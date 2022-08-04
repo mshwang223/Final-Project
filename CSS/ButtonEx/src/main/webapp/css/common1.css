@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+/* 폰트 레이아웃 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+}
+
+/* 버튼 레이아웃 */
+/* Gradient buttons */
+.btn-gradient {
+  margin: 5px;
+  color: white;	/* 버튼 텍스트 색상 */
+  padding: 5px 20px;
+  border: 1px solid rgba(0,0,0,0.21);
+  border-bottom: 4px solid rgba(0,0,0,0.21);
+  border-radius: 4px;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+/* 버튼 색상 */
+.btn-gradient.cyan {
+  background: rgba(27,188,194,1);
+}
+
+.btn-gradient.red { 
+  background: rgba(250,90,90,1);
+}
+
+.btn-gradient.orange {
+  background: rgba(255,105,30,1);
+}
+
+.btn-gradient.blue {
+  background: rgba(102,152,203,1);
+}
+
+.btn-gradient.purple { 
+  background: rgba(203,153,197,1);
+}
+
+.btn-gradient.yellow {
+  background: rgba(240,210,100,1);
+}
+
+.btn-gradient.green {
+  background: rgba(130,200,160,1);
+}
+
+/* click 시 반영 */
+.btn-gradient.cyan:active   {background: #169499;}
+.btn-gradient.red:active    {background: #E35252;}
+.btn-gradient.orange:active {background: #E8601B;}
+.btn-gradient.blue:active   {background: #608FBF;}
+.btn-gradient.purple:active {background: #BD8EB7;}
+.btn-gradient.yellow:active {background: #DBC05B;}
+.btn-gradient.green:active  {background: #72B08E;}
+
+/* 마우스 올렸을 때 투명화 */
+.btn-gradient.cyan:hover {
+	opacity:0.7;
+    box-shadow: 0 0 2px 0 rgba(27,188,194,1) inset, 0 0 2px 2px rgba(27,188,194,1);
+}
+
+.btn-gradient.red:hover {
+	opacity:0.7;
+    box-shadow: 0 0 2px 0 rgba(250,90,90,1) inset, 0 0 2px 2px rgba(250,90,90,1);
+}
+
+.btn-gradient.orange:hover {
+	opacity:0.7;
+    box-shadow: 0 0 2px 0 rgba(255,105,30,1) inset, 0 0 2px 2px rgba(255,105,30,1);
+}
+
+.btn-gradient.blue:hover {
+	opacity:0.7;
+    box-shadow: 0 0 2px 0 rgba(102,152,203,1) inset, 0 0 2px 2px rgba(102,152,203,1);
+}
+
+.btn-gradient.purple:hover {
+	opacity:0.7;
+    box-shadow: 0 0 2px 0 rgba(203,153,197,1) inset, 0 0 2px 2px rgba(203,153,197,1);
+}
+
+.btn-gradient.yellow:hover {
+	opacity:0.7;
+    box-shadow: 0 0 2px 0 rgba(240,210,100,1) inset, 0 0 2px 2px rgba(240,210,100,1);
+}
+
+.btn-gradient.green:hover {
+	opacity:0.7;
+    box-shadow: 0 0 2px 0 rgba(130,200,160,1) inset, 0 0 2px 2px rgba(130,200,160,1);
+}  

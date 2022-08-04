@@ -20,13 +20,13 @@ CREATE TABLE `leave` (
 	`levDate`	DATE	NOT NULL,
 	`userName`	VARCHAR(50)	NOT NULL,
 	`userNickName`	VARCHAR(50)	NOT NULL,
-	`userAuthor`	VARCHAR(50)	NOT NULL
+	`userAuthor`	INT	NOT NULL
 );
 
 CREATE TABLE `board` (
 	`boardId`	VARCHAR(50)	NOT NULL,
 	`userId`	VARCHAR(50)	NOT NULL,
-	`crdId`	VARCHAR(50)	NOT NULL,
+	`categoryId`	VARCHAR(50)	NOT NULL,
 	`title`	VARCHAR(50)	NOT NULL,
 	`contents`	TEXT	NULL,
 	`createDate`	DATE	NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `board` (
 );
 
 CREATE TABLE `brdCategory` (
-	`ctgId`	VARCHAR(50)	NOT NULL,
+	`categoryId`	VARCHAR(50)	NOT NULL,
 	`crdName`	VARCHAR(50)	NOT NULL
 );
 
@@ -51,12 +51,13 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `product` (
 	`prdId`	VARCHAR(50)	NOT NULL,
-	`ctgId`	VARCHAR(50)	NOT NULL,
+	`categoryId`	VARCHAR(50)	NOT NULL,
 	`stateId`	VARCHAR(50)	NOT NULL,
 	`company`	VARCHAR(50)	NOT NULL,
 	`prdName`	VARCHAR(50)	NOT NULL,
 	`prdImg`	TEXT	NULL,
-	`Field`	VARCHAR(255)	NULL
+	`price`	INT	NOT NULL,
+	`contents`	TEXT	NULL
 );
 
 CREATE TABLE `orderInfo` (
@@ -89,7 +90,7 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `imformation` (
 	`imfId`	VARCHAR(50)	NOT NULL,
-	`ctgId`	VARCHAR(50)	NOT NULL,
+	`categoryId`	VARCHAR(50)	NOT NULL,
 	`stateId`	VARCHAR(50)	NOT NULL,
 	`company`	VARCHAR(50)	NOT NULL,
 	`addrZipCode`	VARCHAR(50)	NOT NULL,
@@ -100,7 +101,7 @@ CREATE TABLE `imformation` (
 );
 
 CREATE TABLE `serviceCategory` (
-	`ctgId`	VARCHAR(50)	NOT NULL,
+	`categoryId`	VARCHAR(50)	NOT NULL,
 	`ctgSort`	INT	NOT NULL,
 	`ctgName`	VARCHAR(50)	NOT NULL
 );
@@ -123,11 +124,11 @@ ALTER TABLE `leave` ADD CONSTRAINT `PK_LEAVE` PRIMARY KEY (
 ALTER TABLE `board` ADD CONSTRAINT `PK_BOARD` PRIMARY KEY (
 	`boardId`,
 	`userId`,
-	`crdId`
+	`categoryId`
 );
 
 ALTER TABLE `brdCategory` ADD CONSTRAINT `PK_BRDCATEGORY` PRIMARY KEY (
-	`ctgId`
+	`categoryId`
 );
 
 ALTER TABLE `comments` ADD CONSTRAINT `PK_COMMENTS` PRIMARY KEY (
@@ -138,7 +139,7 @@ ALTER TABLE `comments` ADD CONSTRAINT `PK_COMMENTS` PRIMARY KEY (
 
 ALTER TABLE `product` ADD CONSTRAINT `PK_PRODUCT` PRIMARY KEY (
 	`prdId`,
-	`ctgId`,
+	`categoryId`,
 	`stateId`
 );
 
@@ -161,12 +162,12 @@ ALTER TABLE `cart` ADD CONSTRAINT `PK_CART` PRIMARY KEY (
 
 ALTER TABLE `imformation` ADD CONSTRAINT `PK_IMFORMATION` PRIMARY KEY (
 	`imfId`,
-	`ctgId`,
+	`categoryId`,
 	`stateId`
 );
 
 ALTER TABLE `serviceCategory` ADD CONSTRAINT `PK_SERVICECATEGORY` PRIMARY KEY (
-	`ctgId`
+	`categoryId`
 );
 
 ALTER TABLE `state` ADD CONSTRAINT `PK_STATE` PRIMARY KEY (
@@ -188,10 +189,10 @@ REFERENCES `user` (
 );
 
 ALTER TABLE `board` ADD CONSTRAINT `FK_brdCategory_TO_board_1` FOREIGN KEY (
-	`crdId`
+	`categoryId`
 )
 REFERENCES `brdCategory` (
-	`ctgId`
+	`categoryId`
 );
 
 ALTER TABLE `comments` ADD CONSTRAINT `FK_board_TO_comments_1` FOREIGN KEY (
@@ -209,10 +210,10 @@ REFERENCES `user` (
 );
 
 ALTER TABLE `product` ADD CONSTRAINT `FK_serviceCategory_TO_product_1` FOREIGN KEY (
-	`ctgId`
+	`categoryId`
 )
 REFERENCES `serviceCategory` (
-	`ctgId`
+	`categoryId`
 );
 
 ALTER TABLE `product` ADD CONSTRAINT `FK_state_TO_product_1` FOREIGN KEY (
@@ -258,10 +259,10 @@ REFERENCES `product` (
 );
 
 ALTER TABLE `imformation` ADD CONSTRAINT `FK_serviceCategory_TO_imformation_1` FOREIGN KEY (
-	`ctgId`
+	`categoryId`
 )
 REFERENCES `serviceCategory` (
-	`ctgId`
+	`categoryId`
 );
 
 ALTER TABLE `imformation` ADD CONSTRAINT `FK_state_TO_imformation_1` FOREIGN KEY (
