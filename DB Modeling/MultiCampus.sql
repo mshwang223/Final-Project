@@ -39,20 +39,23 @@ CREATE TABLE `brdCategory` (
 	`crdName`	VARCHAR(50)	NOT NULL
 );
 
-CREATE TABLE `comments` (
-	`cmdId`	VARCHAR(50)	NOT NULL,
-	`boardId`	VARCHAR(50)	NOT NULL,
+CREATE TABLE `review` (
+	`reviewId`	VARCHAR(50)	NOT NULL,
 	`userId`	VARCHAR(50)	NOT NULL,
-	`contents`	VARCHAR(50)	NOT NULL,
+	`prdId`	VARCHAR(50)	NOT NULL,
+	`packageID`	VARCHAR(50)	NOT NULL,
+	`title`	VARCHAR(50)	NOT NULL,
+	`contents`	TEXT	NOT NULL,
 	`createDate`	DATE	NOT NULL,
 	`modifyDate`	DATE	NOT NULL,
-	`show`	INT	NOT NULL
+	`show`	INT	NOT NULL,
+	`point`	INT	NULL
 );
 
 CREATE TABLE `product` (
 	`prdId`	VARCHAR(50)	NOT NULL,
-	`categoryId`	VARCHAR(50)	NOT NULL,
 	`stateId`	VARCHAR(50)	NOT NULL,
+	`packageID`	VARCHAR(50)	NOT NULL,
 	`company`	VARCHAR(50)	NOT NULL,
 	`prdName`	VARCHAR(50)	NOT NULL,
 	`prdImg`	TEXT	NULL,
@@ -78,6 +81,7 @@ CREATE TABLE `orderProduct` (
 	`ordPrdId`	VARCHAR(50)	NOT NULL,
 	`prdId`	VARCHAR(50)	NOT NULL,
 	`ordNo`	VARCHAR(50)	NOT NULL,
+	`packageID`	VARCHAR(50)	NOT NULL,
 	`ordQty`	INT	NULL
 );
 
@@ -85,31 +89,26 @@ CREATE TABLE `cart` (
 	`cartId`	VARCHAR(50)	NOT NULL,
 	`userId`	VARCHAR(50)	NOT NULL,
 	`prdId`	VARCHAR(50)	NOT NULL,
+	`packageID`	VARCHAR(50)	NOT NULL,
 	`cartQty`	INT	NULL
-);
-
-CREATE TABLE `imformation` (
-	`imfId`	VARCHAR(50)	NOT NULL,
-	`categoryId`	VARCHAR(50)	NOT NULL,
-	`stateId`	VARCHAR(50)	NOT NULL,
-	`company`	VARCHAR(50)	NOT NULL,
-	`addrZipCode`	VARCHAR(50)	NOT NULL,
-	`address`	VARCHAR(50)	NOT NULL,
-	`imfImg`	TEXT	NULL,
-	`contents`	TEXT	NULL,
-	`point`	INT	NULL
-);
-
-CREATE TABLE `serviceCategory` (
-	`categoryId`	VARCHAR(50)	NOT NULL,
-	`ctgSort`	INT	NOT NULL,
-	`ctgName`	VARCHAR(50)	NOT NULL
 );
 
 CREATE TABLE `state` (
 	`stateId`	VARCHAR(50)	NOT NULL,
 	`stateCode`	VARCHAR(10)	NOT NULL,
 	`stateName`	VARCHAR(50)	NOT NULL
+);
+
+CREATE TABLE `package` (
+	`packageID`	VARCHAR(50)	NOT NULL,
+	`packageName`	VARCHAR(50)	NOT NULL
+);
+
+CREATE TABLE `pckElenments` (
+	`packElementId`	VARCHAR(50)	NOT NULL,
+	`packageID`	VARCHAR(50)	NOT NULL,
+	`packageName`	VARCHAR(50)	NOT NULL,
+	`pakCheck`	INT	NOT NULL
 );
 
 ALTER TABLE `user` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
@@ -131,16 +130,17 @@ ALTER TABLE `brdCategory` ADD CONSTRAINT `PK_BRDCATEGORY` PRIMARY KEY (
 	`categoryId`
 );
 
-ALTER TABLE `comments` ADD CONSTRAINT `PK_COMMENTS` PRIMARY KEY (
-	`cmdId`,
-	`boardId`,
-	`userId`
+ALTER TABLE `review` ADD CONSTRAINT `PK_REVIEW` PRIMARY KEY (
+	`reviewId`,
+	`userId`,
+	`prdId`,
+	`packageID`
 );
 
 ALTER TABLE `product` ADD CONSTRAINT `PK_PRODUCT` PRIMARY KEY (
 	`prdId`,
-	`categoryId`,
-	`stateId`
+	`stateId`,
+	`packageID`
 );
 
 ALTER TABLE `orderInfo` ADD CONSTRAINT `PK_ORDERINFO` PRIMARY KEY (
@@ -151,27 +151,28 @@ ALTER TABLE `orderInfo` ADD CONSTRAINT `PK_ORDERINFO` PRIMARY KEY (
 ALTER TABLE `orderProduct` ADD CONSTRAINT `PK_ORDERPRODUCT` PRIMARY KEY (
 	`ordPrdId`,
 	`prdId`,
-	`ordNo`
+	`ordNo`,
+	`packageID`
 );
 
 ALTER TABLE `cart` ADD CONSTRAINT `PK_CART` PRIMARY KEY (
 	`cartId`,
 	`userId`,
-	`prdId`
-);
-
-ALTER TABLE `imformation` ADD CONSTRAINT `PK_IMFORMATION` PRIMARY KEY (
-	`imfId`,
-	`categoryId`,
-	`stateId`
-);
-
-ALTER TABLE `serviceCategory` ADD CONSTRAINT `PK_SERVICECATEGORY` PRIMARY KEY (
-	`categoryId`
+	`prdId`,
+	`packageID`
 );
 
 ALTER TABLE `state` ADD CONSTRAINT `PK_STATE` PRIMARY KEY (
 	`stateId`
+);
+
+ALTER TABLE `package` ADD CONSTRAINT `PK_PACKAGE` PRIMARY KEY (
+	`packageID`
+);
+
+ALTER TABLE `pckElenments` ADD CONSTRAINT `PK_PCKELENMENTS` PRIMARY KEY (
+	`packElementId`,
+	`packageID`
 );
 
 ALTER TABLE `leave` ADD CONSTRAINT `FK_user_TO_leave_1` FOREIGN KEY (
@@ -195,25 +196,25 @@ REFERENCES `brdCategory` (
 	`categoryId`
 );
 
-ALTER TABLE `comments` ADD CONSTRAINT `FK_board_TO_comments_1` FOREIGN KEY (
-	`boardId`
-)
-REFERENCES `board` (
-	`boardId`
-);
-
-ALTER TABLE `comments` ADD CONSTRAINT `FK_user_TO_comments_1` FOREIGN KEY (
+ALTER TABLE `review` ADD CONSTRAINT `FK_user_TO_review_1` FOREIGN KEY (
 	`userId`
 )
 REFERENCES `user` (
 	`userId`
 );
 
-ALTER TABLE `product` ADD CONSTRAINT `FK_serviceCategory_TO_product_1` FOREIGN KEY (
-	`categoryId`
+ALTER TABLE `review` ADD CONSTRAINT `FK_product_TO_review_1` FOREIGN KEY (
+	`prdId`
 )
-REFERENCES `serviceCategory` (
-	`categoryId`
+REFERENCES `product` (
+	`prdId`
+);
+
+ALTER TABLE `review` ADD CONSTRAINT `FK_product_TO_review_2` FOREIGN KEY (
+	`packageID`
+)
+REFERENCES `product` (
+	`packageID`
 );
 
 ALTER TABLE `product` ADD CONSTRAINT `FK_state_TO_product_1` FOREIGN KEY (
@@ -221,6 +222,13 @@ ALTER TABLE `product` ADD CONSTRAINT `FK_state_TO_product_1` FOREIGN KEY (
 )
 REFERENCES `state` (
 	`stateId`
+);
+
+ALTER TABLE `product` ADD CONSTRAINT `FK_package_TO_product_1` FOREIGN KEY (
+	`packageID`
+)
+REFERENCES `package` (
+	`packageID`
 );
 
 ALTER TABLE `orderInfo` ADD CONSTRAINT `FK_user_TO_orderInfo_1` FOREIGN KEY (
@@ -235,6 +243,13 @@ ALTER TABLE `orderProduct` ADD CONSTRAINT `FK_product_TO_orderProduct_1` FOREIGN
 )
 REFERENCES `product` (
 	`prdId`
+);
+
+ALTER TABLE `orderProduct` ADD CONSTRAINT `FK_product_TO_orderProduct_2` FOREIGN KEY (
+	`packageID`
+)
+REFERENCES `product` (
+	`packageID`
 );
 
 ALTER TABLE `orderProduct` ADD CONSTRAINT `FK_orderInfo_TO_orderProduct_1` FOREIGN KEY (
@@ -258,17 +273,17 @@ REFERENCES `product` (
 	`prdId`
 );
 
-ALTER TABLE `imformation` ADD CONSTRAINT `FK_serviceCategory_TO_imformation_1` FOREIGN KEY (
-	`categoryId`
+ALTER TABLE `cart` ADD CONSTRAINT `FK_product_TO_cart_2` FOREIGN KEY (
+	`packageID`
 )
-REFERENCES `serviceCategory` (
-	`categoryId`
+REFERENCES `product` (
+	`packageID`
 );
 
-ALTER TABLE `imformation` ADD CONSTRAINT `FK_state_TO_imformation_1` FOREIGN KEY (
-	`stateId`
+ALTER TABLE `pckElenments` ADD CONSTRAINT `FK_package_TO_pckElenments_1` FOREIGN KEY (
+	`packageID`
 )
-REFERENCES `state` (
-	`stateId`
+REFERENCES `package` (
+	`packageID`
 );
 
