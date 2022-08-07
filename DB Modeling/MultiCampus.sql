@@ -43,7 +43,6 @@ CREATE TABLE `review` (
 	`reviewId`	VARCHAR(50)	NOT NULL,
 	`userId`	VARCHAR(50)	NOT NULL,
 	`prdId`	VARCHAR(50)	NOT NULL,
-	`packageID`	VARCHAR(50)	NOT NULL,
 	`title`	VARCHAR(50)	NOT NULL,
 	`contents`	TEXT	NOT NULL,
 	`createDate`	DATE	NOT NULL,
@@ -81,7 +80,6 @@ CREATE TABLE `orderProduct` (
 	`ordPrdId`	VARCHAR(50)	NOT NULL,
 	`prdId`	VARCHAR(50)	NOT NULL,
 	`ordNo`	VARCHAR(50)	NOT NULL,
-	`packageID`	VARCHAR(50)	NOT NULL,
 	`ordQty`	INT	NULL
 );
 
@@ -89,7 +87,6 @@ CREATE TABLE `cart` (
 	`cartId`	VARCHAR(50)	NOT NULL,
 	`userId`	VARCHAR(50)	NOT NULL,
 	`prdId`	VARCHAR(50)	NOT NULL,
-	`packageID`	VARCHAR(50)	NOT NULL,
 	`cartQty`	INT	NULL
 );
 
@@ -133,8 +130,7 @@ ALTER TABLE `brdCategory` ADD CONSTRAINT `PK_BRDCATEGORY` PRIMARY KEY (
 ALTER TABLE `review` ADD CONSTRAINT `PK_REVIEW` PRIMARY KEY (
 	`reviewId`,
 	`userId`,
-	`prdId`,
-	`packageID`
+	`prdId`
 );
 
 ALTER TABLE `product` ADD CONSTRAINT `PK_PRODUCT` PRIMARY KEY (
@@ -151,15 +147,13 @@ ALTER TABLE `orderInfo` ADD CONSTRAINT `PK_ORDERINFO` PRIMARY KEY (
 ALTER TABLE `orderProduct` ADD CONSTRAINT `PK_ORDERPRODUCT` PRIMARY KEY (
 	`ordPrdId`,
 	`prdId`,
-	`ordNo`,
-	`packageID`
+	`ordNo`
 );
 
 ALTER TABLE `cart` ADD CONSTRAINT `PK_CART` PRIMARY KEY (
 	`cartId`,
 	`userId`,
-	`prdId`,
-	`packageID`
+	`prdId`
 );
 
 ALTER TABLE `state` ADD CONSTRAINT `PK_STATE` PRIMARY KEY (
@@ -210,13 +204,6 @@ REFERENCES `product` (
 	`prdId`
 );
 
-ALTER TABLE `review` ADD CONSTRAINT `FK_product_TO_review_2` FOREIGN KEY (
-	`packageID`
-)
-REFERENCES `product` (
-	`packageID`
-);
-
 ALTER TABLE `product` ADD CONSTRAINT `FK_state_TO_product_1` FOREIGN KEY (
 	`stateId`
 )
@@ -245,13 +232,6 @@ REFERENCES `product` (
 	`prdId`
 );
 
-ALTER TABLE `orderProduct` ADD CONSTRAINT `FK_product_TO_orderProduct_2` FOREIGN KEY (
-	`packageID`
-)
-REFERENCES `product` (
-	`packageID`
-);
-
 ALTER TABLE `orderProduct` ADD CONSTRAINT `FK_orderInfo_TO_orderProduct_1` FOREIGN KEY (
 	`ordNo`
 )
@@ -271,13 +251,6 @@ ALTER TABLE `cart` ADD CONSTRAINT `FK_product_TO_cart_1` FOREIGN KEY (
 )
 REFERENCES `product` (
 	`prdId`
-);
-
-ALTER TABLE `cart` ADD CONSTRAINT `FK_product_TO_cart_2` FOREIGN KEY (
-	`packageID`
-)
-REFERENCES `product` (
-	`packageID`
 );
 
 ALTER TABLE `pckElenments` ADD CONSTRAINT `FK_package_TO_pckElenments_1` FOREIGN KEY (
