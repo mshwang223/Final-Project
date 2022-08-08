@@ -55,11 +55,13 @@ CREATE TABLE `product` (
 	`prdId`	VARCHAR(50)	NOT NULL,
 	`stateId`	VARCHAR(50)	NOT NULL,
 	`packageID`	VARCHAR(50)	NOT NULL,
+	`serviceID`	VARCHAR(50)	NOT NULL,
 	`company`	VARCHAR(50)	NOT NULL,
 	`prdName`	VARCHAR(50)	NOT NULL,
 	`prdImg`	TEXT	NULL,
 	`price`	INT	NOT NULL,
-	`contents`	TEXT	NULL
+	`contents`	TEXT	NULL,
+	`Field`	VARCHAR(255)	NULL
 );
 
 CREATE TABLE `orderInfo` (
@@ -67,11 +69,7 @@ CREATE TABLE `orderInfo` (
 	`userId`	VARCHAR(50)	NOT NULL,
 	`ordDate`	DATE	NOT NULL,
 	`receiver`	VARCHAR(50)	NOT NULL,
-	`ordZipCode`	VARCHAR(50)	NOT NULL,
-	`address1`	VARCHAR(50)	NOT NULL,
-	`address2`	VARCHAR(50)	NOT NULL,
 	`rcvPhone`	VARCHAR(50)	NOT NULL,
-	`rcvNotice`	TEXT	NULL,
 	`payment`	INT	NOT NULL,
 	`price`	INT	NOT NULL
 );
@@ -108,6 +106,11 @@ CREATE TABLE `pckElenments` (
 	`pakCheck`	INT	NOT NULL
 );
 
+CREATE TABLE `service` (
+	`serviceID`	VARCHAR(50)	NOT NULL,
+	`serviceName`	VARCHAR(50)	NOT NULL
+);
+
 ALTER TABLE `user` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
 	`userId`
 );
@@ -136,7 +139,8 @@ ALTER TABLE `review` ADD CONSTRAINT `PK_REVIEW` PRIMARY KEY (
 ALTER TABLE `product` ADD CONSTRAINT `PK_PRODUCT` PRIMARY KEY (
 	`prdId`,
 	`stateId`,
-	`packageID`
+	`packageID`,
+	`serviceID`
 );
 
 ALTER TABLE `orderInfo` ADD CONSTRAINT `PK_ORDERINFO` PRIMARY KEY (
@@ -167,6 +171,10 @@ ALTER TABLE `package` ADD CONSTRAINT `PK_PACKAGE` PRIMARY KEY (
 ALTER TABLE `pckElenments` ADD CONSTRAINT `PK_PCKELENMENTS` PRIMARY KEY (
 	`packElementId`,
 	`packageID`
+);
+
+ALTER TABLE `service` ADD CONSTRAINT `PK_SERVICE` PRIMARY KEY (
+	`serviceID`
 );
 
 ALTER TABLE `leave` ADD CONSTRAINT `FK_user_TO_leave_1` FOREIGN KEY (
@@ -216,6 +224,13 @@ ALTER TABLE `product` ADD CONSTRAINT `FK_package_TO_product_1` FOREIGN KEY (
 )
 REFERENCES `package` (
 	`packageID`
+);
+
+ALTER TABLE `product` ADD CONSTRAINT `FK_service_TO_product_1` FOREIGN KEY (
+	`serviceID`
+)
+REFERENCES `service` (
+	`serviceID`
 );
 
 ALTER TABLE `orderInfo` ADD CONSTRAINT `FK_user_TO_orderInfo_1` FOREIGN KEY (
