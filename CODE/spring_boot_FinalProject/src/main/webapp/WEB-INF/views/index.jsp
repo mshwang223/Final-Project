@@ -33,7 +33,7 @@
 				<article class="main_slide">
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="../images/promotion1.png" alt="강아지고양이">
+							<img src="image/promotion1.png" alt="강아지고양이">
 						</div>
 						<div class="promotion_area_contents">
 							<div>아늑한 공간에서 특별한 생일을 보내 보세요</div>
