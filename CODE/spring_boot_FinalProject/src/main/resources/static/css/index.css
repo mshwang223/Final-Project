@@ -146,6 +146,11 @@ article.menu_view{
   margin-top: 30px;
 }
 
+article.menu_view .menu_view_contents > button:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.7s;
+}
+
 
 article.menu_view .menu_view_img img{
   width: 540px;
