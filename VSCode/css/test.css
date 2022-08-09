@@ -39,6 +39,7 @@ header nav.main_nav{
   width: 610px;
   height: 50px;
   margin-right: 300px;
+
 }
 
 header nav.main_nav > div{
@@ -50,7 +51,7 @@ header nav.main_nav > div{
 
 header nav.main_nav > div:hover{
   transition: 0.3s;
-  color:#45beee;
+  color:#ee88ee;
 }
 
 header .login_box{
@@ -77,11 +78,11 @@ header .login_box > span{
 header .login_box > span:nth-child(2){
   width: 95px;
   color: #fff;
-  background-color: #45beee;
+  background-color: #ee88ee;
 }
 
 header .login_box > span:nth-child(1):hover{
-  color:#45beee;
+  color:#ee88ee;
   transition: 0.3s;
 }
 
@@ -263,5 +264,11 @@ article.menu_view .menu_view_contents > button{
   height: 60px;
   border-radius: 50%;
   background-color: #45beee;
+}
+
+.footer_image{
+text-align: right;
+margin-bottom: 150px;
+
 }
 
