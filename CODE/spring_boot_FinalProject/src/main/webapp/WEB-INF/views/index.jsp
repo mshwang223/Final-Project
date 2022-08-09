@@ -70,11 +70,11 @@
 				<div class="div_cpy_info">
 					<p>
 						상호명 (주)펫밀리가 떴다 | 대표 황재윤 | 개인정보보호책임자 곽경록<br>
-						주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@petmily.com | 마케팅/제휴 문의 marketing@petmily.com
+						주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@petmily.com | 마케팅/제휴 문의 <br>
+						펫은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다. <br>
+						marketing@petmily.com
 					</p>
-					<p>
-						펫은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
-					</p>
+
 					<div class="footer_image"><img src="image/petmilylogo.png"></div>
 				</div>
 				
