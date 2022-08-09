@@ -312,7 +312,7 @@
 
 
 
-![](README.assets/타임라인 일정.png)
+![](doc/README.assets/타임라인 일정.png)
 
 
 
@@ -320,7 +320,7 @@
 
 
 
-![](README.assets/MultiCampus.png)
+![](doc/README.assets/MultiCampus.png)
 
 
 
@@ -328,4 +328,4 @@
 
 
 
-![](README.assets/도식화.png)
+![](doc/README.assets/도식화.png)
