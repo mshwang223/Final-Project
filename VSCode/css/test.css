@@ -17,28 +17,35 @@ section.wrap{
 header{
   display: flex;
   justify-content: space-evenly;
+  align-items: flex-end;
   height: 180px;
-  padding-top: 45px;
+  width: 1580px;
+  margin: 0 auto;
+  padding-top: 55px;
 }
 
 header .logo_box{
   display: flex;
   align-items: center;
   height: 60px;
+  position: relative;
+  width: 300px;
+  height: 100%;
 }
 
 header img{
-  width: 250px;
+  position: absolute;
+  width: 210px;
   height: 150px;
 }
 
 header nav.main_nav{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 610px;
+  width: 500px;
   height: 50px;
-  margin-right: 300px;
+  margin: 0 300px 14px 0;
 }
 
 header nav.main_nav > div{
@@ -59,6 +66,7 @@ header .login_box{
   align-items: center;
   height: 50px;
   width: 195px;
+  margin-bottom: 80px;
 }
 
 header .login_box > span{
