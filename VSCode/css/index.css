@@ -50,14 +50,14 @@ header nav.main_nav{
   margin: 0 300px 14px 0;
 }
 
-header nav.main_nav > div{
+header nav.main_nav > a{
   font-size: 18px;
   font-weight: 600;
   color: #555;
   cursor: pointer;
 }
 
-header nav.main_nav > div:hover{
+header nav.main_nav > a:hover{
   transition: 0.3s;
   color:#ee82ee;
 }
@@ -205,6 +205,7 @@ article.menu_view .menu_view_contents > button{
   height: 280px;
   width: 100%;
   margin-top: 80px;
+  padding: 0 100px;
   border-top: 2px solid #ddd;
 }
 
@@ -233,15 +234,6 @@ article.menu_view .menu_view_contents > button{
 .div_cpy_info p{
   font-size: 16px;
   color: #444;
-}
-
-.top_btn{
-  position: fixed;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #45beee;
 }
 
 .footer_image{
