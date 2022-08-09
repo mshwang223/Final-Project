@@ -4,7 +4,9 @@
 
 ### 팀명 :
 
-![](README.assets/팀마커-16600049105724.png)
+
+
+![](README.assets/팀마커.png)
 
 <center>
     <h3>
@@ -312,7 +314,7 @@
 
 
 
-![](README.assets/타임라인 일정.png)
+![](README.assets/Timeline.png)
 
 
 
@@ -320,7 +322,7 @@
 
 
 
-![](README.assets/MultiCampus.png)
+![](README.assets/MultiCampus-16600054060984.png)
 
 
 
@@ -328,4 +330,4 @@
 
 
 
-![](README.assets/도식화.png)
+![](README.assets/도식화-16600054313417.png)
