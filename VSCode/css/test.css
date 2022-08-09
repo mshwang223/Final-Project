@@ -204,6 +204,8 @@ article.menu_view .menu_view_contents > button{
   flex-direction: column;
   height: 300px;
   width: 100%;
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
 }
 
 .footer_box{
