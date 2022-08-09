@@ -314,7 +314,11 @@
 
 
 
+<<<<<<< HEAD
 ![](README.assets/Timeline.png)
+=======
+![](doc/README.assets/타임라인 일정.png)
+>>>>>>> 50a7498db3b0349f7d1a0b866f57447e3a9d0067
 
 
 
@@ -322,7 +326,11 @@
 
 
 
+<<<<<<< HEAD
 ![](README.assets/MultiCampus-16600054060984.png)
+=======
+![](doc/README.assets/MultiCampus.png)
+>>>>>>> 50a7498db3b0349f7d1a0b866f57447e3a9d0067
 
 
 
@@ -330,4 +338,8 @@
 
 
 
+<<<<<<< HEAD
 ![](README.assets/도식화-16600054313417.png)
+=======
+![](doc/README.assets/도식화.png)
+>>>>>>> 50a7498db3b0349f7d1a0b866f57447e3a9d0067
