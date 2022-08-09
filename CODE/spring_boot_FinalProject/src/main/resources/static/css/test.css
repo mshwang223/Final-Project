@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
+:root {
+	--nav-length: 4;
+	--nav-width: calc(100% / var(--nav-length));
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -10,45 +17,97 @@
   /* background-color: #ff8843; */
   /* background-color: #fffee1; */
 
-section.wrap{
+body{
   background-color: #f5f5f5;
+}
+
+section.wrap{
+  width: 1580px;
+  margin: 0 auto;
 }
 
 header{
   display: flex;
   justify-content: space-evenly;
+  align-items: flex-end;
   height: 180px;
-  padding-top: 45px;
+  padding-top: 50px;
 }
 
 header .logo_box{
   display: flex;
   align-items: center;
-  height: 60px;
+  
+  position: relative;
+  width: 300px;
+  height: 100%;
 }
 
 header img{
-  width: 250px;
+  position: absolute;
+  width: 210px;
   height: 150px;
 }
 
 header nav.main_nav{
   display: flex;
-  justify-content: space-around;
+  position: relative;
+  justify-content: space-between;
   align-items: center;
-  width: 610px;
+  width: 500px;
   height: 50px;
-  margin-right: 300px;
+  margin: 0 300px 14px 0;
 }
 
-header nav.main_nav > div{
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: var(--nav-width);
+  height: 3px;
+  background: #ee82ee;
+  transition: all .3s ease-in-out;
+}
+
+nav a:nth-child(1).is-current ~ .underline {
+  left: calc(var(--nav-width) * 0);
+}
+nav a:nth-child(2).is-current ~ .underline {
+  left: calc(var(--nav-width) * 1);
+}
+nav a:nth-child(3).is-current ~ .underline {
+  left: calc(var(--nav-width) * 2);
+}
+nav a:nth-child(4).is-current ~ .underline {
+  left: calc(var(--nav-width) * 3);
+}
+
+nav a:nth-child(1):hover ~ .underline {
+  left: calc(var(--nav-width) * 0);
+}
+nav a:nth-child(2):hover ~ .underline {
+  left: calc(var(--nav-width) * 1);
+}
+nav a:nth-child(3):hover ~ .underline {
+  left: calc(var(--nav-width) * 2);
+}
+nav a:nth-child(4):hover ~ .underline {
+  left: calc(var(--nav-width) * 3);
+}
+
+header nav.main_nav > a{
   font-size: 18px;
   font-weight: 600;
   color: #555;
+  
+  text-align: center;
   cursor: pointer;
+  
+  display: block;
+  width: var(--nav-width);
 }
 
-header nav.main_nav > div:hover{
+header nav.main_nav > a:hover{
   transition: 0.3s;
   color:#ee82ee;
 }
@@ -59,6 +118,7 @@ header .login_box{
   align-items: center;
   height: 50px;
   width: 195px;
+  margin-bottom: 80px;
 }
 
 header .login_box > span{
@@ -87,33 +147,33 @@ header .login_box > span:nth-child(1):hover{
 
 article.menu_view{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 700px;
   padding: 40px;
+  margin-top: 30px;
 }
 
-article.menu_view .menu_view_img {
-
-}
 
 article.menu_view .menu_view_img img{
-  width: 700px;
-  height: 600px;
+  width: 540px;
+  height: 500px;
   border-radius: 20px;
+  margin: 0 100px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 article.menu_view .menu_view_contents{
-  width: 385px;
+  width: 600px;
   height: 300px;
-  margin-right: 150px;
+  margin-left: 150px;
 }
 
 article.menu_view .menu_view_contents > div{
   height: 210px;
+  width: 350px;
   line-height: 70px;
-  font-size: 53px;
+  font-size: 50px;
   color: #666;
   font-weight: 700;
 }
@@ -128,7 +188,7 @@ article.menu_view .menu_view_contents > button{
   font-size: 18px;
   color: #666;
   font-weight: 600;
-  margin-top:25px;
+  margin: 30px 100px 0 0;
   float: right;
   cursor: pointer;
 }
@@ -187,54 +247,6 @@ article.menu_view .menu_view_contents > button{
   right: 25px;
 }
 
-.main_function{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 600px;
-  background-color: #fff;
-}
-
-.main_function_container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1500px;
-  height: 400px;
-}
-
-.main_function_box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 320px;
-  height: 430px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #45beee;
-}
-
-.main_function_title{
-  width: 300px;
-  text-align: center;
-  color:#fff;
-  font-size: 25px;
-  margin-top: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-}
-
-.main_function_content{
-  height: 250px;
-  width: 300px;
-  margin-top: 30px;
-  padding: 5px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
-}
-
 .footer_container{
   display: flex;
   justify-content: center;
@@ -242,6 +254,8 @@ article.menu_view .menu_view_contents > button{
   flex-direction: column;
   height: 300px;
   width: 100%;
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
 }
 
 .footer_box{
@@ -265,3 +279,7 @@ article.menu_view .menu_view_contents > button{
   background-color: #45beee;
 }
 
+.footer_image{
+
+  text-align: right;
+}
