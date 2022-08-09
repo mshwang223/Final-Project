@@ -50,7 +50,7 @@ header nav.main_nav > div{
 
 header nav.main_nav > div:hover{
   transition: 0.3s;
-  color:#45beee;
+  color:#ee82ee;
 }
 
 header .login_box{
@@ -77,11 +77,11 @@ header .login_box > span{
 header .login_box > span:nth-child(2){
   width: 95px;
   color: #fff;
-  background-color: #45beee;
+  background-color: #ee82ee;
 }
 
 header .login_box > span:nth-child(1):hover{
-  color:#45beee;
+  color:#ee82ee;
   transition: 0.3s;
 }
 
