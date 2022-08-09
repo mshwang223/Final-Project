@@ -30,14 +30,16 @@
 				</div>
 			</header>
 			<section>
-				<article class="menu_view">
-					<div class="menu_view_img">
-						<img src="image/promotion1.png" alt="강아지고양이">
+				<article class="main_slide">
+					<div class="promotion_area">
+						<div class="promotion_area_img">
+							<img src="../images/promotion1.png" alt="강아지고양이">
+						</div>
+						<div class="promotion_area_contents">
+							<div>아늑한 공간에서 특별한 생일을 보내 보세요</div>
+							<button>자세히보기</button>
+						</div>
 					</div>
-					<div class="menu_view_contents">
-					<div>아늑한 공간에서 특별한 생일을 보내 보세요</div>
-					<button>자세히보기</button>
-				</div>
 				</article>
 				<article class="popular_items">
 					<div class="popular_title">인기 호텔</div>

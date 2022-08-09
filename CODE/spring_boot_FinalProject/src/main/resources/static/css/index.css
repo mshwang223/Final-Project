@@ -1,4 +1,4 @@
-article.menu_view{
+div.promotion_area{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,13 +7,7 @@ article.menu_view{
   margin-top: 30px;
 }
 
-article.menu_view .menu_view_contents > button:hover{
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: 0.7s;
-}
-
-
-article.menu_view .menu_view_img img{
+div.promotion_area .promotion_area_img img{
   width: 540px;
   height: 500px;
   border-radius: 20px;
@@ -21,13 +15,13 @@ article.menu_view .menu_view_img img{
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-article.menu_view .menu_view_contents{
+div.promotion_area .promotion_area_contents{
   width: 600px;
   height: 300px;
   margin-left: 150px;
 }
 
-article.menu_view .menu_view_contents > div{
+div.promotion_area .promotion_area_contents > div{
   height: 210px;
   width: 350px;
   line-height: 70px;
@@ -36,7 +30,7 @@ article.menu_view .menu_view_contents > div{
   font-weight: 700;
 }
 
-article.menu_view .menu_view_contents > button{
+div.promotion_area .promotion_area_contents > button{
   width: 170px;
   height: 60px;
   background-color: #fff;
@@ -51,11 +45,14 @@ article.menu_view .menu_view_contents > button{
   cursor: pointer;
 }
 
+div.promotion_area .promotion_area_contents > button:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.7s;
+}
+
 .popular_items{
   height: 450px;
   padding: 60px 50px 0 50px;
-  
-  /* background-color: #fff; */
 }
 
 .popular_title{
