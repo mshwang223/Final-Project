@@ -197,27 +197,42 @@ article.menu_view .menu_view_contents > button{
   right: 25px;
 }
 
+
 .footer_container{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
-  height: 300px;
+  height: 280px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 80px;
   border-top: 2px solid #ddd;
 }
 
 .footer_box{
   display: flex;
-  width: 1500px;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
+.div_terms{
+  margin-bottom: 10px;
+}
+
+.btn_terms{
+  cursor: pointer;
+  font-size: 16px;
+  color: #444;
+}
+
+
 .div_cpy_info{
-  width: 1500px;
   height: 100px;
   line-height: 30px;
+}
+
+.div_cpy_info p{
+  font-size: 16px;
+  color: #444;
 }
 
 .top_btn{
@@ -230,6 +245,11 @@ article.menu_view .menu_view_contents > button{
 }
 
 .footer_image{
-
+  width: 200px;
   text-align: right;
+}
+
+.footer_image img{
+  width: 150px;
+  filter: grayscale(100%);
 }
