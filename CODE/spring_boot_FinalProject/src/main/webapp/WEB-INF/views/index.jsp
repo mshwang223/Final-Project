@@ -6,6 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/test.js"></script>

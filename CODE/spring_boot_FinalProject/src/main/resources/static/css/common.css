@@ -1,4 +1,3 @@
-/* header부분시작 */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 *{
   margin: 0;
@@ -25,7 +24,7 @@ header{
   justify-content: space-evenly;
   align-items: flex-end;
   height: 180px;
-  padding-top: 55px;
+  padding-top: 50px;
 }
 
 header .logo_box{
@@ -44,21 +43,63 @@ header img{
 
 header nav.main_nav{
   display: flex;
-  justify-content: space-between;
+  position: relative;
   align-items: center;
-  width: 500px;
+  width: 600px;
   height: 50px;
   margin: 0 300px 14px 0;
 }
 
-header nav.main_nav > div{
+.underline {
+  position: absolute;
+  left: 32px;
+  bottom: -2px;
+  width: 15%;
+  
+  height: 3px;
+  background: #ee82ee;
+  transition: all .3s ease-in-out;
+}
+
+nav a:nth-child(1).is-current ~ .underline {
+  left: calc(0 + 32px);
+}
+nav a:nth-child(2).is-current ~ .underline {
+  left: calc(25% + 32px);
+}
+nav a:nth-child(3).is-current ~ .underline {
+  left: calc(50% + 32px);
+}
+nav a:nth-child(4).is-current ~ .underline {
+  left: calc(75% + 32px);
+}
+
+nav a:nth-child(1):hover ~ .underline {
+  left: calc(0 + 32px);
+}
+nav a:nth-child(2):hover ~ .underline {
+  left: calc(25% + 32px);
+}
+nav a:nth-child(3):hover ~ .underline {
+  left: calc(50% + 32px);
+}
+nav a:nth-child(4):hover ~ .underline {
+  left: calc(75% + 32px);
+}
+
+header nav.main_nav > a{
   font-size: 18px;
   font-weight: 600;
   color: #555;
+  
+  text-align: center;
   cursor: pointer;
+  
+  display: block;
+  width: 25%;
 }
 
-header nav.main_nav > div:hover{
+header nav.main_nav > a:hover{
   transition: 0.3s;
   color:#ee82ee;
 }
@@ -95,57 +136,53 @@ header .login_box > span:nth-child(1):hover{
   color:#ee82ee;
   transition: 0.3s;
 }
-
-article.menu_view{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 700px;
-  padding: 40px;
-  margin-top: 30px;
-}
 /* header끝 */
 
 /* 여기부터 footer */
-footer{
-  height: 300px;
-}
-
 .footer_container{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
-  height: 300px;
+  height: 280px;
   width: 100%;
+  margin-top: 80px;
+  padding: 0 100px;
+  border-top: 2px solid #ddd;
 }
 
 .footer_box{
   display: flex;
-  width: 1500px;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
+.div_terms{
+  margin-bottom: 10px;
+}
+
+.btn_terms{
+  cursor: pointer;
+  font-size: 16px;
+  color: #444;
+}
+
+
 .div_cpy_info{
-  display: flex;
-  justify-content: space-between;
-  width: 1500px;
   height: 100px;
   line-height: 30px;
 }
 
-.footer_image >img{
-  width: 230px;
-  height: 180px;
-  padding: 0 40px 30px 0;
+.div_cpy_info p{
+  font-size: 16px;
+  color: #444;
 }
-/* footer끝 */
 
-.top_btn{
-  position: fixed;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #45beee;
+.footer_image{
+  width: 200px;
+  text-align: right;
+}
+
+.footer_image img{
+  width: 150px;
+  filter: grayscale(100%);
 }
