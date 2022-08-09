@@ -43,18 +43,60 @@ header img{
 
 header nav.main_nav{
   display: flex;
-  justify-content: space-between;
+  position: relative;
   align-items: center;
-  width: 500px;
+  width: 600px;
   height: 50px;
   margin: 0 300px 14px 0;
+}
+
+.underline {
+  position: absolute;
+  left: 32px;
+  bottom: -2px;
+  width: 15%;
+  
+  height: 3px;
+  background: #ee82ee;
+  transition: all .3s ease-in-out;
+}
+
+nav a:nth-child(1).is-current ~ .underline {
+  left: calc(0 + 32px);
+}
+nav a:nth-child(2).is-current ~ .underline {
+  left: calc(25% + 32px);
+}
+nav a:nth-child(3).is-current ~ .underline {
+  left: calc(50% + 32px);
+}
+nav a:nth-child(4).is-current ~ .underline {
+  left: calc(75% + 32px);
+}
+
+nav a:nth-child(1):hover ~ .underline {
+  left: calc(0 + 32px);
+}
+nav a:nth-child(2):hover ~ .underline {
+  left: calc(25% + 32px);
+}
+nav a:nth-child(3):hover ~ .underline {
+  left: calc(50% + 32px);
+}
+nav a:nth-child(4):hover ~ .underline {
+  left: calc(75% + 32px);
 }
 
 header nav.main_nav > a{
   font-size: 18px;
   font-weight: 600;
   color: #555;
+  
+  text-align: center;
   cursor: pointer;
+  
+  display: block;
+  width: 25%;
 }
 
 header nav.main_nav > a:hover{
@@ -104,6 +146,11 @@ article.menu_view{
   margin-top: 30px;
 }
 
+article.menu_view .menu_view_contents > button:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.7s;
+}
+
 
 article.menu_view .menu_view_img img{
   width: 540px;
@@ -141,11 +188,6 @@ article.menu_view .menu_view_contents > button{
   margin: 30px 100px 0 0;
   float: right;
   cursor: pointer;
-}
-
-article.menu_view .menu_view_contents > button:hover{
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: 0.7s;
 }
 
 .popular_items{
