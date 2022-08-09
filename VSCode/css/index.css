@@ -1,4 +1,6 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -236,53 +238,4 @@ div.promotion_area .promotion_area_contents > button:hover{
 
 .popular_items_wrap .next{
   right: 25px;
-}
-
-
-.footer_container{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 280px;
-  width: 100%;
-  margin-top: 80px;
-  padding: 0 100px;
-  border-top: 2px solid #ddd;
-}
-
-.footer_box{
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.div_terms{
-  margin-bottom: 10px;
-}
-
-.btn_terms{
-  cursor: pointer;
-  font-size: 16px;
-  color: #444;
-}
-
-
-.div_cpy_info{
-  height: 100px;
-  line-height: 30px;
-}
-
-.div_cpy_info p{
-  font-size: 16px;
-  color: #444;
-}
-
-.footer_image{
-  width: 200px;
-  text-align: right;
-}
-
-.footer_image img{
-  width: 150px;
-  filter: grayscale(100%);
 }
