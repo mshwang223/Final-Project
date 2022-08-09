@@ -10,8 +10,13 @@
   /* background-color: #ff8843; */
   /* background-color: #fffee1; */
 
-section.wrap{
+body{
   background-color: #f5f5f5;
+}
+
+section.wrap{
+  width: 1580px;
+  margin: 0 auto;
 }
 
 header{
@@ -19,15 +24,12 @@ header{
   justify-content: space-evenly;
   align-items: flex-end;
   height: 180px;
-  width: 1580px;
-  margin: 0 auto;
   padding-top: 55px;
 }
 
 header .logo_box{
   display: flex;
   align-items: center;
-  height: 60px;
   position: relative;
   width: 300px;
   height: 100%;
@@ -95,32 +97,36 @@ header .login_box > span:nth-child(1):hover{
 
 article.menu_view{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 700px;
   padding: 40px;
+  margin-top: 30px;
 }
 
 
 article.menu_view .menu_view_img img{
-  width: 700px;
-  height: 600px;
+  width: 540px;
+  height: 500px;
   border-radius: 20px;
+  margin: 0 100px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 article.menu_view .menu_view_contents{
-  width: 385px;
+  width: 600px;
   height: 300px;
-  margin-right: 150px;
+  margin: 0 100px 0 140px;
 }
 
 article.menu_view .menu_view_contents > div{
   height: 210px;
+  width: 375px;
   line-height: 70px;
   font-size: 53px;
   color: #666;
   font-weight: 700;
+  align-items: center;
 }
 
 article.menu_view .menu_view_contents > button{
@@ -133,7 +139,7 @@ article.menu_view .menu_view_contents > button{
   font-size: 18px;
   color: #666;
   font-weight: 600;
-  margin-top:25px;
+  margin: 40px 20px 0 0;
   float: right;
   cursor: pointer;
 }
@@ -190,54 +196,6 @@ article.menu_view .menu_view_contents > button{
 
 .popular_items_wrap .next{
   right: 25px;
-}
-
-.main_function{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 600px;
-  background-color: #fff;
-}
-
-.main_function_container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1500px;
-  height: 400px;
-}
-
-.main_function_box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 320px;
-  height: 430px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #45beee;
-}
-
-.main_function_title{
-  width: 300px;
-  text-align: center;
-  color:#fff;
-  font-size: 25px;
-  margin-top: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-}
-
-.main_function_content{
-  height: 250px;
-  width: 300px;
-  margin-top: 30px;
-  padding: 5px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
 }
 
 .footer_container{
