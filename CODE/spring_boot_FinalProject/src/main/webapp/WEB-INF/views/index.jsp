@@ -59,8 +59,18 @@
 							<button class="slide_btn">자세히보기</button>
 						</div>
 					</div>
+					<div class="promotion_area">
+						<div class="promotion_area_img">
+							<img src="image/promotion4.png" alt="반려동물 활동">
+						</div>
+						<div class="promotion_area_contents">
+							<div>반려동물과 함께 다양한 활동을 해봐요</div>
+							<button class="slide_btn">자세히보기</button>
+						</div>
+					</div>
 				</div>
 				<div class="slide_bar_box">
+					<span class="slide_bar"></span>
 					<span class="slide_bar"></span>
 					<span class="slide_bar"></span>
 					<span class="slide_bar"></span>
@@ -99,6 +109,12 @@
 			</div>
 		</div>	
 		<div class="footer_image">
+			<div class="sns_box">
+				<span class="sns"><img src="image/facebook.png"></span>
+				<span class="sns"><img src="image/instagram.png"></span>
+				<span class="sns"><img src="image/twitter.png"></span>
+				<span class="sns"><img src="image/youtube.png"></span>
+			</div>
 			<img src="image/petmilylogo.png"></div>
 		</div>
 		</footer>
