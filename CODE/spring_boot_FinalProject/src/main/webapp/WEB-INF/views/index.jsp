@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<script src="js/jquery-3.6.0.min.js"></script>
-		<script src="js/test.js"></script>
+		<script src="js/index.js"></script>
 	</head>
 	
 	<body>
@@ -30,17 +30,42 @@
 				</div>
 			</header>
 			<section>
-				<article class="main_slide">
+			<article class="main_slide">
+				<div class="main_slide_box" id="slideBox">
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="image/promotion1.png" alt="강아지고양이">
+							<img src="image/promotion1.png" alt="반려동물 생일">
 						</div>
 						<div class="promotion_area_contents">
 							<div>아늑한 공간에서 특별한 생일을 보내 보세요</div>
-							<button>자세히보기</button>
+							<button class="slide_btn">자세히보기</button>
 						</div>
 					</div>
-				</article>
+					<div class="promotion_area">
+						<div class="promotion_area_img">
+							<img src="image/promotion2.jpg" alt="반려동물 사진">
+						</div>
+						<div class="promotion_area_contents">
+							<div>반려동물과 추억이 담긴 사진을 찍어봐요</div>
+							<button class="slide_btn">자세히보기</button>
+						</div>
+					</div>
+					<div class="promotion_area">
+						<div class="promotion_area_img">
+							<img src="image/promotion3.png" alt="반려동물 장난감">
+						</div>
+						<div class="promotion_area_contents">
+							<div>다양한 장난감을 제공해드려요</div>
+							<button class="slide_btn">자세히보기</button>
+						</div>
+					</div>
+				</div>
+				<div class="slide_bar_box">
+					<span class="slide_bar"></span>
+					<span class="slide_bar"></span>
+					<span class="slide_bar"></span>
+				</div>
+			</article>
 				<article class="popular_items">
 					<div class="popular_title">인기 호텔</div>
 					<div class="popular_items_wrap">
