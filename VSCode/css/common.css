@@ -185,3 +185,15 @@ header .login_box > span:nth-child(1):hover{
   width: 150px;
   filter: grayscale(100%);
 }
+
+.footer_image .sns_box{
+  display: flex;
+  justify-content: first baseline;
+}
+
+.sns_box .sns >img{
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+}

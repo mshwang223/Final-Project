@@ -1,4 +1,4 @@
-setInterval(mainSlide,4000);
+setInterval(mainSlide,8000);
 
 function mainSlide(){
   $("#slideBox").animate({"margin-left" : "-1580px"}, 1500, function(){
