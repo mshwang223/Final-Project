@@ -52,7 +52,7 @@ header nav.main_nav{
 
 .underline {
   position: absolute;
-  left: 32px;
+  left: 30px;
   bottom: -2px;
   width: 15%;
   
@@ -62,29 +62,29 @@ header nav.main_nav{
 }
 
 nav a:nth-child(1).is-current ~ .underline {
-  left: calc(0 + 32px);
+  left: calc(0 + 30px);
 }
 nav a:nth-child(2).is-current ~ .underline {
-  left: calc(25% + 32px);
+  left: calc(25% + 30px);
 }
 nav a:nth-child(3).is-current ~ .underline {
-  left: calc(50% + 32px);
+  left: calc(50% + 30px);
 }
 nav a:nth-child(4).is-current ~ .underline {
-  left: calc(75% + 32px);
+  left: calc(75% + 30px);
 }
 
 nav a:nth-child(1):hover ~ .underline {
-  left: calc(0 + 32px);
+  left: calc(0 + 30px);
 }
 nav a:nth-child(2):hover ~ .underline {
-  left: calc(25% + 32px);
+  left: calc(25% + 30px);
 }
 nav a:nth-child(3):hover ~ .underline {
-  left: calc(50% + 32px);
+  left: calc(50% + 30px);
 }
 nav a:nth-child(4):hover ~ .underline {
-  left: calc(75% + 32px);
+  left: calc(75% + 30px);
 }
 
 header nav.main_nav > a{
