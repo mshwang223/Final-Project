@@ -1,7 +1,7 @@
-setInterval(mainSlide,4000);
+setInterval(mainSlide,5000);
 
 function mainSlide(){
-  $("#slideBox").animate({"margin-left" : "-1580px"}, 1500, function(){
+  $("#slideBox").animate({"margin-left" : "-1580px"}, 1300, function(){
     $("#slideBox").css({"margin-left" : "-8px"});
     $(".promotion_area:first-child").insertAfter(".promotion_area:last-child");
     //button에 mouseover되면 멈추게
