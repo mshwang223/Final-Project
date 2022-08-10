@@ -184,4 +184,17 @@ header .login_box > span:nth-child(1):hover{
 .footer_image img{
   width: 150px;
   filter: grayscale(100%);
+  margin-bottom: 5px;
+}
+
+.footer_image .sns_box{
+  display: flex;
+  justify-content: first baseline;
+}
+
+.sns_box .sns >img{
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 5px 10px;
+  cursor: pointer;
 }
