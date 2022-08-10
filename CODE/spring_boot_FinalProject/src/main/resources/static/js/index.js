@@ -1,5 +1,11 @@
+/********************************
+ * 파일명 : index.js
+ * 용 도 : 메인 페이지 slide show 이벤트 
+ * 작성자 : 황재윤
+*********************************/
+
 $(document).ready(function(){
-	var interval = setInterval(mainSlide,5000);
+	var interval = setInterval(mainSlide, 5000);
 	
 	// 각 컨트롤 버튼에 대해 처리
 	$('.slide_bar').each(function(index) {
@@ -13,7 +19,7 @@ $(document).ready(function(){
 			
 			$('.slide_bar_box').find('span').not(this).css('background-color', '#ddd');
 			
-			interval = setInterval(mainSlide,8000);
+			interval = setInterval(mainSlide, 5000);
 
 		});
 	});
@@ -54,7 +60,6 @@ $(document).ready(function(){
 	// 슬라이드 패널을 움직이는 함수
 	function moveSlide(chkIdx, index) {
 		var maxLeft = maxLength * 1580;
-		console.log(chkIdx + ", " + index);
 		// 슬라이드 이동
 		if(chkIdx > index) {
 			index = chkIdx - index;
