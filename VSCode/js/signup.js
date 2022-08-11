@@ -50,11 +50,12 @@ $(document).ready(function(){
       // 인증이 되면 다시 인증번호 확인칸 숨기기
       $('.signup_phone_check').hide();
       // 휴대폰 번호 입력칸 / 인증번호 버튼 비활성화시키키
-      $('.signup_phone').attr('disabled', true);
-      $('.signup_phone').css('background-color', '#f2f2f2');
-      $('check_phone').attr('disabled', true);
-      $('.check_phone').text("인증완료");
-      $('check_phone').css('background-color', '#dddddd');
+      $('.text_signup_phone').attr('disabled', true);
+      $('.text_signup_phone').css('background-color', '#f2f2f2');
+      $('.confirm_phone').attr('disabled', true);
+      $('.confirm_phone').text("인증완료");
+      $('.confirm_phone').css('background-color', '#dddddd');
+      $('.confirm_phone').css('cursor', 'auto');
     }else{
       alert("인증번호를 다시 확인해 주세요.");
       $('.check_signup_phone').css('border', 'solid 1px #E65454');
