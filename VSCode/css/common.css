@@ -34,12 +34,6 @@ header .logo_box{
   height: 100%;
 }
 
-header img{
-  position: absolute;
-  width: 210px;
-  height: 150px;
-}
-
 header nav.main_nav{
   display: flex;
   position: relative;
