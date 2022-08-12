@@ -7,6 +7,7 @@
 	<link rel="icon" href="../images/logo_ico.png">
 	<link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/signup.css">
+  <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	<script src="../js/jquery-3.6.0.min.js"></script>
   <script src="../js/signup.js"></script>
 	<title>펫밀리가 떴다</title>
@@ -59,10 +60,10 @@
             <button class="check_phone">인증하기</button>
           </div>
           <div class="signup_address"><p>주소</p>
-            <input type="text" class="zipcode" name="zipcode" readonly>
+            <input type="text" id="zipCode"class="zipcode" name="zipcode" readonly>
             <button class="btn_zipcode">우편번호찾기</button>
-            <input type="text" class="check_address1" placeholder="주소 입력"><br>
-            <input type="text" class="check_address2" placeholder="상세 주소 입력">
+            <input type="text" id="address1"class="check_address1" placeholder="주소 입력"><br>
+            <input type="text" id="address2"class="check_address2" placeholder="상세 주소 입력">
           </div>
           <div class="signup_email"><p>이메일</p>
             <input type="text" class="text_signup_email" placeholder="abc@example.com">
@@ -70,29 +71,29 @@
           <br><br>
           <div class="agree_rule">
             <div class="agree_all">
-              <input type="checkbox" class="agree_all_check"><p>약관 전체 동의</p>
+              <input type="checkbox" class="agree_all_check" name="agree_all_check"><p>약관 전체 동의</p>
             </div>
             <div class="agree_sub">
               <div class="agree_sub1">
-                <input type="checkbox" class="agree_subcheck1"><p>이용 약관(필수)</p>
+                <input type="checkbox" class="agree_subcheck1" name="agree_subcheck1"><p>이용 약관(필수)</p>
                 <a href="#" class="agree_link1">상세보기</a>
               </div>
             </div>
             <div class="agree_sub">
               <div class="agree_sub2">
-                <input type="checkbox" class="agree_subcheck2"><p>개인정보 수집 및 이용(필수)</p>
+                <input type="checkbox" class="agree_subcheck2" name="agree_subcheck2"><p>개인정보 수집 및 이용(필수)</p>
                 <a href="#" class="agree_link2">상세보기</a>
               </div>
             </div>
             <div class="agree_sub">
               <div class="agree_sub3">
-                <input type="checkbox" class="agree_subcheck3"><p>이벤트 / 프로모션 SMS수신(선택)</p>
+                <input type="checkbox" class="agree_subcheck3" name="agree_subcheck3"><p>이벤트 / 프로모션 SMS수신(선택)</p>
                 <a href="#" class="agree_link3">상세보기</a>
               </div>
             </div>
             <div class="agree_sub">
               <div class="agree_sub4">
-                <input type="checkbox" class="agree_subcheck4"><p>이벤트 / 프로모션 Email수신(선택)</p>
+                <input type="checkbox" class="agree_subcheck4" name="agree_subcheck4"><p>이벤트 / 프로모션 Email수신(선택)</p>
                 <a href="#" class="agree_link4">상세보기</a>
               </div>
             </div>
