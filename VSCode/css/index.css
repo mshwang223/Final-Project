@@ -156,58 +156,5 @@ article.main_slide > .slide_bar_box > span.slide_bar{
   transition-duration: 0.3s;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
 
-#dropdown-login {
-  margin-top:10px;
-  display: none;
-  position: absolute;
-  border: 1px solid #ee88ee;
-  width: 250px;
-  height: 150px;
-  min-width: 160px;
-  
-  z-index: 1;
-  border-radius: 8px;
-}
-
-.show {
-  display: block !important;
-}
-
-.popular_hotel:active .material-icons.md-36{
-  color:aqua;
-}
-
-.dropdown_botton{
-  
-  font-size: 5px;
-  border-radius: 5px;
-  color: #222222;
-  background-color: #ee82ee;
-  border-color: #ee82ee;
-  width:50px;
-  height: 30px;
-  
-  
-}
-
-.dropdown_username{
-  border-color:#ee82ee;
-  margin-left: 20px;
-  margin-top: 50px;
-  border-radius: 4px;
-  height:25px;
-  
-}
-
-.dropdown_password{
-  border-color:#ee82ee;
-  margin-left: 20px;
-  border-radius: 4px;
-  height:25px;
-}
 
