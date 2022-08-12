@@ -131,3 +131,45 @@ article.main_slide > .slide_bar_box > span.slide_bar{
 .popular_items_wrap .next{
   right: 10px;
 }
+
+.like{
+  position: absolute;
+  left: 11em;
+  bottom: 11em;
+}
+
+.popular_hotel{
+  position:relative;
+}
+
+
+.popular_hotel img {
+  opacity: 1;
+}
+
+.popular_hotel .material-icons.md-36 {
+  transition-duration: 0.3s;
+}
+
+.popular_hotel:hover .material-icons.md-36 {
+  color: #ee88ee;
+  transition-duration: 0.3s;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#dropdown-login {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.show {
+  display: block !important;
+}
