@@ -1,0 +1,46 @@
+
+/* 게시판 공통 */
+
+table {
+  border-spacing: 0;
+  
+  width: 100%;
+}
+
+th {
+  background: #ee82ee;
+  color: #fff;
+  text-align: center;
+  padding: 15px 15px;
+  
+  border-left: 1px solid #c6c9cc;
+  
+}
+
+/* 테이블 번호 크기 고정 */
+th.num {
+  width: 80px;
+}
+
+/* 테이블 작성자, 작성일 크기 고정 */
+th.author, th.date {
+  width: 240px;	
+}
+
+/* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
+td:not(.title) {
+	text-align: center;
+}
+
+td {
+  padding: 6px 15px;
+  	
+  border-right: 1px solid #c6c9cc;
+  border-bottom: 1px solid #c6c9cc;
+}
+td:first-child {
+  border-left: 1px solid #c6c9cc;
+}
+tr:nth-child(even) td {
+  background: #eaeaed;
+}
