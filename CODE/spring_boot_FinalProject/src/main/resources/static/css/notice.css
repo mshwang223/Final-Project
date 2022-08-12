@@ -1,17 +1,65 @@
 /* 공지사항 */
 
-/* 제목폰트 */
-.pageTitle {
-    position: relative;
-    margin: 0 0 45px;
-    padding: 70px 0 10px 0;
-    font-size: 35px;
-    line-height: 40px;
-    font-weight: bold;
-    
-    text-align: left;	
+.noticeBox div:first-child {
+  margin-bottom: 15px;	
 }
 
-.noticeBox {
-	margin: 0 48px;
+/* 제목폰트 */
+.pageTitle {
+  position: relative;
+  margin: 0 0 45px;
+  padding: 70px 0 10px 0;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: bold;
+    
+  text-align: center;	
+}
+
+/* 테이블 레이아웃 위치 지정 */
+.table-box {
+  height: 460px; 	
+}
+
+/* 공지사항 게시판 크기 */
+table {
+  border-spacing: 0;
+  margin: 0 auto;
+  width: 65%;
+
+}
+
+/* 검색조건 레이아웃 */
+.search-table tr td {
+  border: 0;
+}
+
+div.dropdown-box {
+  width: 100px;
+  height: 35px;
+  border: 1px solid #c6c9cc;
+  
+  position: relative;
+  margin-right: -600px;
+  
+  left: 100px;
+}
+
+div.dropdown-box div:first-child {
+  display: inline-block;	
+  margin-left: 0px;
+  margin-top: 6px;	
+  font-size: 16px;
+  width:40px; 	
+}
+
+div.dropdown-box div:last-child {
+  display: inline-block;
+  font-size: 16px;
+  text-align: right;
+  width:40px;	
+}
+
+.search-box {
+  margin-bottom: 20px;	
 }

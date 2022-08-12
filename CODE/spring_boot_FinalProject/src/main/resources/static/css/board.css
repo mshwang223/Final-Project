@@ -1,30 +1,20 @@
-
 /* 게시판 공통 */
-
-table {
-  border-spacing: 0;
-  
-  width: 100%;
-}
-
 th {
-  background: #ee82ee;
-  color: #fff;
-  text-align: center;
-  padding: 15px 15px;
-  
-  border-left: 1px solid #c6c9cc;
-  
+	background: #ee82ee;
+	color: #fff;
+	text-align: center;
+	padding: 15px 15px;
+	border-left: 1px solid #c6c9cc;
 }
 
 /* 테이블 번호 크기 고정 */
 th.num {
-  width: 80px;
+	width: 80px;
 }
 
 /* 테이블 작성자, 작성일 크기 고정 */
 th.author, th.date {
-  width: 240px;	
+	width: 240px;
 }
 
 /* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
@@ -33,14 +23,60 @@ td:not(.title) {
 }
 
 td {
-  padding: 6px 15px;
-  	
-  border-right: 1px solid #c6c9cc;
-  border-bottom: 1px solid #c6c9cc;
+	padding: 10px 15px;
+	border-right: 1px solid #c6c9cc;
+	border-bottom: 1px solid #c6c9cc;
 }
+
 td:first-child {
-  border-left: 1px solid #c6c9cc;
+	border-left: 1px solid #c6c9cc;
 }
+
 tr:nth-child(even) td {
-  background: #eaeaed;
+	background: #eaeaed;
+}
+
+/* 페이징 레이아웃 */
+.paging-box {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.paging-box>ul {
+	list-style: none;
+}
+
+/* 간격 조정 */
+.paging-box > ul > li {
+	display: inline-block;
+	margin-left: 3px;
+}
+
+.paging-box > ul > li.prevPager {
+	margin-right: 10px;
+}
+
+.paging-box > ul > li.nextPager {
+	margin-left: 10px;
+}
+
+.paging-box > ul > li > a {
+	display: block;
+	position: relative;
+	padding: 7px 0 8px;
+	min-width: 30px;
+	border: 1px solid black;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+.paging-box > ul > li > a:hover {
+	background-color: #636363;
+	color: #fff;
+}
+
+.paging-box > ul > li > a:active {
+	background-color: #636363;
+	color: #fff;	
+}
 }

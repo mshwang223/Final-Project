@@ -9,9 +9,8 @@ $(document).ready(function(){
 	// 로그인 드롭다운 확인
 	var chk = 0;
 	
-	$(".dropdown").on('click', function() {
-		$("#dropdown-login").slideToggle("show", function() {
-			
+	$(".loginForm").on('click', function() {
+		$("#dropdown-login").slideToggle(function() {
 			if($(this).is(':hidden')){	// 닫힐 때
 				chk = 1;
 			} else {
@@ -22,15 +21,19 @@ $(document).ready(function(){
 	
 	// 외부 클릭 시 드롭다운 박스 히든
 	window.onclick = function(event) {
-		const cond1 = String(event.path[1].id) === 'dropdown-login';
-		const cond2 = String(event.path[1].id) === 'login-form';
-		
+		const pathId = event.path[1].id;
+		var divArray = new Array("dropdown-login", "login-form", "input-div", "forgotInfo");
+		/*
+		const cond1 = event.path[1].id == String("dropdown-login");
+		const cond2 = event.path[1].id == String("login-form");
 		const clickedInsideLoginForm = cond1 || cond2;
-		  
-		if (clickedInsideLoginForm) return;
-	  	
-	  	if (!event.target.matches('.loginForm')) {
-	  		if (chk == 2) $("#dropdown-login").hide();
+		*/
+		for(i in divArray) {
+			if(pathId === divArray[i] ) return false;
+		}
+		
+		if (!event.target.matches('.loginForm')) {
+			if (chk == 2) $("#dropdown-login").hide();
 		}
 	}
 });

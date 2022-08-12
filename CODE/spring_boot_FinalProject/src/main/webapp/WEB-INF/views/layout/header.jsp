@@ -28,11 +28,18 @@
 					<span class="loginForm">로그인</span>
 					<div id="dropdown-login">
 						<form action="post" id="login-form">
+							<p>로그인</p>
+							<div class="loginline"></div>
 							<div id="input-div">
-							<input type="text" class="dropdown_username" placeholder="Username">
-							<input type="password" class="dropdown_password" placeholder="Password"></div>
-							<input type="submit" class="dropdown_botton" value="로그인">
+								<input type="text" class="dropdown_username" placeholder=" 아이디">
+								<input type="password" class="dropdown_password" placeholder=" 비밀번호">
+							</div>
+							<div id="forgotInfo">
+								<p>ID 찾기</p>
+								<p>PW 찾기</p>
+							</div> 
 						</form>
+						<input type="submit" class="dropdown_botton" value="로그인">
 					</div>
 				</div>
 				<a href="<c:url value='/signup'/>">회원가입</a>
