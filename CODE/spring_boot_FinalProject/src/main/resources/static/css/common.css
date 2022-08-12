@@ -34,11 +34,15 @@ header .logo_box{
   height: 100%;
 }
 
-header img{
+/*
+.logoImg{
   position: absolute;
   width: 210px;
   height: 150px;
+  
+  top: 0;
 }
+*/
 
 header nav.main_nav{
   display: flex;

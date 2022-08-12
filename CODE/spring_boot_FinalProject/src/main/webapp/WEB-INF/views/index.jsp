@@ -6,6 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
+		<link rel="icon" href="image/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<script src="js/jquery-3.6.0.min.js"></script>
@@ -13,10 +14,11 @@
 	</head>
 	
 	<body>
+		<!-- header 시작 -->
 		<section class="wrap">
 			<header>
 				<div class="logo_box">
-					<img src="image/petmilylogo.png" alt="로고">
+					<a href="<c:url value='/'/>"><img src="image/petmilylogo.png" class="logoImg" alt="로고"></a>
 				</div>
 				<nav class="main_nav">
 					<a>호텔 / 펜션</a>
@@ -26,7 +28,8 @@
 					<div class="underline"></div>
 				</nav>
 				<div class="login_box">
-					<span>로그인</span><span>회원가입</span>
+					<span>로그인</span>
+					<span>회원가입</span>
 				</div>
 			</header>
 			<section>
