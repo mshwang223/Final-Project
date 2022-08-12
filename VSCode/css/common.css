@@ -100,7 +100,7 @@ header .login_box{
   align-items: center;
   height: 50px;
   width: 195px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 header .login_box > .dropdown > span.loginForm, header .login_box > a{
@@ -120,6 +120,7 @@ header .login_box > .dropdown > span.loginForm, header .login_box > a{
 header .login_box > a {
   width: 95px;
   background-color: #ee82ee;
+  border-radius: 8px;
 }
 
 header .login_box > a > span{
@@ -151,6 +152,7 @@ header .login_box > .dropdown > span.loginForm:hover{
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  
 }
 
 .div_terms{
@@ -182,7 +184,6 @@ header .login_box > .dropdown > span.loginForm:hover{
 .footer_image img{
   width: 150px;
   filter: grayscale(100%);
-  margin-bottom: 5px;
 }
 
 .footer_image .sns_box{
@@ -193,7 +194,7 @@ header .login_box > .dropdown > span.loginForm:hover{
 .sns_box .sns >img{
   width: 30px;
   height: 30px;
-  margin: 0 10px 5px 10px;
+  margin: 0 10px 0 10px;
   cursor: pointer;
 }
 
