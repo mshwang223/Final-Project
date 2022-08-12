@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/logo_ico.png">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script src="../js/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" href="../css/petHotel.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script defer src="../js/daterangepicker.js"></script>
+  <script defer src="../js/petHotel.js"></script>
+  <title>펫밀리가 떴다</title>
+</head>
+<body>
+	<section class="wrap">
+		<header>
+			<div class="logo_box">
+				<img src="../images/petmilylogo.png" alt="로고" class="btn" onclick="clicklogo()";/>
+			</div>
+			
+			<nav class="main_nav">
+				<a>호텔 / 펜션</a>
+				<a>프로모션</a>
+				<a>공지사항</a>
+				<a>문의하기</a>
+				<div class="underline"></div>
+			</nav>
+			<div class="login_box">
+				<div class="dropdown">
+					<span class="loginForm">로그인</span>
+				</div>
+				<a href="signup.html" class="signup">
+					<span>회원가입</span>
+				</a>
+			</div>
+		</header>
+		<section class="reservation_container">
+      <article>
+        <div class="background_img_box">
+          <img class="background_img" src="../images/background.jpg" alt="반려동물들">
+        </div>
+        <div class="reservation_area">
+          <div class="reservation_title">
+            야옹아 멍멍아 놀러가자
+          </div>
+          <div class="reservation_box">
+            <div class="search_area">
+              <div>
+                <div class="search_area_title">지역<img src="../images/location.png" alt="지역"></div>
+                <input type="text" class="search_box" id="searchBox" placeholder="지역을 검색하세요" autocomplete="off">
+              </div>
+              <div class="search_pop" id="searchPop">
+                <ul id="searchList">
+                  <li>서울</li>
+                  <li>부산</li>
+                  <li>제주도</li>
+                  <li>강원도</li>
+                  <li>강릉</li>
+                </ul>
+              </div>
+            </div>
+            <div class="option_area">
+              <div>
+                <div class="option_area_title">옵션<img src="../images/choice.png" alt="옵션"></div>
+                <input type="text" class="option_box" id="optionBox" placeholder="옵션을 선택하세요" autocomplete="off">
+              </div>
+              <div class="option_pop" id="optionPop">
+                <!-- <span>픽업<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span> -->
+                <div>
+                  <span>픽업</span>
+                  <span>촬영</span>
+                  <span>패키지</span>
+                  <span>풀장</span>
+                </div>
+              </div>
+            </div>
+            <div class="date_area">
+              <div>
+                <div class="date_area_title">날짜<img src="../images/calendar.png" alt="날짜"></div>
+                <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off">
+              </div>
+            </div>
+            <div class="count_area">
+              <div>
+                <div class="count_area_title">인원수 | 반려동물 수<img src="../images/owner.png" alt="구성원 수"></div>
+                <input type="text" class="count_box" autocomplete="off">
+              </div>
+            </div>
+            <button class="reservation_btn">
+              <div>
+                <span>검색</span> 
+                <img src="../images/search.png" alt="검색">
+              </div>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </section>
+<footer>
+	<div class="footer_container">
+
+		<div class="footer_box">
+			<div class="div_terms">
+				<span class="btn_terms">이용 약관 |</span>
+				<span class="btn_terms">개인정보 처리방침 |</span>
+				<span class="btn_terms">고객센터</span>
+			</div>
+			<div class="div_cpy_info">
+				<p>
+					상호명: (주)펫밀리가 떴다 | 대표 황재윤 | 개인정보보호책임자 곽경록<br>
+					주소: 서울특별시 마포구 양화로 12길 8-9, 3층 (서교동, 예현빌딩) | 이메일 help@petmily.com | 마케팅 / 제휴 문의 marketing@petmily.com <br>
+					대표번호: 02-222-0333 팩스: 050-1122-3030 사업자등록번호: 111-22-33333 통신판매업신고번호: 제2022-서울마포-0000호
+				</p> 
+			</div>
+		</div>	
+		<div class="footer_image">
+			<div class="sns_box">
+				<span class="sns"><img src="../images/facebook.png"></span>
+				<span class="sns"><img src="../images/instagram.png"></span>
+				<span class="sns"><img src="../images/twitter.png"></span>
+				<span class="sns"><img src="../images/youtube.png"></span>
+			</div>
+			<img src="../images/petmilylogo.png">
+		</div>
+		
+	</div>
+</footer>
+</body>
+</html>
