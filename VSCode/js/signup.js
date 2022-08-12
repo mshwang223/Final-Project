@@ -1,3 +1,5 @@
+// signup.js
+
 $(document).ready(function(){
 
   // 아이디 중복체크(백에서 ajax사용)
@@ -65,6 +67,66 @@ $(document).ready(function(){
       })
     }
   });
+
+  // 전체동의 체크박스 체크시 전체 체크
+  let checkedBox = false;
+  $('.agree_all_check').click(function(){
+    if($('.agree_all_check').is(':checked')){
+      $('input[name = agree_subcheck1]').prop('checked', true);
+      $('input[name = agree_subcheck2]').prop('checked', true);
+      $('input[name = agree_subcheck3]').prop('checked', true);
+      $('input[name = agree_subcheck4]').prop('checked', true);
+    }else{
+      $('input[name = agree_subcheck1]').prop('checked', false);
+      $('input[name = agree_subcheck2]').prop('checked', false);
+      $('input[name = agree_subcheck3]').prop('checked', false);
+      $('input[name = agree_subcheck4]').prop('checked', false);
+    }
+  });
+
+  // 전체 체크상태일 경우 : 전체동의 박스 체크
+  // 하나라도 체크되지 않은 상태 경우 : 전체동의 박스체크 해제
+  $('.agree_subcheck1, .agree_subcheck2, .agree_subcheck3, .agree_subcheck4').click(function(){
+    if($('.agree_subcheck1').is(':checked')
+    && $('.agree_subcheck2').is(':checked')
+    && $('.agree_subcheck3').is(':checked')
+    && $('.agree_subcheck4').is(':checked')){
+      $('input[name=agree_all_check]').prop('checked', true);
+    }else{
+      $('input[name=agree_all_check]').prop('checked', false);
+    }
+  });
+
+  $('.logo_box').click(function(){
+    location.href = "index.html";
+  });
+
+  // 주소입력
+  $('.btn_zipcode').on('click', function(){
+    new daum.Postcode({
+      oncomplete:function(data){
+        let address1 = "";
+        
+        // 도로명 주소인 경우
+        if(data.userSelectedType == 'R'){
+          address1 = data.roadAddress + "(" + data.bname + data.buildingName + ")";
+        }else{
+          // 지번인 경우
+          address1 = data.jibunAddress;
+        }
+        
+        // 입력란에 우편번호, 주소1 출력
+        document.getElementById('zipCode').value = data.zonecode;
+        document.getElementById('address1').value = address1;
+        
+        // 삭제 주소 입력하도록 이미 입력되어 있는 값 삭제하고 포커스
+        let address2 = document.getElementById('address2');
+        address2.value = "";
+        address2.focus();
+      }
+    }).open();
+  }); // click 끝
+
 
 
 });//ready 끝

@@ -1,0 +1,17 @@
+/* 공지사항 */
+
+/* 제목폰트 */
+.pageTitle {
+    position: relative;
+    margin: 0 0 45px;
+    padding: 70px 0 10px 0;
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: bold;
+    
+    text-align: left;	
+}
+
+.noticeBox {
+	margin: 0 48px;
+}
