@@ -25,14 +25,14 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
 let searchBox = document.getElementById('searchBox');
 let searchPop = document.getElementById('searchPop');
 let count = 1;
-let searchList = document.querySelectorAll('#searchList');
+let searchList = document.querySelectorAll('#searchList li');
 
 searchBox.addEventListener('click', () => {
   count ++;
   if(count % 2 == 0){
     searchPop.style.display = "block";
   }else{
-    
+    0
     searchPop.style.display = "none";
   }
 
@@ -40,10 +40,9 @@ searchBox.addEventListener('click', () => {
 
 function searchValueClick(){
   for(let i = 0; i < searchList.length; i++){
-    console.log(searchList[i]);
     searchList[i].addEventListener('click', () => {
       
-      searchBox.value = searchList[i].innerText.value;
+      searchBox.value = searchList[i].innerText;
       searchPop.style.display = "none";
     });
   }
@@ -68,13 +67,15 @@ optionBox.addEventListener('click', () => {
 // option 선택
 let option = document.querySelectorAll(".option_pop span");
 let optionLength = 0;
+const createDiv = document.createElement("div");
+let options = [{id:0, value: "픽업"}, {id:0, value: "촬영"}, {id:0, value: "패키지"}, {id:0, value: "풀장"}];
 
 function takeOptionLength(){
   
   for(let i = 0; i < option.length; i++){
     optionLength = option[i].innerText.length;
     
-    option[i].style.width = (optionLength*23) + "px";
+    option[i].style.width = (optionLength*25) + "px";
   }
 
 }
@@ -84,8 +85,10 @@ takeOptionLength();
 function choiceOption(){
   for(let i = 0; i < option.length; i++){
     option[i].addEventListener('click',function(){
-      optionBox.value += option[i].innerText;
-      // optionBox.style.backgroundColor = "#ee82ee";
+
+      createDiv.innerHTML = `<span class="option_span">${options[i].value}</span>`;
+      document.querySelector(".option_box").append(createDiv);
+    
     });
   }
 }

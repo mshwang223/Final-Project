@@ -79,6 +79,22 @@ Ul{
   border-radius: 10px;
 }
 
+.option_box{
+  background-color: #fff;
+  margin-top: 15px;
+  cursor: text;
+}
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+}
+
+div[contenteditable=true] {
+  text-align: left;
+  line-height: 30px;
+  color: #828282;
+}
+
 .reservation_btn{
   width: 130px;
   height: 65px;
@@ -148,7 +164,7 @@ Ul{
   width: 100%;
 }
 
-.option_pop span{
+.option_pop span.option_span{
   display: inline-block;
   height: 28px;
   font-size: 13px;
@@ -162,10 +178,11 @@ Ul{
 }
 
 /* 옵션 삭제 */
-/* .option_pop > span > .option_close{
+.option_pop span.option_span > .option_close{
   width: 8px;
   height: 8px;
   filter: invert(20%);
-} */
+  margin-left: 4px;
+}
 
 
