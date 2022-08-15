@@ -23,7 +23,7 @@
 				<div>
 					<table class="search-table">
 						<tr>
-							<td>1</td>
+							<td></td>
 							<td>
 								<div class="dropdown-box">
 									<div>전체</div>
