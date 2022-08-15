@@ -41,64 +41,106 @@
 		</header>
 		<section class="reservation_container">
       <article>
-        <div class="background_img_box">
-          <img class="background_img" src="../images/background.jpg" alt="반려동물들">
-        </div>
-        <div class="reservation_area">
-          <div class="reservation_title">
-            야옹아 멍멍아 놀러가자
+        <div class="reservation_box">
+          <div class="search_area">
+            <div>
+              <div class="search_area_title">지역<img src="../images/location.png" alt="지역"></div>
+              <input type="text" class="search_box" id="searchBox" placeholder="지역을 검색하세요" autocomplete="off">
+            </div>
+            <div class="search_pop" id="searchPop">
+              <ul id="searchList">
+                <li>서울</li>
+                <li>부산</li>
+                <li>제주도</li>
+                <li>강원도</li>
+                <li>강릉</li>
+              </ul>
+            </div>
           </div>
-          <div class="reservation_box">
-            <div class="search_area">
+          <div class="option_area">
+            <div>
+              <div class="option_area_title">옵션<img src="../images/choice.png" alt="옵션"></div>
+              <div class="option_box" id="optionBox" contenteditable="true" placeholder="옵션을 선택하세요" autocomplete="off"></div>
+            </div>
+            <div class="option_pop" id="optionPop">
               <div>
-                <div class="search_area_title">지역<img src="../images/location.png" alt="지역"></div>
-                <input type="text" class="search_box" id="searchBox" placeholder="지역을 검색하세요" autocomplete="off">
-              </div>
-              <div class="search_pop" id="searchPop">
-                <ul id="searchList">
-                  <li>서울</li>
-                  <li>부산</li>
-                  <li>제주도</li>
-                  <li>강원도</li>
-                  <li>강릉</li>
-                </ul>
+                <span class="option_span">픽업<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span>
+                <span class="option_span">촬영<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span>
+                <span class="option_span">패키지<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span>
+                <span class="option_span">풀장<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span>
               </div>
             </div>
-            <div class="option_area">
-              <div>
-                <div class="option_area_title">옵션<img src="../images/choice.png" alt="옵션"></div>
-                <div class="option_box" id="optionBox" contenteditable="true" placeholder="옵션을 선택하세요" autocomplete="off"></div>
-              </div>
-              <div class="option_pop" id="optionPop">
-                <div>
-                  <span class="option_span">픽업<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span>
-                  <span class="option_span">촬영<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span>
-                  <span class="option_span">패키지<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span>
-                  <span class="option_span">풀장<img src="../images/close.png" alt="옵션 삭제" class="option_close"></span>
-                </div>
-              </div>
-            </div>
-            <div class="date_area">
-              <div>
-                <div class="date_area_title">날짜<img src="../images/calendar.png" alt="날짜"></div>
-                <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off">
-              </div>
-            </div>
-            <div class="count_area">
-              <div>
-                <div class="count_area_title">인원수 | 반려동물 수<img src="../images/owner.png" alt="구성원 수"></div>
-                <input type="text" class="count_box" autocomplete="off">
-              </div>
-            </div>
-            <button class="reservation_btn">
-              <div>
-                <span>검색</span> 
-                <img src="../images/search.png" alt="검색">
-              </div>
-            </button>
           </div>
+          <div class="date_area">
+            <div>
+              <div class="date_area_title">날짜<img src="../images/calendar.png" alt="날짜"></div>
+              <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off">
+            </div>
+          </div>
+          <div class="count_area">
+            <div>
+              <div class="count_area_title">인원수 | 반려동물 수<img src="../images/owner.png" alt="구성원 수"></div>
+              <input type="text" class="count_box" autocomplete="off">
+            </div>
+          </div>
+          <button class="reservation_btn">
+            <div>
+              <span>검색</span> 
+              <img src="../images/search.png" alt="검색">
+            </div>
+          </button>
         </div>
       </article>
+    </section>
+    <section class="stay_container">
+      <div class="stay_img_box">
+        <img src="../images/stay1.jpg" alt="">
+        <div class="stay_info">
+          <div class="stay_name"><span>비스타 워커힐 서울</span><span class="stay_star"><img src="../images/star.png" alt="평점">4.87</span></div>
+          <div>8월 20일 ~ 8월 23일</div>
+          <div>352,000원 / 1박</div>
+        </div>
+      </div>
+      <div class="stay_img_box">
+        <img src="../images/stay2.jpg" alt="">
+        <div class="stay_info">
+          <div class="stay_name"><span>비스타 워커힐 서울</span><span class="stay_star"><img src="../images/star.png" alt="평점">4.87</span></div>
+          <div>8월 20일 ~ 8월 23일</div>
+          <div>352,000원 / 1박</div>
+        </div>
+      </div>
+      <div class="stay_img_box">
+        <img src="../images/stay3.jpg" alt="">
+        <div class="stay_info">
+          <div class="stay_name"><span>비스타 워커힐 서울</span><span class="stay_star"><img src="../images/star.png" alt="평점">4.87</span></div>
+          <div>8월 20일 ~ 8월 23일</div>
+          <div>352,000원 / 1박</div>
+        </div>
+      </div>
+      <div class="stay_img_box">
+        <img src="../images/stay4.jpg" alt="">
+        <div class="stay_info">
+          <div class="stay_name"><span>비스타 워커힐 서울</span><span class="stay_star"><img src="../images/star.png" alt="평점">4.87</span></div>
+          <div>8월 20일 ~ 8월 23일</div>
+          <div>352,000원 / 1박</div>
+        </div>
+      </div>
+      <div class="stay_img_box">
+        <img src="../images/stay5.jpg" alt="">
+        <div class="stay_info">
+          <div class="stay_name"><span>비스타 워커힐 서울</span><span class="stay_star"><img src="../images/star.png" alt="평점">4.87</span></div>
+          <div>8월 20일 ~ 8월 23일</div>
+          <div>352,000원 / 1박</div>
+        </div>
+      </div>
+      <div class="stay_img_box">
+        <img src="../images/stay6.jpg" alt="">
+        <div class="stay_info">
+          <div class="stay_name"><span>비스타 워커힐 서울</span><span class="stay_star"><img src="../images/star.png" alt="평점">4.87</span></div>
+          <div>8월 20일 ~ 8월 23일</div>
+          <div>352,000원 / 1박</div>
+        </div>
+      </div>
     </section>
   </section>
 <footer>

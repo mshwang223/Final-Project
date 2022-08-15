@@ -3,56 +3,16 @@ Ul{
 }
 
 .reservation_container > article{
-  display: flex;
-  justify-content: center;
-  position: relative;
   margin-top: 50px;
-}
-
-.background_img_box{
-  width: 1480px;
-  height: 600px;
-}
-
-.background_img{
-  width: 740px;
-  height: 600px;
-  border-radius: 40px;
-}
-
-.reservation_area{
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  width: 1500px;
-  height: 600px;
-  background-color: #ddd;
-  margin: 0 auto;
-  opacity: 90%;
-  border-radius: 40px;
-  z-index: 5;
-  padding: 30px;
-}
-
-.reservation_title, .reservation_box{
-  width: 710px;
-  font-size: 50px;
-  font-weight: 600;
-  text-align: center;
 }
 
 .reservation_box{
   display: flex;
-  flex-direction: column;
-}
-
-.search_area, .option_area, .date_area, .count_area{
-  display: flex;
-  height: 110px;
-  position: relative;
-  padding: 10px;
-  margin-left: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 133px;
+  border-radius: 30px;
+  background-color: #ddd;
 }
 
 .search_area_title, .option_area_title, .date_area_title, .count_area_title{
@@ -60,6 +20,7 @@ Ul{
   align-items: center;
   font-size: 18px;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .search_area .search_area_title > img, .option_area .option_area_title > img, .date_area .date_area_title > img, .count_area .count_area_title > img{
@@ -69,7 +30,7 @@ Ul{
 }
 
 .search_box, .count_box, .stay_date, .option_box{
-  width: 380px;
+  width: 300px;
   height: 50px;
   border: none;
   outline: none;
@@ -81,7 +42,6 @@ Ul{
 
 .option_box{
   background-color: #fff;
-  margin-top: 15px;
   cursor: text;
 }
 
@@ -95,15 +55,16 @@ div[contenteditable=true] {
   color: #828282;
 }
 
+/* 검색 버튼 */
 .reservation_btn{
-  width: 130px;
-  height: 65px;
+  width: 155px;
+  height: 70px;
   line-height: 70px;
   background-color: #ee82ee;
   cursor: pointer;
   border: none;
-  border-radius: 15px;
-  margin: 15px 0 0 260px;
+  border-radius: 50px;
+  margin-top: 15px;
 }
 
 .reservation_btn > div{
@@ -114,7 +75,7 @@ div[contenteditable=true] {
 }
 
 .reservation_btn > div > span{
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #fff;
 }
@@ -185,4 +146,68 @@ div[contenteditable=true] {
   margin-left: 4px;
 }
 
+
+/* 호텔 , 펜션  */
+.stay_container{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.stay_img_box{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  height: 470px;
+  margin-bottom: 20px;
+}
+
+.stay_img_box > img{
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.stay_star{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+}
+
+.stay_info > div img{
+  width: 20px;
+  height: 20px;
+}
+
+.stay_info > .stay_name{
+  display: flex;
+  justify-content: space-between;
+  width: 330px;
+  margin: 15px 0;
+}
+
+.stay_name > span{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.stay_name span:nth-child(2){
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.stay_info > div:nth-child(2){
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.stay_info > div:nth-child(3){
+  font-size: 16px;
+  font-weight: 600;
+}
 

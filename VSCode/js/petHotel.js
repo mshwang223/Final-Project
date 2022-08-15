@@ -87,10 +87,10 @@ function choiceOption(){
     option[i].addEventListener('click',function(){
 
       createDiv.innerHTML = `<span class="option_span">${options[i].value}</span>`;
-      document.querySelector(".option_box").append(createDiv);
     
     });
   }
+  document.querySelector(".option_box").append(createDiv);
 }
 
 choiceOption();
