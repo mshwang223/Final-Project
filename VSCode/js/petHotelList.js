@@ -6,16 +6,25 @@ $(document).ready(function(){
 	});
 
 	// 지역 클릭 시
-  $('.list_location').click(function(){
+  $('.location_detail').click(function(){
+
     // 클릭한 list_location 클래스 부여
     $(this).addClass('add_text');
     // 부여한 클래스의 장소를 txt에 담아서 value 값 수정
-    let txt1 = $('.add_text .location_detail1').text();
-		let txt2 = $('.add_text .location_detail2').text();
-		let txt3 = $('.add_text .location_detail3').text();
-		let txt4 = $('.add_text .location_detail4').text();
-		let txt5 = $('.add_text .location_detail5').text();
-		let txt6 = $('.add_text .location_detail6').text();
+    let txt1 = $('#location_detail1').text();
+	let txt2 = $('#location_detail2').text();
+	let txt3 = $('#location_detail3').text();
+	let txt4 = $('#location_detail4').text();
+	let txt5 = $('#location_detail5').text();
+	let txt6 = $('#location_detail6').text();
+
+    $('.box_destination').append(txt1 + " ");
+	$('.box_destination').append(txt2 + " ");
+	/*
+	$('#btnDestination').append(txt1);
+	$('#btnDestination').append(txt2);
+    */
+
     $('.input_destination').prop('value', txt1);
 		$('.input_destination').prop('value', txt2);
 		$('.input_destination').prop('value', txt3);
