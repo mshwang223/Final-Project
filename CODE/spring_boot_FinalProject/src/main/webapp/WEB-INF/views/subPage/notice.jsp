@@ -58,7 +58,7 @@
 						<tbody>
 						    <tr>
 						      	<td>1</td>
-						      	<td class="title"><a>공지사항 제목1</a></td>
+						      	<td class="title"><a href="<c:url value="/noticeDetail"/>">공지사항 제목1</a></td>
 						      	<td>Marco Belinelli</td>
 						      	<td>2022-08-12</td>
 						    </tr>

@@ -1,19 +1,17 @@
 /* 공지사항 */
 
-.noticeBox div:first-child {
-  margin-bottom: 15px;	
+/* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
+td:not(.title) {
+	text-align: center;
 }
 
-/* 제목폰트 */
-.pageTitle {
-  position: relative;
-  margin: 0 0 45px;
-  padding: 70px 0 10px 0;
-  font-size: 35px;
-  line-height: 40px;
-  font-weight: bold;
-    
-  text-align: center;	
+/* 2n번째 열 배경색 */
+tr:nth-child(even) td {
+	background: #eaeaed;
+}
+
+.noticeBox div:first-child {
+  margin-bottom: 15px;	
 }
 
 /* 검색조건 레이아웃 */

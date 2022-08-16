@@ -16,4 +16,11 @@ public class MenuController {
 	public String viewNotice() {
 		return "subPage/notice";
 	}
+	
+	// 공지사항 세부화면 가기
+	// 공지사항 가기
+	@RequestMapping("/noticeDetail")
+	public String viewNoticeDetail() {
+		return "subPage/noticeDetail";
+	}	
 }

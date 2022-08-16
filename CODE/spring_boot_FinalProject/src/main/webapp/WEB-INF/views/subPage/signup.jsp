@@ -77,41 +77,41 @@
 			          	<br>
 			          	<div class="agree_rule">
 			            	<div class="agree_all">
-			            	<input type="checkbox" id="allCheck" class="agree_all_check" name="agree_all_check">
-			              	<p class="title">약관 전체 동의</p>
-			            </div>
-			            <div class="agree_sub">
-			            	<div class="agree_sub1">
-			                	<input type="checkbox" class="agree_subcheck1" name="agree_subcheck1">
-			                	<p>이용 약관(필수)</p>
-			                	<a href="#" class="agree_link1">상세보기</a>
-			              	</div>
-			            </div>
-			            <div class="agree_sub">
-			            	<div class="agree_sub2">
-			                	<input type="checkbox" class="agree_subcheck2" name="agree_subcheck2">
-			                	<p>개인정보 수집 및 이용(필수)</p>
-			                	<a href="#" class="agree_link2">상세보기</a>
-			              	</div>
-			            </div>
-			            <div class="agree_sub">
-			            	<div class="agree_sub3">
-			                	<input type="checkbox" class="agree_subcheck3" name="agree_subcheck3">
-			                	<p>이벤트 / 프로모션 SMS수신(선택)</p>
-			                	<a href="#" class="agree_link3">상세보기</a>
-			              	</div>
-			            </div>
-			            <div class="agree_sub">
-			              	<div class="agree_sub4">
-			                	<input type="checkbox" class="agree_subcheck4" name="agree_subcheck4">
-			                	<p>이벤트 / 프로모션 Email수신(선택)</p>
-			                	<a href="#" class="agree_link4">상세보기</a>
-			              	</div>
-		            	</div>
-		          		</div>
-		          		<div class="btn_signup_box">
-		            		<button class="btn_signup_done">가입하기</button>
-		          		</div>
+				            	<input type="checkbox" id="allCheck" class="agree_all_check" name="agree_all_check">
+				              	<p class="title">약관 전체 동의</p>
+				            </div>
+				            <div class="agree_sub">
+				            	<div class="agree_sub1">
+				                	<input type="checkbox" class="agree_subcheck1" name="agree_subcheck1">
+				                	<p>이용 약관(필수)</p>
+				                	<a href="#" class="agree_link1">상세보기</a>
+				              	</div>
+				            </div>
+				            <div class="agree_sub">
+				            	<div class="agree_sub2">
+				                	<input type="checkbox" class="agree_subcheck2" name="agree_subcheck2">
+				                	<p>개인정보 수집 및 이용(필수)</p>
+				                	<a href="#" class="agree_link2">상세보기</a>
+				              	</div>
+				            </div>
+				            <div class="agree_sub">
+				            	<div class="agree_sub3">
+				                	<input type="checkbox" class="agree_subcheck3" name="agree_subcheck3">
+				                	<p>이벤트 / 프로모션 SMS수신(선택)</p>
+				                	<a href="#" class="agree_link3">상세보기</a>
+				              	</div>
+				            </div>
+				            <div class="agree_sub">
+				              	<div class="agree_sub4">
+				                	<input type="checkbox" class="agree_subcheck4" name="agree_subcheck4">
+				                	<p>이벤트 / 프로모션 Email수신(선택)</p>
+				                	<a href="#" class="agree_link4">상세보기</a>
+				              	</div>
+			            	</div>
+			          	</div>
+			          	<div class="btn_signup_box">
+			            	<button class="btn_signup_done">가입하기</button>
+			          	</div>
 		        	</div>
 		    	</div>
 		    </section>

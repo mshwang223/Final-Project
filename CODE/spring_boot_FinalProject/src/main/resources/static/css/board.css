@@ -7,6 +7,18 @@ th {
 	border-left: 1px solid #c6c9cc;
 }
 
+/* 제목폰트 */
+.pageTitle {
+  position: relative;
+  margin: 0 0 45px;
+  padding: 70px 0 10px 0;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: bold;
+    
+  text-align: center;	
+}
+
 /* 테이블 번호 크기 고정 */
 th.num {
 	width: 80px;
@@ -17,11 +29,6 @@ th.author, th.date {
 	width: 240px;
 }
 
-/* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
-td:not(.title) {
-	text-align: center;
-}
-
 td {
 	padding: 10px 15px;
 	border-right: 1px solid #c6c9cc;
@@ -30,10 +37,6 @@ td {
 
 td:first-child {
 	border-left: 1px solid #c6c9cc;
-}
-
-tr:nth-child(even) td {
-	background: #eaeaed;
 }
 
 /* 페이징 레이아웃 */
