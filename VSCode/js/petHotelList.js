@@ -2,35 +2,16 @@ $(document).ready(function(){
 	// 지역 검색하기 클릭시 display : block css 토글
 	$('#btnDestination').click(function(){
 		$('.search_option').toggleClass('dis_block');
-		$('#btnDestination').val('');
+		// $('#btnDestination').val('');
 	});
 
 	// 지역 클릭 시
-  $('.location_detail').click(function(){
-
+  $('.list_location').click(function(){
     // 클릭한 list_location 클래스 부여
     $(this).addClass('add_text');
     // 부여한 클래스의 장소를 txt에 담아서 value 값 수정
-    let txt1 = $('#location_detail1').text();
-	let txt2 = $('#location_detail2').text();
-	let txt3 = $('#location_detail3').text();
-	let txt4 = $('#location_detail4').text();
-	let txt5 = $('#location_detail5').text();
-	let txt6 = $('#location_detail6').text();
-
-    $('.box_destination').append(txt1 + " ");
-	$('.box_destination').append(txt2 + " ");
-	/*
-	$('#btnDestination').append(txt1);
-	$('#btnDestination').append(txt2);
-    */
-
-    $('.input_destination').prop('value', txt1);
-		$('.input_destination').prop('value', txt2);
-		$('.input_destination').prop('value', txt3);
-		$('.input_destination').prop('value', txt4);
-		$('.input_destination').prop('value', txt5);
-		$('.input_destination').prop('value', txt6);
+    let txt = $('.add_text .location_detail').text();
+		$('.input_destination').attr('value', txt);
     $('.search_option').toggleClass('dis_block');
     // 위의 과정이 끝나면 다시 클래스 제거
     $(this).removeClass('add_text');
@@ -89,4 +70,3 @@ $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
 $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDate.format('MM.DD(dd)'));
 
 });
-
