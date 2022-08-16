@@ -94,6 +94,7 @@ header nav.main_nav > a:hover{
   color:#ee82ee;
 }
 
+/* 濡쒓렇�씤 諛뺤뒪 */
 header .login_box{
   display: flex;
   justify-content: space-between;
@@ -103,41 +104,40 @@ header .login_box{
   margin-bottom: 20px;
 }
 
-/* dropdown css 시작 */
+/* dropdown css �떆�옉 */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
+/* �뱶濡��떎�슫 �젅�씠�븘�썐 */
 #dropdown-login {
   margin-top:10px;
   display: none;
   position: absolute;
-  border: 1px solid #ee88ee;
   width: 250px;
-  height: 150px;
+  height: 200px;
   min-width: 160px;
-  z-index: 1;
-  border-radius: 8px;
+  z-index: 10;
+  background-color: white;
 }
 
-.show {
-  display: block !important;
+#login-form{
+  padding: 15px;
+  align-items: center;
 }
 
+#login-form > p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-.dropdown_botton{
-  font-weight: 600;
-  font-size: 5px;
-  border-radius: 5px;
-  color: #fff;
-  background-color: #ee82ee;
-  border-color: #eeeeee;
-  width:100%;
-  height:56px;
-  box-shadow: none;
-  outline: none;
+#login-form .loginline {
+  width: 100%;
+  height: 2px;
+  background: #ee82ee;
   
+  margin-bottom: 15px;	
 }
 
 #login-div {
@@ -145,32 +145,45 @@ header .login_box{
   background-color: #fff;
   margin: 20px;
   flex-direction: row;
-  border-style: solid;
+  border: 1px solid #fff;
   border-radius: 15px;
-  border-color: #fff;
-  border-width: 1px;
 }
 
-#input-div >input{
-  width: 150px;
-  margin: 5px;
-  border-style: solid;
-  background-color: #ee88ee;
-  color: #ee88ee;
-  border-radius: 5px;
-  appearance: none;
-
+#input-div > input{
+  width: 100%;
+  height: 25px;
+  margin-bottom: 5px;
+  border: 1px solid #ee82ee;
+  border-radius: 2px;
+  
+  text-indent: 12px;
 }
 
-#login-form{
+#forgotInfo {
+  margin-top: 5px;
   display: flex;
-  flex-direction: row;
-  padding: 20px;
-  align-items: center;
-  margin-top:25px;
+  justify-content: space-evenly;
+  align-items: flex-end;	
 }
 
-/* dropdown css 끝 */
+#forgotInfo > p {
+	font-weight: bold;
+	font-size: 12px;
+	color: #ee82ee;
+}
+
+.dropdown_botton{
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ee82ee;
+  width: 100%;
+  height: 45px;
+  border: 0;
+}
+
+/* dropdown css �걹 */
+
 header .login_box > .dropdown > span.loginForm, header .login_box > a{
   display: block;
   width: 75px;
@@ -187,6 +200,7 @@ header .login_box > .dropdown > span.loginForm, header .login_box > a{
 
 header .login_box > a {
   width: 95px;
+  color: white;
   background-color: #ee82ee;
   border-radius: 8px;
 }
@@ -202,9 +216,9 @@ header .login_box > .dropdown > span.loginForm:hover{
   transition: 0.5s;
 }
 
-/* header끝 */
+/* header�걹 */
 
-/* 여기부터 footer */
+/* �뿬湲곕��꽣 footer */
 .footer_container{
   display: flex;
   justify-content: space-around;
@@ -259,42 +273,9 @@ header .login_box > .dropdown > span.loginForm:hover{
   justify-content: first baseline;
 }
 
-.sns_box .sns >img{
+.sns_box .sns > img{
   width: 30px;
   height: 30px;
   margin: 0 10px 0 10px;
   cursor: pointer;
 }
-
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://example.com/MaterialIcons-Regular.eot);
-  src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
-    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
-    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px; 
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
-}
-
-.material-icons.md-36 { font-size: 36px; }
