@@ -42,7 +42,7 @@ tr:nth-child(even) td {
 	text-align: center;
 }
 
-.paging-box>ul {
+.paging-box > ul {
 	list-style: none;
 }
 

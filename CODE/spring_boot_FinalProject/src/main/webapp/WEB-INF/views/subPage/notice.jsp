@@ -3,13 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>공지사항</title>
-	<link rel="icon" href="image/logo_ico.png">
-	<link rel="stylesheet" type="text/css" href="css/board.css">
-	<link rel="stylesheet" type="text/css" href="css/notice.css">
-	<script src="js/jquery-3.6.0.min.js"></script>
+	<head>
+		<meta charset="UTF-8">
+		<title>공지사항</title>
+		<link rel="icon" href="image/logo_ico.png">
+		<link rel="stylesheet" type="text/css" href="css/board.css">
+		<link rel="stylesheet" type="text/css" href="css/notice.css">
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script src="js/notice.js"></script>
 	</head>
 	
 	<body>
@@ -26,8 +27,19 @@
 							<td></td>
 							<td>
 								<div class="dropdown-box">
-									<div>전체</div>
-									<div>▼</div>
+									<div id="dpBox-name" class="dpBox-div">전체</div>
+									<div class="dpBox-div">▼</div>
+								</div>
+								<ul class="dropdown-contents">
+									<li id="dp-all">전체</li>
+									<li id="dp-title">제목</li>
+									<li id="dp-contents">내용</li>
+								</ul>
+								<div class="search-box">
+									<div>
+										<input type="text" class="text_search" placeholder="검색어를 입력하세요.">
+										<button class="search-button"><img src="image/search.png"></button>
+									</div>
 								</div>
 							</td>
 						</tr>
@@ -46,7 +58,7 @@
 						<tbody>
 						    <tr>
 						      	<td>1</td>
-						      	<td class="title">공지사항 제목1</td>
+						      	<td class="title"><a>공지사항 제목1</a></td>
 						      	<td>Marco Belinelli</td>
 						      	<td>2022-08-12</td>
 						    </tr>
