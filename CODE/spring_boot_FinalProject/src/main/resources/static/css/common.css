@@ -34,16 +34,6 @@ header .logo_box{
   height: 100%;
 }
 
-/*
-.logoImg{
-  position: absolute;
-  width: 210px;
-  height: 150px;
-  
-  top: 0;
-}
-*/
-
 header nav.main_nav{
   display: flex;
   position: relative;
@@ -93,10 +83,8 @@ header nav.main_nav > a{
   font-size: 18px;
   font-weight: 600;
   color: #555;
-  
   text-align: center;
   cursor: pointer;
-  
   display: block;
   width: 25%;
 }
@@ -106,20 +94,102 @@ header nav.main_nav > a:hover{
   color:#ee82ee;
 }
 
+/* 로그인 박스 */
 header .login_box{
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
   width: 195px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
-header .login_box > span{
-  text-align: center;
+/* dropdown css 시작 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* 드롭다운 레이아웃 */
+#dropdown-login {
+  margin-top:10px;
+  display: none;
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  min-width: 160px;
+  z-index: 10;
+  background-color: white;
+}
+
+#login-form{
+  padding: 15px;
+  align-items: center;
+}
+
+#login-form > p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#login-form .loginline {
+  width: 100%;
+  height: 2px;
+  background: #ee82ee;
+  
+  margin-bottom: 15px;	
+}
+
+#login-div {
+  display: none;
+  background-color: #fff;
+  margin: 20px;
+  flex-direction: row;
+  border: 1px solid #fff;
+  border-radius: 15px;
+}
+
+#input-div > input{
+  width: 100%;
+  height: 25px;
+  margin-bottom: 5px;
+  border: 1px solid #ee82ee;
+  border-radius: 2px;
+  
+  text-indent: 12px;
+}
+
+#forgotInfo {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;	
+}
+
+#forgotInfo > p {
+	font-weight: bold;
+	font-size: 12px;
+	color: #ee82ee;
+}
+
+.dropdown_botton{
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ee82ee;
+  width: 100%;
+  height: 45px;
+  border: 0;
+}
+
+/* dropdown css 끝 */
+
+header .login_box > .dropdown > span.loginForm, header .login_box > a{
+  display: block;
   width: 75px;
   height: 45px;
   line-height: 45px;
+  text-align: center;
   font-size: 16px;
   font-weight: 600;
   color: #555;
@@ -128,15 +198,22 @@ header .login_box > span{
   cursor: pointer;
 }
 
-header .login_box > span:nth-child(2){
+header .login_box > a {
   width: 95px;
-  color: #fff;
+  color: white;
   background-color: #ee82ee;
+  border-radius: 8px;
 }
 
-header .login_box > span:nth-child(1):hover{
+header .login_box > a > span{
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+header .login_box > .dropdown > span.loginForm:hover{
   color:#ee82ee;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 /* header끝 */
@@ -157,6 +234,7 @@ header .login_box > span:nth-child(1):hover{
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  
 }
 
 .div_terms{
@@ -188,7 +266,6 @@ header .login_box > span:nth-child(1):hover{
 .footer_image img{
   width: 150px;
   filter: grayscale(100%);
-  margin-bottom: 5px;
 }
 
 .footer_image .sns_box{
@@ -196,9 +273,9 @@ header .login_box > span:nth-child(1):hover{
   justify-content: first baseline;
 }
 
-.sns_box .sns >img{
+.sns_box .sns > img{
   width: 30px;
   height: 30px;
-  margin: 0 10px 5px 10px;
+  margin: 0 10px 0 10px;
   cursor: pointer;
 }

@@ -1,0 +1,213 @@
+Ul{
+  list-style: none;
+}
+
+.reservation_container > article{
+  margin-top: 50px;
+}
+
+.reservation_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 133px;
+  border-radius: 30px;
+  background-color: #ddd;
+}
+
+.search_area_title, .option_area_title, .date_area_title, .count_area_title{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.search_area .search_area_title > img, .option_area .option_area_title > img, .date_area .date_area_title > img, .count_area .count_area_title > img{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.search_box, .count_box, .stay_date, .option_box{
+  width: 300px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.option_box{
+  background-color: #fff;
+  cursor: text;
+}
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+}
+
+div[contenteditable=true] {
+  text-align: left;
+  line-height: 30px;
+  color: #828282;
+}
+
+/* 검색 버튼 */
+.reservation_btn{
+  width: 155px;
+  height: 70px;
+  line-height: 70px;
+  background-color: #ee82ee;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  margin-top: 15px;
+}
+
+.reservation_btn > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.reservation_btn > div > span{
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.reservation_btn img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  filter: invert(100%);
+}
+
+/* 지역 검색 팝업 */
+.search_area > .search_pop, .option_area > .option_pop{
+  display: none;
+  width: 407px;
+  height: 290px;
+  position:absolute;
+  right: -105px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 35px 0 0 5px;
+  z-index: 10;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.search_pop  li{
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 3px 10px;
+  text-align: left;
+}
+
+/* 옵션 선택 팝업 */
+.option_area > .option_pop{
+  height: 80px;
+  width: 300px;
+  right: 2px;
+}
+
+.option_pop > div{
+  display: flex;
+  width: 100%;
+}
+
+.option_pop span.option_span{
+  display: inline-block;
+  height: 28px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  background-color: #fffd95;
+  padding: 6px;
+  margin-right: 3px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 옵션 삭제 */
+.option_pop span.option_span > .option_close{
+  width: 8px;
+  height: 8px;
+  filter: invert(20%);
+  margin-left: 4px;
+}
+
+
+/* 호텔 , 펜션  */
+.stay_container{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.stay_img_box{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  height: 470px;
+  margin-bottom: 20px;
+}
+
+.stay_img_box > img{
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.stay_star{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+}
+
+.stay_info > div img{
+  width: 20px;
+  height: 20px;
+}
+
+.stay_info > .stay_name{
+  display: flex;
+  justify-content: space-between;
+  width: 330px;
+  margin: 15px 0;
+}
+
+.stay_name > span{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.stay_name span:nth-child(2){
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.stay_info > div:nth-child(2){
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.stay_info > div:nth-child(3){
+  font-size: 16px;
+  font-weight: 600;
+}
+
