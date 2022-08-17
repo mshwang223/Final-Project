@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>펫밀리가 떴다 Footer</title>
+		<title>펫밀리가 떴다</title>
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 	</head>
 	

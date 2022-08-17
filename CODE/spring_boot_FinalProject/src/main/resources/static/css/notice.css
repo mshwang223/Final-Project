@@ -2,12 +2,12 @@
 
 /* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
 td:not(.title) {
-	text-align: center;
+  text-align: center;
 }
 
 /* 2n번째 열 배경색 */
 tr:nth-child(even) td {
-	background: #eaeaed;
+  background: #eaeaed;
 }
 
 .noticeBox div:first-child {

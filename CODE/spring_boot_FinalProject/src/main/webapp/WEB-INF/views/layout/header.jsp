@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>펫밀리가 떴다 Header</title>
+		<title>펫밀리가 떴다</title>
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/header.js"></script>
@@ -20,7 +20,7 @@
 				<a href="<c:url value='/petHotel'/>">호텔 / 펜션</a>
 				<a>프로모션</a>
 				<a href="<c:url value='/notice'/>">공지사항</a>
-				<a>문의하기</a>
+				<a href="<c:url value='/contact'/>">문의하기</a>
 				<div class="underline"></div>
 			</nav>
 			<div class="login_box">

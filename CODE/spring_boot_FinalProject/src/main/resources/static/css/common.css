@@ -149,7 +149,7 @@ header .login_box{
   border-radius: 15px;
 }
 
-#input-div > input{
+#input-div > input {
   width: 100%;
   height: 25px;
   margin-bottom: 5px;
@@ -157,6 +157,10 @@ header .login_box{
   border-radius: 2px;
   
   text-indent: 12px;
+}
+
+#input-div > input:focus {
+  outline: none;
 }
 
 #forgotInfo {

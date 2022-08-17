@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원 가입</title>
+		<title>펫밀리가 떴다</title>
 		<link rel="icon" href="image/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/signup.css">
 		<script src="js/jquery-3.6.0.min.js"></script>

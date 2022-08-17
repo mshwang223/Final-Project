@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>PetHotel</title>
+		<title>펫밀리가 떴다</title>
 		<link rel="icon" href="image/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/petHotel.css">
