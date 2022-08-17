@@ -134,7 +134,7 @@ header .login_box{
   background-color: #ee82ee;
   border-color: #eeeeee;
   width:100%;
-  height:56px;
+  height:68px;
   box-shadow: none;
   outline: none;
   
@@ -153,13 +153,16 @@ header .login_box{
 
 #input-div >input{
   width: 150px;
-  margin: 5px;
+  height:30px;
+  margin:3px;
   border-style: solid;
-  background-color: #ee88ee;
-  color: #ee88ee;
+  background-color: #fff;
+  color: #fff;
   border-radius: 5px;
   appearance: none;
-
+  border-color:#ee88ee;
+  align-items: center;
+ 
 }
 
 #login-form{
@@ -298,3 +301,4 @@ header .login_box > .dropdown > span.loginForm:hover{
 }
 
 .material-icons.md-36 { font-size: 36px; }
+
