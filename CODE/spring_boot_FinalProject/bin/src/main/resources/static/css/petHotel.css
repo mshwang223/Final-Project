@@ -1,0 +1,171 @@
+Ul{
+  list-style: none;
+}
+
+.reservation_container > article{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+.background_img_box{
+  width: 1480px;
+  height: 600px;
+}
+
+.background_img{
+  width: 740px;
+  height: 600px;
+  border-radius: 40px;
+}
+
+.reservation_area{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 1500px;
+  height: 600px;
+  background-color: #ddd;
+  margin: 0 auto;
+  opacity: 90%;
+  border-radius: 40px;
+  z-index: 5;
+  padding: 30px;
+}
+
+.reservation_title, .reservation_box{
+  width: 710px;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.reservation_box{
+  display: flex;
+  flex-direction: column;
+}
+
+.search_area, .option_area, .date_area, .count_area{
+  display: flex;
+  height: 110px;
+  position: relative;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.search_area_title, .option_area_title, .date_area_title, .count_area_title{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search_area .search_area_title > img, .option_area .option_area_title > img, .date_area .date_area_title > img, .count_area .count_area_title > img{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.search_box, .count_box, .stay_date, .option_box{
+  width: 380px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.reservation_btn{
+  width: 130px;
+  height: 65px;
+  line-height: 70px;
+  background-color: #ee82ee;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  margin: 15px 0 0 260px;
+}
+
+.reservation_btn > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.reservation_btn > div > span{
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.reservation_btn img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  filter: invert(100%);
+}
+
+/* 지역 검색 팝업 */
+.search_area > .search_pop, .option_area > .option_pop{
+  display: none;
+  width: 407px;
+  height: 290px;
+  position:absolute;
+  right: -105px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 35px 0 0 5px;
+  z-index: 10;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.search_pop  li{
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 3px 10px;
+  text-align: left;
+}
+
+/* 옵션 선택 팝업 */
+.option_area > .option_pop{
+  height: 80px;
+  width: 300px;
+  right: 2px;
+}
+
+.option_pop > div{
+  display: flex;
+  width: 100%;
+}
+
+.option_pop span{
+  display: inline-block;
+  height: 28px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  background-color: #fffd95;
+  padding: 6px;
+  margin-right: 3px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 옵션 삭제 */
+/* .option_pop > span > .option_close{
+  width: 8px;
+  height: 8px;
+  filter: invert(20%);
+} */
+
+

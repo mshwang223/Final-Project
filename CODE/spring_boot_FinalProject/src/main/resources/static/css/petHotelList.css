@@ -1,0 +1,341 @@
+ul{
+  list-style: none;
+}
+li{
+  list-style: none;
+}
+section .list_wrap{
+  width: 1580px;
+  margin: auto 0;
+}
+/* 호텔 펜션 메인 텍스트 */
+.ttl_pethotel .box_center{
+  text-align: center;
+  height: 50px;
+  padding: 78px 0 0 33%;
+}
+.box_center > div{
+  /* border: 1px solid #ee02ee; */
+  background-color: #fff;
+  width: 500px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 25px;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+/* 텍스트 위치 설정 */
+.list_main{
+  padding: 0 0 0 30px;
+}
+/* 전체 outline 설정 없애기  */
+input{
+  outline: none;
+}
+/* 호텔 리스트 전체 메인 박스 */
+.list_main .main_box{
+  width: 1500px;
+  height: 100%;
+  margin: 100px 0 0 0;
+  /* border: 1px solid #ee02ee; */
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+/* 검색박스 */
+.list_main .search_box{
+  width: 1470px;
+  height: 150px;
+  /* border-radius: 5px; */
+  border-bottom: solid 1px #ddd;
+  margin: 0 0 0 15px;
+}
+.in_box{
+  width: 1400px;
+  height: 130px;
+}
+/* 검색박스 내의 각 박스 */
+.search_box .text_search_destination{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 0 100px;
+  padding-top: 25px;
+}
+.text_search_destination{
+  display: flex;
+  justify-content: flex-start;
+}
+.dog_walk_box > img{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.in_box .box_input{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 0 65px;
+}
+
+.box_destination > input{
+  width: 370px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: normal;
+  border-radius: 5px;
+  background-color: rgb(239, 232, 232);
+  border: none;
+  margin: 15px 0 0 20px;
+  padding-left: 25px;
+}
+input::placeholder{
+  color: rgb(169, 159, 159);
+}
+
+.box_daterange > input{
+  width: 480px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: normal;
+  border-radius: 5px;
+  background-color: rgb(239, 232, 232);
+  border: none;
+  margin: 15px 0 0 0px;
+  padding-left: 25px;
+}
+.box_person_count > input{
+  width: 290px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: normal;
+  border-radius: 5px;
+  background-color: rgb(239, 232, 232);
+  border: none;
+  margin: 15px 0 0 0px;
+  padding-left: 25px;
+}
+.search_list_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #ee82ee;
+  border: none;
+  margin: 15px 0 0 0px;
+  cursor: pointer;
+}
+.search_list_btn > div{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100px;
+}
+.search_list_btn > div > span{
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.search_list_btn > div > img{
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  filter: invert(100%);
+}
+/* 팝업 박스 */
+.dis_block{
+  display: block!important;
+}
+
+.search_option{
+  display: none;
+  width: 370px;
+  height: 400px;
+  position: absolute;
+  top: 509px;
+  margin-left: 95px;
+  padding: 50px 55px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  z-index: 1;
+}
+.location_detail{
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 50px;
+  cursor: pointer;
+}
+.search_location{
+  font-size: 20px;
+}
+.person_count_option{
+  display: none;
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  top: 509px;
+  margin-left: 965px;
+  padding: 50px 55px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  z-index: 2;
+}
+/* 팝업 인원박스 */
+.person_count_option .tlt_popup_person{
+  font-size: 23px;
+  font-weight: 600;
+}
+.person_count_option .div_person_count{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.person_count_option .div_person_count .box_txt_person{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box_txt_person .txt_person_main{
+  font-size: 22px;
+  font-weight: 400;
+}
+.box_txt_person .txt_person_sub{
+  margin: 5px 0 0 1px;
+  font-size: 16px;
+  color: rgb(183, 171, 171);
+}
+.div_person_count .box_plus_minus{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.box_plus_minus .btn_popup_count{
+  width: 34px;
+  height: 34px;
+  border: 3px solid #ddd;
+  border-radius: 50px;
+  color: #ddd;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+.box_plus_minus .btn_count_active{
+  border: 2px solid #ee82ee;
+  color: #ee82ee;
+  cursor: pointer;
+}
+.box_plus_minus .popup_count_person{
+  display: inline-block;
+  width: 43px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+/* 필터박스 */
+.filter_box{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.filter_box .ttl_hotel_list{
+  margin: 15px 0 0 113px;
+  font-size: 18px;
+  font-weight: normal;
+}
+.filter_popular{
+  margin-right: 100px;
+}
+
+/* 필터 버튼 사이징 */
+.result_filter_open{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 210px;
+  height: 45px;
+  border: 1px #DDDDDD solid;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.result_filter_open>span{
+  margin-left: 10px;
+  margin-right: 118px;
+  font-size: 16px;
+  color: #222222;
+}
+.filter_popular .result_filter_select{
+  display: none;
+  position: absolute;
+  width: 210px;
+  border: 1px solid #DDDDDD;
+  border-top: 0;
+}
+.result_filter_option1, .result_filter_option2,
+.result_filter_option3, .result_filter_option4{
+  width: 208px;
+  height: 38px;
+  padding: 0px 15px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 38px;
+}
+/* 호텔 리스트 메인 */
+.list_box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1290px;
+  margin: 0 auto;
+}
+.wrap_result_hotel_list{
+  cursor: pointer;
+}
+.wrap_result_hotel_list > div > img{
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.wrap_whole{
+  width: 280px;
+}
+.wrap_whole .hotel_title{
+  display: flex;
+  justify-content: space-between;
+}
+/* 호텔 이름 폰트 설정 */
+.hotel_title{
+  margin: 10px 0 0 0;
+}
+.hotel_title > p{
+  font-size: 20px;
+  font-weight: 600;
+}
+.hotel_title > div{
+  font-weight: 600;
+  font-size: 18px;
+}
+.hotel_title >div > i{
+  font-size: 20px;
+  color: #ee72ee;
+}
+.wrap_date_Stay{
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(214, 162, 171);
+  margin: 15px 0 0 0;
+}
+.per_stay_price{
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px 0 15px 0;
+}
