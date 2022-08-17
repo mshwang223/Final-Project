@@ -225,7 +225,7 @@
 	        </div>
 	      </div>
 	    </section>
-		
+		<img class="top_btn" src="<c:url value='/top_dog.png'/>">
 		<!-- footer -->
 		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
