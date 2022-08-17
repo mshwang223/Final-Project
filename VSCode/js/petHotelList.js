@@ -103,6 +103,10 @@ $(document).ready(function(){
 			$('#arrowDown').toggleClass('fa-angle-up');
 		});
 	});
+	// 로고 클릭시 index로
+	$('.logo_box').click(function(){
+		location.href = 'index.html';
+	});
 
 });
 

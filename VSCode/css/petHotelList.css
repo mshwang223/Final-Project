@@ -89,6 +89,9 @@ input{
   margin: 15px 0 0 20px;
   padding-left: 25px;
 }
+input::placeholder{
+  color: rgb(169, 159, 159);
+}
 
 .box_daterange > input{
   width: 480px;
