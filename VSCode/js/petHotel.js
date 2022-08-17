@@ -95,3 +95,24 @@ function choiceOption(){
 
 choiceOption();
 
+
+// 찜하기 눌렀을 때
+let likeBtn = document.getElementsByClassName("like_btn");
+let heartCount = 1;
+
+
+for(let i = 0; i < likeBtn.length; i++){
+
+  likeBtn[i].addEventListener('click', ()=>{
+
+    heartCount++;
+
+    if(heartCount % 2 == 0){
+      likeBtn[i].src = "../images/red_heart.png";
+    }else{
+      likeBtn[i].src = "../images/heart.png";
+    }
+  });
+}
+
+

@@ -1,3 +1,5 @@
+/* 메인 슬라이드 */
+
 article.main_slide{
   width: 1580px;
   overflow: hidden;
@@ -6,7 +8,7 @@ article.main_slide{
 article.main_slide div.main_slide_box{
   display: flex;
   position: relative;
-  max-width: 4740px;
+  width: 4740px;
 }
 
 div.promotion_area{
@@ -78,83 +80,24 @@ article.main_slide > .slide_bar_box > span.slide_bar{
   margin: 0 10px;
   border-radius: 50%;
   background-color: #ddd;
-}
-
-.popular_items{
-  height: 450px;
-  padding: 90px 50px 0 50px;
-}
-
-.popular_title{
-  width: 200px;
-  font-size: 22px;
-  color: #555;
-  font-weight: 700;
-  text-align: center;
-  margin: 0 0 37px 50px;
-}
-
-.popular_items_wrap{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-}
-
-.popular_items_container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 250px;
-  width: 90%;
-}
-
-.popular_items_container img{
-  width: 225px;
-  height: 225px;
-  border-radius: 10px;
   cursor: pointer;
 }
 
-.popular_items_wrap .prev, .popular_items_wrap .next{
-  position:absolute;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-}
-
-.popular_items_wrap .prev{
-  left: 10px;
-}
-
-.popular_items_wrap .next{
-  right: 10px;
-}
-
-.like{
-  position: absolute;
-  left: 11em;
-  bottom: 11em;
-}
-
-.popular_hotel{
-  position:relative;
+/* 파티용품 자세히보기 */
+.party_area{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  background-color: #ddd;
+  height: 800px;
+  padding: 50px;
 }
 
 
-.popular_hotel img {
-  opacity: 1;
+
+.party_container > img{
+  width: 400px;
+  height: 350px;
 }
-
-.popular_hotel .material-icons.md-36 {
-  transition-duration: 0.3s;
-}
-
-.popular_hotel:hover .material-icons.md-36 {
-  color: #ee88ee;
-  transition-duration: 0.3s; 
-}
-
-
 

@@ -13,6 +13,7 @@ Ul{
   height: 133px;
   border-radius: 30px;
   background-color: #ddd;
+  margin-bottom: 80px;
 }
 
 .search_area_title, .option_area_title, .date_area_title, .count_area_title{
@@ -34,7 +35,7 @@ Ul{
   height: 50px;
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
   font-weight: 600;
   border-radius: 10px;
@@ -51,7 +52,7 @@ Ul{
 
 div[contenteditable=true] {
   text-align: left;
-  line-height: 30px;
+  line-height: 22px;
   color: #828282;
 }
 
@@ -88,12 +89,17 @@ div[contenteditable=true] {
 }
 
 /* 지역 검색 팝업 */
-.search_area > .search_pop, .option_area > .option_pop{
+.search_area {
+  position:relative;
+}
+
+.search_area > .search_pop{
   display: none;
-  width: 407px;
+  width: 300px;
   height: 290px;
   position:absolute;
-  right: -105px;
+  top: 50px;
+  left: -5px;
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -114,10 +120,24 @@ div[contenteditable=true] {
 }
 
 /* 옵션 선택 팝업 */
+.option_area{
+  position: relative;
+}
+
 .option_area > .option_pop{
+  display: none;
   height: 80px;
   width: 300px;
-  right: 2px;
+  position:absolute;
+  top: 50px;
+  left: -5px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 35px 0 0 5px;
+  z-index: 10;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  
 }
 
 .option_pop > div{
@@ -147,27 +167,62 @@ div[contenteditable=true] {
 }
 
 
-/* 호텔 , 펜션  */
+/* 호텔 , 펜션 (인기, 서울, 부산)  */
+
+.popular_area, .seoul_area{
+  margin-bottom: 90px;
+}
+
+.seoul_title, .popular_title, .busan_title{
+  background-color: #fff;
+  width: 310px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin: 0 0 30px 20px;
+}
+
+.popular_title{
+  width: 160px;
+}
+
+.busan_title{
+  width: 265px;
+}
+
+.seoul_title > span, .popular_title > span, .busan_title > span{
+  margin: 0 0 50px 22px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.stay_items_wrap{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .stay_container{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  cursor: pointer;
 }
 
 .stay_img_box{
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 25%;
-  height: 470px;
-  margin-bottom: 20px;
+  position: relative;
+  width: 20%;
+  height: 430px;
+  cursor: pointer;
 }
 
 .stay_img_box > img{
-  width: 350px;
-  height: 350px;
+  width: 280px;
+  height: 280px;
   border-radius: 10px;
 }
 
@@ -186,7 +241,7 @@ div[contenteditable=true] {
 .stay_info > .stay_name{
   display: flex;
   justify-content: space-between;
-  width: 330px;
+  width: 260px;
   margin: 15px 0;
 }
 
@@ -211,3 +266,51 @@ div[contenteditable=true] {
   font-weight: 600;
 }
 
+/* 이전, 다음 화살표 */
+.stay_items_wrap .prev, .stay_items_wrap .next{
+  position:absolute;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.stay_items_wrap .prev{
+  top: 135px;
+  left: -75px;
+}
+
+.stay_items_wrap .next{
+  top: 135px;
+  right: -75px;
+}
+
+/* 찜하기 */
+.stay_img_box .like_btn{
+  position: absolute;
+  top: 10px;
+  right: 9.5px;
+  width: 33px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 1;
+}
+
+.like_hover{
+  position: absolute;
+  right: 36px;
+  top: 13px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 2;
+  transition: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+
+.like_hover:hover{
+  background-color: #ddd;
+  transition: 0.7s;
+  transition-timing-function: ease-in-out;
+}
