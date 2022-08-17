@@ -22,6 +22,64 @@ $(document).ready(function(){
 		$('.person_count_option').toggleClass('dis_block'); 
 	}); 
 
+	// 인원 버튼 클릭할 때
+  let personCount = parseInt($('#personCount').text());
+  let petCount = parseInt($('#petCount').text());
+
+  // 성인 + 버튼 클릭
+  $('#personPlusBtn').click(function() {
+    personCount++;
+    // 2명부터 -버튼 활성화
+    if(personCount > 1){
+      $('#personMinusBtn').addClass('btn_count_active');
+      $('#personMinusBtn').attr('href', '#');
+    }
+    $('#personCount').text(personCount);
+    $('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
+  });
+
+	// 성인 - 버튼 클릭
+	$('#personMinusBtn').click(function(){
+		personCount--;
+		// 인원이 1 이 되면 - 버튼 비활성
+		if(personCount == 1){
+			$('#personMinusBtn').removeClass('btn_count_active');
+			$('#personMinusBtn').removeAttr('href');
+		}else if(personCount == 0){
+			alert('최소 인원은 1명 이상이어야 합니다.');
+			personCount = 1;
+		}
+		$('#personCount').text(personCount);
+		$('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
+	});
+
+	// 반려동물 + 버튼 클릭
+	$('#petPlusBtn').click(function(){
+		petCount++;
+		// 2마리 부터 - 버튼 활성화
+		if(petCount>1){
+			$('#petMinusBtn').addClass('btn_count_active');
+			$('#petMinusBtn').attr('href', '#');
+		}
+		$('#petCount').text(petCount);
+		$('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
+	});
+
+	// 반려동물 - 버튼 클릭
+	$('#petMinusBtn').click(function(){
+		petCount--;
+		// 반려동물이 1 되면 - 버튼 비활성화
+		if(petCount == 1){
+			$('#petMinusBtn').removeClass('btn_count_active');
+			$('#petMinusBtn').removeAttr('href');
+		}else if(petCount == 0){
+			alert('반려동물은 최소 1마리 이상이어야 합니다.');
+			petCount = 1;
+		}
+		$('#petCount').text(petCount);
+		$('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
+	});
+
 	// 지역 검색 팝업 외부영역 클릭 시 팝업 딛기
   $(document).mouseup(function (e){
     var LayerPopup = $(".search_option");

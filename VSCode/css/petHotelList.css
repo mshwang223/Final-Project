@@ -159,6 +159,12 @@ input{
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   z-index: 1;
 }
+.location_detail{
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 50px;
+  cursor: pointer;
+}
 .search_location{
   font-size: 20px;
 }
@@ -175,6 +181,61 @@ input{
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   z-index: 2;
 }
+/* 팝업 인원박스 */
+.person_count_option .tlt_popup_person{
+  font-size: 23px;
+  font-weight: 600;
+}
+.person_count_option .div_person_count{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.person_count_option .div_person_count .box_txt_person{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box_txt_person .txt_person_main{
+  font-size: 22px;
+  font-weight: 400;
+}
+.box_txt_person .txt_person_sub{
+  margin: 5px 0 0 1px;
+  font-size: 16px;
+  color: rgb(183, 171, 171);
+}
+.div_person_count .box_plus_minus{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.box_plus_minus .btn_popup_count{
+  width: 34px;
+  height: 34px;
+  border: 3px solid #ddd;
+  border-radius: 50px;
+  color: #ddd;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+.box_plus_minus .btn_count_active{
+  border: 2px solid #ee82ee;
+  color: #ee82ee;
+  cursor: pointer;
+}
+.box_plus_minus .popup_count_person{
+  display: inline-block;
+  width: 43px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+
+
 /* 필터박스 */
 .filter_box{
   display: flex;
@@ -214,7 +275,8 @@ input{
   border: 1px solid #DDDDDD;
   border-top: 0;
 }
-.filter_popular .result_filter_option{
+.result_filter_option1, .result_filter_option2,
+.result_filter_option3, .result_filter_option4{
   width: 208px;
   height: 38px;
   padding: 0px 15px;
@@ -230,6 +292,9 @@ input{
   flex-wrap: wrap;
   width: 1290px;
   margin: 0 auto;
+}
+.wrap_result_hotel_list{
+  cursor: pointer;
 }
 .wrap_result_hotel_list > div > img{
   width: 280px;

@@ -21,6 +21,7 @@
   <!-- js -->
 	<script src="../js/jquery-3.6.0.min.js"></script>
 	<script defer src="../js/petHotelList.js"></script>
+  <script src="../js/header.js"></script>
   <!-- language font -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<title>펫밀리가 떴다</title>
@@ -40,16 +41,22 @@
 				<div class="underline"></div>
 			</nav>
 			<div class="login_box">
-				<div class="dropdown">
+        <div class="dropdown">
 					<span class="loginForm">로그인</span>
 					<div id="dropdown-login">
 						<form action="post" id="login-form">
+							<p>로그인</p>
+							<div class="loginline"></div>
 							<div id="input-div">
-							<input type="text" class="dropdown_username" placeholder="Username">
-							<input type="password" class="dropdown_password" placeholder="Password"></div>
-							<input type="submit" class="dropdown_botton" value="로그인">
-							
+								<input type="text" class="dropdown_username" placeholder="아이디">
+								<input type="password" class="dropdown_password" placeholder="비밀번호">
+							</div>
+							<div id="forgotInfo">
+								<p>ID 찾기</p>
+								<p>PW 찾기</p>
+							</div> 
 						</form>
+						<input type="submit" class="dropdown_botton" value="로그인">
 					</div>
 				</div>
 				<a href="signup.html" class="signup">
@@ -113,29 +120,89 @@
                 <div class="list_location">
                   <div class="location_detail">제주도</div>
                 </div>
-                  
               </div>
               <div class="person_count_option">
-
+                <h4 class="tlt_popup_person">인원 선택</h4>
+                <div class="div_person_count">
+                  <div class="box_txt_person">
+                    <span class="txt_person_main">성인</span>
+                    <span class="txt_person_sub">만 18세 이상</span>
+                  </div>
+                  <div class="box_plus_minus">
+                    <a id="personMinusBtn" class="btn_popup_count">-</a>
+                    <span id="personCount" class="popup_count_person">1</span>
+                    <a href="#" id="personPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
+                  </div>
+                </div>
+                <div class="div_person_count">
+                  <div class="box_txt_person">
+                    <span class="txt_person_main">반려동물</span>
+                    <span class="txt_person_sub">강아지 | 고양이</span>
+                  </div>
+                  <div class="box_plus_minus">
+                    <a id="petMinusBtn" class="btn_popup_count">-</a>
+                    <span id="petCount" class="popup_count_person">1</span>
+                    <a href="#" id="petPlusBtn" class="btn_popup_count btn_count_active">+</a>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- 팝업영역 끝 -->
           </div>
           <!-- 필터 영역 -->
           <div class="filter_box">
-            <div class="ttl_hotel_list">검색 결과 총 4개</div>
+            <div class="ttl_hotel_list">검색 결과 총 8개</div>
             <div class="filter_popular">
               <button id="btnFilter" class="result_filter_open"><span>추천순</span><i id="arrowDown" class="fa-solid fa-angle-down"></i></button>
               <ul class="result_filter_select">
-                <li class="result_filter_option">추천순</li>
-                <li class="result_filter_option">평점순</li>
-                <li class="result_filter_option">가격 낮은 순</li>
-                <li class="result_filter_option">가격 높은 순</li>
+                <li class="result_filter_option1">추천순</li>
+                <li class="result_filter_option2">평점순</li>
+                <li class="result_filter_option3">가격 낮은 순</li>
+                <li class="result_filter_option4">가격 높은 순</li>
               </ul>
             </div>
           </div>
           <!-- 호텔 리스트 영역 -->
           <div class="list_box">
+            <div class="wrap_result_hotel_list">
+              <div class="result_hotel_img">
+                <img src="../images/stay2.jpg">
+              </div>
+              <div class="wrap_whole">
+                <div class="hotel_title">
+                  <p>콘래드 호텔</p>
+                  <div><i class="fa-solid fa-star"></i>4.5</div>
+                </div>
+                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
+                <div class="per_stay_price">352,000원 / 1박</div>
+              </div>
+            </div>
+            <div class="wrap_result_hotel_list">
+              <div class="result_hotel_img">
+                <img src="../images/stay2.jpg">
+              </div>
+              <div class="wrap_whole">
+                <div class="hotel_title">
+                  <p>콘래드 호텔</p>
+                  <div><i class="fa-solid fa-star"></i>4.5</div>
+                </div>
+                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
+                <div class="per_stay_price">352,000원 / 1박</div>
+              </div>
+            </div>
+            <div class="wrap_result_hotel_list">
+              <div class="result_hotel_img">
+                <img src="../images/stay2.jpg">
+              </div>
+              <div class="wrap_whole">
+                <div class="hotel_title">
+                  <p>콘래드 호텔</p>
+                  <div><i class="fa-solid fa-star"></i>4.5</div>
+                </div>
+                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
+                <div class="per_stay_price">352,000원 / 1박</div>
+              </div>
+            </div>
             <div class="wrap_result_hotel_list">
               <div class="result_hotel_img">
                 <img src="../images/stay2.jpg">
