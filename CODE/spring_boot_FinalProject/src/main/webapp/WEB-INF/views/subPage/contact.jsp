@@ -43,7 +43,7 @@
 						    <tr>
 						      	<td>문의내용<em></em></td>
 						      	<td class="contents-box">
-						      		<input type="text" placeholder="문의 내용을 입력해 주세요."/>
+						      		<textarea type="text" placeholder="문의 내용을 입력해 주세요."></textarea>
 						      		<span>문의 내용을 입력해 주세요.</span>						      	
 						      	</td>
 						    </tr>
@@ -52,29 +52,32 @@
 						      	<td class="contents-email">
 						      		<div>
 							      		<div>
-							      			<input type="checkbox">&nbsp;&nbsp;받음
+							      			<input type="checkbox" id="chkEmail">&nbsp;&nbsp;받음
 							      		</div>
 							      		<span>등록된 이메일로 답변메일을 받으실 수 있습니다.</span>
 						      		</div>
 						      		<div class="confirm-email">
-							      		
+							      		admin@gmail.com
 						      		</div>
 								</td>
 						    </tr>
 						    <tr>
-						      	<td>첨부이미지</td>
+						      	<td class="title-img">첨부이미지</td>
 						      	<td>
-						      	
+								    <div class="btn_img_box">
+								    	<button class="btn_img_done">이미지 찾기</button>
+								    </div>
 						      	</td>
 						    </tr>
 						</tbody>
 					</table>
+					<div class="btn_list_box">
+				    	<button class="btn_reset">취소</button>
+				    	<button class="btn_done">등록</button>
+				    </div>
 				</div>
 			</section>
 			<!-- 문의하기 레이아웃 종료 -->
 		</section>
-		
-		<!-- footer -->
-		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
 </html>

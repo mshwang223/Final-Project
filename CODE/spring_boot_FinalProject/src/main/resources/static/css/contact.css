@@ -72,12 +72,18 @@ p {
 
 /* 문의하기 테이블 크기 */
 table {
-  border-spacing: 0;
+  border-spacing: none;
+  border-collapse: collapse;
   margin: 35px auto;
   width: 65%;
 }
 
+td {
+  border: none;	
+}
+
 tr td:first-child {
+  border-left: none;	
   width: 200px;
   
   text-align: left;
@@ -87,6 +93,7 @@ tr td:first-child {
   
   padding: 20px 35px 30px 35px;
 }
+
 
 tr td:last-child {
   padding-bottom: 0px;
@@ -106,7 +113,7 @@ em {
   border-radius: 5px;
 }
 
-.contents-box input {
+.contents-box input, textarea {
   width: 100%;
   height: 32px;
  
@@ -120,7 +127,7 @@ em {
   background-color: #f5f5f5;
 }
 
-.contents-box input:focus {
+.contents-box input, textarea:focus {
   outline: none;
   border-bottom-color: #ee82ee;
 }
@@ -131,7 +138,6 @@ em {
   
   font-size: 12px;
   font-weight: bold;
-
 }
 
 .title-email {
@@ -167,11 +173,80 @@ em {
 }
 
 .confirm-email {
-  display: block;
+  display: none;
   width: 360px;
+
+  border-radius: 3px;
+  
+  background-color: white;
+  color: black;
+
+  padding: 10px;
+  
+  font-weight: bold;
+}
+
+.title-img {
+  position: relative;
+  
+  top: 10px;	
+}
+
+/* 이미지 찾기 버튼 */
+.btn_img_done {
+  width: 100px;
+  height: 35px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ee82ee;
+  border-radius: 2px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_img_box > button:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.9s linear;
+}
+
+/* 취소, 등록 버튼 */
+.btn_list_box {
+  width: 100%;
+  height: 100px;
+  margin: 20px auto;
+  text-align: right;
+}
+
+.btn_reset {
+  width: 120px;
   height: 40px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  border-radius: 3px;
+  color: black;
+  border: none;
+  cursor: pointer;
   
-  border: 1px solid black;
-  
-  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.btn_done {
+  width: 120px;
+  height: 40px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #ee82ee;
+  border-radius: 2px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_list_box > button:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.9s linear;
 }

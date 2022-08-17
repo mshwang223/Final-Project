@@ -50,9 +50,9 @@
 						    </tr>
 						</tbody>
 					</table>
-			    <div class="btn_list_box">
-			    	<button class="btn_list_done">목록</button>
-			    </div>
+				    <div class="btn_list_box">
+				    	<button class="btn_list_done">목록</button>
+				    </div>
 				</div>
 			</section>
 			<!-- 세부화면 레이아웃 종료 -->
