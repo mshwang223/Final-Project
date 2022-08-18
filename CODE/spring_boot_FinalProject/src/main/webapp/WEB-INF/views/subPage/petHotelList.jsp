@@ -7,13 +7,14 @@
 	<c:import url="/WEB-INF/views/layout/header.jsp"/>
 	<head>
 		 <!-- daterangepicker -->
- 		 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
- 		 <script src="../js/moment.min.js"></script>
- 		 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
- 		 <script defer src="../js/daterangepicker.js"></script>
- 		 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+ 		 <script src="<c:url value='/js/moment.min.js'/>"></script>
+ 		 <script type="text/javascript" src="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js'/>"></script>
+ 		 <script defer src="<c:url value='/js/daterangepicker.js'/>"></script>
+ 		 <link rel="stylesheet" type="text/css" href="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css'/>" />
  		 <!-- js -->
- 		 <script src="<c:url value='/petHotelList.js'/>"></script>
+ 		 <script src="<c:url value='/js/petHotelList.js'/>"></script>
+ 		 <!-- css -->
+ 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/petHotelList.css'/>">
 	</head>
 	<body>
 		<!-- middle -->
@@ -32,7 +33,7 @@
 	            <div class="in_box">
 	              <div class="text_search_destination">
 	                <div class="where_to">어디로 가시나요?</div>
-	                <div class="dog_walk_box"><img src="../images/dog_walk.png"></div>
+	                <div class="dog_walk_box"><img src="<c:url value='/images/dog_walk.png'/>"></div>
 	              </div>
 	              <div class="box_input">
 	                <div class="box_destination">
@@ -47,7 +48,7 @@
 	                <button class="search_list_btn">
 	                  <div>
 	                    <span>검색</span>
-	                    <img src="../images/search.png" alt="검색">
+	                    <img src="<c:url value='/images/search.png'/>" alt="검색">
 	                  </div>
 	                </button>
 	              </div>
@@ -82,9 +83,9 @@
 	                    <span class="txt_person_sub">만 18세 이상</span>
 	                  </div>
 	                  <div class="box_plus_minus">
-	                    <a id="personMinusBtn" class="btn_popup_count">-</a>
+	                    <span id="personMinusBtn" class="btn_popup_count">-</span>
 	                    <span id="personCount" class="popup_count_person">1</span>
-	                    <a href="#" id="personPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
+	                    <span id="personPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</span>
 	                  </div>
 	                </div>
 	                <div class="div_person_count">
@@ -93,9 +94,9 @@
 	                    <span class="txt_person_sub">강아지 | 고양이</span>
 	                  </div>
 	                  <div class="box_plus_minus">
-	                    <a id="petMinusBtn" class="btn_popup_count">-</a>
+	                    <span id="petMinusBtn" class="btn_popup_count">-</span>
 	                    <span id="petCount" class="popup_count_person">1</span>
-	                    <a href="#" id="petPlusBtn" class="btn_popup_count btn_count_active">+</a>
+	                    <span id="petPlusBtn" class="btn_popup_count btn_count_active">+</span>
 	                  </div>
 	                </div>
 	              </div>
@@ -119,7 +120,7 @@
 	          <div class="list_box">
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
-	                <img src="../images/stay2.jpg">
+	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">
@@ -132,7 +133,7 @@
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
-	                <img src="../images/stay2.jpg">
+	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">
@@ -145,7 +146,7 @@
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
-	                <img src="../images/stay2.jpg">
+	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">
@@ -158,7 +159,7 @@
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
-	                <img src="../images/stay2.jpg">
+	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">
@@ -171,7 +172,7 @@
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
-	                <img src="../images/stay2.jpg">
+	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">
@@ -184,7 +185,7 @@
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
-	                <img src="../images/stay2.jpg">
+	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">
@@ -197,7 +198,7 @@
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
-	                <img src="../images/stay2.jpg">
+	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">
@@ -210,7 +211,7 @@
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
-	                <img src="../images/stay2.jpg">
+	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">

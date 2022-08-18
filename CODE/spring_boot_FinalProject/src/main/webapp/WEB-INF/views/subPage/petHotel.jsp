@@ -4,17 +4,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>펫밀리가 떴다</title>
-		<link rel="icon" href="images/logo_ico.png">
-		<link rel="stylesheet" type="text/css" href="css/common.css">
-		<link rel="stylesheet" type="text/css" href="css/petHotel.css">
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-		<script src="js/jquery-3.6.0.min.js"></script>
-		<script src="js/moment.min.js"></script>
-		<script defer src="js/daterangepicker.js"></script>
+		<!-- datarangepicker -->
+		<link rel="stylesheet" type="text/css" href="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css'/>" />
+		<script src="<c:url value='/js/moment.min.js'/>"></script>
+		<script defer src="<c:url value='/js/daterangepicker.js'/>"></script>
+  		<script src="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js'/>"></script>
+  		<!-- js -->
+  		<script src="js/jquery-3.6.0.min.js"></script>
   		<script defer src="js/petHotel.js"></script>
-  		<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  		<!-- css -->
+  		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="css/petHotel.css">
 	</head>
 
 	<body>
