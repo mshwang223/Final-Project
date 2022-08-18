@@ -3,27 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>펫밀리가 떴다</title>
-	
 	<!-- header  -->
 	<c:import url="/WEB-INF/views/layout/header.jsp"/>
-	
-	<link rel="icon" href="image/logo_ico.png">
-	<link rel="stylesheet" type="text/css" href="css/common.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-		rel="stylesheet">
-	<script src="js/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css'/>">
 	<script src="js/index.js"></script>
 </head>
 
 <body>
 	<section class="wrap">
-		<!-- header  -->
-		<c:import url="/WEB-INF/views/layout/top.jsp"/>
-
+	<!-- top  -->
+		 <c:import url="/WEB-INF/views/layout/top.jsp"/>
+	
 		<!-- section -->
 		<section>
 			<article class="main_slide">
@@ -81,18 +71,20 @@
 				</div>
 				<div class="party_description">
 					<div class="party_description_list">
-						<img src="/images/search.png" alt="">
-						<span>블링블링 글리터 스팽글 꼬깔모자 / 리본타이</span>
+						<img src="/images/search.png" alt=""><span>블링블링 글리터
+							스팽글 꼬깔모자 / 리본타이</span>
 					</div>
 					<div class="party_description_list">
 						<img src="/images/search.png" alt=""><span>알록달록 알파벳
 							생일초 1세트</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>골드 가랜더 1세트</span>
+						<img src="/images/search.png" alt=""><span>골드 가랜더
+							1세트</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>파스텔 풍선 21개</span>
+						<img src="/images/search.png" alt=""><span>파스텔 풍선
+							21개</span>
 					</div>
 				</div>
 			</div>
@@ -106,11 +98,12 @@
 				</div>
 				<div class="party_description">
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>파스텔 생일 가랜더
-							1세트</span>
+						<img src="/images/search.png" alt=""><span>파스텔 생일
+							가랜더 1세트</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>파스텔 풍선 10개</span>
+						<img src="/images/search.png" alt=""><span>파스텔 풍선
+							10개</span>
 					</div>
 					<div class="party_description_list">
 						<img src="/images/search.png" alt=""><span>이름 꼬깔모자</span>

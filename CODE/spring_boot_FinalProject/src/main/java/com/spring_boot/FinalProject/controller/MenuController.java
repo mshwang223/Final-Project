@@ -34,4 +34,10 @@ public class MenuController {
 	public String viewContactResult() {
 		return "subPage/contactResult";
 	}
+	
+	// 호텔 검색 리스트 가기
+	@RequestMapping("/petHotelList")
+	public String viewHotelList() {
+		return "subPage/petHotelList";
+	}
 }
