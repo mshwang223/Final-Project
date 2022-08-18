@@ -9,7 +9,7 @@
 			</div>
 			<nav class="main_nav">
 				<a href="<c:url value='/petHotel'/>">호텔 / 펜션</a>
-				<a>프로모션</a>
+				<a href="<c:url value='/promotion'/>">프로모션</a>
 				<a href="<c:url value='/notice'/>">공지사항</a>
 				<a href="<c:url value='/contact'/>">문의하기</a>
 				<div class="underline"></div>
