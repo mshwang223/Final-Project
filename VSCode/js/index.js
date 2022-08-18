@@ -105,4 +105,18 @@ window.onclick = function (event) {
 login_btn.addEventListener("click", handleClickLoginBtn);
 
 
-  
+// 자세히보기 버튼 이동
+let slideBtn = document.getElementsByClassName("slide_btn");
+let partyArea = document.getElementById("partyArea");
+let photoArea = document.getElementById("photoArea");
+let itemArea = document.getElementById("itemArea");
+let playArea = document.getElementById("playArea");
+console.log(slideBtn);
+
+for(let i = 0; i < slideBtn.length; i++){
+	slideBtn[i].addEventListener('click',() => {
+		if(i == 0){
+			
+		}
+	});
+}

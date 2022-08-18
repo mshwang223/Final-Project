@@ -84,20 +84,232 @@ article.main_slide > .slide_bar_box > span.slide_bar{
 }
 
 /* 파티용품 자세히보기 */
-.party_area{
+.party_area, .photo_area, .item_area, .play_area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0;
+  border-top: 1.5px solid #ddd;
+}
+
+.party_title, .photo_title, .item_title, .play_title{
+  background-color: #fff;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px;
+}
+
+.party_box{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  position: relative;
+  margin: 50px 0 30px 0;
+}
+
+.party_box > div:first-child{
+  position: absolute;
+  top: -35px;
+  left: 95px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.party_box .party_img{
+  display: flex;
+  flex-wrap: wrap;
+  width: 810px;
+}
+
+.party_box .party_img img{
+  width: 350px;
+  height: 300px;
+  border-radius: 10px;
+  margin: 5px 0 0 5px;
+}
+
+.party_box .party_description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+}
+
+.party_description_list{
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
+}
+
+.party_description_list img{
+  width: 23px;
+  height: 23px;
+  margin-right: 10px;
+}
+
+.party_description_list span{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* 포토 자세히 보기 */
+.photo_title{
+  width: 260px;
+}
+
+.photo_box{
+  display: flex;
+  flex-direction: column;
+  height: 520px;
+  width: 100%;
+}
+
+.photo_description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
-  margin-top: 100px;
-  background-color: #ddd;
-  height: 800px;
-  padding: 50px;
+  height: 150px;
+  padding: 0 10px 40px;
 }
 
+.photo_description > div{
+  display: flex;
+  align-items: center;
+}
 
+.photo_description span{
+  font-size: 20px;
+  font-weight: 600;
+}
 
-.party_container > img{
-  width: 400px;
+.photo_description > div > img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.photo_img{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.photo_img img{
+  width: 350px;
   height: 350px;
+  border-radius: 10px;
 }
 
+
+/* 애견용품 및 장난감 자세히보기 */
+.item_area{
+  position: relative;
+}
+
+.item_title{
+  width: 260px;
+}
+
+.item_ps{
+  position:absolute;
+  top: 130px;
+  left: 155px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.item_box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.item_box > div.item{
+  display: flex;
+  justify-content: space-between;
+  width: 48%;
+  margin-bottom: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.item_box > div.item > img{
+  width: 250px;
+  height: 220px;
+  border-radius: 10px;
+}
+
+.item_box > div.item > div{
+  width: 300px;
+}
+
+.item_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item_info > div{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.item_info > .item_info_detail{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+/* 다양한 활동 자세히보기 */
+.play_title{
+  width: 260px;
+}
+
+.play_box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.play_box > div{
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.play_box > div > img{
+  width: 550px;
+  height: 370px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.play_box > div > .play_info{
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  height: 130px;
+  padding: 20px;
+}
+
+.play_info > span{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.play_info > .play_info_detail{
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +10,17 @@
 	<link rel="stylesheet" href="../css/index.css">
 	<script src="../js/jquery-3.6.0.min.js"></script>
 	<script defer src="../js/index.js"></script>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<title>펫밀리가 떴다</title>
 </head>
+
 <body>
 	<section class="wrap">
 		<header>
 			<div class="logo_box">
-				<img src="../images/petmilylogo.png" alt="로고" class="btn" onclick="clicklogo()";/>
+				<img src="../images/petmilylogo.png" alt="로고" class="btn" onclick="clicklogo()" ; />
 			</div>
-			
+
 			<nav class="main_nav">
 				<a>호텔 / 펜션</a>
 				<a>프로모션</a>
@@ -33,10 +34,11 @@
 					<div id="dropdown-login">
 						<form action="post" id="login-form">
 							<div id="input-div">
-							<input type="text" class="dropdown_username" placeholder="아이디">
-							<input type="password" class="dropdown_password" placeholder="비밀번호"></div>
+								<input type="text" class="dropdown_username" placeholder="아이디">
+								<input type="password" class="dropdown_password" placeholder="비밀번호">
+							</div>
 							<input type="submit" class="dropdown_botton" value="로그인">
-							
+
 						</form>
 					</div>
 				</div>
@@ -71,7 +73,7 @@
 							<img src="../images/promotion3.png" alt="반려동물 장난감">
 						</div>
 						<div class="promotion_area_contents">
-							<div>다양한 장난감을 제공해드려요</div>
+							<div>다양한 용품을 제공해드려요</div>
 							<button class="slide_btn">자세히보기</button>
 						</div>
 					</div>
@@ -93,42 +95,159 @@
 				</div>
 			</article>
 		</section>
-		<section class="party_area">
-			<div class="party_container">
-				<img src="../images/party1.png" alt="">
-				<img src="../images/party2.png" alt="">
+		<section class="party_area" id="partyArea">
+			<div class="party_title">#파티용품</div>
+			<div class="party_box">
+				<div>구성1</div>
+				<div class="party_img">
+					<img src="../images/party1.png" alt="">
+					<img src="../images/party2.png" alt="">
+				</div>
+				<div class="party_description">
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>블링블링 글리터 스팽글 꼬깔모자 / 리본타이</span></div>
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>알록달록 알파벳 생일초 1세트</span></div>
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>골드 가랜더 1세트</span></div>
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>파스텔 풍선 21개</span></div>
+				</div>
+			</div>
+			<div class="party_box">
+				<div>구성2</div>
+				<div class="party_img">
+					<img src="../images/party3.png" alt="">
+					<img src="../images/party4.png" alt="">
+					<img src="../images/party5.png" alt="">
+					<img src="../images/party6.png" alt="">
+				</div>
+				<div class="party_description">
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>파스텔 생일 가랜더 1세트</span></div>
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>파스텔 풍선 10개</span></div>
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>이름 꼬깔모자</span></div>
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>파티 접시</span></div>
+					<div class="party_description_list"><img src="../images/search.png" alt=""><span>생일 토퍼</span></div>
+				</div>
 			</div>
 		</section>
-</section>
-<footer>
-	<div class="footer_container">
+		<section class="photo_area" id="photoArea">
+			<div class="photo_title">#추억이 담긴 사진</div>
+			<div class="photo_box">
+				<div class="photo_description">
+					<span>호텔 및 펜션 예약 시 촬영옵션을 선택하면(유료 서비스)</span>
+					<div>
+						<span>반려동물과의 소중한 추억을 사진으로 남겨드려요</span>
+						<img src="../images/camera.png" alt="">
+					</div>
+					<span>각 지역의 포토그래퍼님과 연계하여 진행됩니다 :)  [ 6만원 추가 / 1시간 ]</span>
+				</div>
+				<div class="photo_img">
+					<img src="../images/photo1.jpg" alt="">
+					<img src="../images/photo2.jpg" alt="">
+					<img src="../images/photo3.jpg" alt="">
+				</div>
+			</div>
+		</section>
+		<section class="item_area" id="itemArea">
+			<div class="item_title">#반려용품 및 장난감</div>
+			<div class="item_ps">* 자세한 사항은 결제 시 <strong>요청사항에</strong> 기재부탁드립니다.</div>
+			<div class="item_box">
+				<div class="item">
+					<img src="../images/pet_item1.jpg" alt="">
+					<div class="item_info">
+						<div>- 펫하우스 제공</div>
+						<div>- 견고한 자작나무 원목 하우스</div>
+						<div>- 청결한 패브릭 쿠션</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="../images/pet_item2.jpg" alt="">
+					<div class="item_info">
+						<div>- 배변패드 제공</div>
+						<div class="item_info_detail">[프랑소와펫] 차콜 밤부 배변패드</div>
+						<div class="item_info_detail">변경 사항이 있을 수 있으니 문의바랍니다.</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="../images/pet_item3.jpg" alt="">
+					<div class="item_info">
+						<div>- 캣타워 제공</div>
+						<div>- 견고한 원목 캣타워</div>
+						<div>- 안락한 해먹 포함</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="../images/pet_item4.jpg" alt="">
+					<div class="item_info">
+						<div>- 반려묘 화장실 제공</div>
+						<div class="item_info_detail">[캣아이디어] 평판형 화장실</div>
+						<div class="item_info_detail">두부모래 / 벤토나이트</div>
+						<div class="item_info_detail">* 개인 모래 사용 가능</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="../images/pet_item5.jpg" alt="">
+					<div class="item_info">
+						<div>- 식기 제공</div>
+						<div>- 높이 조절 우드 식기 세트</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="../images/pet_item6.jpg" alt="">
+					<div class="item_info">
+						<div>- 장난감 제공</div>
+						<div class="item_info_detail">노즈워크, 오뎅막대, 캣닢 인형, 장난감 볼 등</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="play_area" id="playArea">
+			<div class="play_title">#즐거운 놀이공간</div>
+			<div class="play_box">
+				<div>
+					<img src="../images/play1.jpg" alt="애견 놀이터">
+					<img src="../images/play2.jpg" alt="애견 수영장">
+				</div>
+				<div>
+					<div class="play_info">
+						<span>자유롭게 뛰어 놀 수 있는 놀이터(playground)</span>
+						<span class="play_info_detail">놀이 시설의 유무는 시설에 따라 상이할 수 있습니다.</span>
+					</div>
+					<div class="play_info">
+						<span>함께 수영할 수 있는 수영장</span>
+						<span class="play_info_detail">장소에 따라 이미지와 상이할 수 있습니다.</span>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<footer>
+		<div class="footer_container">
 
-		<div class="footer_box">
-			<div class="div_terms">
-				<span class="btn_terms">이용 약관 |</span>
-				<span class="btn_terms">개인정보 처리방침 |</span>
-				<span class="btn_terms">고객센터</span>
+			<div class="footer_box">
+				<div class="div_terms">
+					<span class="btn_terms">이용 약관 |</span>
+					<span class="btn_terms">개인정보 처리방침 |</span>
+					<span class="btn_terms">고객센터</span>
+				</div>
+				<div class="div_cpy_info">
+					<p>
+						상호명: (주)펫밀리가 떴다 | 대표 황재윤 | 개인정보보호책임자 곽경록<br>
+						주소: 서울특별시 마포구 양화로 12길 8-9, 3층 (서교동, 예현빌딩) | 이메일 help@petmily.com | 마케팅 / 제휴 문의 marketing@petmily.com <br>
+						대표번호: 02-222-0333 팩스: 050-1122-3030 사업자등록번호: 111-22-33333 통신판매업신고번호: 제2022-서울마포-0000호
+					</p>
+				</div>
 			</div>
-			<div class="div_cpy_info">
-				<p>
-					상호명: (주)펫밀리가 떴다 | 대표 황재윤 | 개인정보보호책임자 곽경록<br>
-					주소: 서울특별시 마포구 양화로 12길 8-9, 3층 (서교동, 예현빌딩) | 이메일 help@petmily.com | 마케팅 / 제휴 문의 marketing@petmily.com <br>
-					대표번호: 02-222-0333 팩스: 050-1122-3030 사업자등록번호: 111-22-33333 통신판매업신고번호: 제2022-서울마포-0000호
-				</p> 
+			<div class="footer_image">
+				<div class="sns_box">
+					<span class="sns"><img src="../images/facebook.png"></span>
+					<span class="sns"><img src="../images/instagram.png"></span>
+					<span class="sns"><img src="../images/twitter.png"></span>
+					<span class="sns"><img src="../images/youtube.png"></span>
+				</div>
+				<img src="../images/petmilylogo.png">
 			</div>
-		</div>	
-		<div class="footer_image">
-			<div class="sns_box">
-				<span class="sns"><img src="../images/facebook.png"></span>
-				<span class="sns"><img src="../images/instagram.png"></span>
-				<span class="sns"><img src="../images/twitter.png"></span>
-				<span class="sns"><img src="../images/youtube.png"></span>
-			</div>
-			<img src="../images/petmilylogo.png">
+
 		</div>
-		
-	</div>
-</footer>
+	</footer>
 
 </body>
+
 </html>
