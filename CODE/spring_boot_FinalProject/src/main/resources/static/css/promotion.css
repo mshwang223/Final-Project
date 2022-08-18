@@ -1,0 +1,29 @@
+/* 전체 틀 */
+ul{
+  list-style: none;
+}
+li{
+  list-style: none;
+}
+.whole_pro_box{
+  margin: 0 auto;
+  width: 1485px;
+  height: 100%;
+}
+/* 메인 프로모션 박스 설정 */
+.main_pro_box{
+  margin: 0 auto;
+  width: 200px;
+}
+.main_pro_box .main_pro_tlt{
+  background-color: #fff;
+  width: 270px;
+  height: 60px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 100px;
+}

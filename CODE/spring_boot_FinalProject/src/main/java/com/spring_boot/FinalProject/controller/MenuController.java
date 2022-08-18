@@ -40,4 +40,10 @@ public class MenuController {
 	public String viewHotelList() {
 		return "subPage/petHotelList";
 	}
+	
+	// 프로모션 가기
+	@RequestMapping("/promotion")
+	public String viewPromotion() {
+		return "subPage/promotion";
+	} 
 }
