@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
    label#input_profile_img {
-        color:#222222;
+        
         margin-left:220px;
         margin-top:5px;
         padding: 0.5rem 1rem;
@@ -11,9 +11,12 @@
         text-align: center;
         display: inline-block;
         width: auto;
-        border-radius: 4px;
-        border-color:#ee82ee;
+        border-radius: 10px;
+        color:#fff;
+        font-family: 'Nanum Gothic';
+        font-weight: 600;
         background-color: #ee88ee;
+        cursor: pointer;
       }
 
 
@@ -56,17 +59,19 @@
 
 
   .user_info button {
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: 'Nanum Gothic';
     margin: 0;
     width: max-content;
     border:none;
-    border-radius: 4px;
+    border-radius: 10px;
     background-color: #ee88ee;
+    color:#fff;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
     padding: 0.5rem 1rem;
     margin-top:7px;
     margin-left:240px;
+    cursor: pointer;
   }
   
 .profile_menu {
