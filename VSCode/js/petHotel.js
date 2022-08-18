@@ -185,6 +185,10 @@ $(document).ready(function(){
 		$('#petCount').text(petCount);
 		$('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
 	});
+  // 검색하기로 페이지 이동
+  $('.reservation_btn').click(function(){
+    location.href = 'petHotelList.html';
+  });
 });
 
 

@@ -339,13 +339,3 @@ input::placeholder{
   font-size: 20px;
   margin: 10px 0 15px 0;
 }
-/* 탑버튼 */
-.top_btn{
-  width: 70px;
-  height: 70px;
-  float: right;
-  position: fixed;
-  right: 90px;
-  bottom: 100px;
-  cursor: pointer;
-}

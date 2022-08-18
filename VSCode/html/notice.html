@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../images/logo_ico.png">
+	<link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/board.css">
+	<link rel="stylesheet" href="../css/notice.css">
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script src="../js/header.js"></script>
+  <script src="../js/notice.js"></script>
+	<script defer src="../js/index.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>펫밀리가 떴다</title>
+</head>
+
+<body>
+	<section class="wrap">
+		<header>
+			<div class="logo_box">
+				<img src="../images/petmilylogo.png" alt="로고" class="btn" onclick="clicklogo()" ; />
+			</div>
+
+			<nav class="main_nav">
+				<a class="ho_pen">호텔 / 펜션</a>
+				<a class="promotion_pack">프로모션</a>
+				<a class="public_alert">공지사항</a>
+				<a class="ask_some">문의하기</a>
+				<div class="underline"></div>
+			</nav>
+			<div class="login_box">
+        <div class="dropdown">
+					<span class="loginForm">로그인</span>
+					<div id="dropdown-login">
+						<form action="post" id="login-form">
+							<p>로그인</p>
+							<div class="loginline"></div>
+							<div id="input-div">
+								<input type="text" class="dropdown_username" placeholder="아이디">
+								<input type="password" class="dropdown_password" placeholder="비밀번호">
+							</div>
+							<div id="forgotInfo">
+								<p>ID 찾기</p>
+								<p>PW 찾기</p>
+							</div> 
+						</form>
+						<input type="submit" class="dropdown_botton" value="로그인">
+					</div>
+				</div>
+				<a href="signup.html" class="signup">
+					<span>회원가입</span>
+				</a>
+			</div>
+		</header>
+			<!-- 공지사항 레이아웃 시작 -->
+			<section class="noticeBox">
+				<p class="pageTitle">공지사항</p>
+				<div>
+					<table class="search-table">
+						<tr>
+							<td></td>
+							<td>
+								<div class="dropdown-box">
+									<div id="dpBox-name" class="dpBox-div">전체</div>
+									<div class="dpBox-div">▼</div>
+								</div>
+								<ul class="dropdown-contents">
+									<li id="dp-all">전체</li>
+									<li id="dp-title">제목</li>
+									<li id="dp-contents">내용</li>
+								</ul>
+								<div class="search-box">
+									<div>
+										<input type="text" class="text_search" placeholder="검색어를 입력하세요.">
+										<button class="search-button"><img src="../images/search.png"></button>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="table-box">
+					<table>
+						<thead>
+							<tr>
+						      	<th class="num">번호</th>
+						      	<th>제목</th>
+						     	<th class="author">작성자</th>
+						      	<th class="date">작성일</th>
+						    </tr>
+						</thead>
+						<tbody>
+						    <tr>
+						      	<td>1</td>
+						      	<td class="title"><a href="<c:url value="/noticeDetail"/>">공지사항 제목1</a></td>
+						      	<td>Marco Belinelli</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>2</td>
+						      	<td class="title">공지사항 제목2</td>
+						      	<td>Carlos Boozer</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>3</td>
+						      	<td class="title">공지사항 제목3</td>
+						      	<td>Jimmy Butler</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>4</td>
+						      	<td class="title">공지사항 제목4</td>
+						      	<td>Luol Deng</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>5</td>
+						      	<td class="title">공지사항 제목5</td>
+						      	<td>Taj Gibson</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>6</td>
+						      	<td class="title">공지사항 제목6</td>
+						      	<td>Richard Hamilton</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>7</td>
+						      	<td class="title">공지사항 제목7</td>
+						      	<td>Kirk Hinrich</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>8</td>
+						      	<td class="title">공지사항 제목8</td>
+						      	<td>Nazr Mohammed</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>9</td>
+						      	<td class="title">공지사항 제목9</td>
+						      	<td>Joakim Noah</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						    <tr>
+						      	<td>10</td>
+						      	<td class="title">공지사항 제목10</td>
+						      	<td>Johnson Cals</td>
+						      	<td>2022-08-12</td>
+						    </tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="paging-box">
+					<ul>
+						<li class="firstPager">
+							<a href="" title="첫 페이지로 이동하기">
+								<<
+							</a>
+						</li>
+						<li class="prevPager">
+							<a href="" title="이전 페이지로 이동하기">
+								<
+							</a>
+						</li>
+						
+						<li><a href="" class="active">1</a></li>
+						<li><a href="" class="active">2</a></li>
+						<li><a href="" class="active">3</a></li>
+						<li><a href="" class="active">4</a></li>
+						<li><a href="" class="active">5</a></li>
+						<li><a href="" class="active">6</a></li>
+						<li><a href="" class="active">7</a></li>
+						<li><a href="" class="active">8</a></li>
+						<li><a href="" class="active">9</a></li>
+						<li><a href="" class="active">10</a></li>
+						
+						<li class="nextPager">
+							<a href="" title="다음 페이지로 이동하기">
+								>
+							</a>
+						</li>
+						<li class="lastPager">
+							<a href="" title="마지막 페이지로 이동하기">
+								>>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- 공지사항 레이아웃 종료 -->
+		</section>
+		<img class="top_btn" src="../images/top_dog.png">
+	</section>
+	<footer>
+		<div class="footer_container">
+
+			<div class="footer_box">
+				<div class="div_terms">
+					<span class="btn_terms">이용 약관 |</span>
+					<span class="btn_terms">개인정보 처리방침 |</span>
+					<span class="btn_terms">고객센터</span>
+				</div>
+				<div class="div_cpy_info">
+					<p>
+						상호명: (주)펫밀리가 떴다 | 대표 황재윤 | 개인정보보호책임자 곽경록<br>
+						주소: 서울특별시 마포구 양화로 12길 8-9, 3층 (서교동, 예현빌딩) | 이메일 help@petmily.com | 마케팅 / 제휴 문의 marketing@petmily.com <br>
+						대표번호: 02-222-0333 팩스: 050-1122-3030 사업자등록번호: 111-22-33333 통신판매업신고번호: 제2022-서울마포-0000호
+					</p>
+				</div>
+			</div>
+			<div class="footer_image">
+				<div class="sns_box">
+					<span class="sns"><img src="../images/facebook.png"></span>
+					<span class="sns"><img src="../images/instagram.png"></span>
+					<span class="sns"><img src="../images/twitter.png"></span>
+					<span class="sns"><img src="../images/youtube.png"></span>
+				</div>
+				<img src="../images/petmilylogo.png">
+			</div>
+
+		</div>
+	</footer>
+
+</body>
+
+</html>

@@ -280,3 +280,13 @@ header .login_box > .dropdown > span.loginForm:hover{
   margin: 0 10px 0 10px;
   cursor: pointer;
 }
+/* 탑버튼 */
+.top_btn{
+  width: 70px;
+  height: 70px;
+  float: right;
+  position: fixed;
+  right: 90px;
+  bottom: 100px;
+  cursor: pointer;
+}

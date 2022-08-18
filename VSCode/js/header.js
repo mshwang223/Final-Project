@@ -36,6 +36,19 @@ $(document).ready(function(){
 			if (chk == 2) $("#dropdown-login").hide();
 		}
 	}
+
+	// 호텔 / 펜션 페이지로 이동
+	$('.ho_pen').click(function(){
+		location.href = '/petHotel';
+	});
+	// 프로모션으로 이동
+	$('.promotion_pack').click(function(){
+		location.href = '';
+	});
+	// 공지사항 페이지로 이동
+	$('.public_alert').click(function(){
+		location.href = '/notice';
+	});
 });
 
 	

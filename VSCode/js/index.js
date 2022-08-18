@@ -98,6 +98,12 @@ $(document).ready(function(){
 		$('html,body').animate({scrollTop : 4100},300);
 	});
 
+	// 탑버튼
+	$('.top_btn').click(function (event) {
+		event.preventDefault();
+		$('html, body').animate({ scrollTop: 0 }, 300);
+	});
+
 });	// document.ready
 
 const login_btn = document.querySelector(".loginForm");

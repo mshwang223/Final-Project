@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../css/petHotel.css">
   <link rel="stylesheet" href="../css/common.css">
   <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/header.js"></script>
   <script defer src="../js/daterangepicker.js"></script>
   <script defer src="../js/petHotel.js"></script>
   <title>펫밀리가 떴다</title>
@@ -26,20 +27,35 @@
       </div>
 
       <nav class="main_nav">
-        <a>호텔 / 펜션</a>
-        <a>프로모션</a>
-        <a>공지사항</a>
-        <a>문의하기</a>
+				<a class="ho_pen">호텔 / 펜션</a>
+				<a class="promotion_pack">프로모션</a>
+				<a class="public_alert">공지사항</a>
+				<a class="ask_some">문의하기</a>>
         <div class="underline"></div>
       </nav>
-      <div class="login_box">
+			<div class="login_box">
         <div class="dropdown">
-          <span class="loginForm">로그인</span>
-        </div>
-        <a href="signup.html" class="signup">
-          <span>회원가입</span>
-        </a>
-      </div>
+					<span class="loginForm">로그인</span>
+					<div id="dropdown-login">
+						<form action="post" id="login-form">
+							<p>로그인</p>
+							<div class="loginline"></div>
+							<div id="input-div">
+								<input type="text" class="dropdown_username" placeholder="아이디">
+								<input type="password" class="dropdown_password" placeholder="비밀번호">
+							</div>
+							<div id="forgotInfo">
+								<p>ID 찾기</p>
+								<p>PW 찾기</p>
+							</div> 
+						</form>
+						<input type="submit" class="dropdown_botton" value="로그인">
+					</div>
+				</div>
+				<a href="signup.html" class="signup">
+					<span>회원가입</span>
+				</a>
+			</div>
     </header>
     <!-- 검색 -->
     <section class="reservation_container">
