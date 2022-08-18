@@ -74,6 +74,11 @@ $(document).ready(function(){
 			$('#slideBox').animate({'margin-left':moveLeft}, 'slow');	
 		}
 	}
+		// 탑버튼
+	$('.top_btn').click(function (event) {
+		event.preventDefault();
+		$('html, body').animate({ scrollTop: 0 }, 300);
+	});
 
 });	// document.ready
 
