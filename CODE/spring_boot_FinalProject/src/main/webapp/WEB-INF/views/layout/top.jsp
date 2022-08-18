@@ -5,7 +5,7 @@
 <html>
 		<header>
 			<div class="logo_box">
-				<a href="<c:url value='/'/>"><img src="images/petmilylogo.png" class="logoImg" alt="로고"></a>
+				<a href="<c:url value='/'/>"><img src="<c:url value='/images/petmilylogo.png'/>" class="logoImg" alt="로고"></a>
 			</div>
 			<nav class="main_nav">
 				<a href="<c:url value='/petHotel'/>">호텔 / 펜션</a>

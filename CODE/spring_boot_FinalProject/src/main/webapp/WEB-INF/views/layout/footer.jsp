@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
-		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/common.css'/>">
 	</head>
 	
 	<body>
@@ -29,12 +29,12 @@
 				</div>	
 				<div class="footer_image">
 					<div class="sns_box">
-						<span class="sns"><img src="images/facebook.png"></span>
-						<span class="sns"><img src="images/instagram.png"></span>
-						<span class="sns"><img src="images/twitter.png"></span>
-						<span class="sns"><img src="images/youtube.png"></span>
+						<span class="sns"><img src="<c:url value='/images/facebook.png'/>"></span>
+						<span class="sns"><img src="<c:url value='/images/instagram.png'/>"></span>
+						<span class="sns"><img src="<c:url value='/images/twitter.png'/>"></span>
+						<span class="sns"><img src="<c:url value='/images/youtube.png'/>"></span>
 					</div>
-					<img src="images/petmilylogo.png">
+					<img src="<c:url value='/images/petmilylogo.png'/>">
 				</div>
 			</div>
 		</footer>
