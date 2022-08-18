@@ -37,7 +37,7 @@ input{
 .list_main .main_box{
   width: 1500px;
   height: 100%;
-  margin: 100px 0 0 0;
+  margin: 100px 0 0 0px;
   /* border: 1px solid #ee02ee; */
   border-radius: 5px;
   background-color: #fff;

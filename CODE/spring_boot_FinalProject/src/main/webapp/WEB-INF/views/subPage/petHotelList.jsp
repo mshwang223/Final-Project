@@ -17,6 +17,7 @@
  		 <script src="<c:url value='/js/petHotelList.js'/>"></script>
 	</head>
 	<body>
+	<section class="wrap">
 	 <!-- top  -->
 		 <c:import url="/WEB-INF/views/layout/top.jsp"/>
 	
@@ -230,6 +231,7 @@
 	      </div>
 	    </section>
 		<img class="top_btn" src="<c:url value='/top_dog.png'/>">
+		</section>
 		<!-- footer -->
 		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
