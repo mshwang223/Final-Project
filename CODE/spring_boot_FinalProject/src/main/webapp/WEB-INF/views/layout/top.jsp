@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
 		<header>
 			<div class="logo_box">
-				<a href="<c:url value='/'/>"><img src="images/petmilylogo.png"
-					class="logoImg" alt="로고"></a>
+				<a href="<c:url value='/'/>"><img src="images/petmilylogo.png" class="logoImg" alt="로고"></a>
 			</div>
 			<nav class="main_nav">
 				<a href="<c:url value='/petHotel'/>">호텔 / 펜션</a>
@@ -35,3 +36,4 @@
 				<a href="<c:url value='/signup'/>">회원가입</a>
 			</div>
 		</header>
+</html>

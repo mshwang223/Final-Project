@@ -7,8 +7,10 @@
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
 		<link rel="icon" href="images/logo_ico.png">
+		<!-- header  -->
+		<c:import url="/WEB-INF/views/layout/header.jsp"/>
+		
 		<link rel="stylesheet" type="text/css" href="css/signup.css">
-		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script src="js/signup.js"></script>
 		
@@ -17,7 +19,7 @@
 	<body>
 		<section class="wrap">
 			<!-- header  -->
-			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			
 			<!-- section -->
 			<section class="signup">

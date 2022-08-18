@@ -6,18 +6,19 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
+		<!-- header  -->
+		<c:import url="/WEB-INF/views/layout/header.jsp"/>
+		
 		<link rel="icon" href="images/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/board.css">
-		<link rel="stylesheet" type="text/css" href="css/contact.css">
 		<link rel="stylesheet" type="text/css" href="css/contactResult.css">
-		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/notice.js"></script>
 	</head>
 	
 	<body>
 		<section class="wrap">
 			<!-- header  -->
-			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			
 			<!-- 공지사항 레이아웃 시작 -->
 			<article class="contactResultBox">
@@ -29,21 +30,22 @@
 				</div>
 
 				<div class="table-box">
+					<div class="blue">총 1</div>
 					<table>
 						<thead>
 							<tr>
 						      	<th class="num">번호</th>
-						      	<th>문의제목</th>
-						     	<th class="author">작성일</th>
-						      	<th class="date">답변유무</th>
+						      	<th class="title">문의제목</th>
+						     	<th class="date">작성일</th>
+						      	<th>답변유무</th>
 						    </tr>
 						</thead>
 						<tbody>
 						    <tr>
 						      	<td>1</td>
-						      	<td class="title">AI 플랫폼을 활용한 웹서비스 수업을 듣고 있는 수강생입니다.</td>
+						      	<td>AI 플랫폼을 활용한 웹서비스 수업을 듣고 있는 수강생입니다.</td>
 						      	<td>2022/08/18 12:07</td>
-						      	<td>답변완료</td>
+						      	<td class="blue">답변완료</td>
 						    </tr>
 						</tbody>
 					</table>

@@ -6,17 +6,19 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
+		<!-- header  -->
+		<c:import url="/WEB-INF/views/layout/header.jsp"/>
+		
 		<link rel="icon" href="images/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/board.css">
 		<link rel="stylesheet" type="text/css" href="css/notice.css">
-		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/notice.js"></script>
 	</head>
 	
 	<body>
 		<section class="wrap">
 			<!-- header  -->
-			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			
 			<!-- 공지사항 레이아웃 시작 -->
 			<article class="noticeBox">

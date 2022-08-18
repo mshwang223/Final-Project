@@ -6,21 +6,19 @@
 	<head>
 		<!-- datarangepicker -->
 		<link rel="stylesheet" type="text/css" href="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css'/>" />
-		<script src="<c:url value='/js/moment.min.js'/>"></script>
 		<script defer src="<c:url value='/js/daterangepicker.js'/>"></script>
   		<script src="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js'/>"></script>
   		<!-- js -->
   		<script src="js/jquery-3.6.0.min.js"></script>
   		<script defer src="js/petHotel.js"></script>
   		<!-- css -->
-  		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/petHotel.css">
 	</head>
 
 	<body>
 		<section class="wrap">
 			<!-- header  -->
-			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			
 			<section class="reservation_container">
 				<article>

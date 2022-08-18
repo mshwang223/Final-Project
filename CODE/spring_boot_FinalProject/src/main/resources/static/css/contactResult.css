@@ -1,7 +1,54 @@
 /* 문의 조회 */
 
-/* 헤더 언더라인 이동 */
+/* 메뉴 */
+.contact-menu {
+  display: flex;
+  flex-wrap: wrap;
+  
+  border-bottom: 1px solid #ddd;
+  
+  width: 1027px;
+  height: 50px;
+  
+  margin: 0 auto;  	
+}
+
+.contact-menu a {
+  width: 140px; 
+  height: 100%;
+  
+  text-align: center;
+  
+  padding-top: 12px;
+  
+  font-size: 18px;
+  font-weight: bold;	
+}
+
 .contact-menu div.underline {
+  position: relative;
+
+  left: -140px;
+  bottom: -47px;
+  
+  width: 140px;
+  height: 3px;
+  
+  background: #ee82ee;
+  transition: all .3s ease-in-out;
+}
+
+.contact-menu a:nth-child(1):hover  {
+  color: #ee82ee;
+}
+.contact-menu a:nth-child(1):hover ~ .underline {
+  left: -280px;
+}
+
+.contact-menu a:nth-child(2):hover  {
+  color: #ee82ee;
+}
+.contact-menu a:nth-child(2):hover ~ .underline {
   left: -140px;
 }
 
@@ -25,7 +72,15 @@ tr:nth-child(even) td {
 
 /* 테이블 레이아웃 위치 지정 */
 .table-box {
-  height: 460px; 	
+  /* height: 460px; */ 	
+}
+
+.table-box div:first-child {
+  width: 1027px;
+  margin: 0 auto 16px auto;
+
+  font-size: 14px;
+  font-weight: bold; 
 }
 
 /* 공지사항 게시판 크기 */
@@ -36,5 +91,14 @@ table {
 }
 
 th.num {
-	width: 80px;
+  width: 80px;
+}
+
+td {
+  font-size: 14px;
+  font-weight: bold;  	
+}
+
+.blue {
+  color: blue; 	
 }
