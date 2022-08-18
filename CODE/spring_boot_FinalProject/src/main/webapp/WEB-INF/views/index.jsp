@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
-		<link rel="icon" href="image/logo_ico.png">
+		<link rel="icon" href="images/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,7 +25,7 @@
 					<div class="main_slide_box" id="slideBox">
 						<div class="promotion_area">
 							<div class="promotion_area_img">
-								<img src="image/promotion1.png" alt="반려동물 생일">
+								<img src="<c:url value='images/promotion1.png'/>" alt="반려동물 생일">
 							</div>
 							<div class="promotion_area_contents">
 								<div>아늑한 공간에서 특별한 생일을 보내 보세요</div>
@@ -34,7 +34,7 @@
 						</div>
 						<div class="promotion_area">
 							<div class="promotion_area_img">
-								<img src="image/promotion2.jpg" alt="반려동물 사진">
+								<img src="images/promotion2.jpg" alt="반려동물 사진">
 							</div>
 							<div class="promotion_area_contents">
 								<div>반려동물과 추억이 담긴 사진을 찍어봐요</div>
@@ -43,7 +43,7 @@
 						</div>
 						<div class="promotion_area">
 							<div class="promotion_area_img">
-								<img src="image/promotion3.png" alt="반려동물 장난감">
+								<img src="images/promotion3.png" alt="반려동물 장난감">
 							</div>
 							<div class="promotion_area_contents">
 								<div>다양한 장난감을 제공해드려요</div>
@@ -52,7 +52,7 @@
 						</div>
 						<div class="promotion_area">
 							<div class="promotion_area_img">
-								<img src="image/promotion4.png" alt="반려동물 활동">
+								<img src="images/promotion4.png" alt="반려동물 활동">
 							</div>
 							<div class="promotion_area_contents">
 								<div>반려동물과 함께 다양한 활동을 해봐요</div>
@@ -72,7 +72,7 @@
 					<div class="popular_items_wrap">
 					<div class="popular_items_container">
 						<div class="popular_hotel">
-							<img src="image/hotel1.jpg" alt="">
+							<img src="images/hotel1.jpg" alt="">
 							<div class="like">
 								<span class="material-icons md-36">
 									favorite_border
@@ -80,7 +80,7 @@
 							</div>
 						</div>
 						<div class="popular_hotel">
-							<img src="image/hotel2.jpg" alt="">
+							<img src="images/hotel2.jpg" alt="">
 							<div class="like">
 								<span class="material-icons md-36">
 									favorite_border
@@ -88,7 +88,7 @@
 							</div>
 						</div>
 					<div class="popular_hotel">
-						<img src="image/hotel3.jpg" alt="">
+						<img src="images/hotel3.jpg" alt="">
 						<div class="like">
 							<span class="material-icons md-36">
 								favorite_border
@@ -96,7 +96,7 @@
 						</div>
 					</div>
 					<div class="popular_hotel">
-						<img src="image/hotel4.jpg" alt="">
+						<img src="images/hotel4.jpg" alt="">
 						<div class="like">
 							<span class="material-icons md-36">
 								favorite_border
@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<div class="popular_hotel">
-							<img src="image/hotel5.jpg" alt="">
+							<img src="images/hotel5.jpg" alt="">
 							<div class="like">
 								<span class="material-icons md-36">
 										favorite_border
@@ -112,8 +112,8 @@
 							</div>
 						</div>
 					</div>
-					<img class="prev"  src="image/left-arrow.png" alt="">
-					<img class="next"  src="image/next.png" alt="">
+					<img class="prev"  src="images/left-arrow.png" alt="">
+					<img class="next"  src="images/next.png" alt="">
 				</div>
 				</article>
 			</section>

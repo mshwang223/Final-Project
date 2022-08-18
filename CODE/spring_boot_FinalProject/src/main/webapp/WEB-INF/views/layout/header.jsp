@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div class="logo_box">
-				<a href="<c:url value='/'/>"><img src="image/petmilylogo.png"
+				<a href="<c:url value='/'/>"><img src="images/petmilylogo.png"
 					class="logoImg" alt="로고"></a>
 			</div>
 			<nav class="main_nav">

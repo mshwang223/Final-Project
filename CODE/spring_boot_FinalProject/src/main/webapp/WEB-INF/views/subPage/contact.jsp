@@ -6,11 +6,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
-		<link rel="icon" href="image/logo_ico.png">
-
+		<link rel="icon" href="images/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/board.css">
 		<link rel="stylesheet" type="text/css" href="css/contact.css">
-
 		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/contact.js"></script>
 	</head>
@@ -22,10 +20,10 @@
 			
 			<!-- 문의하기 레이아웃 시작 -->
 			<article class="contactBox">
-				<p class="pageTitle">문의하기</p>
+				<p class="pageTitle">문의등록</p>
 				<div class="contact-menu">
-					<div>문의등록</div>
-					<div>문의 조회</div>
+					<a href="<c:url value='/contact'/>">문의등록</a>
+					<a href="<c:url value='/contactResult'/>">문의 조회</a>
 					<div class="underline"></div>	
 				</div>
 				<div class="table-box">

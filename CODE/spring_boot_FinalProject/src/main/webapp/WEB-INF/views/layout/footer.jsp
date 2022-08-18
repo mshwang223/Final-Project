@@ -29,12 +29,12 @@
 				</div>	
 				<div class="footer_image">
 					<div class="sns_box">
-						<span class="sns"><img src="image/facebook.png"></span>
-						<span class="sns"><img src="image/instagram.png"></span>
-						<span class="sns"><img src="image/twitter.png"></span>
-						<span class="sns"><img src="image/youtube.png"></span>
+						<span class="sns"><img src="images/facebook.png"></span>
+						<span class="sns"><img src="images/instagram.png"></span>
+						<span class="sns"><img src="images/twitter.png"></span>
+						<span class="sns"><img src="images/youtube.png"></span>
 					</div>
-					<img src="image/petmilylogo.png">
+					<img src="images/petmilylogo.png">
 				</div>
 			</div>
 		</footer>

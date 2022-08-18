@@ -1,0 +1,40 @@
+/* 문의 조회 */
+
+/* 헤더 언더라인 이동 */
+.contact-menu div.underline {
+  left: -140px;
+}
+
+.table-box {
+	margin-top: 45px;
+}
+
+/* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
+td:not(.title) {
+  text-align: center;
+}
+
+/* 2n번째 열 배경색 */
+tr:nth-child(even) td {
+  background: #eaeaed;
+}
+
+.contactResultBox div:first-child {
+  margin-bottom: 15px;	
+}
+
+/* 테이블 레이아웃 위치 지정 */
+.table-box {
+  height: 460px; 	
+}
+
+/* 공지사항 게시판 크기 */
+table {
+  border-spacing: 0;
+  margin: 0 auto;
+  width: 65%;
+}
+
+th.num {
+	width: 80px;
+}

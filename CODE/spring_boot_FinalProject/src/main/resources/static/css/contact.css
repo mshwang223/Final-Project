@@ -6,10 +6,6 @@ nav div.underline {
 }
 
 /* 메뉴 */
-.contactBox > div:first-child {
-  margin-bottom: 15px;	
-}
-
 .contact-menu {
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +18,7 @@ nav div.underline {
   margin: 0 auto;  	
 }
 
-.contact-menu div:not(.underline) {
+.contact-menu a {
   width: 140px; 
   height: 100%;
   
@@ -47,11 +43,17 @@ nav div.underline {
   transition: all .3s ease-in-out;
 }
 
-.contact-menu div:nth-child(1):hover ~ .underline {
+.contact-menu a:nth-child(1):hover  {
+  color: #ee82ee;
+}
+.contact-menu a:nth-child(1):hover ~ .underline {
   left: -280px;
 }
 
-.contact-menu div:nth-child(2):hover ~ .underline {
+.contact-menu a:nth-child(2):hover  {
+  color: #ee82ee;
+}
+.contact-menu a:nth-child(2):hover ~ .underline {
   left: -140px;
 }
 

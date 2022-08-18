@@ -28,4 +28,10 @@ public class MenuController {
 	public String viewContact() {
 		return "subPage/contact";
 	}
+	
+	// 문의 조회 가기
+	@RequestMapping("/contactResult")
+	public String viewContactResult() {
+		return "subPage/contactResult";
+	}
 }

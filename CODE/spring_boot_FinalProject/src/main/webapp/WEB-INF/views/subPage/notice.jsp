@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
-		<link rel="icon" href="image/logo_ico.png">
+		<link rel="icon" href="images/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/board.css">
 		<link rel="stylesheet" type="text/css" href="css/notice.css">
 		<script src="js/jquery-3.6.0.min.js"></script>
@@ -38,7 +38,7 @@
 								<div class="search-box">
 									<div>
 										<input type="text" class="text_search" placeholder="검색어를 입력하세요.">
-										<button class="search-button"><img src="image/search.png"></button>
+										<button class="search-button"><img src="images/search.png"></button>
 									</div>
 								</div>
 							</td>
