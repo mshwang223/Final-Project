@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>공지사항</title>
+		<title>펫밀리가 떴다</title>
 		<link rel="icon" href="image/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/board.css">
 		<link rel="stylesheet" type="text/css" href="css/noticeDetail.css">
@@ -18,7 +18,7 @@
 			<!-- header  -->
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
 			
-			<!-- 공지사항 레이아웃 시작 -->
+			<!-- 세부화면 레이아웃 시작 -->
 			<section class="noticeBox">
 				<p class="pageTitle">공지사항</p>
 				<div class="table-box">
@@ -50,12 +50,12 @@
 						    </tr>
 						</tbody>
 					</table>
-			    <div class="btn_list_box">
-			    	<button class="btn_list_done">목록</button>
-			    </div>
+				    <div class="btn_list_box">
+				    	<button class="btn_list_done">목록</button>
+				    </div>
 				</div>
 			</section>
-			<!-- 공지사항 레이아웃 종료 -->
+			<!-- 세부화면 레이아웃 종료 -->
 		</section>
 		
 		<!-- footer -->

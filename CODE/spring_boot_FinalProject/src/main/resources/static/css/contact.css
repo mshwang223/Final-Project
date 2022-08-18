@@ -1,0 +1,252 @@
+/* 문의하기 */
+
+/* 메뉴 */
+
+.contactBox > div:first-child {
+  margin-bottom: 15px;	
+}
+
+.contact-menu {
+  display: flex;
+  flex-wrap: wrap;
+  
+  border-bottom: 1px solid #ddd;
+  
+  width: 1027px;
+  height: 50px;
+  
+  margin: 0 auto;  	
+}
+
+.contact-menu div:not(.underline) {
+  width: 140px; 
+  height: 100%;
+  
+  text-align: center;
+  
+  padding-top: 12px;
+  
+  font-size: 18px;
+  font-weight: bold;	
+}
+
+.contact-menu div.underline {
+  position: relative;
+
+  left: -280px;
+  bottom: -47px;
+  
+  width: 140px;
+  height: 3px;
+  
+  background: #ee82ee;
+  transition: all .3s ease-in-out;
+}
+
+.contact-menu div:nth-child(1):hover ~ .underline {
+  left: -280px;
+}
+
+.contact-menu div:nth-child(2):hover ~ .underline {
+  left: -140px;
+}
+
+/* 테이블 레이아웃 위치 지정 */
+.table-box {
+  height: 460px; 	
+}
+
+.table-box >  div {
+  margin: 45px auto;
+  
+  width: 1027px;
+  
+  padding-left: 35px; 
+}
+
+p {
+  font-weight: bold;
+  
+  margin-bottom: 5px;	
+}
+
+/* 문의하기 테이블 크기 */
+table {
+  border-spacing: none;
+  border-collapse: collapse;
+  margin: 35px auto;
+  width: 65%;
+}
+
+td {
+  border: none;	
+}
+
+tr td:first-child {
+  border-left: none;	
+  width: 200px;
+  
+  text-align: left;
+  
+  font-size: 14px;
+  font-weight: bold;
+  
+  padding: 20px 35px 30px 35px;
+}
+
+
+tr td:last-child {
+  padding-bottom: 0px;
+}
+
+em {
+  margin-left: 1px;
+  background-color: red;
+
+  display: inline-block;
+  
+  width: 5px;
+  height: 5px;
+  
+  vertical-align: top;
+  
+  border-radius: 5px;
+}
+
+.contents-box input, textarea {
+  width: 100%;
+  height: 32px;
+ 
+  padding: 5px auto;
+ 
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom: 1px groove #eee;
+ 
+  background-color: #f5f5f5;
+}
+
+.contents-box input, textarea:focus {
+  outline: none;
+  border-bottom-color: #ee82ee;
+}
+
+.contents-box span {
+  visibility: hidden;	
+  color: red;
+  
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.title-email {
+  vertical-align: top;	
+}
+
+.contents-email {
+  vertical-align: top;
+}
+
+.contents-email > div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contents-email > div > div:first-child {
+  display: inline-block;
+  width: 80px;
+  
+}
+
+.contents-email > div > div > input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  
+  position: relative;
+  
+  top: 2px; 	
+}
+
+.contents-email span {
+  font-size: 12px;	
+}
+
+.confirm-email {
+  display: none;
+  width: 360px;
+
+  border-radius: 3px;
+  
+  background-color: white;
+  color: black;
+
+  padding: 10px;
+  
+  font-weight: bold;
+}
+
+.title-img {
+  position: relative;
+  
+  top: 10px;	
+}
+
+/* 이미지 찾기 버튼 */
+.btn_img_done {
+  width: 100px;
+  height: 35px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ee82ee;
+  border-radius: 2px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_img_box > button:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.9s linear;
+}
+
+/* 취소, 등록 버튼 */
+.btn_list_box {
+  width: 100%;
+  height: 100px;
+  margin: 20px auto;
+  text-align: right;
+}
+
+.btn_reset {
+  width: 120px;
+  height: 40px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  border-radius: 3px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  
+  margin-right: 10px;
+}
+
+.btn_done {
+  width: 120px;
+  height: 40px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #ee82ee;
+  border-radius: 2px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_list_box > button:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.9s linear;
+}

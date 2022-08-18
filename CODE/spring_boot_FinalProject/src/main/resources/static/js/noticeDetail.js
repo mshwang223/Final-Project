@@ -10,9 +10,6 @@ $(document).ready(function(){
 	$(".btn_list_done").click(function() {
 		location.href = "/notice";
 	});
-	
-	
-	
 });
 
 	

@@ -32,6 +32,7 @@ header .logo_box{
   position: relative;
   width: 300px;
   height: 100%;
+  cursor: pointer;
 }
 
 header nav.main_nav{
