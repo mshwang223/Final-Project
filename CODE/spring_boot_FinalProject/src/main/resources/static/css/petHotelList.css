@@ -341,10 +341,11 @@ input::placeholder{
 }
 /* 탑버튼 */
 .top_btn{
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   float: right;
   position: fixed;
-  right: 160px;
-  bottom: 40px;
+  right: 90px;
+  bottom: 100px;
+  cursor: pointer;
 }
