@@ -6,7 +6,7 @@
 	<!-- header  -->
 	<c:import url="/WEB-INF/views/layout/header.jsp"/>
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css'/>">
-	<script src="js/index.js"></script>
+	<script src="<c:url value='/js/index.js'/>"></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 				<div class="main_slide_box" id="slideBox">
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="/images/promotion1.png" alt="반려동물 생일">
+							<img src="<c:url value='/images/promotion1.png'/>" alt="반려동물 생일">
 						</div>
 						<div class="promotion_area_contents">
 							<div>아늑한 공간에서 특별한 생일을 보내 보세요</div>
@@ -29,7 +29,7 @@
 					</div>
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="/images/promotion2.jpg" alt="반려동물 사진">
+							<img src="<c:url value='/images/promotion2.jpg'/>" alt="반려동물 사진">
 						</div>
 						<div class="promotion_area_contents">
 							<div>반려동물과 추억이 담긴 사진을 찍어봐요</div>
@@ -38,7 +38,7 @@
 					</div>
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="/images/promotion3.png" alt="반려동물 장난감">
+							<img src="<c:url value='/images/promotion3.png'/>" alt="반려동물 장난감">
 						</div>
 						<div class="promotion_area_contents">
 							<div>다양한 용품을 제공해드려요</div>
@@ -47,7 +47,7 @@
 					</div>
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="/images/promotion4.png" alt="반려동물 활동">
+							<img src="<c:url value='/images/promotion4.png'/>" alt="반려동물 활동">
 						</div>
 						<div class="promotion_area_contents">
 							<div>반려동물과 함께 다양한 활동을 해봐요</div>
@@ -66,24 +66,24 @@
 			<div class="party_box">
 				<div>구성1</div>
 				<div class="party_img">
-					<img src="/images/party1.png" alt=""> <img
-						src="/images/party2.png" alt="">
+					<img src="<c:url value='/images/party1.png'/>" alt=""> <img
+						src="<c:url value='/images/party2.png'/>" alt="">
 				</div>
 				<div class="party_description">
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>블링블링 글리터
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>블링블링 글리터
 							스팽글 꼬깔모자 / 리본타이</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>알록달록 알파벳
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>알록달록 알파벳
 							생일초 1세트</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>골드 가랜더
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>골드 가랜더
 							1세트</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>파스텔 풍선
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>파스텔 풍선
 							21개</span>
 					</div>
 				</div>
@@ -91,28 +91,28 @@
 			<div class="party_box">
 				<div>구성2</div>
 				<div class="party_img">
-					<img src="/images/party3.png" alt=""> <img
-						src="/images/party4.png" alt=""> <img
-						src="/images/party5.png" alt=""> <img
-						src="/images/party6.png" alt="">
+					<img src="<c:url value='/images/party3.png'/>" alt=""> <img
+						src="<c:url value='/images/party4.png'/>" alt=""> <img
+						src="<c:url value='/images/party5.png'/>" alt=""> <img
+						src="<c:url value='/images/party6.png'/>" alt="">
 				</div>
 				<div class="party_description">
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>파스텔 생일
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>파스텔 생일
 							가랜더 1세트</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>파스텔 풍선
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>파스텔 풍선
 							10개</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>이름 꼬깔모자</span>
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>이름 꼬깔모자</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>파티 접시</span>
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>파티 접시</span>
 					</div>
 					<div class="party_description_list">
-						<img src="/images/search.png" alt=""><span>생일 토퍼</span>
+						<img src="<c:url value='/images/search.png'/>" alt=""><span>생일 토퍼</span>
 					</div>
 				</div>
 			</div>
@@ -124,14 +124,14 @@
 					<span>호텔 및 펜션 예약 시 촬영옵션을 선택하면(유료 서비스)</span>
 					<div>
 						<span>반려동물과의 소중한 추억을 사진으로 남겨드려요</span> <img
-							src="/images/camera.png" alt="">
+							src="<c:url value='/images/camera.png'/>" alt="">
 					</div>
 					<span>각 지역의 포토그래퍼님과 연계하여 진행됩니다 :) [ 6만원 추가 / 1시간 ]</span>
 				</div>
 				<div class="photo_img">
-					<img src="/images/photo1.jpg" alt=""> <img
-						src="/images/photo2.jpg" alt=""> <img
-						src="/images/photo3.jpg" alt="">
+					<img src="<c:url value='/images/photo1.jpg'/>" alt=""> <img
+						src="<c:url value='/images/photo2.jpg'/>" alt=""> <img
+						src="<c:url value='/images/photo3.jpg'/>" alt="">
 				</div>
 			</div>
 		</section>
@@ -142,7 +142,7 @@
 			</div>
 			<div class="item_box">
 				<div class="item">
-					<img src="/images/pet_item1.jpg" alt="">
+					<img src="<c:url value='/images/pet_item1.jpg'/>" alt="">
 					<div class="item_info">
 						<div>- 펫하우스 제공</div>
 						<div>- 견고한 자작나무 원목 하우스</div>
@@ -150,7 +150,7 @@
 					</div>
 				</div>
 				<div class="item">
-					<img src="/images/pet_item2.jpg" alt="">
+					<img src="<c:url value='/images/pet_item2.jpg'/>" alt="">
 					<div class="item_info">
 						<div>- 배변패드 제공</div>
 						<div class="item_info_detail">[프랑소와펫] 차콜 밤부 배변패드</div>
@@ -158,7 +158,7 @@
 					</div>
 				</div>
 				<div class="item">
-					<img src="/images/pet_item3.jpg" alt="">
+					<img src="<c:url value='/images/pet_item3.jpg'/>" alt="">
 					<div class="item_info">
 						<div>- 캣타워 제공</div>
 						<div>- 견고한 원목 캣타워</div>
@@ -166,7 +166,7 @@
 					</div>
 				</div>
 				<div class="item">
-					<img src="/images/pet_item4.jpg" alt="">
+					<img src="<c:url value='/images/pet_item4.jpg'/>" alt="">
 					<div class="item_info">
 						<div>- 반려묘 화장실 제공</div>
 						<div class="item_info_detail">[캣아이디어] 평판형 화장실</div>
@@ -175,14 +175,14 @@
 					</div>
 				</div>
 				<div class="item">
-					<img src="/images/pet_item5.jpg" alt="">
+					<img src="<c:url value='/images/pet_item5.jpg'/>" alt="">
 					<div class="item_info">
 						<div>- 식기 제공</div>
 						<div>- 높이 조절 우드 식기 세트</div>
 					</div>
 				</div>
 				<div class="item">
-					<img src="/images/pet_item6.jpg" alt="">
+					<img src="<c:url value='/images/pet_item6.jpg'/>" alt="">
 					<div class="item_info">
 						<div>- 장난감 제공</div>
 						<div class="item_info_detail">노즈워크, 오뎅막대, 캣닢 인형, 장난감 볼 등</div>
@@ -194,8 +194,8 @@
 			<div class="play_title">#즐거운 놀이공간</div>
 			<div class="play_box">
 				<div>
-					<img src="/images/play1.jpg" alt="애견 놀이터"> <img
-						src="/images/play2.jpg" alt="애견 수영장">
+					<img src="<c:url value='/images/play1.jpg'/>" alt="애견 놀이터"> <img
+						src="<c:url value='/images/play2.jpg'/>" alt="애견 수영장">
 				</div>
 				<div>
 					<div class="play_info">
@@ -209,7 +209,7 @@
 				</div>
 			</div>
 		</section>
-		<img class="top_btn" src="/images/top_dog.png">
+		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 	</section>
 
 	<!-- footer -->
