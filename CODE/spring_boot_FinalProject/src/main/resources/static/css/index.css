@@ -1,5 +1,3 @@
-/* 메인 슬라이드 */
-
 article.main_slide{
   width: 1580px;
   overflow: hidden;
@@ -8,7 +6,7 @@ article.main_slide{
 article.main_slide div.main_slide_box{
   display: flex;
   position: relative;
-  width: 4740px;
+  max-width: 4740px;
 }
 
 div.promotion_area{
@@ -80,236 +78,114 @@ article.main_slide > .slide_bar_box > span.slide_bar{
   margin: 0 10px;
   border-radius: 50%;
   background-color: #ddd;
+}
+
+.popular_items{
+  height: 450px;
+  padding: 90px 50px 0 50px;
+}
+
+.popular_title{
+  width: 200px;
+  font-size: 22px;
+  color: #555;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 37px 50px;
+}
+
+.popular_items_wrap{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.popular_items_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 250px;
+  width: 90%;
+}
+
+.popular_items_container img{
+  width: 225px;
+  height: 225px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-/* 파티용품 자세히보기 */
-.party_area, .photo_area, .item_area, .play_area{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px 0;
-  border-top: 1.5px solid #ddd;
-}
-
-.party_title, .photo_title, .item_title, .play_title{
-  background-color: #fff;
-  width: 180px;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  font-size: 25px;
-  font-weight: 600;
-  text-align: center;
-  margin: 50px;
-}
-
-.party_box{
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  position: relative;
-  margin: 50px 0 30px 0;
-}
-
-.party_box > div:first-child{
-  position: absolute;
-  top: -35px;
-  left: 95px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.party_box .party_img{
-  display: flex;
-  flex-wrap: wrap;
-  width: 810px;
-}
-
-.party_box .party_img img{
-  width: 350px;
-  height: 300px;
-  border-radius: 10px;
-  margin: 5px 0 0 5px;
-}
-
-.party_box .party_description{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 500px;
-}
-
-.party_description_list{
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.party_description_list img{
-  width: 23px;
-  height: 23px;
-  margin-right: 10px;
-}
-
-.party_description_list span{
-  font-size: 20px;
-  font-weight: 600;
-}
-
-/* 포토 자세히 보기 */
-.photo_title{
-  width: 260px;
-}
-
-.photo_box{
-  display: flex;
-  flex-direction: column;
-  height: 520px;
-  width: 100%;
-}
-
-.photo_description{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 150px;
-  padding: 0 10px 40px;
-}
-
-.photo_description > div{
-  display: flex;
-  align-items: center;
-}
-
-.photo_description span{
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.photo_description > div > img{
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-}
-
-.photo_img{
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 20px;
-}
-
-.photo_img img{
-  width: 350px;
-  height: 350px;
-  border-radius: 10px;
-}
-
-
-/* 애견용품 및 장난감 자세히보기 */
-.item_area{
-  position: relative;
-}
-
-.item_title{
-  width: 260px;
-}
-
-.item_ps{
+.popular_items_wrap .prev, .popular_items_wrap .next{
   position:absolute;
-  top: 130px;
-  left: 155px;
-  font-size: 14px;
-  font-weight: 500;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
 }
 
-.item_box{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 80%;
+.popular_items_wrap .prev{
+  left: 10px;
 }
 
-.item_box > div.item{
-  display: flex;
-  justify-content: space-between;
-  width: 48%;
-  margin-bottom: 20px;
-  background-color: #eee;
-  border-radius: 10px;
+.popular_items_wrap .next{
+  right: 10px;
 }
 
-.item_box > div.item > img{
-  width: 250px;
-  height: 220px;
-  border-radius: 10px;
+.like{
+  position: absolute;
+  left: 11em;
+  bottom: 11em;
 }
 
-.item_box > div.item > div{
-  width: 300px;
-}
-
-.item_info{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.item_info > div{
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.item_info > .item_info_detail{
-  font-size: 15px;
-  font-weight: 500;
+.popular_hotel{
+  position:relative;
 }
 
 
-/* 다양한 활동 자세히보기 */
-.play_title{
-  width: 260px;
+.popular_hotel img {
+  opacity: 1;
 }
 
-.play_box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+.popular_hotel .material-icons.md-36 {
+  transition-duration: 0.3s;
 }
 
-.play_box > div{
-  display: flex;
-  justify-content: space-around;
-  width: 90%;
-  margin-bottom: 20px;
+.popular_hotel:hover .material-icons.md-36 {
+  color: #ee88ee;
+  transition-duration: 0.3s;
 }
 
-.play_box > div > img{
-  width: 550px;
-  height: 370px;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
-.play_box > div > .play_info{
-  display: flex;
-  flex-direction: column;
-  width: 550px;
-  height: 130px;
-  padding: 20px;
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; 
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
 }
 
-.play_info > span{
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+.material-icons.md-36 { font-size: 36px; }
 
-.play_info > .play_info_detail{
-  font-size: 16px;
-  font-weight: 500;
-}
