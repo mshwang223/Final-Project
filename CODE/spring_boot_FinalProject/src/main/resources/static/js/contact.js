@@ -18,7 +18,7 @@ $(document).ready(function(){
 	});
 	
 	// textarea 엔터키 입력 시 자동 높이 조절
-  	$("textarea").on('keyup', function(e) {
+  	$(".contents-box textarea").on('keyup', function(e) {
 	    //$(this).css('height', 'auto');
 	    $(this).height(this.scrollHeight);
 	    
@@ -30,7 +30,7 @@ $(document).ready(function(){
 	});
 	
 	// 문의제목 글자수
-  	$("input").on('keyup', function(e) {
+  	$(".contents-box input").on('keyup', function(e) {
 	    //글자 수 체크
 	    var cntTxt = $(this).val().length;
 	    $("#cntTitle").text(cntTxt);
@@ -40,7 +40,7 @@ $(document).ready(function(){
 	
 	// 유효성 체크
 	// 문의제목
-	$("input[type=text]").on('focusout change keyup', function(e) {
+	$(".contents-box input[type=text]").on('focusout change keyup', function(e) {
 		//if(e.keyCode == 9) return;
 		
 		if($(this).val() == "")  {
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 	
 	// 문의내용
-	$("textarea").on('focusout change keyup', function(e) {
+	$(".contents-box textarea").on('focusout change keyup', function(e) {
 		// Tab키 입력 이벤트 방지
 		if(e.keyCode == 9) return;
 		
