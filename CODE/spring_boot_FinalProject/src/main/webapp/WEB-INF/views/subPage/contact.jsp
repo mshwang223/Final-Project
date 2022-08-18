@@ -7,8 +7,10 @@
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
 		<link rel="icon" href="image/logo_ico.png">
+
 		<link rel="stylesheet" type="text/css" href="css/board.css">
 		<link rel="stylesheet" type="text/css" href="css/contact.css">
+
 		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/contact.js"></script>
 	</head>
@@ -19,7 +21,7 @@
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
 			
 			<!-- 문의하기 레이아웃 시작 -->
-			<section class="contactBox">
+			<article class="contactBox">
 				<p class="pageTitle">문의하기</p>
 				<div class="contact-menu">
 					<div>문의등록</div>
@@ -31,22 +33,34 @@
 						<p>문의하시기 전에 FAQ 관련 내용을 확인해보세요.</p>
 						<p>가능한 빠른 시간 내 답변하도록 노력하겠습니다.</p>
 					</div>
+					
+					<!-- 상단 테이블 -->
 					<table>
 						<tbody>
 						    <tr>
 						      	<td>문의제목<em></em></td>
 						      	<td class="contents-box">
-						      		<input type="text" placeholder="문의 제목을 입력해 주세요."/>
-						      		<span>문의 제목을 입력해 주세요.</span>
+						      		<input type="text" maxlength="50" placeholder="문의 제목을 입력해 주세요."/>
+						      		<span class="span-title">문의 제목을 입력해 주세요.</span>
+						      		<div class="text-count cntTitle"><span id="cntTitle">0</span> / 50</div>
 						      	</td>
 						    </tr>
-						    <tr>
-						      	<td>문의내용<em></em></td>
-						      	<td class="contents-box">
-						      		<textarea type="text" placeholder="문의 내용을 입력해 주세요."></textarea>
-						      		<span>문의 내용을 입력해 주세요.</span>						      	
-						      	</td>
-						    </tr>
+						<tbody>
+					</table>
+					
+					<!-- 중단 textarea 구간 -->	    
+					<div class="layout-contents">
+						<div>문의내용<em></em></div>
+						<div class="contents-box">
+							<textarea maxlength="500" placeholder="문의 내용을 입력해 주세요."></textarea>
+						    <span class="span-contents">문의 내용을 입력해 주세요.</span>
+						    <div class="text-count cntContents"><span id="cntContents">0</span> / 500</div>						      	
+						</div>
+					</div>
+					
+					<!-- 하단 테이블 -->
+					<table>
+						<tbody>	    
 						    <tr>
 						      	<td class="title-email">답변메일</td>
 						      	<td class="contents-email">
@@ -71,12 +85,15 @@
 						    </tr>
 						</tbody>
 					</table>
+					<div class="bottom_line">
+					</div>
 					<div class="btn_list_box">
 				    	<button class="btn_reset">취소</button>
 				    	<button class="btn_done">등록</button>
 				    </div>
+				    <br><br>
 				</div>
-			</section>
+			</article>
 			<!-- 문의하기 레이아웃 종료 -->
 		</section>
 	</body>

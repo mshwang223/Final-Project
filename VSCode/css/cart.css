@@ -82,8 +82,15 @@
 }
 
 .item-info button {
+  font-family: 'Nanum Gothic';
+  font-weight: 600;
+  border:none;
+  border-radius: 10px;
+  color:#fff;
+  background-color: #ee88ee;
   width: fit-content;
   padding: 10px 5px;
+  cursor: pointer;
 }
 
 .item__price {
@@ -131,9 +138,16 @@
 }
 
 .recommended-item button {
+  font-family: 'Nanum Gothic';
+  font-weight: 600;
+  background-color: #ee88ee;
   width: max-content;
   padding: 15px;
   margin-top: 20px;
+  border:none;
+  border-radius: 7px;
+  color:#fff;
+  cursor: pointer;
 }
 
 
@@ -164,14 +178,34 @@
 }
 
 .final_pay_btn {
+  font-family: 'Nanum Gothic';
+  font-weight: 600;
+  font-size:20px;
   position: absolute;
   bottom: 20px;
   width: 400px;
   padding: 20px;
+  color:#fff;
+  background-color:#ee88ee;
+  border:none;
+  border-radius: 10px;
+  cursor: pointer;
+  
 }
 
 .cart_box__title {
   margin-top: 5px;
   margin-bottom: 15px;
   font-weight: bold;
+}
+
+.delete_btn{
+background-color: #ee82ee;
+border:none;
+border-radius: 5px;
+font-family: 'Nanum Gothic';
+color:#fff;
+font-weight: 600;
+cursor: pointer;
+width:60px;
 }
