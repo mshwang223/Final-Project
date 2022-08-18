@@ -74,11 +74,59 @@ $(document).ready(function(){
 			$('#slideBox').animate({'margin-left':moveLeft}, 'slow');	
 		}
 	}
-		// 탑버튼
+	
+	// 클릭 시 회원가입 페이지 이동
+	$(".login_box span:nth-child(2)").on('click', function() {
+		location.href = "/signup";
+	});
+
+
+	// 자세히보기 버튼 이동
+	$('#partyBtn').click(function(){
+		$('html,body').animate({scrollTop : 1040},300);
+	});
+
+	$('#photoBtn').click(function(){
+		$('html,body').animate({scrollTop : 2370},300);
+	});
+
+	$('#itemBtn').click(function(){
+		$('html,body').animate({scrollTop : 3150},300);
+	});
+
+	$('#playBtn').click(function(){
+		$('html,body').animate({scrollTop : 4100},300);
+	});
+
+	// 탑버튼
 	$('.top_btn').click(function (event) {
 		event.preventDefault();
 		$('html, body').animate({ scrollTop: 0 }, 300);
 	});
 
 });	// document.ready
+
+const login_btn = document.querySelector(".loginForm");
+const dropdown_login_box = document.querySelector("#dropdown-login");
+
+handleClickLoginBtn = () => {
+  dropdown_login_box.classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  const cond1 = String(event.path[1].id) === 'dropdown-login';
+  const cond2 = String(event.path[1].id) === 'login-form';
+  const clickedInsideLoginForm = cond1 || cond2;
+  if (clickedInsideLoginForm) {
+    return;
+  }
+  if (!event.target.matches('.loginForm')) {
+    if (dropdown_login_box.classList.contains('show')) {
+      dropdown_login_box.classList.remove('show');
+    }
+  }
+}
+
+login_btn.addEventListener("click", handleClickLoginBtn);
+
 
