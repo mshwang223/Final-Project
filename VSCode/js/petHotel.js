@@ -187,8 +187,6 @@ $(document).ready(function(){
 	});
   // 검색하기로 페이지 이동
   $('.reservation_btn').click(function(){
-    location.href = 'petHotelList.html';
+    location.href = '/petHotelList';
   });
 });
-
-
