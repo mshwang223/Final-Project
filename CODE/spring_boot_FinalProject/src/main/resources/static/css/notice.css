@@ -1,5 +1,10 @@
 /* 공지사항 */
 
+/* 헤더 언더라인 이동 */
+nav div.underline {
+  left: calc(50% + 32px);
+}
+
 /* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
 td:not(.title) {
   text-align: center;

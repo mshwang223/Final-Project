@@ -19,7 +19,7 @@
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
 			
 			<!-- 세부화면 레이아웃 시작 -->
-			<section class="noticeBox">
+			<article class="noticeBox">
 				<p class="pageTitle">공지사항</p>
 				<div class="table-box">
 					<table>
@@ -54,11 +54,11 @@
 				    	<button class="btn_list_done">목록</button>
 				    </div>
 				</div>
-			</section>
+			</article>
 			<!-- 세부화면 레이아웃 종료 -->
+
+			<!-- footer -->
+			<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 		</section>
-		
-		<!-- footer -->
-		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
 </html>
