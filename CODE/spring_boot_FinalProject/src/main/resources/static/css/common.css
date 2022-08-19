@@ -254,18 +254,14 @@ header .login_box{
   display: flex;
 }
 
-.dropdown-user > ul > li:last-child > a {
-  position: relative;	
-  top: -5px;	
-}
+
 
 ul > li img.top_logout_img {
   width: 20px;
   height: 20px;
   
   position: relative;
-  left: 80px;
-  top: 5px;	
+  left: 80px;	
 }
 
 .dropdown-user > ul > li:hover {

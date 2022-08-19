@@ -90,6 +90,11 @@ $(document).ready(function(){
  		}
  		return true;
 	}
+	
+	// 로그아웃
+	$('#logout').click(function() {
+		location.href = "/logout1";
+	});
 });
 
 	

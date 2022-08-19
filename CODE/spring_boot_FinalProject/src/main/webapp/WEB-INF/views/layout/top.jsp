@@ -46,10 +46,9 @@
 						<ul id="userPage">
 							<li><a href="<c:url value='/mypage'/>">마이페이지</a></li>
 							<li class="underline"></li>
-							<li><a href="<c:url value='/logout1'/>">
-									로그아웃
-									<img src="<c:url value='/images/logout.png'/>" class="top_logout_img">
-								</a>
+							<li id="logout">
+								로그아웃
+								<img src="<c:url value='/images/logout.png'/>" class="top_logout_img">
 							</li>
 						</ul>
 					</div>
