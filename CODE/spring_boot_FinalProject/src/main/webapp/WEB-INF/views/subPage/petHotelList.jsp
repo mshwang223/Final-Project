@@ -11,6 +11,7 @@
  		 <script type="text/javascript" src="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js'/>"></script>
  		 <script defer src="<c:url value='/js/daterangepicker.js'/>"></script>
  		 <link rel="stylesheet" type="text/css" href="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css'/>" />
+ 		 <link rel="stylesheet" type="text/css" href="<c:url value='/css/daterangepicker.css'/>">
  		 <!-- css -->
  		 <link rel="stylesheet" type="text/css" href="<c:url value='/css/petHotelList.css'/>">
  		 <!-- js -->
