@@ -1,4 +1,9 @@
 /* 메인 슬라이드 */
+section.main_slide_section{
+	display: flex;
+  justify-content: center;
+	background-color: #e8dee999;
+}
 
 article.main_slide{
   width: 1580px;
