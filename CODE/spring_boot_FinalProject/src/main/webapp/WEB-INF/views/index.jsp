@@ -11,12 +11,11 @@
 	</head>
 
 <body>
-	<section class="wrap">
-	<!-- top  -->
+<!-- top  -->
 		 <c:import url="/WEB-INF/views/layout/top.jsp"/>
 	
 		<!-- section -->
-		<section>
+		<section class="main_slide_section">
 			<article class="main_slide">
 				<div class="main_slide_box" id="slideBox">
 					<div class="promotion_area">
@@ -62,6 +61,8 @@
 				</div>
 			</article>
 		</section>
+	<section class="wrap">
+	
 		<section class="party_area" id="partyArea">
 			<div class="party_title">#파티용품</div>
 			<div class="party_box">

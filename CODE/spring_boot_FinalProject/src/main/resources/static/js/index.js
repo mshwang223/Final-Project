@@ -87,7 +87,7 @@ $(document).ready(function(){
 	});
 
 	$('#photoBtn').click(function(){
-		$('html,body').animate({scrollTop : 2250},300);
+		$('html,body').animate({scrollTop : 2450},300);
 	});
 
 	$('#itemBtn').click(function(){
