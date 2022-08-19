@@ -45,7 +45,7 @@ public class UserController {
 			session.setAttribute("userName", vo.getUserName());
 			session.setAttribute("userEmail", vo.getUserEmail());
 			session.setAttribute("userImg", vo.getUserImg());
-			session.setAttribute("roll", vo.getUserAuthor());
+			session.setAttribute("author", vo.getUserAuthor());
 			
 			// 반환값
 			return "SUCCESS";

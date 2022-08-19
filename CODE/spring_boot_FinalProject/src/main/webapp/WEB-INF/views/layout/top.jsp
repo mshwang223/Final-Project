@@ -45,6 +45,10 @@
 					<img src="<c:url value='/images/profile.png'/>" class="top_profile_img">
 					<div id="dropdown-user" class="dropdown-user">
 						<ul id="userPage">
+							<c:if test="${sessionScope.author eq '1'}">
+							<li id="admin">관리자</li>
+							<li class="underline"></li>
+							</c:if>
 							<li id="myPage">마이페이지</li>
 							<li class="underline"></li>
 							<li id="logout">

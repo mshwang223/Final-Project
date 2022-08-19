@@ -115,6 +115,7 @@ header .login_box{
 .dropdown {
   position: relative;
   display: inline-block;
+  
 }
 
 /* 드롭다운 레이아웃 */
@@ -127,6 +128,9 @@ header .login_box{
   min-width: 160px;
   z-index: 10;
   background-color: white;
+  
+  border: 1px solid #ee82ee;
+  border-radius: 10px;
 }
 
 #login-form{
@@ -195,10 +199,15 @@ header .login_box{
   height: 45px;
   
   margin-top: 10px;
+  
   border: 0;
   
+  border-bottom: 1px solid #ee82ee;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
   position: relative;
-  left: -15px;
+  left: -16px;
   
   cursor: pointer;
 }
@@ -228,11 +237,15 @@ header .login_box{
   display: none;
   
   position: absolute;
+  
   width: 200px;
-  height: 105px;
   min-width: 160px;
+  
   z-index: 10;
   background-color: white;
+  
+  border: 1px solid #ee82ee;
+  border-radius: 10px;
 }
 
 .dropdown-user > ul {
@@ -255,7 +268,7 @@ header .login_box{
   margin: 0;
   	
   width: 100%;
-  height: 2px;
+  height: 1px;
   
   padding: 0;
   
