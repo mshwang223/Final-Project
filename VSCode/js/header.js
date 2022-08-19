@@ -39,15 +39,15 @@ $(document).ready(function(){
 
 	// 호텔 / 펜션 페이지로 이동
 	$('.ho_pen').click(function(){
-		location.href = '/petHotel';
+		location.href = 'petHotel.html';
 	});
 	// 프로모션으로 이동
 	$('.promotion_pack').click(function(){
-		location.href = '';
+		location.href = 'promotion.html';
 	});
 	// 공지사항 페이지로 이동
 	$('.public_alert').click(function(){
-		location.href = '/notice';
+		location.href = 'notice.html';
 	});
 });
 

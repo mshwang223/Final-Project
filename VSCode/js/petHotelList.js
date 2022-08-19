@@ -134,6 +134,6 @@ $(function(){
 });
 
 $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
-$('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDate.format('MM.DD(dd)'));
+$('.stay_daterange').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDate.format('MM.DD(dd)'));
 
 });
