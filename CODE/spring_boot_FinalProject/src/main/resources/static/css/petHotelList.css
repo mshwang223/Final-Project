@@ -37,7 +37,7 @@ input{
 .list_main .main_box{
   width: 1500px;
   height: 100%;
-  margin: 100px 0 0 0px;
+  margin: 100px 0 0 0;
   /* border: 1px solid #ee02ee; */
   border-radius: 5px;
   background-color: #fff;
@@ -104,6 +104,7 @@ input::placeholder{
   margin: 15px 0 0 0px;
   padding-left: 25px;
 }
+
 .box_person_count > input{
   width: 290px;
   height: 50px;
@@ -156,6 +157,7 @@ input::placeholder{
   position: absolute;
   top: 509px;
   margin-left: 95px;
+  margin-top: 10px;
   padding: 50px 55px;
   border-radius: 10px;
   background-color: #ffffff;
@@ -178,6 +180,7 @@ input::placeholder{
   position: absolute;
   top: 509px;
   margin-left: 965px;
+  margin-top: 10px;
   padding: 50px 55px;
   border-radius: 10px;
   background-color: #ffffff;
