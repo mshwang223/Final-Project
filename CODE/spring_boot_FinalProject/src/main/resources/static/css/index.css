@@ -1,8 +1,9 @@
 /* 메인 슬라이드 */
 section.main_slide_section{
 	display: flex;
-  justify-content: center;
+    justify-content: center;
 	background-color: #e8dee999;
+	margin-top: 35px;
 }
 
 article.main_slide{

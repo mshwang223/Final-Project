@@ -83,11 +83,11 @@ $(document).ready(function(){
 
    // 자세히보기 버튼 이동
    $('#partyBtn').click(function(){
-      $('html,body').animate({scrollTop : 1040},300);
+      $('html,body').animate({scrollTop : 1100},300);
    });
 
    $('#photoBtn').click(function(){
-      $('html,body').animate({scrollTop : 2450},300);
+      $('html,body').animate({scrollTop : 2350},300);
    });
 
    $('#itemBtn').click(function(){
