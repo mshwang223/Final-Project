@@ -15,25 +15,46 @@
 				<div class="underline"></div>
 			</nav>
 			<div class="login_box">
+				<!-- 로그인 안 한 경우 -->
+				<c:if test="${empty sessionScope.sid}">
 				<div class="dropdown">
 					<span class="loginForm">로그인</span>
 					<div id="dropdown-login">
-						<form action="post" id="login-form">
+						<form id="login-form" name="login-form">
 							<p>로그인</p>
 							<div class="loginline"></div>
 							<div id="input-div">
-								<input type="text" class="dropdown_username" placeholder="아이디">
-								<input type="password" class="dropdown_password" placeholder="비밀번호">
+								<input type="text" id="userId" name="userId" class="dropdown_username" placeholder="아이디">
+								<input type="password" id="userPw" name="userPw" class="dropdown_password" placeholder="비밀번호">
 							</div>
 							<div id="forgotInfo">
-								<p>ID 찾기</p>
-								<p>PW 찾기</p>
-							</div> 
+								<a href="#">ID 찾기</a>
+								<a href="#">PW 찾기</a>
+							</div>
+							<input type="submit" class="dropdown_botton" value="로그인">
 						</form>
-						<input type="submit" class="dropdown_botton" value="로그인">
 					</div>
 				</div>
 				<a href="<c:url value='/signup'/>">회원가입</a>
+				</c:if>
+				
+				<!-- 로그인 한 경우 -->
+				<c:if test="${not empty sessionScope.sid}">
+				<div class="dropdown">
+					<img src="<c:url value='/images/profile.png'/>" class="top_profile_img">
+					<div id="dropdown-user" class="dropdown-user">
+						<ul id="userPage">
+							<li><a href="<c:url value='/mypage'/>">마이페이지</a></li>
+							<li class="underline"></li>
+							<li><a href="<c:url value='/logout1'/>">
+									로그아웃
+									<img src="<c:url value='/images/logout.png'/>" class="top_logout_img">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				</c:if>
 			</div>
 		</header>
 </html>

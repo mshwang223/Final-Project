@@ -43,7 +43,7 @@ header nav.main_nav{
   margin: 0 300px 20px 0;
 }
 
-.underline {
+header nav div.underline {
   position: absolute;
   left: 32px;
   bottom: -2px;
@@ -105,6 +105,8 @@ header .login_box{
   height: 50px;
   width: 195px;
   margin-bottom: 20px;
+  
+  user-select: none;
 }
 
 /* dropdown css 시작 */
@@ -119,7 +121,7 @@ header .login_box{
   display: none;
   position: absolute;
   width: 250px;
-  height: 200px;
+  height: 180px;
   min-width: 160px;
   z-index: 10;
   background-color: white;
@@ -174,20 +176,100 @@ header .login_box{
   align-items: flex-end;	
 }
 
-#forgotInfo > p {
-	font-weight: bold;
-	font-size: 12px;
-	color: #ee82ee;
+#forgotInfo > a {
+  font-weight: bold;
+  font-size: 12px;
+  color: #ee82ee;
 }
 
 .dropdown_botton{
   font-weight: 600;
   font-size: 14px;
+  
   color: #fff;
   background-color: #ee82ee;
-  width: 100%;
+  
+  width: 250px;
   height: 45px;
+  
+  margin-top: 10px;
   border: 0;
+  
+  position: relative;
+  left: -15px;
+  
+  cursor: pointer;
+}
+
+/* 탑 프로필 이미지 레이아웃 */
+.top_profile_img {
+  position: relative;
+  left: 150px;
+  	
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;	
+}
+
+/* 드롭다운 */
+.dropdown-user {
+  margin-top:10px;
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 105px;
+  min-width: 160px;
+  z-index: 10;
+  background-color: white;
+}
+
+.dropdown-user > ul {
+  list-style: none;	
+}
+
+.dropdown-user > ul > li {
+  margin: 10px 10px;
+  height: 30px;
+  
+  font-weight: bold;
+  
+  text-align: left;
+  text-indent: 12px;
+  
+  padding-top: 6px;
+}
+
+.dropdown-user > ul > li.underline {
+  margin: 0;
+  	
+  width: 100%;
+  height: 2px;
+  
+  padding: 0;
+  
+  background: #ee82ee;
+}
+
+.dropdown-user > ul > li:last-child {
+  display: flex;
+}
+
+.dropdown-user > ul > li:last-child > a {
+  position: relative;	
+  top: -5px;	
+}
+
+ul > li img.top_logout_img {
+  width: 20px;
+  height: 20px;
+  
+  position: relative;
+  left: 80px;
+  top: 5px;	
+}
+
+.dropdown-user > ul > li:hover {
+  background-color: #f5f5f5;
 }
 
 /* dropdown css 끝 */
@@ -290,6 +372,7 @@ header .login_box > .dropdown > span.loginForm:hover{
   margin: 0 10px 0 10px;
   cursor: pointer;
 }
+
 /* 탑버튼 */
 .top_btn{
   width: 75px;

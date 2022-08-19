@@ -106,6 +106,7 @@ $(document).ready(function(){
 
 });	// document.ready
 
+/*
 const login_btn = document.querySelector(".loginForm");
 const dropdown_login_box = document.querySelector("#dropdown-login");
 
@@ -128,5 +129,5 @@ window.onclick = function (event) {
 }
 
 login_btn.addEventListener("click", handleClickLoginBtn);
-
+*/
 
