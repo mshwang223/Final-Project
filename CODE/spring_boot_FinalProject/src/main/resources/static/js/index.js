@@ -87,7 +87,7 @@ $(document).ready(function(){
 	});
 
 	$('#photoBtn').click(function(){
-		$('html,body').animate({scrollTop : 2370},300);
+		$('html,body').animate({scrollTop : 2250},300);
 	});
 
 	$('#itemBtn').click(function(){
@@ -106,8 +106,12 @@ $(document).ready(function(){
 
 });	// document.ready
 
+<<<<<<< HEAD
 /*
 const login_btn = document.querySelector(".loginForm");
+=======
+/*const login_btn = document.querySelector(".loginForm");
+>>>>>>> 85f49b5a4cc7da7bada3386e8dc7b08470891471
 const dropdown_login_box = document.querySelector("#dropdown-login");
 
 handleClickLoginBtn = () => {
@@ -128,6 +132,11 @@ window.onclick = function (event) {
   }
 }
 
+<<<<<<< HEAD
 login_btn.addEventListener("click", handleClickLoginBtn);
 */
+=======
+login_btn.addEventListener("click", handleClickLoginBtn); */
+
+>>>>>>> 85f49b5a4cc7da7bada3386e8dc7b08470891471
 

@@ -32,7 +32,7 @@
             <!-- 프로필 사진 -->
                     <div class="profile_area">
                         <div class="profile_img">
-                            <img src="../images/profile.png" id="profile_img__preview">
+                            <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview">
                             <form>
                                 <div class="mypage_btn">
                                 <label for="profile_input" id="input_profile_img">프로필 사진 편집</label>
@@ -78,10 +78,10 @@
                     <div class="wented_hotel_wrap">
                     <div class="wented_hotel_container">
                         
-                        <div class="wanted_hotel"><img src="../images/hotel1.jpg" alt=""></div>
-                            <div class="wanted_hotel"><img src="../images/hotel2.jpg" alt=""></div>
-                                <div class="wanted_hotel"><img src="../images/hotel3.jpg" alt=""></div>
-                                    <div class="wanted_hotel"><img src="../images/hotel4.jpg" alt=""></div>
+                        <div class="wanted_hotel"><img src="<c:url value='/images/hotel1.jpg'/>" alt=""></div>
+                            <div class="wanted_hotel"><img src="<c:url value='/images/hotel2.jpg'/>" alt=""></div>
+                                <div class="wanted_hotel"><img src="<c:url value='/images/hotel3.jpg'/>" alt=""></div>
+                                    <div class="wanted_hotel"><img src="<c:url value='/images/hotel4.jpg'/>" alt=""></div>
                             </div>
                             <img class="prev"  src="../images/left-arrow.png" alt="">
                             <img class="next"  src="../images/next.png" alt="">

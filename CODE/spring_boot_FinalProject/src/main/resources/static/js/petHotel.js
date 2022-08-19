@@ -52,7 +52,7 @@ function takeOptionLength(){
   for(let i = 0; i < option.length; i++){
     optionLength = option[i].innerText.length;
     
-    option[i].style.width = (optionLength*25) + "px";
+    option[i].style.width = (optionLength*30) + "px";
   }
 
 }
