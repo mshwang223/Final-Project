@@ -1,7 +1,3 @@
-header nav.main_nav div.underline {
-  left: calc(25% + 32px);
-}
-
 /* 전체 틀 */
 ul{
   list-style: none;

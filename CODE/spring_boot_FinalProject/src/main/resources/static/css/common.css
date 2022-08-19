@@ -56,7 +56,7 @@ header nav div.underline {
 }
 
 nav a:nth-child(1).is-current ~ .underline {
-  left: calc(0 + 32px);
+  left: calc(0% + 32px);
 }
 nav a:nth-child(2).is-current ~ .underline {
   left: calc(25% + 32px);
@@ -69,7 +69,7 @@ nav a:nth-child(4).is-current ~ .underline {
 }
 
 nav a:nth-child(1):hover ~ .underline {
-  left: calc(0 + 32px);
+  left: calc(0% + 32px);
 }
 nav a:nth-child(2):hover ~ .underline {
   left: calc(25% + 32px);
