@@ -3,63 +3,25 @@ Ul{
 }
 
 .reservation_container > article{
-  display: flex;
-  justify-content: center;
-  position: relative;
   margin-top: 50px;
-}
-
-.background_img_box{
-  width: 1480px;
-  height: 600px;
-}
-
-.background_img{
-  width: 740px;
-  height: 600px;
-  border-radius: 40px;
-}
-
-.reservation_area{
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  width: 1500px;
-  height: 600px;
-  background-color: #ddd;
-  margin: 0 auto;
-  opacity: 90%;
-  border-radius: 40px;
-  z-index: 5;
-  padding: 30px;
-}
-
-.reservation_title, .reservation_box{
-  width: 710px;
-  font-size: 50px;
-  font-weight: 600;
-  text-align: center;
 }
 
 .reservation_box{
   display: flex;
-  flex-direction: column;
-}
-
-.search_area, .option_area, .date_area, .count_area{
-  display: flex;
-  height: 110px;
-  position: relative;
-  padding: 10px;
-  margin-left: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 133px;
+  border-radius: 30px;
+  background-color: #ddd;
+  margin-bottom: 80px;
 }
 
 .search_area_title, .option_area_title, .date_area_title, .count_area_title{
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .search_area .search_area_title > img, .option_area .option_area_title > img, .date_area .date_area_title > img, .count_area .count_area_title > img{
@@ -69,25 +31,41 @@ Ul{
 }
 
 .search_box, .count_box, .stay_date, .option_box{
-  width: 380px;
+  width: 300px;
   height: 50px;
   border: none;
   outline: none;
-  padding: 10px;
-  font-size: 16px;
+  padding: 15px;
+  font-size: 18px;
   font-weight: 600;
   border-radius: 10px;
 }
 
+.option_box{
+  background-color: #fff;
+  cursor: text;
+}
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+}
+
+div[contenteditable=true] {
+  text-align: left;
+  line-height: 22px;
+  color: #828282;
+}
+
+/* 검색 버튼 */
 .reservation_btn{
-  width: 130px;
-  height: 65px;
+  width: 155px;
+  height: 70px;
   line-height: 70px;
   background-color: #ee82ee;
   cursor: pointer;
   border: none;
-  border-radius: 15px;
-  margin: 15px 0 0 260px;
+  border-radius: 50px;
+  margin-top: 15px;
 }
 
 .reservation_btn > div{
@@ -98,7 +76,7 @@ Ul{
 }
 
 .reservation_btn > div > span{
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #fff;
 }
@@ -111,12 +89,17 @@ Ul{
 }
 
 /* 지역 검색 팝업 */
-.search_area > .search_pop, .option_area > .option_pop{
+.search_area {
+  position:relative;
+}
+
+.search_area > .search_pop{
   display: none;
-  width: 407px;
+  width: 300px;
   height: 290px;
   position:absolute;
-  right: -105px;
+  top: 50px;
+  left: -5px;
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -129,7 +112,7 @@ Ul{
   width: 250px;
   height: 50px;
   line-height: 50px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   margin: 3px 10px;
@@ -137,10 +120,24 @@ Ul{
 }
 
 /* 옵션 선택 팝업 */
+.option_area{
+  position: relative;
+}
+
 .option_area > .option_pop{
+  display: none;
   height: 80px;
   width: 300px;
-  right: 2px;
+  position:absolute;
+  top: 50px;
+  left: -5px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 35px 0 0 5px;
+  z-index: 10;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  
 }
 
 .option_pop > div{
@@ -148,7 +145,7 @@ Ul{
   width: 100%;
 }
 
-.option_pop span{
+.option_pop span.option_span{
   display: inline-block;
   height: 28px;
   font-size: 13px;
@@ -162,10 +159,228 @@ Ul{
 }
 
 /* 옵션 삭제 */
-/* .option_pop > span > .option_close{
+.option_pop span.option_span > .option_close{
   width: 8px;
   height: 8px;
   filter: invert(20%);
-} */
+  margin-left: 4px;
+}
+/* 인원선택 팝업 */
+.dis_block{
+  display: block!important;
+}
+.person_count_option{
+  display: none;
+  width: 350px;
+  height: 300px;
+  margin-top: 5px;
+  position: absolute;
+  padding: 50px 55px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  z-index: 3;
+}
+/* 팝업 인원박스 */
+.person_count_option .tlt_popup_person{
+  font-size: 22px;
+  font-weight: 600;
+}
+.person_count_option .div_person_count{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.person_count_option .div_person_count .box_txt_person{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box_txt_person .txt_person_main{
+  font-size: 20px;
+  font-weight: 400;
+}
+.box_txt_person .txt_person_sub{
+  margin: 5px 0 0 1px;
+  font-size: 16px;
+  color: rgb(183, 171, 171);
+}
+.div_person_count .box_plus_minus{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.box_plus_minus .btn_popup_count{
+  width: 34px;
+  height: 34px;
+  border: 3px solid #ddd;
+  border-radius: 50px;
+  color: #ddd;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+.box_plus_minus .btn_count_active{
+  border: 2px solid #ee82ee;
+  color: #ee82ee;
+  cursor: pointer;
+}
+.box_plus_minus .popup_count_person{
+  display: inline-block;
+  width: 43px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
 
+
+/* 호텔 , 펜션 (인기, 서울, 부산)  */
+
+.popular_area, .seoul_area{
+  margin-bottom: 90px;
+}
+
+.seoul_title, .popular_title, .busan_title{
+  background-color: #fff;
+  width: 310px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin: 0 0 30px 20px;
+}
+
+.popular_title{
+  width: 160px;
+}
+
+.busan_title{
+  width: 265px;
+}
+
+.seoul_title > span, .popular_title > span, .busan_title > span{
+  margin: 0 0 50px 22px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.stay_items_wrap{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.stay_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.stay_img_box{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 20%;
+  height: 430px;
+  cursor: pointer;
+}
+
+.stay_img_box > img{
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.stay_star{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+}
+
+.stay_info > div img{
+  width: 20px;
+  height: 20px;
+}
+
+.stay_info > .stay_name{
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+  margin: 15px 0;
+}
+
+.stay_name > span{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.stay_name span:nth-child(2){
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.stay_info > div:nth-child(2){
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.stay_info > div:nth-child(3){
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 이전, 다음 화살표 */
+.stay_items_wrap .prev, .stay_items_wrap .next{
+  position:absolute;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.stay_items_wrap .prev{
+  top: 135px;
+  left: -75px;
+}
+
+.stay_items_wrap .next{
+  top: 135px;
+  right: -75px;
+}
+
+/* 찜하기 */
+.stay_img_box .like_btn{
+  position: absolute;
+  top: 10px;
+  right: 9.5px;
+  width: 33px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 1;
+}
+
+.like_hover{
+  position: absolute;
+  right: 36px;
+  top: 13px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 2;
+  transition: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+
+.like_hover:hover{
+  background-color: #ddd;
+  transition: 0.7s;
+  transition-timing-function: ease-in-out;
+}
 

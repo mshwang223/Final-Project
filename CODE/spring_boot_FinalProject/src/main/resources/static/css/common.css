@@ -87,11 +87,14 @@ header nav.main_nav > a{
   cursor: pointer;
   display: block;
   width: 25%;
+  transition: 0.6s;
+  transition-timing-function: ease-in-out;
 }
 
 header nav.main_nav > a:hover{
-  transition: 0.3s;
+  transition: 0.4s;
   color:#ee82ee;
+  transition-timing-function: ease-in-out;
 }
 
 /* 로그인 박스 */
@@ -201,6 +204,8 @@ header .login_box > .dropdown > span.loginForm, header .login_box > a{
   border-radius: 8px;
   background-color: #fff;
   cursor: pointer;
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
 }
 
 header .login_box > a {
@@ -219,6 +224,7 @@ header .login_box > a > span{
 header .login_box > .dropdown > span.loginForm:hover{
   color:#ee82ee;
   transition: 0.5s;
+  transition-timing-function: ease-in-out;
 }
 
 /* header끝 */
@@ -286,11 +292,12 @@ header .login_box > .dropdown > span.loginForm:hover{
 }
 /* 탑버튼 */
 .top_btn{
-  width: 70px;
+  width: 75px;
   height: 70px;
   float: right;
   position: fixed;
   right: 90px;
-  bottom: 100px;
+  bottom: 110px;
   cursor: pointer;
+  filter:  hue-rotate(320deg);
 }
