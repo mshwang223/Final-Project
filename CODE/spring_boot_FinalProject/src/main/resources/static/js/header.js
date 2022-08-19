@@ -105,6 +105,11 @@ $(document).ready(function(){
 	$('#myCart').click(function() {
 		location.href = "/cart";
 	});
+	
+	// 장바구니
+	$('#admin').click(function() {
+		location.href = "/admin";
+	});
 });
 
 	

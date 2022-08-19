@@ -233,10 +233,10 @@ header .login_box{
 
 /* 드롭다운 */
 .dropdown-user {
-  margin-top: 35px;
   display: none;
   
   position: absolute;
+  top: 35px;
   
   width: 200px;
   min-width: 160px;
