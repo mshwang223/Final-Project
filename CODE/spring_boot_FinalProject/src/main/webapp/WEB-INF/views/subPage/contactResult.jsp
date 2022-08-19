@@ -22,7 +22,11 @@
 			
 			<!-- 공지사항 레이아웃 시작 -->
 			<article class="contactResultBox">
-				<p class="pageTitle">문의 조회</p>
+				<div class="pageTitle">
+					<div>
+						<span>#문의 조회</span>
+					</div>
+				</div>
 				<div class="contact-menu">
 					<a href="<c:url value='/contact'/>">문의등록</a>
 					<a href="<c:url value='/contactResult'/>">문의 조회</a>

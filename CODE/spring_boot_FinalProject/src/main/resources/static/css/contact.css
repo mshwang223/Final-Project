@@ -291,19 +291,23 @@ em {
   width: 100%;
   height: 1px;
   
-  margin: 0px auto;  
+  margin: 0px auto;
   text-align: right;
 }
 
 .btn_reset {
   width: 120px;
   height: 40px;
-  margin-top: 30px;
+  
+  margin-bottom: 30px; 
+  
   font-size: 16px;
   font-weight: 600;
+  
   background-color: white;
   border-radius: 3px;
   color: black;
+  
   border: none;
   cursor: pointer;
   
@@ -313,12 +317,16 @@ em {
 .btn_done {
   width: 120px;
   height: 40px;
-  margin-top: 30px;
+  
+  margin-bottom: 30px;
+  
   font-size: 16px;
   font-weight: 600;
+  
   background-color: #ee82ee;
   border-radius: 2px;
   color: #fff;
+  
   border: none;
   cursor: pointer;
 }

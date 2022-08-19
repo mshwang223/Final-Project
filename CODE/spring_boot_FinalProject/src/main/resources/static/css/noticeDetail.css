@@ -10,7 +10,7 @@ th {
 
 /* 테이블 레이아웃 위치 지정 */
 .table-box {
-  height: 540px; 	
+  height: 600px; 	
 }
 
 /* 게시판 테이블 크기 */
@@ -26,7 +26,7 @@ td {
 
 /* 게시판 내용 사이즈 */
 tr:nth-child(2) > td {
-  height: 300px;	
+  height: 350px;	
 }
 
 .contents {
@@ -44,19 +44,21 @@ tr:nth-child(2) > td {
 .btn_list_box {
   width: 65%;
   height: 100px;
-  margin: 20px auto;
+  margin: 30px auto;
   text-align: right;
 }
 
 .btn_list_done {
   width: 180px;
   height: 50px;
-  margin-top: 30px;
+  
   font-size: 16px;
   font-weight: 600;
+  
   background-color: #ee82ee;
   border-radius: 2px;
   color: #fff;
+  
   border: none;
   cursor: pointer;
 }

@@ -22,7 +22,11 @@
 			
 			<!-- 문의하기 레이아웃 시작 -->
 			<article class="contactBox">
-				<p class="pageTitle">문의등록</p>
+				<div class="pageTitle">
+					<div>
+						<span>#문의등록</span>
+					</div>
+				</div>
 				<div class="contact-menu">
 					<a href="<c:url value='/contact'/>">문의등록</a>
 					<a href="<c:url value='/contactResult'/>">문의 조회</a>
@@ -91,7 +95,6 @@
 				    	<button class="btn_reset">취소</button>
 				    	<button class="btn_done">등록</button>
 				    </div>
-				    <br><br>
 				</div>
 			</article>
 			<!-- 문의하기 레이아웃 종료 -->

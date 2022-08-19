@@ -22,7 +22,11 @@
 			
 			<!-- 세부화면 레이아웃 시작 -->
 			<article class="noticeBox">
-				<p class="pageTitle">공지사항</p>
+				<div class="pageTitle">
+					<div>
+						<span>#공지사항</span>
+					</div>
+				</div>
 				<div class="table-box">
 					<table>
 						<thead>
