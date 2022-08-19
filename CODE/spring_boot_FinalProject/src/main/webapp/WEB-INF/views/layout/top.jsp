@@ -41,10 +41,11 @@
 				<!-- 로그인 한 경우 -->
 				<c:if test="${not empty sessionScope.sid}">
 				<div class="dropdown">
+					<img src="<c:url value='/images/cart.png'/>" id="myCart" class="top_cart_img">
 					<img src="<c:url value='/images/profile.png'/>" class="top_profile_img">
 					<div id="dropdown-user" class="dropdown-user">
 						<ul id="userPage">
-							<li><a href="<c:url value='/mypage'/>">마이페이지</a></li>
+							<li id="myPage">마이페이지</li>
 							<li class="underline"></li>
 							<li id="logout">
 								로그아웃

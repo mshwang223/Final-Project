@@ -201,14 +201,23 @@ header .login_box{
   cursor: pointer;
 }
 
-/* 탑 프로필 이미지 레이아웃 */
-.top_profile_img {
-  position: relative;
-  left: 150px;
-  	
+.dropdown img {
   width: 40px;
   height: 40px;
-  border-radius: 20px;	
+  border-radius: 20px;  	
+}
+/* 탑 장바구니 이미지 레이아웃 */
+.top_cart_img {
+  position: absolute;
+  top: -15px;
+  left: 85px;
+}
+
+/* 탑 프로필 이미지 레이아웃 */
+.top_profile_img {
+  position: absolute;
+  top: -15px;
+  left: 150px;
 }
 
 /* 드롭다운 */

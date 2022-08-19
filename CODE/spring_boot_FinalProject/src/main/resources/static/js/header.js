@@ -91,9 +91,19 @@ $(document).ready(function(){
  		return true;
 	}
 	
+	// 마이페이지
+	$('#myPage').click(function() {
+		location.href = "/mypage";
+	});
+		
 	// 로그아웃
 	$('#logout').click(function() {
 		location.href = "/logout1";
+	});
+	
+	// 장바구니
+	$('#myCart').click(function() {
+		location.href = "/cart";
 	});
 });
 
