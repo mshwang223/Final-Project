@@ -1,7 +1,7 @@
 /* 문의하기 */
 
 /* 헤더 언더라인 이동 */
-nav div.underline {
+header nav.main_nav div.underline {
   left: calc(75% + 32px);
 }
 

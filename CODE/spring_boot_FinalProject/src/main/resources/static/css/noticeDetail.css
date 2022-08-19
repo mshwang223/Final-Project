@@ -1,5 +1,10 @@
 /* 공지사항 세부화면 */
 
+/* 헤더 언더라인 이동 */
+header nav.main_nav div.underline {
+  left: calc(50% + 32px);
+}
+
 th {
   text-align: left;	
 }

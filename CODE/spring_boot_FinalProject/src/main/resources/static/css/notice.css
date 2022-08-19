@@ -1,7 +1,7 @@
 /* 공지사항 */
 
 /* 헤더 언더라인 이동 */
-nav div.underline {
+header nav.main_nav div.underline {
   left: calc(50% + 32px);
 }
 

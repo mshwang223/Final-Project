@@ -9,7 +9,6 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
-		<link rel="icon" href="images/logo_ico.png">
 		<link rel="stylesheet" type="text/css" href="css/board.css">
 		<link rel="stylesheet" type="text/css" href="css/noticeDetail.css">
 		<script src="js/noticeDetail.js"></script>
