@@ -3,11 +3,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-	<!-- header  -->
-	<c:import url="/WEB-INF/views/layout/header.jsp"/>
-	<link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css'/>">
-	<script src="<c:url value='/js/index.js'/>"></script>
-</head>
+	<head>
+		<!-- header  -->
+		<c:import url="/WEB-INF/views/layout/header.jsp"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css'/>">
+		<script src="<c:url value='/js/index.js'/>"></script>
+	</head>
 
 <body>
 	<section class="wrap">
