@@ -87,7 +87,7 @@ $(document).ready(function(){
 	});
 
 	$('#photoBtn').click(function(){
-		$('html,body').animate({scrollTop : 2370},300);
+		$('html,body').animate({scrollTop : 2250},300);
 	});
 
 	$('#itemBtn').click(function(){
@@ -106,7 +106,7 @@ $(document).ready(function(){
 
 });	// document.ready
 
-const login_btn = document.querySelector(".loginForm");
+/*const login_btn = document.querySelector(".loginForm");
 const dropdown_login_box = document.querySelector("#dropdown-login");
 
 handleClickLoginBtn = () => {
@@ -127,6 +127,6 @@ window.onclick = function (event) {
   }
 }
 
-login_btn.addEventListener("click", handleClickLoginBtn);
+login_btn.addEventListener("click", handleClickLoginBtn); */
 
 

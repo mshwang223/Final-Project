@@ -103,7 +103,7 @@ div[contenteditable=true] {
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
-  margin: 35px 0 0 5px;
+  margin: 68px 0 0 5px;
   z-index: 10;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -134,7 +134,7 @@ div[contenteditable=true] {
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
-  margin: 35px 0 0 5px;
+  margin: 68px 0 0 5px;
   z-index: 10;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   
@@ -146,9 +146,11 @@ div[contenteditable=true] {
 }
 
 .option_pop span.option_span{
-  display: inline-block;
-  height: 28px;
-  font-size: 13px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30px;
+  font-size: 15px;
   font-weight: 600;
   text-align: center;
   background-color: #fffd95;
@@ -173,7 +175,7 @@ div[contenteditable=true] {
   display: none;
   width: 350px;
   height: 300px;
-  margin-top: 5px;
+  margin-top: 34px;
   position: absolute;
   padding: 50px 55px;
   border-radius: 10px;

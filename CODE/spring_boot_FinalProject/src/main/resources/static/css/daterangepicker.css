@@ -16,6 +16,7 @@
   font-family: arial;
   font-size: 15px;
   line-height: 1em;
+  margin-top: 3px;
 }
 
 .daterangepicker:before, .daterangepicker:after {
