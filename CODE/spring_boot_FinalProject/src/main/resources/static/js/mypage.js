@@ -1,3 +1,4 @@
+// 프로필 사진 변경
 function readURL(input) {
     if (input.files && input.files[0]) {
         let reader = new FileReader();

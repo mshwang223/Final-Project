@@ -116,7 +116,7 @@
                 <div class="cart_box_final_pay">
                     <div class="final_pay">
                         <div class="final_pay_txt">최종 결제 금액</div>
-                        <button class="final_pay_btn">결제하기</button>
+                        <button class="final_pay_btn" id="payment" onclick="payment()">결제하기</button>
                     </div>
                 </div>
             </section>

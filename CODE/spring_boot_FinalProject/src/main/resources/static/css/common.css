@@ -222,6 +222,7 @@ header .login_box{
   position: absolute;
   top: -15px;
   left: 85px;
+  cursor: pointer;
 }
 
 /* 탑 프로필 이미지 레이아웃 */
@@ -229,6 +230,7 @@ header .login_box{
   position: absolute;
   top: -15px;
   left: 150px;
+  cursor: pointer;
 }
 
 /* 드롭다운 */
