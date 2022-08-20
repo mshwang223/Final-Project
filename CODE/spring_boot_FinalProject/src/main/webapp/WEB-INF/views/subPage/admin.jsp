@@ -168,9 +168,8 @@
 					</div>
 			</article>
 			<!-- 관리자 레이아웃 종료 -->
-			
+		</section>
 			<!-- footer -->
 			<c:import url="/WEB-INF/views/layout/footer.jsp"/>
-		</section>
 	</body>
 </html>
