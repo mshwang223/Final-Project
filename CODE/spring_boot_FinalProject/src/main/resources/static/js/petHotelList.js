@@ -29,8 +29,8 @@ $(document).ready(function(){
   // 성인 + 버튼 클릭
   $('#personPlusBtn').click(function() {
     personCount++;
-    // 2명부터 -버튼 활성화
-    if(personCount > 1){
+    // 1명부터 -버튼 활성화
+    if(personCount > 0){
       $('#personMinusBtn').addClass('btn_count_active');
       $('#personMinusBtn').attr('href', '#');
     }
@@ -42,12 +42,11 @@ $(document).ready(function(){
 	$('#personMinusBtn').click(function(){
 		personCount--;
 		// 인원이 1 이 되면 - 버튼 비활성
-		if(personCount == 1){
+		if(personCount == 0){
 			$('#personMinusBtn').removeClass('btn_count_active');
 			$('#personMinusBtn').removeAttr('href');
-		}else if(personCount == 0){
-			alert('최소 인원은 1명 이상이어야 합니다.');
-			personCount = 1;
+		}else if(personCount < 0){
+			personCount = 0;
 		}
 		$('#personCount').text(personCount);
 		$('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);

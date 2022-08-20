@@ -89,7 +89,7 @@
 	                  </div>
 	                  <div class="box_plus_minus">
 	                    <span id="personMinusBtn" class="btn_popup_count">-</span>
-	                    <span id="personCount" class="popup_count_person">1</span>
+	                    <span id="personCount" class="popup_count_person">0</span>
 	                    <span id="personPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</span>
 	                  </div>
 	                </div>
