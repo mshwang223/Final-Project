@@ -44,8 +44,6 @@ optionBox.addEventListener('click', () => {
 // option 선택
 let option = document.querySelectorAll(".option_pop span");
 let optionLength = 0;
-const createDiv = document.createElement("div");
-let options = [{id:0, value: "픽업"}, {id:0, value: "촬영"}, {id:0, value: "패키지"}, {id:0, value: "풀장"}];
 
 function takeOptionLength(){
   
@@ -58,20 +56,6 @@ function takeOptionLength(){
 }
 
 takeOptionLength();
-
-function choiceOption(){
-  for(let i = 0; i < option.length; i++){
-    option[i].addEventListener('click',function(){
-
-      createDiv.innerHTML = `<span class="option_span">${options[i].value}</span>`;
-    
-    });
-  }
-  document.querySelector(".option_box").append(createDiv);
-}
-
-choiceOption();
-
 
 // 찜하기 눌렀을 때
 let likeBtn = document.getElementsByClassName("like_btn");
@@ -196,4 +180,21 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
 		$('html, body').animate({ scrollTop: 0 }, 300);
 	});
 	
+		//option 추가
+	$('.option_span').click(function(){
+		if($('.option_box').find('#'+$(this).attr('id')).length == 0){
+			$('.option_box').append($(this).clone());
+		}		
+	});
+
+	//option 삭제
+	$('.option_box  .option_close').click(function(){
+		$(this).remove();
+	});
+	
 }); //document.ready 끝
+
+
+
+
+
