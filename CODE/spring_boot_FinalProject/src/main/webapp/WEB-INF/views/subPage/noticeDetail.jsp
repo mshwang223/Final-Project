@@ -61,9 +61,9 @@
 				</div>
 			</article>
 			<!-- 세부화면 레이아웃 종료 -->
-
-			<!-- footer -->
-			<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 		</section>
+		
+		<!-- footer -->
+		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
 </html>
