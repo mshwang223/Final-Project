@@ -25,11 +25,11 @@
 				</div>
 				<div class="promotion_txt_img">
 					<div class="promotion_img">
-						<img class="main_img" src="../images/dogsuffing.jpg">
+						<img class="main_img" src="<c:url value='/images/dogsuffing.jpg'/>">
 					</div>
 					<div class="promotion_txt">
 						<div class="main_txt">
-							<img src="../images/search.png">무더운 여름, 반려가족과 함께 수상레저를!
+							<img src="<c:url value='/images/search.png'/>">무더운 여름, 반려가족과 함께 수상레저를!
 						</div>
 						<div class="sub_txt">
 							반려가족을 위한 특별한 선물!<br>
@@ -46,13 +46,13 @@
 				<div class="whole_subpro_box">
 					<div class="sub_promotion_txt_img">
 						<div class="sub_promotion_img">
-							<img class="sub_img" src="../images/photo1.jpg"> <img
-								class="photo_plus" src="../images/plus.png"> <img
-								class="sub_img" src="../images/photo3.jpg">
+							<img class="sub_img" src="<c:url value='/images/photo1.jpg'/>"> 
+							<img class="photo_plus" src="<c:url value='/images/plus.png'/>">
+							<img class="sub_img" src="<c:url value='/images/photo3.jpg'/>">
 						</div>
 						<div class="promotion_txt">
 							<div class="sub_main_txt">
-								<img src="../images/search.png">반려가족과 한컷, 추억남기기~!
+								<img src="<c:url value='/images/search.png'/>">반려가족과 한컷, 추억남기기~!
 							</div>
 							<div class="sub_txt">
 								<div class="sub_txt">
@@ -65,7 +65,42 @@
 							</div>
 						</div>
 					</div>
-					<div id="showDetail1" class="sub_info_detail"></div>
+					<div id="showDetail1" class="sub_info_detail">
+						<div class="info_detail_period">
+							<span><img src="<c:url value='/images/search.png'/>">적용기간 :</span>
+							<span class="sub_period">2022.08.08 ~ 2022.12.30</span>
+						</div>
+						<div class="info_detail_profit">
+							<span><img src="<c:url value='/images/search.png'/>">적용혜택 :</span>
+							<div class="whole_profit">
+								<div class="first_profit">
+									▶ 강아지 어메니티 제공<br><br>
+									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
+									▶ 객실 내 강아지 하우스 제공
+								</div>
+								<div class="second_profit">
+									▶ 성인 조식 1인 포함(추가시 성인 1인 35,000원)<br><br>
+									▶ 무료 픽업 서비스(차량이 없는 경우)<br><br>
+									▶ 객실 포함 요금 15% 할인 적용
+								</div>
+							</div>
+						</div>
+						<div class="use_rule">
+							<span><img src="<c:url value='/images/search.png'/>">이용수칙 :</span>
+							<div class="whole_rule">
+								<div class="first_rule">
+									▶ 강아지 어메니티 제공<br><br>
+									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
+									▶ 객실 내 강아지 하우스 제공
+								</div>
+								<div class="second_rule">
+									▶ 강아지 어메니티 제공<br><br>
+									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
+									▶ 객실 내 강아지 하우스 제공
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="sub_pro_txt">
 					<div class="sub_pro_tlt"># 견생네컷 패키지</div>
@@ -73,13 +108,13 @@
 				<div class="whole_subpro_box">
 					<div class="sub_promotion_txt_img">
 						<div class="sub_promotion_img">
-							<img class="sub_img" src="../images/T_shirts.png"> <img
-								class="photo_plus" src="../images/plus.png"> <img
-								class="sub_img" src="../images/dog4cut.jpg">
+							<img class="sub_img" src="<c:url value='/images/T_shirts.png'/>">
+							<img class="photo_plus" src="<c:url value='/images/plus.png'/>">
+							<img class="sub_img" src="<c:url value='/images/dog4cut.jpg'/>">
 						</div>
 						<div class="promotion_txt">
 							<div class="sub_main_txt">
-								<img src="../images/search.png">반려가족을 T-shirt 모델로!
+								<img src="<c:url value='/images/search.png'/>">반려가족을 T-shirt 모델로!
 							</div>
 							<div class="sub_txt">
 								<div class="sub_txt">
@@ -92,7 +127,42 @@
 							</div>
 						</div>
 					</div>
-					<div id="showDetail2" class="sub_info_detail"></div>
+					<div id="showDetail2" class="sub_info_detail">
+						<div class="info_detail_period">
+							<span><img src="<c:url value='/images/search.png'/>">적용기간 :</span>
+							<span class="sub_period">2022.08.08 ~ 2022.12.30</span>
+						</div>
+						<div class="info_detail_profit">
+							<span><img src="<c:url value='/images/search.png'/>">적용혜택 :</span>
+							<div class="whole_profit">
+								<div class="first_profit">
+									▶ 강아지 어메니티 제공<br><br>
+									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
+									▶ 객실 내 강아지 하우스 제공
+								</div>
+								<div class="second_profit">
+									▶ 성인 조식 1인 포함(추가시 성인 1인 35,000원)<br><br>
+									▶ 무료 픽업 서비스(차량이 없는 경우)<br><br>
+									▶ 객실 포함 요금 15% 할인 적용
+								</div>
+							</div>
+						</div>
+						<div class="use_rule">
+							<span><img src="<c:url value='/images/search.png'/>">이용수칙 :</span>
+							<div class="whole_rule">
+								<div class="first_rule">
+									▶ 강아지 어메니티 제공<br><br>
+									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
+									▶ 객실 내 강아지 하우스 제공
+								</div>
+								<div class="second_rule">
+									▶ 강아지 어메니티 제공<br><br>
+									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
+									▶ 객실 내 강아지 하우스 제공
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>

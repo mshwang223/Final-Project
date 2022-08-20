@@ -148,7 +148,92 @@ li{
 .sub_info_detail{
   display: none;
   height: 500px;
-  margin: 15px 0 80px 0;
+  margin: 50px 0 80px 0;
   border-radius: 10px;
-
+}
+.sub_info_detail .info_detail_period{
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1.5px solid #ddd;
+}
+.sub_info_detail .info_detail_period > span{
+	margin-bottom: 30px;	
+}
+.sub_info_detail .info_detail_period > span:first-child{
+	display: flex;
+	align-items: center;
+	font-size: 25px;
+	font-weight: 600;
+}
+.sub_info_detail .info_detail_period > span > img{
+	width: 25px;
+	height: 25px;
+	margin-right: 8px;
+}
+.sub_period{
+	font-size: 25px;
+	font-weight: 400;
+	margin-left: 80px;
+}
+/* 이용혜택 */
+.info_detail_profit{
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 30px;
+	border-bottom: solid 1.5px #ddd;
+}
+.info_detail_profit >*{
+	margin-bottom: 30px;
+}
+.info_detail_profit > span{
+	font-size: 25px;
+	font-weight: 600;
+}
+.info_detail_profit > span > img{
+	width: 25px;
+	height: 25px;
+	margin-right: 8px;
+}
+.info_detail_profit .whole_profit{
+	display: flex;
+	justify-content: flex-start;
+}
+.whole_profit > div{
+	font-size: 25px;
+	font-weight: 400;
+}
+.whole_profit .first_profit{
+	margin-left: 80px;
+}
+.whole_profit .second_profit{
+	margin-left: 50px;
+}
+/* 이용수칙 */
+.use_rule{
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 30px;
+}
+.use_rule > span{
+	font-size: 25px;
+	font-weight: 600;
+}
+.use_rule > span > img{
+	width: 25px;
+	height:25px;
+	margin-right: 8px;
+}
+.use_rule .whole_rule{
+	display: flex;
+	justify_content: flex-start;
+}
+.whole_rule > div{
+	font-size: 25px;
+	font-weight: 400;
+}
+.whole_rule .first_rule{
+	margin-left: 80px;
+}
+.whole_rule .second_rule{
+	margin-left: 50px;
 }
