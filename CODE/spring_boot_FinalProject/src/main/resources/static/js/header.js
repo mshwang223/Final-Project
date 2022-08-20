@@ -13,11 +13,13 @@ $(document).ready(function(){
 	$(window).scroll(function() {
 		if($(this).scrollTop() > 50) {
 			$("header").addClass('header-move');
-			$(".dropdown").css('right', '300px');
+			$(".dropdown").addClass('dropdown-move');
+			$(".btnSignup").addClass('signup-move');
 			$(".logo_box").css('visibility', 'hidden');
 		} else {
 			$("header").removeClass('header-move');
-			$(".dropdown").css('right', '300px');
+			$(".dropdown").removeClass('dropdown-move');
+			$(".btnSignup").removeClass('signup-move');
 			$(".logo_box").css('visibility', 'visible');
 		}
 	});

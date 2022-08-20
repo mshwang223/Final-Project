@@ -35,12 +35,12 @@
 						</form>
 					</div>
 				</div>
-				<a href="<c:url value='/signup'/>">회원가입</a>
+				<a class="btnSignup" href="<c:url value='/signup'/>">회원가입</a>
 				</c:if>
 				
 				<!-- 로그인 한 경우 -->
 				<c:if test="${not empty sessionScope.sid}">
-				<div class="dropdown">
+				<div class="dropdown user">
 					<img src="<c:url value='/images/cart.png'/>" id="myCart" class="top_cart_img">
 					<img src="<c:url value='/images/profile.png'/>" class="top_profile_img">
 					<div id="dropdown-user" class="dropdown-user">

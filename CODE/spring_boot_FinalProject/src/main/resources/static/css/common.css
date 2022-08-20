@@ -22,10 +22,13 @@ header{
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
+  
   height: 180px;
+  
   padding-top: 40px;
   margin: 20px auto;
   width: 1580px;
+ 
 }
 
 header .logo_box{
@@ -103,9 +106,10 @@ header nav.main_nav > a:hover{
 header .login_box{
   display: flex;
   justify-content: space-between;
+  
   align-items: center;
   height: 50px;
-  width: 195px;
+  
   margin-bottom: 20px;
   
   user-select: none;
@@ -113,17 +117,26 @@ header .login_box{
 
 /* dropdown css 시작 */
 .dropdown {
+  width: 100px;
+  display: inline-block;
+}
+
+/* 상단 마이페이지 레이아웃 */
+.login_box > .user {
   position: fixed;
   right: 300px;
   
-  display: inline-block;
+  z-index: 50;
 }
 
 /* 드롭다운 레이아웃 */
 #dropdown-login {
-  margin-top:10px;
   display: none;
+  
   position: absolute;
+  
+  margin-top: 10px;
+  
   width: 250px;
   height: 180px;
   min-width: 160px;
@@ -243,8 +256,7 @@ header .login_box{
   
   width: 200px;
   min-width: 160px;
-  
-  z-index: 10;
+
   background-color: white;
   
   border: 1px solid #ee82ee;
@@ -298,25 +310,45 @@ ul > li img.top_logout_img {
 
 header .login_box > .dropdown > span.loginForm, header .login_box > a{
   display: block;
+  
   width: 75px;
   height: 45px;
+  
   line-height: 45px;
   text-align: center;
+  
   font-size: 16px;
   font-weight: 600;
+  
   color: #555;
+  
   border-radius: 8px;
   background-color: #fff;
+  
   cursor: pointer;
+  /*
   transition: 0.5s;
   transition-timing-function: ease-in-out;
+  */
 }
+
+/*
+.dropdown > span.loginForm {
+  position: relative;
+  top: 0px;	
+}
+*/
 
 header .login_box > a {
   width: 95px;
   color: white;
   background-color: #ee82ee;
   border-radius: 8px;
+
+  /*
+  position: absolute;
+  right: 100px;
+  */
 }
 
 header .login_box > a > span{
@@ -421,4 +453,14 @@ header .login_box > .dropdown > span.loginForm:hover{
   border-bottom: 2px solid #ddd;
   
   z-index: 50;
+}
+
+.dropdown-move {
+  position:fixed;
+  right: 300px;	
+}
+
+.signup-move {
+  position:fixed;
+  right: 205px;	
 }
