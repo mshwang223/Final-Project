@@ -16,10 +16,10 @@
 	</head>
 	
 	<body>
+		<!-- header  -->
+		<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			
 		<section class="wrap">
-			<!-- header  -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
-
 			<!-- 관리자 레이아웃 시작 -->
 			<article>
 				<!-- sidebar -->
