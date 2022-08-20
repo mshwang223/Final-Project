@@ -15,10 +15,10 @@
 	</head>
 	
 	<body>
-		<section class="wrap">
-			<!-- header  -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+		<!-- header  -->
+		<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			
+		<section class="wrap">
 			<!-- 세부화면 레이아웃 시작 -->
 			<article class="noticeBox">
 				<div class="pageTitle">

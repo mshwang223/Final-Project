@@ -8,7 +8,20 @@ $(document).ready(function(){
 	
 	// 로그인 드롭다운 확인
 	var chk = 0;
-	
+
+	// 메뉴 따라오기
+	$(window).scroll(function() {
+		if($(this).scrollTop() > 50) {
+			$("header").addClass('header-move');
+			$(".dropdown").css('right', '300px');
+			$(".logo_box").css('visibility', 'hidden');
+		} else {
+			$("header").removeClass('header-move');
+			$(".dropdown").css('right', '300px');
+			$(".logo_box").css('visibility', 'visible');
+		}
+	});
+
 	$(".loginForm").on('click', function() {
 		$("#dropdown-login").slideToggle(function() {
 			if($(this).is(':hidden')){	// 닫힐 때

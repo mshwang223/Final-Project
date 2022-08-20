@@ -5,6 +5,11 @@ header nav.main_nav div.underline {
   left: calc(75% + 32px);
 }
 
+/* 전체 높이 */
+.contactBox {
+  height: 950px;
+}
+
 /* 메뉴 */
 .contact-menu {
   display: flex;
