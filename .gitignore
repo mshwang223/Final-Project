@@ -1,1 +1,4 @@
 /.metadata/
+
+## 파일 무시
+application.properties
