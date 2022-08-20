@@ -237,3 +237,15 @@ li{
 .whole_rule .second_rule{
 	margin-left: 50px;
 }
+.search_pro_room{
+	width: 180px;
+    height: 60px;
+    background-color: #ee82ee;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 70px 10px 0 1315px;
+    cursor: pointer;
+}

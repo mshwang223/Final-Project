@@ -100,6 +100,7 @@
 								</div>
 							</div>
 						</div>
+						<button type="submit" class="search_pro_room">객실요금조회</button>
 					</div>
 				</div>
 				<div class="sub_pro_txt">
@@ -162,6 +163,7 @@
 								</div>
 							</div>
 						</div>
+						<button type="submit" class="search_pro_room">객실요금조회</button>
 					</div>
 				</div>
 			</div>
