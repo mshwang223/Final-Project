@@ -157,7 +157,7 @@ input::placeholder{
   position: absolute;
   top: 509px;
   margin-left: 95px;
-  margin-top: 10px;
+  margin-top: 40px;
   padding: 50px 55px;
   border-radius: 10px;
   background-color: #ffffff;
@@ -180,7 +180,7 @@ input::placeholder{
   position: absolute;
   top: 509px;
   margin-left: 965px;
-  margin-top: 10px;
+  margin-top: 40px;
   padding: 50px 55px;
   border-radius: 10px;
   background-color: #ffffff;
