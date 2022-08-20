@@ -175,9 +175,13 @@ $(document).ready(function(){
     // 이용약관 동의 여부 검사
     if($('#allCheck').is(':checked')){
       checkedBox = true;
-    }else if($('.agree_subcheck1, .agree_subcheck2').is(':checked') && !($('.agree_subcheck3, .agree_subcheck4').is(':checked'))){
+    }else if($('.agree_subcheck1').is(':checked') && $('.agree_subcheck2').is(':checked')){
       checkedBox = true;
-    }else if(!($('.agree_subcheck3, .agree_subcheck4').is(':checked'))){
+    }else if(!($('.agree_subcheck1').is(':checked') && $('.agree_subcheck2').is(':checked'))){
+      checkBox = false;
+    }else if(!($('.agree_subcheck2').is(':checked') && $('.agree_subcheck1').is(':checked'))){
+      checkBox = false;
+    }else if(($('.agree_subcheck3, .agree_subcheck4').is(':checked'))){
       checkedBox = false;
     }else{
       checkedBox = false;
