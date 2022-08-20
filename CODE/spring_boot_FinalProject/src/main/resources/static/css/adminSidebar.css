@@ -9,60 +9,94 @@ article {
 
 /* 사이드 메뉴 */
 .sideMenu {
+  margin-left: 25px;
   
-  width: 18%;
+  width: 17%;
   height: 660px;
   
   position: sticky;
-  top: 280px;
+  top: 245px;
   
-   background-color: #f5f5f5;
+  background-color: #f5f5f5;
 
 }
 
-.sideMenu > div:last-child {
-  position: relative;
-  bottom: 45px;
-}
-
-.sideTitle {
-  margin-left: 40px;
-  
-  font-size: 18px;
-  font-weight: bold; 	
-}
-
-.sideLists {
+.sideMenu > div {
   margin: 40px auto;
   
-  text-indent: 65px;
+  text-indent: 30px;
   line-height: 60px;
-  
-  list-style: none;
   
   position: relative;
   top: -30px;	
 }
 
-.sideLists li {
+.sideTitle {
+  font-size: 18px;
+  font-weight: bold; 	
+}
+
+.sideMenu > div > a {
+  display: block;
   height: 60px;
   
   font-weight: bold;
+  
+  text-indent: 60px;
 }
 
-.sideLists li:hover {
+div.sideTitleLine {
+  position: absolute;
+  bottom: 480px;
+  left: 225px;
+  
+  width: 3px;
+  height: 60px;
+  
+  background: #ee82ee;
+}
+
+.sideMenu > div > a:hover {
   color: #ee82ee;
   background: white;
-  
-  cursor: pointer;
 }
 
+/* 사용자 관리 메뉴 선택시 */
+a.aUserLists:nth-child(1):hover ~ div.sideTitleLine {
+  top:0px;
+}
+a.aUserLists:nth-child(2):hover ~ div.sideTitleLine {
+  top:60px; 	
+}
+a.aUserLists:nth-child(3):hover ~ div.sideTitleLine {
+  top:calc(60px * 2); 	
+}
+a.aUserLists:nth-child(4):hover ~ div.sideTitleLine {
+  top:calc(60px * 3); 	
+}
+a.aUserLists:nth-child(5):hover ~ div.sideTitleLine {
+  top:calc(60px * 4);	
+}
+a.aUserLists:nth-child(6):hover ~ div.sideTitleLine {
+  top:calc(60px * 5);	
+}
+
+/* 운영 메뉴 선택 시*/
+a.aOperLists:nth-child(8):hover ~ div.sideTitleLine {
+  top:calc(60px * 7);	
+}
+a.aOperLists:nth-child(9):hover ~ div.sideTitleLine {
+  top:calc(60px * 8);	
+}
+a.aOperLists:nth-child(10):hover ~ div.sideTitleLine {
+  top:calc(60px * 9);	
+}
 
 /* 중앙 레이아웃 */
 .main-layout {
   margin: 0px 120px;	
   
-  width: 82%; 
+  width: 83%; 
   height: 2000px;
   
   text-align: center;	

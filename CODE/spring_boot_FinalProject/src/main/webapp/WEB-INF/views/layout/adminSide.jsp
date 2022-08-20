@@ -13,23 +13,19 @@
 		<nav class="sideMenu">
 			<div>
 				<div class="sideTitle">사용자 관리</div>
-				<ul class="sideLists">
-					<li class="underline"></li>
-					<li class="adminNotice">공지사항</li>
-					<li>사용자관리</li>
-					<li>문의내역</li>
-					<li>결재내역</li>
-					<li>탈퇴회원</li>
-				</ul>
-			</div>
-		
-			<div>
+
+				<a class="aUserLists adminNotice" href="#" class="adminNotice">공지사항</a>
+				<a class="aUserLists" href="#">사용자관리</a>
+				<a class="aUserLists" href="#">문의내역</a>
+				<a class="aUserLists" href="#">결재내역</a>
+				<a class="aUserLists" href="#">탈퇴회원</a>
+						
 				<div class="sideTitle">운영</div>
-				<ul class="sideLists">
-					<li>숙박업체 등록</li>
-					<li>서비스 관리</li>
-					<li>패키지 관리</li>
-				</ul>
+
+				<a class="aOperLists" href="#">숙박업체 등록</a>
+				<a class="aOperLists" href="#">관리</a>
+				<a class="aOperLists" href="#">패키지 관리</a>
+				<div class="sideTitleLine"></div>
 			</div>
 		</nav>
 	</body>
