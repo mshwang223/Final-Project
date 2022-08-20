@@ -35,24 +35,26 @@ Ul{
   height: 50px;
   border: none;
   outline: none;
-  padding: 15px;
+  padding: 10px;
   font-size: 18px;
   font-weight: 600;
   border-radius: 10px;
 }
 
 .option_box{
+  display: flex;
+  overflow: hidden;
   background-color: #fff;
   cursor: text;
 }
 
 [contenteditable=true]:empty:before{
   content: attr(placeholder);
+  line-height: 30px;
 }
 
 div[contenteditable=true] {
   text-align: left;
-  line-height: 22px;
   color: #828282;
 }
 
@@ -126,18 +128,17 @@ div[contenteditable=true] {
 
 .option_area > .option_pop{
   display: none;
-  height: 80px;
+  height: 70px;
   width: 300px;
   position:absolute;
   top: 50px;
   left: -5px;
   background-color: #fff;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
   margin: 68px 0 0 5px;
   z-index: 10;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  
 }
 
 .option_pop > div{
@@ -145,7 +146,7 @@ div[contenteditable=true] {
   width: 100%;
 }
 
-.option_pop span.option_span{
+span.option_span{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -161,7 +162,7 @@ div[contenteditable=true] {
 }
 
 /* 옵션 삭제 */
-.option_pop span.option_span > .option_close{
+span.option_span > .option_close{
   width: 8px;
   height: 8px;
   filter: invert(20%);
