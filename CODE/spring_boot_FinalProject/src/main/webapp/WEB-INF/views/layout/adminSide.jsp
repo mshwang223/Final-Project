@@ -14,7 +14,8 @@
 			<div>
 				<div class="sideTitle">사용자 관리</div>
 				<ul class="sideLists">
-					<li>공지사항</li>
+					<li class="underline"></li>
+					<li class="adminNotice">공지사항</li>
 					<li>사용자관리</li>
 					<li>문의내역</li>
 					<li>결재내역</li>

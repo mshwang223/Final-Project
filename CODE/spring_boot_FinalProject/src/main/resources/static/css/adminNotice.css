@@ -1,5 +1,12 @@
 /* 공지사항 */
 
+/* 공지사항에 메뉴 위치 */
+.sideLists li.adminNotice {
+  color: #ee82ee;
+  
+  border-right: 3px solid #ee82ee;
+}
+
 /* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
 td:not(.title) {
   text-align: center;
