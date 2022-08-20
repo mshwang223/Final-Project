@@ -96,6 +96,9 @@ li{
   margin-top: 100px;
 }
 /* sub 프로모션 박스 */
+.whole_subpro_box{
+  width: 1505px;
+}
 .sub_promotion_img{
   text-align: left;
 }
@@ -127,8 +130,7 @@ li{
 .sub_promotion_txt_img{
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 1.5px #ddd;
-  height: 700px;
+  height: 100%;
 }
 .sub_view_detail{
   width: 180px;
@@ -141,4 +143,12 @@ li{
   font-weight: 600;
   margin: 70px 10px 0 326px;
   cursor: pointer;
+}
+/* 프로모션 설명 박스 */
+.sub_info_detail{
+  display: none;
+  height: 500px;
+  margin: 15px 0 80px 0;
+  border-radius: 10px;
+
 }

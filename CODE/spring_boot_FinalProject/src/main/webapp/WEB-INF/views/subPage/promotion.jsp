@@ -1,97 +1,105 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- header  -->
-		<c:import url="/WEB-INF/views/layout/header.jsp"/>
-		<!-- css -->
- 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/promotion.css'/>">
- 		<!-- js -->
- 		<script src="<c:url value='/js/promotion.js'/>"></script>
-	</head>
-	<body>
-		<section class="wrap">
+<head>
+<!-- header  -->
+<c:import url="/WEB-INF/views/layout/header.jsp" />
+<!-- css -->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/promotion.css'/>">
+<!-- js -->
+<script src="<c:url value='/js/promotion.js'/>"></script>
+</head>
+<body>
+	<section class="wrap">
 		<!-- top  -->
-		<c:import url="/WEB-INF/views/layout/top.jsp"/>
-		
+		<c:import url="/WEB-INF/views/layout/top.jsp" />
+
 		<!-- middle -->
-	    <section class="promotion_menu">
-	    <section class="promotion_menu">
-	      <div class="whole_pro_box">
-	        <div class="main_pro_txt">
-	          <div class="main_pro_tlt"># 이달의 프로모션</div>
-	        </div>
-					<div class="promotion_txt_img">
-						<div class="promotion_img">
-							<img class="main_img" src="../images/dogsuffing.jpg">
-						</div>
-						<div class="promotion_txt">
-							<div class="main_txt">
-								<img src="../images/search.png">무더운 여름, 반려가족과 함께 수상레저를!
-							</div>
-							<div class="sub_txt">
-								반려가족을 위한 특별한 선물!<br><br>
-								자연을 느낄 수 있는, 야외 레저활동을 경험해 보세요!<br><br>
-								사랑스러운 반려가족과 함께하면 행복은 두 배!<br><br>
-							</div>
-							<button type="submit" class="view_detail">상세 보기</button>
-						</div>
+		<section class="promotion_menu">
+			<div class="whole_pro_box">
+				<div class="main_pro_txt">
+					<div class="main_pro_tlt"># 이달의 프로모션</div>
+				</div>
+				<div class="promotion_txt_img">
+					<div class="promotion_img">
+						<img class="main_img" src="../images/dogsuffing.jpg">
 					</div>
+					<div class="promotion_txt">
+						<div class="main_txt">
+							<img src="../images/search.png">무더운 여름, 반려가족과 함께 수상레저를!
+						</div>
+						<div class="sub_txt">
+							반려가족을 위한 특별한 선물!<br>
+							<br> 자연을 느낄 수 있는, 야외 레저활동을 경험해 보세요!<br>
+							<br> 사랑스러운 반려가족과 함께하면 행복은 두 배!<br>
+							<br>
+						</div>
+						<button type="submit" class="view_detail">상세 보기</button>
+					</div>
+				</div>
 				<div class="sub_pro_txt">
 					<div class="sub_pro_tlt"># 강아지와 함께 추억 패키지</div>
 				</div>
-				<div class="sub_promotion_txt_img">
-					<div class="sub_promotion_img">
-						<img class="sub_img" src="../images/photo1.jpg">
-						<img class="photo_plus" src="../images/plus.png">
-						<img class="sub_img" src="../images/photo3.jpg">
-					</div>
-					<div class="promotion_txt">
-						<div class="sub_main_txt">
-							<img src="../images/search.png">반려가족과 한컷, 추억남기기~!      
+				<div class="whole_subpro_box">
+					<div class="sub_promotion_txt_img">
+						<div class="sub_promotion_img">
+							<img class="sub_img" src="../images/photo1.jpg"> <img
+								class="photo_plus" src="../images/plus.png"> <img
+								class="sub_img" src="../images/photo3.jpg">
 						</div>
-						<div class="sub_txt">
-							<div class="sub_txt">
-								사람만 찍냐? 이제 반려가족도 찍는다~<br><br>
-								반려가족과 함께 화보촬영을 해봐요!<br><br>
-								보면 볼수록 사랑스러운 가족을 액자속에 담아봐요<br><br>
+						<div class="promotion_txt">
+							<div class="sub_main_txt">
+								<img src="../images/search.png">반려가족과 한컷, 추억남기기~!
 							</div>
-							<button type="submit" class="sub_view_detail">상세 보기</button>
+							<div class="sub_txt">
+								<div class="sub_txt">
+									사람만 찍냐? 이제 반려가족도 찍는다~<br>
+									<br> 반려가족과 함께 화보촬영을 해봐요!<br>
+									<br> 보면 볼수록 사랑스러운 가족을 액자속에 담아봐요<br>
+									<br>
+								</div>
+								<button id="btnView1" class="sub_view_detail">상세 보기</button>
+							</div>
 						</div>
 					</div>
+					<div id="showDetail1" class="sub_info_detail"></div>
 				</div>
 				<div class="sub_pro_txt">
 					<div class="sub_pro_tlt"># 견생네컷 패키지</div>
 				</div>
-				<div class="sub_promotion_txt_img">
-					<div class="sub_promotion_img">
-						<img class="sub_img" src="../images/T_shirts.png">
-						<img class="photo_plus" src="../images/plus.png">
-						<img class="sub_img" src="../images/dog4cut.jpg">
-					</div>
-					<div class="promotion_txt">
-						<div class="sub_main_txt">
-							<img src="../images/search.png">반려가족을 T-shirt 모델로!      
+				<div class="whole_subpro_box">
+					<div class="sub_promotion_txt_img">
+						<div class="sub_promotion_img">
+							<img class="sub_img" src="../images/T_shirts.png"> <img
+								class="photo_plus" src="../images/plus.png"> <img
+								class="sub_img" src="../images/dog4cut.jpg">
 						</div>
-						<div class="sub_txt">
-							<div class="sub_txt">
-								우리집 귀염둥이를 셔츠안에 쏙~<br><br>
-								댕댕이 4컷을 셔츠로 제작하고 싶으신가요?<br><br>
-								견생네컷 패키지로 댕댕이 셔츠를 제작해봐요<br><br>
+						<div class="promotion_txt">
+							<div class="sub_main_txt">
+								<img src="../images/search.png">반려가족을 T-shirt 모델로!
 							</div>
-							<button type="submit" class="sub_view_detail">상세 보기</button>
+							<div class="sub_txt">
+								<div class="sub_txt">
+									우리집 귀염둥이를 셔츠안에 쏙~<br>
+									<br> 댕댕이 4컷을 셔츠로 제작하고 싶으신가요?<br>
+									<br> 견생네컷 패키지로 댕댕이 셔츠를 제작해봐요<br>
+									<br>
+								</div>
+								<button id="btnView2" class="sub_view_detail">상세 보기</button>
+							</div>
 						</div>
 					</div>
+					<div id="showDetail2" class="sub_info_detail"></div>
 				</div>
-	      </div>
-	    </section>
-	    </section>		
-		
-		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
+			</div>
 		</section>
-		<!-- footer -->
-		<c:import url="/WEB-INF/views/layout/footer.jsp"/>		 
-	</body>
+
+		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
+	</section>
+	<!-- footer -->
+	<c:import url="/WEB-INF/views/layout/footer.jsp" />
+</body>
 </html>
