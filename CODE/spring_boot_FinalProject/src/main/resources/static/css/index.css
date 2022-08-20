@@ -74,6 +74,7 @@ article.main_slide > .slide_bar_box{
   justify-content: center;
   width: 100%;
   height: 30px;
+  margin-bottom: 30px;
 }
 
 article.main_slide > .slide_bar_box > span.slide_bar{

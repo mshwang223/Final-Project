@@ -56,13 +56,13 @@
 						</div>
 						<div class="option_pop" id="optionPop">
 							<div>
-								<span class="option_span">픽업<img
+								<span class="option_span" id="option1">픽업<img
 									src="<c:url value='/images/close.png'/>" alt="옵션 삭제" class="option_close"></span>
-								<span class="option_span">촬영<img
+								<span class="option_span" id="option2">촬영<img
 									src="<c:url value='/images/close.png'/>" alt="옵션 삭제" class="option_close"></span>
-								<span class="option_span">패키지<img
+								<span class="option_span" id="option3">패키지<img
 									src="<c:url value='/images/close.png'/>" alt="옵션 삭제" class="option_close"></span>
-								<span class="option_span">풀장<img
+								<span class="option_span" id="option4">풀장<img
 									src="<c:url value='/images/close.png'/>" alt="옵션 삭제" class="option_close"></span>
 							</div>
 						</div>
