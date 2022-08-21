@@ -10,9 +10,4 @@ public class PayController {
 	public String viewCart() {
 		return "subPage/cart";
 	}
-    // 결제페이지 가기
-	@RequestMapping("/payment")
-	public String viewPayment() {
-		return "subPage/payment";
-	}
 }
