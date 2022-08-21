@@ -199,7 +199,7 @@ li{
 	justify-content: flex-start;
 }
 .whole_profit > div{
-	font-size: 25px;
+	font-size: 22px;
 	font-weight: 400;
 }
 .whole_profit .first_profit{
@@ -228,14 +228,14 @@ li{
 	justify_content: flex-start;
 }
 .whole_rule > div{
-	font-size: 25px;
+	font-size: 22px;
 	font-weight: 400;
 }
 .whole_rule .first_rule{
 	margin-left: 80px;
 }
 .whole_rule .second_rule{
-	margin-left: 50px;
+	margin-left: 63px;
 }
 .search_pro_room{
 	width: 180px;
@@ -246,6 +246,6 @@ li{
     color: #fff;
     font-size: 20px;
     font-weight: 600;
-    margin: 70px 10px 0 1315px;
+    margin: 40px 10px 40px 1313px;
     cursor: pointer;
 }

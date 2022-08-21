@@ -89,14 +89,14 @@
 							<span><img src="<c:url value='/images/search.png'/>">이용수칙 :</span>
 							<div class="whole_rule">
 								<div class="first_rule">
-									▶ 강아지 어메니티 제공<br><br>
-									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
-									▶ 객실 내 강아지 하우스 제공
+									▶ 한정 수량 객실 패키지 입니다<br><br>
+									▶ 객실내 대여품목은 가져가실 수 없습니다<br><br>
+									▶ 객실내 강아지 대여품 파손시 부담금이 발생합니다
 								</div>
 								<div class="second_rule">
-									▶ 강아지 어메니티 제공<br><br>
-									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
-									▶ 객실 내 강아지 하우스 제공
+									▶ 우천 및 자연재해시 실내에서만 촬영가능합니다<br><br>
+									▶ 촬영장소는 정해진 장소에서만 촬영 가능합니다<br><br>
+									▶ 본 패키지는 연박이 불가능합니다
 								</div>
 							</div>
 						</div>
@@ -137,8 +137,8 @@
 							<span><img src="<c:url value='/images/search.png'/>">적용혜택 :</span>
 							<div class="whole_profit">
 								<div class="first_profit">
-									▶ 강아지 어메니티 제공<br><br>
-									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
+									▶ 견생네컷 촬영서비스 제공<br><br>
+									▶ 촬영한 견생네컷 티셔츠로 제작 (자택으로 배송가능)<br><br>
 									▶ 객실 내 강아지 하우스 제공
 								</div>
 								<div class="second_profit">
@@ -152,14 +152,14 @@
 							<span><img src="<c:url value='/images/search.png'/>">이용수칙 :</span>
 							<div class="whole_rule">
 								<div class="first_rule">
-									▶ 강아지 어메니티 제공<br><br>
-									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
-									▶ 객실 내 강아지 하우스 제공
+									▶ 한정 수량 객실 패키지 입니다<br><br>
+									▶ 객실내 대여품목은 가져가실 수 없습니다<br><br>
+									▶ 객실내 강아지 대여품 파손시 부담금이 발생합니다
 								</div>
 								<div class="second_rule">
-									▶ 강아지 어메니티 제공<br><br>
-									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
-									▶ 객실 내 강아지 하우스 제공
+									▶ 셔츠내 사진위치는 변경 불가합니다<br><br>
+									▶ 호텔사정에 따라 촬영은 외부에서 합니다<br><br>
+									▶ 본 패키지는 연박이 불가능합니다
 								</div>
 							</div>
 						</div>
