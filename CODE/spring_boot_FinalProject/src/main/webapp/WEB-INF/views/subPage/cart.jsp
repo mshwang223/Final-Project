@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="css/cart.css">
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script defer src="js/index.js"></script>
-    <script src="js/cart.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -120,10 +119,84 @@
                     </div>
                 </div>
             </section>
+              <div id="final_pay_modal" class="modal">
+           
+            <div class="modal-content">
+                <div class="logo_box">
+                <img src="<c:url value='/images/petmilylogo.png'/>" alt="로고" class="btn" onclick="clicklogo()";/>
+                </div>
+                <span class="close">&times;</span>
+                <hr>
+                <div class="terms_of_agreement">
+                    <span>이용약관</span>
+                    <div style="float: right;">
+                        <input type="checkbox" name="agree_all" id="agree_all" onclick="selectAll2(this)";/>
+                        <label for="agree_all">전체동의</label>
+                    </div>
+                    <hr>
+                    <div class="terms_of_agreement__details">
+                        <div class="terms_of_agreement__detail">
+                            <span>전자금융거래 이용약관</span>
+                            <input type="checkbox" name="agree1" id="agree1">
+                            <label for="agree1">동의</label>
+                        </div>
+                        <br>
+                        <div class="terms_of_agreement__detail">
+                            <span>개인정보의 수집 및 이용안내</span>
+                            <input type="checkbox" name="agree1" id="agree2">
+                            <label for="agree2">동의</label>
+                        </div>
+                        <div class="terms_of_agreement__detail">
+                            <span>개인정보 제공 및 위탁안내</span>
+                            <input type="checkbox" name="agree1" id="agree3">
+                            <label for="agree3">동의</label>
+                        </div>
+                    </div>
+                    <div class="terms_of_agreement__see_more">
+                        <button>약관보기 
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="payments">
+                    <div class="payments__pays">
+                        <button class="kakaopay">
+                        <img src="<c:url value='/images/kakaopay_btn.png'/>" alt="">
+                            <span>온 국민이 다 쓰는 카카오페이</span>
+                        </button>
+                        <button class="naverpay">
+                            <img src="<c:url value='/images/naverpay_btn.png'/>" alt="">
+                            <span>네이버페이로 결제하세요</span>
+                        </button>
+                    </div>
+                    <div class="payments__cards">
+                        <button class="card__hyundae">현대카드</button>
+                        <button class="card__samsung">삼성카드</button>
+                        <button>KB국민</button>
+                        <button>비씨(페이북)</button>
+                        <button>신한카드</button>
+                        <button>NH농협</button>
+                        <button>
+                            하나카드
+                        </button>
+                        <button>씨티카드</button>
+                        <button>롯데카드</button>
+                        <button>UnionPay</button>
+                        <button>그외카드</button>
+                    </div>
+                    <div class="payments__else">
+                        <button>PAYCO</button>
+                        <button>L.pay</button>
+                        <button>그외결제</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
             
               <!--footer -->
             <c:import url="/WEB-INF/views/layout/footer.jsp"/>
             </section>
- 
+ <script src="js/cart.js"></script>
 </body>
 </html>
