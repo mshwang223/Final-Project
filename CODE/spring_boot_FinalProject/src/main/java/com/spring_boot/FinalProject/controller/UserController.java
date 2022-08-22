@@ -3,7 +3,6 @@ package com.spring_boot.FinalProject.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,9 +17,6 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
-	
-	@Autowired
-	PasswordEncoder pwEncoder;
 	
 	// 로그인 처리
 	@ResponseBody

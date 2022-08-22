@@ -9,9 +9,18 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
+		<!-- summernote api -->
+		<link rel="stylesheet" type="text/css" href="css/summernote-lite.css">
+		
 		<link rel="stylesheet" type="text/css" href="css/board.css">
 		<link rel="stylesheet" type="text/css" href="css/adminNoticeDetail.css">
-		<script src="js/noticeDetail.js"></script>
+		
+		<!-- summernote api -->
+		<script src="/js/summernote-lite.js"></script>
+		<script src="/js/summernote-ko-KR.js"></script>		
+		
+		<script src="js/adminNoticeDetail.js"></script>
+		
 	</head>
 	
 	<body>
@@ -37,7 +46,9 @@
 					<table>
 						<thead>
 							<tr>
-						      	<th colspan="2">공지사항 제목1</th>
+						      	<th class="adminInputTitle" colspan="2">
+						      		<input type="text" placeholder="공지사항 제목1" />
+						      	</th>
 						    </tr>
 						</thead>
 						<tbody>
@@ -46,7 +57,7 @@
 						    </tr>
 						    <tr>
 						      	<td colspan="2">
-						      		<div class="contents">
+						      		<div id="adminNoticeContents" class="contents">
 							      		서버지연 현상이 발생하여 점검 중 입니다.<br><br>
 							      		종료 예정 시간 : 2022-08-16 오후 08:30
 						      		</div>
@@ -69,8 +80,6 @@
 			</article>
 			<!-- 세부화면 레이아웃 종료 -->
 		</section>
-		
-		<!-- footer -->
-		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
+
 	</body>
 </html>
