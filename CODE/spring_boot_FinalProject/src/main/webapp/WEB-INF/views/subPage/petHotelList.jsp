@@ -18,9 +18,9 @@
  		 <script src="<c:url value='/js/petHotelList.js'/>"></script>
 	</head>
 	<body>
+	<!-- top  -->
+	<c:import url="/WEB-INF/views/layout/top.jsp"/>
 	<section class="wrap">
-	 <!-- top  -->
-		 <c:import url="/WEB-INF/views/layout/top.jsp"/>
 	
 		<!-- middle -->
 		<section class="list_wrap">

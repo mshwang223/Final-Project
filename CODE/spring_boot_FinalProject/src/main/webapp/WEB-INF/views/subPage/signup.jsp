@@ -17,9 +17,9 @@
 	</head>
 
 	<body>
+		<!-- top  -->
+		<c:import url="/WEB-INF/views/layout/top.jsp"/>
 		<section class="wrap">
-			<!-- header  -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			
 			<!-- section -->
 			<section class="signup">
@@ -117,9 +117,9 @@
 		        	</div>
 		    	</div>
 		    </section>
-	
-			<!-- footer -->
-			<c:import url="/WEB-INF/views/layout/footer.jsp"/>
+		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
+		<!-- footer -->
+		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
 </html>
