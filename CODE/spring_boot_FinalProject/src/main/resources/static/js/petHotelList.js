@@ -106,11 +106,6 @@ $(document).ready(function(){
 	$('.logo_box').click(function(){
 		location.href = 'index.html';
 	});
-	// 탑버튼
-	$('.top_btn').click(function (event) {
-		event.preventDefault();
-		$('html, body').animate({ scrollTop: 0 }, 300);
-	});
 	
 	// Daterangepicker
 	var now = new Date();
