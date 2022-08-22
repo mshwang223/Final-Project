@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/adminNotice.css">
 		
 		<script src="js/notice.js"></script>
+		<script src="js/adminNotice.js"></script>
 	</head>
 	
 	<body>
@@ -52,7 +53,7 @@
 										</div>
 									</div>
 									<div>
-										<button class="btnAdmin">NEW</button>
+										<button id="adminNoticeNew" class="btnAdmin">NEW</button>
 									</div>
 								</td>
 							</tr>

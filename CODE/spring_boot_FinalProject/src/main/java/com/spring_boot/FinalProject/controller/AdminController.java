@@ -16,4 +16,10 @@ public class AdminController {
 	public String viewAdminNoticeDetail() {
 		return "subPage/adminNoticeDetail";
 	}
+	
+	// 관리자-공지사항 신규생성 페이지
+	@RequestMapping("/adminNoticeNew")
+	public String viewAdminNoticeNew() {
+		return "subPage/adminNoticeNew";
+	}	
 }

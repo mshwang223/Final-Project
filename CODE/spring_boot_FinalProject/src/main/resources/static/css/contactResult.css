@@ -5,6 +5,10 @@ header nav.main_nav div.underline {
   left: calc(75% + 32px);
 }
 
+.contactResultBox {
+  height: 650px;	
+}
+
 /* 메뉴 */
 .contact-menu {
   display: flex;

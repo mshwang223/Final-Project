@@ -9,9 +9,16 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
+		<!-- summernote api -->
+		<link rel="stylesheet" type="text/css" href="css/summernote-lite.css">
+		
 		<link rel="stylesheet" type="text/css" href="css/board.css">
-		<link rel="stylesheet" type="text/css" href="css/noticeDetail.css">
-		<script src="js/noticeDetail.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/adminNoticeNew.css">
+
+		<!-- summernote api -->
+		<script src="/js/summernote-lite.js"></script>
+		
+		<script src="js/adminNoticeDetail.js"></script>
 	</head>
 	
 	<body>
@@ -26,11 +33,21 @@
 						<span>#공지사항</span>
 					</div>
 				</div>
+				<div>
+					<table>
+						<tr>
+							<td class="button-table"><button class="btnAdmin">저장</button></td>
+						</tr>
+					</table>
+				</div>
 				<div class="table-box">
 					<table>
 						<thead>
 							<tr>
-						      	<th colspan="2">공지사항 제목1</th>
+								<th class="num">제목</th>
+						      	<th class="adminInputTitle">
+						      		<input type="text" />
+						      	</th>
 						    </tr>
 						</thead>
 						<tbody>
@@ -39,19 +56,10 @@
 						    </tr>
 						    <tr>
 						      	<td colspan="2">
-						      		<div class="contents">
-							      		서버지연 현상이 발생하여 점검 중 입니다.<br><br>
-							      		종료 예정 시간 : 2022-08-16 오후 08:30
+						      		<div id="adminNoticeContents" class="contents">
+
 						      		</div>
 						      	</td>
-						    </tr>
-						    <tr>
-						      	<td class="paging-td">▲ 이전글</td>
-						      	<td>첫 번째 글입니다.</td>
-						    </tr>
-						    <tr>  	
-						      	<td class="paging-td">▼ 다음글</td>
-						      	<td>공지사항 제목2</td>
 						    </tr>
 						</tbody>
 					</table>

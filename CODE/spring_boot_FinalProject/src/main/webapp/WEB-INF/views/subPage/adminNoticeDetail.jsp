@@ -53,7 +53,7 @@
 						</thead>
 						<tbody>
 						    <tr>
-						      	<td class="titles" colspan="2">관리자&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 2022-08-16</td>
+						      	<td class="titles" colspan="2">관리자&nbsp;&nbsp; | &nbsp;&nbsp;수정일 : 2022-08-16</td>
 						    </tr>
 						    <tr>
 						      	<td colspan="2">
