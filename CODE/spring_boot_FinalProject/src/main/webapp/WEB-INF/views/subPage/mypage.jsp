@@ -17,12 +17,10 @@
 	<link href="https://fonts.gogleapis.coom/icon?family=Material+Icons"
       rel="stylesheet">
       </head>
-      
-      <body>
-        <section class="wrap">
-        <!-- header -->
+       <!-- header -->
         <c:import url="/WEB-INF/views/layout/top.jsp"/>
-        
+      <body>
+        <section class="wrap">   
         <!-- section -->
             <section class="mypage">
                 <div class="mypage_box">
