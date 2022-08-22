@@ -80,6 +80,7 @@
 			</article>
 			<!-- 세부화면 레이아웃 종료 -->
 		</section>
-
+<!-- footer -->
+		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
 </html>

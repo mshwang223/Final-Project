@@ -15,7 +15,7 @@ th {
 
 /* 테이블 레이아웃 위치 지정 */
 .table-box {
-  height: 850px;	
+  height:max-content;
 }
 
 /* 게시판 테이블 크기 */
@@ -120,3 +120,4 @@ th.adminInputTitle > input:focus {
   background-color: white;
   color: black;	
 }
+
