@@ -40,7 +40,11 @@ public class MenuController {
 	public String viewHotelList() {
 		return "subPage/petHotelList";
 	}
-	
+	// 호텔 예약 페이지
+	@RequestMapping("/petHotelRsv")
+	public String viewHotelRsv() {
+		return "subPage/petHotelRsv";
+	}
 	// 프로모션 가기
 	@RequestMapping("/promotion")
 	public String viewPromotion() {
