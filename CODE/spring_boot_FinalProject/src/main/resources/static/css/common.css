@@ -31,17 +31,26 @@ header{
  
 }
 
-header .logo_box{
+header .logo_box{	
   display: flex;
+
   align-items: center;
   position: relative;
+  right: 311.5px;
+  
   width: 300px;
   height: 100%;
 }
 
+header .logo_box > a > img {
+  position: fixed;
+  top: 45px;
+  left: 212px;
+}
+
 header nav.main_nav{
   display: flex;
-  position: relative;
+  position: absolute;
   align-items: center;
   width: 600px;
   height: 50px;
@@ -109,8 +118,11 @@ header .login_box{
   
   align-items: center;
   height: 50px;
-  
+
   margin-bottom: 20px;
+  
+  position: relative;
+  left: 295px;
   
   user-select: none;
 }
@@ -311,6 +323,8 @@ ul > li img.top_logout_img {
 header .login_box > .dropdown > span.loginForm, header .login_box > a{
   display: block;
   
+  
+  
   width: 75px;
   height: 45px;
   
@@ -441,10 +455,11 @@ header .login_box > .dropdown > span.loginForm:hover{
 
 /* 스크롤 이동 시 header 이동 */
 .header-move {
+
   position: fixed;
   top: 0;
-  
-  margin: 0px;
+
+  margin-top: 0;
     
   width: 100%;
   height: 80px;
@@ -455,12 +470,17 @@ header .login_box > .dropdown > span.loginForm:hover{
   z-index: 50;
 }
 
+/* 스크롤 이동 시 header 이동 */
+.nav-move {
+  right: 100px;
+}
+
 .dropdown-move {
   position:fixed;
-  right: 300px;	
+  right: 320px;	
 }
 
 .signup-move {
   position:fixed;
-  right: 205px;	
+  right: 225px;
 }
