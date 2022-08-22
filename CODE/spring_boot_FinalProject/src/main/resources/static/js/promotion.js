@@ -19,6 +19,9 @@
   $('#btnView3').click(function(){
     $('#showDetail3').slideToggle('500');
   });
-  
+  // 객실요금 조회 버튼 이동
+  $('.search_pro_room').click(function(){
+  	location.href = '/petHotelList';
+  });
 
 });
