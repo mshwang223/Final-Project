@@ -97,6 +97,7 @@
 				</div>
 			</article>
 			<!-- 문의하기 레이아웃 종료 -->
+			<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
 	</body>
 </html>

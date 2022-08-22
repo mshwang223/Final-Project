@@ -110,6 +110,12 @@ $(document).ready(function(){
  		return true;
 	}
 	
+   // 탑버튼 기능
+   $('.top_btn').click(function (event) {
+      event.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, 300);
+   });
+	
 	// 마이페이지
 	$('#myPage').click(function() {
 		location.href = "/mypage";

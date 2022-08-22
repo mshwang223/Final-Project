@@ -97,12 +97,5 @@ $(document).ready(function(){
    $('#playBtn').click(function(){
       $('html,body').animate({scrollTop : 4100},300);
    });
-
-   // 탑버튼
-   $('.top_btn').click(function (event) {
-      event.preventDefault();
-      $('html, body').animate({ scrollTop: 0 }, 300);
-   });
-
 });   // document.ready
 
