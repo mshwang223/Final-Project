@@ -12,7 +12,7 @@
 	<body>
 		<nav class="sideMenu">
 			<div>
-				<div class="sideTitle">사용자 관리</div>
+				<div class="sideTitle">사용자</div>
 
 				<a class="aUserLists adminNotice" href="#" class="adminNotice">공지사항</a>
 				<a class="aUserLists" href="#">사용자관리</a>

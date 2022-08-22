@@ -131,6 +131,8 @@ header .login_box{
 .dropdown {
   width: 100px;
   display: inline-block;
+  
+  position: absolute;
 }
 
 /* 상단 마이페이지 레이아웃 */
@@ -146,6 +148,8 @@ header .login_box{
   display: none;
   
   position: absolute;
+  top: 25px;
+  left: -73px;
   
   margin-top: 10px;
   
@@ -323,8 +327,6 @@ ul > li img.top_logout_img {
 header .login_box > .dropdown > span.loginForm, header .login_box > a{
   display: block;
   
-  
-  
   width: 75px;
   height: 45px;
   
@@ -340,18 +342,18 @@ header .login_box > .dropdown > span.loginForm, header .login_box > a{
   background-color: #fff;
   
   cursor: pointer;
+  
   /*
   transition: 0.5s;
   transition-timing-function: ease-in-out;
   */
 }
 
-/*
 .dropdown > span.loginForm {
-  position: relative;
-  top: 0px;	
+  position: absolute;
+  top: -22px;
+  right: 100px;
 }
-*/
 
 header .login_box > a {
   width: 95px;
@@ -359,10 +361,9 @@ header .login_box > a {
   background-color: #ee82ee;
   border-radius: 8px;
 
-  /*
   position: absolute;
-  right: 100px;
-  */
+  left: 30px;
+
 }
 
 header .login_box > a > span{
@@ -474,13 +475,6 @@ header .login_box > .dropdown > span.loginForm:hover{
 .nav-move {
   right: 100px;
 }
-
-.dropdown-move {
-  position:fixed;
-  right: 270px;	
-}
-
-
 
 .signup-move {
   position:fixed;
