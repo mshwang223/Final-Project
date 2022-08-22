@@ -96,3 +96,27 @@ td:first-child {
 	background-color: #636363;
 	color: #fff;	
 }
+
+/* 관리자 테이블 버튼 레이아웃 */
+.btnAdmin {
+  font-size: 14px;
+  font-weight: bold;
+  
+  text-align: center;
+  
+  margin-left: 30px;
+  padding: 9px 15px;
+  
+  border-radius: 5px;
+  border: 0px;
+  
+  background: #ee82ee;
+  color: white;
+  
+  cursor: pointer;	
+}
+
+.btnAdmin:active {
+  background: white;
+  color: black;	
+}

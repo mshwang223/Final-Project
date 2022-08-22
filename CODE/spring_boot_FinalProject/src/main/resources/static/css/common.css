@@ -27,7 +27,7 @@ header{
   
   padding-top: 40px;
   margin: 20px auto;
-  width: 1580px;
+  width: 100%;
  
 }
 
@@ -43,9 +43,9 @@ header .logo_box{
 }
 
 header .logo_box > a > img {
-  position: fixed;
-  top: 45px;
-  left: 212px;
+  position: relative;
+  top: 0px;
+  left: 0px;
 }
 
 header nav.main_nav{
@@ -477,10 +477,12 @@ header .login_box > .dropdown > span.loginForm:hover{
 
 .dropdown-move {
   position:fixed;
-  right: 320px;	
+  right: 270px;	
 }
+
+
 
 .signup-move {
   position:fixed;
-  right: 225px;
+  right: 175px;
 }

@@ -10,4 +10,10 @@ public class AdminController {
 	public String viewAdmin() {
 		return "subPage/admin";
 	}
+	
+	// 관리자-공지사항 세부화면 페이지
+	@RequestMapping("/adminNoticeDetail")
+	public String viewAdminNoticeDetail() {
+		return "subPage/adminNoticeDetail";
+	}
 }
