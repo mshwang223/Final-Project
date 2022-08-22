@@ -8,7 +8,7 @@ ul{
 li{
   list-style: none;
 }
-.whole_pro_box{
+.wrap_pro_box{
   width: 1505px;
   height: 100%;
 }
@@ -196,7 +196,7 @@ li{
 }
 .info_detail_profit .whole_profit{
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 }
 .whole_profit > div{
 	font-size: 22px;
@@ -225,7 +225,7 @@ li{
 }
 .use_rule .whole_rule{
 	display: flex;
-	justify_content: flex-start;
+	justify_content: space-between;
 }
 .whole_rule > div{
 	font-size: 22px;

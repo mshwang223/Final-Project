@@ -15,5 +15,10 @@
   $('#btnView2').click(function(){
     $('#showDetail2').slideToggle('500');
   });
+    // 상세보기 버튼3 슬라이드 토글
+  $('#btnView3').click(function(){
+    $('#showDetail3').slideToggle('500');
+  });
+  
 
 });
