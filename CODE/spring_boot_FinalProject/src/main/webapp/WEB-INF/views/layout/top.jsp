@@ -3,6 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/top-modal.css'/>">
+<script defer src="<c:url value='/js/top-modal.js'/>"></script>
+</head>
 		<header>
 			<div class="logo_box">
 				<a href="<c:url value='/'/>"><img src="<c:url value='/images/petmilylogo.png'/>" class="logoImg" alt="로고"></a>
@@ -17,22 +21,51 @@
 			<div class="login_box">
 				<!-- 로그인 안 한 경우 -->
 				<c:if test="${empty sessionScope.sid}">
-				<div class="dropdown">
+			   <div class="dropdown">
 					<span class="loginForm">로그인</span>
 					<div id="dropdown-login">
-						<form id="login-form" name="login-form">
+						<form action="post" id="login-form">
 							<p>로그인</p>
 							<div class="loginline"></div>
 							<div id="input-div">
-								<input type="text" id="userId" name="userId" class="dropdown_username" placeholder="아이디">
-								<input type="password" id="userPw" name="userPw" class="dropdown_password" placeholder="비밀번호">
+								<input type="text" class="dropdown_username" placeholder="아이디">
+								<input type="password" class="dropdown_password" placeholder="비밀번호">
 							</div>
 							<div id="forgotInfo">
-								<a href="#">ID 찾기</a>
-								<a href="#">PW 찾기</a>
-							</div>
-							<input type="submit" class="dropdown_botton" value="로그인">
+								<a id="findIdBtn" href="#">ID 찾기</a>
+								<a id="findPwBtn" href="#">PW 찾기</a>
+							</div> 
 						</form>
+						<input type="submit" class="dropdown_botton" value="로그인">
+					</div>
+					<!-- The Modal -->
+					<div id="findIdModal" class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+						<img src="<c:url value='/images/petmilylogo.png'/>" alt="">
+							<span class="close">&times;</span>
+							<p>아이디 찾기</p>
+							<hr>
+							<form id="findIdForm">
+								<input type="text" placeholder="이름" name="name">
+								<input type="email" placeholder="이메일" name="email">
+								<input type="submit" class="modal_btn" value="아이디 찾기">
+							</form>
+						</div>
+					</div>
+					<div id="findPwModal" class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+						<img src="<c:url value='/images/petmilylogo.png'/>" alt="">
+							<span class="close">&times;</span>
+							<p>비밀번호 찾기</p>
+							<hr>
+							<form id="findPwForm">
+								<input type="text" placeholder="아이디" name="username">
+								<input type="email" placeholder="이메일" name="email">
+								<input type="submit" class="modal_btn" value="비밀번호 찾기">
+							</form>
+						</div>
 					</div>
 				</div>
 				<a class="btnSignup" href="<c:url value='/signup'/>">회원가입</a>
