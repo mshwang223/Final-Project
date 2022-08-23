@@ -1,318 +1,173 @@
-/* 회원가입 전체 박스 설정 */
-.signup_box{
-  margin: 0 auto;
-  margin-top: 100px;
-  border: 1px solid #ee82ee;
-  width: 600px;
-  height: 1230px;
-  background-color: #fff;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-}
-
-/* 회원가입 텍스트 설정 */
-.signup_box .signup_title > p{
+/* 제목레이아웃 */
+.pageTitle {
   text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 50px 0 40px 0;
+  
+  margin: 50px auto 30px auto;	
 }
 
-/* 항목에 폰트 굵게 표시 */
-.title { 
-	font-size: 16px; 
-	font-weight:bold;
-}
-
-/* 모든 항목 위아래 간격 설정 */
-.signup_id, .signup_pwd,
-.check_pwd, .signup_name,
-.signup_phone, .signup_phone_check,
-.signup_email, .recommend_code{
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-/* 박스안 고객정보 박스 */
-.custom_info{
-  width: 356px;
-  height: 800px;
-  margin: 0 auto;
-}
-
-/* 모든 p태그 폰트크기 결정 */
-.custom_info > p{
-  font-size: 16px;
-}
-
-/* 아이디, 아이디 중복확인 */
-.custom_info .text_signup_id{
-  width: 270px;
-  height: 40px;
-  border: #ee82ee solid 1px;
-  border-radius: 2px;
-  padding: 8px;
-  outline: none;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.signup_id .btn_idcheck{
-  width: 80px;
-  height: 40px;
-  background-color: #ee82ee;
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* 비밀번호, 비밀번호 체크 */
-.custom_info .text_signup_pwd{
-  width: 354px;
-  height: 40px;
-  border: #ee82ee solid 1px;
-  border-radius: 2px;
-  padding: 8px;
-  outline: none;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.custom_info .text_check_pwd{
-  width: 354px;
-  height: 40px;
-  border: #ee82ee solid 1px;
-  border-radius: 2px;
-  padding: 8px;
-  outline: none;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-/* 이름 입력 상자 */
-.custom_info .text_signup_name{
-  width: 354px;
-  height: 40px;
-  border: #ee82ee solid 1px;
-  border-radius: 2px;
-  padding: 8px;
-  outline: none;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-/* 휴대폰 번호, 인증번호 전송 */
-.custom_info .text_signup_phone{
-  width: 270px;
-  height: 40px;
-  border: #ee82ee solid 1px;
-  border-radius: 2px;
-  padding: 8px;
-  outline: none;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.signup_phone .confirm_phone{
-  width: 80px;
-  height: 40px;
-  background-color: #ee82ee;
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* 인증번호 입력 */
-.custom_info .check_signup_phone{
-  width: 270px;
-  height: 40px;
-  border: #ee82ee solid 1px;
-  border-radius: 2px;
-  padding: 8px;
-  outline: none;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.signup_phone_check .check_phone{
-  width: 80px;
-  height: 40px;
-  background-color: #ee82ee;
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* 주소박스 */
-.zipcode{
-  width: 250px;
-  height: 40px;
-  border-radius: 2px;
-  border: #ee82ee solid 1px;
-  outline: none;
-  font-size: 14px;
-  margin-top: 5px;
-  padding: 8px;
-  cursor: auto;
-}
-
-.btn_zipcode{
-  width: 100px;
-  height: 40px;
-  background-color: #ee82ee;
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.check_address1, .check_address2{
-  width: 354px;
-  height: 40px;
-  margin-top: 10px;
+.pageTitle > div {
   background-color: #fff;
-  border: #ee82ee solid 1px;
-  outline: none;
-  font-size: 14px;
-  padding: 8px;
-}
-
-/* 이메일 박스 */
-.custom_info .text_signup_email{
-  width: 354px;
-  height: 40px;
-  border: #ee82ee solid 1px;
-  border-radius: 2px;
-  padding: 8px;
-  outline: none;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-/* 색상 변경 */
-.agree_rule input {
-  accent-color: #f5f5f5;
-}
-
-/* 이용약관 전체 박스 */
-.agree_rule{
-  width: 356px;
-  height: 200px;
-}
-
-/* 이용약관 전체 체크박스 */
-.agree_all{
-  display: flex;
-  justify-content: space-between;
-  width: 356px;
-  border-bottom: rgb(200, 198, 198) 1px solid;
-}
-.agree_all_check{
-  width: 20px;
-  height: 20px;
-  margin: 0 0 15px 0;
-}
-.agree_all > p{
-  margin-right: 226px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* 이용약관 서브1 체크 */
-.agree_sub1{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.agree_sub1 .agree_subcheck1{
-  width: 20px;
-  height: 20px;
-}
-
-.agree_sub1 > p{
-  margin-right: 126px;
-  font-weight: bold;
-}
-
-/* 이용약관 서브2 체크 */
-.agree_sub2{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.agree_sub2 .agree_subcheck2{
-  width: 20px;
-  height: 20px;
-}
-
-.agree_sub2 > p{
-  margin-right: 43px;
-  font-weight: bold;
-}
-
-/* 이용약관 서브3 체크 */
-.agree_sub3{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.agree_sub3 .agree_subcheck3{
-  width: 20px;
-  height: 20px;
-}
-
-.agree_sub3 > p{
-  margin-right: 6px;
-}
-
-/* 이용약관 서브4 체크 */
-.agree_sub4{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-.agree_sub4 .agree_subcheck4{
-  width: 20px;
-  height: 20px;
-}
-
-/* 가입하기 버튼 */
-.btn_signup_box{
-  width: 356px;
-  height: 100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.btn_signup_done{
-  width: 356px;
-  height: 50px;
-  margin-top: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  background-color: #ee82ee;
-  border-radius: 2px;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.btn_signup_box > button:hover{
+  border-radius: 20px;
+  
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  transition: 0.9s linear;
+  
+  display: inline-block;
+  
+  line-height: 60px;
 }
+
+.pageTitle > div > span {
+  margin: 0 22px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* 배경 레이아웃 */
+.terms-box {
+  margin: auto 200px;
+  padding: 80px 160px;
+  
+  background-color: white;
+  
+  border-radius: 15px;
+}
+
+/* 소젝목 */
+.termsTitle {
+  padding: 15px 0;
+  
+  font-size: 20px;
+  font-weight: bold;
+}
+
+em {
+  margin-left: 1px;
+  background-color: red;
+
+  display: inline-block;
+  
+  width: 5px;
+  height: 5px;
+  
+  vertical-align: top;
+  
+  border-radius: 5px;
+}
+
+/* 체크박스 배경 레이아웃 */
+.terms-box > div:last-child {
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;	
+}
+
+.agree_sub {
+  padding: 50px 50px 20px 50px;
+}
+
+/* input checkbox 레이아웃 */
+.agree_sub input[type="checkbox"] {
+  margin-right: 10px;
+   
+  width: 16px;
+  height: 16px;
+  
+  cursor: pointer;
+}
+
+.agree_sub label {
+  position: relative;
+  top: -2px;
+  
+  font-weight: bold;
+  
+  cursor: pointer;	
+}
+
+.agree_sub .btn-close {
+  width: 16px;
+  height: 16px;
+  
+  font-size: 16px;
+  
+  border: 0 none;
+  outline: o none;
+  background-color: transparent;
+  
+  float: right;
+  
+  cursor: pointer;	
+}
+
+.termsline {
+  height: 2px;
+  
+  margin: 0 50px 10px 50px; 
+  
+  background-color: #f5f5f5;
+  
+  position: relative;	
+}
+
+/* 약관 정책 세부 레이아웃 */
+.subDetail-box {
+  background-color: #f5f5f5;
+  
+  margin: 0 50px 10px 50px;
+  
+  padding: 10px;
+  
+  border: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  outline: 0;
+  
+  position: relative;
+  top: -11px;
+  
+  display: none;
+}
+
+.subDetail-box > div {
+  max-height: 148px; 
+  
+  padding: 4px 18px 4px 24px;
+  
+  color: black;
+  
+  font-size: 14px;
+  line-height: 22px;
+  
+  overflow-y: auto;
+}
+
+/* 스크롤바 레이아웃 */
+.showDetail::-webkit-scrollbar {
+  padding: 15px;
+  right: 5px;	
+  width: 8px;
+}
+
+.showDetail::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 8px; 
+}
+
+.showDetail::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* 전체 동의 하부 텍스트 레이아웃 */
+.agree_sub span {
+  display: block;
+  
+  font-size: 14px;
+  font-weight: bold;
+  
+  padding-top: 10px;
+  padding-left: 30px;
+}
+
+.last {
+  padding-bottom: 50px;	
+}
+
