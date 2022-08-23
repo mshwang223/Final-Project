@@ -28,6 +28,7 @@ function searchValueClick(){
 searchValueClick();
 
 // 옵션 선택 토글
+/*
 let optionBox = document.getElementById('optionBox');
 let optionPop = document.getElementById('optionPop');
 
@@ -40,6 +41,7 @@ optionBox.addEventListener('click', () => {
   }
 
 });
+  */
 
 // option 선택
 let option = document.querySelectorAll(".option_pop span");
@@ -102,25 +104,18 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
 
   // 인원검색 영역 클릭시
   $('.count_box').click(function(){
-    $('.person_count_option').toggleClass('dis_block');
-  });
-  // 인원수|반려동물 검색 팝업 외부영역 클릭 시 팝업 딛기
-  $(document).mouseup(function (e){
-    var LayerPopup = $(".person_count_option");
-    if(LayerPopup.has(e.target).length === 0){
-      LayerPopup.removeClass("dis_block");
-    }
-    });
+		$('.person_count_option').toggleClass('dis_block'); 
+	}); 
 
-    // 인원 버튼 클릭할 때
+	// 인원 버튼 클릭할 때
   let personCount = parseInt($('#personCount').text());
   let petCount = parseInt($('#petCount').text());
 
   // 성인 + 버튼 클릭
   $('#personPlusBtn').click(function() {
     personCount++;
-    // 2명부터 -버튼 활성화
-    if(personCount > 1){
+    // 1명부터 -버튼 활성화
+    if(personCount > 0){
       $('#personMinusBtn').addClass('btn_count_active');
       $('#personMinusBtn').attr('href', '#');
     }
@@ -132,12 +127,10 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
 	$('#personMinusBtn').click(function(){
 		personCount--;
 		// 인원이 1 이 되면 - 버튼 비활성
-		if(personCount == 1){
+		if(personCount == 0){
 			$('#personMinusBtn').removeClass('btn_count_active');
-			$('#personMinusBtn').removeAttr('href');
-		}else if(personCount == 0){
-			alert('최소 인원은 1명 이상이어야 합니다.');
-			personCount = 1;
+		}else if(personCount < 0){
+			personCount = 0;
 		}
 		$('#personCount').text(personCount);
 		$('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
@@ -149,7 +142,6 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
 		// 2마리 부터 - 버튼 활성화
 		if(petCount>1){
 			$('#petMinusBtn').addClass('btn_count_active');
-			$('#petMinusBtn').attr('href', '#');
 		}
 		$('#petCount').text(petCount);
 		$('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
@@ -169,31 +161,70 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
 		$('#petCount').text(petCount);
 		$('#btnCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
 	});
+	
+	// 인원수|반려동물 검색 팝업 외부영역 클릭 시 팝업 딛기
+  $(document).mouseup(function (e){
+    var LayerPopup = $(".person_count_option");
+    if(LayerPopup.has(e.target).length === 0){
+      LayerPopup.removeClass("dis_block");
+    }
+  });
+  
+  	// 지역검색 팝업 닫기
+  $(document).mouseup(function (e){
+    var LayerPopup = $(".search_pop");
+    if(LayerPopup.has(e.target).length === 0){
+      LayerPopup.css("display","none");
+    }
+  });
+  
+  	// 옵션 팝업닫기
+  $(document).mouseup(function (e){
+    var LayerPopup = $(".option_pop");
+    if(LayerPopup.has(e.target).length === 0){
+      LayerPopup.css("display","none");
+    }
+  });
+	
   // 검색하기로 페이지 이동
   $('.reservation_btn').click(function(){
     location.href = '/petHotelList';
   });
   
-  	// 탑버튼
-	$('.top_btn').click(function (event) {
-		event.preventDefault();
-		$('html, body').animate({ scrollTop: 0 }, 300);
-	});
 	
-		//option 추가
-	$('.option_span').click(function(){
+	//option 추가
+	var option_cnt = 0;
+	$('.option_span').not('.option_close').click(function(){
 		if($('.option_box').find('#'+$(this).attr('id')).length == 0){
-			$('.option_box').append($(this).clone());
+			option_cnt++;
+			var clone = $(this).clone().append('<img src="/images/close.png" alt="옵션 삭제" class="option_close" id="option_close'+option_cnt+'">');
+			$('.option_box').append(clone);
+			$('.option_pop').removeClass("dis_block");
 		}		
 	});
+	
 
-	//option 삭제
-	$('.option_box  .option_close').click(function(){
-		$(this).remove();
+	$('.option_box').click(function(){
+		$('.option_pop').toggleClass('dis_block');
 	});
+
+	
+	
 	
 }); //document.ready 끝
 
+
+$(document).on('click', '.option_close', function(e){
+	$(this).closest('.option_span').remove();
+		e.preventDefault();
+});
+
+
+/*$(document).on('click', '.option_box:not(.option_close)', function(){
+	alert("짜잔");
+	$('.option_pop').toggleClass('dis_block');
+});
+*/
 
 
 
