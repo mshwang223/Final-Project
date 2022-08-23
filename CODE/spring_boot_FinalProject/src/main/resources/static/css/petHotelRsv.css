@@ -1,0 +1,318 @@
+input{
+	outline: none;
+}
+select{
+	outline: none;
+}
+/* 전체 박스 플렉스 */
+.sec_rsv_wrap{
+	display: flex;
+	justify-content: space-around;
+}
+
+/* 예약호텔 정보 박스 */
+.box_hotel_info{
+	width: 1000px;
+/* 	height: 100%; */
+	border-radius: 10px;
+	border: none;
+	background-color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	padding: 40px 0 0 40px;
+}
+.box_hotel_info .box_img_tlt{
+	display: flex;
+	justify-content: flex-start;
+	padding-bottom: 25px; 
+}
+.box_img_tlt{
+	width: 920px;
+	border-bottom: 1px solid #ddd;
+}
+/* 옆 공간 설정 */
+.box_img_tlt .info_txt_Box{
+	margin-left: 45px;
+}
+
+/* 이미지 크기 설정 */
+.box_hotel_info .img_box > img{
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+}
+/* 호텔 이름 박스 및 정보*/
+.box_hotel_info .info_txt_Box .info_tlt{
+	font-size: 25px;
+	font-weight: 600;
+	margin-top: 20px;
+}
+.info_address{
+	margin-top: 15px;
+	color: #778887;
+	font-size: 18px;
+}
+.info_period{
+	margin-top: 8px;
+	color: #778887;
+	font-size: 18px;
+}
+.info_person_count{
+	margin-top: 8px;
+	color: #778887;
+	font-size: 18px;
+}
+.info_bed{
+	margin-top: 8px;
+	color: #778887;
+	font-size: 18px;
+}
+.address_icon{
+	margin-right: 12px;
+	color: #778887;
+	font-size: 18px;
+}
+.stay_calendar{
+	margin-right: 12px;
+	color: #778887;
+	font-size: 18px;
+}
+.person_icon{
+	margin-right: 12px;
+	color: #778887;
+	font-size: 18px;
+}
+.bed_icon{
+	margin-right: 7px;
+	color: #778887;
+	font-size: 18px;
+}
+/* 호텔 룸타입/가격 */
+.box_type_price{
+	display: flex;
+	justify-content: space-between;
+	width: 920px;
+	height: 85px;
+}
+
+.box_type_price .room_type{
+	font-size: 20px;
+	font-weight: 600;
+	margin-left: 15px;
+	padding-right: 365px;
+	height: 60px;
+	border-right: solid 1px #ddd;
+	margin-top: 15px;
+	line-height: 60px;
+}
+
+.box_type_price .ttl_price{
+	font-size: 20px;
+	font-weight: 600;
+	margin-right: 15px;
+	line-height: 80px;
+}
+/* 정보 입력 박스 */
+.box_cus_info{
+	width: 1000px;
+	border-radius: 10px;
+	border: none;
+	background-color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	margin-top: 20px;
+	padding: 40px 0 40px 40px;
+}
+.box_cus_info2{
+	display: none;
+	width: 1000px;
+	border-radius: 10px;
+	border: none;
+	background-color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	margin-top: 20px;
+	padding: 40px 0 40px 40px;
+}
+.first_cus_info .cus_info_tlt{
+	font-size: 25px;
+	font-weight: 600;
+}
+.first_cus_info .name_rule{
+	font-size: 16px;
+	font-weight: 400;
+	color: #c2c2bc;
+	margin-top: 6px;
+}
+/* 이름상자 */
+.tlt_all{
+	font-size: 18px;
+}
+.cus_name{
+	margin-top: 15px;
+}
+
+.cus_name .input_cus_name{
+	margin-top: 6px;
+	width: 270px;
+	height: 45px;
+	padding-left: 8px;
+	font-size: 18px;
+}
+/* 연락처 상자 */
+.cus_phone{
+	margin-top: 10px;
+}
+.cus_phone > input{
+	width: 120px;
+	height: 45px;
+	margin-top: 6px;
+	padding: 8px;
+	font-size: 18px;
+}
+/* 이메일 상자 */
+.cus_email{
+	margin-top: 10px;
+}
+.cus_email > input{
+	width: 250px;
+	height: 45px;
+	margin-top: 6px;
+	padding: 8px;
+	font-size: 18px;
+}
+.cus_email .mail_address_select{
+	width: 250px;
+	height: 45px;
+	padding: 8px;
+	font-size: 18px;
+}
+.add_new_cus{
+	margin-top: 15px;
+	cursor: pointer;
+}
+.add_new_cus .add_customer{
+	font-size: 18px;
+	margin-right: 5px;
+}
+.add_new_cus > span{
+	font-size: 18px;
+}
+/* 약관 박스 */
+.contract_info_box{
+	width: 1000px;
+	border-radius: 10px;
+	border: none;
+	background-color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	margin-top: 20px;
+	padding: 40px 0 40px 40px;
+}
+.contract_info_box .introduce_contract{
+	font-size: 18px;
+	font-weight: 600;
+}
+.contract_info_box .introduce_contract_box{
+	margin-top: 20px;
+	width: 920px;
+	border-bottom: solid 1px #ddd;
+	padding-bottom: 30px;
+}
+.introduce_contract_box div{
+	font-size: 16px;
+	color: #778887;
+	margin-top: 10px;
+}
+.agreement_check_final{
+	margin-top: 30px;
+	font-size: 19px;
+	align-items: center;
+}
+.agree_text_final{
+	width: 15px;
+	height: 15px;
+	margin: 0 10px 0 0;
+}
+
+
+/* 스토커 박스 */
+.follow_box{
+	width: 400px;
+	height: 100%;
+	border-radius: 10px;
+	border: none;
+	background-color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    top: 105px;
+    position: sticky;
+    padding: 30px;
+}
+.follow_box .info_price{
+	width: 340px;
+	border-bottom: solid 1px #ddd;
+	padding-bottom: 15px;
+	font-size: 25px;
+	font-weight: 600;
+}
+.follow_box .price_per_night{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+	color: #778887;
+}
+.price_per_night div{
+	font-size: 18px;
+	color: #778887;
+}
+.insurance_price{
+	margin-top: 50px;
+	cursor: pointer;
+}
+.insurance_price i{
+	font-size: 18px;
+	color: #778887;
+	margin-right: 8px;
+}
+.insurance_price span{
+	font-size: 18px;
+	color: #778887;
+	margin-right: 8px;
+}
+.info_insurance{
+	display: none;
+	padding: 10px 0 0 25px;
+}
+.info_insurance p{
+	margin-bottom: 8px;
+	color: #778887;
+}
+/* 최종 금액 박스 */
+.final_price_box{
+	display: flex;
+	justify-content: space-between;
+	border-top: solid 1px #ddd;
+	margin: 15px 0 0 0;
+	padding-top: 15px;
+}
+.final_price_box .price_txt{
+	font-size: 18px;
+	font-weight: 600;
+}
+.final_price_box .price_won{
+	font-size: 25px;
+	font-weight: 600;
+}
+
+/* 예약하기 버튼 */
+.final_pay_btn{
+	width: 300px;
+	height: 47px;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 30px 0 0 21px;
+	border-radius: 10px;
+	border: none;
+	background-color: #ee82ee;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+
