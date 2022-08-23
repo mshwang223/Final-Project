@@ -35,7 +35,7 @@ Ul{
   height: 50px;
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 10px 10px 10px 15px;
   font-size: 18px;
   font-weight: 600;
   border-radius: 10px;
@@ -48,7 +48,7 @@ Ul{
   cursor: text;
 }
 
-[contenteditable=true]:empty:before{
+/* [contenteditable=true]:empty:before{
   content: attr(placeholder);
   line-height: 30px;
 }
@@ -56,7 +56,7 @@ Ul{
 div[contenteditable=true] {
   text-align: left;
   color: #828282;
-}
+} */
 
 /* 검색 버튼 */
 .reservation_btn{

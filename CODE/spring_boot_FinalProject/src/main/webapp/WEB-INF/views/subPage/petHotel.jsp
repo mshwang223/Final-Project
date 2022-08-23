@@ -22,9 +22,9 @@
 </head>
 
 <body>
+	<!-- top  -->
+	<c:import url="/WEB-INF/views/layout/top.jsp" />
 	<section class="wrap">
-		<!-- top  -->
-		<c:import url="/WEB-INF/views/layout/top.jsp" />
 
 		<section class="reservation_container">
 			<article>
@@ -52,18 +52,15 @@
 							<div class="option_area_title">
 								옵션<img src="<c:url value='/images/choice.png'/>" alt="옵션">
 							</div>
-							<div class="option_box" id="optionBox" contenteditable="true" placeholder="옵션을 선택하세요" autocomplete="off"></div>
+							<div class="option_box" id="optionBox" autocomplete="off"></div>
+							<!--  contenteditable="true" placeholder="옵션을 선택하세요" -->
 						</div>
 						<div class="option_pop" id="optionPop">
 							<div>
-								<span class="option_span" id="option1">픽업<img
-									src="<c:url value='/images/close.png'/>" alt="옵션 삭제" class="option_close"></span>
-								<span class="option_span" id="option2">촬영<img
-									src="<c:url value='/images/close.png'/>" alt="옵션 삭제" class="option_close"></span>
-								<span class="option_span" id="option3">패키지<img
-									src="<c:url value='/images/close.png'/>" alt="옵션 삭제" class="option_close"></span>
-								<span class="option_span" id="option4">풀장<img
-									src="<c:url value='/images/close.png'/>" alt="옵션 삭제" class="option_close"></span>
+								<span class="option_span" id="option1">픽업</span>
+								<span class="option_span" id="option2">촬영</span>
+								<span class="option_span" id="option3">패키지</span>
+								<span class="option_span" id="option4">풀장</span>
 							</div>
 						</div>
 					</div>
@@ -81,7 +78,7 @@
 							<div class="count_area_title">
 								인원수 | 반려동물 수<img src="<c:url value='/images/owner.png'/>" alt="구성원 수">
 							</div>
-							<input type="text" class="count_box" autocomplete="off">
+							<input type="text" class="count_box" id="btnCount" autocomplete="off">
 						</div>
 						<div class="person_count_option">
 							<h4 class="tlt_popup_person">인원 선택</h4>
@@ -92,7 +89,7 @@
 								</div>
 								<div class="box_plus_minus">
 									<span id="personMinusBtn" class="btn_popup_count">-</span> 
-									<span id="personCount" class="popup_count_person">1</span>
+									<span id="personCount" class="popup_count_person">0</span>
 									<span id="personPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</span>
 								</div>
 							</div>
