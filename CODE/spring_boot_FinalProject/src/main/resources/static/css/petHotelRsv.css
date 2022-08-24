@@ -161,7 +161,7 @@ select{
 	margin-top: 10px;
 }
 .cus_phone > input{
-	width: 120px;
+	width: 270px;
 	height: 45px;
 	margin-top: 6px;
 	padding: 8px;
@@ -303,7 +303,7 @@ select{
 /* 예약하기 버튼 */
 .final_pay_btn{
 	width: 300px;
-	height: 47px;
+	height: 52px;
 	font-size: 20px;
 	font-weight: 600;
 	margin: 30px 0 0 21px;
