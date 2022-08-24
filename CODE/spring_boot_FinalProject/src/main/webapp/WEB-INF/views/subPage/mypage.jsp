@@ -45,29 +45,22 @@
                       
                     </div>
                     <div class="profile_menu">
-                        <button class="accordion">적립금<span class="accordion__arrow">></span></button>
-                        <div class="panel">
-                            <p>aaaaaaaaaaa</p>
-                        </div>
-
-                        <button class="accordion">쿠폰 <span class="accordion__arrow">></span></button>
-                        <div class="panel">
-                            <p>aaaaaaaaaa</p>
-                        </div>
-
-                        <button class="accordion">나의 등급<span class="accordion__arrow">></span></button>
+                        <button class="accordion">문의 내역<span class="accordion__arrow">></span></button>
                         <div class="panel">
                             <p>aaaaaaaa</p>
                         </div>
 
-                        <button class="accordion">찜한 상품<span class="accordion__arrow">></span></button>
+                        <button class="accordion">나의 리뷰<span class="accordion__arrow">></span></button>
                         <div class="panel">
                             <p>aaaaaaaaaaa</p>
                         </div>
 
                         <button class="accordion">예약 내역<span class="accordion__arrow">></span></button>
                         <div class="panel">
-                            <p>aaaaaaaaaa</p>
+                        <div class="panel_wrap">
+                            <p>펫밀리가 떴다2 펜션</p>
+                            <button class="review_btn">후기 남기러 가기</button>
+                            </div>
                         </div>
                     </div>
                     <br>
@@ -84,7 +77,10 @@
                             <img class="prev"  src="../images/left-arrow.png" alt="">
                             <img class="next"  src="../images/next.png" alt="">
                             </div>
-                            <div class="wented_title"> <br><p>추천 패키지</p><br></div>
+                            <div class="wented_title"> <br><p>예약 현황</p><br></div>
+                            <div class="profile_menu">
+                            <button class="accordion">2022.03.13~2022.03.15  |  펫밀리가 떴다 펜션<span class="accordion__arrow">></span></button>
+                            </div>
 
                         </div>
                     

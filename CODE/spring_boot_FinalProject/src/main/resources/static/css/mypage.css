@@ -91,6 +91,8 @@
   outline: none;
   transition: 0.4s;
   position: relative;
+   font-size: 13px;
+  font-weight: 600;
 }
 
 .accordion:first-of-type {
@@ -115,8 +117,31 @@
   display: none;
   overflow: hidden;
   border: none;
+  height:100%; 
 }
 
+.panel p{
+  font-size: 20px;
+  font-weight: 600;
+  margin-top:12px;
+}
+
+.panel_wrap{
+display:flex;
+justify-content: space-between;
+}
+
+.review_btn{
+  margin:5px 0 5px 0;
+  width:120px;
+  height:35px;
+  background-color:#ee88ee;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-weight: 600;
+  cursor:pointer;
+}
 .wented_hotel{
   height: 450px;
   padding: 90px 50px 0 50px;
@@ -168,3 +193,8 @@
 .wented_hotel_wrap .next{
   right: 1px;
 }
+
+.accordion__arrow2 {
+  float: right;
+}
+
