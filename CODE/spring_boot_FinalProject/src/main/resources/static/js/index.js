@@ -74,12 +74,7 @@ $(document).ready(function(){
          $('#slideBox').animate({'margin-left':moveLeft}, 'slow');   
       }
    }
-   
-   // 클릭 시 회원가입 페이지 이동
-   $(".login_box span:nth-child(2)").on('click', function() {
-      location.href = "/signup";
-   });
-
+     
 
    // 자세히보기 버튼 이동
    $('#partyBtn').click(function(){

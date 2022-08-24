@@ -7,7 +7,7 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css'/>">
-		<script src="<c:url value='/js/index.js'/>"></script>
+		<script defer src="<c:url value='/js/index.js'/>"></script>
 	</head>
 
 <body>

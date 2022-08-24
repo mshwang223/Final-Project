@@ -9,9 +9,9 @@
 	<link rel="icon" href="../images/logo_ico.png">
 	   <!-- header -->
         <c:import url="/WEB-INF/views/layout/header.jsp"/>
-	<link rel="stylesheet" type="text/css" href="css/common.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/cart.css">
+	<link rel="stylesheet" type="text/css" href="<c:url value='/css/common.css'/>">
+	<link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/css/cart.css'/>">
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script defer src="js/index.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -120,7 +120,6 @@
                 </div>
             </section>
               <div id="final_pay_modal" class="modal">
-           
             <div class="modal-content">
                 <div class="logo_box">
                 <img src="<c:url value='/images/petmilylogo.png'/>" alt="로고" class="btn" onclick="clicklogo()";/>
