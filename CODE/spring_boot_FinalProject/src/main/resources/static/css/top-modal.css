@@ -17,7 +17,7 @@
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .close {
@@ -44,7 +44,7 @@
 
 #findIdModal .modal-content,
 #findPwModal .modal-content {
-  width: 250px;
+  width: 300px;
   text-align: center;
 }
 
@@ -65,3 +65,10 @@
 	border:none;
 	background-color:#ee88ee;
 }
+
+.modal-content p{
+	font-size:20px;
+	font-family: 'Nanum Gothic';
+	font-weight:600;
+}
+

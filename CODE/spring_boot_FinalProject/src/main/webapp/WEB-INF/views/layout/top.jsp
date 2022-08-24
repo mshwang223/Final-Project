@@ -56,7 +56,7 @@
 					<div id="findPwModal" class="modal">
 						<!-- Modal content -->
 						<div class="modal-content">
-						<img src="<c:url value='/images/petmilylogo.png'/>" alt="">
+						<img src="<c:url value='/images/petmilylogo.png'/>" alt="" height=200px;>
 							<span class="close">&times;</span>
 							<p>비밀번호 찾기</p>
 							<hr>
