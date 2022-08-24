@@ -8,12 +8,13 @@ select{
 .sec_rsv_wrap{
 	display: flex;
 	justify-content: space-around;
+	margin-left: 80px;
 }
 
 /* 예약호텔 정보 박스 */
 .box_hotel_info{
 	width: 1000px;
-/* 	height: 100%; */
+	margin-top: 50px;
 	border-radius: 10px;
 	border: none;
 	background-color: #fff;
@@ -235,6 +236,7 @@ select{
 /* 스토커 박스 */
 .follow_box{
 	width: 400px;
+	margin-top: 50px;
 	height: 100%;
 	border-radius: 10px;
 	border: none;
