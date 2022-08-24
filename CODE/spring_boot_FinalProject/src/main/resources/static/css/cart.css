@@ -155,7 +155,7 @@
 .cart_box_final_pay{
   position: sticky; 
   position: -webkit-sticky;
-  top: 50px;
+  top: 90px;
   display: flex;
   justify-content: center;
   margin-left:43px;
@@ -167,6 +167,14 @@
   background-color: #fff;
   border-radius: 10px;
  
+}
+
+#agree1,
+#agree2,
+#agree3,
+#agree_all
+{
+	 cursor:pointer;
 }
 
 .final_pay_txt{
@@ -267,12 +275,14 @@ width:60px;
   "detail2 detail3" max-content / 1fr 1fr;
   grid-column-gap: 15px;
   grid-row-gap: 5px;
+ 
 }
 
 .terms_of_agreement__detail {
   display: grid;
   grid-template:
   "title input label" max-content / 1fr max-content max-content;
+  
 }
 
 .terms_of_agreement__detail span {
@@ -295,10 +305,12 @@ width:60px;
   color: white;
   border: none;
   border-radius: 10px;
+ 
 }
 
 .terms_of_agreement__see_more button i {
   color: white;
+  
 }
 
 .payments {
@@ -313,6 +325,7 @@ width:60px;
   background-color: white;
   border: 1px solid gray;
   padding: 7px 0;
+  cursor:pointer;
 }
 
 .payments__pays {
