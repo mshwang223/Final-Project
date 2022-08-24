@@ -1,0 +1,688 @@
+@charset "UTF-8";
+.stay_title{
+  font-size: 35px;
+  font-weight: 700;
+  margin-top: 40px;
+}
+
+.stay_sub_info{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.stay_sub_box{
+  display: flex;
+  align-items: center;
+}
+
+.stay_sub_info .stay_sub_box img{
+  width: 20px;
+  height: 20px;
+}
+
+.stay_sub_info span, .stay_sub_info .stay_sub_box div{
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.stay_sub_info .stay_sub_box div{
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.stay_sub_info .stay_pick{
+  display: flex;
+  align-items: center;
+}
+
+.stay_sub_info .stay_pick img{
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.stay_sub_info .stay_pick span{
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.stay_img_container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.stay_img_container > .stay_img_box1{
+  display: flex;
+  align-items: center;
+  height: 762px;
+}
+
+.stay_img_container > .stay_img_box1 img{
+  width: 785px;
+  height: 755px;
+}
+
+.stay_img_container > .stay_img_box2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 775px;
+}
+
+.stay_img_container > .stay_img_box2 div{
+  position: absolute;
+  bottom: 7px;
+  right: 0;
+  width: 382px;
+  height: 372px;
+  line-height: 372px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #ee82ee;
+  background-color: #222;
+  opacity: 0.8;
+}
+
+.stay_img_container > .stay_img_box2 img{
+  width: 382px;
+  height: 373px;
+}
+
+.stay_info_area{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.stay_info_area .info_content_area{
+  width: 850px;
+}
+
+.info_content_box1 .content_title{
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.simple_info_box{
+  margin-top: 12px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #ddd;
+}
+
+.simple_info_box > span{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.info_content_box2{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  border-bottom: 2px solid #ddd;
+}
+
+.location_box img, .contact_box img{
+  width: 20px;
+  height: 20px;
+}
+
+.location_box, .contact_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 405px;
+  font-size: 20px;
+}
+
+.contact_box{
+  width: 290px;
+}
+
+.copy{
+  display: none;
+  position:absolute;
+  top: -42px;
+  right: -33px;
+  width: 65px;
+  padding: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: #efbdef;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.copy:after {
+  content : '';
+  position: absolute;
+  background-color:#efbdef;
+  width : 10px;
+  height: 10px;
+  transform: rotate(45deg) translateX(-50%);
+  bottom: -5px;
+  left: 50%; 
+}
+
+.location_box > i:hover, .contact_box > i:hover {
+  cursor: pointer;
+}
+
+.location_box > i:hover + p.copy, .contact_box > i:hover + p.copy{
+  display: block;
+}
+
+
+/* 숙박타입 */
+.info_content_box3{
+  height: 670px;
+  border-bottom: 1px solid #ddd;
+  padding: 30px 0 0 0;
+}
+
+.info_content_box3 > div:first-child{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 45px;
+}
+
+.info_content_box3 img{
+  width: 340px;
+  height: 240px;
+  border-radius: 10px;
+}
+
+.room_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px;
+  height: 180px;
+}
+
+.room_box > div{
+  font-size: 22px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.info_content_box3 > div:nth-child(2), .info_content_box3 > div:nth-child(3){
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.info_content_box3 div:nth-child(3){
+  margin-top: 30px;
+}
+
+.info_content_box3 div:nth-child(2) .room_box span, .info_content_box3 div:nth-child(3) .room_box span{
+  display: inline-block;
+  width: 150px;
+  height: 47px;
+  line-height: 47px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.info_content_box3 div:nth-child(3) .room_box span{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.room_btn{
+  width: 115px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ee82ee;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* 숙소 편의 시설 */
+.info_content_box4{
+  border-bottom: 2px solid #ddd;
+}
+
+.info_content_box4 > div:first-child{
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.cs_box{
+  display: flex;
+  margin-top: 20px;
+}
+
+.cs_box > div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 22px;
+  font-weight: 500;
+  width: 50%;
+  height: 250px;
+}
+
+.additional_cs > div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 22px;
+  font-weight: 500;
+  width: 50%;
+}
+
+.cs_box1 > div, .cs_box2 > div{
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.cs_box img, .additional_cs img{
+  width: 25px;
+  height: 25px;
+  margin-right: 25px;
+}
+
+.additional_click{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.additional_click > span{
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #222;
+}
+
+.additional_click i{
+  font-size: 23px;
+  margin-left: 10px;
+}
+
+.additional_cs{
+  display: none;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.sticky_area{
+  position: sticky;
+  top: 105px;
+  width: 450px;
+  height: 600px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  padding: 30px;
+}
+
+.charge_area{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.charge_area div:nth-child(1) span{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.charge_area div:nth-child(1) span:nth-child(2){
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.charge_area div:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.charge_area div:nth-child(2) img{
+  width: 20px;
+  height: 20px;
+}
+
+.charge_area div:nth-child(2) > div{
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+}
+
+.check_date{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.checkin,.checkout{
+  width: 192px;
+  height: 70px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.checkin{
+  border-right: 1px solid #ddd;
+}
+
+.checkin div:nth-child(2), .checkout div:nth-child(2), .total_count div:nth-child(2){
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* 인원선택 팝업 */
+.dis_block{
+  display: block!important;
+}
+
+.info_content_count, .stay_date{
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.total_count{
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.person_count_option{
+  display: none;
+  width: 385px;
+  height: 300px;
+  position: absolute;
+  top: 73px;
+  right: 0;
+  padding: 50px 55px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  z-index: 3;
+}
+
+/* 팝업 인원박스 */
+.person_count_option .tlt_popup_person{
+  font-size: 22px;
+  font-weight: 600;
+}
+.person_count_option .div_person_count{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.person_count_option .div_person_count .box_txt_person{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box_txt_person .txt_person_main{
+  font-size: 20px;
+  font-weight: 400;
+}
+.box_txt_person .txt_person_sub{
+  margin: 5px 0 0 1px;
+  font-size: 16px;
+  color: rgb(183, 171, 171);
+}
+.div_person_count .box_plus_minus{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.box_plus_minus .btn_popup_count{
+  width: 34px;
+  height: 34px;
+  border: 3px solid #ddd;
+  border-radius: 50px;
+  color: #ddd;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+.box_plus_minus .btn_count_active{
+  border: 2px solid #ee82ee;
+  color: #ee82ee;
+  cursor: pointer;
+}
+.box_plus_minus .popup_count_person{
+  display: inline-block;
+  width: 43px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 요금 상세 */
+.charge_detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 175px;
+  margin-top: 20px;
+  padding: 0 10px 20px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.charge_detail > div{
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.total_charge{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 17px;
+  padding: 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.book_btn{
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ee82ee;
+  cursor: pointer;
+}
+
+/* 지도 */
+.info_content_box5{
+  height: 450px;
+  margin: 45px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.info_content_box5 .map{
+  width: 100%;
+  height: 400px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* 알아두어야 할 사항 */
+.info_content_box6{
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #ddd;;
+}
+
+.rule_box > div{
+  margin-bottom: 20px;
+}
+
+.rule_title{
+  font-size: 25px;
+  font-weight: 600;
+  margin: 45px 0 30px;
+}
+
+.rule_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.rule_container > div.rule_box{
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  height: 170px;
+}
+
+.rule_container > div.rule_box, .rule_container > div > i{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.rule_container .rule_box > div > i{
+  margin-right: 10px;
+}
+
+.rule_sub_title{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.rule_sub_long{
+  line-height: 26px;
+}
+
+/* 리뷰 */
+.info_content_box7{
+  height: 700px;
+}
+
+.info_content_box7 > div.review_title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+  font-weight: 600;
+  width: 215px;
+}
+
+.info_content_box7 > div.review_title > img{
+  width: 20px;
+  height: 20px;
+}
+
+.review_title > div{
+  border-bottom: 1px solid #222;
+}
+
+.review_content_container{
+  display: flex;
+}
+
+.review_content_box{
+  width: 50%;
+  height: 550px;
+  margin: 20px 0;
+  padding: 40px 20px;
+}
+
+.review_content_box > div.review_user_content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 250px;
+  margin-bottom: 20px;
+  padding: 10px
+}
+
+.review_content_box .user_img_box{
+  width: 40px;
+  height: 40px;
+  border: 3.5px solid #222;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.review_content_box .user_img_box img{
+  width: 33px;
+  height: 33px;
+  margin-top: 5px;
+}
+
+.review_info{
+  width: 310px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.review_info .nickname{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.review_info .review_date{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.review_content{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.info_content_box7 > button{
+  float: right;
+  width: 230px;
+  height: 65px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 2.5px solid #222;
+  cursor: pointer;
+  margin: 10px 20px;
+}
