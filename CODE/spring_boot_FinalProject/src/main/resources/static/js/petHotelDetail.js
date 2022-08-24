@@ -104,9 +104,13 @@ $(document).ready(function(){
     });
     
   });
+  
+    //후기 이동
+	$('.review_move').click(function(){
+	      $('html,section').animate({scrollTop : 3000},300);
+	   });
 
-
-}); //document.ready 끝6
+}); //document.ready 끝
 
 
 // 찜하기 눌렀을 때
@@ -143,8 +147,6 @@ var marker = new naver.maps.Marker({
   position: new naver.maps.LatLng(37.3405761, 127.3164609),
   map: map
 });
-
-var map = new naver.maps.Map('map', mapOptions);
 
 //37.3595704, 127.105399
 //37.3405761, 127.3164609

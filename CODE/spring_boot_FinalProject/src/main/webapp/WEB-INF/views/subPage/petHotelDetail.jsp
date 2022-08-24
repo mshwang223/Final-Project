@@ -45,7 +45,7 @@
 					<div class="stay_sub_info">
 						<div class="stay_sub_box">
 							<img src="/images/star.png" alt="별점"> <span>4.37</span>
-							<div>후기 300개</div>
+							<div class="review_move">후기 300개</div>
 						</div>
 						<div class="stay_pick">
 							<img class="like_btn" src="/images/heart.png" alt="찜하기">
@@ -254,7 +254,7 @@
 						</div>
 						<div>
 							<img src="/images/star.png" alt="별점"> <span>4.37</span>
-							<div>후기 300개</div>
+							<div class="review_move">후기 300개</div>
 						</div>
 					</div>
 					<div class="check_date">
@@ -320,7 +320,7 @@
 				</div>
 			</article>
 		</section>
-
+		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 	</section>
 	<!-- footer -->
 	<c:import url="/WEB-INF/views/layout/footer.jsp" />
