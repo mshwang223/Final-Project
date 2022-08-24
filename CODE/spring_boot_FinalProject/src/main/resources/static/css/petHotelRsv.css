@@ -8,12 +8,13 @@ select{
 .sec_rsv_wrap{
 	display: flex;
 	justify-content: space-around;
+	margin-left: 80px;
 }
 
 /* 예약호텔 정보 박스 */
 .box_hotel_info{
 	width: 1000px;
-/* 	height: 100%; */
+	margin-top: 50px;
 	border-radius: 10px;
 	border: none;
 	background-color: #fff;
@@ -161,7 +162,7 @@ select{
 	margin-top: 10px;
 }
 .cus_phone > input{
-	width: 120px;
+	width: 270px;
 	height: 45px;
 	margin-top: 6px;
 	padding: 8px;
@@ -235,6 +236,7 @@ select{
 /* 스토커 박스 */
 .follow_box{
 	width: 400px;
+	margin-top: 50px;
 	height: 100%;
 	border-radius: 10px;
 	border: none;
@@ -303,7 +305,7 @@ select{
 /* 예약하기 버튼 */
 .final_pay_btn{
 	width: 300px;
-	height: 47px;
+	height: 52px;
 	font-size: 20px;
 	font-weight: 600;
 	margin: 30px 0 0 21px;

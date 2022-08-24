@@ -40,20 +40,18 @@
 						<div class="name_rule">(투숙객 이름은 체크인 시 제시할 유효한 신분증 이름과 정확히 일치해야 합니다)</div>
 						<div class="cus_name">
 							<div class="tlt_all">투숙객명</div>
-							<input type="text" class="input_cus_name">							
+							<input type="text" id="cusName" class="input_cus_name">							
 						</div>
 						<div class="cus_phone">
 							<div class="tlt_all">연락처</div>
-							<input type="text" class="input_phone1"> -
-							<input type="text" class="input_phone2"> -
-							<input type="text" class="input_phone3">
+							<input type="text" id="phNum" class="input_phone1">
 						</div>
 						<div class="cus_email">
 							<div class="tlt_all">이메일</div>
-							<input type="text" class="mail_id"> @
-							<input type="text" class="mail_address" placeholder="직접입력">
+							<input type="text" id="mailId" class="mail_id"> @
+							<input type="text" id="mailAddress" class="mail_address" placeholder="직접입력">
 							<select class="mail_address_select" id="cusSel" >
-								<option selected>직접입력</option>
+								<option value="" selected>직접입력</option>
 								<option>naver.com</option>
 					            <option>gmail.com</option>
 					            <option>hanmail.net</option>
@@ -62,7 +60,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="newCustomer" class="add_new_cus"><i id="plusBtn" class="fa-solid fa-plus add_customer"></i><span>새 투숙객 추가</span></div>
+				<div id="newCustomer" class="add_new_cus"><i id="plusBtn" class="fa-solid fa-plus add_customer"></i><span>투숙객 추가</span></div>
 				<div class="box_cus_info2">
 					<div class="first_cus_info">
 						<div class="cus_info_tlt">투숙객 정보</div>
@@ -73,20 +71,18 @@
 						</div>
 						<div class="cus_phone">
 							<div class="tlt_all">연락처</div>
-							<input type="text" class="input_phone1"> -
-							<input type="text" class="input_phone2"> -
-							<input type="text" class="input_phone3">
+							<input type="text" class="input_phone1">
 						</div>
 						<div class="cus_email">
 							<div class="tlt_all">이메일</div>
 							<input type="text" class="mail_id">@
-							<input type="text" class="mail_address" placeholder="직접입력">
-							<select class="mail_address_select" id="cusSel" >
-								<option selected>직접입력</option>
-								<option>naver.com</option>
-					            <option>gmail.com</option>
-					            <option>hanmail.net</option>
-					            <option>hotmail.com</option>
+							<input type="text" id="emailAddress" class="mail_address" placeholder="직접입력">
+							<select class="mail_address_select" id="cusSel2" >
+								<option value="" selected>직접입력</option>
+								<option value="naver.com">naver.com</option>
+					            <option value="gmail.com">gmail.com</option>
+					            <option value="hanmail.net">hanmail.net</option>
+					            <option value="hotmail.com">hotmail.com</option>
 							</select>
 						</div>
 					</div>
@@ -99,7 +95,7 @@
 			        	<div class="agreement_c">(필수) 펫밀리가 떴다 공급업체 서비스 약관 및 세금 명세 약관을 읽었으며 이에 동의합니다.</div>
 			        </div>
 			        <div class="agreement_check_final">
-	          			<input type="checkbox" class="agree_text_final">위 약관을 확인 하였으며, 약관에 동의합니다
+	          			<input type="checkbox" name="finalCheck" id="finalCheck" class="agree_text_final">위 약관을 확인 하였으며, 약관에 동의합니다
 	        		</div>
         		</div>
 			</div>
@@ -122,7 +118,7 @@
 					<div class="price_txt">최종 금액</div>
 					<div class="price_won">352,000원</div>
 				</div>
-				<button type="submit" class="final_pay_btn">예약하기</button>
+				<button type="submit" id="finalPayBtn" class="final_pay_btn">예약하기</button>
 			</div>
 		</section>
 	<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
