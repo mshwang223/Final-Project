@@ -130,10 +130,14 @@ $(document).ready(function(){
 		location.href = "/cart";
 	});
 	
-	// 장바구니
+	// 관리자 페이지 이동
 	$('#admin').click(function() {
 		location.href = "/admin";
 	});
+	// 업체등록 페이지 이동
+	$('#inputHotel').click(function(){
+		location.href = "/inputHotel";
+	})
 });
 
 	
