@@ -1,0 +1,40 @@
+/* 약관 정책 세부 레이아웃 */
+
+/* 팝업 레이아웃 */
+#signupModal {
+  display: none;	
+}
+
+div.modal-content {
+  padding-top: 50px;	
+}
+
+.showDetail {
+  max-height: 300px; 
+  
+  padding: 0px 18px 4px 24px;
+  
+  color: black;
+  
+  font-size: 14px;
+  line-height: 22px;
+  
+  overflow-y: auto;
+}
+
+/* 스크롤바 레이아웃 */
+.showDetail::-webkit-scrollbar {
+  padding: 15px;
+  right: 5px;	
+  width: 8px;
+}
+
+.showDetail::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 8px; 
+}
+
+.showDetail::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+

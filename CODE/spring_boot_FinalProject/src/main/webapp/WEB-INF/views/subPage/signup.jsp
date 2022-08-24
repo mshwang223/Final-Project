@@ -11,76 +11,111 @@
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
 		<link rel="stylesheet" type="text/css" href="css/signup.css">
+		<link rel="stylesheet" type="text/css" href="css/signup-modal.css">
+		
+		
+		<!-- <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> -->
+		
 		<script src="js/signup.js"></script>
+		<script src="js/signup-modal.js"></script>
+		
+
 		
 	</head>
 
 	<body>
 		<!-- top  -->
 		<c:import url="/WEB-INF/views/layout/top.jsp"/>
-		
 		<section class="wrap">
+			
 			<!-- section -->
-			<section>
-		    	<div>
+			<section class="signup">
 			        <div class="pageTitle">
 						<div>
 							<span>#회원가입</span>
 						</div>
 					</div>
-			        <div class="terms-box">
-			        	<div class="termsTitle">약관 동의<em></em></div>
-			        	<div>
-			        		<div class="agree_sub">
-			        			<input type="checkbox" id="agree_subcheck1" class="agree_subcheck">
-			        			<label for="agree_subcheck1">서비스 이용약관(필수)</label>
-			        			<button class="btn-close sub1">▼</button>
-			        		</div>
-			        		<div class="termsline sub1"></div>
-			        		<div class="subDetail-box sub1">
-				        		<div id="subpage1" class="showDetail"></div>
-			        		</div>
-			        		
-			        		<div class="agree_sub">
-			        			<input type="checkbox" id="agree_subcheck2" class="agree_subcheck">
-			        			<label for="agree_subcheck2">개인정보 수집 및 이용 동의(필수)</label>
-			        			<button class="btn-close sub2">▼</button>
-			        		</div>
-			        		<div class="termsline"></div>
-			        		<div class="subDetail-box sub2">
-				        		<div id="subpage2" class="showDetail"></div>
-			        		</div>
-			        		
-			        		<div class="agree_sub">
-			        			<input type="checkbox" id="agree_subcheck3" class="agree_subcheck">
-			        			<label for="agree_subcheck3">개인정보 수집 및 이용 동의(선택)</label>
-			        			<button class="btn-close sub3">▼</button>
-			        		</div>
-			        		<div class="termsline"></div>
-			        		<div class="subDetail-box sub3">
-				        		<div id="subpage3" class="showDetail"></div>
-			        		</div>
-			        		
-			        		<div class="agree_sub">
-			        			<input type="checkbox" id="agree_subcheck4" class="agree_subcheck">
-			        			<label for="agree_subcheck4">개인정보 제 3자 제공 동의(필수)</label>
-			        			<button class="btn-close sub4">▼</button>
-			        		</div>
-			        		<div class="termsline"></div>
-			        		<div class="subDetail-box sub4">
-				        		<div id="subpage4" class="showDetail"></div>
-			        		</div>
-			        		
-			        		<div class="agree_sub last">
-			        			<input type="checkbox" id="agree_checkAll">
-			        			<label for="agree_checkAll">전체동의</label>
-			        			<span>
-			        				서비스 이용약관(필수), 개인정보 수집 및 이용 동의(필수), 개인정보 수집 및 이용 동의(선택), 개인정보 제 3자 제공<br> 동의(필수) 내용에 모두 동의 합니다.
-			        			</span>
-			        		</div>
-			        	</div>
-			        </div>
+		    	<div class="signup_box">
+			        <div class="custom_info">
+			        	<div class="signup_id">
+			            	<p class="title">아이디</p>
+			            	<input type="text" class="text_signup_id" placeholder="아이디 입력">
+			            	<button class="btn_idcheck">중복확인</button>
+			          	</div>
+			          	<br>
+			          	<div class="signup_pwd">
+			            	<p class="title">비밀번호</p>
+			            	<input type="password" id="signupPwd1" class="text_signup_pwd"
+			              	placeholder="영문 숫자 특수문자 포함 8~12자리">
+			            	<!-- <div class="pwd_eyes"><img src="../images/show.png"></div> -->
+			          	</div>
+			          	<div class="check_pwd">
+			            	<p class="title">비밀번호 확인</p>
+			            	<input type="password" id="signupPwd2" class="text_check_pwd"
+			              	placeholder="영문 숫자 특수문자 포함 8~12자리">
+			            	<!-- <div class="pwd_eyes"><img src="../images/show.png"></div> -->
+			          	</div>
+			          	<br>
+			          	<div class="signup_name">
+			            	<p class="title">이름</p>
+			            	<input type="text" id="signupName" class="text_signup_name"
+			              	placeholder="이름을 입력해 주세요">
+			          	</div>
+			          	<br>
+			          	<div class="signup_email">
+			            	<p class="title">이메일</p>
+			            	<input type="text" id="signupEmail" class="text_signup_email" placeholder="abc@example.com">
+			          	</div>
+			          	<br>
+			          	<br>
+			          	<div class="agree_rule">
+			            	<div class="agree_all">
+				            	<input type="checkbox" id="allCheck" class="agree_all_check" name="agree_all_check">
+				              	<p class="title">약관 전체 동의</p>
+				            </div>
+				            <div class="agree_sub">
+				            	<div class="agree_sub1">
+				                	<input type="checkbox" id="agree_subcheck1" class="agree_subcheck essential" name="agree_subcheck1">
+				                	<p>서비스 이용약관(필수)</p>
+				                	<div id="subDetail1">상세보기</div>
+				              	</div>
+				            </div>
+				            <div class="agree_sub">
+				            	<div class="agree_sub2">
+				                	<input type="checkbox" id="agree_subcheck2" class="agree_subcheck essential" name="agree_subcheck2">
+				                	<p>개인정보 수집 및 이용 동의(필수)</p>
+				                	<div id="subDetail2">상세보기</div>
+				              	</div>
+				            </div>
+				            <div class="agree_sub">
+				            	<div class="agree_sub3">
+				                	<input type="checkbox" id="agree_subcheck3" class="agree_subcheck" name="agree_subcheck3">
+				                	<p>개인정보 수집 및 이용 동의(선택)</p>
+				                	<div id="subDetail3">상세보기</div>
+				              	</div>
+				            </div>
+				            <div class="agree_sub">
+				              	<div class="agree_sub4">
+				                	<input type="checkbox" id="agree_subcheck4" class="agree_subcheck essential" name="agree_subcheck4">
+				                	<p>개인정보 제 3자 제공 동의(필수)</p>
+				                	<div id="subDetail4">상세보기</div>
+				              	</div>
+			            	</div>
+			          	</div>
+			          	<div class="btn_signup_box">
+			            	<button class="btn_signup_done">가입하기</button>
+			          	</div>
+		        	</div>
 		    	</div>
+		    	
+		    	<!-- The Modal -->
+				<div id="signupModal" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						
+					</div>
+				</div>
 		    </section>
 		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
