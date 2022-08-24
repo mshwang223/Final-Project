@@ -28,8 +28,8 @@
 							<p>로그인</p>
 							<div class="loginline"></div>
 							<div id="input-div">
-								<input type="text" class="dropdown_username" placeholder="아이디">
-								<input type="password" class="dropdown_password" placeholder="비밀번호">
+								<input type="text" id="userId" class="dropdown_username" placeholder="아이디">
+								<input type="password" id="userPw" class="dropdown_password" placeholder="비밀번호">
 							</div>
 							<div id="forgotInfo">
 								<a id="findIdBtn" href="#">ID 찾기</a>
