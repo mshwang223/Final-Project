@@ -154,7 +154,7 @@ header .login_box{
   margin-top: 10px;
   
   width: 250px;
-  height: 200px;
+  height: 212px;
   min-width: 160px;
   z-index: 10;
   background-color: white;
@@ -223,11 +223,11 @@ header .login_box{
   font-size: 14px;
   color: #fff;
   background-color: #ee82ee;
-  width: 100%;
+  width: 216px;
   height: 45px;
   border: 1px solid #ee82ee;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
+  margin-left: 16px;
 }
 
 .dropdown img {
