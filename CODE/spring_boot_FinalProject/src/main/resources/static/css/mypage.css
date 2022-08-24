@@ -131,7 +131,7 @@ display:flex;
 justify-content: space-between;
 }
 
-.review_btn{
+#review_btn{
   margin:5px 0 5px 0;
   width:120px;
   height:35px;

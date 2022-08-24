@@ -9,13 +9,17 @@
 	<link rel="icon" href="../images/logo_ico.png">
 	 <!-- header -->
         <c:import url="/WEB-INF/views/layout/header.jsp"/>
-    <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/mypage.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/css/common.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/css/mypage.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/css/review-modal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/css/top-modal.css'/>">
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script defer src="js/mypage.js"></script>
+	<script defer src="<c:url value='/js/review-modal.js'/>"></script>
 	<link href="https://fonts.gogleapis.coom/icon?family=Material+Icons"
       rel="stylesheet">
+      <link href="/assets/css/star.css" rel="stylesheet"/>
       </head>
        <!-- header -->
         <c:import url="/WEB-INF/views/layout/top.jsp"/>
@@ -59,9 +63,36 @@
                         <div class="panel">
                         <div class="panel_wrap">
                             <p>펫밀리가 떴다2 펜션</p>
-                            <button class="review_btn">후기 남기러 가기</button>
+                            <button id="review_btn">후기 남기러 가기</button>
                             </div>
                         </div>
+                    </div>
+                    <div id="reviewmodal" class="modal">
+                    <!-- Modal Content -->
+                    <div class="modal-content">
+                    <img src="<c:url value='/images/petmilylogo.png'/>" alt="" height=70px;>
+                    <span class="close">&times;</span>
+                    <p>후기 남기기</p>
+                    <hr>
+                    <form id=reviewform">
+                    <div class="star-rating">
+                    <input type="radio" id="5-stars" name="rating" value="5" />
+                    <label for="5-stars" class="star">&#9733;</label>
+                    <input type="radio" id="4-stars" name="rating" value="4" />
+                    <label for="4-stars" class="star">&#9733;</label>
+                    <input type="radio" id="3-stars" name="rating" value="3" />
+                    <label for="3-stars" class="star">&#9733;</label>
+                    <input type="radio" id="2-stars" name="rating" value="2" />
+                    <label for="2-stars" class="star">&#9733;</label>
+                    <input type="radio" id="1-star" name="rating" value="1" />
+                    <label for="1-star" class="star">&#9733;</label>
+                  </div>
+                    <textarea class="col-auto form-control" type="text" id="review" placeholder="후기를 남겨주세요" maxlength=100;></textarea>
+                    </form>
+
+                    
+                    <input type="submit" id="submit-btn" value="후기남기기">
+                    </div>
                     </div>
                     <br>
                     <div class="wented_title"> <p>이용한 패키지</p>
@@ -83,7 +114,7 @@
                             </div>
 
                         </div>
-                    
+                  
                 
               
             </section>
