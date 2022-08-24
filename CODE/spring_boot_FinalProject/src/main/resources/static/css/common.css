@@ -228,6 +228,7 @@ header .login_box{
   border: 1px solid #ee82ee;
   border-radius: 10px;
   margin-left: 16px;
+  cursor:pointer;
 }
 
 .dropdown img {
