@@ -128,6 +128,10 @@ $(document).ready(function(){
 	$('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDate.format('MM.DD(dd)'));
 
 });
+	// Detail페이지로 이동
+	$('.search_list_btn').click(function(){
+		location.href = '/petHotelDetail';
+	});
 
 });
 
