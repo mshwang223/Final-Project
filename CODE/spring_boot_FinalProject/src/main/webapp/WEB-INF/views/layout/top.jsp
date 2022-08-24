@@ -82,10 +82,8 @@
 							<li id="admin">관리자</li>
 							<li class="underline"></li>
 							</c:if>
-							<c:if test="${sessionScope.author eq '2'}">
 							<li id="inputHotel" id="company">업체등록</li>
 							<li class="underline"></li>
-							</c:if>
 							<li id="myPage">마이페이지</li>
 							<li class="underline"></li>
 							<li id="logout">
