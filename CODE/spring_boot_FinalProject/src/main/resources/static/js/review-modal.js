@@ -2,18 +2,8 @@ const modals = document.querySelectorAll(".modal");
 const reviewmodal = document.querySelector("#reviewmodal");
 const reviewBtn = document.querySelector("#review_btn");
 const closeBtns = document.querySelectorAll(".close");
-const findIdModal = document.querySelector("#findIdModal");
-const findPwModal = document.querySelector("#findPwModal");
-const findIdBtn = document.querySelector("#findIdBtn");
-const findPwBtn = document.querySelector("#findPwBtn");
 
-findIdBtn.onclick = function() {
-	findIdModal.style.display = "block";
-}
 
-findPwBtn.onclick = function () {
-	findPwModal.style.display = "block";
-}
 
 review_btn.onclick = function() {
 	reviewmodal.style.display = "block";
