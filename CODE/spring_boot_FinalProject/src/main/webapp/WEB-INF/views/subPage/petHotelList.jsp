@@ -27,7 +27,7 @@
 	      <div class="ttl_pethotel">
 	        <div class="text_box">
 	          <div class="box_center">
-	            <div>#반려동물과 함께 하는 호텔 / 펜션</div>
+	            <div># 반려동물과 함께 하는 호텔 / 펜션</div>
 	          </div>
 	        </div>
 	      </div>
