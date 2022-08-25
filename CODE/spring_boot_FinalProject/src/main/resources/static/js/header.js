@@ -14,13 +14,16 @@ $(document).ready(function(){
 		if($(this).scrollTop() > 50) {
 			$("header").addClass('header-move');
 			
-			//$(".dropdown").addClass('dropdown-move');
-			$(".btnSignup").addClass('signup-move');
+			$(".main_nav").addClass("nav-move");		// 메뉴
+			$(".dropdown").addClass('dropdown-move');	// 로그인
+			$(".btnSignup").addClass('signup-move');	// 회원가입
 			
 			$(".logo_box").css('visibility', 'hidden');
 		} else {
 			$("header").removeClass('header-move');
 			
+			$(".main_nav").removeClass("nav-move");		// 메뉴
+			$(".dropdown").removeClass('dropdown-move');
 			$(".btnSignup").removeClass('signup-move');
 			
 			$(".logo_box").css('visibility', 'visible');

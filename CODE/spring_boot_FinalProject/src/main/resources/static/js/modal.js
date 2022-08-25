@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function(){
 const modals = document.querySelectorAll(".modal");
 const findIdModal = document.querySelector("#findIdModal");
 const findPwModal = document.querySelector("#findPwModal");
@@ -33,3 +34,5 @@ modals.forEach(modal => {
 		}
 	});
 })
+
+});

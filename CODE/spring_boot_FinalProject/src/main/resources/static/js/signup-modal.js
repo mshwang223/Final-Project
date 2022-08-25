@@ -8,26 +8,30 @@ $(document).ready(function(){
 	// 모달 팝업 기능 구현
 	$("#subDetail1").click(function() {
 		$("#signupModal").css('display', 'block');
-		$("#signupModal > div").append('<div id="subpage1" class="showDetail"></div>');
+		$(".modal-content > div").empty();	// 초기화
+		$(".modal-content > div").append('<div id="subpage1" class="showDetail"></div>');
 		readTxtFile("subpage1", $("#subpage1"));
 	});
 	
 	$("#subDetail2").click(function() {
 		$("#signupModal").css('display', 'block');
-		$("#signupModal > div").append('<div id="subpage2" class="showDetail"></div>');
-		readTxtFile("subpage2", $("#subpage1"));
+		$(".modal-content > div").empty();	// 초기화
+		$(".modal-content > div").append('<div id="subpage2" class="showDetail"></div>');
+		readTxtFile("subpage2", $("#subpage2"));
 	});
 	
 	$("#subDetail3").click(function() {
 		$("#signupModal").css('display', 'block');
-		$("#signupModal > div").append('<div id="subpage3" class="showDetail"></div>');
-		readTxtFile("subpage3", $("#subpage1"));
+		$(".modal-content > div").empty();	// 초기화
+		$(".modal-content > div").append('<div id="subpage3" class="showDetail"></div>');
+		readTxtFile("subpage3", $("#subpage3"));
 	});
 	
 	$("#subDetail4").click(function() {
 		$("#signupModal").css('display', 'block');
-		$("#signupModal > div").append('<div id="subpage4" class="showDetail"></div>');
-		readTxtFile("subpage4", $("#subpage1"));
+		$(".modal-content > div").empty();	// 초기화
+		$(".modal-content > div").append('<div id="subpage4" class="showDetail"></div>');
+		readTxtFile("subpage4", $("#subpage4"));
 	});
 
  	function readTxtFile(fileName, id) {

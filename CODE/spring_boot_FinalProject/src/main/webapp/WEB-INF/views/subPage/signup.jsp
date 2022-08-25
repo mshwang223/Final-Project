@@ -77,43 +77,45 @@
 				            	<div class="agree_sub1">
 				                	<input type="checkbox" id="agree_subcheck1" class="agree_subcheck essential" name="agree_subcheck1">
 				                	<p>서비스 이용약관(필수)</p>
-				                	<div id="subDetail1">상세보기</div>
+				                	<div id="subDetail1" class="subDetail">상세보기</div>
 				              	</div>
 				            </div>
 				            <div class="agree_sub">
 				            	<div class="agree_sub2">
 				                	<input type="checkbox" id="agree_subcheck2" class="agree_subcheck essential" name="agree_subcheck2">
 				                	<p>개인정보 수집 및 이용 동의(필수)</p>
-				                	<div id="subDetail2">상세보기</div>
+				                	<div id="subDetail2" class="subDetail">상세보기</div>
 				              	</div>
 				            </div>
 				            <div class="agree_sub">
 				            	<div class="agree_sub3">
 				                	<input type="checkbox" id="agree_subcheck3" class="agree_subcheck" name="agree_subcheck3">
 				                	<p>개인정보 수집 및 이용 동의(선택)</p>
-				                	<div id="subDetail3">상세보기</div>
+				                	<div id="subDetail3" class="subDetail">상세보기</div>
 				              	</div>
 				            </div>
 				            <div class="agree_sub">
 				              	<div class="agree_sub4">
 				                	<input type="checkbox" id="agree_subcheck4" class="agree_subcheck essential" name="agree_subcheck4">
 				                	<p>개인정보 제 3자 제공 동의(필수)</p>
-				                	<div id="subDetail4">상세보기</div>
+				                	<div id="subDetail4" class="subDetail">상세보기</div>
 				              	</div>
 			            	</div>
 			          	</div>
-			          	<div class="btn_signup_box">
-			            	<button class="btn_signup_done">가입하기</button>
-			          	</div>
 		        	</div>
 		    	</div>
-		    	
+			    
+			    <div class="btn_signup_box">
+			    	<button class="btn_cancel_done">취 소</button>
+			        <button class="btn_signup_done">가입하기</button>
+			    </div>
+			    		    	
 		    	<!-- The Modal -->
 				<div id="signupModal" class="modal">
 					<!-- Modal content -->
 					<div class="modal-content">
 						<span class="close">&times;</span>
-						
+						<div></div>
 					</div>
 				</div>
 		    </section>

@@ -6,24 +6,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>마이페이지</title>
-	<link rel="icon" href="../images/logo_ico.png">
-	 <!-- header -->
-        <c:import url="/WEB-INF/views/layout/header.jsp"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value='/css/common.css'/>">
+	<!-- header -->
+    <c:import url="/WEB-INF/views/layout/header.jsp"/>
+    
     <link rel="stylesheet" type="text/css" href="<c:url value='/css/mypage.css'/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/css/review-modal.css'/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value='/css/top-modal.css'/>">
-	<script src="js/jquery-3.6.0.min.js"></script>
+    
 	<script defer src="js/mypage.js"></script>
 	<script defer src="<c:url value='/js/review-modal.js'/>"></script>
+	
 	<link href="https://fonts.gogleapis.coom/icon?family=Material+Icons"
       rel="stylesheet">
-      <link href="/assets/css/star.css" rel="stylesheet"/>
+    <link href="/assets/css/star.css" rel="stylesheet"/>
       </head>
        <!-- header -->
         <c:import url="/WEB-INF/views/layout/top.jsp"/>
-      <body>
+      <body>    
         <section class="wrap">   
         <!-- section -->
             <section class="mypage">

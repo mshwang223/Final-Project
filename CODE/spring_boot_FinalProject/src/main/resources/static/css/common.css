@@ -32,9 +32,11 @@ header{
 header .logo_box{	
   display: flex;
   align-items: center;
+  
   position: relative;
   right: 450px;
   width: 231px;
+
   height: 100%;
 }
 
@@ -46,7 +48,10 @@ header .logo_box > a > img {
 
 header nav.main_nav{
   display: flex;
+  
   position: absolute;
+  left: 300;
+  
   align-items: center;
   width: 600px;
   height: 50px;
@@ -346,9 +351,9 @@ header .login_box > a {
   background-color: #ee82ee;
   border-radius: 8px;
 
+  margin-left: 30px;
+  
   position: absolute;
-  left: 30px;
-
 }
 
 header .login_box > a > span{
@@ -441,8 +446,6 @@ header .login_box > .dropdown > span.loginForm:hover{
 
 /* 스크롤 이동 시 header 이동 */
 .header-move {
-  display: flex;
-  justify-content: center;
   position: fixed;
   top: 0;
   margin-top: 0;
@@ -453,12 +456,8 @@ header .login_box > .dropdown > span.loginForm:hover{
   z-index: 50;
 }
 
-/* 스크롤 이동 시 header 이동 */
 .nav-move {
-  right: 100px;
+  position: fixed;
+  	
 }
 
-.signup-move {
-  position:fixed;
-  right: 175px;
-}

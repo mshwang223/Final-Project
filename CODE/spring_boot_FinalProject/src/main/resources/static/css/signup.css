@@ -23,7 +23,7 @@
 }
 
 .signup_box{
-  margin: 50px auto 100px auto;
+  margin: 50px auto;
   
   border: 1px solid #ee82ee;
   
@@ -228,24 +228,49 @@
   font-weight: bold;
 }
 
+/* 상세보기 레이아웃 */
+.subDetail {
+  cursor: pointer;	
+}
+
 /* 가입하기 버튼 */
 .btn_signup_box{
-  width: 356px;
-  height: 100px;
+  width: 600px;
   margin: 0 auto;
-  text-align: center;
+  text-align: right;
 }
 
 .btn_signup_done{
-  width: 356px;
+  width: 120px;
   height: 50px;
-  margin-top: 30px;
+
   font-size: 16px;
   font-weight: 600;
+  
   background-color: #ee82ee;
-  border-radius: 2px;
   color: #fff;
+  
   border: none;
+  border-radius: 8px;
+  
+  cursor: pointer;
+}
+
+.btn_cancel_done{
+  width: 120px;
+  height: 50px;
+  
+  margin-right: 30px;
+
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: white;
+  color: black;
+  
+  border: none;
+  border-radius: 8px;
+  
   cursor: pointer;
 }
 

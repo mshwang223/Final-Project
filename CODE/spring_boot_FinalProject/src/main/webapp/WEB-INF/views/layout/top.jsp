@@ -19,7 +19,7 @@
 			<div class="login_box">
 				<!-- 로그인 안 한 경우 -->
 				<c:if test="${empty sessionScope.sid}">
-			   <div class="dropdown">
+			   	<div class="dropdown">
 					<span class="loginForm">로그인</span>
 					<div id="dropdown-login">
 						<form action="post" id="login-form">
