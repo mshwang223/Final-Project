@@ -182,7 +182,7 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
   $(document).mouseup(function (e){
     var LayerPopup = $(".option_pop");
     if(LayerPopup.has(e.target).length === 0){
-      LayerPopup.css("display","none");
+      LayerPopup.removeClass("dis_block");
     }
   });
 	
