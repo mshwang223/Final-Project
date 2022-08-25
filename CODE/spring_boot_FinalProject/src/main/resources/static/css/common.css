@@ -18,40 +18,47 @@ section.wrap{
   margin: 0 auto;
 }
 
-header{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  height: 180px;
+header {
+  height: 180px;  
   padding-top: 40px;
   margin: 20px auto;
-  width: 1580px;
- 
+  
 }
 
-header .logo_box{	
+header > div {
+  width: 1580px;
+  
   display: flex;
+  align-items: flex-end;
+  
+  margin: 0 auto;
+}
+	
+header > div > .logo_box{	
   align-items: center;
   
+  /*
   position: relative;
   right: 450px;
-  width: 231px;
-
-  height: 100%;
+  */
 }
 
-header .logo_box > a > img {
+.logo_box > a > img {
   position: relative;
   top: 0px;
   left: 0px;
+}
+
+div.nav-box {
+  width: 1000px;
+  height: 90px;	
 }
 
 header nav.main_nav{
   display: flex;
   
   position: absolute;
-  left: 300;
-  
+
   align-items: center;
   width: 600px;
   height: 50px;
@@ -115,53 +122,42 @@ header nav.main_nav > a:hover{
 /* 로그인 박스 */
 header .login_box{
   display: flex;
-  justify-content: space-between;
   
-  align-items: center;
-  height: 50px;
+  margin-left: 120px;
+  
+  width: 300px;
+  height: 90px;
 
-  margin-bottom: 20px;
-  
-  position: relative;
-  left: 295px;
-  
   user-select: none;
 }
 
 /* dropdown css 시작 */
 .dropdown {
   width: 100px;
-  display: inline-block;
-  
-  position: absolute;
-}
-
-/* 상단 마이페이지 레이아웃 */
-.login_box > .user {
-  position: fixed;
-  right: 300px;
-  
-  z-index: 50;
 }
 
 /* 드롭다운 레이아웃 */
 #dropdown-login {
   display: none;
   
+  /*
   position: absolute;
   top: 25px;
   left: -73px;
-  
+  */
   margin-top: 10px;
   
   width: 250px;
-  height: 212px;
   min-width: 160px;
-  z-index: 10;
+  height: 212px;
+
   background-color: white;
   
   border: 1px solid #ee82ee;
   border-radius: 10px;
+  
+  position: absolute;
+  z-index: 50;
 }
 
 #login-form{
@@ -232,33 +228,33 @@ header .login_box{
   cursor:pointer;
 }
 
+
+/* 로그인 시 이미지 레이아웃 */
+.user {
+  width: 180px;
+  margin-left: 80px;
+  
+  text-align: right;
+}
+
 .dropdown img {
   width: 40px;
   height: 40px;
-  border-radius: 20px;  	
-}
-/* 탑 장바구니 이미지 레이아웃 */
-.top_cart_img {
-  position: absolute;
-  top: -15px;
-  left: 85px;
-  cursor: pointer;
+  border-radius: 20px;
+  
+  cursor: pointer;  	
 }
 
 /* 탑 프로필 이미지 레이아웃 */
 .top_profile_img {
-  position: absolute;
-  top: -15px;
-  left: 150px;
-  cursor: pointer;
+  margin-left: 20px;
 }
 
 /* 드롭다운 */
 .dropdown-user {
   display: none;
   
-  position: absolute;
-  top: 35px;
+  margin-top: 10px;
   
   width: 200px;
   min-width: 160px;
@@ -267,6 +263,9 @@ header .login_box{
   
   border: 1px solid #ee82ee;
   border-radius: 10px;
+  
+  position: absolute;
+  z-index: 50;
 }
 
 .dropdown-user > ul {
@@ -314,7 +313,7 @@ ul > li img.top_logout_img {
 
 /* dropdown css 끝 */
 
-header .login_box > .dropdown > span.loginForm, header .login_box > a{
+header .login_box > .dropdown > span.loginForm, header .login_box > a {
   display: block;
   
   width: 75px;
@@ -339,21 +338,11 @@ header .login_box > .dropdown > span.loginForm, header .login_box > a{
   */
 }
 
-.dropdown > span.loginForm {
-  position: absolute;
-  top: -22px;
-  right: 100px;
-}
-
 header .login_box > a {
   width: 95px;
   color: white;
   background-color: #ee82ee;
   border-radius: 8px;
-
-  margin-left: 30px;
-  
-  position: absolute;
 }
 
 header .login_box > a > span{
@@ -449,15 +438,18 @@ header .login_box > .dropdown > span.loginForm:hover{
   position: fixed;
   top: 0;
   margin-top: 0;
+  
   width: 100%;
   height: 95px;
+  
   background: #f5f5f5;
   border-bottom: 2px solid #ddd;
+  
   z-index: 50;
 }
 
-.nav-move {
-  position: fixed;
-  	
+.headerDiv-move {
+  margin-top: -105px;
 }
+
 

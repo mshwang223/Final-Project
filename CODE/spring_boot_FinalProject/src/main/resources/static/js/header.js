@@ -13,19 +13,13 @@ $(document).ready(function(){
 	$(window).scroll(function() {
 		if($(this).scrollTop() > 50) {
 			$("header").addClass('header-move');
-			
-			$(".main_nav").addClass("nav-move");		// 메뉴
-			$(".dropdown").addClass('dropdown-move');	// 로그인
-			$(".btnSignup").addClass('signup-move');	// 회원가입
-			
+			$("header > div").addClass('headerDiv-move');
+
 			$(".logo_box").css('visibility', 'hidden');
 		} else {
 			$("header").removeClass('header-move');
-			
-			$(".main_nav").removeClass("nav-move");		// 메뉴
-			$(".dropdown").removeClass('dropdown-move');
-			$(".btnSignup").removeClass('signup-move');
-			
+			$("header > div").removeClass('headerDiv-move');
+
 			$(".logo_box").css('visibility', 'visible');
 		}
 	});
@@ -54,7 +48,6 @@ $(document).ready(function(){
 	// 외부 클릭 시 드롭다운 박스 히든
 	window.onclick = function(event) {
 		const pathId = event.path[1].id;
-
 		var divArray = new Array("dropdown-login", "login-form", "input-div", "forgotInfo", "userPage");
 		
 		for(i in divArray) {

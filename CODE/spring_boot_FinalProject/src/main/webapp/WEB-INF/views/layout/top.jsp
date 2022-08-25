@@ -6,16 +6,19 @@
 <head>
 </head>
 		<header>
+			<div>
 			<div class="logo_box">
 				<a href="<c:url value='/'/>"><img src="<c:url value='/images/petmilylogo.png'/>" class="logoImg" alt="로고"></a>
 			</div>
-			<nav class="main_nav">
-				<a href="<c:url value='/petHotel'/>">호텔 / 펜션</a>
-				<a href="<c:url value='/promotion'/>">프로모션</a>
-				<a href="<c:url value='/notice'/>">공지사항</a>
-				<a href="<c:url value='/contact'/>">문의하기</a>
-				<div class="underline"></div>
-			</nav>
+			<div class="nav-box">
+				<nav class="main_nav">
+					<a href="<c:url value='/petHotel'/>">호텔 / 펜션</a>
+					<a href="<c:url value='/promotion'/>">프로모션</a>
+					<a href="<c:url value='/notice'/>">공지사항</a>
+					<a href="<c:url value='/contact'/>">문의하기</a>
+					<div class="underline"></div>
+				</nav>
+			</div>
 			<div class="login_box">
 				<!-- 로그인 안 한 경우 -->
 				<c:if test="${empty sessionScope.sid}">
@@ -92,6 +95,7 @@
 					</div>
 				</div>
 				</c:if>
+			</div>
 			</div>
 		</header>
 </html>
