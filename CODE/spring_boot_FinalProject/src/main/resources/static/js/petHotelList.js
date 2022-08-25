@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	// 지역 검색하기 클릭시 display : block css 토글
+	// 지역 클릭시 display : block css 토글
 	$('#btnDestination').click(function(){
 		$('.search_option').toggleClass('dis_block');
 		// $('#btnDestination').val('');
@@ -12,6 +12,8 @@ $(document).ready(function(){
     // 부여한 클래스의 장소를 txt에 담아서 value 값 수정
     let txt = $('.add_text .location_detail').text();
 		$('.input_destination').attr('value', txt);
+		$('.input_destination').css('color', '#333');
+		$('.input_destination').css('font-weight', '600');
     $('.search_option').toggleClass('dis_block');
     // 위의 과정이 끝나면 다시 클래스 제거
     $(this).removeClass('add_text');
@@ -126,10 +128,29 @@ $(document).ready(function(){
 	
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
 	$('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDate.format('MM.DD(dd)'));
+	$('.stay_date').css('font-weight', '600');
+	$('.stay_date').css('color', '#333');
 
 });
+	// 검색버튼 클릭시 유효성 검사
+	$('#listSearchBtn').click(function(){
+		if($('#btnDestination').val() == '목적지를 검색하세요'){
+			alert('목적지를 입력해주세요');
+			return false;
+		}else if($('#rangepicker').val() == '날짜를 입력해 주세요'){
+			alert('유효한 날짜를 입력해주세요');
+			return false;
+		}else if($('#btnCount').val() == ''){
+			alert('인원수를 입력해주세요');
+			return false;
+		}else{
+			widow.location.href = '/petHotelList';
+		}
+	});
+	
+	
 	// Detail페이지로 이동
-	$('.search_list_btn').click(function(){
+	$('#resultHotelList').click(function(){
 		location.href = '/petHotelDetail';
 	});
 

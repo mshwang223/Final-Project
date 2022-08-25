@@ -42,15 +42,15 @@
 	              </div>
 	              <div class="box_input">
 	                <div class="box_destination">
-	                  <input type="text" id="btnDestination" class="input_destination" placeholder="지역">
+	                  <input type="text" id="btnDestination" class="input_destination" value="목적지를 검색하세요">
 	                </div>
 	                <div class="box_daterange">
-	                  <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off" placeholder="날짜를 입력해 주세요">
+	                  <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off" value="날짜를 입력해 주세요">
 	                </div>
 	                <div class="box_person_count">
-	                  <input type="text" id="btnCount" class="txt_stay" placeholder="인원수 | 반려동물 수">
+	                  <input type="text" id="btnCount" class="txt_stay" value="성인0, 반려동물1">
 	                </div>
-	                <button class="search_list_btn">
+	                <button id="listSearchBtn" class="search_list_btn">
 	                  <div>
 	                    <span>검색</span>
 	                    <img src="<c:url value='/images/search.png'/>" alt="검색">
@@ -123,7 +123,7 @@
 	          </div>
 	          <!-- 호텔 리스트 영역 -->
 	          <div class="list_box">
-	            <div class="wrap_result_hotel_list">
+	            <div id="resultHotelList" class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
 	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>

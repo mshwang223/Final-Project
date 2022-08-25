@@ -82,12 +82,14 @@ input{
   width: 370px;
   height: 50px;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
+  color: #a8a8a8;
   border-radius: 5px;
   background-color: rgb(239, 232, 232);
   border: none;
   margin: 15px 0 0 20px;
   padding-left: 25px;
+  cursor: pointer;
 }
 input::placeholder{
   color: rgb(169, 159, 159);
@@ -97,24 +99,27 @@ input::placeholder{
   width: 480px;
   height: 50px;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
+  color: #a8a8a8;
   border-radius: 5px;
   background-color: rgb(239, 232, 232);
   border: none;
   margin: 15px 0 0 0px;
   padding-left: 25px;
+  cursor: pointer;
 }
 
 .box_person_count > input{
   width: 290px;
   height: 50px;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
   border-radius: 5px;
   background-color: rgb(239, 232, 232);
   border: none;
   margin: 15px 0 0 0px;
   padding-left: 25px;
+  cursor: pointer;
 }
 .search_list_btn{
   display: flex;
