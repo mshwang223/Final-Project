@@ -577,7 +577,7 @@ input{
     border: solid 1px #777;
     font-size: 18px;
     resize: none;
-    margin-top: 10px;
+    margin: 10px 0 20px 0;
     outline: none;
 }
 /* 취소/등록 버튼 설정 */
