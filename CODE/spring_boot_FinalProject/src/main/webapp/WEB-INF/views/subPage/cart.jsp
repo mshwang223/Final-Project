@@ -121,8 +121,9 @@
             </section>
               <div id="final_pay_modal" class="modal">
             <div class="modal-content">
+             <img src="<c:url value='/images/petmilylogo.png'/>" alt="로고" class="btn"/>
                 <div class="logo_box">
-                <img src="<c:url value='/images/petmilylogo.png'/>" alt="로고" class="btn" onclick="clicklogo()";/>
+              
                 </div>
                 <span class="close">&times;</span>
                 <hr>
