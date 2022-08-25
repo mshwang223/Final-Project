@@ -109,6 +109,34 @@ $(document).ready(function(){
 	$('.review_move').click(function(){
 	      $('html,section').animate({scrollTop : 3000},300);
 	   });
+	   
+	//주소 복사하기
+	const location = document.getElementById('address');
+	$('#locationCopy').click(function(){
+		window.navigator.clipboard.writeText(location.textContent).then(() => {
+			// 복사가 완료되면 호출
+			$('#copy_box').css('display', 'flex');
+			$('#copy_box').fadeOut(2500, 'swing');
+		});
+		
+	});
+	
+    //연락처 복사하기
+	const call = document.getElementById('hotelCallNumber');
+	$('#phoneCopy').click(function(){
+		window.navigator.clipboard.writeText(call.textContent).then(() => {
+			// 복사가 완료되면 호출
+			$('#copy_box').css('display', 'flex');
+			$('#copy_box').fadeOut(2500, 'swing');
+		});
+		
+	});
+	
+	
+	// reservation페이지로 이동
+	$('.book_btn').on('click', function(){
+		location.href = "/petHotelRsv";
+	});
 
 }); //document.ready 끝
 
@@ -133,11 +161,6 @@ for(let i = 0; i < likeBtn.length; i++){
 }
 
 // navermap 지도
-/*var mapOptions = {
-  center: new naver.maps.LatLng(37.3405761, 127.3164609),
-  zoom: 17
-};*/
-
 var map = new naver.maps.Map('map',{
   center: new naver.maps.LatLng(37.3405761, 127.3164609),
   zoom: 17
@@ -148,7 +171,5 @@ var marker = new naver.maps.Marker({
   map: map
 });
 
-//37.3595704, 127.105399
-//37.3405761, 127.3164609
-  
+
   

@@ -183,6 +183,22 @@
   display: block;
 }
 
+/* 복사 시 팝업 박스 */
+#copy_box {
+    display: none;
+    width: 430px;
+    position: fixed;
+    top: 250px;
+    left: 38.8%;
+    padding: 14px 16px 16px 14px;
+    background-color: #666666;
+    box-shadow: #999999 0px 4px 8px 0px;
+    color: #ddd;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 5px;
+    z-index: 2;
+}
 
 /* 숙박타입 */
 .info_content_box3{

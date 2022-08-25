@@ -55,19 +55,13 @@
 				</div>
 				<div class="stay_img_container">
 					<div class="stay_img_box1">
-						<a href="/images/petDetail1.jpg" data-lightbox="example"><img
-							src="/images/petDetail1.jpg" alt=""></a>
+						<a href="/images/petDetail1.jpg" data-lightbox="example"><img src="/images/petDetail1.jpg" alt=""></a>
 					</div>
 					<div class="stay_img_box2">
-						<a href="/images/petDetail2.jpg" data-lightbox="example"><img
-							src="/images/petDetail2.jpg" alt=""></a> <a
-							href="/images/petDetail3.jpg" data-lightbox="example"><img
-							src="/images/petDetail3.jpg" alt=""></a> <a
-							href="/images/petDetail4.jpg" data-lightbox="example"><img
-							src="/images/petDetail4.jpg" alt=""></a> <a
-							href="/images/petDetail5.jpg" data-lightbox="example"><img
-							src="/images/petDetail5.jpg" alt="">
-							<div>+ 이미지 더보기</div></a>
+						<a href="/images/petDetail2.jpg" data-lightbox="example"><img src="/images/petDetail2.jpg" alt=""></a> 
+						<a href="/images/petDetail3.jpg" data-lightbox="example"><img src="/images/petDetail3.jpg" alt=""></a>
+						<a href="/images/petDetail4.jpg" data-lightbox="example"><img src="/images/petDetail4.jpg" alt=""></a>
+						<a href="/images/petDetail5.jpg" data-lightbox="example"><img src="/images/petDetail5.jpg" alt=""><div>+ 이미지 더보기</div></a>
 					</div>
 				</div>
 			</article>
@@ -76,19 +70,19 @@
 					<div class="info_content_box1">
 						<div class="content_title">K401펜션</div>
 						<div class="simple_info_box">
-							<span>침실 1개 · </span> <span>침대 1개 · </span> <span>욕실 1개 ·
-							</span> <span>플레이그라운드</span>
+							<span>침실 1개 · </span> <span>침대 1개 · </span>
+							<span>욕실 1개 · </span> <span>플레이그라운드</span>
 						</div>
 					</div>
 					<div class="info_content_box2">
 						<div class="location_box">
-							<img src="/images/location.png" alt=""> <span>주소 :
-							</span><span>경기도 광주시 도척면 궁평리 401</span> <i class="fa-regular fa-copy"></i>
+							<img src="/images/location.png" alt=""><span>주소 : </span>
+							<span id="address">경기도 광주시 도척면 궁평리 401</span> <i class="fa-regular fa-copy" id="locationCopy"></i>
 							<p class="copy">Copy!</p>
 						</div>
 						<div class="contact_box">
-							<img src="/images/phone.png" alt=""> <span>연락처 : </span><span>
-								070-7758-0401</span> <i class="fa-regular fa-copy"></i>
+							<img src="/images/phone.png" alt=""> <span>연락처 : </span>
+							<span id="hotelCallNumber">070-7758-0401</span> <i class="fa-regular fa-copy" id="phoneCopy"></i>
 							<p class="copy">Copy!</p>
 						</div>
 					</div>
@@ -265,12 +259,11 @@
 						</div>
 						<div class="checkout">
 							<div>체크아웃</div>
-							<input type="text" id="rangepicker2" class="stay_date"
-								name="daterange" autocomplete="off">
+							<input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off" spellcheck="false">
 						</div>
 						<div class="total_count">
-							<span>인원수 | 반려동물 수</span> <input type="text"
-								class="info_content_count" id="infoCount">
+							<span>인원수 | 반려동물 수</span> 
+							<input type="text" class="info_content_count" id="infoCount" spellcheck="false">
 							<div class="person_count_option">
 								<h4 class="tlt_popup_person">인원 선택</h4>
 								<div class="div_person_count">
@@ -279,10 +272,9 @@
 											class="txt_person_sub">만 18세 이상</span>
 									</div>
 									<div class="box_plus_minus">
-										<span id="personMinusBtn" class="btn_popup_count">-</span> <span
-											id="personCount" class="popup_count_person">0</span> <span
-											id="personPlusBtn"
-											class="btn_popup_count btn_adult_plus btn_count_active">+</span>
+										<span id="personMinusBtn" class="btn_popup_count">-</span> 
+										<span id="personCount" class="popup_count_person">0</span>
+											<span id="personPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</span>
 									</div>
 								</div>
 								<div class="div_person_count">
@@ -291,9 +283,9 @@
 											class="txt_person_sub">강아지 | 고양이</span>
 									</div>
 									<div class="box_plus_minus">
-										<span id="petMinusBtn" class="btn_popup_count">-</span> <span
-											id="petCount" class="popup_count_person">1</span> <span
-											id="petPlusBtn" class="btn_popup_count btn_count_active">+</span>
+										<span id="petMinusBtn" class="btn_popup_count">-</span>
+										<span id="petCount" class="popup_count_person">1</span>
+											<span id="petPlusBtn" class="btn_popup_count btn_count_active">+</span>
 									</div>
 								</div>
 							</div>
@@ -322,6 +314,8 @@
 		</section>
 		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 	</section>
+	 <!-- 복사 시 팝업 박스 -->
+    <div id="copy_box">클립보드에 복사되었습니다. </div>
 	<!-- footer -->
 	<c:import url="/WEB-INF/views/layout/footer.jsp" />
 </body>
