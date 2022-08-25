@@ -4,8 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="<c:url value='/css/top-modal.css'/>">
-<script defer src="<c:url value='/js/top-modal.js'/>"></script>
 </head>
 		<header>
 			<div class="logo_box">
