@@ -28,8 +28,7 @@ $(document).ready(function(){
 		
 			return false;
 		// 연락처 칸 비었을때
-		}
-		if($('#phNum').val() == ""){
+		}else if($('#phNum').val() == ""){
 			alert('휴대폰 번호를 확인해주세요');
 			$('#phNum').focus();
 			$('#phNum').focus(function(){
@@ -39,8 +38,7 @@ $(document).ready(function(){
 				}
 			});
 			return false;
-		}
-		if($('#mailId').val() == ""){
+		}else if($('#mailId').val() == ""){
 			alert('이메일을 확인해주세요');
 			$('#mailId').focus();
 			$('#mailId').focus(function(){
@@ -50,10 +48,13 @@ $(document).ready(function(){
 				}
 			});
 			return false;
-		}
-		if(!($('input[name=finalCheck]').is(':checked'))){
+		}else if(!($('input[name=finalCheck]').is(':checked'))){
 			alert('약관에 동의하여 주시기 바랍니다');
+		}else{
+			alert('성공적으로 예약이 완료되었습니다. 장바구니에서 확인해주세요');
+			location.href = '/cart';
 		}
+		
 	});
 	
 	// select박스 이메일주소 값 text박스로 가져오기
