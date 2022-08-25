@@ -186,9 +186,19 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
     }
   });
 	
-  // 검색하기로 페이지 이동
-  $('.reservation_btn').click(function(){
-    location.href = '/petHotelList';
+  // 검색하기로 페이지 이동(유효성 검사)
+  $('#reservationBtn').click(function(){
+  	if($('#searchBox').val() == '목적지를 검색하세요'){
+  		alert('목적지를 입력해 주세요');
+  		return false;
+  	}else if($('#rangepicker').val() == '날짜를 입력해주세요'){
+  		alert('유효한 날짜를 입력해주세요');
+  		return false;
+  	}else if($('#btnCount').val() == ''){
+  		alert('인원수를 입력해주세요');
+  	}else{
+  		location.href = '/petHotelList';
+  	} 
   });
   
 	
@@ -208,7 +218,6 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
 		$('.option_pop').toggleClass('dis_block');
 	});
 
-	
 	
 	
 }); //document.ready 끝

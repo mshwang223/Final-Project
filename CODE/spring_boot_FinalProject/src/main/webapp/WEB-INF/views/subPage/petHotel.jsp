@@ -35,7 +35,7 @@
 								지역<img src="<c:url value='/images/location.png'/>" alt="지역">
 							</div>
 							<input type="text" class="search_box" id="searchBox"
-								placeholder="지역을 검색하세요" autocomplete="off">
+								value="목적지를 검색하세요" autocomplete="off">
 						</div>
 						<div class="search_pop" id="searchPop">
 							<ul id="searchList">
@@ -70,7 +70,7 @@
 								날짜<img src="<c:url value='/images/calendar.png'/>" alt="날짜">
 							</div>
 							<input type="text" id="rangepicker" class="stay_date"
-								name="daterange" autocomplete="off">
+								name="daterange" autocomplete="off" value="날짜를 입력해주세요">
 						</div>
 					</div>
 					<div class="count_area">
@@ -78,7 +78,7 @@
 							<div class="count_area_title">
 								인원수 | 반려동물 수<img src="<c:url value='/images/owner.png'/>" alt="구성원 수">
 							</div>
-							<input type="text" class="count_box" id="btnCount" autocomplete="off">
+							<input type="text" class="count_box" id="btnCount" autocomplete="off" value="성인0, 반려동물1">
 						</div>
 						<div class="person_count_option">
 							<h4 class="tlt_popup_person">인원 선택</h4>
@@ -106,7 +106,7 @@
 							</div>
 						</div>
 					</div>
-					<button class="reservation_btn">
+					<button id="reservationBtn" class="reservation_btn">
 						<div>
 							<span>검색</span> <img src="<c:url value='/images/search.png'/>" alt="검색">
 						</div>
