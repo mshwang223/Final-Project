@@ -75,7 +75,7 @@
 						</div>
 						<div class="cus_email">
 							<div class="tlt_all">이메일</div>
-							<input type="text" class="mail_id">@
+							<input type="text" class="mail_id"> @
 							<input type="text" id="emailAddress" class="mail_address" placeholder="직접입력">
 							<select class="mail_address_select" id="cusSel2" >
 								<option value="" selected>직접입력</option>
