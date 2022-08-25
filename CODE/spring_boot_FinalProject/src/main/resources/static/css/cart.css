@@ -155,7 +155,7 @@
 .cart_box_final_pay{
   position: sticky; 
   position: -webkit-sticky;
-  top: 90px;
+  top: 105px;
   display: flex;
   justify-content: center;
   margin-left:43px;
