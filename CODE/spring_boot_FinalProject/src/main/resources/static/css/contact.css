@@ -7,7 +7,7 @@ header nav.main_nav div.underline {
 
 /* 전체 높이 */
 .contactBox {
-  height: 950px;
+  height: 1100px;
 }
 
 /* 메뉴 */
@@ -155,7 +155,10 @@ em {
 /* 글자수 폰트사이즈 */
 .text-count {
   font-size: 12px;
-  font-weight: bold;	
+  font-weight: bold;
+  
+    
+  width: 50px;	
 }
 
 /* 글자수-제목 위치 */
@@ -216,7 +219,7 @@ em {
   position: relative;
   
   bottom: 20px;
-  left: 780px;	
+  left: 780px;
 } 
 
 /* 하단 테이블 레이아웃 */
