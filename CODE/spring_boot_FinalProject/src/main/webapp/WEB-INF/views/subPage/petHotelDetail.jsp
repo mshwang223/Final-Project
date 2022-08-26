@@ -153,7 +153,7 @@
 							<div class="rule_box">
 								<div class="rule_sub_title">숙소 이용 규칙</div>
 								<div>
-									<i class="fa-solid fa-clock"></i>체크인: 오후 3:00 ~ 오후 10:00
+									<i class="fa-solid fa-clock"></i>체크인 : 오후 3:00 ~ 오후 10:00
 								</div>
 								<div>
 									<i class="fa-solid fa-clock"></i>체크아웃 : 오전 10:00

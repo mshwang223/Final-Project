@@ -116,7 +116,7 @@ $(document).ready(function(){
 		window.navigator.clipboard.writeText(location.textContent).then(() => {
 			// 복사가 완료되면 호출
 			$('#copy_box').css('display', 'flex');
-			$('#copy_box').fadeOut(2500, 'swing');
+			$('#copy_box').fadeOut(3000, 'swing');
 		});
 		
 	});
@@ -142,29 +142,41 @@ $(document).ready(function(){
 	var scrollValue;
 	$(window).scroll(function () { 
 		scrollValue = $(document).scrollTop(); 
-	    console.log(scrollValue); 
+	    //console.log(scrollValue); 
 	});
 	
-	// 후기 더 보기 클릭했을 때 모달창 켜기
-	$('.review_more_btn').click(function(){
-		$('.black_bg').css({"top" : scrollValue + "px"});
-		$('.black_bg').css('display', 'block');
-		$('.review_container').css('display', 'flex');
-		$('html, body').css({'overflow': 'hidden', 'height': '100%'});
-		$('.black_bg').on('scroll touchmovel', function(event) {
-		  event.preventDefault();
-		  event.stopPropagation();
-		  return false;
-		});
-	});
+   // 후기 더 보기 클릭했을 때 모달창 켜기
+   $('.review_more_btn').click(function(){
+      $('.black_bg').css({"top" : scrollValue + "px"});
+      $('.black_bg').css('display', 'block');
+      $('.review_container').css('display', 'flex');
+      $('.review_container').draggable();
+      $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+      $('.black_bg').on('scroll touchmovel', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      });
+   });      
 
-	// 후기 더 보기 클릭했을 때 모달창 끄기
+	// 엑스 눌렀을 때 모달창 끄기
 	$('.review_close').click(function(){
 		$('.black_bg').css('display', 'none');
 		$('.review_container').css('display', 'none');
 		$('.black_bg').off('scroll touchmove');
 		$('html, body').css({'overflow': 'visible', 'height': '100%'});
 	});
+	
+	// 외부 눌렀을 때 모달 창 끄기
+	  $(document).mouseup(function (e){
+		    var reviewContainer = $(".review_container");
+		    if(reviewContainer.has(e.target).length === 0){
+		      	$('.black_bg').css('display', 'none');
+				$('.review_container').css('display', 'none');
+				$('.black_bg').off('scroll touchmove');
+				$('html, body').css({'overflow': 'visible', 'height': '100%'});
+		    }
+   	});
 	
 
 }); //document.ready 끝
