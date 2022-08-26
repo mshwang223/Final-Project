@@ -67,7 +67,7 @@ public class UserController {
 		return "subPage/mypage";
 	}
 	// 업체등록 페이지
-	@RequestMapping("/inputHotel")
+	@RequestMapping("/insertHotel")
 	public String viewInsertHotel() {
 		return "subPage/insertHotel";
 	}
