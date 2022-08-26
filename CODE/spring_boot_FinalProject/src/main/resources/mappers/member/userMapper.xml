@@ -16,4 +16,14 @@
   		(userId, userPw, userName, userEmail)
   		VALUES(#{userId}, #{userPw}, #{userName}, #{userEmail})
   	</insert>
+
+  	<!-- ID 체크 -->
+  	<select id="chkId" parameterType="String" resultType="String">
+  		SELECT userId FROM user WHERE userId = #{userId}
+  	</select>
+  	
+  	<!-- Email 체크 -->
+  	<select id="chkEmail" parameterType="String" resultType="String">
+  		SELECT userEmail FROM user WHERE userEmail = #{userEmail}
+  	</select>
 </mapper>

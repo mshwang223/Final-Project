@@ -9,4 +9,10 @@ public interface IUserDAO {
 	// 회원가입
 	void insertUser(UserVO vo);
 	
+	// ID 체크
+	String chkId(String id);
+	
+	// Email 체크
+	String chkEmail(String email);
+	
 }

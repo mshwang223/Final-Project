@@ -2,24 +2,85 @@
 
 $(document).ready(function(){
 
-  // 아이디 중복체크(백에서 ajax사용)
-  let checkId = true;
-  /*
-  $('.btn_idcheck').click(function(){
-    if($('.text_signup_id').val() == ""){
-      alert("아이디를 입력하세요");
-    }else if($('.text_signup_id').val() == "admin"){
-      alert("이미 사용중인 아이디 입니다.");
-      $('.text_signup_id').css('border', '1px solid #E65454');
-      $('.text_signup_id').click(function(){
-        $('.text_signup_id').css('border', '1px solid #ee82ee');
-      });
-    }else{
-      alert("사용 가능한 아이디 입니다.");
-      checkId = true;
-    }
-  });
-  */
+	// 아이디 중복체크
+  	let checkId = false;
+  	$(".btn_idcheck").on('click', function(){
+		// 기본 기능 중단
+		event.preventDefault();
+
+		if($('#signupId').val() == ""){
+			alert("아이디를 입력하세요");
+			$('#signupId').focus();
+			return false;
+	    }
+	    	 	 		
+ 		$.ajax({
+ 			type:"post",
+ 			url:"/chkId",
+ 			data:{ "userId":$('#signupId').val() },
+			dataType:"text",
+			success:function(result){
+				// 성공 시 결과 받음
+				if(result == "FIND") {
+					alert("이미 사용중인 아이디 입니다.");
+					$('.text_signup_id').css('border', '1px solid #E65454');
+					$('#signupId').focus();
+				} else {
+				    alert("사용 가능한 아이디 입니다.");
+				    checkId = true;
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		}); 				
+	});
+	
+	// 이메일 중복체크
+  	let checkEmail = false; 
+  	$(".btn_emailcheck").on('click', function(){
+		// 기본 기능 중단
+		event.preventDefault();
+
+		if($('#signupEmail').val() == ""){
+			alert("이메일을 입력하세요");
+			$('#signupEmail').focus();
+			return false;
+	    }
+	    
+	    // 이메일 형식 유효성 검사
+    	let emailRule = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+    	let emailVal = $('#signupEmail').val();
+    
+    	if(!emailRule.test(emailVal)){
+	        alert("이메일 형식을 확인해주세요");
+	        $('#signupEmail').focus();
+	        result = false;
+    	}
+	    	 	 		
+ 		$.ajax({
+ 			type:"post",
+ 			url:"/chkEmail",
+ 			data:{ "userEmail": emailVal },
+			dataType:"text",
+			success:function(result){
+				// 성공 시 결과 받음
+				if(result == "FIND"){
+					alert("이미 사용 중인 이메일입니다.");
+					$('#signupEmail').css('border', '1px solid #E65454');
+					$('#signupEmail').focus();
+				}else{
+					alert("사용할 수 있는 Email입니다.");
+					checkEmail = true; 
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		});				
+	});		
   
   // 전체동의 체크박스 체크시 전체 체크
 	$('#allCheck').click(function() {
@@ -41,14 +102,9 @@ $(document).ready(function(){
   
   // 회원가입 버튼 클릭
   let checkToPwd = false;
-  let checkKoreaName = false; 
-  let checkEmail = false; 
-  let signupDone = false;
-  
+  let checkKoreaName = false;  
   function chkSubmit(){
-    // 약관 확인
-    let checkedBox = $(".essential:checked").length;
-  
+
     // 비밀번호 유효성 검사
     let checkPwd =   /^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;;
     let password1 = $('#signupPwd1').val();
@@ -59,6 +115,7 @@ $(document).ready(function(){
     }else{
       if(!(password1 == password2)){
         alert("비밀번호가 일치하지 않습니다");
+        $('#signupPwd2').focus();
         result = false;
         checkToPwd = false;
       }else{
@@ -85,30 +142,31 @@ $(document).ready(function(){
       checkEmail=false;
     }
     
-    // 회원정보 검사
-    if(checkId&&checkToPwd&&checkKoreaName&&checkEmail&&checkedBox){
-    	alert("펫밀리가 떴다에 오신걸 환영합니다!");
-    	signupDone = true;
-    } else {
-    	if(!checkId) {
-        	alert("아이디 중복을 확인해주세요.");
-        	result = false;
-	    } else if(!checkToPwd){
-	    	alert("비밀번호는 특수문자를 포함한 8~12자리로 입력해주세요.");
-	    	result = false;
-	    } else if(!checkKoreaName) {
-	    	alert("이름을 확인해주세요");
-	    	result = false;
-	    } else if(!checkEmail) {
-	        alert("이메일 형식을 확인해주세요");
-	        result = false;
-	    } else if(checkedBox < 3) {
-	        alert("약관에 동의해주세요");
-	        console.log(checkedBox);
-	        result = false;
-	    }
-    }
+    // 약관 확인
+    let checkedBox = $(".essential:checked").length;    
     
+    // 회원정보 검사
+    if(!checkId) {
+      alert("아이디 중복을 확인해주세요.");
+      $('#signupId').focus();
+      result = false;
+	} else if(!checkToPwd){
+	  alert("비밀번호는 특수문자를 포함한 8~12자리로 입력해주세요.");
+	  $('#signupPwd1').focus();
+	  result = false;
+	} else if(!checkKoreaName) {
+	  alert("이름을 확인해주세요");
+	  $('#signupName').focus();
+	  result = false;
+	} else if(!checkEmail) {
+	  alert("이메일 형식을 확인해주세요");
+	  $('#signupEmail').focus();
+	  result = false;
+	} else if(checkedBox < 3) {
+	  alert("약관에 동의해주세요");
+	  result = false;
+	}
+
     return result;
   }
   
@@ -135,7 +193,7 @@ $(document).ready(function(){
 			dataType:"text",
 			success:function(result){
 				if(result == "SUCCESS"){
-					alert("가입되었습니다.");
+					alert("펫밀리가 떴다에 오신걸 환영합니다!");
 					location.href="/";
 				}
 			},

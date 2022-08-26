@@ -33,4 +33,16 @@ public class UserService implements IUserService {
 		
 		dao.insertUser(vo);
 	}
+	
+	// ID 체크
+	@Override
+	public String chkId(String id) {
+		return dao.chkId(id);
+	}
+	
+	// Email 체크
+	@Override
+	public String chkEmail(String email) {
+		return dao.chkEmail(email);
+	}
 }

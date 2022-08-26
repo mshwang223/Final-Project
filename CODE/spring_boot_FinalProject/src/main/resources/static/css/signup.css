@@ -121,9 +121,9 @@
   margin-top: 5px;
 }
 
-/* 이메일 박스 */
+/* 이메일, 이메일 중복 확인  */
 .custom_info .text_signup_email{
-  width: 354px;
+  width: 270px;
   height: 40px;
   border: #ee82ee solid 1px;
   border-radius: 2px;
@@ -131,6 +131,18 @@
   outline: none;
   font-size: 14px;
   margin-top: 5px;
+}
+
+.signup_email .btn_emailcheck{
+  width: 80px;
+  height: 40px;
+  background-color: #ee82ee;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* 색상 변경 */

@@ -91,6 +91,32 @@ public class UserController {
 		
 		return "SUCCESS";
 	}
+	
+	// ID 중복 체크
+	@ResponseBody
+	@RequestMapping("/chkId")
+	public String chkUserId(@RequestParam("userId") String userId) {
+		String result = "";
+		String id = userService.chkId(userId);
+		
+		if(id != null)
+			result = "FIND";
+		
+		return result;
+	}
+	
+	// Email 중복 체크
+	@ResponseBody
+	@RequestMapping("/chkEmail")
+	public String chkUserEmail(@RequestParam("userEmail") String userEmail) {
+		String result = "";
+		String email = userService.chkEmail(userEmail);
+
+		if(email != null)
+			result = "FIND";
+		
+		return result;
+	}	
 
     // 마이 페이지
 	@RequestMapping("/mypage")

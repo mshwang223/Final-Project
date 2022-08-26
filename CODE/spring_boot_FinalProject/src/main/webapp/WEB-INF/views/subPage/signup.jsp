@@ -65,6 +65,7 @@
 			          	<div class="signup_email">
 			            	<p class="title">이메일</p>
 			            	<input type="text" id="signupEmail" class="text_signup_email" placeholder="abc@example.com">
+			          		<button type="button" class="btn_emailcheck">중복확인</button>
 			          	</div>
 			          	<br>
 			          	<br>
