@@ -134,9 +134,38 @@ $(document).ready(function(){
 	
 	
 	// reservation페이지로 이동
-	$('.book_btn').on('click', function(){
-		location.href = "/petHotelRsv";
+	$('.book_btn').click(function(){
+		window.location.href = "/petHotelRsv";
 	});
+	
+	// 현재 스크롤 위치
+	var scrollValue;
+	$(window).scroll(function () { 
+		scrollValue = $(document).scrollTop(); 
+	    console.log(scrollValue); 
+	});
+	
+	// 후기 더 보기 클릭했을 때 모달창 켜기
+	$('.review_more_btn').click(function(){
+		$('.black_bg').css({"top" : scrollValue + "px"});
+		$('.black_bg').css('display', 'block');
+		$('.review_container').css('display', 'flex');
+		$('html, body').css({'overflow': 'hidden', 'height': '100%'});
+		$('.black_bg').on('scroll touchmovel', function(event) {
+		  event.preventDefault();
+		  event.stopPropagation();
+		  return false;
+		});
+	});
+
+	// 후기 더 보기 클릭했을 때 모달창 끄기
+	$('.review_close').click(function(){
+		$('.black_bg').css('display', 'none');
+		$('.review_container').css('display', 'none');
+		$('.black_bg').off('scroll touchmove');
+		$('html, body').css({'overflow': 'visible', 'height': '100%'});
+	});
+	
 
 }); //document.ready 끝
 
@@ -170,6 +199,14 @@ var marker = new naver.maps.Marker({
   position: new naver.maps.LatLng(37.3405761, 127.3164609),
   map: map
 });
+
+
+
+
+
+
+
+
 
 
   

@@ -6,17 +6,13 @@
 <head>
 	<!-- header  -->
 	<c:import url="/WEB-INF/views/layout/header.jsp" />
-	<!-- ico -->
-	<link rel="icon" href="<c:url value='/images/logo_ico.png'/>">
+	
 	<!-- datarangepicker -->
-    <script type="text/javascript" src="<c:url value='https://cdn.jsdelivr.net/jquery/latest/jquery.min.js'/>"></script>
-    <script src="<c:url value='/js/moment.min.js'/>"></script>
-    <script src="<c:url value='/js/daterangepicker.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js'/>"></script>
-    <link rel="stylesheet" type="text/css" href="<c:url value='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css'/>" />
     <link rel="stylesheet" type="text/css" href="<c:url value='/css/daterangepicker.css'/>">
+    
 	<!-- js -->
 	<script defer src="<c:url value='/js/petHotel.js'/>"></script>
+	
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/petHotel.css'/>">
 </head>

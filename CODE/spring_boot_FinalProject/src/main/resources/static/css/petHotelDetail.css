@@ -657,15 +657,15 @@
 .review_content_box .user_img_box{
   width: 40px;
   height: 40px;
-  border: 3.5px solid #222;
   border-radius: 50%;
+  text-align: center;
   overflow: hidden;
 }
 
-.review_content_box .user_img_box img{
-  width: 33px;
-  height: 33px;
-  margin-top: 5px;
+.review_content_box .user_img_box img, .modal_user_info img{
+  width: 35px;
+  height: 35px;
+  margin-top: 1px;
 }
 
 .review_info{
@@ -688,7 +688,7 @@
 .review_content{
   font-size: 16px;
   font-weight: 500;
-  line-height: 22px;
+  line-height: 24px;
 }
 
 .info_content_box7 > button{
@@ -701,4 +701,96 @@
   border: 2.5px solid #222;
   cursor: pointer;
   margin: 10px 20px;
+}
+
+/* 리뷰 모달 */
+.black_bg{
+	display: none;
+	position: absolute;
+    top: 0;
+	left: 0;
+	content: " ";
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0,0, 0.5);
+	z-index: 5;
+}
+
+.review_container{
+	display: none;
+	flex-wrap: wrap;
+    justify-content: space-between;
+    position:absolute;
+    top: calc(50% - 330px);
+    left:  calc(50% - 350px);
+	width: 700px;
+	height: 700px;
+	border-radius: 10px;
+	background-color: #fff;
+	padding: 50px;
+	z-index: 10;
+}
+
+.modal_review_title{
+	display: flex;
+	align-items: center;
+	width: 90%;
+	height: 60px;
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.modal_review_title img{
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+}
+
+.modal_review_title span{
+	margin-right: 8px;
+}
+
+.review_close{
+	height: 60px;
+}
+
+.review_close > i {
+	font-size: 35px;
+	line-height: 60px;
+	cursor: pointer
+}
+
+.review_box{
+	height: 500px;
+	padding: 10px;
+	overflow: auto;
+}
+
+.modal_user_review{
+	height: 160px;
+}
+
+.modal_user_info{
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.modal_user_info img{
+	margin-right: 10px;
+}
+
+.modal_nickname{
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+.modal_review_date{
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.modal_content{
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
 }

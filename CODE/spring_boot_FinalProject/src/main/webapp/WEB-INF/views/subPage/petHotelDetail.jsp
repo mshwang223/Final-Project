@@ -6,20 +6,9 @@
 <head>
 	<!-- header  -->
 	<c:import url="/WEB-INF/views/layout/header.jsp" />
-	
-    <!-- datarangepicker -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script src="/js/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <script defer src="/js/daterangepicker.js"></script>
-    <link rel="stylesheet" href="/css/daterangepicker.css">
-	
-	<!-- ico -->
-	<link rel="icon" href="<c:url value='/images/logo_ico.png'/>">
-		
+			
 	<!-- naver maps api -->
-	<script defer type="text/javascript" src="<c:url value='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=dmtzzphj4x'/>"></script>
+	<script type="text/javascript" src="<c:url value='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=dmtzzphj4x'/>"></script>
 	
 	<!-- lightbox -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css" />
@@ -238,7 +227,90 @@
 								</div>
 							</div>
 						</div>
-						<button>후기 더보기</button>
+						<button class="review_more_btn">후기 더보기</button>
+						<div class="black_bg">
+							<div class="review_container">
+								<div class="modal_review_title">
+									<img src="/images/star.png" alt="별점"> <span>4.37</span>
+									<div>후기 300개</div>
+								</div>
+								<div class="review_close"><i class="fa-regular fa-circle-xmark"></i></div>
+								<div class="review_box">
+									<div class="modal_user_review">
+										<div class="modal_user_info">
+											<img src="<c:url value='/images/user.png'/>">
+											<div>
+												<div class="modal_nickname">냠냠</div>
+												<div class="modal_review_date">2022.05.14</div>
+											</div>
+										</div>
+										<div class="modal_content">
+										체크인도 너무 수월했고, 숙소도 기대 이상이었어요. 동네가 조용해서 날 좋을때 오면 구경도 하고 산책하면 좋을것 같았어요!!
+										</div>
+									</div>
+									<div class="modal_user_review">
+										<div class="modal_user_info">
+											<img src="<c:url value='/images/user.png'/>">
+											<div>
+												<div class="modal_nickname">냠냠</div>
+												<div class="modal_review_date">2022.05.14</div>
+											</div>
+										</div>
+										<div class="modal_content">
+										체크인도 너무 수월했고, 숙소도 기대 이상이었어요. 동네가 조용해서 날 좋을때 오면 구경도 하고 산책하면 좋을것 같았어요!!
+										</div>
+									</div>
+									<div class="modal_user_review">
+										<div class="modal_user_info">
+											<img src="<c:url value='/images/user.png'/>">
+											<div>
+												<div class="modal_nickname">냠냠</div>
+												<div class="modal_review_date">2022.05.14</div>
+											</div>
+										</div>
+										<div class="modal_content">
+										체크인도 너무 수월했고, 숙소도 기대 이상이었어요. 동네가 조용해서 날 좋을때 오면 구경도 하고 산책하면 좋을것 같았어요!!
+										</div>
+									</div>
+									<div class="modal_user_review">
+										<div class="modal_user_info">
+											<img src="<c:url value='/images/user.png'/>">
+											<div>
+												<div class="modal_nickname">냠냠</div>
+												<div class="modal_review_date">2022.05.14</div>
+											</div>
+										</div>
+										<div class="modal_content">
+										체크인도 너무 수월했고, 숙소도 기대 이상이었어요. 동네가 조용해서 날 좋을때 오면 구경도 하고 산책하면 좋을것 같았어요!!
+										</div>
+									</div>
+									<div class="modal_user_review">
+										<div class="modal_user_info">
+											<img src="<c:url value='/images/user.png'/>">
+											<div>
+												<div class="modal_nickname">냠냠</div>
+												<div class="modal_review_date">2022.05.14</div>
+											</div>
+										</div>
+										<div class="modal_content">
+										체크인도 너무 수월했고, 숙소도 기대 이상이었어요. 동네가 조용해서 날 좋을때 오면 구경도 하고 산책하면 좋을것 같았어요!!
+										</div>
+									</div>
+									<div class="modal_user_review">
+										<div class="modal_user_info">
+											<img src="<c:url value='/images/user.png'/>">
+											<div>
+												<div class="modal_nickname">냠냠</div>
+												<div class="modal_review_date">2022.05.14</div>
+											</div>
+										</div>
+										<div class="modal_content">
+										체크인도 너무 수월했고, 숙소도 기대 이상이었어요. 동네가 조용해서 날 좋을때 오면 구경도 하고 산책하면 좋을것 같았어요!!
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="sticky_area">
