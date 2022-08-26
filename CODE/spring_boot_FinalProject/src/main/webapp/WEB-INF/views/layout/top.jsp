@@ -33,8 +33,8 @@
 								<input type="password" id="userPw" class="dropdown_password" placeholder="비밀번호">
 							</div>
 							<div id="forgotInfo">
-								<a id="findIdBtn" href="#">ID 찾기</a>
-								<a id="findPwBtn" href="#">PW 찾기</a>
+								<a id="findIdBtn">ID 찾기</a>
+								<a id="findPwBtn">PW 찾기</a>
 							</div> 
 						</form>
 						<input type="submit" class="dropdown_botton" value="로그인">

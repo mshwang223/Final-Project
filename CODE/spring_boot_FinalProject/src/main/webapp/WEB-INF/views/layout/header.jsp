@@ -9,6 +9,8 @@
 	<link rel="icon" href="<c:url value='/images/logo_ico.png'/>">
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/common.css'/>">
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/modal.css'/>">
+
+	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	
 	<!-- daterangepicker -->
 	<script src="<c:url value='/js/moment.min.js'/>"></script>
@@ -26,8 +28,6 @@
 
   	<!-- language font -->
 	<link href="<c:url value='https://fonts.googleapis.com/icon?family=Material+Icons'/>" rel="stylesheet">
-	
-	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	
 	<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 	<script defer src="<c:url value='/js/modal.js'/>"></script>
