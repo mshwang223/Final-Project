@@ -9,14 +9,8 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
-		<!-- summernote api -->
-		<link rel="stylesheet" type="text/css" href="css/summernote-lite.css">
-		
 		<link rel="stylesheet" type="text/css" href="css/board.css">
 		<link rel="stylesheet" type="text/css" href="css/adminNoticeNew.css">
-
-		<!-- summernote api -->
-		<script src="/js/summernote-lite.js"></script>
 		
 		<script src="js/adminNoticeDetail.js"></script>
 	</head>
