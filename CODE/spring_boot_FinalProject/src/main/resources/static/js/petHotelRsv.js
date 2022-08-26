@@ -4,8 +4,11 @@ $(document).ready(function(){
 	// + 새 투숙객 추가하기 클릭시
 	$('#newCustomer').click(function(){
 		$('.box_cus_info2').slideToggle('500', function(){
-			$('#plusBtn').toggleClass('fa-plus');
-			$('#plusBtn').toggleClass('fa-minus');
+			if($('#newCustomer').html() == '<i id="plusBtn" class="fa-solid fa-plus add_customer"></i>투숙객 추가(선택)'){
+				$('#newCustomer').html('<i id="plusBtn" class="fa-solid fa-minus add_customer"></i>접기');
+			}else{
+				$('#newCustomer').html('<i id="plusBtn" class="fa-solid fa-plus add_customer"></i>투숙객 추가(선택)');
+			}
 		});
 	});
 	// 가격보상제도 클릭시

@@ -187,14 +187,15 @@ select{
 .add_new_cus{
 	margin-top: 15px;
 	cursor: pointer;
+	font-size: 18px;
 }
 .add_new_cus .add_customer{
 	font-size: 18px;
 	margin-right: 5px;
 }
-.add_new_cus > span{
+/* .add_new_cus > span{
 	font-size: 18px;
-}
+} */
 /* 약관 박스 */
 .contract_info_box{
 	width: 1000px;

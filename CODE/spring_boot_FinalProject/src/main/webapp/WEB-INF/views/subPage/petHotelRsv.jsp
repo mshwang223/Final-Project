@@ -60,7 +60,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="newCustomer" class="add_new_cus"><i id="plusBtn" class="fa-solid fa-plus add_customer"></i><span>투숙객 추가</span></div>
+				<div id="newCustomer" class="add_new_cus"><i id="plusBtn" class="fa-solid fa-plus add_customer"></i>투숙객 추가(선택)</div>
 				<div class="box_cus_info2">
 					<div class="first_cus_info">
 						<div class="cus_info_tlt">투숙객 정보</div>
