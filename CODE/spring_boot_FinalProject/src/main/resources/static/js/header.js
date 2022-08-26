@@ -5,9 +5,6 @@
 *********************************/
 
 $(document).ready(function(){
-	
-	// 로그인 드롭다운 확인
-	var chk = 0;
 
 	// 메뉴 따라오기
 	$(window).scroll(function() {
@@ -25,27 +22,16 @@ $(document).ready(function(){
 	});
 
 	$(".loginForm").on('click', function() {
-		$("#dropdown-login").slideToggle(function() {
-			if($(this).is(':hidden')){	// 닫힐 때
-				chk = 1;
-			} else {
-				chk = 2;
-			}
-		});
+		$("#dropdown-login").slideToggle();
 	});
 	
  	// 탑 유저 이미지 드롭다운
  	$(".top_profile_img").on('click', function() {
-		$("#dropdown-user").slideToggle(function() {
-			if($(this).is(':hidden')){	// 닫힐 때
-				chk = 1;
-			} else {
-				chk = 2;
-			}
-		});
+		$("#dropdown-user").slideToggle();
 	});
 	
 	// 외부 클릭 시 드롭다운 박스 히든
+	/*
 	window.onclick = function(event) {
 		const pathId = event.path[1].id;
 		var divArray = new Array("dropdown-login", "login-form", "input-div", "forgotInfo", "userPage");
@@ -62,6 +48,25 @@ $(document).ready(function(){
 			if (chk == 2) $("#dropdown-user").hide();
 		}
 	}
+	*/
+	
+	// 외부 클릭 시 드롭다운 박스 히든
+	$(document).mouseup(function (e){
+		// 로그인 토글
+		var loginContainer = $("#dropdown-login");
+		if(loginContainer.has(e.target).length === 0 && e.target.className != "loginForm"){
+			if(window.getSelection().anchorNode === $("#input-div")[0]) return false;
+		
+			loginContainer.hide();
+		}
+		
+		// 사용자 토글
+		var userContainer = $("#dropdown-user");
+		if(loginContainer.has(e.target).length === 0 && e.target.className != "top_profile_img"){
+			userContainer.hide();
+		}
+   	});
+	
 	
 	// 로그인
 	$('.dropdown_botton').click(function() {
