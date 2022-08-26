@@ -1,4 +1,5 @@
 // 프로필 사진 변경
+/*
 function readURL(input) {
     if (input.files && input.files[0]) {
         let reader = new FileReader();
@@ -11,7 +12,10 @@ function readURL(input) {
     }
 }
 
+*/
 
+
+$(document).ready(function() {
 // let acc = document.getElementsByClassName("accordion");
 let acc_arr = document.getElementsByClassName("accordion__arrow");
 let i;
@@ -28,3 +32,8 @@ for (i = 0; i < acc_arr.length; i++) {
         }
     });
 }
+
+	$("#signupPet").click(function() {
+		location.href = "/signupPet";
+	});
+});

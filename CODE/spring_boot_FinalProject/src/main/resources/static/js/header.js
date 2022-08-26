@@ -31,26 +31,6 @@ $(document).ready(function(){
 	});
 	
 	// 외부 클릭 시 드롭다운 박스 히든
-	/*
-	window.onclick = function(event) {
-		const pathId = event.path[1].id;
-		var divArray = new Array("dropdown-login", "login-form", "input-div", "forgotInfo", "userPage");
-		
-		for(i in divArray) {
-			if(pathId === divArray[i] ) return false;
-		}
-		
-		if (!event.target.matches('.loginForm')) {
-			if (chk == 2) $("#dropdown-login").hide();
-		}
-
-		if (!event.target.matches('.top_profile_img')) {
-			if (chk == 2) $("#dropdown-user").hide();
-		}
-	}
-	*/
-	
-	// 외부 클릭 시 드롭다운 박스 히든
 	$(document).mouseup(function (e){
 		// 로그인 토글
 		var loginContainer = $("#dropdown-login");

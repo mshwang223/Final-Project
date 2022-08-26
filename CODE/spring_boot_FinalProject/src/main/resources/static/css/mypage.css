@@ -1,79 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-   label#input_profile_img {
-        
-        margin-left:226px;
-        margin-top:5px;
-        padding: 0.5rem 1rem;
-        font-family: "Noto Sans KR", sans-serif;
-        font-size: 1rem;
-        font-weight: 400;
-        text-align: center;
-        display: inline-block;
-        width: auto;
-        border-radius: 10px;
-        color:#fff;
-        font-family: 'Nanum Gothic';
-        font-weight: 600;
-        background-color: #ee88ee;
-        cursor: pointer;
-      }
-
-
+/* 배경 레이아웃 */
 .mypage_box{
-    margin: 0 auto;
-    margin-top: 100px;
-    border: 1px solid #ee82ee;
-    width: 600px;
-    height: 1230px;
-    background-color: #fff;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-  }
-
-  .mypage_box .mypage_title > p{
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    margin: 50px 0 40px 0;
-  }
-
-
+  margin: 0 auto;
   
-  div.profile_area .profile_img img{
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    display:block;
-    margin:auto;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  }
+  border: 1px solid #ee82ee;
+  border-radius: 10px;
   
-  .profile_button{
-    display: block;
-    margin:auto;
-    width:150px;
-    height:20px;
-  }
-
-
-  .user_info button {
-    font-family: 'Nanum Gothic';
-    margin: 0;
-    width: max-content;
-    border:none;
-    border-radius: 10px;
-    background-color: #ee88ee;
-    color:#fff;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    margin-top:7px;
-    margin-left:243px;
-    cursor: pointer;
-  }
+  width: 600px;
   
+  background-color: #fff;
+  
+  align-items: center;
+  
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+/* 제목 폰트 */
+.pageTitle {
+  text-align: center;
+  
+  margin: 50px auto 50px auto;	
+}
+
+.pageTitle > div {
+  background-color: #fff;
+  border-radius: 20px;
+  
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  
+  display: inline-block;
+  
+  line-height: 60px;
+}
+
+.pageTitle > div > span {
+  margin: 0 22px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* 이미지 레이아웃 */
+div.profile_area {
+  display: flex;
+  
+  margin-top: 30px;	
+}
+
+div.profile_area .profile_img img{
+  width: 150px;
+  height: 150px;
+  
+  border-radius: 80px;
+  
+  margin-left: 40px;
+  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.user_info {
+  width: 400px;	
+}
+
+.user_info > div:first-child {
+  height: 50px;
+  
+  text-align: left;
+}
+
+.user_info > div > button {
+  width: 120px;
+  height: 45px;
+  
+  border:none;
+  border-radius: 10px;
+  
+  background-color: #ee88ee;
+  color:#fff;
+  
+  font-size: 1rem;
+  font-weight: 600;
+  
+  margin-left: 45px;
+  
+  cursor: pointer;
+}
+
+/* 이름 레이아웃 */
+.user_info > div:nth-child(2) {
+  height: 30px;
+  
+  margin: 15px 45px;
+  
+  display: flex;
+}
+
+.profileTitle {
+  width: 55px;	
+}
+
+#userName {
+  margin-left: 30px;	
+}
+
+/* 이메일 레이아웃 */
+.user_info > div:nth-child(3) {
+  height: 50px;
+  
+  margin: 15px 45px;
+  
+  display: flex;
+}
+
+#userEmail {
+  margin-left: 30px;	
+}
+
 .profile_menu {
   border: 1px solid black;
   margin: 30px;

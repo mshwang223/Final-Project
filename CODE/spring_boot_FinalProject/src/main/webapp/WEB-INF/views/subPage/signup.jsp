@@ -30,11 +30,11 @@
 			
 			<!-- section -->
 			<form method="post" id="signup" class="signup">
-			        <div class="pageTitle">
-						<div>
-							<span>#회원가입</span>
-						</div>
+			    <div class="pageTitle">
+					<div>
+						<span>#회원가입</span>
 					</div>
+				</div>
 		    	<div class="signup_box">
 			        <div class="custom_info">
 			        	<div class="signup_id">

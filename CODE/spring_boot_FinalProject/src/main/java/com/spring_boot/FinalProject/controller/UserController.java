@@ -120,9 +120,16 @@ public class UserController {
 
     // 마이 페이지
 	@RequestMapping("/mypage")
-	    public String viweMypage() {
+	public String viweMypage() {
 		return "subPage/mypage";
 	}
+	
+    // 마이 페이지
+	@RequestMapping("/signupPet")
+	public String viweSignupPet() {
+		return "subPage/signupPet";
+	}	
+	
 	// 업체등록 페이지
 	@RequestMapping("/insertHotel")
 	public String viewInsertHotel() {
