@@ -29,7 +29,7 @@
 		<section class="wrap">
 			
 			<!-- section -->
-			<section class="signup">
+			<form method="post" id="signup" class="signup">
 			        <div class="pageTitle">
 						<div>
 							<span>#회원가입</span>
@@ -39,8 +39,8 @@
 			        <div class="custom_info">
 			        	<div class="signup_id">
 			            	<p class="title">아이디</p>
-			            	<input type="text" class="text_signup_id" placeholder="아이디 입력">
-			            	<button class="btn_idcheck">중복확인</button>
+			            	<input type="text" id="signupId" class="text_signup_id" placeholder="아이디 입력">
+			            	<button type="button" class="btn_idcheck">중복확인</button>
 			          	</div>
 			          	<br>
 			          	<div class="signup_pwd">
@@ -107,7 +107,7 @@
 			    
 			    <div class="btn_signup_box">
 			    	<button class="btn_cancel_done">취 소</button>
-			        <button class="btn_signup_done">가입하기</button>
+			        <button type="submit" class="btn_signup_done">가입하기</button>
 			    </div>
 			    		    	
 		    	<!-- The Modal -->
@@ -118,7 +118,7 @@
 						<div></div>
 					</div>
 				</div>
-		    </section>
+		    </form>
 		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
 		<!-- footer -->

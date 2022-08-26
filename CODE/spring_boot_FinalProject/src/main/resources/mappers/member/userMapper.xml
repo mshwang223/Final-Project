@@ -7,6 +7,13 @@
   	
   	<!-- 로그인 확인 -->
   	<select id="selectUser" parameterType="String" resultType="com.spring_boot.FinalProject.model.UserVO">
-  		SELECT * FROM user WHERE userId = #{userId} AND userPw = #{userPw}
+  		SELECT * FROM user WHERE userId = #{userId}
   	</select>
+  	
+  	<!-- 회원 가입 -->
+  	<insert id="insertUser" parameterType="com.spring_boot.FinalProject.model.UserVO">
+  		INSERT into user
+  		(userId, userPw, userName, userEmail)
+  		VALUES(#{userId}, #{userPw}, #{userName}, #{userEmail})
+  	</insert>
 </mapper>
