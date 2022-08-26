@@ -42,6 +42,7 @@ $(document).ready(function(){
   let checkKoreaName = false; 
   let checkEmail = false; 
   let signupDone = false;
+  let checkedBox = $(".essential:checked").length;
 
   $('.btn_signup_done').click(function(){
     // 비밀번호 유효성 검사
@@ -78,28 +79,22 @@ $(document).ready(function(){
       checkEmail=false;
     }
     
-    // 이용약관 동의 여부 검사
-    if($(".essential:checked").length < 3) {
-		alert("이용약관에 동의하셔야 합니다.");
-		return false;	
-	}
-    
     // 회원정보 검사
     if(checkId&&checkToPwd&&checkKoreaName&&checkEmail&&checkedBox){
-      alert("펫밀리가 떴다에 오신걸 환영합니다!");
-      signupDone = true;
-    }else{
-      if(!checkId){
-        alert("아이디 중복을 확인해주세요.");
-      }else if(!checkToPwd){
-        alert("비밀번호는 특수문자를 포함한 8~12자리로 입력해주세요.");
-      }else if(!checkKoreaName){
-        alert("이름을 확인해주세요");
-      }else if(!checkEmail){
-        alert("이메일 형식을 확인해주세요");
-      }else if(!checkedBox){
-        alert("약관에 동의해주세요");
-      }
+    	alert("펫밀리가 떴다에 오신걸 환영합니다!");
+    	signupDone = true;
+    } else {
+    	if(!checkId) {
+        	alert("아이디 중복을 확인해주세요.");
+	    } else if(!checkToPwd){
+	    	alert("비밀번호는 특수문자를 포함한 8~12자리로 입력해주세요.");
+	    } else if(!checkKoreaName) {
+	    	alert("이름을 확인해주세요");
+	    } else if(!checkEmail) {
+	        alert("이메일 형식을 확인해주세요");
+	    } else if(checkedBox < 3) {
+	        alert("약관에 동의해주세요");
+	    }
     }
   });
 });//ready 끝
