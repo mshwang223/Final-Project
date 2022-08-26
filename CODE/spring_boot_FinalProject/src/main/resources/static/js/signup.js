@@ -56,7 +56,7 @@ $(document).ready(function(){
     	if(!emailRule.test(emailVal)){
 	        alert("이메일 형식을 확인해주세요");
 	        $('#signupEmail').focus();
-	        result = false;
+	        return false;
     	}
 	    	 	 		
  		$.ajax({
@@ -116,7 +116,6 @@ $(document).ready(function(){
       if(!(password1 == password2)){
         alert("비밀번호가 일치하지 않습니다");
         $('#signupPwd2').focus();
-        result = false;
         checkToPwd = false;
       }else{
         checkToPwd = true;
@@ -132,16 +131,6 @@ $(document).ready(function(){
       checkKoreaName=true;// 회원가입 버튼 실행 시 확인 4
     }
 
-    // 이메일 형식 유효성 검사
-    let emailRule=/^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-    let emailVal=$('#signupEmail').val();
-    
-    if(emailRule.test(emailVal)){
-      checkEmail=true;
-    } else{
-      checkEmail=false;
-    }
-    
     // 약관 확인
     let checkedBox = $(".essential:checked").length;    
     
@@ -159,7 +148,7 @@ $(document).ready(function(){
 	  $('#signupName').focus();
 	  result = false;
 	} else if(!checkEmail) {
-	  alert("이메일 형식을 확인해주세요");
+	  alert("이메일 중복을 확인해주세요");
 	  $('#signupEmail').focus();
 	  result = false;
 	} else if(checkedBox < 3) {
