@@ -44,7 +44,7 @@
 	                  <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off" value="날짜를 입력해 주세요">
 	                </div>
 	                <div class="box_person_count">
-	                  <input type="text" id="btnCount" class="txt_stay" value="성인0, 반려동물1">
+	                  <input type="text" id="btnCount" class="txt_stay" value="성인0, 반려동물1"  spellcheck="false">
 	                </div>
 	                <button id="listSearchBtn" class="search_list_btn">
 	                  <div>
