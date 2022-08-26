@@ -71,12 +71,12 @@
         </dependency>
 
 		<!-- 암호화 위한 의존성 추가 -->
-		<!-- 
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		-->
+		
 		
 		<!-- 랜덤 난수 생성 -->
 		<dependency>
