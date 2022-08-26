@@ -132,7 +132,7 @@ $(document).ready(function(){
 	});
 	// 업체등록 페이지 이동
 	$('#inputHotel').click(function(){
-		location.href = "/inputHotel";
+		location.href = "/insertHotel";
 	})
 });
 
