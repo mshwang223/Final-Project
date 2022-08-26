@@ -45,7 +45,7 @@ input{
 	height: 400px;
 	border-radius: 10px;
 	padding-top: 150px;
-	margin: 30px 0 0 90px;
+	margin: 60px 0 0 90px;
 }
 .img_box > div{
 	margin-top: 10px;
@@ -144,6 +144,94 @@ input{
 	height: 50px;
 	font-size: 20px;
 	cursor: default;	
+}
+/* 인원수 설정 */
+.limit_person > p{
+	font-size: 18px;
+	font-weight: 600	
+}
+.limit_person .input_limit_person{
+	margin-top: 10px;
+	width: 350px;
+	height: 50px;
+	font-size: 20px;	
+}
+/* 반려동물 수 설정 */
+.limit_pet > p{
+	font-size: 18px;
+	font-weight: 600
+}
+.limit_pet .input_limit_pet{
+	margin-top: 10px;
+	width: 350px;
+	height: 50px;
+	font-size: 20px;	
+}
+/* 서비스 박스 설정 */
+.comp_service{
+	margin-top: 15px;
+}
+.comp_service > p{
+	font-size: 18px;
+	font-weight: 600	
+}
+.box_service{
+	display: flex;
+	margin-top: 15px;
+}
+.box_service > span{
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+}
+.box_service input{
+	margin-left: 5px;
+	margin-right: 40px;
+	width: 18px;
+	height: 18px;
+}
+/* 제공시설 박스 설정 */
+.comp_facility > p{
+	font-size: 18px;
+	font-weight: 600	
+}
+.box_facility{
+	display: flex;
+	margin-top: 15px;
+}
+.box_facility > span{
+	display: flex;
+	align-items: center;
+	font-size: 20px;	
+}
+.box_facility input{
+	margin-left: 5px;
+	margin-right: 40px;
+	width: 18px;
+	height: 18px;	
+}
+/* 추가제공시설 박스 설정 */
+.comp_add_facility{
+	margin-bottom: 15px;
+}
+.comp_add_facility > p{
+	font-size: 18px;
+	font-weight: 600	
+}
+.box_add_facility{
+	display: flex;
+	margin-top: 15px;	
+}
+.box_add_facility > span{
+	display: flex;
+	align-items: center;
+	font-size: 20px;	
+}
+.box_add_facility input{
+	margin-left: 5px;
+	margin-right: 40px;
+	width: 18px;
+	height: 18px;	
 }
 /* 데이터레인지 피커 설정 */
 .daterangepicker {

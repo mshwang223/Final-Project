@@ -56,6 +56,46 @@
           					<input type="text" class="input_price_hotel">
           				</div>
           				<br>
+          				<div class="limit_person">
+          					<p>제한 인원수</p>
+          					<input type="text" class="input_limit_person">
+          				</div>
+          				<br>
+          				<div class="limit_pet">
+          					<p>제한 반려동물 수</p>
+          					<input type="text" class="input_limit_pet">
+          				</div>
+          				<br>
+          				<div class="comp_service">
+          					<p>제공 서비스</p>
+          					<div class="box_service">
+          						<span>픽업<input type="checkbox" class="box_comp_service"></span>
+          						<span>넷플릭스<input type="checkbox" class="box_comp_service"></span>
+          						<span>와이파이<input type="checkbox" class="box_comp_service"></span>
+          						<span>돌봄서비스<input type="checkbox" class="box_comp_service"></span>
+          					</div>
+          				</div>
+          				<br>
+          				<div class="comp_facility">
+          					<p>제공 시설</p>
+          					<div class="box_facility">
+          						<span>주방<input type="checkbox" class="box_comp_facility"></span>
+          						<span>주차공간<input type="checkbox" class="box_comp_facility"></span>
+          						<span>수영장<input type="checkbox" class="box_comp_facility"></span>
+          						<span>마당<input type="checkbox" class="box_comp_facility"></span>
+          					</div>
+          				</div>
+          				<br>
+          				<div class="comp_add_facility">
+          					<p>추가 시설</p>
+          					<div class="box_add_facility">
+          						<span>세탁기<input type="checkbox" class="box_comp_add_facility"></span>
+          						<span>건조기<input type="checkbox" class="box_comp_add_facility"></span>
+          						<span>욕실용품<input type="checkbox" class="box_comp_add_facility"></span>
+          						<span>에어컨<input type="checkbox" class="box_comp_add_facility"></span>
+          					</div>
+          				</div>
+          				<br>                				            				
           				<div class="period_insert">
           					<p>등록기간</p>
           					<input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off" placeholder="날짜를 입력해 주세요">
