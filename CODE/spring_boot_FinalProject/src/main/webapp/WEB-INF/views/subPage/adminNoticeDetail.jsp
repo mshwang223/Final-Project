@@ -16,8 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="css/adminNoticeDetail.css">
 		
 		<!-- summernote api -->
-		<script src="/js/summernote-lite.js"></script>
-		<script src="/js/summernote-ko-KR.js"></script>		
+		<script src="/js/summernote-lite.js"></script>	
 		
 		<script src="js/adminNoticeDetail.js"></script>
 		
