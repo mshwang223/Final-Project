@@ -60,9 +60,9 @@
 									<div class="dpBox-div">▼</div>
 								</div>
 								<ul class="dropdown-contents">
-									<li class="small" value="small">소형</li>
-									<li class="midium" value="midium">중형</li>
-									<li class="large" value="large">대형</li>
+									<li class="small" value="1">소형</li>
+									<li class="midium" value="2">중형</li>
+									<li class="large" value="3">대형</li>
 								</ul>
 				            	<div id="subDetail" class="subDetail"><span>상세보기</span></div>
 			            	</div>
