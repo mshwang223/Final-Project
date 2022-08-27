@@ -27,10 +27,11 @@ $(document).ready(function(){
 				// 성공 시 결과 받음
 				if(result == "FIND") {
 					alert("이미 사용중인 아이디 입니다.");
-					$('.text_signup_id').css('border', '1px solid #E65454');
+					$('#signupId').css('border', '1px solid #E65454');
 					$('#signupId').focus();
 				} else {
 				    alert("사용 가능한 아이디 입니다.");
+				    $('#signupId').css('border', '1px solid #EE82EE');
 				    checkId = true;
 				}
 			},
@@ -76,6 +77,7 @@ $(document).ready(function(){
 					$('#signupEmail').focus();
 				}else{
 					alert("사용할 수 있는 Email입니다.");
+					$('#signupEmail').css('border', '1px solid #EE82EE');
 					checkEmail = true; 
 				}
 			},
@@ -121,6 +123,7 @@ $(document).ready(function(){
         alert("비밀번호가 일치하지 않습니다");
         $('#signupPwd2').focus();
         checkToPwd = false;
+        return false;
       }else{
         checkToPwd = true;
       }
@@ -141,6 +144,7 @@ $(document).ready(function(){
     // 회원정보 검사
     if(!checkId) {
       alert("아이디 중복을 확인해주세요.");
+      $('#signupId').css('border', '1px solid #E65454');
       $('#signupId').focus();
       result = false;
 	} else if(!checkToPwd){
@@ -153,6 +157,7 @@ $(document).ready(function(){
 	  result = false;
 	} else if(!checkEmail) {
 	  alert("이메일 중복을 확인해주세요");
+	  $('#signupEmail').css('border', '1px solid #E65454');
 	  $('#signupEmail').focus();
 	  result = false;
 	} else if(checkedBox < 3) {
