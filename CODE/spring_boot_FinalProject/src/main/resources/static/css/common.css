@@ -284,6 +284,8 @@ header .login_box{
   text-indent: 12px;
   
   padding-top: 6px;
+  
+  cursor: pointer;
 }
 
 .dropdown-user > ul > li.underline {
