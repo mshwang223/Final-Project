@@ -1,5 +1,6 @@
 package com.spring_boot.FinalProject.dao;
 
+import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
@@ -18,5 +19,8 @@ public interface IUserDAO {
 	
 	// 펫 등록
 	void insertPet(PetVO vo);
+	
+	// 펫 등록증 확인
+	PetCardVO selectPet(String petCode);
 	
 }

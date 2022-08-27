@@ -11,11 +11,14 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.UserService;
@@ -142,8 +145,7 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping("/joinPet")
 	public String petJoin(@RequestParam("uploadFile") MultipartFile file,
-						  @RequestParam HashMap<String, Object> param,
-						  HttpServletRequest request) throws IOException {
+						  @RequestParam HashMap<String, Object> param) throws IOException {
 		
 		String 	userId 		= (String)param.get("userId");
 		String 	userName 	= (String)param.get("userName");
@@ -162,10 +164,8 @@ public class UserController {
 		vo.setPetSize(petSize);
 		vo.setComment(comment);			
 		
-		System.out.println(file.getOriginalFilename());
-		
 		// 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
-		String uploadPath = request.getServletContext().getRealPath("/WEB-INF/views/uploadImg/");
+		String uploadPath = "c:/springWorkspace/petImg/";
 		// c:대소문자 상관없으며 마지막에 '/' 있어야 한다
 				
 		// 2. 원본 파일 이름 설정
@@ -203,7 +203,24 @@ public class UserController {
 		
 		userService.insertPet(vo);
 		
-		return "SUCCESS";
+		return petCode;
+	}
+	
+    // 펫등록 완료 페이지
+	@RequestMapping("/signupPetComplete/{petCode}")
+	public String viewSignupPetComplete(@PathVariable String petCode, Model model) {
+
+		PetCardVO vo = userService.selectPet(petCode);
+		
+		model.addAttribute("petImg", vo.getPetImg());
+		model.addAttribute("userName", vo.getUserName());
+		model.addAttribute("petName", vo.getPetName());
+		model.addAttribute("petKind", vo.getPetKind());
+		model.addAttribute("petSize", vo.getPetSize());
+		model.addAttribute("petCode", vo.getPetCode());
+		model.addAttribute("createDate", vo.getCreateDate());
+
+		return "subPage/signupPetComplete";
 	}
 	
 	// 업체등록 페이지

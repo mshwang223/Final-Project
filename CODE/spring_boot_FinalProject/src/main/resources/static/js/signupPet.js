@@ -78,10 +78,9 @@ $(document).ready(function(){
         	processData : false,
 			success:function(result){
 				// 성공 시 결과 받음
-				if(result == "SUCCESS"){
+				if(result){
 					alert("등록되었습니다.");
-					//location.href="/myPage/" + $('#userId').val();
-					location.href="/mypage";
+					location.href="/signupPetComplete/" + result;
 				}
 			},
 			error:function(){

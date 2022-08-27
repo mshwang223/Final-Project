@@ -20,8 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/daterangepicker.css'/>">
 	
 	<!-- summernote -->
-	<link rel="stylesheet" type="text/css" href="css/summernote-lite.css">
-	<script src="/js/summernote-lite.js"></script>
+	<link rel="stylesheet" type="text/css" href="<c:url value='/css/summernote-lite.css'/>">
+	<script src="<c:url value='/js/summernote-lite.js'/>"></script>
 	
 	<!-- fontawesome -->
 	<script type="text/javascript" src="<c:url value='https://kit.fontawesome.com/fa5522895a.js'/>" crossorigin="anonymous"></script>
