@@ -150,10 +150,20 @@ $(document).ready(function(){
 	
 	
 	// Detail페이지로 이동
-	$('#resultHotelList').click(function(){
+	$('#resultHotelList div img').click(function(){
 		location.href = '/petHotelDetail';
 	});
+	
+	
+	$('.like_btn').click(function(){
+        if($(this).attr('src') == "/images/heart.png") {
+            $(this).attr('src', '/images/red_heart.png');
+        } else {
+            $(this).attr('src', '/images/heart.png');
+        }
+    });
 
 });
+
 
 

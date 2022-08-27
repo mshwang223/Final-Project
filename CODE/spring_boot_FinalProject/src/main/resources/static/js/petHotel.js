@@ -71,9 +71,9 @@ for(let i = 0; i < likeBtn.length; i++){
     heartCount++;
 
     if(heartCount % 2 == 0){
-      likeBtn[i].src = "../images/red_heart.png";
+      likeBtn[i].src = "/images/red_heart.png";
     }else{
-      likeBtn[i].src = "../images/heart.png";
+      likeBtn[i].src = "/images/heart.png";
     }
   });
 }

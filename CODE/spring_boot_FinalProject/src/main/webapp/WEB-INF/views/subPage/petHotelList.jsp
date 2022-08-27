@@ -131,6 +131,7 @@
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
 	                <div class="per_stay_price">352,000원 / 1박</div>
 	              </div>
+	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
@@ -144,6 +145,7 @@
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
 	                <div class="per_stay_price">352,000원 / 1박</div>
 	              </div>
+	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
@@ -157,6 +159,7 @@
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
 	                <div class="per_stay_price">352,000원 / 1박</div>
 	              </div>
+	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
@@ -170,6 +173,7 @@
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
 	                <div class="per_stay_price">352,000원 / 1박</div>
 	              </div>
+	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
@@ -183,6 +187,7 @@
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
 	                <div class="per_stay_price">352,000원 / 1박</div>
 	              </div>
+	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
@@ -196,6 +201,7 @@
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
 	                <div class="per_stay_price">352,000원 / 1박</div>
 	              </div>
+	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
@@ -209,6 +215,7 @@
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
 	                <div class="per_stay_price">352,000원 / 1박</div>
 	              </div>
+	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
 	            <div class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
@@ -222,6 +229,7 @@
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
 	                <div class="per_stay_price">352,000원 / 1박</div>
 	              </div>
+	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
 	          </div>
 	        </div>

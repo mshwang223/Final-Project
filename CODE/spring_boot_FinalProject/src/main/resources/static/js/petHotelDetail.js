@@ -20,7 +20,7 @@ $(document).ready(function(){
 	$('#rangepicker1').val(picker.startDate.format('MM.DD(dd)'));
 });
 
-  $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
+    $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
     $('#rangepicker2').val(picker.endDate.format('MM.DD(dd)'));
 
 });
@@ -201,10 +201,10 @@ for(let i = 0; i < likeBtn.length; i++){
   });
 }
 
-// navermap 지도
+// naver maps 지도
 var map = new naver.maps.Map('map',{
   center: new naver.maps.LatLng(37.3405761, 127.3164609),
-  zoom: 17
+  zoom: 18
 });
 
 var marker = new naver.maps.Marker({
