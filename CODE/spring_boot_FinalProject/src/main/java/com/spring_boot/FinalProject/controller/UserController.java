@@ -192,10 +192,10 @@ public class UserController {
 		}
 		
 		// 임의 펫코드 생성
-		String tmpCode1 = RandomStringUtils.randomAlphanumeric(5);
-		String tmpCode2 = RandomStringUtils.randomAlphanumeric(5);
-		String tmpCode3 = RandomStringUtils.randomAlphanumeric(5);
-		String tmpCode4 = userId;
+		String tmpCode1 = RandomStringUtils.randomAlphanumeric(5).toUpperCase();
+		String tmpCode2 = RandomStringUtils.randomAlphanumeric(5).toUpperCase();
+		String tmpCode3 = RandomStringUtils.randomAlphanumeric(5).toUpperCase();
+		String tmpCode4 = userId.toUpperCase();
 		
 		String petCode = tmpCode1 + "-" + tmpCode2 + "-" + tmpCode3 + "-" + tmpCode4;
 		
