@@ -34,23 +34,25 @@
 				</div>
 		    	<div class="signup_box">
                     <div class="pet_img">
-                    	<img src="<c:url value='/images/profilePet.png'/>" id="profile_img_preview">
+                    	<img id="profile_img_preview" src="<c:url value='/images/profilePet.png'/>"/>
+                    	<input type="hidden" id="sessionFile" name="sessionFile" value="${sessionScope.userImg}"/>
+						<input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
                     </div>
 			        <div class="pet_info">
 			        	<div class="pet_user">
 			            	<p class="title">신청자</p>
-			            	<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>"//>
-			            	<input type="text" class="text_pet_user input_layout" value="<c:url value='${sessionScope.userName}'/>" readonly>
+			            	<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
+			            	<input type="text" name="userName" class="text_pet_user input_layout" value="<c:url value='${sessionScope.userName}'/>" readonly>
 			          	</div>
 			          	<br>
 			          	<div class="pet_name">
 			            	<p class="title">이름</p>
-			            	<input type="text" id="petName" name="petName" class="text_pet_name input_layout" placeholder="이름을 입력해 주세요">
+			            	<input type="text" id="petName" name="petName" class="text_pet_name input_layout" placeholder="이름을 입력해 주세요" required>
 			          	</div>
 			          	<br>
 			          	<div class="pet_race">
 			            	<p class="title">종류</p>
-			            	<input type="text" id="petRace" name="petRace" class="text_pet_Race input_layout" placeholder="종류를 입력해 주세요(개, 고양이, 햄스터 등)">
+			            	<input type="text" id="petRace" name="petRace" class="text_pet_Race input_layout" placeholder="종류를 입력해 주세요(개, 고양이, 햄스터 등)" required>
 			          	</div>
 			          	<br>
 			          	<div class="pet_kind">

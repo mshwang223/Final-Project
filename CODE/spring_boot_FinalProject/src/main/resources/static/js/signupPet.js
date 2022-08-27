@@ -5,6 +5,26 @@
 *********************************/
 
 $(document).ready(function(){
+	// 이미지 클릭 시 업로드
+ 	$("#profile_img_preview").click(function () {
+	    $("#uploadFile").trigger('click');
+	});
+ 
+ 	$("#uploadFile").on('change', function() {
+ 		setImageFromFile(this, '#profile_img_preview');
+	});
+	
+	// 이미지 미리보기
+	function setImageFromFile(input, expression) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        reader.onload = function (e) {
+	            $(expression).attr('src', e.target.result);
+	        }
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
+
 
 	// 드롭다운 토글
 	$(".dpBox-div").on('click', function() {
