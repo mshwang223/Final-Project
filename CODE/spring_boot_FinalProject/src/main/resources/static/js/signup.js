@@ -200,6 +200,11 @@ $(document).ready(function(){
 				alert("회원가입 실패");
 			}
  		});
-	});  
+	});
+	
+	// 취소
+   	$(".btn_cancel_done").click(function() {
+   		location.href="/";
+   	});  
 });//ready 끝
 

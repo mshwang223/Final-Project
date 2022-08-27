@@ -107,7 +107,7 @@
 		    	</div>
 			    
 			    <div class="btn_signup_box">
-			    	<button class="btn_cancel_done">취 소</button>
+			    	<button type="button" class="btn_cancel_done">취 소</button>
 			        <button type="submit" class="btn_signup_done">가입하기</button>
 			    </div>
 			    		    	

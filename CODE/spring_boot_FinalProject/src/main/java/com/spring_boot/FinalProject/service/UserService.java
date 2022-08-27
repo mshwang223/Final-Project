@@ -6,6 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IUserDAO;
+import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 @Service
@@ -44,5 +45,11 @@ public class UserService implements IUserService {
 	@Override
 	public String chkEmail(String email) {
 		return dao.chkEmail(email);
+	}
+
+	// 펫 등록
+	@Override
+	public void insertPet(PetVO vo) {
+		dao.insertPet(vo);
 	}
 }

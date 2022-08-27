@@ -26,7 +26,7 @@
 		<section class="wrap">
 			
 			<!-- section -->
-			<form method="post" id="signup" class="signup">
+			<form method="post" id="signupPet" class="signupPet">
 			    <div class="pageTitle">
 					<div>
 						<span>#펫등록</span>
@@ -37,32 +37,39 @@
                     	<img src="<c:url value='/images/profilePet.png'/>" id="profile_img_preview">
                     </div>
 			        <div class="pet_info">
+			        	<div class="pet_user">
+			            	<p class="title">신청자</p>
+			            	<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>"//>
+			            	<input type="text" class="text_pet_user input_layout" value="<c:url value='${sessionScope.userName}'/>" readonly>
+			          	</div>
+			          	<br>
 			          	<div class="pet_name">
 			            	<p class="title">이름</p>
-			            	<input type="text" id="petName" class="text_pet_name input_layout" placeholder="이름을 입력해 주세요">
+			            	<input type="text" id="petName" name="petName" class="text_pet_name input_layout" placeholder="이름을 입력해 주세요">
 			          	</div>
 			          	<br>
 			          	<div class="pet_race">
 			            	<p class="title">종류</p>
-			            	<input type="text" id="petRace" class="text_pet_Race input_layout" placeholder="종류를 입력해 주세요">
+			            	<input type="text" id="petRace" name="petRace" class="text_pet_Race input_layout" placeholder="종류를 입력해 주세요(개, 고양이, 햄스터 등)">
 			          	</div>
 			          	<br>
 			          	<div class="pet_kind">
 			            	<p class="title">품종</p>
-			            	<input type="text" id="petKind" class="text_pet_kind input_layout" placeholder="품종을 입력해 주세요">
+			            	<input type="text" id="petKind" name="petKind" class="text_pet_kind input_layout" placeholder="품종을 입력해 주세요. 모르면 공란">
 			          	</div>
 			          	<br>
 			          	<div class="pet_size">
 			            	<p class="title">크기</p>
 			            	<div>
 								<div class="dropdown-box">
-									<div id="pet_size" class="dpBox-pet-size">소형</div>
+									<div id="petSize" class="dpBox-pet-size">소형</div>
+									<input type="hidden" name="petSize" readonly />	<!-- 컨트롤러에 넘길 파라미터 -->
 									<div class="dpBox-div">▼</div>
 								</div>
 								<ul class="dropdown-contents">
-									<li class="small" value="1">소형</li>
-									<li class="midium" value="2">중형</li>
-									<li class="large" value="3">대형</li>
+									<li class="small">소형</li>
+									<li class="midium">중형</li>
+									<li class="large">대형</li>
 								</ul>
 				            	<div id="subDetail" class="subDetail"><span>상세보기</span></div>
 			            	</div>
@@ -70,7 +77,7 @@
 			          	<br>
 			          	<div class="pet_comment">
 			            	<p class="title">특이사항</p>
-			            	<textarea cols="48" rows="10" id="petComment" class="text_pet_comment textarea_layout" maxlength="220" placeholder="펫이 가진 특별한 점을 입력하세요"></textarea>
+			            	<textarea cols="48" rows="10" id="petComment" name="comment" class="text_pet_comment textarea_layout" maxlength="220" placeholder="펫이 가진 특별한 점을 입력하세요"></textarea>
 			          	</div>
 		        	</div>
 		    	</div>

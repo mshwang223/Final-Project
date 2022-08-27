@@ -1,5 +1,6 @@
 package com.spring_boot.FinalProject.dao;
 
+import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 public interface IUserDAO {
@@ -14,5 +15,8 @@ public interface IUserDAO {
 	
 	// Email 체크
 	String chkEmail(String email);
+	
+	// 펫 등록
+	void insertPet(PetVO vo);
 	
 }

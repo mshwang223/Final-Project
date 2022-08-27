@@ -26,4 +26,11 @@
   	<select id="chkEmail" parameterType="String" resultType="String">
   		SELECT userEmail FROM user WHERE userEmail = #{userEmail}
   	</select>
+  	
+  	<!-- 펫 등록 -->
+  	<insert id="insertPet" parameterType="com.spring_boot.FinalProject.model.PetVO">
+  		INSERT into pet
+  		(userId, petImg, petName, petRace, petKind, petSize, comment, petCode)
+  		VALUES(#{userId}, #{petImg}, #{petName}, #{petRace}, #{petKind}, #{petSize}, #{comment}, #{petCode})
+  	</insert>
 </mapper>

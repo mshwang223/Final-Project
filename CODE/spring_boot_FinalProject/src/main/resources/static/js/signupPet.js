@@ -5,6 +5,8 @@
 *********************************/
 
 $(document).ready(function(){
+
+	// 드롭다운 토글
 	$(".dpBox-div").on('click', function() {
 		$(".dropdown-contents").slideToggle();
 	});
@@ -21,17 +23,60 @@ $(document).ready(function(){
 		} else {
 			if(e.target.className != "dpBox-div") {
 				if(e.target.className == "small") { 
-					$("#pet_size").text("소형");
+					$("#petSize").text("소형");
+					$("input[name=petSize]").val("1");
 					dropdownContainer.hide();
 				} else if(e.target.className == "midium") { 
-					$("#pet_size").text("중형");
+					$("#petSize").text("중형");
+					$("input[name=petSize]").val("2");
 					dropdownContainer.hide();
 				} else if(e.target.className == "large") {
-					$("#pet_size").text("대형");
+					$("#petSize").text("대형");
+					$("input[name=petSize]").val("3");
 					dropdownContainer.hide();
 				}			
 			}	
 		}
    	});
+   	
+   	// 펫 등록
+   	$("input[name=petSize]").val("1");	// 기본값 선언
+	$("#signupPet").on('submit', function(){
+	
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+ 		
+ 		var formData = new FormData($('#signupPet')[0]);
+		
+		$.ajax({
+ 			type:"post",
+ 			enctype: 'multipart/form-data',
+ 			url:"/joinPet",
+ 			data: formData,
+			contentType : false,
+        	processData : false,
+			success:function(result){
+				// 성공 시 결과 받음
+				if(result == "SUCCESS"){
+					alert("등록되었습니다.");
+					//location.href="/myPage/" + $('#userId').val();
+					location.href="/mypage";
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		}); 
+	});  
+   	
+   	// 취소
+   	$(".btn_cancel_done").click(function() {
+   		//location.href="/myPage/" + $('#userId').val();
+   		location.href="/mypage";
+   	});
+   	
+   	
 });//ready 끝
 

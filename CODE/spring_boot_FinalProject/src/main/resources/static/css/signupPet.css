@@ -78,7 +78,7 @@
   font-size: 16px;
 }
 
-/* 이름 입력 상자 */
+/* 입력 상자 */
 .pet_info .input_layout {
   width: 354px;
   height: 40px;
@@ -94,6 +94,15 @@
   font-size: 14px;
 }
 
+/* 신청자 입력 상자 */
+.text_pet_user.input_layout {
+  border: none;
+  
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 크기 입력 상자 */
 div.pet_size {
   position: relative;	
 }
@@ -102,7 +111,6 @@ div.pet_size > div {
   display: flex;	
 }
 
-/* 크기 입력 상자 */
 div.dropdown-box {
   border: #ee82ee solid 1px;
   border-top-left-radius: 2px;

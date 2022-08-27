@@ -1,7 +1,10 @@
 package com.spring_boot.FinalProject.controller;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.UserService;
 
@@ -124,11 +128,48 @@ public class UserController {
 		return "subPage/mypage";
 	}
 	
-    // 마이 페이지
+    // 펫등록 페이지
 	@RequestMapping("/signupPet")
-	public String viweSignupPet() {
+	public String viewSignupPet() {
 		return "subPage/signupPet";
-	}	
+	}
+	
+	// 펫등록 기능
+	@ResponseBody
+	@RequestMapping("/joinPet")
+	public String petJoin(@RequestParam HashMap<String, Object> param) {
+		
+		String 	userId 	= (String)param.get("userId");
+		String 	petImg 	= (String)param.get("petImg");
+		String 	petName = (String)param.get("petName");
+		String 	petRace = (String)param.get("petRace");
+		String 	petKind = (String)param.get("petKind");
+		int 	petSize = Integer.parseInt((String)param.get("petSize"));
+		String 	comment = (String)param.get("comment");
+		
+		PetVO vo = new PetVO();
+		vo.setUserId(userId);
+		vo.setPetImg(petImg);
+		vo.setPetName(petName);
+		vo.setPetRace(petRace);
+		vo.setPetKind(petKind);
+		vo.setPetSize(petSize);
+		vo.setComment(comment);
+		
+		// 임의 펫코드 생성
+		String tmpCode1 = RandomStringUtils.randomAlphanumeric(5);
+		String tmpCode2 = RandomStringUtils.randomAlphanumeric(5);
+		String tmpCode3 = RandomStringUtils.randomAlphanumeric(5);
+		String tmpCode4 = userId;
+		
+		String petCode = tmpCode1 + "-" + tmpCode2 + "-" + tmpCode3 + "-" + tmpCode4;
+		
+		vo.setPetCode(petCode);
+		
+		userService.insertPet(vo);
+		
+		return "SUCCESS";
+	}
 	
 	// 업체등록 페이지
 	@RequestMapping("/insertHotel")
