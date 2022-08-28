@@ -142,6 +142,12 @@ public class UserController {
 		return "subPage/mypage";
 	}
 	
+    // 찜 페이지
+	@RequestMapping("/nice")
+	public String viweNice() {
+		return "subPage/nice";
+	}
+	
     // 펫등록 페이지
 	@RequestMapping("/signupPet")
 	public String viewSignupPet() {
