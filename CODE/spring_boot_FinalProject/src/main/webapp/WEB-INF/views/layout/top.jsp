@@ -35,6 +35,10 @@
 							<div id="forgotInfo">
 								<a id="findIdBtn">ID 찾기</a>
 								<a id="findPwBtn">PW 찾기</a>
+							</div>
+							<div class="loginline last"></div>
+							<div id="petLogin" class="petlogo-box">
+								<img src="<c:url value='/images/logo_ico.png'/>" alt="">
 							</div> 
 						</form>
 						<input type="submit" class="dropdown_botton" value="로그인">

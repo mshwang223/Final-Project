@@ -151,7 +151,7 @@ header .login_box{
   
   width: 250px;
   min-width: 160px;
-  height: 212px;
+  height: 290px;
 
   background-color: white;
   
@@ -172,12 +172,18 @@ header .login_box{
   margin-bottom: 10px;
 }
 
+/* 첫 번째 언더라인 */
 #login-form .loginline {
   width: 100%;
   height: 2px;
   background: #ee82ee;
   
   margin-bottom: 15px;	
+}
+
+/* 두 번째 언더라인 */
+#login-form .loginline.last {
+  margin-top: 10px;	
 }
 
 #login-div {
@@ -217,6 +223,21 @@ header .login_box{
   color: #ee82ee;
 }
 
+/* 펫 로그인 레이아웃 */
+.petlogo-box {
+  text-align: center;
+}
+
+.petlogo-box > img {
+  width: 40px;
+  height: 40px;
+  
+  border: 2px solid #ee82ee;
+  
+  padding: 5px;	
+}
+
+/* 로그인 버튼 */
 .dropdown_botton{
   font-weight: 600;
   font-size: 14px;

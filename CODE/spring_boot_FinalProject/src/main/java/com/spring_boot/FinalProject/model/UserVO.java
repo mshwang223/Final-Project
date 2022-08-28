@@ -19,6 +19,8 @@ public class UserVO {
 	private String userName;
 	private int userAuthor;	// 0:일반유저, 1:관리자
 	
+	private String petCode;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -73,5 +75,12 @@ public class UserVO {
 	}
 	public void setUserAuthor(int userAuthor) {
 		this.userAuthor = userAuthor;
+	}
+	
+	public String getPetCode() {
+		return petCode;
+	}
+	public void setPetCode(String petCode) {
+		this.petCode = petCode;
 	}
 }

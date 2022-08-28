@@ -9,6 +9,9 @@ public interface IUserService {
 	// 유저 조회 기능
 	UserVO selectUser(String userId);
 	
+	// 유저 조회 기능(펫코드)
+	UserVO selectUserPetCode(String petCode);
+	
 	// 회원가입
 	void insertUser(UserVO vo);
 	

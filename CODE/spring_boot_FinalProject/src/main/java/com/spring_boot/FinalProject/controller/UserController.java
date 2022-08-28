@@ -69,6 +69,12 @@ public class UserController {
 		session.invalidate();
 		return "redirect:/";
 	}
+	
+	// 펫로그인 페이지 가기
+	@RequestMapping("/petLogin")
+	public String viewPetLogin() {
+		return "subPage/petLogin";
+	}	
 
 	// 회원가입 페이지 가기
 	@RequestMapping("/signup")

@@ -90,11 +90,16 @@ $(document).ready(function(){
  		return true;
 	}
 	
-   // 탑버튼 기능
-   $('.top_btn').click(function (event) {
-      event.preventDefault();
-      $('html, body').animate({ scrollTop: 0 }, 300);
-   });
+    // 탑버튼 기능
+    $('.top_btn').click(function (event) {
+    	event.preventDefault();
+      	$('html, body').animate({ scrollTop: 0 }, 300);
+   	});
+   	
+   	// 펫 로그인 페이지
+ 	$('#petLogin').click(function() {
+		location.href = "/petLogin";
+	});  	
 	
 	// 마이페이지
 	$('#myPage').click(function() {

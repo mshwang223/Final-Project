@@ -26,6 +26,12 @@ public class UserService implements IUserService {
 		return dao.selectUser(userId);
 	}
 	
+	// 유저 조회 기능(펫코드)
+	@Override
+	public UserVO selectUserPetCode(String petCode) {
+		return dao.selectUserPetCode(petCode);
+	}
+	
 	// 회원 가입
 	@Override
 	public void insertUser(UserVO vo) {

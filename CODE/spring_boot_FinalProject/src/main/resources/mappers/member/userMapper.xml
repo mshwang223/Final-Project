@@ -10,6 +10,14 @@
   		SELECT * FROM user WHERE userId = #{userId}
   	</select>
   	
+  	<!-- 로그인 확인(펫코드) -->
+  	<select id="selectUserPetCode" parameterType="String" resultType="com.spring_boot.FinalProject.model.UserVO">
+  		SELECT user.* 
+		  FROM pet
+		  JOIN user ON pet.userId = user.userId
+		 WHERE pet.petCode = #{petCode}
+  	</select>
+  	
   	<!-- 회원 가입 -->
   	<insert id="insertUser" parameterType="com.spring_boot.FinalProject.model.UserVO">
   		INSERT into user

@@ -18,9 +18,6 @@
 		
 		<script src="js/signup.js"></script>
 		<script src="js/signup-modal.js"></script>
-		
-
-		
 	</head>
 
 	<body>
