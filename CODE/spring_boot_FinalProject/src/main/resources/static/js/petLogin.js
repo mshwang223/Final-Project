@@ -38,6 +38,12 @@ $(document).ready(function(){
 	
 	// 이미지 확인 버튼 기능
 	$(".btnUpload_box > #confirm").click(function() {
+ 		// 유효성 체크
+ 		if($("#uploadFile").val() == "") {
+ 			alert("먼저 등록증을 업로드 해주세요.");
+ 			return false;
+ 		}	
+	
 		chkUpload = 1;
 		$("#profile_img_preview").css('opacity', '1');
 		$(".img_box > div").css('display', 'none');
@@ -51,6 +57,12 @@ $(document).ready(function(){
 		// submit 이벤트 기본 기능 : 페이지 새로 고침
  		// 기본 기능 중단
  		event.preventDefault();
+ 		
+ 		// 유효성 체크
+ 		if($("#uploadFile").val() == "") {
+ 			alert("먼저 등록증을 업로드 해주세요.");
+ 			return false;
+ 		}
  		
  		if(chkUpload == 0) {
  			alert("업로드 이미지 확인 버튼을 클릭해 주세요.");
