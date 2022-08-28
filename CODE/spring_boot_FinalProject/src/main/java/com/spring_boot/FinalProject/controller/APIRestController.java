@@ -16,10 +16,11 @@ import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.OCRService;
 import com.spring_boot.FinalProject.service.UserService;
 
-
-
 @RestController
 public class APIRestController {
+	@Autowired
+	APIController apiController;
+	
 	@Autowired
 	UserService userService;
 	
@@ -32,7 +33,7 @@ public class APIRestController {
 							  HttpSession session) throws IOException {
 		
 		// 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치 (프로젝트 외부에 저장)
-		String uploadPath = "C:/springWorkspace/upload/";
+		String uploadPath = apiController.uploadPathFile();
 		// 마지막에 / 있어야 함
 		
 		// 2. 원본 파일 이름 알아오기

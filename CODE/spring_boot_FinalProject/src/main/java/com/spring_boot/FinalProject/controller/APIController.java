@@ -29,4 +29,22 @@ public class APIController {
 		
 		return result;
 	}
+	
+	// 업로드 패스 경로
+	
+	// 파일 업로드
+	@ResponseBody
+	public String uploadPathFile() {
+		String path = "C:/springWorkspace/upload/";
+		
+		return path;
+	}
+	
+	// 이미지 업로드
+	@ResponseBody
+	public String uploadPathImg() {
+		String path = "c:/springWorkspace/petImg/";
+		
+		return path;
+	}
 }

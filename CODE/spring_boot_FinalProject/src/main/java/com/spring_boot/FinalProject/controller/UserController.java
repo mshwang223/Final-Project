@@ -23,9 +23,10 @@ import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.UserService;
 
-
 @Controller
 public class UserController {
+	@Autowired
+	APIController apiController;
 	
 	@Autowired
 	UserService userService;
@@ -171,7 +172,7 @@ public class UserController {
 		vo.setComment(comment);			
 		
 		// 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
-		String uploadPath = "c:/springWorkspace/petImg/";
+		String uploadPath = apiController.uploadPathImg();
 		// c:대소문자 상관없으며 마지막에 '/' 있어야 한다
 				
 		// 2. 원본 파일 이름 설정
