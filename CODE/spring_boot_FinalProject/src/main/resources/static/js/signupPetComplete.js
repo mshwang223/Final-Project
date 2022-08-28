@@ -25,6 +25,7 @@ $(document).ready(function(){
 		link.href = uri;
 		document.body.appendChild(link);
 		link.click();
+		document.body.removeChild(link);
 	}
 		
 

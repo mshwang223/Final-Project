@@ -12,13 +12,13 @@
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/signupPetComplete.css'/>">
+		
+		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/signupPetComplete.js'/>"></script>
 		<script src="<c:url value='/js/html2canvas.js'/>"></script>
 	</head>
 
 	<body>
-		<!-- top  -->
-		<c:import url="/WEB-INF/views/layout/top.jsp"/>
 		<section class="wrap">
 			
 			<!-- section -->
@@ -97,10 +97,6 @@
 			    	<button class="btn_signup_done">홈으로</button>
 			    </div>
 		    </article>
-			<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
-				
-		<!-- footer -->
-		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
 </html>

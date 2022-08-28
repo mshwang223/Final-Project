@@ -52,10 +52,8 @@
 
 /* 카드 박스 레이아웃 */
 .card_box {
-  width: 560px;
+
   height: 360px;
-	
-  margin: 0px;
 	
   background: url("../images/bgPetCard.png");
   background-size: 100% 100%;
