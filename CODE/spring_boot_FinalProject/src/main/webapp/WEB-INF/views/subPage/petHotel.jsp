@@ -115,7 +115,7 @@
 			<!-- 인기호텔 -->
 			<article class="popular_area">
 				<div class="popular_title">
-					<span>#인기호텔</span>
+					<span># 인기호텔</span>
 				</div>
 				<div class="stay_items_wrap">
 					<div class="stay_container">
@@ -192,7 +192,7 @@
 			<!-- 서울 -->
 			<article class="seoul_area">
 				<div class="seoul_title">
-					<span>#서울에서 보내는 펫캉스</span>
+					<span># 서울에서 보내는 펫캉스</span>
 				</div>
 				<div class="stay_items_wrap">
 					<div class="stay_container">
@@ -268,7 +268,7 @@
 			</article>
 			<article class="busan_area">
 				<div class="busan_title">
-					<span>#부산 오션뷰 펫캉스</span>
+					<span># 부산 오션뷰 펫캉스</span>
 				</div>
 				<div class="stay_items_wrap">
 					<div class="stay_container">

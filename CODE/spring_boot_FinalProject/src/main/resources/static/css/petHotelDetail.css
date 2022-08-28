@@ -1,19 +1,20 @@
 @charset "UTF-8";
 .stay_title{
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 700;
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .stay_sub_info{
   display: flex;
-  justify-content: space-between;
   margin-top: 20px;
 }
 
 .stay_sub_box{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 150px;
 }
 
 .stay_sub_info .stay_sub_box img{
@@ -21,68 +22,73 @@
   height: 20px;
 }
 
-.stay_sub_info span, .stay_sub_info .stay_sub_box div{
-  margin-left: 10px;
+.stay_pick span, .stay_sub_box div.review_move{
   font-size: 16px;
   font-weight: 500;
 }
 
-.stay_sub_info .stay_sub_box div{
+.stay_sub_box div.review_move{
   font-weight: 600;
   cursor: pointer;
+  border-bottom: 1px solid #222;
 }
 
 .stay_sub_info .stay_pick{
   display: flex;
+  justify-content: flex-end;
   align-items: center;
+  width: 90px;
 }
 
 .stay_sub_info .stay_pick img{
   width: 22px;
   height: 22px;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .stay_sub_info .stay_pick span{
   font-size: 16px;
   font-weight: 600;
-  margin-left: 5px;
 }
 
 .stay_img_container{
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 1580px;
+  margin-top: 40px;
 }
 
 .stay_img_container > .stay_img_box1{
-  display: flex;
-  align-items: center;
-  height: 762px;
+	margin-right: 5px;
 }
 
 .stay_img_container > .stay_img_box1 img{
-  width: 785px;
-  height: 755px;
+  height: 500px;
+  width: 750px;
 }
 
 .stay_img_container > .stay_img_box2{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   position: relative;
-  width: 775px;
+  width: 830px;
+}
+
+.stay_img_container > .stay_img_box2 img{
+  height: 250px;
+  width: 410px;
 }
 
 .stay_img_container > .stay_img_box2 div{
   position: absolute;
-  bottom: 7px;
+  bottom: 4px;
   right: 0;
-  width: 382px;
-  height: 372px;
-  line-height: 372px;
+  height: 250px;
+  width: 410px;
+  line-height: 250px;
   text-align: center;
   font-size: 30px;
   font-weight: 800;
@@ -91,10 +97,7 @@
   opacity: 0.8;
 }
 
-.stay_img_container > .stay_img_box2 img{
-  width: 382px;
-  height: 373px;
-}
+/* 숙소 정보 article */
 
 .stay_info_area{
   display: flex;
@@ -114,7 +117,7 @@
 .simple_info_box{
   margin-top: 12px;
   padding-bottom: 25px;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .simple_info_box > span{
@@ -127,7 +130,7 @@
   align-items: center;
   justify-content: space-around;
   height: 100px;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .location_box img, .contact_box img{
@@ -273,7 +276,7 @@
 
 /* 숙소 편의 시설 */
 .info_content_box4{
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .info_content_box4 > div:first-child{

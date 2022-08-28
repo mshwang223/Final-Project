@@ -107,7 +107,7 @@ $(document).ready(function(){
   
     //후기 이동
 	$('.review_move').click(function(){
-	      $('html,section').animate({scrollTop : 3000},300);
+	      $('html,section').animate({scrollTop : 2800},300);
 	   });
 	   
 	//주소 복사하기

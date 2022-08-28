@@ -64,7 +64,7 @@
 	<section class="wrap">
 	
 		<section class="party_area" id="partyArea">
-			<div class="party_title">#파티용품</div>
+			<div class="party_title"># 파티용품</div>
 			<div class="party_box">
 				<div>구성1</div>
 				<div class="party_img">
@@ -120,7 +120,7 @@
 			</div>
 		</section>
 		<section class="photo_area" id="photoArea">
-			<div class="photo_title">#추억이 담긴 사진</div>
+			<div class="photo_title"># 추억이 담긴 사진</div>
 			<div class="photo_box">
 				<div class="photo_description">
 					<span>호텔 및 펜션 예약 시 촬영옵션을 선택하면(유료 서비스)</span>
@@ -138,7 +138,7 @@
 			</div>
 		</section>
 		<section class="item_area" id="itemArea">
-			<div class="item_title">#반려용품 및 장난감</div>
+			<div class="item_title"># 반려용품 및 장난감</div>
 			<div class="item_ps">
 				* 자세한 사항은 결제 시 <strong>요청사항에</strong> 기재부탁드립니다.
 			</div>
@@ -193,7 +193,7 @@
 			</div>
 		</section>
 		<section class="play_area" id="playArea">
-			<div class="play_title">#즐거운 놀이공간</div>
+			<div class="play_title"># 즐거운 놀이공간</div>
 			<div class="play_box">
 				<div>
 					<img src="<c:url value='/images/play1.jpg'/>" alt="애견 놀이터"> <img

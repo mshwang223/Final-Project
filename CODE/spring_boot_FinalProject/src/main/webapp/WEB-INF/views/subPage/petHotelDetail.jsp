@@ -37,8 +37,8 @@
 							<div class="review_move">후기 300개</div>
 						</div>
 						<div class="stay_pick">
-							<img class="like_btn" src="/images/heart.png" alt="찜하기">
 							<span>찜하기</span>
+							<img class="like_btn" src="/images/heart.png" alt="찜하기">
 						</div>
 					</div>
 				</div>

@@ -27,10 +27,9 @@ header {
 
 header > div {
   width: 1580px;
-  
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
-  
   margin: 0 auto;
 }
 	
@@ -47,20 +46,16 @@ header > div > .logo_box{
   position: relative;
   top: 0px;
   left: 0px;
-  
-  margin-left: 50px;
 }
 
 div.nav-box {
-  width: 1000px;
+  width: 900px;
   height: 90px;	
 }
 
 header nav.main_nav{
   display: flex;
-  
   position: absolute;
-
   align-items: center;
   width: 600px;
   height: 50px;
@@ -124,12 +119,10 @@ header nav.main_nav > a:hover{
 /* 로그인 박스 */
 header .login_box{
   display: flex;
-  
+  justify-content: space-between;
   margin-left: 120px;
-  
-  width: 300px;
+  width: 200px;
   height: 90px;
-
   user-select: none;
 }
 
@@ -452,7 +445,7 @@ header .login_box > .dropdown > span.loginForm:hover{
   height: 70px;
   float: right;
   position: fixed;
-  right: 90px;
+  right: 80px;
   bottom: 110px;
   cursor: pointer;
   filter:  hue-rotate(320deg);

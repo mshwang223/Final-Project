@@ -78,19 +78,19 @@ $(document).ready(function(){
 
    // 자세히보기 버튼 이동
    $('#partyBtn').click(function(){
-      $('html,body').animate({scrollTop : 1100},300);
+      $('html,body').animate({scrollTop : 1000},300);
    });
 
    $('#photoBtn').click(function(){
-      $('html,body').animate({scrollTop : 2350},300);
+      $('html,body').animate({scrollTop : 2150},300);
    });
 
    $('#itemBtn').click(function(){
-      $('html,body').animate({scrollTop : 3150},300);
+      $('html,body').animate({scrollTop : 2950},300);
    });
 
    $('#playBtn').click(function(){
-      $('html,body').animate({scrollTop : 4100},300);
+      $('html,body').animate({scrollTop : 3900},300);
    });
 });   // document.ready
 
