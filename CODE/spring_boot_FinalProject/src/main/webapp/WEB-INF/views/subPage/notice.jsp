@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,30 +27,31 @@
 						<span>#공지사항</span>
 					</div>
 				</div>
-				<div>
+				<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value='/noticeSearch'/>">
 					<table class="search-table">
 						<tr>
 							<td></td>
 							<td>
-								<div class="dropdown-box">
-									<div id="dpBox-name" class="dpBox-div">전체</div>
+								<div id="dropdown-box" class="dropdown-box">
+									<div id="dpBox-name" class="dpBox-name">전체</div>
+									<input type="hidden" id="chk_search" name="chk_search" value="0" />
 									<div class="dpBox-div">▼</div>
 								</div>
 								<ul class="dropdown-contents">
-									<li id="dp-all">전체</li>
-									<li id="dp-title">제목</li>
-									<li id="dp-contents">내용</li>
+									<li class="dp-all">전체</li>
+									<li class="dp-title">제목</li>
+									<li class="dp-contents">내용</li>
 								</ul>
 								<div class="search-box">
 									<div>
-										<input type="text" class="text_search" placeholder="검색어를 입력하세요.">
+										<input type="text" id="text_search" name="text_search" class="text_search" placeholder="검색어를 입력하세요.">
 										<button class="search-button"><img src="images/search.png"></button>
 									</div>
 								</div>
 							</td>
 						</tr>
 					</table>
-				</div>
+				</form>
 				<div class="table-box">
 					<table>
 						<thead>
@@ -61,66 +63,14 @@
 						    </tr>
 						</thead>
 						<tbody>
+							<c:forEach var="list" items="${lists}" varStatus="loop">
 						    <tr>
-						      	<td>1</td>
-						      	<td class="title"><a href="<c:url value="/noticeDetail"/>">공지사항 제목1</a></td>
-						      	<td>Marco Belinelli</td>
-						      	<td>2022-08-12</td>
+						      	<td>${loop.count}</td>
+						      	<td class="title"><a href="<c:url value="/noticeDetail"/>">${list.title}</a></td>
+						      	<td>${list.userName}</td>
+						      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 						    </tr>
-						    <tr>
-						      	<td>2</td>
-						      	<td class="title">공지사항 제목2</td>
-						      	<td>Carlos Boozer</td>
-						      	<td>2022-08-12</td>
-						    </tr>
-						    <tr>
-						      	<td>3</td>
-						      	<td class="title">공지사항 제목3</td>
-						      	<td>Jimmy Butler</td>
-						      	<td>2022-08-12</td>
-						    </tr>
-						    <tr>
-						      	<td>4</td>
-						      	<td class="title">공지사항 제목4</td>
-						      	<td>Luol Deng</td>
-						      	<td>2022-08-12</td>
-						    </tr>
-						    <tr>
-						      	<td>5</td>
-						      	<td class="title">공지사항 제목5</td>
-						      	<td>Taj Gibson</td>
-						      	<td>2022-08-12</td>
-						    </tr>
-						    <tr>
-						      	<td>6</td>
-						      	<td class="title">공지사항 제목6</td>
-						      	<td>Richard Hamilton</td>
-						      	<td>2022-08-12</td>
-						    </tr>
-						    <tr>
-						      	<td>7</td>
-						      	<td class="title">공지사항 제목7</td>
-						      	<td>Kirk Hinrich</td>
-						      	<td>2022-08-12</td>
-						    </tr>
-						    <tr>
-						      	<td>8</td>
-						      	<td class="title">공지사항 제목8</td>
-						      	<td>Nazr Mohammed</td>
-						      	<td>2022-08-12</td>
-						    </tr>
-						    <tr>
-						      	<td>9</td>
-						      	<td class="title">공지사항 제목9</td>
-						      	<td>Joakim Noah</td>
-						      	<td>2022-08-12</td>
-						    </tr>
-						    <tr>
-						      	<td>10</td>
-						      	<td class="title">공지사항 제목10</td>
-						      	<td>Johnson Cals</td>
-						      	<td>2022-08-12</td>
-						    </tr>
+						    </c:forEach>
 						</tbody>
 					</table>
 				</div>
