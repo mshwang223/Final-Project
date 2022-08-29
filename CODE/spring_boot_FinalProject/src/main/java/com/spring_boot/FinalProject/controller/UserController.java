@@ -142,6 +142,12 @@ public class UserController {
 		return "subPage/mypage";
 	}
 	
+	// 프로필 수정 페이지
+	@RequestMapping("/updateprofile")
+	public String viweUpdateprofile() {
+		return "subPage/updateprofile";
+	}
+	
     // 펫등록 페이지
 	@RequestMapping("/signupPet")
 	public String viewSignupPet() {

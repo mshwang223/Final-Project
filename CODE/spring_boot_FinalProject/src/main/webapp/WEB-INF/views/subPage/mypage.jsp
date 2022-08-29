@@ -48,18 +48,18 @@
                        
                         <div class="user_info">
                         	<div>
-	                        	<button id="modifyUser">프로필 수정</button>
+	                        	<button id="modifyUser" onclick="uploadprofile()">프로필 수정</button>
 								<button id="signupPet">펫 등록</button>                        	
                         	</div>
 
 							<div>
 								<div class="profileTitle">이 름 : </div>
-								<div id="userName">홍길동</div>
+								<div id="userName"></div>
 							</div>
 							
 							<div>
 								<div>이메일 : </div>
-								<div id="userEmail">admin@gmail.com</div>							
+								<div id="userEmail"></div>							
 							</div>
 						</div>
                     </div>

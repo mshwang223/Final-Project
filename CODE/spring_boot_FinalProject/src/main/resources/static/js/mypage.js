@@ -30,3 +30,7 @@ for (i = 0; i < acc_arr.length; i++) {
         }
     });
 }
+
+function uploadprofile(){
+window.location.href='/updateprofile';
+}
