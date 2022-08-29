@@ -15,6 +15,9 @@ public interface IUserService {
 	// 회원가입
 	void insertUser(UserVO vo);
 	
+	// 회원탈퇴
+	void deleteUser(String userId);
+	
 	// ID 체크
 	String chkId(String id);
 	

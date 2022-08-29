@@ -24,6 +24,11 @@
   		(userId, userPw, userName, userEmail)
   		VALUES(#{userId}, #{userPw}, #{userName}, #{userEmail})
   	</insert>
+  	
+  	<!-- 회원 탈퇴 -->
+  	<delete id="deleteUser" parameterType="String">
+  		DELETE FROM user WHERE userId = #{userId}
+  	</delete>
 
   	<!-- ID 체크 -->
   	<select id="chkId" parameterType="String" resultType="String">

@@ -65,4 +65,11 @@ public class UserService implements IUserService {
 	public PetCardVO selectPet(String petCode) {
 		return dao.selectPet(petCode);
 	}
+	
+	// 회원탈퇴
+	@Override
+	public void deleteUser(String userId) {
+		dao.deleteUser(userId);
+		
+	}
 }
