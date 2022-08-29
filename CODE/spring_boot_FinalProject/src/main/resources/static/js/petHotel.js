@@ -15,6 +15,7 @@ searchBox.addEventListener('click', () => {
 
 });
 
+//검색 value
 function searchValueClick(){
   for(let i = 0; i < searchList.length; i++){
     searchList[i].addEventListener('click', () => {
@@ -27,37 +28,6 @@ function searchValueClick(){
 
 searchValueClick();
 
-// 옵션 선택 토글
-/*
-let optionBox = document.getElementById('optionBox');
-let optionPop = document.getElementById('optionPop');
-
-optionBox.addEventListener('click', () => {
-  count ++;
-  if(count % 2 == 0){
-    optionPop.style.display = "block";
-  }else{
-    optionPop.style.display = "none";
-  }
-
-});
-  */
-
-// option 선택
-let option = document.querySelectorAll(".option_pop span");
-let optionLength = 0;
-
-function takeOptionLength(){
-  
-  for(let i = 0; i < option.length; i++){
-    optionLength = option[i].innerText.length;
-    
-    option[i].style.width = (optionLength*30) + "px";
-  }
-
-}
-
-takeOptionLength();
 
 // 찜하기 눌렀을 때
 let likeBtn = document.getElementsByClassName("like_btn");
@@ -77,6 +47,24 @@ for(let i = 0; i < likeBtn.length; i++){
     }
   });
 }
+
+// option 넓이
+let option = document.querySelectorAll(".option_pop span");
+let optionLength = 0;
+
+function takeOptionLength(){
+  
+  for(let i = 0; i < option.length; i++){
+    optionLength = option[i].innerText.length;
+    
+    option[i].style.width = (optionLength*30) + "px";
+  }
+
+}
+
+takeOptionLength();
+
+
 // 제이쿼리 영역
 $(document).ready(function(){
 
@@ -203,37 +191,98 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
   
 	
 	//option 추가
-	var option_cnt = 0;
-	$('.option_span').not('.option_close').click(function(){
-		if($('.option_box').find('#'+$(this).attr('id')).length == 0){
-			option_cnt++;
-			var clone = $(this).clone().append('<img src="/images/close.png" alt="옵션 삭제" class="option_close" id="option_close'+option_cnt+'">');
-			$('.option_box').append(clone);
-			$('.option_pop').removeClass("dis_block");
-		}		
-	});
+   var option_cnt = 0;
+   $('.option_span').not('.option_close').click(function(){
+      if($('.option_box').find('#'+$(this).attr('id')).length == 0){
+         option_cnt++;
+         var clone = $(this).clone().append('<img src="/images/close.png" class="option_close choice" id="option_close'+option_cnt+'">');
+         $(clone).attr('class', 'added_option choice');
+         //$(clone).attr('id', 'added_option'+option_cnt+'');
+         $('.option_box').append(clone);
+         $('.option_pop').removeClass("dis_block");
+      }
+   });
+   
+
+   $('.option_box').click(function(e){
+      if(!$(e.target).hasClass('choice')){
+         $('.option_pop').toggleClass('dis_block');
+      }
+   });
 	
 
-	$('.option_box').click(function(){
-		$('.option_pop').toggleClass('dis_block');
-	});
+	// 슬라이드 10개	
+	// 인기숙소 슬라이드
+	var popularBox = $('.popular_img_box').length;
+    var popularIndex = 0;
 
+    $('.popular_next').click(function(){
+        $('.popular_img_box:nth-child(1)').animate({marginLeft:  '-=320px' }, '500');
+        $('.popular_prev').css("display","block");
+        popularIndex++;
+        if(popularIndex == (popularBox - 5))
+            $('.popular_next').css("display","none");
+    });
+
+    $('.popular_prev').click(function(){
+        $('.popular_img_box:nth-child(1)').animate({marginLeft:  '+=320px' }, '500');
+        $('.popular_next').css("display","block");
+        popularIndex--;
+        if(popularIndex == 0)
+            $('.popular_prev').css("display","none");
+    });
 	
+	 // 서울숙소 슬라이드
+	var seoulBox = $('.seoul_img_box').length;
+    var seoulIndex = 0;
+
+    $('.seoul_next').click(function(){
+        $('.seoul_img_box:nth-child(1)').animate({marginLeft:  '-=320px' }, '700');
+        $('.seoul_prev').css("display","block");
+        seoulIndex++;
+        if(seoulIndex == (seoulBox - 5))
+            $('.seoul_next').css("display","none");
+    });
+
+    $('.seoul_prev').click(function(){
+        $('.seoul_img_box:nth-child(1)').animate({marginLeft:  '+=320px' }, '700');
+        $('.seoul_next').css("display","block");
+        seoulIndex--;
+        if(seoulIndex == 0)
+            $('.seoul_prev').css("display","none");
+    });
+    
+    // 부산숙소 슬라이드
+	var busanBox = $('.busan_img_box').length;
+    var busanIndex = 0;
+
+    $('.busan_next').click(function(){
+        $('.busan_img_box:nth-child(1)').animate({marginLeft:  '-=320px' }, '700');
+        $('.busan_prev').css("display","block");
+        busanIndex++;
+        if(busanIndex == (busanBox - 5))
+            $('.busan_next').css("display","none");
+    });
+
+    $('.busan_prev').click(function(){
+        $('.busan_img_box:nth-child(1)').animate({marginLeft:  '+=320px' }, '700');
+        $('.busan_next').css("display","block");
+        busanIndex--;
+        if(busanIndex == 0)
+            $('.busan_prev').css("display","none");
+    });
 	
 }); //document.ready 끝
 
 
+
+//옵션 삭제 로드 이후 동적으로 생성
 $(document).on('click', '.option_close', function(e){
-	$(this).closest('.option_span').remove();
+	$(this).closest('.added_option').remove();
 		e.preventDefault();
 });
 
 
-/*$(document).on('click', '.option_box:not(.option_close)', function(){
-	alert("짜잔");
-	$('.option_pop').toggleClass('dis_block');
-});
-*/
 
 
 

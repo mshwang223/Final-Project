@@ -51,6 +51,9 @@
 						<a href="/images/petDetail3.jpg" data-lightbox="example"><img src="/images/petDetail3.jpg" alt=""></a>
 						<a href="/images/petDetail4.jpg" data-lightbox="example"><img src="/images/petDetail4.jpg" alt=""></a>
 						<a href="/images/petDetail5.jpg" data-lightbox="example"><img src="/images/petDetail5.jpg" alt=""><div>+ 이미지 더보기</div></a>
+						<a href="/images/petDetail2.jpg" data-lightbox="example"><img src="/images/petDetail2.jpg" alt=""></a> 
+						<a href="/images/petDetail3.jpg" data-lightbox="example"><img src="/images/petDetail3.jpg" alt=""></a>
+						<a href="/images/petDetail4.jpg" data-lightbox="example"><img src="/images/petDetail4.jpg" alt=""></a>
 					</div>
 				</div>
 			</article>

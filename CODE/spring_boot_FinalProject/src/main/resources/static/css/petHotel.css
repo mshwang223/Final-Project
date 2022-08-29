@@ -146,7 +146,7 @@ div[contenteditable=true] {
   width: 100%;
 }
 
-span.option_span{
+span.option_span, .added_option{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -162,7 +162,7 @@ span.option_span{
 }
 
 /* 옵션 삭제 */
-span.option_span > .option_close{
+.option_close{
   width: 8px;
   height: 8px;
   filter: invert(20%);
@@ -252,7 +252,7 @@ span.option_span > .option_close{
   line-height: 60px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  margin: 0 0 30px 20px;
+  margin-bottom: 30px;
 }
 
 .popular_title{
@@ -280,19 +280,20 @@ span.option_span > .option_close{
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  overflow: hidden;
 }
 
-.stay_img_box{
+.popular_img_box, .seoul_img_box, .busan_img_box{
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
-  width: 20%;
   height: 430px;
+  margin-right: 40px;
   cursor: pointer;
 }
 
-.stay_img_box > img{
+.popular_img_box > img, .seoul_img_box > img, .busan_img_box > img{
   width: 280px;
   height: 280px;
   border-radius: 10px;
@@ -339,25 +340,26 @@ span.option_span > .option_close{
 }
 
 /* 이전, 다음 화살표 */
-.stay_items_wrap .prev, .stay_items_wrap .next{
+.popular_prev, .seoul_prev, .busan_prev, .popular_next, .seoul_next, .busan_next{
   position:absolute;
   width: 35px;
   height: 35px;
   cursor: pointer;
 }
 
-.stay_items_wrap .prev{
+.popular_prev, .seoul_prev, .busan_prev{
+  display: none;
   top: 135px;
   left: -75px;
 }
 
-.stay_items_wrap .next{
+.popular_next, .seoul_next, .busan_next{
   top: 135px;
   right: -75px;
 }
 
 /* 찜하기 */
-.stay_img_box .like_btn{
+.like_btn{
   position: absolute;
   top: 10px;
   right: 9.5px;
@@ -370,7 +372,7 @@ span.option_span > .option_close{
 
 .like_hover{
   position: absolute;
-  right: 36px;
+  right: 15px;
   top: 13px;
   width: 52px;
   height: 52px;

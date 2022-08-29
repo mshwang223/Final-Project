@@ -74,7 +74,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
+  height: 500px;
   width: 830px;
+  overflow: hidden;
 }
 
 .stay_img_container > .stay_img_box2 img{
