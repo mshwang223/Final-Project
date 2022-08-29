@@ -17,8 +17,7 @@ public class InsertHotelVO {
 	private int maxManCnt;
 	private int maxPetCnt;
 	private int price;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date startDate;
+	private String startDate;
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date endDate;
 	private String serviceImg;
@@ -98,10 +97,10 @@ public class InsertHotelVO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 	public Date getEndDate() {
@@ -128,4 +127,6 @@ public class InsertHotelVO {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
+	
 }

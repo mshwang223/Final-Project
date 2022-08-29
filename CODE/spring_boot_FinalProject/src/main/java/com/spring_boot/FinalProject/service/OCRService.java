@@ -20,8 +20,8 @@ public class OCRService {
 	public String ocrTemplate(String filePathName) {
 		
 		// OCR Templete
-		String apiURL = "";
-		String secretKey = "";
+		String apiURL = "https://5knsg9jnjg.apigw.ntruss.com/custom/v1/17977/8025c03a701f10dd0652c4e883f2ab752d275f898e4ce223ee749cbd28d86ae1/infer";
+		String secretKey = "cG5XVlBCY25jaVdsVGJCY2pnd3hLeERQQ0hDVVZueU4=";
 		
 		//String imageFile = "C:/springWorkspace/images/receipt.jpg";
 		String imageFile = filePathName;
