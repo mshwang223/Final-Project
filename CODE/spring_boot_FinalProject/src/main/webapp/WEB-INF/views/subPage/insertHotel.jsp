@@ -30,6 +30,7 @@
 				<div class="whole_info_box">
 					<div class="img_box">
 						<i class="fa-solid fa-circle-plus add_img_file"></i>
+						<input type="file" id="uploadMultiFile" name="uploadMultiFile" style="display:none"/>
 						<div>(사진을 업로드 해주세요)</div>
 					</div>
 					<div class="hotel_insert_info">

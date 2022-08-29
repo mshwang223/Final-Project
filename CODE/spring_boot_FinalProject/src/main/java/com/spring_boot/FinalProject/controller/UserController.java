@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.RandomStringUtils;
@@ -33,6 +32,7 @@ public class UserController {
 	
 	@Autowired
 	PasswordEncoder pwEncoder;
+
 	
 	// 로그인 처리
 	@ResponseBody
@@ -142,12 +142,6 @@ public class UserController {
 		return "subPage/mypage";
 	}
 	
-    // 찜 페이지
-	@RequestMapping("/nice")
-	public String viweNice() {
-		return "subPage/nice";
-	}
-	
     // 펫등록 페이지
 	@RequestMapping("/signupPet")
 	public String viewSignupPet() {
@@ -240,6 +234,29 @@ public class UserController {
 	@RequestMapping("/insertHotel")
 	public String viewInsertHotel() {
 		return "subPage/insertHotel";
+	}
+	
+	// 업체등록
+	@ResponseBody
+	@RequestMapping("/registerHotel")
+	public String registerHotel(@RequestParam HashMap<String, Object> param) throws IOException {
+		
+		
+		String 	userId 		= (String)param.get("userId");
+		String 	name 	= (String)param.get("name");
+		String 	zipcode 	= (String)param.get("zipcode");
+		String 	address1 	= (String)param.get("address1");
+		String 	address2 	= (String)param.get("address2");
+		String 	telNumber 	= (String)param.get("telNumber");
+		int 	maxManCnt 	= Integer.parseInt((String)param.get("maxManCnt"));
+		int 	maxPetCnt 	= Integer.parseInt((String)param.get("maxPetCnt"));
+		int 	price 	= Integer.parseInt((String)param.get("price"));
+		String 	comment 	= (String)param.get("comment");
+		String 	sessionFile = (String)param.get("sessionFile");
+		
+
+		
+		return "success";
 	}
 }
 
