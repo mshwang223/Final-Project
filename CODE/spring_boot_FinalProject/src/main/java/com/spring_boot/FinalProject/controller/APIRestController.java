@@ -46,14 +46,11 @@ public class APIRestController {
 		// 4. 서버로 전송
 		file.transferTo(newFile);		
 		
-		//String ocrList = ocrService.ocrGeneral(filePathName);		
-		String ocrList = ocrService.ocrTemplate(filePathName);
-		
 		// 펫등록증 인식코드 반환
-		String[] petCardList = ocrList.split(" ");
-		String petCode = petCardList[petCardList.length-1];
+		String ocrList = ocrService.ocrTemplate(filePathName);
+		String petCode = ocrList.replaceAll(" ", "");
+		System.out.println(petCode);
 		
-		System.out.println("petCode : " + petCode);
 		
 		// 로그인 수행
 		UserVO vo = userService.selectUserPetCode(petCode);
