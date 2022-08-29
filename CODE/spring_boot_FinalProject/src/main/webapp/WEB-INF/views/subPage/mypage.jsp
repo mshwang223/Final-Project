@@ -36,7 +36,16 @@
                     <div class="profile_area">
                         <div class="profile_img">
                             <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview">
+                            <form>
+                            <div class="mypage_btn">
+                            <div class="mypage_input">
+						  <label for="profile_input" id="input_profile_img">프로필 사진 편집</label>
+                                <input type="file" id="profile_input" style="display: none;" onchange="readURL(this);">
                         </div>
+                        </div>
+                         </form>
+                        </div>
+                       
                         <div class="user_info">
                         	<div>
 	                        	<button id="modifyUser">프로필 수정</button>

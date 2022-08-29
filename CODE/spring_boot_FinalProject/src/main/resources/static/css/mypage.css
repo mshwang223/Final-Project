@@ -46,6 +46,22 @@ div.profile_area {
   margin-top: 30px;	
 }
 
+ label#input_profile_img {
+    
+        margin: 10px 0 0 40px;       
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        display: inline-block;
+        width: 150px;
+        border-radius: 3px;
+        color:#fff;
+        font-family: 'Nanum Gothic';
+        background-color: #ee88ee;
+        cursor: pointer;
+      }
+
 div.profile_area .profile_img img{
   width: 150px;
   height: 150px;
