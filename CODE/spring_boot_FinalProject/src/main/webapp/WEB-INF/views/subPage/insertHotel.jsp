@@ -25,46 +25,47 @@
 		
 		<!-- middle -->
 		<section>
-			<div class="wrap_insert_box">
+			<form id="fileUploadFormMulti" method="post" enctype="multipart/form-data" class="wrap_insert_box">
 				<div class="tlt_insert"><div># 업체등록</div></div>
 				<div class="whole_info_box">
 					<div class="img_box">
-						<i class="fa-solid fa-circle-plus add_img_file"></i>
-						<input type="file" id="uploadMultiFile" name="uploadMultiFile" style="display:none"/>
-						<div>(사진을 업로드 해주세요)</div>
+						<i id="uploadPlus" class="fa-solid fa-circle-plus add_img_file"></i>
+						<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
+						<input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
+						<div>(사진을 알집으로 압축하여 업로드 해주세요)</div>
 					</div>
 					<div class="hotel_insert_info">
 						<div class="hotel_tlt">
 							<p>업체명</p>
-							<input type="text" class="input_hotel_name">
+							<input type="text" id="inputHotelName" name="inputHotelName" class="input_hotel_name">
 						</div>
 						<br> 
 						<div class="signup_address">
 				            <p class="title">업체주소</p>
 				            <input type="text" id="zipCode" class="zipcode" name="zipcode" readonly>
 				            <button class="btn_zipcode">우편번호찾기</button><br>
-				            <input type="text" id="address1" class="check_address1" placeholder="주소 입력"><br>
-				            <input type="text" id="address2" class="check_address2" placeholder="상세 주소 입력">
+				            <input type="text" id="address1" name="address1" class="check_address1" placeholder="주소 입력"><br>
+				            <input type="text" id="address2" name="address2" class="check_address2" placeholder="상세 주소 입력">
           				</div>
           				<br>
           				<div class="hotel_phone">
           					<p>숙박 연락처</p>
-          					<input type="text" class="input_phone" placeholder="'-' 없이 입력해주세요">
+          					<input type="text" name="inputPhone" class="input_phone" placeholder="'-' 없이 입력해주세요">
           				</div>
           				<br>
           				<div class="insert_hotel_price">
           					<p>숙박 가격</p>
-          					<input type="text" class="input_price_hotel">
+          					<input type="text" id="inputPrice" name="inputPrice" class="input_price_hotel">
           				</div>
           				<br>
           				<div class="limit_person">
           					<p>제한 인원수</p>
-          					<input type="text" class="input_limit_person">
+          					<input type="text" id="inputLimitPerson" name="inputLimitPerson" class="input_limit_person">
           				</div>
           				<br>
           				<div class="limit_pet">
           					<p>제한 반려동물 수</p>
-          					<input type="text" class="input_limit_pet">
+          					<input type="text" id="inputLimitPet" name="inputLimitPet" class="input_limit_pet">
           				</div>
           				<br>
           				<div class="comp_service">
@@ -104,15 +105,16 @@
           				<br>
           				<div class="stay_rule">
           					<p>특이사항</p>
-          					<textarea class="input_stay_rule" type="text" id="stayRule" placeholder="이용수칙을 남겨주세요" maxlength=100;></textarea>
+          					<textarea class="input_stay_rule" type="text" id="stayRule" name="stayRule" placeholder="이용수칙을 남겨주세요" maxlength=100;></textarea>
           				</div>
 					</div>
 				</div>
 				<div class="insert_cancel_box">
 					<div class="cxl_btn">취소</div>
-					<div class="insert_btn">등록</div>
+					<button type="submit" id="registerBtn" class="insert_btn">등록</button>
 				</div>
-			</div>
+			</form>
+			
 			<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
 		

@@ -51,4 +51,39 @@ $(document).ready(function(){
 
 	});
 	
+	$('#uploadPlus').click(function(){
+		$('#uploadFile').trigger('click');
+	});
+	
+	
+	
+	$("#fileUploadFormMulti").on('submit', function(){
+	
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+ 		
+ 		var formData = new FormData($('#fileUploadFormMulti')[0]);
+		
+		$.ajax({
+ 			type:"post",
+ 			enctype: 'multipart/form-data',
+ 			url:"/registerHotel",
+ 			data: formData,
+			contentType : false,
+        	processData : false,
+			success:function(result){
+				// 성공 시 결과 받음
+				alert(result);
+				if(result){
+					alert("등록되었습니다.");
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		}); 
+	});  
+	
 }); //ready끝
