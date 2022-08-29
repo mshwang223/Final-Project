@@ -11,10 +11,17 @@ public class PetVO {
 	private String petImg;
 	private String petName;
 	private String petRace;
+	private int	petAge;
 	private String petKind;
 	private int petSize;
 	private String comment;
 	private String petCode;
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
+	private Date startDate;
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
+	private Date endDate;	
 
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date createdDate;
@@ -54,6 +61,13 @@ public class PetVO {
 		this.petRace = petRace;
 	}
 
+	public int getPetAge() {
+		return petAge;
+	}
+	public void setPetAge(int petAge) {
+		this.petAge = petAge;
+	}
+
 	public String getPetKind() {
 		return petKind;
 	}
@@ -82,10 +96,26 @@ public class PetVO {
 		this.petCode = petCode;
 	}
 
+	public Date getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
 	public Date getCreatedDate() {
 		return createdDate;
 	}
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
+
+
 }

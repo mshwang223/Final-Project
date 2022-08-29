@@ -53,14 +53,28 @@
                     		<div class="contentDiv">${petName}</div>
                     	</div>
                     	
+                    	<div class="content-box age">
+                    		<div class="titleDiv">나 이</div>
+                    		<div class="contentDiv">${petAge}세</div>
+                    	</div>                    	
+                    	
+                    	<div class="content-box kind">
+                    		<div class="titleDiv">품 종</div>
+                    		<div class="contentDiv">${petKind}</div>
+                    	</div>
+                    	
                     	<div class="content-box userDiv">
                     		<div class="titleDiv">보호자</div>
                     		<div class="contentDiv">${userName}</div>
                     	</div>
                     	
-                    	<div class="content-box kind">
-                    		<div class="titleDiv">품 종</div>
-                    		<div class="contentDiv">${petKind}</div>
+                    	<div class="content-box betweenDate">
+                    		<div class="titleDiv">사용기한</div>
+                    		<div class="contentDiv">
+                    			<fmt:formatDate value="${startDate}" pattern="yyyy-MM-dd"/>
+                    			&nbsp; ~ &nbsp;
+                    			<fmt:formatDate value="${endDate}" pattern="yyyy-MM-dd"/>
+                    		</div>
                     	</div>
                     	
                     	<div class="content-box date">

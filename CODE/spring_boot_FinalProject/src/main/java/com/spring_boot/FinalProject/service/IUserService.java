@@ -1,6 +1,5 @@
 package com.spring_boot.FinalProject.service;
 
-import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -30,6 +29,4 @@ public interface IUserService {
 	
 	// 펫 등록증 확인
 	PetCardVO selectPet(String petCode);
-	// 호텔 등록
-	void insertHotel(InsertHotelVO vo);
 }

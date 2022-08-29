@@ -158,6 +158,7 @@ public class UserController {
 		String 	userName 	= (String)param.get("userName");
 		String 	petName 	= (String)param.get("petName");
 		String 	petRace 	= (String)param.get("petRace");
+		int 	petAge 		= Integer.parseInt((String)param.get("petAge"));
 		String 	petKind 	= (String)param.get("petKind");
 		int 	petSize 	= Integer.parseInt((String)param.get("petSize"));
 		String 	comment 	= (String)param.get("comment");
@@ -167,6 +168,7 @@ public class UserController {
 		vo.setUserId(userId);
 		vo.setPetName(petName);
 		vo.setPetRace(petRace);
+		vo.setPetAge(petAge);
 		vo.setPetKind(petKind);
 		vo.setPetSize(petSize);
 		vo.setComment(comment);			
@@ -222,9 +224,12 @@ public class UserController {
 		model.addAttribute("petImg", vo.getPetImg());
 		model.addAttribute("userName", vo.getUserName());
 		model.addAttribute("petName", vo.getPetName());
+		model.addAttribute("petAge", vo.getPetAge());
 		model.addAttribute("petKind", vo.getPetKind());
 		model.addAttribute("petSize", vo.getPetSize());
 		model.addAttribute("petCode", vo.getPetCode());
+		model.addAttribute("startDate", vo.getStartDate());
+		model.addAttribute("endDate", vo.getEndDate());
 		model.addAttribute("createDate", vo.getCreateDate());
 
 		return "subPage/signupPetComplete";

@@ -6,7 +6,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IUserDAO;
-import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -71,12 +70,6 @@ public class UserService implements IUserService {
 	@Override
 	public void deleteUser(String userId) {
 		dao.deleteUser(userId);
-		
-	}
-
-	@Override
-	public void insertHotel(InsertHotelVO vo) {
-		dao.insertHotel(vo);
 		
 	}
 }

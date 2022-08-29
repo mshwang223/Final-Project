@@ -56,6 +56,11 @@
 			          	</div>
 			          	<br>
 			          	<div class="pet_kind">
+			            	<p class="title">나이</p>
+			            	<input type="text" id="petAge" name="petAge" class="text_pet_age input_layout" type="number" maxlength="2" placeholder="나이를 입력해 주세요. 모르면 공란">
+			          	</div>
+			          	<br>
+			          	<div class="pet_kind">
 			            	<p class="title">품종</p>
 			            	<input type="text" id="petKind" name="petKind" class="text_pet_kind input_layout" placeholder="품종을 입력해 주세요. 모르면 공란">
 			          	</div>

@@ -106,6 +106,8 @@
 .content-box > div.titleDiv {
   padding: 10px;
   
+  word-spacing: 11px;
+  
   color: #ee82ee;
 }
 
@@ -120,8 +122,8 @@
   left: 160px;
 }
 
-/* 보호자 */
-.content-box.userDiv {
+/* 나이 */
+.content-box.age {
   position: absolute;
   top: 70px;
   left: 320px;
@@ -134,8 +136,8 @@
   left: 160px;
 }
 
-/* 등록일 */
-.content-box.date {
+/* 보호자 */
+.content-box.userDiv {
   position: absolute;
   top: 105px;
   left: 320px;
@@ -148,10 +150,24 @@
   left: 160px;
 }
 
+/* 등록일 */
+.content-box.date {
+  position: absolute;
+  top: 140px;
+  left: 320px;
+}
+
+/* 등록기한 */
+.content-box.betweenDate {
+  position: absolute;
+  top: 235px;
+  left: 30px;
+}
+
 /* 코드박스 레이아웃 */
 .petCode-box {
   position: absolute;
-  top: 200px;
+  top: 190px;
   left: 35px;
   
   background: #f5f5f5;

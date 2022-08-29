@@ -43,8 +43,9 @@
   	<!-- 펫 등록 -->
   	<insert id="insertPet" parameterType="com.spring_boot.FinalProject.model.PetVO">
   		INSERT into pet
-  		(userId, petImg, petName, petRace, petKind, petSize, comment, petCode)
-  		VALUES(#{userId}, #{petImg}, #{petName}, #{petRace}, #{petKind}, #{petSize}, #{comment}, #{petCode})
+  		(userId, petImg, petName, petRace, petAge, petKind, petSize, comment, petCode, endDate)
+  		VALUES(#{userId}, #{petImg}, #{petName}, #{petRace}, #{petAge}, 
+  			   #{petKind}, #{petSize}, #{comment}, #{petCode}, DATE_ADD(CURRENT_TIMESTAMP, INTERVAL 1 YEAR))
   	</insert>
   	
   	<!-- 펫 등록 확인 -->
