@@ -26,9 +26,17 @@ public class BoardController {
 	public String noticeSearch(@PathVariable String num, 
 							   @RequestParam HashMap<String, Object> map, 
 							   HttpSession session, Model model) {
+		int chk_search = 0;
+		if(map.get("chk_search") != null)
+			chk_search = Integer.parseInt((String)map.get("chk_search"));
 		
-		int chk_search = Integer.parseInt((String)map.get("chk_search"));
-		String text_search = (String)map.get("text_search");
+		String text_search = "";	
+
+		if(map.get("text_search") == null)
+			text_search = "";
+		else
+			text_search = (String)map.get("text_search");
+
 		
 		ArrayList<BoardVO> lists = null;
 		
