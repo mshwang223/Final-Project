@@ -11,6 +11,9 @@ public class BoardVO {
 	private int category;
 	private String title;
 	private String contents;
+
+	private String chkEmail;
+	private String img;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date createDate;
@@ -21,63 +24,77 @@ public class BoardVO {
 	
 	private String prevTitle;
 	private String nextTitle;
-
+	
 	public String getBoardId() {
 		return boardId;
 	}
 	public void setBoardId(String boardId) {
 		this.boardId = boardId;
 	}
-
+	
 	public String getUserId() {
 		return userId;
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
+	
 	public String getUserName() {
 		return userName;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
+	
 	public int getCategory() {
 		return category;
 	}
 	public void setCategory(int category) {
 		this.category = category;
 	}
-
+	
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	
 	public String getContents() {
 		return contents;
 	}
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-
+	
+	public String getChkEmail() {
+		return chkEmail;
+	}
+	public void setChkEmail(String chkEmail) {
+		this.chkEmail = chkEmail;
+	}
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	
 	public Date getCreateDate() {
 		return createDate;
 	}
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-
+	
 	public Date getModifyDate() {
 		return modifyDate;
 	}
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
-
+	
 	public int getRowCnt() {
 		return rowCnt;
 	}
