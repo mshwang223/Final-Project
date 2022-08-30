@@ -28,13 +28,15 @@
 			<form id="fileUploadFormMulti" method="post" enctype="multipart/form-data" class="wrap_insert_box">
 				<div class="tlt_insert"><div># 업체등록</div></div>
 				<div class="whole_info_box">
-					<div class="img_box">
-						<i id="uploadPlus" class="fa-solid fa-circle-plus add_img_file"></i>
-						<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
-						<input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
-						<div>(사진을 알집으로 압축하여 업로드 해주세요)</div>
-					</div>
+
 					<div class="hotel_insert_info">
+					<div class="file_box">
+						<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
+						<input type="file" id="uploadFile" name="uploadFile" style="display: none"/>
+						<div id="imgBox" class=img_box></div>
+						<button type="button" id="uploadPlus" class="upload_btn">업로드</button>	
+					</div>
+										
 						<div class="hotel_tlt">
 							<p>업체명</p>
 							<input type="text" id="inputHotelName" name="inputHotelName" class="input_hotel_name" autocomplete="off">

@@ -256,7 +256,7 @@ public class UserController {
 								@RequestParam HashMap<String, Object> param,
 								@RequestParam ("service") String[]services,
 								@RequestParam ("provide") String[]provides,
-								@RequestParam ("additional") String[]additionals) throws IOException {
+								@RequestParam ("additional") String[]additionals, Model model) throws IOException {
 		
 		String userId = (String)param.get("userId");
 		String name = (String)param.get("inputHotelName");
@@ -330,7 +330,7 @@ public class UserController {
 		  userService.insertHotel(vo);
 		 
 			
-		return "SUCCESS";
+		return "success";
 	}
 }
 
