@@ -11,7 +11,6 @@ article {
 .sideMenu {
   margin-left: 25px;
   
-  width: 17%;
   height: 660px;
   
   position: sticky;
@@ -39,7 +38,7 @@ article {
 .sideMenu > div > a {
   display: block;
   height: 60px;
-  width: 227px;
+  width: 200px;
   font-weight: bold;
   
   text-indent: 60px;
@@ -48,7 +47,7 @@ article {
 div.sideTitleLine {
   position: absolute;
   bottom: 480px;
-  left: 225px;
+  left: 200px;
   
   width: 3px;
   height: 60px;
