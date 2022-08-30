@@ -14,4 +14,7 @@ public interface IBoardDAO {
 	
 	// 공지사항 세부 내용
 	BoardVO noticeDetailView(String boardId);
+	
+	// 문의하기 작성
+	void insertContact(BoardVO vo);
 }

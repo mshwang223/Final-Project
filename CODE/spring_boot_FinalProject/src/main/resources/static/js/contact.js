@@ -70,6 +70,35 @@ $(document).ready(function(){
 			$(".cntContents, #cntContents").css('color', 'black');
 		}
 	});
+	
+	// 문의하기 저장
+  	$("#frmContact").on('submit', function(){
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+ 		
+ 		var formData = new FormData($('#frmContact')[0]);
+
+		$.ajax({
+ 			type:"post",
+ 			enctype: 'multipart/form-data',
+ 			url:"/insertContact",
+ 			data: formData,
+			contentType : false,
+        	processData : false,
+			success:function(result){
+				// 성공 시 결과 받음
+				if(result){
+					alert("등록되었습니다.");
+					location.href="/";
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		}); 				
+	});	
 });
 
 	

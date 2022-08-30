@@ -40,4 +40,11 @@
 	  ORDER BY board.boardId DESC
 	]]>   		
   	</select>
+  	
+  	<!-- 문의하기 작성 -->
+  	<insert id="insertContact" parameterType="com.spring_boot.FinalProject.model.UserVO">
+  		INSERT into board
+  		(userId, title, contents, chkEmail, chkImg, category)
+  		VALUES(#{userId}, #{title}, #{contents}, #{chkEmail}, #{chkImg}, 2)
+  	</insert>
 </mapper>

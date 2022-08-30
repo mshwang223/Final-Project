@@ -13,7 +13,7 @@ public class BoardVO {
 	private String contents;
 
 	private String chkEmail;
-	private String img;
+	private String chkImg;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date createDate;
@@ -74,11 +74,11 @@ public class BoardVO {
 		this.chkEmail = chkEmail;
 	}
 	
-	public String getImg() {
-		return img;
+	public String getChkImg() {
+		return chkImg;
 	}
-	public void setImg(String img) {
-		this.img = img;
+	public void setChkImg(String chkImg) {
+		this.chkImg = chkImg;
 	}
 	
 	public Date getCreateDate() {
@@ -115,4 +115,5 @@ public class BoardVO {
 	public void setNextTitle(String nextTitle) {
 		this.nextTitle = nextTitle;
 	}
+	
 }

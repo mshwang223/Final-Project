@@ -21,7 +21,7 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 	
-	// 공지사항 검색
+	// 공지사항 페이지 검색
 	@RequestMapping("/noticeSearch/{num}")
 	public String noticeSearch(@PathVariable String num, 
 							   @RequestParam HashMap<String, Object> map, 
@@ -86,5 +86,28 @@ public class BoardController {
 		session.setAttribute("flag", num);
 		
 		return "subPage/notice";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/insertContact")
+	public String insertContact(@RequestParam HashMap<String, Object> map) {
+		String userId = (String)map.get("userId");
+		String title = (String)map.get("title");
+		String contents = (String)map.get("contents");
+		String chkEmail = (String)map.get("chkEmail");
+		String chkImg = (String)map.get("chkImg");
+		
+		System.out.println(userId);
+		
+		BoardVO vo = new BoardVO();
+		vo.setUserId(userId);
+		vo.setTitle(title);
+		vo.setContents(contents);
+		vo.setChkEmail(chkEmail);
+		vo.setChkImg(chkImg);
+		
+		boardService.insertContact(vo);
+		
+		return "SUCCESS";
 	}
 }

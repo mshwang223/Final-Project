@@ -31,7 +31,7 @@
 					<a href="<c:url value='/contactResult'/>">문의 조회</a>
 					<div class="underline"></div>	
 				</div>
-				<div class="table-box">
+				<form id="frmContact" class="table-box">
 					<div>
 						<p>문의하시기 전에 FAQ 관련 내용을 확인해보세요.</p>
 						<p>가능한 빠른 시간 내 답변하도록 노력하겠습니다.</p>
@@ -43,7 +43,8 @@
 						    <tr>
 						      	<td>문의제목<em></em></td>
 						      	<td class="contents-box">
-						      		<input type="text" maxlength="50" placeholder="문의 제목을 입력해 주세요."/>
+						      		<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
+						      		<input id="title" name="title" type="text" maxlength="50" placeholder="문의 제목을 입력해 주세요." required/>
 						      		<span class="span-title">문의 제목을 입력해 주세요.</span>
 						      		<div class="text-count cntTitle"><span id="cntTitle">0</span> / 50</div>
 						      	</td>
@@ -55,7 +56,7 @@
 					<div class="layout-contents">
 						<div>문의내용<em></em></div>
 						<div class="contents-box">
-							<textarea maxlength="500" placeholder="문의 내용을 입력해 주세요."></textarea>
+							<textarea id="contents" name="contents" maxlength="500" placeholder="문의 내용을 입력해 주세요." required></textarea>
 						    <span class="span-contents">문의 내용을 입력해 주세요.</span>
 						    <div class="text-count cntContents"><span id="cntContents">0</span> / 500</div>						      	
 						</div>
@@ -69,7 +70,7 @@
 						      	<td class="contents-email">
 						      		<div>
 							      		<div>
-							      			<input type="checkbox" id="chkEmail">&nbsp;&nbsp;받음
+							      			<input type="checkbox" id="chkEmail" name="chkEmail">&nbsp;&nbsp;받음
 							      		</div>
 							      		<span>등록된 이메일로 답변메일을 받으실 수 있습니다.</span>
 						      		</div>
@@ -82,6 +83,7 @@
 						      	<td class="title-img">첨부이미지</td>
 						      	<td>
 								    <div class="btn_img_box">
+								    	<input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
 								    	<button class="btn_img_done">이미지 찾기</button>
 								    </div>
 						      	</td>
@@ -91,10 +93,10 @@
 					<div class="bottom_line">
 					</div>
 					<div class="btn_list_box">
-				    	<button class="btn_reset">취소</button>
-				    	<button class="btn_done">등록</button>
+				    	<button type="button" class="btn_reset">취소</button>
+				    	<button type="submit" class="btn_done">등록</button>
 				    </div>
-				</div>
+				</form>
 			</article>
 			<!-- 문의하기 레이아웃 종료 -->
 			<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">

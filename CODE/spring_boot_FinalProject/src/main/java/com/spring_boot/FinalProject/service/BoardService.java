@@ -34,4 +34,10 @@ public class BoardService implements IBoardService {
 	public BoardVO noticeDetailView(String boardId) {
 		return dao.noticeDetailView(boardId);
 	}
+
+	// 문의하기 작성
+	@Override
+	public void insertContact(BoardVO vo) {
+		dao.insertContact(vo);		
+	}
 }
