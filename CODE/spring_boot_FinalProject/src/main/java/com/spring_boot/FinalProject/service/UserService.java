@@ -54,6 +54,12 @@ public class UserService implements IUserService {
 	public String chkEmail(String email) {
 		return dao.chkEmail(email);
 	}
+	
+	// Email 확인
+	@Override
+	public String confirmEmail(String userId) {
+		return dao.confirmEmail(userId);
+	}
 
 	// 펫 등록
 	@Override

@@ -88,16 +88,21 @@ public class BoardController {
 		return "subPage/notice";
 	}
 	
+	// 문의하기 등록
 	@ResponseBody
 	@RequestMapping("/insertContact")
 	public String insertContact(@RequestParam HashMap<String, Object> map) {
 		String userId = (String)map.get("userId");
 		String title = (String)map.get("title");
 		String contents = (String)map.get("contents");
-		String chkEmail = (String)map.get("chkEmail");
+		
+		String chkEmail = null;
+		if((String)map.get("chkEmail") == "on") chkEmail = "Y";
+		else chkEmail = "N";
+		
 		String chkImg = (String)map.get("chkImg");
 		
-		System.out.println(userId);
+		System.out.println(chkEmail);
 		
 		BoardVO vo = new BoardVO();
 		vo.setUserId(userId);

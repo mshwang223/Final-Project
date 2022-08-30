@@ -74,9 +74,7 @@
 							      		</div>
 							      		<span>등록된 이메일로 답변메일을 받으실 수 있습니다.</span>
 						      		</div>
-						      		<div class="confirm-email">
-							      		admin@gmail.com
-						      		</div>
+						      		<div class="confirm-email"></div>
 								</td>
 						    </tr>
 						    <tr>

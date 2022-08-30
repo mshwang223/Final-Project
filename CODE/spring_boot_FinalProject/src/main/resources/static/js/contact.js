@@ -12,6 +12,19 @@ $(document).ready(function(){
 
 		if(chkEmail) {
 			$(".confirm-email").css('display', 'block');
+			
+			// 답변메일 클릭 시 이메일 조회
+			console.log($("#userId").val());
+			
+	 		$.ajax({
+	 			type:"post",
+	 			url:"/confirmEmail",
+	 			data:{"userId":$('#userId').val()},
+				dataType:"text",
+				success:function(result){
+					$(".confirm-email").text(result);	
+				}
+	 		});			
 		} else {
 			$(".confirm-email").css('display', 'none');
 		}

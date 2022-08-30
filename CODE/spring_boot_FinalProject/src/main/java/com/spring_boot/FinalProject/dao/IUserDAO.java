@@ -24,6 +24,9 @@ public interface IUserDAO {
 	// Email 체크
 	String chkEmail(String email);
 	
+	// Email 조회
+	String confirmEmail(String userId);
+	
 	// 펫 등록
 	void insertPet(PetVO vo);
 	

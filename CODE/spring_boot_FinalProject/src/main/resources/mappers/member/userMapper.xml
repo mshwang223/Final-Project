@@ -40,6 +40,11 @@
   		SELECT userEmail FROM user WHERE userEmail = #{userEmail}
   	</select>
   	
+  	<!-- Email 확인 -->
+  	<select id="confirmEmail" parameterType="String" resultType="String">
+  		SELECT userEmail FROM user WHERE userId = #{userId}
+  	</select>
+  	
   	<!-- 펫 등록 -->
   	<insert id="insertPet" parameterType="com.spring_boot.FinalProject.model.PetVO">
   		INSERT into pet

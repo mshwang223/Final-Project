@@ -2,7 +2,6 @@ package com.spring_boot.FinalProject.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -71,6 +70,15 @@ public class UserController {
 	public String userLogout(HttpSession session) {
 		session.invalidate();
 		return "redirect:/";
+	}
+	
+	// 이메일 확인
+	@ResponseBody
+	@RequestMapping("/confirmEmail")
+	public String confrimEmail(@RequestParam("userId") String userId) {
+		String userEmail = userService.confirmEmail(userId);
+		
+		return userEmail;
 	}
 	
 	// 펫로그인 페이지 가기
