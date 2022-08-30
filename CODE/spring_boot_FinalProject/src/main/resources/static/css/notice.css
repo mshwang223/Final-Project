@@ -37,6 +37,18 @@ tr:nth-child(even) td {
   position: relative;
 }
 
+.search-table tr td:first-child {
+  justify-content: flex-start;
+}
+
+div.blue {
+  position: relative;
+  top: 27px;
+  
+  font-weight: bold;
+  color: blue;  	
+}
+
 div.dropdown-box {
   width: 100px;
   height: 35px;

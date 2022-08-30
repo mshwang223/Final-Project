@@ -77,6 +77,7 @@ public class BoardController {
 		int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
 		
 		model.addAttribute("lists", lists);
+		model.addAttribute("maxCnt", lists.get(0).getRowCnt());
 		model.addAttribute("maxPageNum", maxPageNum);
 
 		model.addAttribute("chk_search", map.get("chk_search"));
