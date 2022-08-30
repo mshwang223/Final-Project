@@ -60,6 +60,15 @@ $(document).ready(function(){
    		$("#userFrm").attr('action', submitPath);
    		$("#userFrm").submit();
 	});
+	
+	// 첫 페이지 버튼 클릭했을 때
+   	$(".firstPager > a").click(function() {
+   		var pageNum = parseInt(0);
+   		var submitPath = "/noticeSearch/" + pageNum;
+   		
+   		$("#userFrm").attr('action', submitPath);
+   		$("#userFrm").submit();   	
+   	});
 
    	// 이전 버튼 클릭했을 때
    	$(".prevPager > a").click(function() {
@@ -84,6 +93,15 @@ $(document).ready(function(){
 			alert("마지막 페이지입니다.");
 			return false;
 		}
+   		
+   		$("#userFrm").attr('action', submitPath);
+   		$("#userFrm").submit();   	
+   	});
+   	
+	// 첫 페이지 버튼 클릭했을 때
+   	$(".lastPager > a").click(function() {
+   		var pageNum = $("#maxPage").val() - 1;
+   		var submitPath = "/noticeSearch/" + pageNum;
    		
    		$("#userFrm").attr('action', submitPath);
    		$("#userFrm").submit();   	

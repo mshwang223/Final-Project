@@ -32,5 +32,9 @@ for (i = 0; i < acc_arr.length; i++) {
 }
 
 function uploadprofile(){
-window.location.href='/updateprofile';
+	window.location.href='/updateprofile';
+}
+
+function signupPet(){
+	window.location.href='/signupPet';
 }

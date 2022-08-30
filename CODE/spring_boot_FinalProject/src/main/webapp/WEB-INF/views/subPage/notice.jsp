@@ -74,7 +74,7 @@
 							<c:forEach var="list" items="${lists}" varStatus="loop">
 						    <tr>
 						      	<td>${loop.count}</td>
-						      	<td class="title"><a href="<c:url value="/noticeDetail"/>">${list.title}</a></td>
+						      	<td class="title"><a href="<c:url value="/noticeDetail/${list.title}"/>">${list.title}</a></td>
 						      	<td>${list.userName}</td>
 						      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 						    </tr>

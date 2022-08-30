@@ -49,7 +49,7 @@
                         <div class="user_info">
                         	<div>
 	                        	<button id="modifyUser" onclick="uploadprofile()">프로필 수정</button>
-								<button id="signupPet">펫 등록</button>                        	
+								<button id="signupPet" onclick="signupPet()">펫 등록</button>                        	
                         	</div>
 
 							<div>
