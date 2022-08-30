@@ -15,7 +15,9 @@
 					<a href="<c:url value='/petHotel'/>">호텔 / 펜션</a>
 					<a href="<c:url value='/promotion'/>">프로모션</a>
 					<a href="<c:url value='/noticeSearch/0'/>">공지사항</a>
+					<c:if test="${not empty sessionScope.sid}">
 					<a href="<c:url value='/contact'/>">문의하기</a>
+					</c:if>
 					<div class="underline"></div>
 				</nav>
 			</div>
