@@ -8,10 +8,9 @@
   	<!-- 로그인 확인(조건) -->
   	<select id="selectNotice" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.BoardVO">
   		SELECT board.*, user.userName, COUNT(*) OVER() AS rowCnt
-  		  FROM board
+  		  FROM (SELECT * FROM board WHERE category = 1) AS board
   		  JOIN user ON board.userId = user.userId
-  		 WHERE title LIKE CONCAT('%',#{title},'%') AND contents LIKE CONCAT('%',#{contents},'%')
-  		   AND category = 1
+  		 WHERE board.title LIKE CONCAT('%',#{title},'%') AND board.contents LIKE CONCAT('%',#{contents},'%')
   		 ORDER BY board.boardId DESC
   		 LIMIT 10 OFFSET #{pageNum}
   	</select>
@@ -19,10 +18,9 @@
   	<!-- 로그인 확인(전체) -->
   	<select id="selectNoticeOR" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.BoardVO">
   		SELECT board.*, user.userName, COUNT(*) OVER() AS rowCnt
-  		  FROM board
+  		  FROM (SELECT * FROM board WHERE category = 1) AS board
   		  JOIN user ON board.userId = user.userId
-  		 WHERE title LIKE CONCAT('%',#{title},'%') OR contents LIKE CONCAT('%',#{contents},'%')
-  		   AND category = 1
+  		 WHERE board.title LIKE CONCAT('%',#{title},'%') OR board.contents LIKE CONCAT('%',#{contents},'%')
   		 ORDER BY board.boardId DESC
   		 LIMIT 10 OFFSET #{pageNum}
   	</select>
