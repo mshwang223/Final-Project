@@ -90,7 +90,7 @@ $(document).ready(function(){
 				// 성공 시 결과 받음
 				if(result){
 					alert("등록되었습니다.");
-					location.href="/";
+					location.href="/contactResult";
 				}
 			},
 			error:function(){
@@ -99,6 +99,10 @@ $(document).ready(function(){
 			}
  		}); 				
 	});	
+	
+	$(".btn_reset").click(function() {
+		location.href = "/";
+	});
 });
 
 	
