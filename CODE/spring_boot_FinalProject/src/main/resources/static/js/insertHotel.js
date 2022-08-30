@@ -55,6 +55,13 @@ $(document).ready(function(){
 		$('#uploadFile').trigger('click');
 	});
 	
+ 	$("#uploadFile").on('change', function() {
+ 		var fileValue = $(this).val().split("\\");
+ 		var fileName = fileValue[fileValue.length - 1];	// 파일명
+ 		$("#uploadFile").val("");	// 초기화
+ 		$("#imgBox").text(fileName);
+	});
+	
 	
 	
 	$("#fileUploadFormMulti").on('submit', function(){
