@@ -37,7 +37,9 @@ input{
 	margin-top: 20px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-
+.file_box{
+	display: flex;
+}
 .whole_info_box .img_box{
 	text-align: left;
 	border: 1px solid #777;
