@@ -10,9 +10,9 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
-		<link rel="stylesheet" type="text/css" href="css/board.css">
-		<link rel="stylesheet" type="text/css" href="css/notice.css">
-		<script src="js/notice.js"></script>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/board.css"/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/notice.css"/>">
+		<script src="<c:url value="/js/notice.js"/>"></script>
 	</head>
 	
 	<body>
@@ -27,14 +27,22 @@
 						<span>#공지사항</span>
 					</div>
 				</div>
-				<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value='/noticeSearch'/>">
+				<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/noticeSearch/0"/>">
 					<table class="search-table">
 						<tr>
 							<td></td>
 							<td>
 								<div id="dropdown-box" class="dropdown-box">
 									<div id="dpBox-name" class="dpBox-name">전체</div>
-									<input type="hidden" id="chk_search" name="chk_search" value="0" />
+									
+									<c:if test="${empty chk_search}">
+										<input type="hidden" id="chk_search" name="chk_search" value="0" />
+									</c:if>
+									
+									<c:if test="${not empty chk_search}">
+										<input type="hidden" id="chk_search" name="chk_search" value="${chk_search}" />
+									</c:if>
+									
 									<div class="dpBox-div">▼</div>
 								</div>
 								<ul class="dropdown-contents">
@@ -44,8 +52,8 @@
 								</ul>
 								<div class="search-box">
 									<div>
-										<input type="text" id="text_search" name="text_search" class="text_search" placeholder="검색어를 입력하세요.">
-										<button class="search-button"><img src="images/search.png"></button>
+										<input type="text" id="text_search" name="text_search" class="text_search" value="${text_search}" placeholder="검색어를 입력하세요.">
+										<button class="search-button"><img src="<c:url value="/images/search.png"/>"></button>
 									</div>
 								</div>
 							</td>
@@ -75,36 +83,31 @@
 					</table>
 				</div>
 				<div class="paging-box">
+					<input type="hidden" id="flag" value="${sessionScope.flag}" />
+					<input type="hidden" id="maxPage" value="${maxPageNum}" />
 					<ul>
 						<li class="firstPager">
-							<a href="" title="첫 페이지로 이동하기">
+							<a href="javascript:void(0)" title="첫 페이지로 이동하기">
 								<<
 							</a>
 						</li>
 						<li class="prevPager">
-							<a href="" title="이전 페이지로 이동하기">
+							<a href="javascript:void(0)" title="이전 페이지로 이동하기">
 								<
 							</a>
 						</li>
-						
-						<li><a href="" class="active">1</a></li>
-						<li><a href="" class="active">2</a></li>
-						<li><a href="" class="active">3</a></li>
-						<li><a href="" class="active">4</a></li>
-						<li><a href="" class="active">5</a></li>
-						<li><a href="" class="active">6</a></li>
-						<li><a href="" class="active">7</a></li>
-						<li><a href="" class="active">8</a></li>
-						<li><a href="" class="active">9</a></li>
-						<li><a href="" class="active">10</a></li>
-						
+						<c:forEach var="i" begin="1" end="${maxPageNum}">
+						<li>
+							<a href="javascript:void(0)" class="active">${i}</a>
+						</li>
+						</c:forEach>
 						<li class="nextPager">
-							<a href="" title="다음 페이지로 이동하기">
+							<a href="javascript:void(0)" title="다음 페이지로 이동하기">
 								>
 							</a>
 						</li>
 						<li class="lastPager">
-							<a href="" title="마지막 페이지로 이동하기">
+							<a href="javascript:void(0)" title="마지막 페이지로 이동하기">
 								>>
 							</a>
 						</li>

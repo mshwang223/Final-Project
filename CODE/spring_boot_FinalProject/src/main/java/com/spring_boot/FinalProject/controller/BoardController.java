@@ -3,11 +3,15 @@ package com.spring_boot.FinalProject.controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.service.BoardService;
@@ -18,13 +22,19 @@ public class BoardController {
 	BoardService boardService;
 	
 	// 공지사항 검색
-	@RequestMapping("/noticeSearch")
-	public String noticeSearch(@RequestParam HashMap<String, Object> map, Model model) {
+	@RequestMapping("/noticeSearch/{num}")
+	public String noticeSearch(@PathVariable String num, 
+							   @RequestParam HashMap<String, Object> map, 
+							   HttpSession session, Model model) {
 		
 		int chk_search = Integer.parseInt((String)map.get("chk_search"));
 		String text_search = (String)map.get("text_search");
 		
 		ArrayList<BoardVO> lists = null;
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
 		
 		if(chk_search == 0) {	// 검색 조건 전체
 			if(text_search.equals("") || text_search.length() == 0) {
@@ -55,8 +65,17 @@ public class BoardController {
 			lists = boardService.selectNotice(map);
 		}
 		
-		model.addAttribute("lists", lists);
+		// 페이징 계산
+		int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
 		
-		return "/subPage/notice";
+		model.addAttribute("lists", lists);
+		model.addAttribute("maxPageNum", maxPageNum);
+
+		model.addAttribute("chk_search", map.get("chk_search"));
+		model.addAttribute("text_search", map.get("text_search"));		
+		
+		session.setAttribute("flag", num);
+		
+		return "subPage/notice";
 	}
 }

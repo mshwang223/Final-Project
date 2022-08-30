@@ -38,6 +38,57 @@ $(document).ready(function(){
 			}	
 		}
    	});
+   	
+   	// 초기화
+   	var flag = $("#flag").val();
+   	$("a.active").eq(flag).addClass("aSelected");
+   	
+   	console.log($("#chk_search").val());
+   	
+   	if($("#chk_search").val() == "" || $("#chk_search").val() == "0")
+   		$("#dpBox-name").text("전체");
+   	else if($("#chk_search").val() == "1")
+   		$("#dpBox-name").text("제목");
+   	else
+   		$("#dpBox-name").text("내용");
+   	
+   	// 페이지 번호 버튼 클릭했을 때
+   	$(".active").click(function(e) {
+   		var pageNum = parseInt($(this)[0].text - 1);
+   		var submitPath = "/noticeSearch/" + pageNum;
+   		
+   		$("#userFrm").attr('action', submitPath);
+   		$("#userFrm").submit();
+	});
+
+   	// 이전 버튼 클릭했을 때
+   	$(".prevPager > a").click(function() {
+   		var pageNum = parseInt(flag - 1);
+   		var submitPath = "/noticeSearch/" + pageNum;
+   		
+   		if(pageNum < 0) {
+   			alert("첫 페이지 입니다.");
+   			return false;
+   		}
+   		
+   		$("#userFrm").attr('action', submitPath);
+   		$("#userFrm").submit();   	
+   	});
+   	
+   	// 다음 버튼 클릭했을 때
+   	$(".nextPager > a").click(function() {
+   		var pageNum = parseInt(flag + 1);
+   		var submitPath = "/noticeSearch/" + pageNum;
+   		
+   		if(pageNum >= $("#maxPage").val()) {
+			alert("마지막 페이지입니다.");
+			return false;
+		}
+   		
+   		$("#userFrm").attr('action', submitPath);
+   		$("#userFrm").submit();   	
+   	});
+   	
 });
 
 	
