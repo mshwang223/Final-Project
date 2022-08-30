@@ -18,6 +18,9 @@ public class BoardVO {
 	private Date modifyDate;
 	
 	private int rowCnt;
+	
+	private String prevTitle;
+	private String nextTitle;
 
 	public String getBoardId() {
 		return boardId;
@@ -80,5 +83,19 @@ public class BoardVO {
 	}
 	public void setRowCnt(int rowCnt) {
 		this.rowCnt = rowCnt;
+	}
+	
+	public String getPrevTitle() {
+		return prevTitle;
+	}
+	public void setPrevTitle(String prevTitle) {
+		this.prevTitle = prevTitle;
+	}
+	
+	public String getNextTitle() {
+		return nextTitle;
+	}
+	public void setNextTitle(String nextTitle) {
+		this.nextTitle = nextTitle;
 	}
 }

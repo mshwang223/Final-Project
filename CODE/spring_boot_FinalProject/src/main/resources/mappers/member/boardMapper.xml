@@ -11,8 +11,9 @@
   		  FROM board
   		  JOIN user ON board.userId = user.userId
   		 WHERE title LIKE CONCAT('%',#{title},'%') AND contents LIKE CONCAT('%',#{contents},'%')
-  		ORDER BY board.boardId DESC
-  		LIMIT 10 OFFSET #{pageNum}
+  		   AND category = 1
+  		 ORDER BY board.boardId DESC
+  		 LIMIT 10 OFFSET #{pageNum}
   	</select>
   	
   	<!-- 로그인 확인(전체) -->
@@ -21,8 +22,22 @@
   		  FROM board
   		  JOIN user ON board.userId = user.userId
   		 WHERE title LIKE CONCAT('%',#{title},'%') OR contents LIKE CONCAT('%',#{contents},'%')
+  		   AND category = 1
   		 ORDER BY board.boardId DESC
   		 LIMIT 10 OFFSET #{pageNum}
   	</select>
 
+  	<!-- 공지사항 세부 내용 조회 -->
+  	<select id="noticeDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.BoardVO">
+  	<![CDATA[
+		SELECT board.*, user.userName,
+		       (SELECT title FROM board WHERE boardId < #{boardId} ORDER BY boardId DESC LIMIT 1) AS prevTitle,
+		       (SELECT title FROM board WHERE boardId > #{boardId} ORDER BY boardId LIMIT 1) AS nextTitle
+		  FROM board
+		  JOIN user ON board.userId = user.userId
+		 WHERE boardId = #{boardId}
+		   AND category = 1
+	  ORDER BY board.boardId DESC
+	]]>   		
+  	</select>
 </mapper>

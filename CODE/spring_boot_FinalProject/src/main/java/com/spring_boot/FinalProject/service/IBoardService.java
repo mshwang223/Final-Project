@@ -12,4 +12,7 @@ public interface IBoardService {
 	
 	// 공지사항 조회 기능(전체)
 	ArrayList<BoardVO> selectNoticeOR(HashMap<String, Object> map);
+	
+	// 공지사항 세부 내용
+	BoardVO noticeDetailView(String boardId);
 }

@@ -28,4 +28,10 @@ public class BoardService implements IBoardService {
 	public ArrayList<BoardVO> selectNoticeOR(HashMap<String, Object> map) {
 		return dao.selectNoticeOR(map);
 	}
+
+	// 공지사항 세부화면 조회
+	@Override
+	public BoardVO noticeDetailView(String boardId) {
+		return dao.noticeDetailView(boardId);
+	}
 }
