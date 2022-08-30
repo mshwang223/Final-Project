@@ -22,11 +22,13 @@ public class MenuController {
 	}	
 	
 	// 공지사항 가기
+	/*
 	@RequestMapping("/notice")
 	public String viewNotice() {
 		return "redirect:/noticeSearch/" + "0";
 		//return "subPage/notice";
 	}
+	*/
 	
 	// 공지사항 세부화면 가기
 	@RequestMapping("/noticeDetail/{boardId}")
