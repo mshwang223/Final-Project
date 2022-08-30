@@ -22,4 +22,16 @@ public class AdminController {
 	public String viewAdminNoticeNew() {
 		return "subPage/adminNoticeNew";
 	}	
+	
+	// 관리자-업체관리 페이지
+	@RequestMapping("/adminInsertHotel")
+	public String viewAdminInsertHotel() {
+		return "subPage/adminInsertHotel";
+	}	
+	
+	// 관리자-업체관리 세부화면 페이지
+		@RequestMapping("/adminInsertDetail")
+		public String viewAdminInsertDetail() {
+			return "subPage/adminInsertDetail";
+		}	
 }

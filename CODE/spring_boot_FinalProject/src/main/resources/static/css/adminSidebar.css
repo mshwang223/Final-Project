@@ -39,7 +39,7 @@ article {
 .sideMenu > div > a {
   display: block;
   height: 60px;
-  
+  width: 227px;
   font-weight: bold;
   
   text-indent: 60px;

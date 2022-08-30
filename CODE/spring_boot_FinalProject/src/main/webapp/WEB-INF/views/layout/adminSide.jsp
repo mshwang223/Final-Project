@@ -22,7 +22,7 @@
 						
 				<div class="sideTitle">운영</div>
 
-				<a class="aOperLists" href="#">숙박업체 등록</a>
+				<a class="aOperLists" href="<c:url value="/adminInsertHotel"/>">숙박업체 등록</a>
 				<a class="aOperLists" href="#">관리</a>
 				<a class="aOperLists" href="#">패키지 관리</a>
 				<div class="sideTitleLine"></div>

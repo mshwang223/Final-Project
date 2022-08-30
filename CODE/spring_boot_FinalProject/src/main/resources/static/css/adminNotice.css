@@ -27,13 +27,10 @@ tr:nth-child(even) td {
 
 .search-table tr td {
   padding: 1px;
-  
   border: 0;
   width: 50%;
-  
   display:flex;
   justify-content: flex-end;
-  
   position: relative;
 }
 

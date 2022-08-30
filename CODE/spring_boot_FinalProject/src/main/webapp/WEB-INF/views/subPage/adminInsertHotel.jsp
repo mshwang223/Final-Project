@@ -13,7 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/adminNotice.css">
 		
 		<script src="js/notice.js"></script>
-		<script src="js/adminNotice.js"></script>
+		<script src="js/adminInsertHotel.js"></script>
 	</head>
 	
 	<body>
@@ -29,7 +29,7 @@
 				<div class="main-layout">
 					<div class="pageTitle">
 						<div>
-							<span># 공지사항</span>
+							<span># 등록관리</span>
 						</div>
 					</div>	
 					<div>
@@ -52,9 +52,6 @@
 											<button class="search-button"><img src="images/search.png"></button>
 										</div>
 									</div>
-									<div>
-										<button id="adminNoticeNew" class="btnAdmin">NEW</button>
-									</div>
 								</td>
 							</tr>
 						</table>
@@ -65,70 +62,81 @@
 								<tr>
 							      	<th class="num">번호</th>
 							      	<th>제목</th>
-							     	<th class="author">작성자</th>
-							      	<th class="date">작성일</th>
+							     	<th class="author">등록업체</th>
+							      	<th class="date">등록일</th>
+							      	<th class="approve">승인여부</th>
 							    </tr>
 							</thead>
 							<tbody>
 							    <tr>
 							      	<td>1</td>
-							      	<td class="title"><a href="<c:url value="/adminNoticeDetail"/>">공지사항 제목1</a></td>
-							      	<td>Marco Belinelli</td>
+							      	<td class="title"><a href="<c:url value="/adminInsertDetail"/>">호호펜션등록합니다.</a></td>
+							      	<td>호호펜션</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>2</td>
 							      	<td class="title">공지사항 제목2</td>
 							      	<td>Carlos Boozer</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>3</td>
 							      	<td class="title">공지사항 제목3</td>
 							      	<td>Jimmy Butler</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>4</td>
 							      	<td class="title">공지사항 제목4</td>
 							      	<td>Luol Deng</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>5</td>
 							      	<td class="title">공지사항 제목5</td>
 							      	<td>Taj Gibson</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>6</td>
 							      	<td class="title">공지사항 제목6</td>
 							      	<td>Richard Hamilton</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>7</td>
 							      	<td class="title">공지사항 제목7</td>
 							      	<td>Kirk Hinrich</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>8</td>
 							      	<td class="title">공지사항 제목8</td>
 							      	<td>Nazr Mohammed</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>9</td>
 							      	<td class="title">공지사항 제목9</td>
 							      	<td>Joakim Noah</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							    <tr>
 							      	<td>10</td>
 							      	<td class="title">공지사항 제목10</td>
 							      	<td>Johnson Cals</td>
 							      	<td>2022-08-12</td>
+							      	<td>N</td>
 							    </tr>
 							</tbody>
 						</table>

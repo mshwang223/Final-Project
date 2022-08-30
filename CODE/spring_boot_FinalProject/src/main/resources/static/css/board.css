@@ -43,6 +43,10 @@ th.author, th.date {
   width: 240px;
 }
 
+th.approve{
+	width: 100px;
+}
+
 td {
   padding: 10px 15px;
   border-right: 1px solid #c6c9cc;
