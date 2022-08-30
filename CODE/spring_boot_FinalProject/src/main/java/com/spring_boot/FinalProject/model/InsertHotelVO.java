@@ -16,14 +16,16 @@ public class InsertHotelVO {
 	private String telNumber;
 	private int maxManCnt;
 	private int maxPetCnt;
+	private String facility1;
+	private String facility2;
+	private String facility3;
 	private int price;
-	private String startDate;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date endDate;
+	private String period;
 	private String serviceImg;
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date createdDate;
 	private String comment;
+	
 	
 	public int getRegId() {
 		return regId;
@@ -91,23 +93,35 @@ public class InsertHotelVO {
 	public void setMaxPetCnt(int maxPetCnt) {
 		this.maxPetCnt = maxPetCnt;
 	}
+	public String getFacility1() {
+		return facility1;
+	}
+	public void setFacility1(String facility1) {
+		this.facility1 = facility1;
+	}
+	public String getFacility2() {
+		return facility2;
+	}
+	public void setFacility2(String facility2) {
+		this.facility2 = facility2;
+	}
+	public String getFacility3() {
+		return facility3;
+	}
+	public void setFacility3(String facility3) {
+		this.facility3 = facility3;
+	}
 	public int getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getStartDate() {
-		return startDate;
+	public String getPeriod() {
+		return period;
 	}
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-	public Date getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
+	public void setPeriod(String period) {
+		this.period = period;
 	}
 	public String getServiceImg() {
 		return serviceImg;
@@ -127,6 +141,5 @@ public class InsertHotelVO {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	
-	
+
 }

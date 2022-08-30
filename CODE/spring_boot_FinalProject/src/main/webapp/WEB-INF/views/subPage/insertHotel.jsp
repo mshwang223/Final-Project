@@ -37,13 +37,13 @@
 					<div class="hotel_insert_info">
 						<div class="hotel_tlt">
 							<p>업체명</p>
-							<input type="text" id="inputHotelName" name="inputHotelName" class="input_hotel_name">
+							<input type="text" id="inputHotelName" name="inputHotelName" class="input_hotel_name" autocomplete="off">
 						</div>
 						<br> 
 						<div class="signup_address">
 				            <p class="title">업체주소</p>
 				            <input type="text" id="zipCode" class="zipcode" name="zipcode" readonly>
-				            <button class="btn_zipcode">우편번호찾기</button><br>
+				            <button type="button" class="btn_zipcode">우편번호찾기</button><br>
 				            <input type="text" id="address1" name="address1" class="check_address1" placeholder="주소 입력"><br>
 				            <input type="text" id="address2" name="address2" class="check_address2" placeholder="상세 주소 입력">
           				</div>
@@ -71,30 +71,30 @@
           				<div class="comp_service">
           					<p>제공 서비스</p>
           					<div class="box_service">
-          						<span>픽업<input type="checkbox" class="box_comp_service"></span>
-          						<span>넷플릭스<input type="checkbox" class="box_comp_service"></span>
-          						<span>와이파이<input type="checkbox" class="box_comp_service"></span>
-          						<span>돌봄서비스<input type="checkbox" class="box_comp_service"></span>
+          						<span>픽업<input type="checkbox" id="pickUp" name="service" class="box_comp_service" value="픽업"></span>
+          						<span>넷플릭스<input type="checkbox" id="streaming" name="service" class="box_comp_service" value="넷플릭스"></span>
+          						<span>와이파이<input type="checkbox" id="wireless" name="service" class="box_comp_service" value="와이파이"></span>
+          						<span>돌봄서비스<input type="checkbox" id="petCare" name="service" class="box_comp_service" value="돌봄서비스"></span>
           					</div>
           				</div>
           				<br>
           				<div class="comp_facility">
           					<p>제공 시설</p>
           					<div class="box_facility">
-          						<span>주방<input type="checkbox" class="box_comp_facility"></span>
-          						<span>주차공간<input type="checkbox" class="box_comp_facility"></span>
-          						<span>수영장<input type="checkbox" class="box_comp_facility"></span>
-          						<span>마당<input type="checkbox" class="box_comp_facility"></span>
+          						<span>주방<input type="checkbox" id="kitchen" name="provide" class="box_comp_facility" value="주방"></span>
+          						<span>주차공간<input type="checkbox" id="parkingLot" name="provide" class="box_comp_facility" value="주차공간"></span>
+          						<span>수영장<input type="checkbox" id="swimPool" name="provide" class="box_comp_facility" value="수영장"></span>
+          						<span>마당<input type="checkbox" id="yard" name="provide" class="box_comp_facility" value="마당"></span>
           					</div>
           				</div>
           				<br>
           				<div class="comp_add_facility">
           					<p>추가 시설</p>
           					<div class="box_add_facility">
-          						<span>세탁기<input type="checkbox" class="box_comp_add_facility"></span>
-          						<span>건조기<input type="checkbox" class="box_comp_add_facility"></span>
-          						<span>욕실용품<input type="checkbox" class="box_comp_add_facility"></span>
-          						<span>에어컨<input type="checkbox" class="box_comp_add_facility"></span>
+          						<span>세탁기<input type="checkbox" id="cleanMachine" name="additional" class="box_comp_add_facility" value="세탁기"></span>
+          						<span>건조기<input type="checkbox" id="dryMachine" name="additional" class="box_comp_add_facility" value="건조기"></span>
+          						<span>욕실용품<input type="checkbox" id="bathKit" name="additional" class="box_comp_add_facility" value="욕실용품"></span>
+          						<span>에어컨<input type="checkbox" id="ariCon" name="additional" class="box_comp_add_facility" value="에어컨"></span>
           					</div>
           				</div>
           				<br>                				            				

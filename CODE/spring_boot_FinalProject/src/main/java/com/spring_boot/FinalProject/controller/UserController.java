@@ -253,7 +253,10 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping("/registerHotel")
 	public String registerHotel(@RequestParam("uploadFile") MultipartFile file,
-								@RequestParam HashMap<String, Object> param) throws IOException {
+								@RequestParam HashMap<String, Object> param,
+								@RequestParam ("service") String[]services,
+								@RequestParam ("provide") String[]provides,
+								@RequestParam ("additional") String[]additionals) throws IOException {
 		
 		String userId = (String)param.get("userId");
 		String name = (String)param.get("inputHotelName");
@@ -264,50 +267,69 @@ public class UserController {
 		int price = Integer.parseInt((String)param.get("inputPrice"));
 		int maxManCnt = Integer.parseInt((String)param.get("inputLimitPerson"));
 		int maxPetCnt = Integer.parseInt((String)param.get("inputLimitPet"));
-		String startDate = (String)param.get("daterange");
+		String facility1 = "";
+		String facility2 = "";
+		String facility3 = ""; 
+		String period = (String)param.get("daterange");
 		String sessionFile = (String)param.get("uploadFile");
 		String comment = (String)param.get("stayRule");
 		
+		for(int i =0; i<services.length; i++) {
+			facility1 += services[i] + ",";
+		}
+		for(int i =0; i<provides.length; i++) {
+			facility2 += provides[i] + ",";
+		}
+		for(int i =0; i<additionals.length; i++) {
+			facility3 += additionals[i] + ",";
+		}
 		  
+		
 		  InsertHotelVO vo = new InsertHotelVO(); 
 		  vo.setUserId(userId);
 		  vo.setName(name); 
 		  vo.setZipcode(zipcode); 
 		  vo.setAddress1(address1);
-		  vo.setAddress2(address2);
+		  vo.setAddress2(address2); 
 		  vo.setTelNumber(telNumber);
-		  vo.setMaxManCnt(maxManCnt); 
-		  vo.setMaxPetCnt(maxPetCnt);
+		  vo.setMaxManCnt(maxManCnt);
+		  vo.setMaxPetCnt(maxPetCnt); 
+		  vo.setFacility1(facility1);
+		  vo.setFacility2(facility2);
+		  vo.setFacility3(facility3);
 		  vo.setPrice(price);
-		  vo.setStartDate(startDate);
+		  vo.setPeriod(period); 
 		  vo.setComment(comment);
 		  
-			// 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
-			String uploadPath = apiController.uploadPathImg();
-			// c:대소문자 상관없으며 마지막에 '/' 있어야 한다
-					
-			// 2. 원본 파일 이름 설정
-			String originalFileName = file.getOriginalFilename();
-			// 이미지가 추가되었을 때
-			if(!originalFileName.equals("")) { 
-				// 3. 파일 이름이 중복되지 않도록 파일 이름 변경
-				
-				// 업체명과 조합하여 파일명 생성
-				String savedFileName = name + "_" + originalFileName;
-
-				// 4. 파일 생성
-				File newFile = new File(uploadPath + savedFileName);
-						
-				// 5. 서버로 전송
-				file.transferTo(newFile);
-						
-				// 6. DB에 저장
-				vo.setServiceImg(savedFileName);
-			} else {	// 이미지가 추가되지 않은 경우
-				// 기존 추가된 이미지가 있을 경우
-				if(!sessionFile.equals(""))
-					vo.setServiceImg(sessionFile);
-			}
+		  
+		  // 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
+		  String uploadPath = apiController.uploadPathImg(); // c:대소문자 상관없으며 마지막에 '/' 있어야 한다
+		  
+		  // 2. 원본 파일 이름 설정
+		  String originalFileName = file.getOriginalFilename(); 
+		  //이미지가 추가되었을 때
+		  if(!originalFileName.equals("")) { 
+		  // 3. 파일 이름이 중복되지 않도록 파일 이름 변경
+		  
+		  // 업체명과 조합하여 파일명 생성
+		  String savedFileName = name + "_" + originalFileName;
+		  
+		  // 4. 파일 생성
+		  File newFile = new File(uploadPath + savedFileName);
+		  
+		  // 5. 서버로 전송
+		  file.transferTo(newFile);
+		  
+		  // 6. DB에 저장
+		  vo.setServiceImg(savedFileName); } 
+		  else { 
+			  // 이미지가 추가되지 않은 경우
+			  // 기존 추가된 이미지가 있을 경우 
+			  if(!sessionFile.equals("")) vo.setServiceImg(sessionFile);
+		  } 
+		  userService.insertHotel(vo);
+		 
+			
 		return "SUCCESS";
 	}
 }

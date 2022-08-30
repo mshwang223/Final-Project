@@ -55,12 +55,13 @@
 		  JOIN user ON pet.userId = user.userId
 		 WHERE pet.petCode = #{petCode}
   	</select>
+  	
   	<!-- 업체등록 -->
   	<insert id="insertHotel" parameterType="com.spring_boot.FinalProject.model.InsertHotelVO">
   		INSERT INTO registration
   		(userId, name, zipcode, address1, address2, telNumber, maxManCnt, maxPetCnt,
-  		 price, startDate, endDate, serviceImg, comment)
+  		 facility1, facility2, facility3, price, period, serviceImg, comment)
   		 VALUES(#{userId}, #{name}, #{zipcode}, #{address1}, #{address2}, #{telNumber}, #{maxManCnt}, #{maxPetCnt},
-  		 		#{price}, #{startDate}, #{endDate}, #{serviceImg}, #{comment}, DATE_ADD(CURRENT_TIMESTAMP))
+  		 		#{facility1}, #{facility2}, #{facility3}, #{price}, #{period}, #{serviceImg}, #{comment})
   	</insert>
 </mapper>
