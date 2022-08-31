@@ -94,7 +94,10 @@
 				
 					</div>
 				</form>
-
+				<form id="cancleForm" method="post" action="/adminApproveHotel">
+					<input type="hidden" name="name" value="${name }">
+					<input type="hidden" name="approve" value="N">
+				</form>
 			</article>
 			<!-- 관리자 레이아웃 종료 -->
 		</section>
