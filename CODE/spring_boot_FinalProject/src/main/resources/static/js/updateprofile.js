@@ -14,13 +14,8 @@ $(document).ready(function () {
             $('#updateprofileId').focus();
             return false;
         }
-        
-         if ($('#updateprofileId').length<5) {
-            alert("아이디는 5글자 이상 8자리 이하로 해주세요");
-            $('#updateprofileId').focus();
-            return false;
-        }
-           
+
+
         $.ajax({
             type: "post",
             url: "/chkId",
@@ -44,6 +39,31 @@ $(document).ready(function () {
             }
         });
     });
+
+    function pwCheck() {
+        let checkToPwd = false;
+        let checkKoreaName = false;
+        let checkPwd = /^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+        ;
+        let password1 = $('#updateprofilepw1').val();
+        let password2 = $('#updateprofilepw2').val();
+        let result = true;
+        if (checkPwd.test(password1) === false) {
+            alert("비밀번호를 조건에따라 다시입력하세요");
+            return false;
+        } else {
+            if (!(password1 == password2)) {
+                alert("비밀번호가 일치하지 않습니다");
+                $('#updateprofilepw2').focus();
+                checkToPwd = false;
+                return false;
+            } else {
+                checkToPwd = false;
+                return true;
+            }
+        }
+    }
+
 
     // 이메일 중복체크
     let checkEmail = false;
@@ -91,6 +111,7 @@ $(document).ready(function () {
         });
     });
 
+
     $("#updateprofile").on('submit', function () {
         // submit 이벤트 기본 기능 : 페이지 새로 고침
         // 기본 기능 중단
@@ -101,7 +122,7 @@ $(document).ready(function () {
             type: "post",
             url: "/updateprofile",
             data: {
-                "userId": $('#updateprofileId').val(),
+                "userPw": $('#updateprofilePw1').val(),
                 "userEmail": $('updateprofileEmail').val()
             },
             dataType: "text",
@@ -122,38 +143,46 @@ $(document).ready(function () {
     });
 
 
-    function isIdEmpty(id) {
-        return id == null || id === '';
-
-    }
-
     function isEmailEmpty(email) {
         return email == null || email === '';
     }
 
+    function isPwConfEmpty() {
+        return isPwEmpty()||isConfEmpty();
+    }
+    function isPwEmpty() {
+        let password1 = $('#updateprofilepw1').val();
+
+        return password1 === '' || password1 == null;
+    }
+    function isConfEmpty() {
+        let password2 = $('#updateprofilepw2').val();
+        return  password2 === '' || password2 == null;
+    }
+
     $(document).on('click', '.btn_updateprofile_done', function () {
         event.preventDefault();
-        let id = $('#updateprofileId').val();
         let email = $('#updateprofileEmail').val();
-        if (isIdEmpty(id) && isEmailEmpty(email)) {
-            alert("이메일 혹은 이메일을 입력해주세요");
+        if (isEmailEmpty(email)&&isPwConfEmpty()) {
+            alert("이메일또는 비밀번호를 입력해주세요");
             return;
         }
-        if (!isIdEmpty(id) && !checkId) {
-            alert("아이디 중복체크해주세요");
-            return;
-        }
-        if (!isEmailEmpty(email) && !checkEmail) {
+
+        if (!isEmailEmpty(email) & !checkEmail) {
             alert("이메일 중복체크해주세요");
             return;
         }
+        if ((!isPwEmpty()||!isConfEmpty())&&!pwCheck()) {
+                return;
+        }
+
 
         $.ajax({
             type: "post",
             url: "/updateprofile",
             data: {
-                "userId": id,
-                "userEmail": email
+                "userPw": $("#updateprofilepw1").val(),
+                "userEmail": $("#updateprofileEmail").val(),
             },
             dataType: "text",
             success: function (result) {

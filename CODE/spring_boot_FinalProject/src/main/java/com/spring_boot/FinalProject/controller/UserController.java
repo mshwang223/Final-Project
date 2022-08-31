@@ -167,23 +167,19 @@ public class UserController {
     // 회원 정보 수정
     @ResponseBody
     @RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
-    public String viewUpdateprofile(@RequestParam(required = false) String userId, @RequestParam(required = false) String userEmail, HttpSession session) {
+    public String viewUpdateprofile(@RequestParam(required = false) String userPw, @RequestParam(required = false) String userEmail, HttpSession session) {
         String sid = (String) session.getAttribute("sid");
         if (sid == null) {
             return "ACCESS_DENIED";
         }
-        if (userId == null && userEmail == null) {
+        if (userPw == null && userEmail == null) {
             return "VALIDATION";
         }
         try {
-            userService.memberUpdate(sid, userId, userEmail);
-            UserVO userVO;
-            if (userId != null && !userId.isEmpty()) {
-                userVO = userService.selectUser(userId);
-                session.setAttribute("sid", userVO.getUserId());
-            } else {
-                userVO = userService.selectUser(sid);
-            }
+            userService.memberUpdate(sid, userPw, userEmail);
+            UserVO userVO = userService.selectUser(sid);
+			System.out.println("userVO = " + userVO);
+			System.out.println("sid = " + sid);
             session.setAttribute("userEmail", userVO.getUserEmail());
         } catch (Exception e) {
             e.printStackTrace();

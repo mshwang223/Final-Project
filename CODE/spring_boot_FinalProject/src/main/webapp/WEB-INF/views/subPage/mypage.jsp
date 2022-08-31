@@ -53,7 +53,7 @@
                         	</div>
 
 							<div>
-								<div class="profileTitle">이 름 : </div>
+								<div class="profileTitle">이 름 :</div>
 								<div id="userName"></div>
 							</div>
 							

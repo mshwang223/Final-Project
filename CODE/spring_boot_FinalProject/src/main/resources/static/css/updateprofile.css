@@ -41,7 +41,9 @@
 }
 
 .updateprofile_id,
-.updateprofile_email{
+.updateprofile_email,
+.updateprofile_pw,
+.updateprofile_pwcheck{
   margin-top: 10px;
   margin-bottom: 5px;
 }
@@ -91,6 +93,17 @@
   margin-top: 5px;
 }
 
+.custom_info .text_updateprofile_pw{
+  width: 270px;
+  height: 40px;
+  border: #ee82ee solid 1px;
+  border-radius: 2px;
+  padding: 8px;
+  outline: none;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 .updateprofile_email .btn_emailcheck{
   width: 80px;
   height: 40px;
@@ -102,6 +115,7 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 
 .btn_updateprofile_box{
   width: 600px;

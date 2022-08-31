@@ -25,17 +25,21 @@
 				</div>
 					<div class="update_box">
 					 <div class="custom_info">
-			        	<div class="updateprofile_id">
-			            	<p class="title">아이디</p>
-			            	<input type="text" id="updateprofileId" class="text_updateprofile_id" placeholder="아이디 입력(5~8자리)" pattern=".{5,8}" required title="아이디는 5~8자리까지 입력해야 합니다.">
-			            	<button type="button" class="btn_idcheck">중복확인</button>
-			          	</div>
-			          	<br>
 			          	 	<div class="updateprofile_email">
 			            	<p class="title">이메일</p>
 			            	<input type="text" id="updateprofileEmail" class="text_updateprofile_email" placeholder="abc@example.com">
 			          		<button type="button" class="btn_emailcheck">중복확인</button>
 			          	</div>
+			          	<br>
+			          	<div class="updateprofile_pw">
+			            	<p class="title">비밀번호</p>
+			            	<input type="password" id="updateprofilepw1" class="text_updateprofile_pw" placeholder="영문 숫자 특수문자 포함 8~12자리">
+			            	</div>
+			            <br>
+			            <div class="updateprofile_pwcheck">
+			            	<p class="title">비밀번호확인</p>
+			            	<input type="password" id="updateprofilepw2" class="text_updateprofile_pw" placeholder="영문 숫자 특수문자 포함 8~12자리">			        			          			
+					</div>
 					</div>
 					</div>
 					 <div class="btn_updateprofile_box">

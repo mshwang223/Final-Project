@@ -45,20 +45,19 @@
   		SELECT userEmail FROM user WHERE userId = #{userId}
   	</select>
   	
-  	 <!-- 회원정보 수정 -->
-    <update id="memberUpdate">
+	 <!-- 회원정보 수정 -->
+    <update id="memberUpdate" parameterType="String">
         UPDATE user SET
         <trim suffixOverrides=",">
-            <if test='updateId != null  and !updateId.equals("")'>
-                userId=#{updateId},
+            <if test='updatePw != null  and !updatePw.equals("")'>
+                userPw=#{updatePw},
             </if>
             <if test='updateEmail != null  and !updateEmail.equals("")'>
                 userEmail=#{updateEmail},
             </if>
         </trim>
-        WHERE userId=#{userId}
+        WHERE USERID=#{userId}
     </update>
-  	
   	<!-- 펫 등록 -->
   	<insert id="insertPet" parameterType="com.spring_boot.FinalProject.model.PetVO">
   		INSERT into pet

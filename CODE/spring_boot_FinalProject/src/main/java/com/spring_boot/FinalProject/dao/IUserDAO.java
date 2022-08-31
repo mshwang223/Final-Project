@@ -39,6 +39,6 @@ public interface IUserDAO {
 	// 호텔 등록
 	void insertHotel(InsertHotelVO vo);
 
-	void memberUpdate(String userId, String updateId, String updateEmail);
+	void memberUpdate(String userId, String updatePw, String updateEmail);
 	
 }

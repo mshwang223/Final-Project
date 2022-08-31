@@ -23,7 +23,7 @@ public interface IUserService {
 	String chkId(String id);
 	
 	 // 회원 정보 수정
-    void memberUpdate(String userId, String updateId, String updateEmail);
+    void memberUpdate(String userPw, String updatePw, String updateEmail);
     
 	// Email 체크
 	String chkEmail(String email);

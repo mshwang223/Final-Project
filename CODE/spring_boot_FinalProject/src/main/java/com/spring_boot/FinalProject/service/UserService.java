@@ -46,8 +46,9 @@ public class UserService implements IUserService {
 	
 	// 회원 정보 수정
 		@Override
-		public void memberUpdate(String userId,String updateId,String updateEmail) {
-		     dao.memberUpdate(userId,updateId,updateEmail);
+		public void memberUpdate(String userId,String updatePw,String updateEmail) {
+		  String encodedPwd = pwdEncoder.encode(updatePw);
+		     dao.memberUpdate(userId,encodedPwd,updateEmail);
 		}
 		
 	// ID 체크
