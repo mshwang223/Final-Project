@@ -1,5 +1,6 @@
 package com.spring_boot.FinalProject.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.service.BoardService;
@@ -72,7 +74,16 @@ public class AdminController {
 		
 		return "subPage/adminInsertDetail";
 	}	
+	
+	@RequestMapping("fileDownloadList")
+	public ModelAndView fildDownloadList(ModelAndView mv) {
+		File path = new File("c:/springWorkspace/petImg/");
+		String[] fileList = path.list();
 		
+		mv.addObject("fileList", fileList);
+		mv.setViewName("upload/adminInsertDetail");
+		return mv;
+	}
 
 	
 	
