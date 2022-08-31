@@ -20,6 +20,9 @@ public interface IBoardService {
 	// 문의하기 작성
 	void insertContact(BoardVO vo);
 	
+	// 문의내역 조회
+	ArrayList<BoardVO> selectContact(HashMap<String, Object> map);
+	
 	//등록업체 조회
 	ArrayList<InsertHotelVO> selectRegistration();
 	
