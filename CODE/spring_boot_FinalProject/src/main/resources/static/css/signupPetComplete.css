@@ -1,11 +1,6 @@
 /* 페이지 타이틀 설정 */
 
-@font-face {
-    font-family: 'FiraCode-Bold';
-    src: url('../font/FiraCode-Bold.woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
 
 .pageTitle {
   text-align: center;
@@ -185,13 +180,13 @@
 }
 
 .petCode-box div {
-  font-family: 'FiraCode-Bold';	
+  font-family: 'PT Serif', serif;
   font-size: 26px;
   font-weight: bold;
   
   text-align: center;
   
-  padding-top: 2px;
+  padding-top: 3px;
 }
 
 .card_box .logo_img {
