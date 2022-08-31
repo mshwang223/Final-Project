@@ -37,17 +37,47 @@ input{
 	margin-top: 20px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.file_box{
-	display: flex;
+.filebox{
+	margin-top: 50px;
 }
-.whole_info_box .img_box{
-	text-align: left;
-	border: 1px solid #777;
-	width: 350px;
-	height: 50px;
-	/* padding-top: 150px; */
-	margin: 60px 0 0 0px;
+.filebox > p{
+	font-size: 18px;
+	font-weight: 600;
 }
+.filebox .upload-name {
+    display: inline-block;
+    width: 255px;
+    height: 50px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #777;
+    font-size: 18px;
+}
+.filebox label {
+    display: inline-block;
+    padding: 15px 10px 10px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #ee82ee;
+    cursor: pointer;
+    height: 50px;
+    margin-left: 0px;
+}
+
+/* 파일버튼 기존디자인 삭제 */
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+
+
 .upload_btn{
 	width: 100px;
 	height: 50px;

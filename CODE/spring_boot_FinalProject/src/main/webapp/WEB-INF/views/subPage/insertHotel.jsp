@@ -30,12 +30,12 @@
 				<div class="whole_info_box">
 
 					<div class="hotel_insert_info">
-					<div class="file_box">
-						<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
-						<input type="file" id="uploadFile" name="uploadFile" style="display: none"/>
-						<div id="imgBox" class=img_box></div>
-						<button type="button" id="uploadPlus" class="upload_btn">업로드</button>	
-					</div>
+						<div class="filebox">
+							<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
+						    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+						    <label for="file">파일찾기</label> 
+						    <input type="file" id="file" name="uploadFile">
+						</div>
 										
 						<div class="hotel_tlt">
 							<p>업체명</p>

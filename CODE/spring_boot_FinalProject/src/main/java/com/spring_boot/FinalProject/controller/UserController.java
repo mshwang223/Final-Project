@@ -364,10 +364,13 @@ public class UserController {
 		  
 		  // 6. DB에 저장
 		  vo.setServiceImg(savedFileName); } 
-		/*
-		 * else { // 이미지가 추가되지 않은 경우 // 기존 추가된 이미지가 있을 경우 if(!sessionFile.equals(""))
-		 * vo.setServiceImg(sessionFile); }
-		 */
+
+		  else { 
+		  // 이미지가 추가되지 않은 경우 
+		  // 기존 추가된 이미지가 있을 경우
+			if(!sessionFile.equals(""))
+			  vo.setServiceImg(sessionFile); }
+			 
 		  userService.insertHotel(vo);
 		 
 			
