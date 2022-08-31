@@ -1,0 +1,131 @@
+/* 공지사항 세부화면 */
+
+/* 헤더 언더라인 이동 */
+header nav.main_nav div.underline {
+  left: calc(50% + 32px);
+}
+
+th {
+  text-align: left;	
+}
+
+.noticeBox div:first-child {
+  margin-bottom: 15px;	
+}
+
+/* 테이블 레이아웃 위치 지정 */
+.table-box {
+  height: max-content;
+}
+
+/* 게시판 테이블 크기 */
+table {
+  border-spacing: 0;
+  margin: 0 auto;
+  width: 65%;
+}
+
+td {
+  background-color: #f5f5f5;
+}
+
+/* 게시판 내용 사이즈 */
+tr:nth-child(2) > td {
+  height: 350px;
+  
+  padding: 0;	
+}
+
+.contents {
+  position: relative;
+  top:-100px;
+}
+
+/* summernote 바깥선 제거 */
+.note-editor.note-frame {
+  border: 0;	
+}
+
+.paging-td {
+	font-weight: bold;
+	
+	width: 120px;
+}
+
+/* 목록 버튼 */
+.btn_list_box {
+  width: 65%;
+  height: 100px;
+  margin: 30px auto;
+  text-align: right;
+}
+
+.btn_list_done {
+  width: 120px;
+  height: 50px;
+  
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: white;
+  border-radius: 2px;
+  color: black;
+  
+  border: none;
+  border-radius: 8px;
+  
+  cursor: pointer;
+}
+
+.btn_save_done {
+  width: 120px;
+  height: 50px;
+  
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: #ee82ee;
+  border-radius: 2px;
+  color: #fff;
+  
+  margin-left: 30px;
+  
+  border: none;
+  border-radius: 8px;
+  
+  cursor: pointer;
+}
+
+.btn_list_box > button:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.9s linear;
+}
+
+/* 게시판 제목 */
+th.contactInputTitle {
+  padding: 0;	
+}
+
+th.contactInputTitle > input {
+  width: 100%;
+  height: 40px;
+  
+  border: none;
+  
+  background-color: #ee82ee;
+  color: white;
+  
+  text-indent: 15px;
+  
+  font-size: 16px;
+  font-weight: bold;
+  
+}
+
+th.contactInputTitle > input:focus {
+  outline: none;
+  
+  background-color: white;
+  color: black;
+
+}

@@ -73,33 +73,37 @@
 					<input type="hidden" id="maxPage" value="${maxPageNum}" />
 					<ul>
 						<c:if test="${maxPageNum ne 0}">
-							<li class="firstPager">
-								<div title="첫 페이지로 이동하기">
-									<<
-								</div>
-							</li>
-							<li class="prevPager">
-								<div title="이전 페이지로 이동하기">
-									<
-								</div>
-							</li>
+							<c:if test="${maxPageNum ne 1}">
+								<li class="firstPager">
+									<div title="첫 페이지로 이동하기">
+										<<
+									</div>
+								</li>
+								<li class="prevPager">
+									<div title="이전 페이지로 이동하기">
+										<
+									</div>
+								</li>
+							</c:if>
 
 							<c:forEach var="i" begin="1" end="${maxPageNum}">
 							<li>
 								<div class="active" value="${i}">${i}</div>
 							</li>
 							</c:forEach>
-
-							<li class="nextPager">
-								<div title="다음 페이지로 이동하기">
-									>
-								</div>
-							</li>
-							<li class="lastPager">
-								<div title="마지막 페이지로 이동하기">
-									>>
-								</div>
-							</li>
+						
+							<c:if test="${maxPageNum ne 1}">
+								<li class="nextPager">
+									<div title="다음 페이지로 이동하기">
+										>
+									</div>
+								</li>
+								<li class="lastPager">
+									<div title="마지막 페이지로 이동하기">
+										>>
+									</div>
+								</li>
+							</c:if>
 						</c:if>
 					</ul>
 				</div>

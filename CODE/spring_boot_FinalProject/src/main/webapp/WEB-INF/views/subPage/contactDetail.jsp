@@ -11,8 +11,8 @@
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/board.css"/>">
-		<link rel="stylesheet" type="text/css" href="<c:url value="/css/noticeDetail.css"/>">
-		<script src="<c:url value="/js/noticeDetail.js"/>"></script>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/contactDetail.css"/>">
+		<script src="<c:url value="/js/contactDetail.js"/>"></script>
 	</head>
 	
 	<body>
@@ -24,26 +24,29 @@
 			<article class="noticeBox">
 				<div class="pageTitle">
 					<div>
-						<span>#공지사항</span>
+						<span>#문의 조회</span>
 					</div>
 				</div>
 				<div class="table-box">
 					<table>
 						<thead>
 							<tr>
-						      	<th colspan="2">${notice.title}</th>
+						      	<th class="contactInputTitle" colspan="2">
+						      		<input type="text" value="<c:url value='${notice.title}'/>" />
+						      	</th>
 						    </tr>
 						</thead>
 						<tbody>
 						    <tr>
 						      	<td class="titles" colspan="2">
+						      		<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
 						      		${notice.userName}&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 
 						      		<fmt:formatDate value="${notice.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/>
 						      	</td>
 						    </tr>
 						    <tr>
 						      	<td colspan="2">
-						      		<div class="contents">
+						      		<div id="contactContents" class="contents">
 							      		${notice.contents}
 						      		</div>
 						      	</td>
@@ -74,6 +77,7 @@
 					</table>
 				    <div class="btn_list_box">
 				    	<button class="btn_list_done">목록</button>
+				    	<button class="btn_save_done">저장</button>
 				    </div>
 				</div>
 			</article>

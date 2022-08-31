@@ -101,6 +101,16 @@ public class BoardController {
 		return "subPage/notice";
 	}
 	
+	// 공지사항 세부화면 가기
+	@RequestMapping("/noticeDetail/{boardId}")
+	public String viewNoticeDetail(@PathVariable String boardId, Model model) {
+		BoardVO vo = boardService.noticeDetailView(boardId);
+		
+		model.addAttribute("notice", vo);
+		
+		return "subPage/noticeDetail";
+	}
+	
 	// 문의하기 등록
 	@ResponseBody
 	@RequestMapping("/insertContact")
@@ -155,16 +165,6 @@ public class BoardController {
 		//return "subPage/notice";
 	}
 	*/
-	
-	// 공지사항 세부화면 가기
-	@RequestMapping("/noticeDetail/{boardId}")
-	public String viewNoticeDetail(@PathVariable String boardId, Model model) {
-		BoardVO vo = boardService.noticeDetailView(boardId);
-		
-		model.addAttribute("notice", vo);
-		
-		return "subPage/noticeDetail";
-	}
 	
 	// 문의내역 가기
 	@RequestMapping("/contact")
