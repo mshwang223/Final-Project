@@ -71,14 +71,21 @@
 						    </tr>
 						</thead>
 						<tbody>
-							<c:forEach var="list" items="${lists}" varStatus="loop">
-						    <tr>
-						      	<td>${loop.count}</td>
-						      	<td class="title"><a href="<c:url value="/noticeDetail/${list.boardId}"/>">${list.title}</a></td>
-						      	<td>${list.userName}</td>
-						      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
-						    </tr>
-						    </c:forEach>
+							<c:if test="${maxPageNum eq 0}">
+								<tr>
+									<td colspan="4">내용이 없습니다.</td>
+								</tr>							
+							</c:if>
+							<c:if test="${maxPageNum ne 0}">
+								<c:forEach var="list" items="${lists}" varStatus="loop">
+								    <tr>
+								      	<td>${loop.count}</td>
+								      	<td class="title"><a href="<c:url value="/noticeDetail/${list.boardId}"/>">${list.title}</a></td>
+								      	<td>${list.userName}</td>
+								      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
+								    </tr>
+							    </c:forEach>
+							</c:if>
 						</tbody>
 					</table>
 				</div>
@@ -86,34 +93,34 @@
 					<input type="hidden" id="flag" value="${sessionScope.flag}" />
 					<input type="hidden" id="maxPage" value="${maxPageNum}" />
 					<ul>
-						<c:if test="${maxPageNum ne '1'}">
-						<li class="firstPager">
-							<a href="javascript:void(0)" title="첫 페이지로 이동하기">
-								<<
-							</a>
-						</li>
-						<li class="prevPager">
-							<a href="javascript:void(0)" title="이전 페이지로 이동하기">
-								<
-							</a>
-						</li>
-						</c:if>
-						<c:forEach var="i" begin="1" end="${maxPageNum}">
-						<li>
-							<a href="javascript:void(0)" class="active">${i}</a>
-						</li>
-						</c:forEach>
-						<c:if test="${maxPageNum ne '1'}">
-						<li class="nextPager">
-							<a href="javascript:void(0)" title="다음 페이지로 이동하기">
-								>
-							</a>
-						</li>
-						<li class="lastPager">
-							<a href="javascript:void(0)" title="마지막 페이지로 이동하기">
-								>>
-							</a>
-						</li>
+						<c:if test="${maxPageNum ne 0}">
+							<li class="firstPager">
+								<a href="javascript:void(0)" title="첫 페이지로 이동하기">
+									<<
+								</a>
+							</li>
+							<li class="prevPager">
+								<a href="javascript:void(0)" title="이전 페이지로 이동하기">
+									<
+								</a>
+							</li>
+
+							<c:forEach var="i" begin="1" end="${maxPageNum}">
+							<li>
+								<a href="javascript:void(0)" class="active">${i}</a>
+							</li>
+							</c:forEach>
+
+							<li class="nextPager">
+								<a href="javascript:void(0)" title="다음 페이지로 이동하기">
+									>
+								</a>
+							</li>
+							<li class="lastPager">
+								<a href="javascript:void(0)" title="마지막 페이지로 이동하기">
+									>>
+								</a>
+							</li>
 						</c:if>
 					</ul>
 				</div>

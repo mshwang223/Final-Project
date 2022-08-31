@@ -72,19 +72,25 @@ public class BoardController {
 			}
 			lists = boardService.selectNotice(map);
 		}
-		
-		// 페이징 계산
-		int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
-		
-		model.addAttribute("lists", lists);
-		model.addAttribute("maxCnt", lists.get(0).getRowCnt());
-		model.addAttribute("maxPageNum", maxPageNum);
 
-		model.addAttribute("chk_search", map.get("chk_search"));
-		model.addAttribute("text_search", map.get("text_search"));		
+		if(!lists.toString().equals("[]")) {
 		
-		session.setAttribute("flag", num);
-		
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+	
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+	
+			model.addAttribute("chk_search", map.get("chk_search"));
+			model.addAttribute("text_search", map.get("text_search"));		
+			
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+
 		return "subPage/notice";
 	}
 	
