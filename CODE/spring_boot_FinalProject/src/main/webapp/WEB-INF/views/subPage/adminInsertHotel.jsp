@@ -75,7 +75,7 @@
 								      	<td>${regList.userId}</td>
 								      	<td><fmt:formatDate value="${regList.createDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 								      	
-								      	<td>N</td>
+								      	<td>${regList.approve }</td>
 								    </tr>
 							    </c:forEach>
 							</tbody>

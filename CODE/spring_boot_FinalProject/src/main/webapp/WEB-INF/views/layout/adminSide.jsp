@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
-		<link rel="stylesheet" type="text/css" href="css/adminSidebar.css">	
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/adminSidebar.css'/>">
 	</head>
 
 	<body>

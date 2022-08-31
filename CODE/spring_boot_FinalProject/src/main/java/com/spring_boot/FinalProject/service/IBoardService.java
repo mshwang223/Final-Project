@@ -25,4 +25,7 @@ public interface IBoardService {
 	
 	// 업체 디테일 조회
 	InsertHotelVO detailRegistration(int regId);
+	
+	// 업체 승인
+	void approveHotel(String name, String approve);
 }

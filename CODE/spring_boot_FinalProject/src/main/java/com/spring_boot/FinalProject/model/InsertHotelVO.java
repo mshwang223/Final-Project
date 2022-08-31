@@ -25,6 +25,13 @@ public class InsertHotelVO {
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date createDate;
 	private String comment;
+	private String approve;
+	public String getApprove() {
+		return approve;
+	}
+	public void setApprove(String approve) {
+		this.approve = approve;
+	}
 	public int getRegId() {
 		return regId;
 	}

@@ -56,4 +56,9 @@
   		SELECT * FROM registration WHERE regId = #{regId}
   	</select>
   	
+  	<!-- 업체 승인 -->
+  	<update id="approveHotel" parameterType="HashMap">
+  		UPDATE registration SET approve = #{approve} WHERE name = #{name}
+  	</update>
+  	
 </mapper>

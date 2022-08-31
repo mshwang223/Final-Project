@@ -53,6 +53,14 @@ public class BoardService implements IBoardService {
 		
 		return dao.detailRegistration(regId);
 	}
+
+	@Override
+	public void approveHotel(String name, String approve) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("name", name);
+		map.put("approve", approve);
+		dao.approveHotel(map);
+	}
 	
 	
 }
