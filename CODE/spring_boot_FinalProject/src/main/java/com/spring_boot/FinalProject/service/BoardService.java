@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IBoardDAO;
 import com.spring_boot.FinalProject.model.BoardVO;
+import com.spring_boot.FinalProject.model.InsertHotelVO;
 
 
 @Service
@@ -39,5 +40,11 @@ public class BoardService implements IBoardService {
 	@Override
 	public void insertContact(BoardVO vo) {
 		dao.insertContact(vo);		
+	}
+	
+	//등록업체 조회
+	@Override
+	public ArrayList<InsertHotelVO> selectRegistration(){
+		return dao.selectRegistration();
 	}
 }

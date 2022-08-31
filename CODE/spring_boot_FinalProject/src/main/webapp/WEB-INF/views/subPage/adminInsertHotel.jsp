@@ -61,83 +61,22 @@
 							<thead>
 								<tr>
 							      	<th class="num">번호</th>
-							      	<th>제목</th>
-							     	<th class="author">등록업체</th>
+							      	<th>등록업체</th>
+							     	<th class="author">사용자ID</th>
 							      	<th class="date">등록일</th>
 							      	<th class="approve">승인여부</th>
 							    </tr>
 							</thead>
 							<tbody>
-							    <tr>
-							      	<td>1</td>
-							      	<td class="title"><a href="<c:url value="/adminInsertDetail"/>">호호펜션등록합니다.</a></td>
-							      	<td>호호펜션</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>2</td>
-							      	<td class="title">공지사항 제목2</td>
-							      	<td>Carlos Boozer</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>3</td>
-							      	<td class="title">공지사항 제목3</td>
-							      	<td>Jimmy Butler</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>4</td>
-							      	<td class="title">공지사항 제목4</td>
-							      	<td>Luol Deng</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>5</td>
-							      	<td class="title">공지사항 제목5</td>
-							      	<td>Taj Gibson</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>6</td>
-							      	<td class="title">공지사항 제목6</td>
-							      	<td>Richard Hamilton</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>7</td>
-							      	<td class="title">공지사항 제목7</td>
-							      	<td>Kirk Hinrich</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>8</td>
-							      	<td class="title">공지사항 제목8</td>
-							      	<td>Nazr Mohammed</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>9</td>
-							      	<td class="title">공지사항 제목9</td>
-							      	<td>Joakim Noah</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
-							    <tr>
-							      	<td>10</td>
-							      	<td class="title">공지사항 제목10</td>
-							      	<td>Johnson Cals</td>
-							      	<td>2022-08-12</td>
-							      	<td>N</td>
-							    </tr>
+								<c:forEach var="regList" items="${regList }"  begin="0" end="9">
+								    <tr>
+								      	<td>${regList.regId}</td>
+								      	<td class="title"><a href="<c:url value='/adminInsertDetail/${regList.regId }'/>">${regList.name}</a></td>
+								      	<td>${regList.userId}</td>
+								      	<td>2022-08-12</td>
+								      	<td>N</td>
+								    </tr>
+							    </c:forEach>
 							</tbody>
 						</table>
 					</div>

@@ -45,4 +45,10 @@
   		(userId, title, contents, chkEmail, chkFile, category)
   		VALUES(#{userId}, #{title}, #{contents}, #{chkEmail}, #{chkFile}, 2)
   	</insert>
+  	
+  	 <!-- 등록업체  -->
+  	<select id="selectRegistration" parameterType="String" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
+  		SELECT * FROM registration
+  	</select>
+  	
 </mapper>

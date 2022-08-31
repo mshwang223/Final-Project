@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.spring_boot.FinalProject.model.BoardVO;
+import com.spring_boot.FinalProject.model.InsertHotelVO;
 
 public interface IBoardDAO {
 	// 공지사항 조회 기능
@@ -17,4 +18,7 @@ public interface IBoardDAO {
 	
 	// 문의하기 작성
 	void insertContact(BoardVO vo);
+	
+	//등록업체 조회
+	ArrayList<InsertHotelVO> selectRegistration();
 }

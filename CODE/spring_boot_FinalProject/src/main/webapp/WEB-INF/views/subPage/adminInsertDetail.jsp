@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,8 +10,7 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
-		
-		<script src="js/notice.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/adminInsertDetail.css">
 		<script src="js/adminInsertDetail.js"></script>
 	</head>
 	
@@ -21,11 +21,61 @@
 		<section class="wrap">
 			<!-- 관리자 레이아웃 시작 -->
 			<article>
-				<!-- sidebar -->
+				<!-- slide bar -->
 				<c:import url="/WEB-INF/views/layout/adminSide.jsp"/>
-				
-				
+
+				<div class="approve_area">
+					
+					<div class="approve_wrap">
+						<div class="company_title">
+						<span>업체명 : </span>
+						<span>${regList.name}</span>
+					</div>
+					<div class="company_address">
+						<span>주소 : </span>
+						<span>${regList.address1}</span>
+						<span>${regList.address2}</span>
+					</div>
+					<div class="company_img">
+						<span>이미지 파일 : </span>
+						<a href="<c:url value='/fileDownload/${file}' /> ">${file} 파일 다운로드</a>
+					</div>
+					<div class="company_contact">
+						<span>연락처 : </span>
+						<span>${regList.telNumber}</span>
+					</div>
+					<div class="company_price">
+						<span>가격 : </span>
+						<span><fmt:formatNumber value="${regList.price}"/>원</span>
+					</div>
+					<div class="company_person_count">
+						<span>최대 인원수 : </span>
+						<span><fmt:formatNumber value="${regList.maxManCnt}"/>명</span>
+					</div>
+					<div class="company_pet_count">
+						<span>최대 반려동물 수 : </span>
+						<span><fmt:formatNumber value="${regList.maxPetCnt}"/>마리</span>
+					</div>
+					<div class="company_service">
+						<span>제공서비스 : </span>
+						<span>${regList.facility1}</span>
+					</div>
+					<div class="company_facility">
+						<span>제공시설 : </span>
+						<span>${regList.facility2}</span>
+					</div>
+					<div class="company_add_facility">
+						<span>등록기간 : </span>
+						<span>${regList.facility3}</span>
+					</div>
+					<div class="company_pet_count">
+						<span>특이사항 : </span>
+						<span>${regList.comment}</span>
+					</div>
+					</div>
+			
 				</div>
+
 			</article>
 			<!-- 관리자 레이아웃 종료 -->
 		</section>

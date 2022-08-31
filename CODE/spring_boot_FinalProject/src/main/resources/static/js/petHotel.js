@@ -212,6 +212,26 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
 	
 
 	// 슬라이드 10개	
+	// 특가숙소 슬라이드
+	var specialBox = $('.special_img_box').length;
+    var specialIndex = 0;
+
+    $('.special_next').click(function(){
+        $('.special_img_box:nth-child(1)').animate({marginLeft:  '-=320px' }, '500');
+        $('.special_prev').css("display","block");
+        specialIndex++;
+        if(specialIndex == (specialBox - 5))
+            $('.special_next').css("display","none");
+    });
+
+    $('.special_prev').click(function(){
+        $('.special_img_box:nth-child(1)').animate({marginLeft:  '+=320px' }, '500');
+        $('.special_next').css("display","block");
+        specialIndex--;
+        if(specialIndex == 0)
+            $('.special_prev').css("display","none");
+    });
+	
 	// 인기숙소 슬라이드
 	var popularBox = $('.popular_img_box').length;
     var popularIndex = 0;
