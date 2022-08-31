@@ -53,7 +53,7 @@ $(document).ready(function(){
    
 	$("#file").on('change',function(){
  	 var fileName = $("#file").val();
-  	$(".upload-name").val(fileName);
+  	$(".upload-name").val(fileName.split("\\").pop());
 });
    
 
@@ -73,13 +73,14 @@ $(document).ready(function(){
           enctype: 'multipart/form-data',
           url:"/registerHotel",
           data: formData,
-         contentType : false,
-           processData : false,
-         success:function(result){
+          contentType : false,
+          processData : false,
+          success:function(result){
             // 성공 시 결과 받음
             alert(result);
             if(result){
                alert("등록되었습니다.");
+               location.href = "/adminInsertHotel";
             }
          },
          error:function(){
