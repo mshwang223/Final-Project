@@ -9,11 +9,10 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
-		<link rel="stylesheet" type="text/css" href="css/board.css">
-		<link rel="stylesheet" type="text/css" href="css/adminNotice.css">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/adminNotice.css'/>">
 		
-		<script src="js/notice.js"></script>
-		<script src="js/adminInsertHotel.js"></script>
+		<script src="<c:url value='js/adminInsertHotel.js'/>"></script>
 	</head>
 	
 	<body>
@@ -73,7 +72,7 @@
 								      	<td>${regList.regId}</td>
 								      	<td class="title"><a href="<c:url value='/adminInsertDetail/${regList.regId }'/>">${regList.name}</a></td>
 								      	<td>${regList.userId}</td>
-								      	<td>2022-08-12</td>
+								      	<td>${regList.createDate}</td>
 								      	<td>N</td>
 								    </tr>
 							    </c:forEach>

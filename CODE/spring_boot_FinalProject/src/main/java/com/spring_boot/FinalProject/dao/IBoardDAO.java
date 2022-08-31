@@ -21,4 +21,7 @@ public interface IBoardDAO {
 	
 	//등록업체 조회
 	ArrayList<InsertHotelVO> selectRegistration();
+	
+	// 업체 디테일 조회
+	InsertHotelVO detailRegistration(int regId);
 }

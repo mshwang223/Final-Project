@@ -47,4 +47,12 @@ public class BoardService implements IBoardService {
 	public ArrayList<InsertHotelVO> selectRegistration(){
 		return dao.selectRegistration();
 	}
+
+	@Override
+	public InsertHotelVO detailRegistration(int regId) {
+		
+		return dao.detailRegistration(regId);
+	}
+	
+	
 }

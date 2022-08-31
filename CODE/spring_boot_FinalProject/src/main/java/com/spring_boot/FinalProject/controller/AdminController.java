@@ -51,10 +51,24 @@ public class AdminController {
 	
 	// 관리자-업체관리 세부화면 페이지
 	@RequestMapping("/adminInsertDetail/{regId}")
-	public String viewAdminInsertDetail(@PathVariable String regId, Model model) {
+	public String viewAdminInsertDetail(@PathVariable int regId, Model model) {
 		
-		ArrayList <InsertHotelVO> regList = bService.selectRegistration();
-		model.addAttribute("regList", regList);
+		InsertHotelVO vo = bService.detailRegistration(regId);
+		model.addAttribute("regId", vo.getRegId());
+		model.addAttribute("name", vo.getName());
+		model.addAttribute("address1", vo.getAddress1());
+		model.addAttribute("address2", vo.getAddress2());
+		model.addAttribute("telNumber", vo.getTelNumber());
+		model.addAttribute("maxManCnt", vo.getMaxManCnt());
+		model.addAttribute("maxPetCnt", vo.getMaxPetCnt());
+		model.addAttribute("facility1", vo.getFacility1());
+		model.addAttribute("facility2", vo.getFacility2());
+		model.addAttribute("facility3", vo.getFacility3());
+		model.addAttribute("price", vo.getPrice());
+		model.addAttribute("period", vo.getPeriod());
+		model.addAttribute("serviceImg", vo.getServiceImg());
+		model.addAttribute("createDate", vo.getCreateDate());
+		model.addAttribute("comment", vo.getComment());
 		
 		return "subPage/adminInsertDetail";
 	}	
