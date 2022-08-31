@@ -13,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -152,11 +154,43 @@ public class UserController {
 		return "subPage/mypage";
 	}
 	
-	// 프로필 수정 페이지
-	@RequestMapping("/updateprofile")
-	public String viweUpdateprofile() {
-		return "subPage/updateprofile";
-	}
+	 // 프로필 수정 페이지
+    @RequestMapping(value = "/updateprofile", method = RequestMethod.GET)
+    public String viewUpdateprofile(HttpSession session) {
+        System.out.println("session = " + session.getAttribute("sid"));
+        if (session.getAttribute("sid") == null) {
+            return "redirect:/";
+        }
+        return "subPage/updateprofile";
+    }
+    
+    // 회원 정보 수정
+    @ResponseBody
+    @RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
+    public String viewUpdateprofile(@RequestParam(required = false) String userId, @RequestParam(required = false) String userEmail, HttpSession session) {
+        String sid = (String) session.getAttribute("sid");
+        if (sid == null) {
+            return "ACCESS_DENIED";
+        }
+        if (userId == null && userEmail == null) {
+            return "VALIDATION";
+        }
+        try {
+            userService.memberUpdate(sid, userId, userEmail);
+            UserVO userVO;
+            if (userId != null && !userId.isEmpty()) {
+                userVO = userService.selectUser(userId);
+                session.setAttribute("sid", userVO.getUserId());
+            } else {
+                userVO = userService.selectUser(sid);
+            }
+            session.setAttribute("userEmail", userVO.getUserEmail());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "ERROR";
+        }
+        return "SUCCESS";
+    }
 	
     // 펫등록 페이지
 	@RequestMapping("/signupPet")

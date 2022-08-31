@@ -27,6 +27,9 @@ public interface IUserDAO {
 	// Email 조회
 	String confirmEmail(String userId);
 	
+	// 회원 정보 수정
+	void memberUpdate(UserVO vo);
+	
 	// 펫 등록
 	void insertPet(PetVO vo);
 	
@@ -35,5 +38,7 @@ public interface IUserDAO {
 	
 	// 호텔 등록
 	void insertHotel(InsertHotelVO vo);
+
+	void memberUpdate(String userId, String updateId, String updateEmail);
 	
 }

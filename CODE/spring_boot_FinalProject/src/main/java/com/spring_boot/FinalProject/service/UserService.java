@@ -1,6 +1,7 @@
 package com.spring_boot.FinalProject.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,12 @@ public class UserService implements IUserService {
 		dao.insertUser(vo);
 	}
 	
+	// 회원 정보 수정
+		@Override
+		public void memberUpdate(String userId,String updateId,String updateEmail) {
+		     dao.memberUpdate(userId,updateId,updateEmail);
+		}
+		
 	// ID 체크
 	@Override
 	public String chkId(String id) {
