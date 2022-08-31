@@ -100,7 +100,7 @@ public class BoardController {
 		if((String)map.get("chkEmail") == "on") chkEmail = "Y";
 		else chkEmail = "N";
 		
-		String chkImg = (String)map.get("chkImg");
+		String chkFile = (String)map.get("chkFile");
 		
 		System.out.println(chkEmail);
 		
@@ -109,7 +109,7 @@ public class BoardController {
 		vo.setTitle(title);
 		vo.setContents(contents);
 		vo.setChkEmail(chkEmail);
-		vo.setChkImg(chkImg);
+		vo.setChkFile(chkFile);
 		
 		boardService.insertContact(vo);
 		
