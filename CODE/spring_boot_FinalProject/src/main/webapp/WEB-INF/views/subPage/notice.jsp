@@ -86,6 +86,7 @@
 					<input type="hidden" id="flag" value="${sessionScope.flag}" />
 					<input type="hidden" id="maxPage" value="${maxPageNum}" />
 					<ul>
+						<c:if test="${maxPageNum ne '1'}">
 						<li class="firstPager">
 							<a href="javascript:void(0)" title="첫 페이지로 이동하기">
 								<<
@@ -96,11 +97,13 @@
 								<
 							</a>
 						</li>
+						</c:if>
 						<c:forEach var="i" begin="1" end="${maxPageNum}">
 						<li>
 							<a href="javascript:void(0)" class="active">${i}</a>
 						</li>
 						</c:forEach>
+						<c:if test="${maxPageNum ne '1'}">
 						<li class="nextPager">
 							<a href="javascript:void(0)" title="다음 페이지로 이동하기">
 								>
@@ -111,6 +114,7 @@
 								>>
 							</a>
 						</li>
+						</c:if>
 					</ul>
 				</div>
 			</article>
