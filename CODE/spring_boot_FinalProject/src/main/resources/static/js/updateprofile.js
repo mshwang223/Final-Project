@@ -14,7 +14,13 @@ $(document).ready(function () {
             $('#updateprofileId').focus();
             return false;
         }
-
+        
+         if ($('#updateprofileId').length<5) {
+            alert("아이디는 5글자 이상 8자리 이하로 해주세요");
+            $('#updateprofileId').focus();
+            return false;
+        }
+           
         $.ajax({
             type: "post",
             url: "/chkId",
