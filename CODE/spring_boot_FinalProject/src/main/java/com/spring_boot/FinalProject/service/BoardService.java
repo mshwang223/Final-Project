@@ -54,6 +54,12 @@ public class BoardService implements IBoardService {
 		return dao.contactDetailView(boardId);
 	}
 	
+	// 문의내역 저장
+	@Override
+	public void updateContact(HashMap<String, Object> map) {
+		dao.updateContact(map);
+	}
+	
 	//등록업체 조회
 	@Override
 	public ArrayList<InsertHotelVO> selectRegistration(){
@@ -75,6 +81,4 @@ public class BoardService implements IBoardService {
 		map.put("approve", approve);
 		dao.approveHotel(map);
 	}
-		
-		
 }

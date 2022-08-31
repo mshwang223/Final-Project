@@ -25,6 +25,9 @@ public interface IBoardDAO {
 	// 문의내역 상세조회
 	BoardVO contactDetailView(String boardId);
 	
+	// 문의내역 저장
+	void updateContact(HashMap<String, Object> map);
+	
 	//등록업체 조회
 	ArrayList<InsertHotelVO> selectRegistration();
 	

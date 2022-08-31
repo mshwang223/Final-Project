@@ -27,12 +27,13 @@
 						<span>#문의 조회</span>
 					</div>
 				</div>
-				<div class="table-box">
+				<form method="post" id="userFrm" class="userFrm" name="userFrm">
+					<input type="hidden" name="boardId" value="<c:url value='${notice.boardId}'/>" />
 					<table>
 						<thead>
 							<tr>
 						      	<th class="contactInputTitle" colspan="2">
-						      		<input type="text" value="<c:url value='${notice.title}'/>" />
+						      		<input type="text" name="title" value="<c:url value='${notice.title}'/>" />
 						      	</th>
 						    </tr>
 						</thead>
@@ -40,15 +41,32 @@
 						    <tr>
 						      	<td class="titles" colspan="2">
 						      		<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
+						      		<input type="hidden" id="userName" name="userName" value="<c:url value='${sessionScope.userName}'/>">
 						      		${notice.userName}&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 
 						      		<fmt:formatDate value="${notice.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/>
 						      	</td>
 						    </tr>
 						    <tr>
 						      	<td colspan="2">
-						      		<div id="contactContents" class="contents">
-							      		${notice.contents}
-						      		</div>
+						      		<textarea id="contactContents" class="contents" name="contents">
+						      			${notice.contents}
+						      		</textarea>
+						      	</td>
+						    </tr>
+						    <tr class="tr-file">
+						    	<td class="paging-td file">첨부파일</td>
+						      	<td>
+								    <div class="btn_img_box">
+								    	<input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
+								    	<button type="button" id="btn_img_done" class="btn_img_done">파일찾기</button>
+								    </div>
+								    
+								    <div class="file-box">
+								    	<div id="escFile">
+								    		<i class="fa-solid fa-circle-xmark"></i>
+								    	</div>
+								    	<div id="fileName">${notice.chkFile}</div>
+								    </div>
 						      	</td>
 						    </tr>
 						    <tr>
@@ -76,10 +94,10 @@
 						</tbody>
 					</table>
 				    <div class="btn_list_box">
-				    	<button class="btn_list_done">목록</button>
-				    	<button class="btn_save_done">저장</button>
+				    	<button type="button" class="btn_list_done">목록</button>
+				    	<button type="submit" class="btn_save_done">저장</button>
 				    </div>
-				</div>
+				</form>
 			</article>
 			<!-- 세부화면 레이아웃 종료 -->
 		</section>

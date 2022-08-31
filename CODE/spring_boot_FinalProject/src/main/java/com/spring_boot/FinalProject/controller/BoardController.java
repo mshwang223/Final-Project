@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -218,5 +219,40 @@ public class BoardController {
 		model.addAttribute("notice", vo);
 		
 		return "subPage/contactDetail";
+	}
+	
+	// 문의내역 저장
+	@ResponseBody
+	@RequestMapping("/updateContact")
+	public String updateContact(@RequestParam("uploadFile") MultipartFile file,
+								@RequestParam HashMap<String, Object> map) throws IOException {
+
+		String userName = (String)map.get("userName");
+
+		// 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
+		String uploadPath = apiController.uploadPathFile();
+		// c:대소문자 상관없으며 마지막에 '/' 있어야 한다
+				
+		// 2. 원본 파일 이름 설정
+		String originalFileName = file.getOriginalFilename();
+
+		// 3. 파일 이름이 중복되지 않도록 파일 이름 변경
+			
+		// 사용자명과 조합하여 파일명 생성
+		String savedFileName = userName + "_" + originalFileName;
+
+		// 4. 파일 생성
+		File newFile = new File(uploadPath + savedFileName);
+					
+		// 5. 서버로 전송
+		file.transferTo(newFile);
+					
+		// 6. DB에 저장
+		if(!originalFileName.equals("")) map.put("chkFile", savedFileName);
+		else map.put("chkFile", "");
+		
+		boardService.updateContact(map);
+		
+		return "SUCCESS";
 	}
 }
