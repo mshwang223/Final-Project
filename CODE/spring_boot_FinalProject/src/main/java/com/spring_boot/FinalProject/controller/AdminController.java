@@ -85,6 +85,15 @@ public class AdminController {
 		return mv;
 	}
 
+	@RequestMapping("/adminApproveHotel")
+	public String adminApproveHotel(@RequestParam HashMap<String, Object> map, Model model) {
+		bService.approveHotel((String) map.get("name"), (String) map.get("approve"));
+		
+		ArrayList <InsertHotelVO> regList = bService.selectRegistration();
+		model.addAttribute("regList", regList);
+		
+		return "subPage/adminInsertHotel";
+	}
 	
 	
 }
