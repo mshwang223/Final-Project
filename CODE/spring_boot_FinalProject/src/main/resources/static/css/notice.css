@@ -160,7 +160,12 @@ div.search-box div button img {
 
 /* 테이블 레이아웃 위치 지정 */
 .table-box {
-  height: 460px; 	
+  height: 460px;
+}
+
+.table-box tr td {
+  font-size: 14px;
+  font-weight: bold;	
 }
 
 /* 공지사항 게시판 크기 */
