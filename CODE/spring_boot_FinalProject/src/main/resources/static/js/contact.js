@@ -5,7 +5,27 @@
 *********************************/
 
 $(document).ready(function(){
+	// 이미지 클릭 시 업로드
+ 	$("#btn_img_done").click(function () {
+ 		$("#uploadFile").val("");	// 초기화
+	    $("#uploadFile").trigger('click');
+	});
 	
+	$("#uploadFile").on('change', function() {
+ 		var fileValue = $(this).val().split("\\");
+ 		var fileName = fileValue[fileValue.length - 1];	// 파일명
+ 		
+ 		$(".file-box").css('display', 'inline-block');
+ 		$("#fileName").text(fileName);
+
+	});
+	
+	// 취소 버튼 클릭 시 초기화
+ 	$("#escFile").click(function () {
+ 		$(".file-box").css('display', 'none');
+	    $("#uploadFile").val("");	// 초기화
+	});	
+		
 	// 답변메일 확인 체크박스 클릭 시 메일 박스 보여짐
 	$("#chkEmail").on('change', function() {
 		const chkEmail = $("#chkEmail").is(':checked');

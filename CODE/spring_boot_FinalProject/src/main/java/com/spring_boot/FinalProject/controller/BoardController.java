@@ -1,5 +1,7 @@
 package com.spring_boot.FinalProject.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,14 +14,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.service.BoardService;
 
 @Controller
 public class BoardController {
+	
 	@Autowired
 	BoardService boardService;
+	
+	@Autowired
+	APIController apiController;
 	
 	// 공지사항 페이지 검색
 	@RequestMapping("/noticeSearch/{num}")
@@ -97,25 +104,51 @@ public class BoardController {
 	// 문의하기 등록
 	@ResponseBody
 	@RequestMapping("/insertContact")
-	public String insertContact(@RequestParam HashMap<String, Object> map) {
+	public String insertContact(@RequestParam("uploadFile") MultipartFile file, 
+								@RequestParam HashMap<String, Object> map) throws IOException {
 		String userId = (String)map.get("userId");
+		String userName = (String)map.get("userName");
 		String title = (String)map.get("title");
 		String contents = (String)map.get("contents");
 		
 		String chkEmail = null;
-		if((String)map.get("chkEmail") == "on") chkEmail = "Y";
+		if(((String)map.get("chkEmail")).equals("on")) chkEmail = "Y";
 		else chkEmail = "N";
 		
-		String chkFile = (String)map.get("chkFile");
-		
-		System.out.println(chkEmail);
+		String sessionFile = (String)map.get(file);
 		
 		BoardVO vo = new BoardVO();
 		vo.setUserId(userId);
 		vo.setTitle(title);
 		vo.setContents(contents);
 		vo.setChkEmail(chkEmail);
-		vo.setChkFile(chkFile);
+		
+		// 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
+		String uploadPath = apiController.uploadPathFile();
+		// c:대소문자 상관없으며 마지막에 '/' 있어야 한다
+				
+		// 2. 원본 파일 이름 설정
+		String originalFileName = file.getOriginalFilename();
+		// 이미지가 추가되었을 때
+		if(!originalFileName.equals("")) { 
+			// 3. 파일 이름이 중복되지 않도록 파일 이름 변경
+			
+			// 사용자명과 조합하여 파일명 생성
+			String savedFileName = userName + "_" + originalFileName;
+
+			// 4. 파일 생성
+			File newFile = new File(uploadPath + savedFileName);
+					
+			// 5. 서버로 전송
+			file.transferTo(newFile);
+					
+			// 6. DB에 저장
+			vo.setChkFile(savedFileName);
+		} else {	// 이미지가 추가되지 않은 경우
+			// 기존 추가된 이미지가 있을 경우
+			if(!sessionFile.equals(""))
+				vo.setChkFile(sessionFile);
+		}
 		
 		boardService.insertContact(vo);
 		

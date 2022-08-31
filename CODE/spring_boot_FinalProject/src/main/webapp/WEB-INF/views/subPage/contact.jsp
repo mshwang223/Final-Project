@@ -35,6 +35,7 @@
 					<div>
 						<p>문의하시기 전에 FAQ 관련 내용을 확인해보세요.</p>
 						<p>가능한 빠른 시간 내 답변하도록 노력하겠습니다.</p>
+						<input type="hidden" name="userName" value="<c:url value='${sessionScope.userName}'/>">
 					</div>
 					
 					<!-- 상단 테이블 -->
@@ -77,12 +78,19 @@
 						      		<div class="confirm-email"></div>
 								</td>
 						    </tr>
-						    <tr>
-						      	<td class="title-img">첨부이미지</td>
+						    <tr class="tr-file">
+						      	<td class="title-img">첨부파일</td>
 						      	<td>
 								    <div class="btn_img_box">
 								    	<input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
-								    	<button class="btn_img_done">이미지 찾기</button>
+								    	<button type="button" id="btn_img_done" class="btn_img_done">파일찾기</button>
+								    </div>
+								    
+								    <div class="file-box">
+								    	<div id="escFile">
+								    		<i class="fa-solid fa-circle-xmark"></i>
+								    	</div>
+								    	<div id="fileName"></div>
 								    </div>
 						      	</td>
 						    </tr>
@@ -99,5 +107,7 @@
 			<!-- 문의하기 레이아웃 종료 -->
 			<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
+		<!-- footer -->
+		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>
 </html>

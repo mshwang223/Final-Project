@@ -263,13 +263,17 @@ em {
   font-weight: bold;
 }
 
-.title-img {
-  position: relative;
+tr.tr-file {
+  position: relative;	
+}
+
+td.title-img {
+  position: absolute;
   
   top: 10px;	
 }
 
-/* 이미지 찾기 버튼 */
+/* 파일 찾기 버튼 */
 .btn_img_done {
   width: 100px;
   height: 35px;
@@ -285,6 +289,31 @@ em {
 .btn_img_box > button:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: 0.9s linear;
+}
+
+/* 드롭다운 파일명 레이아웃 */
+.file-box {
+  display: none;
+  
+  width: 360px;
+  
+  position: relative;
+  top: 10px;
+  
+  background-color: white;
+  
+  font-size: 14px;
+
+  padding: 10px;
+}
+
+#escFile {
+  width: 20px;
+  height: 15px;
+  
+  float: left;
+  
+  cursor: pointer;	
 }
 
 /* 하단 라인 */
