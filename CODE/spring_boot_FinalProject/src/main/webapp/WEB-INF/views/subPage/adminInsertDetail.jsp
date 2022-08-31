@@ -46,8 +46,8 @@
 							</div>
 							<div class="company_img">
 								<span>이미지 파일 : </span>
-								<input type="hidden" name="file" id="file" value="/fileDownload/${file }">
-								<a href="<c:url value='/fileDownload/${file}' /> ">${file} 파일 다운로드</a>
+								<input type="hidden" name="serviceImg" id="serviceImg" value="${serviceImg }">
+								<a href="<c:url value='/fileDownload/${serviceImg}' /> ">파일 다운로드</a>
 							</div>
 							<div class="company_contact">
 								<span>연락처 : </span>

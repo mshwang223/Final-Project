@@ -60,12 +60,14 @@ public class BoardService implements IBoardService {
 		return dao.selectRegistration();
 	}
 
+	// 업체 등록 세부 관리
 	@Override
 	public InsertHotelVO detailRegistration(int regId) {
 		
 		return dao.detailRegistration(regId);
 	}
-
+		
+	// 업체 승인
 	@Override
 	public void approveHotel(String name, String approve) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -73,6 +75,6 @@ public class BoardService implements IBoardService {
 		map.put("approve", approve);
 		dao.approveHotel(map);
 	}
-	
-	
+		
+		
 }

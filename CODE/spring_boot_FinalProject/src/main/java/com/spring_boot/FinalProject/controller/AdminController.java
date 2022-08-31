@@ -1,18 +1,20 @@
 package com.spring_boot.FinalProject.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.service.BoardService;
@@ -75,14 +77,28 @@ public class AdminController {
 		return "subPage/adminInsertDetail";
 	}	
 	
-	@RequestMapping("fileDownloadList")
-	public ModelAndView fildDownloadList(ModelAndView mv) {
-		File path = new File("c:/springWorkspace/petImg/");
-		String[] fileList = path.list();
+	@RequestMapping("fileDownload/{serviceImg}")
+	public void fileDownload(@PathVariable String serviceImg, HttpServletResponse response) throws Exception {
 		
-		mv.addObject("fileList", fileList);
-		mv.setViewName("upload/adminInsertDetail");
-		return mv;
+		File f = new File("C:/springWorkspace/petImg/", serviceImg);
+		
+		//파일명 인코딩
+		String encodedFileName = new String (serviceImg.getBytes("UTF-8"), "ISO-8859-1");
+
+		// 파일 다운로드 설정
+		response.setContentType("application/download");
+		response.setContentLength((int) f.length());
+		response.setHeader("content-Disposition", "attratchment;filename=\""+ encodedFileName +"\"");
+		
+		//다운로드 시 저장되는 이름은 Response Header의 "Content-Disposition"에 명시
+		
+		//response 객체를 통해 서버로 부터 파일 다운로드 받음
+		OutputStream os = response.getOutputStream();
+		
+		//파일 입력 객체 생성 
+		FileInputStream fis = new FileInputStream(f);
+		FileCopyUtils.copy(fis,os);
+		
 	}
 
 	@RequestMapping("/adminApproveHotel")
