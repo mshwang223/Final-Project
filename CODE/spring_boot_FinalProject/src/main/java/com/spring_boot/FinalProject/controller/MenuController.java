@@ -47,10 +47,12 @@ public class MenuController {
 	}
 	
 	// 문의 조회 가기
+	/*
 	@RequestMapping("/contactResult")
 	public String viewContactResult() {
 		return "subPage/contactResult";
 	}
+	*/
 	
 	// 호텔 검색 리스트 가기
 	@RequestMapping("/petHotelList")
