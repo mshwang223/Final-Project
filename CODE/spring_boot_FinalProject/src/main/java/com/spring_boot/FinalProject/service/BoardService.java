@@ -48,6 +48,12 @@ public class BoardService implements IBoardService {
 		return dao.selectContact(map);
 	}
 	
+	// 문의내역 세부화면 조회
+	@Override
+	public BoardVO contactDetailView(String boardId) {
+		return dao.contactDetailView(boardId);
+	}
+	
 	//등록업체 조회
 	@Override
 	public ArrayList<InsertHotelVO> selectRegistration(){

@@ -23,6 +23,9 @@ public interface IBoardService {
 	// 문의내역 조회
 	ArrayList<BoardVO> selectContact(HashMap<String, Object> map);
 	
+	// 문의내역 상세조회
+	BoardVO contactDetailView(String boardId);
+	
 	//등록업체 조회
 	ArrayList<InsertHotelVO> selectRegistration();
 	

@@ -29,8 +29,8 @@
   	<select id="noticeDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.BoardVO">
   	<![CDATA[
 		SELECT board.*, user.userName,
-		       (SELECT title FROM board WHERE boardId < #{boardId} ORDER BY boardId DESC LIMIT 1) AS prevTitle,
-		       (SELECT title FROM board WHERE boardId > #{boardId} ORDER BY boardId LIMIT 1) AS nextTitle
+		       (SELECT title FROM board WHERE boardId < #{boardId} AND category = 1 ORDER BY boardId DESC LIMIT 1) AS prevTitle,
+		       (SELECT title FROM board WHERE boardId > #{boardId} AND category = 1 ORDER BY boardId LIMIT 1) AS nextTitle
 		  FROM board
 		  JOIN user ON board.userId = user.userId
 		 WHERE boardId = #{boardId}
@@ -54,6 +54,20 @@
 		   AND category = '2'
 		 ORDER BY boardId DESC
 		 LIMIT 10 OFFSET #{pageNum}
+  	</select>
+  	
+  	<!-- 문의내역 세부 내용 조회 -->
+  	<select id="contactDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.BoardVO">
+  	<![CDATA[
+		SELECT board.*, user.userName,
+		       (SELECT title FROM board WHERE boardId < #{boardId} AND category = 2 ORDER BY boardId DESC LIMIT 1) AS prevTitle,
+		       (SELECT title FROM board WHERE boardId > #{boardId} AND category = 2 ORDER BY boardId LIMIT 1) AS nextTitle
+		  FROM board
+		  JOIN user ON board.userId = user.userId
+		 WHERE boardId = #{boardId}
+		   AND category = 2
+	  ORDER BY board.boardId DESC
+	]]>   		
   	</select>
   	
   	  <!-- 등록업체  -->

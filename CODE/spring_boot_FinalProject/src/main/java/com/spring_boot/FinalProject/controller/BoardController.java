@@ -147,6 +147,39 @@ public class BoardController {
 		return "SUCCESS";
 	}
 	
+	// 공지사항 가기
+	/*
+	@RequestMapping("/notice")
+	public String viewNotice() {
+		return "redirect:/noticeSearch/" + "0";
+		//return "subPage/notice";
+	}
+	*/
+	
+	// 공지사항 세부화면 가기
+	@RequestMapping("/noticeDetail/{boardId}")
+	public String viewNoticeDetail(@PathVariable String boardId, Model model) {
+		BoardVO vo = boardService.noticeDetailView(boardId);
+		
+		model.addAttribute("notice", vo);
+		
+		return "subPage/noticeDetail";
+	}
+	
+	// 문의내역 가기
+	@RequestMapping("/contact")
+	public String viewContact() {
+		return "subPage/contact";
+	}
+	
+	// 문의내역 조회 가기
+	/*
+	@RequestMapping("/contactResult")
+	public String viewContactResult() {
+		return "subPage/contactResult";
+	}
+	*/
+	
 	// 문의 내역 조회
 	@RequestMapping("/contactResult/{num}/{userId}")
 	public String contactResult(@PathVariable String num, @PathVariable String userId,
@@ -175,5 +208,15 @@ public class BoardController {
 		}
 		
 		return "subPage/contactResult";
+	}
+	
+	// 문의내역 세부화면 가기
+	@RequestMapping("/contactDetail/{boardId}")
+	public String viewContactDetail(@PathVariable String boardId, Model model) {
+		BoardVO vo = boardService.contactDetailView(boardId);
+		
+		model.addAttribute("notice", vo);
+		
+		return "subPage/contactDetail";
 	}
 }
