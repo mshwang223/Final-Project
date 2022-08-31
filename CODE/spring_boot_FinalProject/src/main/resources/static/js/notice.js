@@ -41,9 +41,7 @@ $(document).ready(function(){
    	
    	// 초기화
    	var flag = $("#flag").val();
-   	$("a.active").eq(flag).addClass("aSelected");
-   	
-   	console.log($("#chk_search").val());
+   	$("div.active").eq(flag).addClass("aSelected");
    	
    	if($("#chk_search").val() == "" || $("#chk_search").val() == "0")
    		$("#dpBox-name").text("전체");
@@ -54,7 +52,7 @@ $(document).ready(function(){
    	
    	// 페이지 번호 버튼 클릭했을 때
    	$(".active").click(function(e) {
-   		var pageNum = parseInt($(this)[0].text - 1);
+   		var pageNum = parseInt($(this).attr('value') - 1);
    		var submitPath = "/noticeSearch/" + pageNum;
    		
    		$("#userFrm").attr('action', submitPath);
@@ -62,7 +60,7 @@ $(document).ready(function(){
 	});
 	
 	// 첫 페이지 버튼 클릭했을 때
-   	$(".firstPager > a").click(function() {
+   	$(".firstPager > div").click(function() {
    		var pageNum = parseInt(0);
    		var submitPath = "/noticeSearch/" + pageNum;
    		
@@ -71,7 +69,7 @@ $(document).ready(function(){
    	});
 
    	// 이전 버튼 클릭했을 때
-   	$(".prevPager > a").click(function() {
+   	$(".prevPager > div").click(function() {
    		var pageNum = parseInt(flag - 1);
    		var submitPath = "/noticeSearch/" + pageNum;
    		
@@ -85,7 +83,7 @@ $(document).ready(function(){
    	});
    	
    	// 다음 버튼 클릭했을 때
-   	$(".nextPager > a").click(function() {
+   	$(".nextPager > div").click(function() {
    		var pageNum = parseInt(flag + 1);
    		var submitPath = "/noticeSearch/" + pageNum;
    		
@@ -99,14 +97,13 @@ $(document).ready(function(){
    	});
    	
 	// 첫 페이지 버튼 클릭했을 때
-   	$(".lastPager > a").click(function() {
+   	$(".lastPager > div").click(function() {
    		var pageNum = $("#maxPage").val() - 1;
    		var submitPath = "/noticeSearch/" + pageNum;
    		
    		$("#userFrm").attr('action', submitPath);
    		$("#userFrm").submit();   	
    	});
-   	
 });
 
 	

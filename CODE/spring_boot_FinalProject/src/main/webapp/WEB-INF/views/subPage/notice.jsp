@@ -99,31 +99,31 @@
 					<ul>
 						<c:if test="${maxPageNum ne 0}">
 							<li class="firstPager">
-								<a href="javascript:void(0)" title="첫 페이지로 이동하기">
+								<div title="첫 페이지로 이동하기">
 									<<
-								</a>
+								</div>
 							</li>
 							<li class="prevPager">
-								<a href="javascript:void(0)" title="이전 페이지로 이동하기">
+								<div title="이전 페이지로 이동하기">
 									<
-								</a>
+								</div>
 							</li>
 
 							<c:forEach var="i" begin="1" end="${maxPageNum}">
 							<li>
-								<a href="javascript:void(0)" class="active">${i}</a>
+								<div class="active" value="${i}">${i}</div>
 							</li>
 							</c:forEach>
 
 							<li class="nextPager">
-								<a href="javascript:void(0)" title="다음 페이지로 이동하기">
+								<div title="다음 페이지로 이동하기">
 									>
-								</a>
+								</div>
 							</li>
 							<li class="lastPager">
-								<a href="javascript:void(0)" title="마지막 페이지로 이동하기">
+								<div title="마지막 페이지로 이동하기">
 									>>
-								</a>
+								</div>
 							</li>
 						</c:if>
 					</ul>

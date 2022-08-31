@@ -41,6 +41,12 @@ public class BoardService implements IBoardService {
 	public void insertContact(BoardVO vo) {
 		dao.insertContact(vo);		
 	}
+
+	// 문의내역 조회
+	@Override
+	public ArrayList<BoardVO> selectContact(HashMap<String, Object> map) {
+		return dao.selectContact(map);
+	}
 	
 	//등록업체 조회
 	@Override

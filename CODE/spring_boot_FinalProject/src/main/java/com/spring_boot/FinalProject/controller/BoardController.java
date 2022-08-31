@@ -112,10 +112,8 @@ public class BoardController {
 		String contents = (String)map.get("contents");
 		
 		String chkEmail = null;
-		if(((String)map.get("chkEmail")).equals("on")) chkEmail = "Y";
-		else chkEmail = "N";
-		
-		String sessionFile = (String)map.get(file);
+		if((map.get("chkEmail") == null)) chkEmail = "N";
+		else chkEmail = "Y";
 		
 		BoardVO vo = new BoardVO();
 		vo.setUserId(userId);
@@ -129,29 +127,53 @@ public class BoardController {
 				
 		// 2. 원본 파일 이름 설정
 		String originalFileName = file.getOriginalFilename();
-		// 이미지가 추가되었을 때
-		if(!originalFileName.equals("")) { 
-			// 3. 파일 이름이 중복되지 않도록 파일 이름 변경
-			
-			// 사용자명과 조합하여 파일명 생성
-			String savedFileName = userName + "_" + originalFileName;
 
-			// 4. 파일 생성
-			File newFile = new File(uploadPath + savedFileName);
+		// 3. 파일 이름이 중복되지 않도록 파일 이름 변경
+			
+		// 사용자명과 조합하여 파일명 생성
+		String savedFileName = userName + "_" + originalFileName;
+
+		// 4. 파일 생성
+		File newFile = new File(uploadPath + savedFileName);
 					
-			// 5. 서버로 전송
-			file.transferTo(newFile);
+		// 5. 서버로 전송
+		file.transferTo(newFile);
 					
-			// 6. DB에 저장
-			vo.setChkFile(savedFileName);
-		} else {	// 이미지가 추가되지 않은 경우
-			// 기존 추가된 이미지가 있을 경우
-			if(!sessionFile.equals(""))
-				vo.setChkFile(sessionFile);
-		}
+		// 6. DB에 저장
+		vo.setChkFile(savedFileName);
 		
 		boardService.insertContact(vo);
 		
 		return "SUCCESS";
+	}
+	
+	// 문의 내역 조회
+	@RequestMapping("/contactResult/{num}/{userId}")
+	public String contactResult(@PathVariable String num, @PathVariable String userId,
+								@RequestParam HashMap<String, Object> map,
+			 					HttpSession session, Model model) {
+		
+		ArrayList<BoardVO> lists = null;
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
+		map.put("userId", userId);
+
+		lists = boardService.selectContact(map);
+		
+		if(!lists.toString().equals("[]")) {
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+		
+		return "subPage/contactResult";
 	}
 }

@@ -45,6 +45,16 @@
   		(userId, title, contents, chkEmail, chkFile, category, chkYN)
   		VALUES(#{userId}, #{title}, #{contents}, #{chkEmail}, #{chkFile}, 2, 0)
   	</insert>
+
+  	<!-- 문의내역 조회 -->
+  	<select id="selectContact" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.BoardVO">
+		SELECT *, COUNT(*) OVER() AS rowCnt 
+		  FROM board
+		 WHERE userId = #{userId}
+		   AND category = '2'
+		 ORDER BY boardId DESC
+		 LIMIT 10 OFFSET #{pageNum}
+  	</select>
   	
   	  <!-- 등록업체  -->
   	<select id="selectRegistration" parameterType="String" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">

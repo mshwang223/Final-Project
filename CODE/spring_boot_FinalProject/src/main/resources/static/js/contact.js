@@ -123,7 +123,7 @@ $(document).ready(function(){
 				// 성공 시 결과 받음
 				if(result){
 					alert("등록되었습니다.");
-					location.href="/contactResult";
+					location.href="/contactResult/0/" + $("#userId").val();
 				}
 			},
 			error:function(){

@@ -19,12 +19,12 @@ public interface IBoardDAO {
 	// 문의하기 작성
 	void insertContact(BoardVO vo);
 	
+	// 문의내역 조회
+	ArrayList<BoardVO> selectContact(HashMap<String, Object> map);
+	
 	//등록업체 조회
 	ArrayList<InsertHotelVO> selectRegistration();
 	
 	// 업체 디테일 조회
 	InsertHotelVO detailRegistration(int regId);
-	
-	// 업체 승인
-	void approveHotel(HashMap<String, Object> map);
 }

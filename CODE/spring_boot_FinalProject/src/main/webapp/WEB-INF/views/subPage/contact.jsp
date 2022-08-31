@@ -9,9 +9,9 @@
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
-		<link rel="stylesheet" type="text/css" href="css/board.css">
-		<link rel="stylesheet" type="text/css" href="css/contact.css">
-		<script src="js/contact.js"></script>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/board.css"/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/contact.css"/>">
+		<script src="<c:url value="/js/contact.js"/>"></script>
 	</head>
 	
 	<body>
@@ -28,13 +28,14 @@
 				</div>
 				<div class="contact-menu">
 					<a href="<c:url value='/contact'/>">문의등록</a>
-					<a href="<c:url value='/contactResult'/>">문의 조회</a>
+					<a href="<c:url value='/contactResult/0/${sessionScope.sid}'/>">문의 조회</a>
 					<div class="underline"></div>	
 				</div>
 				<form id="frmContact" class="table-box">
 					<div>
 						<p>문의하시기 전에 FAQ 관련 내용을 확인해보세요.</p>
 						<p>가능한 빠른 시간 내 답변하도록 노력하겠습니다.</p>
+						<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
 						<input type="hidden" name="userName" value="<c:url value='${sessionScope.userName}'/>">
 					</div>
 					
@@ -44,7 +45,6 @@
 						    <tr>
 						      	<td>문의제목<em></em></td>
 						      	<td class="contents-box">
-						      		<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
 						      		<input id="title" name="title" type="text" maxlength="50" placeholder="문의 제목을 입력해 주세요." required/>
 						      		<span class="span-title">문의 제목을 입력해 주세요.</span>
 						      		<div class="text-count cntTitle"><span id="cntTitle">0</span> / 50</div>

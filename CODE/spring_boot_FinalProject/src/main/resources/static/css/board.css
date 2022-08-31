@@ -39,7 +39,7 @@ th.num {
 }
 
 /* 테이블 작성자, 작성일 크기 고정 */
-th.author, th.date {
+th.author, th.date, th.chkYN {
   width: 240px;
 }
 
@@ -81,7 +81,7 @@ td:first-child {
   margin-left: 10px;
 }
 
-.paging-box > ul > li > a {
+.paging-box > ul > li > div {
   display: block;
   position: relative;
   padding: 7px 0 8px;
@@ -89,14 +89,16 @@ td:first-child {
   border: 1px solid black;
   font-size: 14px;
   box-sizing: border-box;
+  
+  cursor: pointer;
 }
 
-.paging-box > ul > li > a:hover {
+.paging-box > ul > li > div:hover {
   background-color: #636363;
   color: #fff;
 }
 
-.paging-box > ul > li > a.active:focus {
+.paging-box > ul > li > div.active:focus {
   background-color: #636363;
   color: #fff;
 }
