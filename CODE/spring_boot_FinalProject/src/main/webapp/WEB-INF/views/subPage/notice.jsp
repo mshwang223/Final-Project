@@ -30,7 +30,11 @@
 				<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/noticeSearch/0"/>">
 					<table class="search-table">
 						<tr>
-							<td><div class="blue">총 ${maxCnt}</div></td>
+							<td>
+								<c:if test="${maxPageNum ne 0}">
+									<div class="blue">총 ${maxCnt}</div>
+								</c:if>	
+							</td>
 							<td>
 								<div id="dropdown-box" class="dropdown-box">
 									<div id="dpBox-name" class="dpBox-name">전체</div>

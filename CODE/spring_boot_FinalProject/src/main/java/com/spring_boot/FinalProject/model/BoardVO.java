@@ -14,6 +14,7 @@ public class BoardVO {
 
 	private String chkEmail;
 	private String chkFile;
+	private int chkYN;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date createDate;
@@ -79,6 +80,13 @@ public class BoardVO {
 	}
 	public void setChkFile(String chkFile) {
 		this.chkFile = chkFile;
+	}
+
+	public int getChkYN() {
+		return chkYN;
+	}
+	public void setChkYN(int chkYN) {
+		this.chkYN = chkYN;
 	}
 
 	public Date getCreateDate() {
