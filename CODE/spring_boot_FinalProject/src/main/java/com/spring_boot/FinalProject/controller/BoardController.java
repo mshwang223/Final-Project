@@ -151,7 +151,9 @@ public class BoardController {
 		file.transferTo(newFile);
 					
 		// 6. DB에 저장
-		vo.setChkFile(savedFileName);
+		if(!originalFileName.equals(""))
+			vo.setChkFile(savedFileName);
+		
 		
 		boardService.insertContact(vo);
 		
