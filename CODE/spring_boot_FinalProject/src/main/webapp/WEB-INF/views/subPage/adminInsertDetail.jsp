@@ -80,8 +80,13 @@
 								<input type="hidden" name="facility2" id="facility2" value="${facility2 }">
 							</div>
 							<div class="company_add_facility">
-								<span>등록기간 : </span>
+								<span>추가시설 : </span>
 								<span>${facility3}</span>
+								<input type="hidden" name="facility3" id="facility3" value="${facility3}">
+							</div>
+							<div class="company_add_facility">
+								<span>등록기간 : </span>
+								<span>${period}</span>
 								<input type="hidden" name="facility3" id="facility3" value="${facility3}">
 							</div>
 							<div class="company_pet_count">
