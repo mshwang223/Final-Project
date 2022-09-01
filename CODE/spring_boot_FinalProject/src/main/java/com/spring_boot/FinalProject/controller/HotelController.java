@@ -37,6 +37,12 @@ public class HotelController {
 		map.put("period", period);
 		map.put("count", count);
 		
+		/* 지역값 구분 */
+		map.put("stateId", "1");
+		
+		/* 시설(옵션) 구분 */
+		map.put("facilityId", "1");		
+		
 		/* 날짜값 구하기 */
 		String[] listPeriod = period.split(" ~ ");
 		String startDate = listPeriod[0].substring(0, listPeriod[0].length()-3);
@@ -46,6 +52,15 @@ public class HotelController {
 		map.put("endDate", endDate);
 		
 		model.addAttribute("map", map);
+		
+		/* 인원수 구하기 */
+		
+		String[] listCount = count.split(", ");
+		String maxManCnt = listCount[0].split("성인")[1];
+		String maxPetCnt = listCount[1].split("반려동물")[1];
+		
+		map.put("maxManCnt", maxManCnt);
+		map.put("maxPetCnt", maxPetCnt);
 		
 		ArrayList<StayVO> lists = hotelService.selectHotel(map);
 		
