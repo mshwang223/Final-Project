@@ -8,10 +8,11 @@
   	<!-- 숙박펜션 조회 기능 -->
   	<select id="selectHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
   	<![CDATA[
-  		SELECT * 
+  		SELECT *, 
+  			   (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) AS price,
+  			   COUNT(*) OVER() AS rowCnt 
   		  FROM stay
   		 WHERE stateId = #{stateId}
-  		   AND facilityId IN (#{facilityId})
   		   AND maxManCnt = #{maxManCnt}
   		   AND maxPetCnt = #{maxPetCnt}
   		   AND startDate >= DATE_FORMAT(#{startDate}, '%Y-%m-%d') 

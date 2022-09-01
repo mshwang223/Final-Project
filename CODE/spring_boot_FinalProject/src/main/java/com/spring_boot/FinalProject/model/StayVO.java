@@ -28,6 +28,9 @@ public class StayVO {
 	
 	private int maxManCnt;
 	private int maxPetCnt;
+	
+	private int rowCnt;
+	private int price;
 
 	public String getStayNo() {
 		return stayNo;
@@ -132,5 +135,19 @@ public class StayVO {
 	}
 	public void setMaxPetCnt(int maxPetCnt) {
 		this.maxPetCnt = maxPetCnt;
+	}
+
+	public int getRowCnt() {
+		return rowCnt;
+	}
+	public void setRowCnt(int rowCnt) {
+		this.rowCnt = rowCnt;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
 	}
 }

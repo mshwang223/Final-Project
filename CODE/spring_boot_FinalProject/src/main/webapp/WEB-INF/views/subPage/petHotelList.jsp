@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<!-- 양식다시제출 제거 -->
+<!-- 양식제출 안뜨게함!--!>
 <%    
 response.setHeader("Cache-Control","no-store");    
 response.setHeader("Pragma","no-cache");    
@@ -118,7 +118,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	          </div>
 	          <!-- 필터 영역 -->
 	          <div class="filter_box">
-	            <div class="ttl_hotel_list">검색 결과 총 8개</div>
+	            <div class="ttl_hotel_list">검색 결과 총 ${rowCnt}개</div>
 	            <div class="filter_popular">
 	              <button id="btnFilter" class="result_filter_open"><span>추천순</span><i id="arrowDown" class="fa-solid fa-angle-down"></i></button>
 	              <ul class="result_filter_select">
@@ -141,7 +141,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	                  <p>${list.stayName}</p>
 	                  <div><i class="fa-solid fa-star"></i>${list.star}</div>
 	                </div>
-	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
+	                <div class="wrap_date_Stay">
+	                	<fmt:formatDate value="${list.startDate}" pattern="yyyy-MM-dd"/> ~
+	                	<fmt:formatDate value="${list.endDate}" pattern="yyyy-MM-dd"/>
+	                </div>
 	                <div class="per_stay_price">${list.price}원 / 1박</div>
 	              </div>
 	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
