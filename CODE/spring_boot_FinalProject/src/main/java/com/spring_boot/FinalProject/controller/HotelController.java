@@ -58,7 +58,9 @@ public class HotelController {
 		
 		map.put("maxManCnt", maxManCnt);
 		map.put("maxPetCnt", maxPetCnt);
-		
+
+		System.out.println(map.keySet());
+		System.out.println(map.values());
 		ArrayList<StayVO> lists = hotelService.selectHotel(map);
 		
 		/* 조회 수 구하기 */
@@ -68,6 +70,9 @@ public class HotelController {
 			int rowCnt = lists.get(0).getRowCnt();
 			model.addAttribute("rowCnt", rowCnt);
 		}
+		
+		for(StayVO list : lists)
+			System.out.println("list = " + list.getStayName());
 		
 		model.addAttribute("lists", lists);
 		

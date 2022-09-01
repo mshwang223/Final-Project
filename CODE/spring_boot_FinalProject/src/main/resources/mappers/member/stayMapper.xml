@@ -13,10 +13,10 @@
   			   COUNT(*) OVER() AS rowCnt 
   		  FROM stay
   		 WHERE stateId = #{stateId}
-  		   AND maxManCnt = #{maxManCnt}
-  		   AND maxPetCnt = #{maxPetCnt}
-  		   AND startDate >= DATE_FORMAT(#{startDate}, '%Y-%m-%d') 
-  		   AND endDAte <= DATE_FORMAT(#{endDate}, '%Y-%m-%d')
+  		   AND maxManCnt >= #{maxManCnt}
+  		   AND maxPetCnt >= #{maxPetCnt}
+  		   AND startDate <= DATE_FORMAT(#{startDate}, '%Y-%m-%d') 
+  		   AND endDate >= DATE_FORMAT(#{endDate}, '%Y-%m-%d')
   	]]>	   
 	</select>
 </mapper>
