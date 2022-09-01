@@ -163,6 +163,18 @@ $(document).ready(function(){
             $(this).attr('src', '/images/heart.png');
         }
     });
+    
+    // 행수에 따른 간격 조정
+    var rowCnt = 4 - ($("#rowCnt").val() % 4);
+    if(rowCnt > 0) {
+    	for(var i = 0; i < rowCnt; i++) {
+    		var tmpHtml = `<div id="resultHotelList" class="wrap_result_hotel_list">`;
+    		tmpHtml += `<div class="result_hotel_img"></div>`;
+    		tmpHtml += `<div class="wrap_whole"></div>`;
+    		tmpHtml += `</div>`;
+			$("div.list_box").append(tmpHtml);   	
+    	}
+    }
 
 });
 

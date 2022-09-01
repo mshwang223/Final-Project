@@ -119,6 +119,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	          <!-- 필터 영역 -->
 	          <div class="filter_box">
 	            <div class="ttl_hotel_list">검색 결과 총 ${rowCnt}개</div>
+	            <input type="hidden" id="rowCnt" name="rowCnt" value="<c:url value='${rowCnt}'/>">
 	            <div class="filter_popular">
 	              <button id="btnFilter" class="result_filter_open"><span>추천순</span><i id="arrowDown" class="fa-solid fa-angle-down"></i></button>
 	              <ul class="result_filter_select">

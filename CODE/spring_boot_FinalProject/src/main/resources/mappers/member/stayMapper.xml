@@ -10,7 +10,7 @@
   	<![CDATA[
   		SELECT *, 
   			   (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) AS price,
-  			   (SELECT roomImg FROM room WHERE stay.stayNo = room.stayNo ORDER BY room.roomId DESC LIMIT 1) AS mainImg,
+  			   (SELECT stayImgId FROM stayimg WHERE stay.stayNo = stayimg.stayNo ORDER BY stayimg.stayImgId DESC LIMIT 1) AS mainImg,
   			   COUNT(*) OVER() AS rowCnt 
   		  FROM stay
   		 WHERE stateId = #{stateId}
