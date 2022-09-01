@@ -153,16 +153,16 @@ input::placeholder{
 /* 팝업 박스 */
 .dis_block{
   display: block!important;
+
 }
 
 .search_option{
   display: none;
   width: 370px;
   height: 400px;
-  position: absolute;
-  top: 509px;
+  position: relative;
+
   margin-left: 95px;
-  margin-top: 40px;
   padding: 50px 55px;
   border-radius: 10px;
   background-color: #ffffff;
@@ -252,6 +252,7 @@ input::placeholder{
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+
 }
 .filter_box .ttl_hotel_list{
   margin: 15px 0 0 113px;
@@ -285,6 +286,8 @@ input::placeholder{
   width: 210px;
   border: 1px solid #DDDDDD;
   border-top: 0;
+  
+    z-index: 50;
 }
 .result_filter_option1, .result_filter_option2,
 .result_filter_option3, .result_filter_option4{
