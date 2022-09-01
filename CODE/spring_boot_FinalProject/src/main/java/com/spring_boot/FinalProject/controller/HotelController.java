@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.spring_boot.FinalProject.model.FacilityVO;
+import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.service.HotelService;
 
@@ -34,21 +36,11 @@ public class HotelController {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("area", area);
-		map.put("period", period);
 		map.put("count", count);
+		map.put("period", period);
 		
 		/* 지역값 구분 */
 		map.put("stateId", "1");
-		
-		/* 날짜값 구하기 */
-		String[] listPeriod = period.split(" ~ ");
-		String startDate = listPeriod[0].substring(0, listPeriod[0].length()-3);
-		String endDate = listPeriod[1].substring(0, listPeriod[1].length()-3);
-		
-		map.put("startDate", startDate);
-		map.put("endDate", endDate);
-		
-		model.addAttribute("map", map);
 		
 		/* 인원수 구하기 */
 		
@@ -59,8 +51,6 @@ public class HotelController {
 		map.put("maxManCnt", maxManCnt);
 		map.put("maxPetCnt", maxPetCnt);
 
-		System.out.println(map.keySet());
-		System.out.println(map.values());
 		ArrayList<StayVO> lists = hotelService.selectHotel(map);
 		
 		/* 조회 수 구하기 */
@@ -71,17 +61,42 @@ public class HotelController {
 			model.addAttribute("rowCnt", rowCnt);
 		}
 		
-		for(StayVO list : lists)
-			System.out.println("list = " + list.getStayName());
-		
+		model.addAttribute("map", map);
 		model.addAttribute("lists", lists);
 		
 		return "subPage/petHotelList";
 	}
 	
 	// 호텔 상세 페이지
-	@RequestMapping("/petHotelDetail")
-	public String viewHotelDetail() {
+	@RequestMapping("/petHotelDetail/stayNo={stayNo}&period={period}")
+	public String viewHotelDetail(@PathVariable("stayNo") String stayNo,
+								  @PathVariable("period") String period,
+								  Model model) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("stayNo", stayNo);
+		map.put("period", period);
+		
+		// 호텔펜션 테이블
+		StayVO vo = hotelService.selectDetailHotel(map);
+		
+		model.addAttribute("list", vo);
+		
+		// 룸 테이블
+		ArrayList<RoomVO> lists2 = hotelService.selectDetailRoom(map);
+		
+		model.addAttribute("lists2", lists2);
+		
+		// 시설 테이블
+		ArrayList<FacilityVO> flist1 = hotelService.selectDetailFacility1(map);
+		ArrayList<FacilityVO> flist2 = hotelService.selectDetailFacility2(map);
+		ArrayList<FacilityVO> flist3 = hotelService.selectDetailFacility3(map);
+		
+		model.addAttribute("flist1", flist1);
+		model.addAttribute("flist2", flist2);
+		model.addAttribute("flist3", flist3);
+		
 		return "subPage/petHotelDetail";
 	}
 	

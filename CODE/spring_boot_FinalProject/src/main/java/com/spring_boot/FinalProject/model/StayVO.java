@@ -12,19 +12,12 @@ public class StayVO {
 	private String stayName;
 	private String star;
 	
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date startDate;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date endDate;	
-	
 	private String stayAddress;
 	private String serviceImg;
 	private String telNumber;
 	
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date checkIn;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date checkOut;
+	private String checkIn;
+	private String checkOut;
 	
 	private int maxManCnt;
 	private int maxPetCnt;
@@ -74,20 +67,6 @@ public class StayVO {
 		this.star = star;
 	}
 
-	public Date getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
 	public String getStayAddress() {
 		return stayAddress;
 	}
@@ -109,17 +88,17 @@ public class StayVO {
 		this.telNumber = telNumber;
 	}
 
-	public Date getCheckIn() {
+	public String getCheckIn() {
 		return checkIn;
 	}
-	public void setCheckIn(Date checkIn) {
+	public void setCheckIn(String checkIn) {
 		this.checkIn = checkIn;
 	}
 
-	public Date getCheckOut() {
+	public String getCheckOut() {
 		return checkOut;
 	}
-	public void setCheckOut(Date checkOut) {
+	public void setCheckOut(String checkOut) {
 		this.checkOut = checkOut;
 	}
 

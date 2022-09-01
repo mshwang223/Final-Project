@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
@@ -38,10 +39,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 		<section>
 			<article class="stay_detail">
 				<div>
-					<div class="stay_title">서울 근교 감성 펫펜션 K401펜션</div>
+					<div class="stay_title">${list.stayName}</div>
 					<div class="stay_sub_info">
 						<div class="stay_sub_box">
-							<img src="/images/star.png" alt="별점"> <span>4.37</span>
+							<img src="/images/star.png" alt="별점"> <span>${list.star}</span>
 							<div class="review_move">후기 300개</div>
 						</div>
 						<div class="stay_pick">
@@ -77,12 +78,12 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="info_content_box2">
 						<div class="location_box">
 							<img src="/images/location.png" alt=""><span>주소 : </span>
-							<span id="address">경기도 광주시 도척면 궁평리 401</span> <i class="fa-regular fa-copy" id="locationCopy"></i>
+							<span id="address">${list.stayAddress}</span> <i class="fa-regular fa-copy" id="locationCopy"></i>
 							<p class="copy">Copy!</p>
 						</div>
 						<div class="contact_box">
 							<img src="/images/phone.png" alt=""> <span>연락처 : </span>
-							<span id="hotelCallNumber">070-7758-0401</span> <i class="fa-regular fa-copy" id="phoneCopy"></i>
+							<span id="hotelCallNumber">${list.telNumber}</span> <i class="fa-regular fa-copy" id="phoneCopy"></i>
 							<p class="copy">Copy!</p>
 						</div>
 					</div>
@@ -91,71 +92,54 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<div class="info_content_box3">
 						<div>숙박타입</div>
+						<c:forEach var="room" items="${lists2}" varStatus="loop">
 						<div>
 							<img src="/images/stayType.jpg" alt="">
 							<div class="room_box">
-								<span># 스탠다드 더블</span>
-								<div>95,000원</div>
+								<c:if test="${room.bedType eq 1}"><span># 스탠다드 더블</span></c:if>
+								<c:if test="${room.bedType eq 2}"><span># 스탠다드 트윈</span></c:if>
+								<div><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${room.price}" />원</div>
 								<button class="room_btn">선택</button>
 							</div>
 						</div>
-						<div>
-							<img src="/images/stayType.jpg" alt="">
-							<div class="room_box">
-								<span># 스탠다드 트윈</span>
-								<div>95,000원</div>
-								<button class="room_btn">선택</button>
-							</div>
-						</div>
+						</c:forEach>
 					</div>
 					<div class="info_content_box4">
 						<div>숙소 편의 시설</div>
 						<div class="cs_box">
+							
 							<div class="cs_box1">
+								<c:forEach var="f1" items="${flist1}" varStatus="loop">
 								<div>
-									<img src="/images/cutlery.png" alt="">주방
+									<img src="/images/${f1.facilityImg}" alt="">${f1.facilityName}
 								</div>
-								<div>
-									<img src="/images/car.png" alt="">주차시설
-								</div>
-								<div>
-									<img src="/images/swimming-pool.png" alt="">수영장
-								</div>
-								<div>
-									<img src="/images/park.png" alt="">마당
-								</div>
+								</c:forEach>
 							</div>
 							<div class="cs_box2">
+								<c:forEach var="f2" items="${flist2}" varStatus="loop">
 								<div>
-									<img src="/images/wifi.png" alt="">무선 인터넷
+									<img src="/images/${f2.facilityImg}" alt="">${f2.facilityName}
 								</div>
-								<div>
-									<img src="/images/antique-balcony.png" alt="">발코니
-								</div>
-								<div>
-									<img src="/images/tv.png" alt="">넷플릭스 / 왓챠
-								</div>
-								<div>
-									<img src="/images/air-conditioner.png" alt="">에어컨
-								</div>
+								</c:forEach>
 							</div>
 						</div>
+						<c:if test="${not empty flist3}">
 						<div class="additional_click">
 							<span>추가 편의시설 더 보기</span><i id="additionalClick"
 								class="fa-solid fa-chevron-down"></i>
 						</div>
+						
+						
 						<div class="additional_cs">
-							<div class="cs_box1">
+							<c:forEach var="f3" items="${flist3}" varStatus="loop">
+							<div class="cs_box${loop.count}">
 								<div>
-									<img src="/images/drying-machine.png" alt="">세탁기
+									<img src="/images/${f3.facilityImg}" alt="">${f3.facilityName}
 								</div>
 							</div>
-							<div class="cs_box2">
-								<div>
-									<img src="/images/drying-machine.png" alt="">건조기
-								</div>
-							</div>
+							</c:forEach>
 						</div>
+						</c:if>						
 					</div>
 
 					<div class="info_content_box6">
@@ -164,10 +148,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<div class="rule_box">
 								<div class="rule_sub_title">숙소 이용 규칙</div>
 								<div>
-									<i class="fa-solid fa-clock"></i>체크인 : 오후 3:00 ~ 오후 10:00
+									<i class="fa-solid fa-clock"></i>체크인 : ${list.checkIn}
 								</div>
 								<div>
-									<i class="fa-solid fa-clock"></i>체크아웃 : 오전 10:00
+									<i class="fa-solid fa-clock"></i>체크아웃 : ${list.checkOut}
 								</div>
 							</div>
 							<div class="rule_box">

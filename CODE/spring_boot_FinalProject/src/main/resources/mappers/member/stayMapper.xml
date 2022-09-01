@@ -10,13 +10,53 @@
   	<![CDATA[
   		SELECT *, 
   			   (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) AS price,
+  			   (SELECT roomImg FROM room WHERE stay.stayNo = room.stayNo ORDER BY room.roomId DESC LIMIT 1) AS mainImg,
   			   COUNT(*) OVER() AS rowCnt 
   		  FROM stay
   		 WHERE stateId = #{stateId}
   		   AND maxManCnt >= #{maxManCnt}
   		   AND maxPetCnt >= #{maxPetCnt}
-  		   AND startDate <= DATE_FORMAT(#{startDate}, '%Y-%m-%d') 
-  		   AND endDate >= DATE_FORMAT(#{endDate}, '%Y-%m-%d')
   	]]>	   
+	</select>
+	
+  	<!-- 숙박펜션 세부화면 조회 기능 -->
+  	<select id="selectDetailHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
+		SELECT *
+		  FROM stay
+		 WHERE stayNo = #{stayNo}   
+	</select>
+	
+  	<!-- 숙박펜션 세부화면 조회 기능 -->
+  	<select id="selectDetailRoom" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.RoomVO">
+		SELECT *
+		  FROM room
+		 WHERE stayNo = #{stayNo}   
+	</select>
+	
+  	<!-- 숙박펜션 편의시설1 세부화면 조회 기능 -->
+  	<select id="selectDetailFacility1" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.FacilityVO">
+		SELECT *
+		  FROM facilityroom
+		  JOIN facility ON facilityroom.facilityId = facility.facilityId
+		 WHERE facilityroom.stayNo = #{stayNo}
+		   AND facilitySort = '1'   
+	</select>
+	
+	<!-- 숙박펜션 편의시설2 세부화면 조회 기능 -->
+  	<select id="selectDetailFacility2" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.FacilityVO">
+		SELECT *
+		  FROM facilityroom
+		  JOIN facility ON facilityroom.facilityId = facility.facilityId
+		 WHERE facilityroom.stayNo = #{stayNo}
+		   AND facilitySort = '2'   
+	</select>
+	
+	<!-- 숙박펜션 편의시설3 세부화면 조회 기능 -->
+  	<select id="selectDetailFacility3" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.FacilityVO">
+		SELECT *
+		  FROM facilityroom
+		  JOIN facility ON facilityroom.facilityId = facility.facilityId
+		 WHERE facilityroom.stayNo = #{stayNo}
+		   AND facilitySort = '3'   
 	</select>
 </mapper>
