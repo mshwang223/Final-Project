@@ -37,18 +37,19 @@ public class HotelController {
 		map.put("period", period);
 		map.put("count", count);
 		
+		/* 날짜값 구하기 */
 		String[] listPeriod = period.split(" ~ ");
+		String startDate = listPeriod[0].substring(0, listPeriod[0].length()-3);
+		String endDate = listPeriod[1].substring(0, listPeriod[1].length()-3);
 		
-		for(String i : listPeriod)
-			System.out.println(i);
+		map.put("startDate", startDate);
+		map.put("endDate", endDate);
 		
 		model.addAttribute("map", map);
 		
+		ArrayList<StayVO> lists = hotelService.selectHotel(map);
 		
-		
-		//ArrayList<StayVO> lists = hotelService.selectHotel(map);
-		
-		//model.addAttribute("lists", lists);
+		model.addAttribute("lists", lists);
 		
 		return "subPage/petHotelList";
 	}

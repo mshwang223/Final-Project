@@ -10,10 +10,9 @@
   		SELECT * 
   		  FROM stay
   		 WHERE stateId = #{stateId}
-  		   AND facilityId = #{stateId}
+  		   <!--  AND facilityId = #{stateId}  -->
   		   AND maxManCnt = #{maxManCnt}
   		   AND maxPetCnt = #{maxPetCnt}
-  		   AND BETWEEN #{startDate} AND #{endDate}  
-  		 ORDER BY board.boardId DESC
+  		   AND BETWEEN DATE_FORMAT(#{startDate}, '%Y-%m-%d') AND DATE_FORMAT(#{endDate}, '%Y-%m-%d')
 	</select>
 </mapper>
