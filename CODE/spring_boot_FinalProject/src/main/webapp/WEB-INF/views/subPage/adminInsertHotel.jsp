@@ -2,6 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!-- 양식제출 안뜨게함!--!>
+<%    
+response.setHeader("Cache-Control","no-store");    
+response.setHeader("Pragma","no-cache");    
+response.setDateHeader("Expires",0);    
+if (request.getProtocol().equals("HTTP/1.1"))  
+        response.setHeader("Cache-Control", "no-cache");  
+%>
 <!DOCTYPE html>
 <html>
 	<head>
