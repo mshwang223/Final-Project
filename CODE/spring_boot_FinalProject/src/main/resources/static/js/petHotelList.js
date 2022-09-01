@@ -151,7 +151,8 @@ $(document).ready(function(){
 	
 	// Detail페이지로 이동
 	$('#resultHotelList div img').click(function(){
-		location.href = "/petHotelDetail/stayNo=" + $("#stayNo").val() + "&period=" + $("#rangepicker").val();
+		var stay_no = $(this).parent('div').children('input[type=hidden]').val();
+		location.href = "/petHotelDetail/stayNo=" + stay_no + "&period=" + $("#rangepicker").val();
 	});
 	
 	

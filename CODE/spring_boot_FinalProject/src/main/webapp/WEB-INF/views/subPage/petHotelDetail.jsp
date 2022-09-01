@@ -90,6 +90,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="info_content_box5">
 						<div id="map" class="map"></div>
 					</div>
+					<c:if test="${not empty lists2}">
 					<div class="info_content_box3">
 						<div>숙박타입</div>
 						<c:forEach var="room" items="${lists2}" varStatus="loop">
@@ -104,6 +105,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						</div>
 						</c:forEach>
 					</div>
+					</c:if>
 					<div class="info_content_box4">
 						<div>숙소 편의 시설</div>
 						<div class="cs_box">
