@@ -77,7 +77,6 @@ $(document).ready(function(){
           processData : false,
           success:function(result){
             // 성공 시 결과 받음
-            alert(result);
             if(result){
                alert("등록되었습니다.");
                location.href = "/adminInsertHotel";
