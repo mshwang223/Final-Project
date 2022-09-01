@@ -1,4 +1,9 @@
 // 프로필 사진 변경
+$(document).ready(function () {
+    $(document).on('change','#profile_input',function () {
+        $("#imageForm").submit();
+    });
+});
 
 function readURL(input) {
     if (input.files && input.files[0]) {

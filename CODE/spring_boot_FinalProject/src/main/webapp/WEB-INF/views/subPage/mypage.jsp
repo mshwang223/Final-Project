@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
 response.setHeader("Pragma","no-cache");    
@@ -40,19 +39,24 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				
                 <div class="mypage_box">
-            		<!-- 프로필 사진 -->
-                    <div class="profile_area">
-                        <div class="profile_img">
-                            <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview">
-                            <form>
-                            <div class="mypage_btn">
-                            <div class="mypage_input">
-						  <label for="profile_input" id="input_profile_img">프로필 사진 편집</label>
-                                <input type="file" id="profile_input" style="display: none;" onchange="readURL(this);">
+            	      <!-- 프로필 사진 -->
+            <div class="profile_area">
+                <div class="profile_img">
+                    <c:if test="${user.userImg != '' && user.userImg ne null && !empty user.userImg }">
+                        <img src="/myProfileImg" id="profile_img__preview">
+                    </c:if>
+                    <c:if test="${user.userImg == '' && user.userImg eq null || empty user.userImg }">
+                        <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview" accept="image/*">
+                    </c:if>
+                    <div class="mypage_btn">
+                        <div class="mypage_input">
+                            <form id="imageForm" method="post" action="/updateUserImg" enctype="multipart/form-data">
+                                <label for="profile_input" id="input_profile_img">프로필 사진 편집</label>
+                                <input type="file" name="userImg" id="profile_input" style="display: none;">
+                            </form>
                         </div>
-                        </div>
-                         </form>
-                        </div>
+                    </div>
+                </div>
                        
                         <div class="user_info">
                         	<div>

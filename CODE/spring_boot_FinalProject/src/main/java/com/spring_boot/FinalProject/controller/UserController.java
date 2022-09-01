@@ -2,18 +2,22 @@ package com.spring_boot.FinalProject.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,18 +27,22 @@ import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
+import com.spring_boot.FinalProject.service.ImgService;
 import com.spring_boot.FinalProject.service.UserService;
 
 @Controller
 public class UserController {
 	@Autowired
-	APIController apiController;
+	private  APIController apiController;
 	
 	@Autowired
-	UserService userService;
+	private  UserService userService;
 	
 	@Autowired
-	PasswordEncoder pwEncoder;
+	private  PasswordEncoder pwEncoder;
+
+	@Autowired
+	private ImgService imgService;
 
 	
 	// 로그인 처리
@@ -150,7 +158,14 @@ public class UserController {
 
     // 마이 페이지
 	@RequestMapping("/mypage")
-	public String viweMypage() {
+	public String viweMypage( HttpSession session,Model model) {
+		String sid = (String) session.getAttribute("sid");
+		if (sid == null) {
+			return "ACCESS_DENIED";
+		}
+		UserVO userVO = userService.selectUser(sid);
+		model.addAttribute("user",userVO);
+
 		return "subPage/mypage";
 	}
 	
@@ -169,6 +184,8 @@ public class UserController {
     @RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
     public String viewUpdateprofile(@RequestParam(required = false) String userPw, @RequestParam(required = false) String userEmail, HttpSession session) {
         String sid = (String) session.getAttribute("sid");
+
+		System.out.println("fileup");
         if (sid == null) {
             return "ACCESS_DENIED";
         }
@@ -187,8 +204,34 @@ public class UserController {
         }
         return "SUCCESS";
     }
-	
-    // 펫등록 페이지
+
+	@ResponseBody
+    @RequestMapping(value = "/myProfileImg", method = RequestMethod.GET)
+	public ResponseEntity<Resource> myProfileImg(HttpSession session) throws MalformedURLException {
+		String sid = (String) session.getAttribute("sid");
+		UserVO userVO = userService.selectUser(sid);
+
+		return ResponseEntity.ok()
+				.contentType(MediaType.IMAGE_PNG)
+				.body(new UrlResource("file:" + imgService.getFullPath(userVO.getUserImg())));
+	}
+
+
+    @RequestMapping(value = "/updateUserImg", method = RequestMethod.POST)
+	public String updateUserImg(HttpSession session,MultipartFile userImg) throws IOException {
+		String sid = (String) session.getAttribute("sid");
+		if (sid == null) {
+			return "redirect:/";
+		}
+		String imageName = imgService.storeImg(userImg);
+		userService.userImgUpdate(sid,imageName);
+		return "redirect:/mypage";
+	}
+
+
+
+
+	// 펫등록 페이지
 	@RequestMapping("/signupPet")
 	public String viewSignupPet() {
 		return "subPage/signupPet";
@@ -313,13 +356,13 @@ public class UserController {
 		String comment = (String)param.get("stayRule");
 		
 		for(int i =0; i<services.length; i++) {
-			facility1 += services[i] + " ";
+			facility1 += services[i] + ",";
 		}
 		for(int i =0; i<provides.length; i++) {
-			facility2 += provides[i] + " ";
+			facility2 += provides[i] + ",";
 		}
 		for(int i =0; i<additionals.length; i++) {
-			facility3 += additionals[i] + " ";
+			facility3 += additionals[i] + ",";
 		}
 		  
 		

@@ -1,7 +1,6 @@
 package com.spring_boot.FinalProject.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -92,5 +91,10 @@ public class UserService implements IUserService {
 	public void insertHotel(InsertHotelVO vo) {
 		dao.insertHotel(vo);
 		
+	}
+	
+	// 사진 변경
+	public void userImgUpdate(String sid, String imgName) {
+		dao.updateUserImg(sid, imgName);
 	}
 }

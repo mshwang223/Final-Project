@@ -58,6 +58,14 @@
         </trim>
         WHERE USERID=#{userId}
     </update>
+    
+    <!-- 프로필 사진 변경 -->
+      <update id="updateUserImg" parameterType="String">
+        UPDATE user
+        SET USERIMG=#{imgName}
+        WHERE USERID = #{sid}
+    </update>
+    
   	<!-- 펫 등록 -->
   	<insert id="insertPet" parameterType="com.spring_boot.FinalProject.model.PetVO">
   		INSERT into pet
