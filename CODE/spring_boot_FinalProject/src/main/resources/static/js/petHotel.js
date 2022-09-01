@@ -86,7 +86,7 @@ $(function(){
 });
 
 $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
-$('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDate.format('MM.DD(dd)'));
+$('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.endDate.format('YYYY.MM.DD(dd)'));
 
 });
 
@@ -185,7 +185,9 @@ $('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDat
   	}else if($('#btnCount').val() == ''){
   		alert('인원수를 입력해주세요');
   	}else{
-  		location.href = '/petHotelList';
+  		location.href = "/petHotelList/area=" + $('#searchBox').val() + 
+  						"&period=" + $('#rangepicker').val() +
+  						"&count=" + $('#btnCount').val();
   	} 
   });
   
