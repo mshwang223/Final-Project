@@ -182,10 +182,8 @@ input::placeholder{
   display: none;
   width: 350px;
   height: 300px;
-  position: absolute;
-  top: 509px;
+  position: relative;
   margin-left: 965px;
-  margin-top: 40px;
   padding: 50px 55px;
   border-radius: 10px;
   background-color: #ffffff;
