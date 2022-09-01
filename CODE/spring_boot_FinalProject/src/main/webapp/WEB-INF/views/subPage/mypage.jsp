@@ -53,12 +53,12 @@
                         	</div>
 
 							<div>
-								<div class="profileTitle">이 름 :</div>
+								<div>이 름 : <%=session.getAttribute("userName") %></div>
 								<div id="userName"></div>
 							</div>
 							
 							<div>
-								<div>이메일 : </div>
+								<div>이메일 : <%=session.getAttribute("userEmail") %></div>
 								<div id="userEmail"></div>							
 							</div>
 						</div>
