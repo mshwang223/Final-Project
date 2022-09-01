@@ -313,13 +313,13 @@ public class UserController {
 		String comment = (String)param.get("stayRule");
 		
 		for(int i =0; i<services.length; i++) {
-			facility1 += services[i] + ",";
+			facility1 += services[i] + " ";
 		}
 		for(int i =0; i<provides.length; i++) {
-			facility2 += provides[i] + ",";
+			facility2 += provides[i] + " ";
 		}
 		for(int i =0; i<additionals.length; i++) {
-			facility3 += additionals[i] + ",";
+			facility3 += additionals[i] + " ";
 		}
 		  
 		

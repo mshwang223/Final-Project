@@ -127,7 +127,7 @@ $(document).ready(function(){
 	});
 	
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
-	$('.stay_date').val(picker.startDate.format('MM.DD(dd)') + ' ~ ' + picker.endDate.format('MM.DD(dd)'));
+	$('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.endDate.format('YYYY.MM.DD(dd)'));
 	$('.stay_date').css('font-weight', '600');
 	$('.stay_date').css('color', '#333');
 

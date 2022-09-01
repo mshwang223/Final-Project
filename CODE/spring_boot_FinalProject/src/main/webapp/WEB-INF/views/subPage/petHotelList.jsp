@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!-- 양식다시제출 제거 -->
+<%    
+response.setHeader("Cache-Control","no-store");    
+response.setHeader("Pragma","no-cache");    
+response.setDateHeader("Expires",0);    
+if (request.getProtocol().equals("HTTP/1.1"))  
+        response.setHeader("Cache-Control", "no-cache");  
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -38,13 +47,16 @@
 	              </div>
 	              <div class="box_input">
 	                <div class="box_destination">
-	                  <input type="text" id="btnDestination" class="input_destination" value="목적지를 검색하세요">
+	                  <input type="text" id="btnDestination" class="input_destination" 
+	                  		 placeholder="목적지를 검색하세요" value="<c:url value="${map.area}"/>">
 	                </div>
 	                <div class="box_daterange">
-	                  <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off" value="날짜를 입력해 주세요">
+	                  <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off" 
+	                  		 placeholder="날짜를 입력해 주세요" value="<c:url value="${map.period}"/>">
 	                </div>
 	                <div class="box_person_count">
-	                  <input type="text" id="btnCount" class="txt_stay" value="성인0, 반려동물1"  spellcheck="false">
+	                  <input type="text" id="btnCount" class="txt_stay" placeholder="성인0, 반려동물1"  
+	                  		 spellcheck="false" value="<c:url value="${map.count}"/>">
 	                </div>
 	                <button id="listSearchBtn" class="search_list_btn">
 	                  <div>
@@ -119,118 +131,22 @@
 	          </div>
 	          <!-- 호텔 리스트 영역 -->
 	          <div class="list_box">
+	          	<c:forEach var="list" items="${lists}" varStatus="loop">
 	            <div id="resultHotelList" class="wrap_result_hotel_list">
 	              <div class="result_hotel_img">
 	                <img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">
-	                  <p>콘래드 호텔</p>
-	                  <div><i class="fa-solid fa-star"></i>4.5</div>
+	                  <p>${list.stayName}</p>
+	                  <div><i class="fa-solid fa-star"></i>${list.star}</div>
 	                </div>
 	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
-	                <div class="per_stay_price">352,000원 / 1박</div>
+	                <div class="per_stay_price">${list.price}원 / 1박</div>
 	              </div>
 	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
 	            </div>
-	            <div class="wrap_result_hotel_list">
-	              <div class="result_hotel_img">
-	                <img src="<c:url value='/images/stay2.jpg'/>">
-	              </div>
-	              <div class="wrap_whole">
-	                <div class="hotel_title">
-	                  <p>콘래드 호텔</p>
-	                  <div><i class="fa-solid fa-star"></i>4.5</div>
-	                </div>
-	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
-	                <div class="per_stay_price">352,000원 / 1박</div>
-	              </div>
-	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
-	            </div>
-	            <div class="wrap_result_hotel_list">
-	              <div class="result_hotel_img">
-	                <img src="<c:url value='/images/stay2.jpg'/>">
-	              </div>
-	              <div class="wrap_whole">
-	                <div class="hotel_title">
-	                  <p>콘래드 호텔</p>
-	                  <div><i class="fa-solid fa-star"></i>4.5</div>
-	                </div>
-	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
-	                <div class="per_stay_price">352,000원 / 1박</div>
-	              </div>
-	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
-	            </div>
-	            <div class="wrap_result_hotel_list">
-	              <div class="result_hotel_img">
-	                <img src="<c:url value='/images/stay2.jpg'/>">
-	              </div>
-	              <div class="wrap_whole">
-	                <div class="hotel_title">
-	                  <p>콘래드 호텔</p>
-	                  <div><i class="fa-solid fa-star"></i>4.5</div>
-	                </div>
-	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
-	                <div class="per_stay_price">352,000원 / 1박</div>
-	              </div>
-	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
-	            </div>
-	            <div class="wrap_result_hotel_list">
-	              <div class="result_hotel_img">
-	                <img src="<c:url value='/images/stay2.jpg'/>">
-	              </div>
-	              <div class="wrap_whole">
-	                <div class="hotel_title">
-	                  <p>콘래드 호텔</p>
-	                  <div><i class="fa-solid fa-star"></i>4.5</div>
-	                </div>
-	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
-	                <div class="per_stay_price">352,000원 / 1박</div>
-	              </div>
-	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
-	            </div>
-	            <div class="wrap_result_hotel_list">
-	              <div class="result_hotel_img">
-	                <img src="<c:url value='/images/stay2.jpg'/>">
-	              </div>
-	              <div class="wrap_whole">
-	                <div class="hotel_title">
-	                  <p>콘래드 호텔</p>
-	                  <div><i class="fa-solid fa-star"></i>4.5</div>
-	                </div>
-	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
-	                <div class="per_stay_price">352,000원 / 1박</div>
-	              </div>
-	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
-	            </div>
-	            <div class="wrap_result_hotel_list">
-	              <div class="result_hotel_img">
-	                <img src="<c:url value='/images/stay2.jpg'/>">
-	              </div>
-	              <div class="wrap_whole">
-	                <div class="hotel_title">
-	                  <p>콘래드 호텔</p>
-	                  <div><i class="fa-solid fa-star"></i>4.5</div>
-	                </div>
-	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
-	                <div class="per_stay_price">352,000원 / 1박</div>
-	              </div>
-	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
-	            </div>
-	            <div class="wrap_result_hotel_list">
-	              <div class="result_hotel_img">
-	                <img src="<c:url value='/images/stay2.jpg'/>">
-	              </div>
-	              <div class="wrap_whole">
-	                <div class="hotel_title">
-	                  <p>콘래드 호텔</p>
-	                  <div><i class="fa-solid fa-star"></i>4.5</div>
-	                </div>
-	                <div class="wrap_date_Stay">8월20일 ~ 8월21일</div>
-	                <div class="per_stay_price">352,000원 / 1박</div>
-	              </div>
-	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
-	            </div>
+	            </c:forEach> 
 	          </div>
 	        </div>
 	      </div>
