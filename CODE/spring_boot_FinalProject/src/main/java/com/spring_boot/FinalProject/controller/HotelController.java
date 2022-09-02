@@ -23,7 +23,7 @@ import com.spring_boot.FinalProject.service.UserService;
 import com.spring_boot.FinalProject.service.UtilService;
 
 @Controller
-public class HotelController {
+public class HotelController { 
 	@Autowired
 	GEOService geoService;
 	
