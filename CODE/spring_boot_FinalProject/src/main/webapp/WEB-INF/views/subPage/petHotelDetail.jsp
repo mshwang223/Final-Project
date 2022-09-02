@@ -97,8 +97,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<div>
 							<img src="/images/stayType.jpg" alt="">
 							<div class="room_box">
-								<c:if test="${room.bedType eq 1}"><span># 스탠다드 더블</span></c:if>
-								<c:if test="${room.bedType eq 2}"><span># 스탠다드 트윈</span></c:if>
+								<c:if test="${room.roomType eq 1}"><span># 스탠다드 더블</span></c:if>
+								<c:if test="${room.roomType eq 2}"><span># 스탠다드 트윈</span></c:if>
 								<div><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${room.price}" />원</div>
 								<button class="room_btn">선택</button>
 							</div>
