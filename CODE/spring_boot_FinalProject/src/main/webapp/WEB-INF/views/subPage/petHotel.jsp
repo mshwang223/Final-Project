@@ -50,7 +50,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							</ul>
 						</div>
 					</div>
-<%-- 					<div class="option_area">
+<%-- 					<div class="option_area"> 
 						<div>
 							<div class="option_area_title">
 								옵션<img src="<c:url value='/images/choice.png'/>" alt="옵션">
