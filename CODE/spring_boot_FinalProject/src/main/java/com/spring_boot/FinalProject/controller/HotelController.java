@@ -30,9 +30,8 @@ public class HotelController {
 	// 숙박예약 가기(검색)
 	@RequestMapping("/petHotel")
 	public String viewPetHotel(Model model) {
-		
+		// 지역코드 검색
 		ArrayList<UtilVO> lists = utilService.selectState();
-		
 		model.addAttribute("lists", lists);
 		
 		return "subPage/petHotel";
@@ -44,15 +43,21 @@ public class HotelController {
 								@RequestParam HashMap<String, Object> map,			
 								Model model) {
 		
+		// 지역코드 검색
+		ArrayList<UtilVO> areaLists = utilService.selectState();
+		model.addAttribute("areaLists", areaLists);
+		
 		String area = (String)map.get("area");
+		String areaCode = (String)map.get("areaCode");
+		
 		String count = (String)map.get("count");
 		String period = (String)map.get("daterange");
 		map.put("num", num);
 		map.put("period", period);
 		
 		/* 지역값 구분 */
-		map.put("stateId", "1");
-		// map.put("stateId", area);
+		//map.put("stateId", "1");
+		map.put("stateId", areaCode);
 		
 		/* 인원수 구하기 */
 		

@@ -8,7 +8,8 @@
   	<!-- 숙박펜션 조회 기능 -->
   	<select id="selectHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
   	<![CDATA[
-  		SELECT *, 
+  		SELECT *,
+  			   (SELECT stateName FROM state WHERE state.stateId = stay.stateId) AS area, 
   			   (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) AS price,
   			   '' AS mainImg,
   			   COUNT(*) OVER() AS rowCnt 

@@ -1,6 +1,7 @@
 // 지역 검색 토글
 let searchBox = document.getElementById('searchBox');
 let searchPop = document.getElementById('searchPop');
+let areaCode = document.getElementById('areaCode');
 let count = 1;
 let searchList = document.querySelectorAll('#searchList li');
 
@@ -19,7 +20,7 @@ searchBox.addEventListener('click', () => {
 function searchValueClick(){
   for(let i = 0; i < searchList.length; i++){
     searchList[i].addEventListener('click', () => {
-      
+      areaCode.value = searchList[i].value;
       searchBox.value = searchList[i].innerText;
       searchPop.style.display = "none";
     });

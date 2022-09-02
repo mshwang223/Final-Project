@@ -48,8 +48,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	              </div>
 	              <div class="box_input">
 	                <div class="box_destination">
-	                  <input type="text" id="btnDestination" class="input_destination" name="area"
-	                  		 placeholder="목적지를 검색하세요" value="<c:url value="${map.area}"/>">
+	                  <input type="text" id="btnDestination" class="input_destination"
+	                  		 placeholder="목적지를 검색하세요" name="area" value="<c:url value="${map.area}"/>">
+	                  <input type="hidden" id="areaCode" name="areaCode" value="<c:url value="${map.areaCode}"/>">
 	                </div>
 	                <div class="box_daterange">
 	                  <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off" 
@@ -70,25 +71,13 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	            <!-- 검색팝업 영역 -->
 	            <div class="popup_space">
 	              <div class="search_option">
-	              	
+	              	<c:forEach var="arealist" items="${areaLists}" varStatus="loop">	
 	                <div class="list_location">
-	                  <div class="location_detail">서울</div>
+	                  <div class="location_detail">${arealist.stateName}
+	                  	<input type="hidden" id="areaCode" value="<c:url value="${arealist.stateId}"/>">
+	                  </div>
 	                </div>
-	                <div class="list_location">
-	                  <div class="location_detail">경기도</div>
-	                </div>
-	                <div class="list_location">
-	                  <div class="location_detail">강원도</div>
-	                </div>
-	                <div class="list_location">
-	                  <div class="location_detail">부산</div>
-	                </div>
-	                <div class="list_location">
-	                  <div class="location_detail">광주</div>
-	                </div>
-	                <div class="list_location">
-	                  <div class="location_detail">제주도</div>
-	                </div>
+	                </c:forEach>
 	              </div>
 	              <div class="person_count_option">
 	                <h4 class="tlt_popup_person">인원 선택</h4>

@@ -38,8 +38,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<div class="search_area_title">
 								지역<img src="<c:url value='/images/location.png'/>" alt="지역">
 							</div>
-							<input type="text" name="area" class="search_box" id="searchBox"
-								value="목적지를 검색하세요" autocomplete="off">
+							<input type="text" class="search_box" id="searchBox" name="area"
+								placeholder="목적지를 검색하세요" autocomplete="off">
+							<input type="hidden" id="areaCode" name="areaCode">
 						</div>
 						<div class="search_pop" id="searchPop">
 							<ul id="searchList">

@@ -18,6 +18,10 @@ $(document).ready(function(){
     // 위의 과정이 끝나면 다시 클래스 제거
     $(this).removeClass('add_text');
   });
+  
+  $(".location_detail").click(function() {
+  	$("input[name=areaCode]").val($(this).children('input').val());
+  });
 
 	// 인원수 | 반려동물 수 클릭시 display:block css 토글
 	$('#btnCount').click(function(){
