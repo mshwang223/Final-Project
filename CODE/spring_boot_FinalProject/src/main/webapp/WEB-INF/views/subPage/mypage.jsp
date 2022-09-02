@@ -14,7 +14,7 @@
 	    <link rel="stylesheet" type="text/css" href="<c:url value='/css/mypage.css'/>">
 	    <link rel="stylesheet" type="text/css" href="<c:url value='/css/review-modal.css'/>">
 	    
-		<script src="js/mypage.js"></script>
+		<script defer src="<c:url value='/js/mypage.js'/>"></script>
 		<script defer src="<c:url value='/js/review-modal.js'/>"></script>
 	
 	</head>
