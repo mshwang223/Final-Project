@@ -271,7 +271,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
         seoulIndex--;
         if(seoulIndex == 0)
             $('.seoul_prev').css("display","none");
-    });
+    }); 
     
     // 부산숙소 슬라이드
 	var busanBox = $('.busan_img_box').length;
