@@ -95,16 +95,18 @@ public class HotelController {
 	}
 	
 	// 호텔 상세 페이지
-	@RequestMapping("/petHotelDetail/stayNo={stayNo}&period={period}")
+	@RequestMapping("/petHotelDetail/stayNo={stayNo}&period={period}&count={count}")
 	public String viewHotelDetail(@PathVariable("stayNo") String stayNo,
 								  @PathVariable("period") String period,
+								  @PathVariable("count") String count,
 								  Model model) {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
+		
 		map.put("stayNo", stayNo);
 		map.put("period", period);
-		model.addAttribute("map", map);
+		map.put("count", count);
 		
 		// 호텔펜션 테이블
 		StayVO vo = hotelService.selectDetailHotel(map);
@@ -124,6 +126,7 @@ public class HotelController {
 		model.addAttribute("flist1", flist1);
 		model.addAttribute("flist2", flist2);
 		model.addAttribute("flist3", flist3);
+		model.addAttribute("map", map);
 
 		// 지도 주소 좌표 호출(Naver GEOService)
 		String address = vo.getStayAddress();

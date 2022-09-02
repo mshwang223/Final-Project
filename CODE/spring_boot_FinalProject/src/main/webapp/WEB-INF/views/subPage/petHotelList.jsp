@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<!-- 양식제출 안뜨게함!--!>
+<!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
 response.setHeader("Pragma","no-cache");    
@@ -129,7 +129,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	              <div class="result_hotel_img">
 	              	<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">
 	                <%-- <img src="<c:url value='/images/${list.mainImg}'/>"> --%>
-	                <img src="<c:url value='/images/stay2.jpg'/>">
+                	<img src="<c:url value='/images/stay2.jpg'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">

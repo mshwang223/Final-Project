@@ -323,18 +323,18 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						</div>
 					</div>
 					<div class="check_date">
-						<div class="checkin">
-							<div>체크인</div>
-							<input type="text" id="rangepicker1" class="stay_date"
-								name="daterange" autocomplete="off" value="${fn:substring(map.period,5,14) }">
-						</div>
-						<div class="checkout">
-							<div>체크아웃</div>
-							<input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off" spellcheck="false" value="${fn:substring(map.period,21,29) }">
-						</div>
+					<div class="checkin">
+						<div>체크인</div>
+						<input type="text" id="rangepicker1" class="stay_date"
+							name="daterange" autocomplete="off" value="${fn:substring(map.period,5,14) }">
+					</div>
+					<div class="checkout">
+						<div>체크아웃</div>
+						<input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off" spellcheck="false" value="${fn:substring(map.period,21,29) }">
+					</div>
 						<div class="total_count">
 							<span>인원수 | 반려동물 수</span> 
-							<input type="text" class="info_content_count" id="infoCount" spellcheck="false">
+							<input type="text" class="info_content_count" id="infoCount" spellcheck="false" value="${map.count}">
 							<div class="person_count_option">
 								<h4 class="tlt_popup_person">인원 선택</h4>
 								<div class="div_person_count">
