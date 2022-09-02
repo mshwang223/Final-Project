@@ -145,7 +145,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	                  <div><i class="fa-solid fa-star"></i>${list.star}</div>
 	                </div>
 	                <div class="wrap_date_Stay">
-	                	${period}
+	                	${map.period}
 	                </div>
 	                <div class="per_stay_price">
 	                <fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${list.price}" />원 / 1박
