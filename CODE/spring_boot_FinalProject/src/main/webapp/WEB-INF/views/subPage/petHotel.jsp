@@ -32,13 +32,13 @@ if (request.getProtocol().equals("HTTP/1.1"))
 
 		<section class="reservation_container">
 			<article>
-				<div class="reservation_box">
+				<form id="userFrm" class="reservation_box" method="post" action="<c:url value="/petHotelList"/>">
 					<div class="search_area">
 						<div>
 							<div class="search_area_title">
 								지역<img src="<c:url value='/images/location.png'/>" alt="지역">
 							</div>
-							<input type="text" class="search_box" id="searchBox"
+							<input type="text" name="area" class="search_box" id="searchBox"
 								value="목적지를 검색하세요" autocomplete="off">
 						</div>
 						<div class="search_pop" id="searchPop">
@@ -82,7 +82,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<div class="count_area_title">
 								인원수 | 반려동물 수<img src="<c:url value='/images/owner.png'/>" alt="구성원 수">
 							</div>
-							<input type="text" class="count_box" id="btnCount" autocomplete="off" value="성인0, 반려동물1" spellcheck="false">
+							<input type="text" class="count_box" id="btnCount" name="count" autocomplete="off" value="성인0, 반려동물1" spellcheck="false">
 						</div>
 						<div class="person_count_option">
 							<h4 class="tlt_popup_person">인원 선택</h4>
@@ -115,7 +115,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<span>검색</span> <img src="<c:url value='/images/search.png'/>" alt="검색">
 						</div>
 					</button>
-				</div>
+				</form>
 			</article>
 		</section>
 		<!-- 호텔 펜션 추천 -->

@@ -185,9 +185,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
   	}else if($('#btnCount').val() == ''){
   		alert('인원수를 입력해주세요');
   	}else{
-  		location.href = "/petHotelList/area=" + $('#searchBox').val() + 
-  						"&period=" + $('#rangepicker').val() +
-  						"&count=" + $('#btnCount').val();
+  		$("#userFrm").submit();
   	} 
   });
   

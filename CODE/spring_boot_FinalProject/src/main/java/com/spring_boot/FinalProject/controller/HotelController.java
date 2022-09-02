@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.RoomVO;
@@ -28,15 +29,12 @@ public class HotelController {
 	}	
 	
 	// 호텔 검색 리스트 가기(검색)
-	@RequestMapping("/petHotelList/area={area}&period={period}&count={count}")
-	public String viewHotelList(@PathVariable("area") String area,
-								@PathVariable("period") String period,
-								@PathVariable("count") String count,			
+	@RequestMapping("/petHotelList")
+	public String viewHotelList(@RequestParam HashMap<String, Object> map,			
 								Model model) {
 		
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("area", area);
-		map.put("count", count);
+		String count =(String)map.get("count");
+		String period = (String)map.get("daterange");
 		map.put("period", period);
 		
 		/* 지역값 구분 */
