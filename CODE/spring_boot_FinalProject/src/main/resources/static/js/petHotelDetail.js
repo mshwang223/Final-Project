@@ -135,7 +135,8 @@ $(document).ready(function(){
 	
 	// reservation페이지로 이동
 	$('.book_btn').click(function(){
-		window.location.href = "/petHotelRsv";
+		var stay_no = $('.sticky_area').children('input[type=hidden]').val();
+		window.location.href = "/petHotelRsv/stayNo=" + stay_no + "&period=" + $("#rangepicker").val();
 	});
 	
 	// 현재 스크롤 위치

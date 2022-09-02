@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
@@ -30,16 +31,16 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="box_img_tlt">
 						<div class="img_box"><img src="<c:url value='/images/stay2.jpg'/>"></div>
 						<div class="info_txt_Box">
-							<div class="info_tlt">콘래드 호텔</div>
-							<div class="info_address"><i class="fa-solid fa-location-dot address_icon"></i>서울특별시 영등포구 국제금융로 10</div>
-							<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>2022.08.20 ~ 2022.08.21</div>
-							<div class="info_person_count"><i class="fa-solid fa-user person_icon"></i>성인 2인</div>
+							<div class="info_tlt">${stayList.stayName }</div>
+							<div class="info_address"><i class="fa-solid fa-location-dot address_icon"></i>${stayList.stayAddress}</div>
+							<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${map.period}</div>
+							<div class="info_person_count"><i class="fa-solid fa-user person_icon"></i>성인 ${stayList.maxManCnt}인</div>
 							<div class="info_bed"><i class="fa-solid fa-bed bed_icon"></i>더블침대 1개</div>
 						</div>
 					</div>
 					<div class="box_type_price">
-						<div class="room_type">디럭스 더블</div>
-						<div class="ttl_price">352,000원</div>
+						<div class="room_type">${room.roomType eq 1}</div>
+						<div class="ttl_price">${room.price }원</div>
 					</div>
 				</div>
 				<div class="box_cus_info">
@@ -48,7 +49,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<div class="name_rule">(투숙객 이름은 체크인 시 제시할 유효한 신분증 이름과 정확히 일치해야 합니다)</div>
 						<div class="cus_name">
 							<div class="tlt_all">투숙객명</div>
-							<input type="text" id="cusName" class="input_cus_name">							
+							<input type="text" id="cusName" class="input_cus_name" value="${user.userName }">							
 						</div>
 						<div class="cus_phone">
 							<div class="tlt_all">연락처</div>
@@ -56,8 +57,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						</div>
 						<div class="cus_email">
 							<div class="tlt_all">이메일</div>
-							<input type="text" id="mailId" class="mail_id"> @
-							<input type="text" id="mailAddress" class="mail_address" placeholder="직접입력">
+							<input type="text" id="mailId" class="mail_id" value="${email[0]}"> @
+							<input type="text" id="mailAddress" class="mail_address" placeholder="직접입력" value="${email[1]}">
 							<select class="mail_address_select" id="cusSel" >
 								<option value="" selected>직접입력</option>
 								<option>naver.com</option>

@@ -3,6 +3,8 @@ package com.spring_boot.FinalProject.controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
+import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.model.UtilVO;
 import com.spring_boot.FinalProject.service.HotelService;
+import com.spring_boot.FinalProject.service.UserService;
 import com.spring_boot.FinalProject.service.UtilService;
 
 @Controller
@@ -25,6 +29,9 @@ public class HotelController {
 	
 	@Autowired
 	UtilService utilService;
+	
+	@Autowired
+	UserService userService;
 	
 	
 	// 숙박예약 가기(검색)
@@ -94,6 +101,7 @@ public class HotelController {
 		
 		map.put("stayNo", stayNo);
 		map.put("period", period);
+		model.addAttribute("map", map);
 		
 		// 호텔펜션 테이블
 		StayVO vo = hotelService.selectDetailHotel(map);
@@ -118,8 +126,38 @@ public class HotelController {
 	}
 	
 	// 호텔 예약 페이지
-	@RequestMapping("/petHotelRsv")
-	public String viewHotelRsv() {
+	@RequestMapping("/petHotelRsv/stayNo={stayNo}&period={period}")
+	public String viewHotelRsv(@PathVariable("stayNo") String stayNo,
+							   @PathVariable("period") String period,
+							   HttpSession session, Model model) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		String userId = (String) session.getAttribute("sid");
+		UserVO user = userService.selectUser(userId);
+		
+		map.put("stayNo", stayNo);
+		map.put("period", period);
+		
+		System.out.println(stayNo);
+		// 호텔
+		StayVO stayList = hotelService.selectDetailHotel(map);
+		System.out.println(stayList);
+		
+		
+		// 룸
+		ArrayList<RoomVO> roomList = hotelService.selectDetailRoom(map);
+		System.out.println(roomList);
+		
+		
+		String[] email = user.getUserEmail().split("@"); 
+		
+		model.addAttribute("user", user);
+		model.addAttribute("stayList", stayList);
+		model.addAttribute("roomList", roomList);
+		model.addAttribute("email", email);
+		model.addAttribute("map", map);
+		
+		
 		return "subPage/petHotelRsv";
 	}
 }

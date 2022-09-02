@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
@@ -324,11 +325,11 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<div class="checkin">
 							<div>체크인</div>
 							<input type="text" id="rangepicker1" class="stay_date"
-								name="daterange" autocomplete="off">
+								name="daterange" autocomplete="off" value="${fn:substring(map.period,5,14) }">
 						</div>
 						<div class="checkout">
 							<div>체크아웃</div>
-							<input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off" spellcheck="false">
+							<input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off" spellcheck="false" value="${fn:substring(map.period,21,29) }">
 						</div>
 						<div class="total_count">
 							<span>인원수 | 반려동물 수</span> 
