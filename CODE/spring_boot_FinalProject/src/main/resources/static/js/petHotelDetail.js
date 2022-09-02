@@ -207,6 +207,16 @@ $(document).ready(function(){
 		calculate();
 	});
 	
+	// 일자 계산
+	function getDiffDate(d1, d2) {
+		const date1 = new Date(d1);
+		const date2 = new Date(d2);
+		
+		const diffDate = date1.getTime() - date2.getTime();
+		
+		return Math.abs(diffDate / (1000 * 60 * 60 * 24));	/* 밀리세컨 * 초 * 분 * 시 = 일 */
+	}
+	
 	
 	function calculate() {
 		var txtStartDate = $("#rangepicker1").val();
@@ -217,19 +227,17 @@ $(document).ready(function(){
 		// 시작일자
 		var startYear = year;
 		var startMonth = Number(txtStartDate.substr(0, 5).split(".")[0]);
-		var startDate = startYear + txtStartDate.substr(0, 5).replace(".", "");
-		
+		var startDate = startYear + "-" + txtStartDate.substr(0, 5).replace(".", "-");
+				
 		// 종료일자
 		var endYear = year;
 		var endMonth = Number(textEndDate.substr(0, 5).split(".")[0]);
 		
+		// 연도가 넘어갈 때
 		if(startMonth > endMonth) endYear += 1;
-		var endDate = endYear + textEndDate.substr(0, 5).replace(".", "");
+		var endDate = endYear + "-" + textEndDate.substr(0, 5).replace(".", "-");
 		
-		var totalDay;
-		
-		if(startMonth > endMonth) totalDay = parseFloat(startDate)- parseFloat(endDate); 
-		else totalDay = parseFloat(endDate)- parseFloat(startDate); 
+		var totalDay = getDiffDate(startDate, endDate);
 		
 		// 1번째
 		var roomPrice = $("#roomPrice").text();

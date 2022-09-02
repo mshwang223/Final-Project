@@ -39,7 +39,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								지역<img src="<c:url value='/images/location.png'/>" alt="지역">
 							</div>
 							<input type="text" class="search_box" id="searchBox" name="area"
-								placeholder="목적지를 검색하세요" autocomplete="off">
+								placeholder="목적지를 검색하세요" autocomplete="off" readOnly>
 							<input type="hidden" id="areaCode" name="areaCode">
 						</div>
 						<div class="search_pop" id="searchPop">
@@ -72,7 +72,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								날짜<img src="<c:url value='/images/calendar.png'/>" alt="날짜">
 							</div>
 							<input type="text" id="rangepicker" class="stay_date"
-								name="daterange" autocomplete="off" value="날짜를 입력해주세요">
+								name="daterange" autocomplete="off" value="날짜를 입력해주세요" readOnly>
 						</div>
 					</div>
 					<div class="count_area">
@@ -80,7 +80,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<div class="count_area_title">
 								인원수 | 반려동물 수<img src="<c:url value='/images/owner.png'/>" alt="구성원 수">
 							</div>
-							<input type="text" class="count_box" id="btnCount" name="count" autocomplete="off" value="성인0, 반려동물1" spellcheck="false">
+							<input type="text" class="count_box" id="btnCount" name="count" autocomplete="off" value="성인0, 반려동물1" spellcheck="false" readOnly>
 						</div>
 						<div class="person_count_option">
 							<h4 class="tlt_popup_person">인원 선택</h4>
