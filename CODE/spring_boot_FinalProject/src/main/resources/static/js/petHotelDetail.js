@@ -22,7 +22,8 @@ $(document).ready(function(){
 
     $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
     $('#rangepicker2').val(picker.endDate.format('MM.DD(dd)'));
-
+	
+	calculate();
 });
 
 
@@ -193,6 +194,70 @@ $(document).ready(function(){
 	  position: new naver.maps.LatLng(y, x),
 	  map: map
 	});	
+	
+	// 선택 버튼 클릭 시 계산
+	$("#roomPrice").text($("div.room_box > div").eq(0).text().replace("₩", ""));
+	calculate();
+	$(".room_btn").click(function() {
+		var txtPrice = $(this).parent().children('div').text();
+		var price = txtPrice.replace(/[₩,원]/g, "");	// 정규식
+		
+		$("#roomPrice").text(txtPrice.replace("₩", ""));
+		
+		calculate();
+	});
+	
+	
+	function calculate() {
+		var txtStartDate = $("#rangepicker1").val();
+		var textEndDate = $("#rangepicker2").val();
+		
+		const year = new Date().getFullYear();
+		
+		// 시작일자
+		var startYear = year;
+		var startMonth = Number(txtStartDate.substr(0, 5).split(".")[0]);
+		var startDate = startYear + txtStartDate.substr(0, 5).replace(".", "");
+		
+		// 종료일자
+		var endYear = year;
+		var endMonth = Number(textEndDate.substr(0, 5).split(".")[0]);
+		
+		if(startMonth > endMonth) endYear += 1;
+		var endDate = endYear + textEndDate.substr(0, 5).replace(".", "");
+		
+		var totalDay;
+		
+		if(startMonth > endMonth) totalDay = parseFloat(startDate)- parseFloat(endDate); 
+		else totalDay = parseFloat(endDate)- parseFloat(startDate); 
+		
+		// 1번째
+		var roomPrice = $("#roomPrice").text();
+		$("div.charge_box1 > span:first-child").text(roomPrice + " x " + totalDay + "박");
+		
+		var total = Number(roomPrice.replace(/[₩,원]/g, "") * totalDay);
+		$("div.charge_box1 > span:last-child").text(total.toLocaleString() + "원");
+		
+		// 청소비
+		var cleanPriceText = "15,000원";
+		var cleanPrice = 15000;
+		$("div.charge_box2 > span:last-child").text(cleanPriceText);
+		
+		// 서비스 수수료
+		var serviceTaxText = "30,000원";
+		var serviceTax = 30000;
+		$("div.charge_box3 > span:last-child").text(serviceTaxText);
+		
+		// 숙박세와 수수료
+		var outTaxText = "3,000원";
+		var outTax = 3000;
+		$("div.charge_box4 > span:last-child").text(outTaxText);
+		
+		// 총합계
+		var totalPrice = Number(total + cleanPrice + serviceTax + outTax);
+		$("div.total_charge > span:last-child").text(totalPrice.toLocaleString() + "원");
+		
+	}
 
 }); //document.ready 끝
 

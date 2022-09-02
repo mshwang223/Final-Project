@@ -315,7 +315,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="sticky_area">
 					<div class="charge_area">
 						<div>
-							<span>95,000원</span><span> / 1박</span>
+							<span id="roomPrice"></span><span> / 1박</span>
 						</div>
 						<div>
 							<img src="/images/star.png" alt="별점"> <span>4.37</span>
