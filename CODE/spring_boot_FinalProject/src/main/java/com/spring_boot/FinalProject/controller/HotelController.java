@@ -17,12 +17,15 @@ import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.model.UtilVO;
+import com.spring_boot.FinalProject.service.GEOService;
 import com.spring_boot.FinalProject.service.HotelService;
 import com.spring_boot.FinalProject.service.UserService;
 import com.spring_boot.FinalProject.service.UtilService;
 
 @Controller
 public class HotelController {
+	@Autowired
+	GEOService geoService;
 	
 	@Autowired
 	HotelService hotelService;
@@ -121,6 +124,11 @@ public class HotelController {
 		model.addAttribute("flist1", flist1);
 		model.addAttribute("flist2", flist2);
 		model.addAttribute("flist3", flist3);
+
+		// 지도 주소 좌표 호출(Naver GEOService)
+		String address = vo.getStayAddress();
+		String coordinate = geoService.geoAddress(address);
+		model.addAttribute("coordinate", coordinate);
 		
 		return "subPage/petHotelDetail";
 	}

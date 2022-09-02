@@ -178,7 +178,21 @@ $(document).ready(function(){
 				$('html, body').css({'overflow': 'visible', 'height': '100%'});
 		    }
    	});
+
+	// naver geocode
+	var coordinate = $("#coordinate").val().split(",");
+	var x = coordinate[0];
+	var y = coordinate[1];
+	// naver maps 지도
+	var map = new naver.maps.Map('map',{
+	  center: new naver.maps.LatLng(y, x),
+	  zoom: 18
+	});
 	
+	var marker = new naver.maps.Marker({
+	  position: new naver.maps.LatLng(y, x),
+	  map: map
+	});	
 
 }); //document.ready 끝
 
@@ -201,17 +215,6 @@ for(let i = 0; i < likeBtn.length; i++){
     }
   });
 }
-
-// naver maps 지도
-var map = new naver.maps.Map('map',{
-  center: new naver.maps.LatLng(37.3405761, 127.3164609),
-  zoom: 18
-});
-
-var marker = new naver.maps.Marker({
-  position: new naver.maps.LatLng(37.3405761, 127.3164609),
-  map: map
-});
 
 
 

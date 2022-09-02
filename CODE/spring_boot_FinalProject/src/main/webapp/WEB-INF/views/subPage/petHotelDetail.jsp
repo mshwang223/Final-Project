@@ -90,6 +90,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<div class="info_content_box5">
 						<div id="map" class="map"></div>
+						<input type="hidden" id="coordinate" value="<c:url value='${coordinate}'/>"/>
 					</div>
 					<c:if test="${not empty lists2}">
 					<div class="info_content_box3">
