@@ -50,13 +50,12 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							</ul>
 						</div>
 					</div>
-					<div class="option_area">
+<%-- 					<div class="option_area">
 						<div>
 							<div class="option_area_title">
 								옵션<img src="<c:url value='/images/choice.png'/>" alt="옵션">
 							</div>
 							<div class="option_box" id="optionBox" autocomplete="off"></div>
-							<!--  contenteditable="true" placeholder="옵션을 선택하세요" -->
 						</div>
 						<div class="option_pop" id="optionPop">
 							<div>
@@ -66,7 +65,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								<span class="option_span" id="option4">풀장</span>
 							</div>
 						</div>
-					</div>
+					</div> --%>
 					<div class="date_area">
 						<div>
 							<div class="date_area_title">

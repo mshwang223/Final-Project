@@ -31,7 +31,7 @@ Ul{
 }
 
 .search_box, .count_box, .stay_date, .option_box{
-  width: 300px;
+  width: 360px;
   height: 50px;
   border: none;
   outline: none;
@@ -41,12 +41,12 @@ Ul{
   border-radius: 10px;
 }
 
-.option_box{
+/* .option_box{
   display: flex;
   overflow: hidden;
   background-color: #fff;
   cursor: text;
-}
+} */
 
 /* [contenteditable=true]:empty:before{
   content: attr(placeholder);
@@ -121,7 +121,7 @@ div[contenteditable=true] {
 }
 
 /* 옵션 선택 팝업 */
-.option_area{
+/* .option_area{
   position: relative;
 }
 
@@ -160,13 +160,13 @@ span.option_span, .added_option{
   cursor: pointer;
 }
 
-/* 옵션 삭제 */
+옵션 삭제
 .option_close{
   width: 8px;
   height: 8px;
   filter: invert(20%);
   margin-left: 4px;
-}
+} */
 /* 인원선택 팝업 */
 .dis_block{
   display: block!important;

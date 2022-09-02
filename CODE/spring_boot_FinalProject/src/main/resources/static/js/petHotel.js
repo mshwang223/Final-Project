@@ -50,7 +50,7 @@ for(let i = 0; i < likeBtn.length; i++){
 }
 
 // option 넓이
-let option = document.querySelectorAll(".option_pop span");
+/*let option = document.querySelectorAll(".option_pop span");
 let optionLength = 0;
 
 function takeOptionLength(){
@@ -63,7 +63,7 @@ function takeOptionLength(){
 
 }
 
-takeOptionLength();
+takeOptionLength();*/
 
 
 // 제이쿼리 영역
@@ -168,12 +168,12 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
   });
   
   	// 옵션 팝업닫기
-  $(document).mouseup(function (e){
+  /*$(document).mouseup(function (e){
     var LayerPopup = $(".option_pop");
     if(LayerPopup.has(e.target).length === 0){
       LayerPopup.removeClass("dis_block");
     }
-  });
+  });*/
 	
   // 검색하기로 페이지 이동(유효성 검사)
   $('#reservationBtn').click(function(){
@@ -192,7 +192,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
   
 	
 	//option 추가
-   var option_cnt = 0;
+  /*var option_cnt = 0;
    $('.option_span').not('.option_close').click(function(){
       if($('.option_box').find('#'+$(this).attr('id')).length == 0){
          option_cnt++;
@@ -209,7 +209,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
       if(!$(e.target).hasClass('choice')){
          $('.option_pop').toggleClass('dis_block');
       }
-   });
+   });*/
 	
 
 	// 슬라이드 10개	
@@ -298,10 +298,10 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
 
 
 //옵션 삭제 로드 이후 동적으로 생성
-$(document).on('click', '.option_close', function(e){
+/*$(document).on('click', '.option_close', function(e){
 	$(this).closest('.added_option').remove();
 		e.preventDefault();
-});
+});*/
 
 
 
