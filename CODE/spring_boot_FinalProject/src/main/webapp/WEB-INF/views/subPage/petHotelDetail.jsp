@@ -380,6 +380,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<span>총합계</span> <span>235,283원</span>
 					</div>
 					<button class="book_btn">예약하기</button>
+					<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">
 				</div>
 			</article>
 		</section>
