@@ -82,7 +82,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<p class="copy">Copy!</p>
 						</div>
 						<div class="contact_box">
-							<img src="/images/phone.png" alt=""> <span>연락처 : </span>
+							<img src="/images/phone.png" alt=""><span>연락처 : </span>
 							<span id="hotelCallNumber">${list.telNumber}</span> <i class="fa-regular fa-copy" id="phoneCopy"></i>
 							<p class="copy">Copy!</p>
 						</div>
