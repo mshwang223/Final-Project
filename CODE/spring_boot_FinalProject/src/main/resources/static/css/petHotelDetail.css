@@ -155,11 +155,11 @@
 }
 
 
-.copy{
+.location_box .copy, .contact_box .copy{
   display: none;
   position:absolute;
-  top: -42px;
-  right: -33px;
+  top: -40px;
+  right: 133px;
   width: 65px;
   padding: 8px;
   -webkit-border-radius: 8px;
@@ -169,6 +169,10 @@
   font-size: 16px;
   font-weight: 600;
   text-align: center;
+}
+
+.contact_box .copy{
+	right: 490px;
 }
 
 .copy:after {
