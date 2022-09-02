@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring_boot.FinalProject.dao.IUtilDAO">
+	<!-- 지역코드 조회 기능 -->
+  	<select id="selectState" resultType="com.spring_boot.FinalProject.model.UtilVO">
+		SELECT * FROM state
+    </select>
+</mapper>

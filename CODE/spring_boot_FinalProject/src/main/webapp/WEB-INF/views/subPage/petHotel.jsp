@@ -43,11 +43,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						</div>
 						<div class="search_pop" id="searchPop">
 							<ul id="searchList">
-								<li>서울</li>
-								<li>부산</li>
-								<li>제주도</li>
-								<li>강원도</li>
-								<li>강릉</li>
+								<c:forEach var="list" items="${lists}" varStatus="loop">
+									<li value="${list.stateId}">${list.stateName}</li>
+								</c:forEach>
 							</ul>
 						</div>
 					</div>

@@ -8,7 +8,6 @@ import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
 
 public interface IHotelService {
-
 	// 숙박펜션 조회 기능
 	ArrayList<StayVO> selectHotel(HashMap<String, Object> map);
 	

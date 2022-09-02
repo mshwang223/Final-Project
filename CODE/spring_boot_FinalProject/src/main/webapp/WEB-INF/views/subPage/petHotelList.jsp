@@ -70,6 +70,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	            <!-- 검색팝업 영역 -->
 	            <div class="popup_space">
 	              <div class="search_option">
+	              	
 	                <div class="list_location">
 	                  <div class="location_detail">서울</div>
 	                </div>
