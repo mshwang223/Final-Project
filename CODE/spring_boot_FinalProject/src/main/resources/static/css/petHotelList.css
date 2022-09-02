@@ -188,7 +188,7 @@ input::placeholder{
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  z-index: 2;
+  z-index: 50;
 }
 /* 팝업 인원박스 */
 .person_count_option .tlt_popup_person{
@@ -287,8 +287,7 @@ input::placeholder{
   
     z-index: 50;
 }
-.result_filter_option1, .result_filter_option2,
-.result_filter_option3, .result_filter_option4{
+.result_filter_option {
   width: 208px;
   height: 38px;
   padding: 0px 15px;

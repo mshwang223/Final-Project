@@ -39,6 +39,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	      <!-- 메인 리스트 -->
 	      <div class="list_main">
 	        <div class="main_box">
+	          <form id="userFrm" method="post" action="<c:url value="/petHotelList/0"/>">
 	          <div class="search_box">
 	            <div class="in_box">
 	              <div class="text_search_destination">
@@ -47,7 +48,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	              </div>
 	              <div class="box_input">
 	                <div class="box_destination">
-	                  <input type="text" id="btnDestination" class="input_destination" 
+	                  <input type="text" id="btnDestination" class="input_destination" name="area"
 	                  		 placeholder="목적지를 검색하세요" value="<c:url value="${map.area}"/>">
 	                </div>
 	                <div class="box_daterange">
@@ -55,7 +56,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	                  		 placeholder="날짜를 입력해 주세요" value="<c:url value="${map.period}"/>">
 	                </div>
 	                <div class="box_person_count">
-	                  <input type="text" id="btnCount" class="txt_stay" placeholder="성인0, 반려동물1"  
+	                  <input type="text" id="btnCount" class="txt_stay" name="count" placeholder="성인0, 반려동물1"  
 	                  		 spellcheck="false" value="<c:url value="${map.count}"/>">
 	                </div>
 	                <button id="listSearchBtn" class="search_list_btn">
@@ -116,17 +117,18 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	            </div>
 	            <!-- 팝업영역 끝 -->
 	          </div>
+	          </form> 
 	          <!-- 필터 영역 -->
 	          <div class="filter_box">
 	            <div class="ttl_hotel_list">검색 결과 총 ${rowCnt}개</div>
 	            <input type="hidden" id="rowCnt" name="rowCnt" value="<c:url value='${rowCnt}'/>">
 	            <div class="filter_popular">
-	              <button id="btnFilter" class="result_filter_open"><span>추천순</span><i id="arrowDown" class="fa-solid fa-angle-down"></i></button>
+	              <button id="btnFilter" class="result_filter_open"><span>전체</span><i id="arrowDown" class="fa-solid fa-angle-down"></i></button>
 	              <ul class="result_filter_select">
-	                <li class="result_filter_option1">추천순</li>
-	                <li class="result_filter_option2">평점순</li>
-	                <li class="result_filter_option3">가격 낮은 순</li>
-	                <li class="result_filter_option4">가격 높은 순</li>
+	                <li class="result_filter_option" value="0">전체</li>
+	                <li class="result_filter_option" value="1">평점순</li>
+	                <li class="result_filter_option" value="2">가격 낮은 순</li>
+	                <li class="result_filter_option" value="3">가격 높은 순</li>
 	              </ul>
 	            </div>
 	          </div>

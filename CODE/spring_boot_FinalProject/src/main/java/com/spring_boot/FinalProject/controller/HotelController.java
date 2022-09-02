@@ -29,12 +29,14 @@ public class HotelController {
 	}	
 	
 	// 호텔 검색 리스트 가기(검색)
-	@RequestMapping("/petHotelList")
-	public String viewHotelList(@RequestParam HashMap<String, Object> map,			
+	@RequestMapping("/petHotelList/{num}")
+	public String viewHotelList(@PathVariable String num,
+								@RequestParam HashMap<String, Object> map,			
 								Model model) {
 		
 		String count =(String)map.get("count");
 		String period = (String)map.get("daterange");
+		map.put("num", num);
 		map.put("period", period);
 		
 		/* 지역값 구분 */

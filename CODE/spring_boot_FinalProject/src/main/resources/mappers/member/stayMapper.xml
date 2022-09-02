@@ -16,7 +16,11 @@
   		 WHERE stateId = #{stateId}
   		   AND maxManCnt >= #{maxManCnt}
   		   AND maxPetCnt >= #{maxPetCnt}
-  	]]>	   
+  		 ORDER BY (CASE #{num} WHEN '0' THEN stay.stayNo END) ASC,
+  		          (CASE #{num} WHEN '1' THEN stay.star END) DESC,
+  		          (CASE #{num} WHEN '2' THEN (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) END) ASC,
+  		          (CASE #{num} WHEN '3' THEN (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) END) DESC             
+   	]]>	   
 	</select>
 	
   	<!-- 숙박펜션 세부화면 조회 기능 -->

@@ -102,8 +102,35 @@ $(document).ready(function(){
 		$('.result_filter_select').slideToggle('500', function(){
 			$('#arrowDown').toggleClass('fa-angle-down');
 			$('#arrowDown').toggleClass('fa-angle-up');
+			
 		});
 	});
+	
+	$(".result_filter_option").click(function() {
+		var submitPath;
+		if($(this).val() == '0') {
+			submitPath = "/petHotelList/0";
+   			
+   			$("#userFrm").attr('action', submitPath);
+			$("#userFrm").submit();
+		} else if($(this).val() == '1') {
+			submitPath = "/petHotelList/1";
+   			
+   			$("#userFrm").attr('action', submitPath);
+			$("#userFrm").submit();
+		} else if($(this).val() == '2') {
+			submitPath = "/petHotelList/2";
+   			
+   			$("#userFrm").attr('action', submitPath);
+			$("#userFrm").submit();		
+		} else {
+			submitPath = "/petHotelList/3";
+   			
+   			$("#userFrm").attr('action', submitPath);
+			$("#userFrm").submit();		
+		}
+	});
+	
 	// 로고 클릭시 index로
 	$('.logo_box').click(function(){
 		location.href = 'index.html';
@@ -144,7 +171,8 @@ $(document).ready(function(){
 			alert('인원수를 입력해주세요');
 			return false;
 		}else{
-			widow.location.href = '/petHotelList';
+			//widow.location.href = '/petHotelList';
+			$("#userFrm").submit();
 		}
 	});
 	

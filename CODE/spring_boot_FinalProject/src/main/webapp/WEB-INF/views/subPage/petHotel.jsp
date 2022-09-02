@@ -32,7 +32,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 
 		<section class="reservation_container">
 			<article>
-				<form id="userFrm" class="reservation_box" method="post" action="<c:url value="/petHotelList"/>">
+				<form id="userFrm" class="reservation_box" method="post" action="<c:url value="/petHotelList/0"/>">
 					<div class="search_area">
 						<div>
 							<div class="search_area_title">
