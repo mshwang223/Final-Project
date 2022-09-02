@@ -49,16 +49,16 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	              <div class="box_input">
 	                <div class="box_destination">
 	                  <input type="text" id="btnDestination" class="input_destination"
-	                  		 placeholder="목적지를 검색하세요" name="area" value="<c:url value="${map.area}"/>">
+	                  		 placeholder="목적지를 검색하세요" name="area" value="<c:url value="${map.area}"/>" readOnly>
 	                  <input type="hidden" id="areaCode" name="areaCode" value="<c:url value="${map.areaCode}"/>">
 	                </div>
 	                <div class="box_daterange">
 	                  <input type="text" id="rangepicker" class="stay_date" name="daterange" autocomplete="off" 
-	                  		 placeholder="날짜를 입력해 주세요" value="<c:url value="${map.period}"/>">
+	                  		 placeholder="날짜를 입력해 주세요" value="<c:url value="${map.period}"/>" readOnly>
 	                </div>
 	                <div class="box_person_count">
 	                  <input type="text" id="btnCount" class="txt_stay" name="count" placeholder="성인0, 반려동물1"  
-	                  		 spellcheck="false" value="<c:url value="${map.count}"/>">
+	                  		 spellcheck="false" value="<c:url value="${map.count}"/>" readOnly>
 	                </div>
 	                <button id="listSearchBtn" class="search_list_btn">
 	                  <div>
