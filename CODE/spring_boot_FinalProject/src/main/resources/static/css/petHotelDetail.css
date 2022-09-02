@@ -146,18 +146,14 @@
 
 .location_box, .contact_box{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
-  width: 405px;
   font-size: 20px;
   
   margin-bottom: 20px;
 }
 
-.contact_box{
-  width: 250px;
-}
 
 .copy{
   display: none;
@@ -186,12 +182,23 @@
   left: 50%; 
 }
 
+i {
+  position: relative;
+  left: 5px;	
+}
+
 .location_box > i:hover, .contact_box > i:hover {
   cursor: pointer;
 }
 
 .location_box > i:hover + p.copy, .contact_box > i:hover + p.copy{
   display: block;
+}
+
+span.spanWidth {
+  text-align: left;
+  padding-left: 15px;
+  width: 100px;	
 }
 
 /* 복사 시 팝업 박스 */

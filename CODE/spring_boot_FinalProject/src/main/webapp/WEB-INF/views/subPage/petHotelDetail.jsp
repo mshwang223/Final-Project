@@ -77,13 +77,13 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<div class="info_content_box2">
 						<div class="location_box">
-							<img src="/images/location.png" alt=""><span>주소 : </span>
-							<span id="address">${list.stayAddress}</span> <i class="fa-regular fa-copy" id="locationCopy"></i>
+							<img src="/images/location.png" alt=""><span class="spanWidth">주소 : </span>
+							<span id="address spanText">${list.stayAddress}</span> <i class="fa-regular fa-copy" id="locationCopy"></i>
 							<p class="copy">Copy!</p>
 						</div>
 						<div class="contact_box">
-							<img src="/images/phone.png" alt=""><span>연락처 : </span>
-							<span id="hotelCallNumber">${list.telNumber}</span> <i class="fa-regular fa-copy" id="phoneCopy"></i>
+							<img src="/images/phone.png" alt=""><span class="spanWidth">연락처 : </span>
+							<span id="hotelCallNumber spanText">${list.telNumber}</span> <i class="fa-regular fa-copy" id="phoneCopy"></i>
 							<p class="copy">Copy!</p>
 						</div>
 					</div>
