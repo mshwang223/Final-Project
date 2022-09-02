@@ -25,7 +25,7 @@
 	
   	<!-- 숙박펜션 세부화면 조회 기능 -->
   	<select id="selectDetailHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
-		SELECT *
+		SELECT *, #{period} AS period, #{count} AS count
 		  FROM stay
 		 WHERE stayNo = #{stayNo}   
 	</select>

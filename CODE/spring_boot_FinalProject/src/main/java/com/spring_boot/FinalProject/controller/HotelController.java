@@ -57,7 +57,6 @@ public class HotelController {
 		ArrayList<UtilVO> areaLists = utilService.selectState();
 		model.addAttribute("areaLists", areaLists);
 		
-		String area = (String)map.get("area");
 		String areaCode = (String)map.get("areaCode");
 		
 		String count = (String)map.get("count");
@@ -95,18 +94,16 @@ public class HotelController {
 	}
 	
 	// 호텔 상세 페이지
-	@RequestMapping("/petHotelDetail/stayNo={stayNo}&period={period}&count={count}")
+	@RequestMapping("/petHotelDetail/stayNo={stayNo}")
 	public String viewHotelDetail(@PathVariable("stayNo") String stayNo,
-								  @PathVariable("period") String period,
-								  @PathVariable("count") String count,
-								  Model model) {
-		
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		
+								  @RequestParam HashMap<String, Object> map,
+								  HttpSession session, Model model) {
 		
 		map.put("stayNo", stayNo);
+		
+		String period = (String)map.get("daterange");
 		map.put("period", period);
-		map.put("count", count);
+
 		
 		// 호텔펜션 테이블
 		StayVO vo = hotelService.selectDetailHotel(map);
@@ -132,6 +129,16 @@ public class HotelController {
 		String address = vo.getStayAddress();
 		String coordinate = geoService.geoAddress(address);
 		model.addAttribute("coordinate", coordinate);
+		
+		// 펫 등록증 소유여부 확인
+		String sid = (String)session.getAttribute("sid");
+		String userId = userService.selectPetUser(sid);
+		
+		String petChkYn = "Y";
+		if(userId == null) petChkYn = "N";
+		
+		model.addAttribute("petChkYn", petChkYn);
+		
 		
 		return "subPage/petHotelDetail";
 	}

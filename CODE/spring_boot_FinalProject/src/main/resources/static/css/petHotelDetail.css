@@ -157,9 +157,9 @@
 
 .location_box .copy, .contact_box .copy{
   display: none;
-  position:absolute;
+  position:relative;
   top: -40px;
-  right: 133px;
+  right: 20px;
   width: 65px;
   padding: 8px;
   -webkit-border-radius: 8px;
@@ -169,10 +169,6 @@
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-}
-
-.contact_box .copy{
-	right: 490px;
 }
 
 .copy:after {
@@ -370,7 +366,7 @@ span.spanWidth {
   position: sticky;
   top: 105px;
   width: 450px;
-  height: 600px;
+  height: max-content;
   border-radius: 20px;
   border: 1px solid #ddd;
   padding: 30px;
@@ -537,7 +533,6 @@ span.spanWidth {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 175px;
   margin-top: 20px;
   padding: 0 10px 20px 10px;
   border-bottom: 1px solid #ddd;
@@ -548,6 +543,8 @@ span.spanWidth {
   justify-content: space-between;
   font-size: 20px;
   font-weight: 500;
+  
+  padding: 10px;
 }
 
 .total_charge{
@@ -1241,5 +1238,130 @@ span.spanWidth {
     clear: none !important;
   }
 }
+
+/* 할인 박스 레이아웃 */
+
+/* 대상 버튼 레이아웃 */
+.dicntClick {
+  font-size: 18px;
+  font-weight: bold;
+  
+  padding: 3px 6px;
+  
+  background: #ee82ee;
+  color: white;
+  
+  cursor: pointer;
+  
+  border-radius: 5px;
+  border: none;	
+}
+
+.dicntClick:active {
+  background: white;
+  color: black;	
+}
+
+/* 드롭다운 박스 레이아웃 */
+form.dicnt-dropBox {
+  display: none;	
+  height: max-content;
+  
+  border: 1px solid #ddd;
+  padding: 10px;
+  
+  font-size: 18px;	
+}
+
+div.uploadImg-box {
+  margin-top: 10px;
+  
+  height: 221px;
+  
+  background-color: white;
+  
+  text-align: center;
+  
+  position: relative;
+}
+
+.uploadImg-box > img {
+  width: 100%;
+  height: 100%;
+  
+  margin: none;	
+}
+
+i.add_img_file {
+  font-size: 80px;
+
+  margin-top: 18%;
+  color: #ee82ee;
+	
+  position: absolute;
+  left: 140px;
+  	
+  cursor: pointer;
+}
+
+div.uploadImg-box > div {
+  margin-top: 3%;
+  
+  position: absolute;
+  bottom: 50px;
+  left: 82px;	
+}
+
+/* 업로드 버튼 레이아웃 */
+.btnUpload_box {
+  text-align: right;	
+}
+
+.btnUpload_box > button {
+  margin-left: 10px;
+  padding: 3px 6px;	
+	
+  font-size: 16px;
+  font-weight: bold;
+  
+  visibility: hidden;	
+}
+
+/* 적용 버튼 */
+.btn_signup_box {
+  margin: 0 auto;
+  float: right;
+}
+
+.btn_signup_done {
+  display: none;
+  	
+  margin: 10px 0px;	
+  
+  width: 60px;
+  height: 30px;
+
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: #ee82ee;
+  color: #fff;
+  
+  border: none;
+  border-radius: 5px;
+  
+  cursor: pointer;
+}
+
+.btn_signup_done:active {
+  background: white;
+  color: black;	
+}
+
+/* 적용 후 결과 */
+div.disCount_total {
+  display: none;	
+}
+
 
 

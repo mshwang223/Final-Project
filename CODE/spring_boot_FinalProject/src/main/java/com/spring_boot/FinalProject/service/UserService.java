@@ -80,6 +80,12 @@ public class UserService implements IUserService {
 		return dao.selectPet(petCode);
 	}
 	
+	// 펫 등록증 소유 여부 확인
+	@Override
+	public String selectPetUser(String userId) {
+		return dao.selectPetUser(userId);
+	}
+	
 	// 회원탈퇴
 	@Override
 	public void deleteUser(String userId) {

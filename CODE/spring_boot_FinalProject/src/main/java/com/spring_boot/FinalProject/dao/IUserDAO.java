@@ -36,6 +36,9 @@ public interface IUserDAO {
 	// 펫 등록증 확인
 	PetCardVO selectPet(String petCode);
 	
+	// 펫 등록증 소유 여부 확인
+	String selectPetUser(String userId);
+	
 	// 호텔 등록
 	void insertHotel(InsertHotelVO vo);
 

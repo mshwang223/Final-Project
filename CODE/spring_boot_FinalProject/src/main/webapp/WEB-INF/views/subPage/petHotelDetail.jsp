@@ -28,6 +28,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/common.css'/>">
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/petHotelDetail.css'/>">
 	<!-- js -->
+	<script defer src="<c:url value='/js/clipboard.js'/>"></script>
 	<script defer src="<c:url value='/js/petHotelDetail.js'/>"></script>
 
 </head>
@@ -79,12 +80,14 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="info_content_box2">
 						<div class="location_box">
 							<img src="/images/location.png" alt=""><span class="spanWidth">주소 : </span>
-							<span id="address spanText">${list.stayAddress}</span> <i class="fa-regular fa-copy" id="locationCopy"></i>
+							<span id="address">${list.stayAddress}</span> 
+							<i class="fa-regular fa-copy" id="locationCopy" data-clipboard-action="copy" data-clipboard-target="#address"></i>
 							<p class="copy">Copy!</p>
 						</div>
 						<div class="contact_box">
 							<img src="/images/phone.png" alt=""><span class="spanWidth">연락처 : </span>
-							<span id="hotelCallNumber spanText">${list.telNumber}</span> <i class="fa-regular fa-copy" id="phoneCopy"></i>
+							<span id="hotelCallNumber">${list.telNumber}</span> 
+							<i class="fa-regular fa-copy" id="phoneCopy" data-clipboard-action="copy" data-clipboard-target="#hotelCallNumber"></i>
 							<p class="copy">Copy!</p>
 						</div>
 					</div>
@@ -370,11 +373,35 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<span>청소비</span><span>15,000원</span>
 						</div>
 						<div class="charge_box3">
-							<span>서비스 수수료</span><span>27,530원</span>
+							<span>서비스 수수료</span><span>30,000원</span>
 						</div>
 						<div class="charge_box4">
-							<span>숙박세와 수수료</span><span>2,753원</span>
+							<span>숙박세와 수수료</span><span>3,000원</span>
 						</div>
+						<c:if test="${petChkYn eq 'Y'}">
+						<div class="charge_box5">
+							<span>펫등록증 (30%)할인</span>
+							<span><button id="dicntClick" class="dicntClick">클릭!</button></span>
+						</div>
+						<form id="petForm" name="petForm" class="dicnt-dropBox">
+							<div class="btnUpload_box">
+								<button id="cancel" type="button">취소</button>
+								<button id="confirm" type="button">확인</button>
+							</div>
+							<div class="uploadImg-box">
+								<img id="profile_img_preview" src="<c:url value='/images/bgpetCard.png'/>"/>
+								<i class="fa-solid fa-circle-plus add_img_file"></i>
+								<input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
+								<div>(등록증을 업로드 하세요)</div>
+							</div>
+							<div class="btn_signup_box">
+								<button type="submit" class="btn_signup_done">적용</button>
+							</div>
+						</form>
+						<div class="disCount_total">
+							<span>할인 가격</span><span>0원</span>
+						</div>
+						</c:if>
 					</div>
 					<div class="total_charge">
 						<span>총합계</span> <span>235,283원</span>

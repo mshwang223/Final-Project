@@ -108,6 +108,10 @@ div.dropdown-box div:last-child {
   padding-top: 8px;
 }
 
+.dropdown-contents > li:hover {
+  background: white;	
+}
+
 div.search-box {
   width: 230px;
   height: 35px;

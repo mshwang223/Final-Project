@@ -26,8 +26,6 @@ $(document).ready(function(){
 	calculate();
 });
 
-
-
   // 인원검색 영역 클릭시
   $('.info_content_count').click(function(){
 		$('.person_count_option').toggleClass('dis_block'); 
@@ -194,7 +192,12 @@ $(document).ready(function(){
 	  position: new naver.maps.LatLng(y, x),
 	  map: map
 	});	
-	
+
+	// 전역값 설정
+	var total = 0;			// 숙박비
+	var totalPrice = 0;		// 총합계
+	var discountPrice = 0;	// 할인가
+		
 	// 선택 버튼 클릭 시 계산
 	$("#roomPrice").text($("div.room_box > div").eq(0).text().replace("₩", ""));
 	calculate();
@@ -216,7 +219,6 @@ $(document).ready(function(){
 		
 		return Math.abs(diffDate / (1000 * 60 * 60 * 24));	/* 밀리세컨 * 초 * 분 * 시 = 일 */
 	}
-	
 	
 	function calculate() {
 		var txtStartDate = $("#rangepicker1").val();
@@ -243,7 +245,7 @@ $(document).ready(function(){
 		var roomPrice = $("#roomPrice").text();
 		$("div.charge_box1 > span:first-child").text(roomPrice + " x " + totalDay + "박");
 		
-		var total = Number(roomPrice.replace(/[₩,원]/g, "") * totalDay);
+		total = Number(roomPrice.replace(/[₩,원]/g, "") * totalDay);
 		$("div.charge_box1 > span:last-child").text(total.toLocaleString() + "원");
 		
 		// 청소비
@@ -262,10 +264,123 @@ $(document).ready(function(){
 		$("div.charge_box4 > span:last-child").text(outTaxText);
 		
 		// 총합계
-		var totalPrice = Number(total + cleanPrice + serviceTax + outTax);
+		totalPrice = Number(total + cleanPrice + serviceTax + outTax - discountPrice);
 		$("div.total_charge > span:last-child").text(totalPrice.toLocaleString() + "원");
 		
 	}
+	
+	// 할인 토글
+	$("#dicntClick").on('click', function() {
+		$(".dicnt-dropBox").slideToggle();	
+	});
+	
+	// 이미지 클릭 시 업로드
+ 	$(".add_img_file").click(function () {
+	    $("#uploadFile").trigger('click');
+	});
+ 
+ 	$("#uploadFile").on('change', function() {
+ 		setImageFromFile(this, '#profile_img_preview');
+ 		$(".btnUpload_box > button").css('visibility', 'visible');
+ 		$("#profile_img_preview").css('opacity', '0.5');
+ 	});
+	
+	// 이미지 미리보기
+	function setImageFromFile(input, expression) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        reader.onload = function (e) {
+	            $(expression).attr('src', e.target.result);
+	        }
+	        reader.readAsDataURL(input.files[0]);
+	        reader = null;
+	    }
+	}
+	
+	// 이미지 취소 버튼 기능
+	$(".btnUpload_box > #cancel").click(function() {
+		$("#profile_img_preview").prop('src', '/images/bgpetCard.png');
+		$("#profile_img_preview").css('opacity', '1');
+		$(".uploadImg-box > i").css('display', 'block');
+		$(".uploadImg-box > i").css('bottom', '80px');
+		$(".uploadImg-box > div").css('display', 'block');
+		
+		$(".btn_signup_done").css('display', 'none');
+		
+		$("#uploadFile").val("");	// 초기화
+		
+		// 할인가격 계산
+		discountPrice = 0;
+		$("div.disCount_total > span:last-child").text(discountPrice.toLocaleString() + "원");
+		$("div.disCount_total").css('display', 'none');
+		calculate();
+	});
+	
+	// 이미지 확인 버튼 기능
+	$(".btnUpload_box > #confirm").click(function() {
+ 		// 유효성 체크
+ 		if($("#uploadFile").val() == "") {
+ 			alert("먼저 등록증을 업로드 해주세요.");
+ 			return false;
+ 		}	
+	
+		chkUpload = 1;
+		$("#profile_img_preview").css('opacity', '1');
+		$(".uploadImg-box > i").css('display', 'none');
+		$(".uploadImg-box > div").css('display', 'none');
+		
+		$(".btn_signup_done").css('display', 'block');
+	});
+	
+	// 펫 로그인(OCR)
+   	let chkUpload = 0;
+   	$("#petForm").on('submit', function(){
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+ 		
+ 		// 유효성 체크
+ 		if($("#uploadFile").val() == "") {
+ 			alert("먼저 등록증을 업로드 해주세요.");
+ 			return false;
+ 		}
+ 		
+ 		if(chkUpload == 0) {
+ 			alert("업로드 이미지 확인 버튼을 클릭해 주세요.");
+ 			return false;
+ 		}
+ 		
+ 		var formData = new FormData($("#petForm")[0]);
+ 		
+ 		$.ajax({
+ 			type:"post",
+ 			enctype: 'multipart/form-data',
+ 			url:"/petLoginOCR",
+ 			data: formData,
+			contentType : false,
+        	processData : false,
+			success:function(result){
+				// 성공 시 결과 받음
+				
+				if(result == "SUCCESS"){
+					alert("적용되었습니다.");
+					$("#petForm").css('display', 'none');
+					$(".disCount_total").css('display', 'flex');
+					
+					// 할인가격 계산
+					discountPrice = Number(total * 30 / 100);
+					$("div.disCount_total > span:last-child").text(discountPrice.toLocaleString() + "원");
+					calculate();
+				} else {
+					alert("적용되지 않는 할인 카드입니다.");
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		});  	
+   	});
 
 }); //document.ready 끝
 
