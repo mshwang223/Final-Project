@@ -134,12 +134,15 @@ public class HotelController {
 		String sid = (String)session.getAttribute("sid");
 		String userId = userService.selectPetUser(sid);
 		
+		System.out.println(userId);
+		
 		String petChkYn = "Y";
 		if(userId == null) petChkYn = "N";
 		
+		System.out.println(petChkYn);
+		
 		model.addAttribute("petChkYn", petChkYn);
-		
-		
+				
 		return "subPage/petHotelDetail";
 	}
 	

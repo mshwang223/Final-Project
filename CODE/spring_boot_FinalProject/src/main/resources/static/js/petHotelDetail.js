@@ -110,6 +110,7 @@ $(document).ready(function(){
 	   });
 	   
 	//주소 복사하기
+
 	const location = document.getElementById('address');
 	$('#locationCopy').click(function(){
 		window.navigator.clipboard.writeText(location.textContent).then(() => {
@@ -129,8 +130,7 @@ $(document).ready(function(){
 			$('#copy_box').fadeOut(2500, 'swing');
 		});
 		
-	});
-	
+	});	
 	
 	// reservation페이지로 이동
 	$('.book_btn').click(function(){
@@ -196,6 +196,7 @@ $(document).ready(function(){
 	// 전역값 설정
 	var total = 0;			// 숙박비
 	var totalPrice = 0;		// 총합계
+	var chkDiscnt = "N";
 	var discountPrice = 0;	// 할인가
 		
 	// 선택 버튼 클릭 시 계산
@@ -263,6 +264,15 @@ $(document).ready(function(){
 		var outTax = 3000;
 		$("div.charge_box4 > span:last-child").text(outTaxText);
 		
+		// 할인가격 계산
+		if(chkDiscnt === "Y") {
+			discountPrice = Number(total * 30 / 100);
+			$("div.disCount_total > span:last-child").text(discountPrice.toLocaleString() + "원");
+		} else {
+			discountPrice = 0;
+		}
+		
+		
 		// 총합계
 		totalPrice = Number(total + cleanPrice + serviceTax + outTax - discountPrice);
 		$("div.total_charge > span:last-child").text(totalPrice.toLocaleString() + "원");
@@ -310,6 +320,7 @@ $(document).ready(function(){
 		$("#uploadFile").val("");	// 초기화
 		
 		// 할인가격 계산
+		chkDiscnt = "N";
 		discountPrice = 0;
 		$("div.disCount_total > span:last-child").text(discountPrice.toLocaleString() + "원");
 		$("div.disCount_total").css('display', 'none');
@@ -368,6 +379,7 @@ $(document).ready(function(){
 					$(".disCount_total").css('display', 'flex');
 					
 					// 할인가격 계산
+					chkDiscnt = "Y";
 					discountPrice = Number(total * 30 / 100);
 					$("div.disCount_total > span:last-child").text(discountPrice.toLocaleString() + "원");
 					calculate();
