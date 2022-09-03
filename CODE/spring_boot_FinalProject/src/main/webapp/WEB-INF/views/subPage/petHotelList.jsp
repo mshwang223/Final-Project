@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
@@ -137,7 +138,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	                  <div><i class="fa-solid fa-star"></i>${list.star}</div>
 	                </div>
 	                <div class="wrap_date_Stay">
-	                	${map.period}
+	                	${fn:substring(map.period,5,14) } ~ ${fn:substring(map.period,21,29) }
 	                </div>
 	                <div class="per_stay_price">
 	                <fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${list.price}" />원 / 1박

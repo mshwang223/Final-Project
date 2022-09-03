@@ -36,8 +36,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<input type="hidden" id="count" name="count" value="${map.count}"/>
 							<div class="info_tlt">${stayList.stayName }</div>
 							<div class="info_address"><i class="fa-solid fa-location-dot address_icon"></i>${stayList.stayAddress}</div>
-							<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${map.period}</div>
-							<div class="info_person_count"><i class="fa-solid fa-user person_icon"></i>성인 ${stayList.maxManCnt}인</div>
+							<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${fn:substring(map.period,0,29) }</div>
+							<div class="info_person_count"><i class="fa-solid fa-user person_icon"></i>${map.count}</div>
 							<div class="info_bed"><i class="fa-solid fa-bed bed_icon"></i>${map.roomType}</div>
 						</div>
 					</div>

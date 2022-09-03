@@ -87,7 +87,7 @@ $(function(){
 });
 
 $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
-$('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.endDate.format('YYYY.MM.DD(dd)'));
+$('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.endDate.format('YYYY.MM.DD(dd)') +', ' +Math.floor((picker.endDate - picker.startDate)/86400000)+'박');
 
 });
 
