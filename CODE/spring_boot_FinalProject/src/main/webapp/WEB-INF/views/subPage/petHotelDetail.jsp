@@ -404,10 +404,20 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						</c:if>
 					</div>
 					<div class="total_charge">
-						<span>총합계</span> <span>235,283원</span>
+						<span>총합계</span> <span>0원</span>
 					</div>
 					<button class="book_btn">예약하기</button>
-					<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">
+					
+					<form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv"/>">
+						<input type="hidden" id="count" name="count" value="${map.count}"/>
+						<input type="hidden" id="roomType" name="roomType" value=""/>
+						<input type="hidden" id="rPrice" name="rPrice" value="0"/>
+						<input type="hidden" id="rangepicker" name="rangepicker" value="${map.period}"/>
+						<input type="hidden" id="discount" name="discount" value="0"/>
+						<input type="hidden" id="total" name="total" value=""/>
+						<input type="hidden" id="diffDay" name="diffDay" value=""/>
+						<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">	
+					</form>
 				</div>
 			</article>
 		</section>

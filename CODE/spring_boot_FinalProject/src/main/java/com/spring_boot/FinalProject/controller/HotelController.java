@@ -134,12 +134,8 @@ public class HotelController {
 		String sid = (String)session.getAttribute("sid");
 		String userId = userService.selectPetUser(sid);
 		
-		System.out.println(userId);
-		
 		String petChkYn = "Y";
 		if(userId == null) petChkYn = "N";
-		
-		System.out.println(petChkYn);
 		
 		model.addAttribute("petChkYn", petChkYn);
 				
@@ -147,34 +143,25 @@ public class HotelController {
 	}
 	
 	// 호텔 예약 페이지
-	@RequestMapping("/petHotelRsv/stayNo={stayNo}&period={period}")
-	public String viewHotelRsv(@PathVariable("stayNo") String stayNo,
-							   @PathVariable("period") String period,
+	@RequestMapping("/petHotelRsv")
+	public String viewHotelRsv(@RequestParam HashMap<String, Object> map,
 							   HttpSession session, Model model) {
 		
-		HashMap<String, Object> map = new HashMap<String, Object>();
 		String userId = (String) session.getAttribute("sid");
 		UserVO user = userService.selectUser(userId);
 		
-		map.put("stayNo", stayNo);
-		map.put("period", period);
-		
-		System.out.println(stayNo);
 		// 호텔
 		StayVO stayList = hotelService.selectDetailHotel(map);
-		System.out.println(stayList);
+		String period = (String)map.get("rangepicker");
+		map.put("period", period);
 		
-		
-		// 룸
-		ArrayList<RoomVO> roomList = hotelService.selectDetailRoom(map);
-		System.out.println(roomList);
-		
-		
+		System.out.println(map.keySet());
+		System.out.println(map.get("discount"));
+				
 		String[] email = user.getUserEmail().split("@"); 
 		
 		model.addAttribute("user", user);
 		model.addAttribute("stayList", stayList);
-		model.addAttribute("roomList", roomList);
 		model.addAttribute("email", email);
 		model.addAttribute("map", map);
 		

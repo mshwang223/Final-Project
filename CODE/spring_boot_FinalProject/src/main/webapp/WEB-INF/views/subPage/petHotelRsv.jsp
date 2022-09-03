@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!-- 양식다시제출 제거 -->
 <%    
@@ -35,12 +36,12 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<div class="info_address"><i class="fa-solid fa-location-dot address_icon"></i>${stayList.stayAddress}</div>
 							<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${map.period}</div>
 							<div class="info_person_count"><i class="fa-solid fa-user person_icon"></i>성인 ${stayList.maxManCnt}인</div>
-							<div class="info_bed"><i class="fa-solid fa-bed bed_icon"></i>더블침대 1개</div>
+							<div class="info_bed"><i class="fa-solid fa-bed bed_icon"></i>${map.roomType}</div>
 						</div>
 					</div>
 					<div class="box_type_price">
-						<div class="room_type">${room.roomType eq 1}</div>
-						<div class="ttl_price">${room.price }원</div>
+						<div class="room_type">${map.roomType}</div>
+						<div class="ttl_price"><fmt:formatNumber type="currency" value="${map.rPrice}" />원</div>
 					</div>
 				</div>
 				<div class="box_cus_info">
@@ -111,9 +112,27 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<div class="follow_box">
 				<div class="info_price">결제정보</div>
 				<div class="price_per_night">
-					<div class="one_night">1박 ~</div>
-					<div class="one_night_price">352,000원</div>
+					<div class="one_night">${map.diffDay}박(1박 : <fmt:formatNumber type="currency" value="${map.rPrice}" />원)</div>
+					<div class="one_night_price"><fmt:formatNumber type="currency" value="${map.rPrice * map.diffDay}" />원</div>
 				</div>
+				<div class="price_per_night">
+					<div class="one_night">청소비</div>
+					<div class="one_night_price"><fmt:formatNumber type="currency" value="15000" />원</div>
+				</div>
+				<div class="price_per_night">
+					<div class="one_night">서비스 수수료</div>
+					<div class="one_night_price"><fmt:formatNumber type="currency" value="30000" />원</div>
+				</div>
+				<div class="price_per_night">
+					<div class="one_night">숙박세 외 수수료</div>
+					<div class="one_night_price"><fmt:formatNumber type="currency" value="3000" />원</div>
+				</div>
+				<c:if test="${map.discount gt 0}">
+				<div class="price_per_night">
+					<div class="one_night">할인금액</div>
+					<div class="one_night_price"><fmt:formatNumber type="currency" value="${map.discount}" />원</div>
+				</div>
+				</c:if>
 				<div id="insurancePrice" class="insurance_price">
 					<i class="fa-solid fa-shield-dog"></i><span>펫밀리가 떴다 가격 보장제</span>
 				</div>
@@ -125,7 +144,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="final_price_box">
 					<div class="price_txt">최종 금액</div>
-					<div class="price_won">352,000원</div>
+					<div class="price_won"><fmt:formatNumber type="currency" value="${map.total}" />원</div>
 				</div>
 				<button type="submit" id="finalPayBtn" class="final_pay_btn">예약하기</button>
 			</div>

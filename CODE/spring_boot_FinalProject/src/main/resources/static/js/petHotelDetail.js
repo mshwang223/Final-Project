@@ -17,14 +17,11 @@ $(document).ready(function(){
 	});
 
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
-	$('#rangepicker1').val(picker.startDate.format('MM.DD(dd)'));
-});
-
-    $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
-    $('#rangepicker2').val(picker.endDate.format('MM.DD(dd)'));
-	
-	calculate();
-});
+		$('#rangepicker1').val(picker.startDate.format('MM.DD(dd)'));
+		$('#rangepicker2').val(picker.endDate.format('MM.DD(dd)'));
+		$("#rangepicker").val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.endDate.format('YYYY.MM.DD(dd)'));
+		calculate();
+	});
 
   // 인원검색 영역 클릭시
   $('.info_content_count').click(function(){
@@ -69,6 +66,11 @@ $(document).ready(function(){
 		}
 		$('#petCount').text(petCount);
 		$('#infoCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
+	});
+	
+	// 반영
+	$('#infoCount').on('change', function() {
+		$("#count").val($(this).val());
 	});
 
 	// 반려동물 - 버튼 클릭
@@ -134,8 +136,9 @@ $(document).ready(function(){
 	
 	// reservation페이지로 이동
 	$('.book_btn').click(function(){
-		var stay_no = $('.sticky_area').children('input[type=hidden]').val();
-		window.location.href = "/petHotelRsv/stayNo=" + stay_no + "&period=" + $("#rangepicker").val();
+		//var stay_no = $('.sticky_area').children('input[type=hidden]').val();
+		//window.location.href = "/petHotelRsv/stayNo=" + stay_no + "&period=" + $("#rangepicker").val();
+		$("#rsvForm").submit();
 	});
 	
 	// 현재 스크롤 위치
@@ -201,12 +204,19 @@ $(document).ready(function(){
 		
 	// 선택 버튼 클릭 시 계산
 	$("#roomPrice").text($("div.room_box > div").eq(0).text().replace("₩", ""));
+	$("#roomType").val($("div.room_box > span").eq(0).text().replace("#", ""));
+	$("#rPrice").val($("#roomPrice").text().replace(/[,원]/g, ""));
 	calculate();
 	$(".room_btn").click(function() {
 		var txtPrice = $(this).parent().children('div').text();
-		var price = txtPrice.replace(/[₩,원]/g, "");	// 정규식
+		var price = txtPrice.replace(/[₩]/g, "");	// 정규식
+		$("#roomPrice").text(price);
 		
-		$("#roomPrice").text(txtPrice.replace("₩", ""));
+		var roomName = $(this).parent().children('span').text();
+		var roomType = roomName.replace("# ", "");
+		$("#roomType").val(roomType);
+		
+		$("#rPrice").val($("#roomPrice").text().replace(/[,원]/g, ""));
 		
 		calculate();
 	});
@@ -245,6 +255,7 @@ $(document).ready(function(){
 		// 1번째
 		var roomPrice = $("#roomPrice").text();
 		$("div.charge_box1 > span:first-child").text(roomPrice + " x " + totalDay + "박");
+		$("#diffDay").val(totalDay);
 		
 		total = Number(roomPrice.replace(/[₩,원]/g, "") * totalDay);
 		$("div.charge_box1 > span:last-child").text(total.toLocaleString() + "원");
@@ -268,6 +279,7 @@ $(document).ready(function(){
 		if(chkDiscnt === "Y") {
 			discountPrice = Number(total * 30 / 100);
 			$("div.disCount_total > span:last-child").text(discountPrice.toLocaleString() + "원");
+			$("#discount").val(discountPrice);
 		} else {
 			discountPrice = 0;
 		}
@@ -276,6 +288,7 @@ $(document).ready(function(){
 		// 총합계
 		totalPrice = Number(total + cleanPrice + serviceTax + outTax - discountPrice);
 		$("div.total_charge > span:last-child").text(totalPrice.toLocaleString() + "원");
+		$("#total").val(totalPrice);
 		
 	}
 	
@@ -324,6 +337,7 @@ $(document).ready(function(){
 		discountPrice = 0;
 		$("div.disCount_total > span:last-child").text(discountPrice.toLocaleString() + "원");
 		$("div.disCount_total").css('display', 'none');
+		$("#discount").val(discountPrice);
 		calculate();
 	});
 	
@@ -382,6 +396,7 @@ $(document).ready(function(){
 					chkDiscnt = "Y";
 					discountPrice = Number(total * 30 / 100);
 					$("div.disCount_total > span:last-child").text(discountPrice.toLocaleString() + "원");
+					$("#discount").val(discountPrice);
 					calculate();
 				} else {
 					alert("적용되지 않는 할인 카드입니다.");

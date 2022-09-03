@@ -209,13 +209,11 @@ $(document).ready(function(){
 	$('#btnFilter').click(function(){
 	var arrowDown = $('#arrowDown');
 		if(arrowDown.hasClass('fa-angle-down')){
-				alert('보고싶엉');
 			  $(".result_filter_select").slideDown(500);
 			  $('#arrowDown').addClass('fa-angle-up');
 			  $('#arrowDown').removeClass('fa-angle-down');
 			  return false;
 		}else if(arrowDown.hasClass('fa-angle-up')){
-			alert('사랑해');
 			 $(".result_filter_select").slideUp(500);
 			 $('#arrowDown').addClass('fa-angle-down');
 			 $('#arrowDown').removeClass('fa-angle-up');
