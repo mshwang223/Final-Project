@@ -55,8 +55,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
                                <img src="<c:url value='/images/hotel4.jpg'/>"alt="상품" width="120" height="90">
                                 <div class="item-info">
                                     <p class="item-info__brand">도그 하우스</p>
-                                    <p class="item-info__name">ooooooooooooooooo</p>
-                                    <p>oooooo</p>
+                                    <p class="item-info__name">예약날짜</p>
+                                    
                                     <button>주문변경</button>
                                 </div>
                                 <div class="item__price">
@@ -72,8 +72,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
                                 <img src="<c:url value='/images/hotel5.jpg'/>"alt="상품" width="120" height="90">
                                 <div class="item-info">
                                     <p class="item-info__brand">도그 하우스2</p>
-                                    <p class="item-info__name">oooooooooooooo</p>
-                                    <p>ooooooooo</p>
+                                    <p class="item-info__name">예약날짜</p>
+                                    
                                     <button>주문변경</button>
                                 </div>
                                 <div class="item__price">
