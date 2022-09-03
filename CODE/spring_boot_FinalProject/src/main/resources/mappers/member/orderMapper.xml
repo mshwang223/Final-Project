@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring_boot.FinalProject.dao.IOrderDAO">
+  	<!-- 예약상품 저장 -->
+  	<insert id="insertRsv" parameterType="com.spring_boot.FinalProject.model.OrderVO">
+  		INSERT into orderProduct
+  		(userId, stayNo, manCnt, petCnt, rcvPhone)
+  		VALUES(#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone})
+  	</insert>
+</mapper>

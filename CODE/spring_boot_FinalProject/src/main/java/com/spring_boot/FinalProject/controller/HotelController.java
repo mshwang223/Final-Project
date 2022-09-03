@@ -11,14 +11,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring_boot.FinalProject.model.FacilityVO;
+import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.model.UtilVO;
 import com.spring_boot.FinalProject.service.GEOService;
 import com.spring_boot.FinalProject.service.HotelService;
+import com.spring_boot.FinalProject.service.OrderService;
 import com.spring_boot.FinalProject.service.UserService;
 import com.spring_boot.FinalProject.service.UtilService;
 
@@ -35,6 +38,9 @@ public class HotelController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	OrderService orderService;
 	
 	
 	// 숙박예약 가기(검색)
@@ -154,9 +160,6 @@ public class HotelController {
 		StayVO stayList = hotelService.selectDetailHotel(map);
 		String period = (String)map.get("rangepicker");
 		map.put("period", period);
-		
-		System.out.println(map.keySet());
-		System.out.println(map.get("discount"));
 				
 		String[] email = user.getUserEmail().split("@"); 
 		
@@ -168,4 +171,36 @@ public class HotelController {
 		
 		return "subPage/petHotelRsv";
 	}
+	
+	// 예약한 상품 저장
+	@ResponseBody
+	@RequestMapping("/insertRsv")
+	public String insertRsv(@RequestParam HashMap<String, Object> map,
+							HttpSession session, Model model) {
+		
+		
+		String userId = (String) session.getAttribute("sid");
+		String stayNo = (String) map.get("stayNo");
+		String count = (String)map.get("count");
+		
+		String man = count.split(", ")[0];
+		int manCnt = Integer.parseInt(man.substring(man.length()-1, man.length()));
+		
+		String pet = count.split(", ")[1];
+		int petCnt = Integer.parseInt(pet.substring(pet.length()-1, pet.length()));
+		
+		String rcvPhone = (String)map.get("rcvPhone");
+		
+		OrderVO vo = new OrderVO();
+		vo.setUserId(userId);
+		vo.setStayNo(stayNo);
+		vo.setManCnt(manCnt);
+		vo.setPetCnt(petCnt);
+		vo.setRcvPhone(rcvPhone);
+		
+		orderService.insertRsv(vo);		
+		
+		return "SUCCESS";
+	}
+	
 }

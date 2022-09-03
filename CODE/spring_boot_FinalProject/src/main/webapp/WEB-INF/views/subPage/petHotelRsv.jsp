@@ -26,12 +26,14 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	<c:import url="/WEB-INF/views/layout/top.jsp"/>
 	<section class="wrap">
 		<!-- middle -->
-		<section class="sec_rsv_wrap">
+		<form class="sec_rsv_wrap" id="userFrm">
 			<div class="rsv_wrap">
 				<div class="box_hotel_info">
 					<div class="box_img_tlt">
 						<div class="img_box"><img src="<c:url value='/images/stay2.jpg'/>"></div>
 						<div class="info_txt_Box">
+							<input type="hidden" id="stayNo" name="stayNo" value="${stayList.stayNo}"/>
+							<input type="hidden" id="count" name="count" value="${map.count}"/>
 							<div class="info_tlt">${stayList.stayName }</div>
 							<div class="info_address"><i class="fa-solid fa-location-dot address_icon"></i>${stayList.stayAddress}</div>
 							<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${map.period}</div>
@@ -54,7 +56,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						</div>
 						<div class="cus_phone">
 							<div class="tlt_all">연락처</div>
-							<input type="text" id="phNum" class="input_phone1">
+							<input type="text" id="phNum" name="rcvPhone" class="input_phone1">
 						</div>
 						<div class="cus_email">
 							<div class="tlt_all">이메일</div>
@@ -148,7 +150,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<button type="submit" id="finalPayBtn" class="final_pay_btn">예약하기</button>
 			</div>
-		</section>
+		</form>
 	<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 	</section>
 	<!-- footer -->
