@@ -101,14 +101,6 @@ $(document).ready(function(){
     }
   });
 
-	// 검색필터 영역 슬라이드토글
-	$('#btnFilter').click(function(){
-		$('.result_filter_select').slideToggle('500', function(){
-			$('#arrowDown').toggleClass('fa-angle-down');
-			$('#arrowDown').toggleClass('fa-angle-up');
-			
-		});
-	});
 	
 	$(".result_filter_option").click(function() {
 		var submitPath;
@@ -211,7 +203,35 @@ $(document).ready(function(){
 			$("div.list_box").append(tmpHtml);   	
     	}
     }
+    
+    // 검색필터 영역 슬라이드토글    
+    
+	$('#btnFilter').click(function(){
+	var arrowDown = $('#arrowDown');
+		if(arrowDown.hasClass('fa-angle-down')){
+				alert('보고싶엉');
+			  $(".result_filter_select").slideDown(500);
+			  $('#arrowDown').addClass('fa-angle-up');
+			  $('#arrowDown').removeClass('fa-angle-down');
+			  return false;
+		}else if(arrowDown.hasClass('fa-angle-up')){
+			alert('사랑해');
+			 $(".result_filter_select").slideUp(500);
+			 $('#arrowDown').addClass('fa-angle-down');
+			 $('#arrowDown').removeClass('fa-angle-up');
+			 return false;
+		}
+	});
 
+    // 검색필터 외부 클릭시 닫힘
+   	$(document).mouseup(function (e){
+	    var dropdown = $(".filter_popular");
+	    if(!dropdown.is(e.target) && dropdown.has(e.target).length == 0){
+	      $(".result_filter_select").slideUp(500);
+	      $('#arrowDown').addClass('fa-angle-down');
+	      $('#arrowDown').removeClass('fa-angle-up');
+	 	}
+	});
 });
 
 

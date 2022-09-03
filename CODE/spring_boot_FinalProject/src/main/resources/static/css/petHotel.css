@@ -246,12 +246,12 @@ span.option_span, .added_option{
 
 
 /* 호텔 , 펜션 (인기, 서울, 부산)  */
-
-.popular_area, .seoul_area, .busan_area, .special_area{
+custom
+.popular_area, .seoul_area, .busan_area, .special_area, .custom_area{
   margin-bottom: 90px;
 }
 
-.seoul_title, .popular_title, .busan_title, .special_title{
+.seoul_title, .popular_title, .busan_title, .special_title, .custom_title{
   background-color: #fff;
   width: 310px;
   height: 60px;
@@ -261,7 +261,7 @@ span.option_span, .added_option{
   margin-bottom: 30px;
 }
 
-.popular_title, .special_title{
+.popular_title, .special_title, .custom_title{
   width: 160px;
 }
 
@@ -269,7 +269,7 @@ span.option_span, .added_option{
   width: 265px;
 }
 
-.seoul_title > span, .popular_title > span, .busan_title > span, .special_title > span{
+.seoul_title > span, .popular_title > span, .busan_title > span, .special_title > span,  .custom_title > span{
   margin: 0 0 50px 22px;
   font-size: 25px;
   font-weight: 600;
@@ -289,7 +289,7 @@ span.option_span, .added_option{
   overflow: hidden;
 }
 
-.popular_img_box, .seoul_img_box, .busan_img_box, .special_img_box{
+.popular_img_box, .seoul_img_box, .busan_img_box, .special_img_box, .custom_img_box{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -299,7 +299,7 @@ span.option_span, .added_option{
   cursor: pointer;
 }
 
-.popular_img_box > img, .seoul_img_box > img, .busan_img_box > img, .special_img_box > img{
+.popular_img_box > img, .seoul_img_box > img, .busan_img_box > img, .special_img_box > img,  .custom_img_box > img{
   width: 280px;
   height: 280px;
   border-radius: 10px;
@@ -346,20 +346,20 @@ span.option_span, .added_option{
 }
 
 /* 이전, 다음 화살표 */
-.popular_prev, .seoul_prev, .busan_prev, .special_prev, .popular_next, .seoul_next, .busan_next, .special_next{
+.popular_prev, .seoul_prev, .busan_prev, .special_prev, .custom_prev, .popular_next, .seoul_next, .busan_next, .special_next, .custom_next{
   position:absolute;
   width: 35px;
   height: 35px;
   cursor: pointer;
 }
 
-.popular_prev, .seoul_prev, .busan_prev, .special_prev{
+.popular_prev, .seoul_prev, .busan_prev, .special_prev, .custom_prev{
   display: none;
   top: 135px;
   left: -75px;
 }
 
-.popular_next, .seoul_next, .busan_next, .special_next{
+.popular_next, .seoul_next, .busan_next, .special_next, .custom_next{
   top: 135px;
   right: -75px;
 }
