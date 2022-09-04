@@ -40,10 +40,26 @@ public class APIController {
 		return path;
 	}
 	
-	// 이미지 업로드
+	// 펫이미지 업로드
 	@ResponseBody
-	public String uploadPathImg() {
+	public String uploadPetPathImg() {
 		String path = "c:/springWorkspace/petImg/";
+		
+		return path;
+	}
+	
+	// 유저프로필 업로드
+	@ResponseBody
+	public String uploadProfilePathImg() {
+		String path = "c:/springWorkspace/profileImg/";
+		
+		return path;
+	}
+	
+	// 업체등록이미지 업로드
+	@ResponseBody
+	public String uploadCompanyPathImg() {
+		String path = "c:/springWorkspace/comImg/";
 		
 		return path;
 	}

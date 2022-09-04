@@ -104,7 +104,7 @@ public class HotelController {
 		  
 		  
 		  // 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
-		  String uploadPath = apiController.uploadPathImg(); // c:대소문자 상관없으며 마지막에 '/' 있어야 한다
+		  String uploadPath = apiController.uploadCompanyPathImg(); // c:대소문자 상관없으며 마지막에 '/' 있어야 한다
 		  
 		  // 2. 원본 파일 이름 설정
 		  String originalFileName = file.getOriginalFilename(); 

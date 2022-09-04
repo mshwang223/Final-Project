@@ -247,15 +247,28 @@ header .login_box{
 
 /* 로그인 시 이미지 레이아웃 */
 .user {
-  width: 180px;
+  width: 400px;
   margin-left: 80px;
   
   text-align: right;
+  
+  position: relative;
+  top: -15px;
+}
+
+/* 포인트 박스 */
+div.points_box {
+  font-size: 18px;	
+  font-weight: bold;
+  position: relative;
+  top: 36px;
+  right: 135px;	
 }
 
 .dropdown img {
   width: 40px;
   height: 40px;
+  
   border-radius: 20px;
   
   cursor: pointer;  	
@@ -437,15 +450,6 @@ header .login_box > .dropdown > span.loginForm:hover{
   height: 30px;
   margin: 0 10px 0 10px;
   cursor: pointer;
-}
-
-/* 포인트 박스 */
-div.points_box {
-  font-size: 18px;	
-  font-weight: bold;
-  position: relative;
-  top: 36px;
-  right: 140px;	
 }
 
 /* 탑버튼 */

@@ -10,5 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/petImg/**")
         .addResourceLocations("file:///C:/springWorkspace/petImg/");
+		registry.addResourceHandler("/profileImg/**")
+        .addResourceLocations("file:///C:/springWorkspace/profileImg/");
 	}
 }
