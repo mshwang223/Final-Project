@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
@@ -35,40 +36,37 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<span>#공지사항</span>
 					</div>
 				</div>
-				<div>
-					<table>
-						<tr>
-							<td class="button-table"><button class="btnAdmin">저장</button></td>
-						</tr>
-					</table>
-				</div>
-				<div class="table-box">
+				<form method="post" id="userFrmNew" class="userFrm" name="userFrm">
 					<table>
 						<thead>
 							<tr>
 								<th class="num">제목</th>
 						      	<th class="adminInputTitle">
-						      		<input type="text" />
+						      		<input type="text" name="title" />
 						      	</th>
 						    </tr>
 						</thead>
 						<tbody>
 						    <tr>
-						      	<td class="titles" colspan="2">관리자&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 2022-08-16</td>
+						      	<td class="titles" colspan="2">
+						      		<!-- 현재년도 -->
+									<c:set var="now" value="<%=new java.util.Date()%>" />
+									관리자&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 
+						      		<fmt:formatDate value="${now}" pattern="yyyy-MM-dd hh:mm:ss" />
+						      	</td>
 						    </tr>
 						    <tr>
 						      	<td colspan="2">
-						      		<div id="adminNoticeContents" class="contents">
-
-						      		</div>
+						      		<textarea id="adminNoticeContents" class="contents" name="contents"></textarea>
 						      	</td>
 						    </tr>
 						</tbody>
 					</table>
 				    <div class="btn_list_box">
-				    	<button class="btn_list_done">목록</button>
+				    	<button type="button" class="btn_list_done">목록</button>
+				    	<button type="submit" class="btn_save_done">저장</button>
 				    </div>
-				</div>
+				</form>
 			</article>
 			<!-- 세부화면 레이아웃 종료 -->
 		</section>

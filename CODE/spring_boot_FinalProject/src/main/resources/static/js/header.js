@@ -118,7 +118,7 @@ $(document).ready(function(){
 	
 	// 관리자 페이지 이동
 	$('#admin').click(function() {
-		location.href = "/admin";
+		location.href = "/adminNoticeSearch/0";
 	});
 	// 업체등록 페이지 이동
 	$('#inputHotel').click(function(){

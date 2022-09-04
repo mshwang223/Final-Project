@@ -6,7 +6,7 @@
 
 $(document).ready(function(){
 	
-	// 로그인 드롭다운 확인
+	// 공지사항 드롭다운 확인
 	$("#dropdown-box").on('click', function() {
 		$(".dropdown-contents").slideToggle();
 	});

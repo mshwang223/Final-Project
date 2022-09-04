@@ -109,6 +109,7 @@ div.dropdown-box div:last-child {
 }
 
 .dropdown-contents > li:hover {
+  cursor: pointer;
   background: white;	
 }
 

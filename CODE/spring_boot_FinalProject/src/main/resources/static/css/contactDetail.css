@@ -13,11 +13,6 @@ th {
   margin-bottom: 15px;	
 }
 
-/* 테이블 레이아웃 위치 지정 */
-.table-box {
-  height: max-content;
-}
-
 /* 게시판 테이블 크기 */
 table {
   border-spacing: 0;

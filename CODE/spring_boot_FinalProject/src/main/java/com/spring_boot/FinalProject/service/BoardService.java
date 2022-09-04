@@ -81,4 +81,16 @@ public class BoardService implements IBoardService {
 		map.put("approve", approve);
 		dao.approveHotel(map);
 	}
+	
+	// 관리자-공지사항 수정
+	@Override
+	public void updateAdminNotice(HashMap<String, Object> map) {
+		dao.updateAdminNotice(map);
+	}
+	
+	// 관리자-공지사항 입력
+	@Override
+	public void insertAdminNotice(HashMap<String, Object> map) {
+		dao.insertAdminNotice(map);
+	}
 }

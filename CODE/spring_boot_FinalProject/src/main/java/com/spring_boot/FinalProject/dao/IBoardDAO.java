@@ -36,4 +36,10 @@ public interface IBoardDAO {
 	
 	// 업체 승인
 	void approveHotel(HashMap<String, Object> map);
+	
+	// 관리자-공지사항 저장
+	void updateAdminNotice(HashMap<String, Object> map);
+	
+	// 관리자-공지사항 입력
+	void insertAdminNotice(HashMap<String, Object> map);
 }

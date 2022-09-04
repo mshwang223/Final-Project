@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
@@ -17,11 +18,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
-		<link rel="stylesheet" type="text/css" href="css/board.css">
-		<link rel="stylesheet" type="text/css" href="css/adminNotice.css">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/board.css"/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminNotice.css"/>">
 		
-		<script src="js/notice.js"></script>
-		<script src="js/adminNotice.js"></script>
+		<script src="<c:url value="/js/adminNotice.js"/>"></script>
 	</head>
 	
 	<body>
@@ -37,36 +37,49 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="main-layout">
 					<div class="pageTitle">
 						<div>
-							<span># 공지사항</span>
+							<span>#공지사항</span>
 						</div>
 					</div>	
-					<div>
+					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminNoticeSearch/0"/>">
 						<table class="search-table">
 							<tr>
-								<td></td>
 								<td>
-									<div class="dropdown-box">
-										<div id="dpBox-name" class="dpBox-div">전체</div>
+									<c:if test="${maxPageNum ne 0}">
+										<div class="blue">총 ${maxCnt}</div>
+									</c:if>	
+								</td>
+								<td>
+									<div id="dropdown-box" class="dropdown-box">
+										<div id="dpBox-name" class="dpBox-name">전체</div>
+										
+										<c:if test="${empty chk_search}">
+											<input type="hidden" id="chk_search" name="chk_search" value="0" />
+										</c:if>
+										
+										<c:if test="${not empty chk_search}">
+											<input type="hidden" id="chk_search" name="chk_search" value="${chk_search}" />
+										</c:if>
+										
 										<div class="dpBox-div">▼</div>
 									</div>
 									<ul class="dropdown-contents">
-										<li id="dp-all">전체</li>
-										<li id="dp-title">제목</li>
-										<li id="dp-contents">내용</li>
+										<li class="dp-all">전체</li>
+										<li class="dp-title">제목</li>
+										<li class="dp-contents">내용</li>
 									</ul>
 									<div class="search-box">
 										<div>
-											<input type="text" class="text_search" placeholder="검색어를 입력하세요.">
-											<button class="search-button"><img src="images/search.png"></button>
+											<input type="text" id="text_search" name="text_search" class="text_search" value="${text_search}" placeholder="검색어를 입력하세요.">
+											<button class="search-button"><img src="<c:url value="/images/search.png"/>"></button>
 										</div>
 									</div>
 									<div>
-										<button id="adminNoticeNew" class="btnAdmin">NEW</button>
+										<button type="button" id="adminNoticeNew" class="btnAdmin">NEW</button>
 									</div>
 								</td>
 							</tr>
 						</table>
-					</div>
+					</form>	
 					<div class="table-box">
 						<table>
 							<thead>
@@ -78,103 +91,61 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							    </tr>
 							</thead>
 							<tbody>
-							    <tr>
-							      	<td>1</td>
-							      	<td class="title"><a href="<c:url value="/adminNoticeDetail"/>">공지사항 제목1</a></td>
-							      	<td>Marco Belinelli</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>2</td>
-							      	<td class="title">공지사항 제목2</td>
-							      	<td>Carlos Boozer</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>3</td>
-							      	<td class="title">공지사항 제목3</td>
-							      	<td>Jimmy Butler</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>4</td>
-							      	<td class="title">공지사항 제목4</td>
-							      	<td>Luol Deng</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>5</td>
-							      	<td class="title">공지사항 제목5</td>
-							      	<td>Taj Gibson</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>6</td>
-							      	<td class="title">공지사항 제목6</td>
-							      	<td>Richard Hamilton</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>7</td>
-							      	<td class="title">공지사항 제목7</td>
-							      	<td>Kirk Hinrich</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>8</td>
-							      	<td class="title">공지사항 제목8</td>
-							      	<td>Nazr Mohammed</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>9</td>
-							      	<td class="title">공지사항 제목9</td>
-							      	<td>Joakim Noah</td>
-							      	<td>2022-08-12</td>
-							    </tr>
-							    <tr>
-							      	<td>10</td>
-							      	<td class="title">공지사항 제목10</td>
-							      	<td>Johnson Cals</td>
-							      	<td>2022-08-12</td>
-							    </tr>
+								<c:if test="${maxPageNum eq 0}">
+									<tr>
+										<td colspan="4">내용이 없습니다.</td>
+									</tr>							
+								</c:if>
+								<c:if test="${maxPageNum ne 0}">
+									<c:forEach var="list" items="${lists}" varStatus="loop">
+									    <tr>
+									      	<td>${loop.count}</td>
+									      	<td class="title"><a href="<c:url value="/adminNoticeDetail/${list.boardId}"/>">${list.title}</a></td>
+									      	<td>${list.userName}</td>
+									      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
+									    </tr>
+								    </c:forEach>
+								</c:if>
 							</tbody>
 						</table>
 					</div>
 					<div class="paging-box">
+						<input type="hidden" id="flag" value="${sessionScope.flag}" />
+						<input type="hidden" id="maxPage" value="${maxPageNum}" />
 						<ul>
-							<li class="firstPager">
-								<a href="" title="첫 페이지로 이동하기">
-									<<
-								</a>
-							</li>
-							<li class="prevPager">
-								<a href="" title="이전 페이지로 이동하기">
-									<
-								</a>
-							</li>
+							<c:if test="${maxPageNum ne 0}">
+								<c:if test="${maxPageNum ne 1}">
+									<li class="firstPager">
+										<div title="첫 페이지로 이동하기">
+											<<
+										</div>
+									</li>
+									<li class="prevPager">
+										<div title="이전 페이지로 이동하기">
+											<
+										</div>
+									</li>
+								</c:if>
+	
+								<c:forEach var="i" begin="1" end="${maxPageNum}">
+								<li>
+									<div class="active" value="${i}">${i}</div>
+								</li>
+								</c:forEach>
 							
-							<li><a href="" class="active">1</a></li>
-							<li><a href="" class="active">2</a></li>
-							<li><a href="" class="active">3</a></li>
-							<li><a href="" class="active">4</a></li>
-							<li><a href="" class="active">5</a></li>
-							<li><a href="" class="active">6</a></li>
-							<li><a href="" class="active">7</a></li>
-							<li><a href="" class="active">8</a></li>
-							<li><a href="" class="active">9</a></li>
-							<li><a href="" class="active">10</a></li>
-							
-							<li class="nextPager">
-								<a href="" title="다음 페이지로 이동하기">
-									>
-								</a>
-							</li>
-							<li class="lastPager">
-								<a href="" title="마지막 페이지로 이동하기">
-									>>
-								</a>
-							</li>
+								<c:if test="${maxPageNum ne 1}">
+									<li class="nextPager">
+										<div title="다음 페이지로 이동하기">
+											>
+										</div>
+									</li>
+									<li class="lastPager">
+										<div title="마지막 페이지로 이동하기">
+											>>
+										</div>
+									</li>
+								</c:if>
+							</c:if>
 						</ul>
 					</div>
 				</div>

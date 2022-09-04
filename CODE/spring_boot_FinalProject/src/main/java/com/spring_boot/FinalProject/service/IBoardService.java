@@ -37,4 +37,10 @@ public interface IBoardService {
 	
 	// 업체 승인
 	void approveHotel(String name, String approve);
+	
+	// 관리자-공지사항 수정
+	void updateAdminNotice(HashMap<String, Object> map);
+	
+	// 관리자-공지사항 입력
+	void insertAdminNotice(HashMap<String, Object> map);
 }
