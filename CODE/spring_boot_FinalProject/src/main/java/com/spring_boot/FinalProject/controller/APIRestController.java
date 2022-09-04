@@ -49,22 +49,22 @@ public class APIRestController {
 		String ocrList = ocrService.ocrTemplate(filePathName);
 		String petCode = ocrList.replaceAll(" ", "");
 		System.out.println(petCode);
+
+		// 포인트 적용 여부 확인
+		UserVO vo = userService.selectUserPetCode(petCode);
+		userService.updatePoints(vo.getUserId());
 		
+		// 로그인 후 접속일자 변경
+		userService.updateActiveDate(vo.getUserId());
 		
 		// 로그인 수행
-		UserVO vo = userService.selectUserPetCode(petCode);
+		vo = userService.selectUserPetCode(petCode);
 		
 		// vo가 null이면 로그인 실패
 		if (vo == null) {
 			return "FAIL";
 		} else {
 
-			// 포인트 적용 여부 확인
-			userService.updatePoints(vo.getUserId());
-			
-			// 로그인 후 접속일자 변경
-			userService.updateActiveDate(vo.getUserId());
-			
 			// 세션저장
 			session.setAttribute("sid", vo.getUserId());
 			session.setAttribute("userName", vo.getUserName());

@@ -29,7 +29,7 @@ public class ImgService {
         //String fileName = createFileName(file.getOriginalFilename());
     	String fileName = userId + file.getOriginalFilename().substring(file.getOriginalFilename().length() - 4, file.getOriginalFilename().length());
         
-        File mk = new File(apiController.uploadProfilePathImg());
+        File mk = new File(apiController.uploadProfilePathImg());	
         if (!mk.exists()) {
             mk.mkdirs();
         }

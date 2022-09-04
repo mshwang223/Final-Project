@@ -50,7 +50,12 @@ public class UserController {
 	public String userLogin(@RequestParam("userId") String userId, 
 							@RequestParam("userPw") String userPw,
 							HttpSession session) {
-
+		// 포인트 적용
+		userService.updatePoints(userId);
+		
+		// 로그인 후 접속일자 변경
+		userService.updateActiveDate(userId);
+		
 		UserVO vo = userService.selectUser(userId);
 
 		// vo가 null이면 로그인 실패
@@ -60,9 +65,6 @@ public class UserController {
 
 			if (!pwEncoder.matches(userPw, vo.getUserPw()))
 				return "FAIL";
-
-			// 로그인 후 접속일자 변경
-			userService.updateActiveDate(userId);			
 			
 			// 세션저장
 			session.setAttribute("sid", vo.getUserId());

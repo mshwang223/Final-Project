@@ -28,7 +28,7 @@
   	<!-- 로그인 후 포인트 증감 -->
     <update id="updatePoints" parameterType="String">
     <![CDATA[
-    	UPDATE user 
+    	UPDATE user
     	   SET points = points + 100
     	 WHERE userId = #{userId}
     	   AND CAST(activeDate AS DATE) <= DATE_ADD(CURRENT_DATE(), INTERVAL -1 DAY)

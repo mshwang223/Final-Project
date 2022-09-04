@@ -265,6 +265,11 @@ div.points_box {
   right: 135px;	
 }
 
+div.points_box > i {
+  margin-right: 5px;
+  position:relative;	
+}
+
 .dropdown img {
   width: 40px;
   height: 40px;

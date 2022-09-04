@@ -182,7 +182,7 @@
   left: 50%; 
 }
 
-i {
+.location_box i, .contact_box i {
   position: relative;
   left: 5px;	
 }

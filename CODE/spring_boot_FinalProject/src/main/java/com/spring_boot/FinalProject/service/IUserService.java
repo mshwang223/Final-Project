@@ -26,7 +26,7 @@ public interface IUserService {
 	// ID 체크
 	String chkId(String id);
 	
-	 // 회원 정보 수정
+	// 회원 정보 수정
     void memberUpdate(String userPw, String updatePw, String updateEmail);
     
 	// Email 체크

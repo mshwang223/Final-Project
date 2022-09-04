@@ -24,10 +24,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	</head>
 	
 	<body>
+		<!-- header  -->
+		<c:import url="/WEB-INF/views/layout/top.jsp"/>
+		
 		<section class="wrap">
-			<!-- header  -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
-			
 			<!-- 공지사항 레이아웃 시작 -->
 			<article class="contactResultBox">
 				<div class="pageTitle">

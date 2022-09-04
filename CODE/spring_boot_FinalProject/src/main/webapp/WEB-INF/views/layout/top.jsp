@@ -79,9 +79,9 @@
 				</c:if>
 				
 				<!-- 로그인 한 경우 -->
-				<c:if test="${not empty sessionScope.sid}">
+				<c:if test="${not empty sessionScope.sid}"> 
 				<div class="dropdown user">
-					<div class="points_box"><i class="fa-solid fa-coins"></i>&nbsp;${sessionScope.points}P</div>
+					<div class="points_box"><i class="fa-solid fa-coins"></i>${sessionScope.points}P</div>
 					<img src="<c:url value='/images/cart.png'/>" id="myCart" class="top_cart_img">
 					<c:if test="${empty sessionScope.userImg}">
 						<img src="<c:url value='/images/profile.png'/>" class="top_profile_img">
