@@ -6,7 +6,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IUserDAO;
-import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -33,6 +32,18 @@ public class UserService implements IUserService {
 		return dao.selectUserPetCode(petCode);
 	}
 	
+	// 로그인 후 접속일자 수정
+	@Override
+	public void updateActiveDate(String userId) {
+		dao.updateActiveDate(userId);
+	}
+	
+	// 로그인 후 포인트 증감
+	@Override
+	public void updatePoints(String userId) {
+		dao.updatePoints(userId);
+	}
+	
 	// 회원 가입
 	@Override
 	public void insertUser(UserVO vo) {
@@ -44,11 +55,11 @@ public class UserService implements IUserService {
 	}
 	
 	// 회원 정보 수정
-		@Override
-		public void memberUpdate(String userId,String updatePw,String updateEmail) {
-		  String encodedPwd = pwdEncoder.encode(updatePw);
-		     dao.memberUpdate(userId,encodedPwd,updateEmail);
-		}
+	@Override
+	public void memberUpdate(String userId,String updatePw,String updateEmail) {
+		String encodedPwd = pwdEncoder.encode(updatePw);
+		dao.memberUpdate(userId,encodedPwd,updateEmail);
+	}
 		
 	// ID 체크
 	@Override
@@ -93,12 +104,6 @@ public class UserService implements IUserService {
 		
 	}
 
-	@Override
-	public void insertHotel(InsertHotelVO vo) {
-		dao.insertHotel(vo);
-		
-	}
-	
 	// 사진 변경
 	public void userImgUpdate(String sid, String imgName) {
 		dao.updateUserImg(sid, imgName);

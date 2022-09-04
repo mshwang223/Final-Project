@@ -4,7 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.spring_boot.FinalProject.dao.IHotelDAO">
-  	
+  	<!-- 업체등록 -->
+  	<insert id="insertHotel" parameterType="com.spring_boot.FinalProject.model.InsertHotelVO">
+  		INSERT INTO registration
+  		(userId, name, zipcode, address1, address2, telNumber, maxManCnt, maxPetCnt,
+  		 facility1, facility2, facility3, price, period, serviceImg, comment)
+  		 VALUES(#{userId}, #{name}, #{zipcode}, #{address1}, #{address2}, #{telNumber}, #{maxManCnt}, #{maxPetCnt},
+  		 		#{facility1}, #{facility2}, #{facility3}, #{price}, #{period}, #{serviceImg}, #{comment})
+  	</insert>
+  	  	
   	<!-- 숙박펜션 조회 기능 -->
   	<select id="selectHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
   	<![CDATA[

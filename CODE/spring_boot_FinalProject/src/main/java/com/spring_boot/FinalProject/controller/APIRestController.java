@@ -58,6 +58,12 @@ public class APIRestController {
 		if (vo == null) {
 			return "FAIL";
 		} else {
+
+			// 포인트 적용 여부 확인
+			userService.updatePoints(vo.getUserId());
+			
+			// 로그인 후 접속일자 변경
+			userService.updateActiveDate(vo.getUserId());
 			
 			// 세션저장
 			session.setAttribute("sid", vo.getUserId());
@@ -65,6 +71,7 @@ public class APIRestController {
 			session.setAttribute("userEmail", vo.getUserEmail());
 			session.setAttribute("userImg", vo.getUserImg());
 			session.setAttribute("author", vo.getUserAuthor());
+			session.setAttribute("points", vo.getPoints());
 			
 			// 반환값
 			return "SUCCESS";

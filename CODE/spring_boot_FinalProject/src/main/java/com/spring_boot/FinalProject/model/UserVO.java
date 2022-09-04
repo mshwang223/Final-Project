@@ -20,6 +20,7 @@ public class UserVO {
 	private int userAuthor;	// 0:일반유저, 1:관리자
 	
 	private String petCode;
+	private int points;
 	
 	public String getUserId() {
 		return userId;
@@ -82,5 +83,12 @@ public class UserVO {
 	}
 	public void setPetCode(String petCode) {
 		this.petCode = petCode;
+	}
+	
+	public int getPoints() {
+		return points;
+	}
+	public void setPoints(int points) {
+		this.points = points;
 	}
 }

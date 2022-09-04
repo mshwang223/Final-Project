@@ -54,7 +54,7 @@ public class OCRService {
 
 			con.connect();
 			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-			long start = System.currentTimeMillis();
+			//long start = System.currentTimeMillis();
 			File file = new File(imageFile);
 			writeMultiPart(wr, postParams, file, boundary);
 			wr.close();

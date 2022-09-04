@@ -439,6 +439,15 @@ header .login_box > .dropdown > span.loginForm:hover{
   cursor: pointer;
 }
 
+/* 포인트 박스 */
+div.points_box {
+  font-size: 18px;	
+  font-weight: bold;
+  position: relative;
+  top: 36px;
+  right: 140px;	
+}
+
 /* 탑버튼 */
 .top_btn{
   width: 75px;

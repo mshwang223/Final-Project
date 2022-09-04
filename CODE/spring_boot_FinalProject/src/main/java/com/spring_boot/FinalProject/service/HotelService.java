@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IHotelDAO;
 import com.spring_boot.FinalProject.model.FacilityVO;
+import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
 
@@ -18,7 +19,14 @@ public class HotelService implements IHotelService {
 	@Autowired
 	@Qualifier("IHotelDAO")
 	IHotelDAO dao;
-	
+
+	// 호텔 등록
+	@Override
+	public void insertHotel(InsertHotelVO vo) {
+		dao.insertHotel(vo);
+		
+	}	
+
 	// 숙박펜션 조회 기능
 	@Override
 	public ArrayList<StayVO> selectHotel(HashMap<String, Object> map) {

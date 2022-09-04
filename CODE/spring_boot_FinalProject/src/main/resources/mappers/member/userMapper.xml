@@ -18,6 +18,23 @@
 		 WHERE pet.petCode = #{petCode}
   	</select>
   	
+  	<!-- 로그인 후 접속일자 수정 -->
+    <update id="updateActiveDate" parameterType="String">
+    	UPDATE user 
+    	   SET activeDate = CURRENT_TIMESTAMP
+    	 WHERE userId = #{userId}
+    </update>
+    
+  	<!-- 로그인 후 포인트 증감 -->
+    <update id="updatePoints" parameterType="String">
+    <![CDATA[
+    	UPDATE user 
+    	   SET points = points + 100
+    	 WHERE userId = #{userId}
+    	   AND CAST(activeDate AS DATE) <= DATE_ADD(CURRENT_DATE(), INTERVAL -1 DAY)
+    ]]>	  
+    </update>
+        
   	<!-- 회원 가입 -->
   	<insert id="insertUser" parameterType="com.spring_boot.FinalProject.model.UserVO">
   		INSERT into user
@@ -87,13 +104,4 @@
   		SELECT userId FROM pet
 		 WHERE userId = #{userId}
   	</select>
-  	
-  	<!-- 업체등록 -->
-  	<insert id="insertHotel" parameterType="com.spring_boot.FinalProject.model.InsertHotelVO">
-  		INSERT INTO registration
-  		(userId, name, zipcode, address1, address2, telNumber, maxManCnt, maxPetCnt,
-  		 facility1, facility2, facility3, price, period, serviceImg, comment)
-  		 VALUES(#{userId}, #{name}, #{zipcode}, #{address1}, #{address2}, #{telNumber}, #{maxManCnt}, #{maxPetCnt},
-  		 		#{facility1}, #{facility2}, #{facility3}, #{price}, #{period}, #{serviceImg}, #{comment})
-  	</insert>
 </mapper>

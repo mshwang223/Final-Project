@@ -81,8 +81,14 @@
 				<!-- 로그인 한 경우 -->
 				<c:if test="${not empty sessionScope.sid}">
 				<div class="dropdown user">
+					<div class="points_box"><i class="fa-solid fa-coins"></i> ${sessionScope.points}P</div>
 					<img src="<c:url value='/images/cart.png'/>" id="myCart" class="top_cart_img">
-					<img src="<c:url value='/images/profile.png'/>" class="top_profile_img">
+					<c:if test="${empty sessionScope.userImg}">
+						<img src="<c:url value='/images/profile.png'/>" class="top_profile_img">
+					</c:if>
+					<c:if test="${not empty sessionScope.userImg}">
+						<img src="<c:url value='/images/profile.png'/>" class="top_profile_img">
+					</c:if>
 					<div id="dropdown-user" class="dropdown-user">
 						<ul id="userPage">
 							<c:if test="${sessionScope.author eq '1'}">
