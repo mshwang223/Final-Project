@@ -23,9 +23,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
+import com.spring_boot.FinalProject.service.HotelService;
 import com.spring_boot.FinalProject.service.ImgService;
 import com.spring_boot.FinalProject.service.UserService;
 
@@ -42,6 +44,9 @@ public class UserController {
 
 	@Autowired
 	ImgService imgService;
+	
+	@Autowired
+	HotelService hotelService;
 
 	
 	// 로그인 처리
