@@ -97,7 +97,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<tbody>
 								<c:if test="${maxPageNum eq 0}">
 									<tr>
-										<td colspan="4">내용이 없습니다.</td>
+										<td colspan="5">내용이 없습니다.</td>
 									</tr>							
 								</c:if>
 								<c:if test="${maxPageNum ne 0}">
