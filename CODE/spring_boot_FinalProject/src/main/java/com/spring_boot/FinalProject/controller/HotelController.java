@@ -137,10 +137,14 @@ public class HotelController {
 	
 	// 숙박예약 가기(검색)
 	@RequestMapping("/petHotel")
-	public String viewPetHotel(Model model) {
+	public String viewPetHotel(Model model, @RequestParam HashMap<String, Object> map) {
 		// 지역코드 검색
 		ArrayList<UtilVO> lists = utilService.selectState();
 		model.addAttribute("lists", lists);
+		
+		// 호텔펜션 테이블
+		StayVO stayList = hotelService.selectDetailHotel(map);
+		model.addAttribute("stayList", stayList);
 		
 		return "subPage/petHotel";
 	}	
