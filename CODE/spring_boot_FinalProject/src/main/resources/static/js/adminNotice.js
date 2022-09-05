@@ -172,7 +172,9 @@ $(document).ready(function(){
 						alert("전송 실패");
 					}
 		 		}); 			
- 			}
+ 			} else {
+	 			$(".agree_subcheck").prop('checked', false);
+	 		}
  		}
 	});	
 });
