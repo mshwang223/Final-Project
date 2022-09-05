@@ -51,8 +51,12 @@ th.checkBox > input {
 }
 
 /* 테이블 작성자, 작성일 크기 고정 */
-th.author, th.date, th.chkYN {
-  width: 240px;
+th.date {
+  width: 220px;
+}
+
+th.author, th.chkYN {
+  width: 160px;	
 }
 
 th.approve{
