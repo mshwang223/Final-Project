@@ -14,7 +14,7 @@
 			<div>
 				<div class="sideTitle">사용자</div>
 
-				<a class="aUserLists adminNotice" href="#" class="adminNotice">공지사항</a>
+				<a class="aUserLists adminNotice" href="<c:url value='/adminNoticeSearch/0'/>" class="adminNotice">공지사항</a>
 				<a class="aUserLists" href="#">사용자관리</a>
 				<a class="aUserLists" href="#">문의내역</a>
 				<a class="aUserLists" href="#">결재내역</a>
