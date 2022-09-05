@@ -174,6 +174,7 @@ $(document).ready(function(){
 		 		}); 			
  			} else {
 	 			$(".agree_subcheck").prop('checked', false);
+	 			arrBoardId = [];	// 초기화 필요
 	 		}
  		}
 	});	
