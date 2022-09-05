@@ -127,6 +127,7 @@ $(document).ready(function(){
 					}
 		 		});
 	 		} else {
+	 			$('#allCheck').prop('checked', false);
 	 			$(".agree_subcheck").prop('checked', false);
 	 			arrBoardId = [];	// 초기화 필요
 	 		}
