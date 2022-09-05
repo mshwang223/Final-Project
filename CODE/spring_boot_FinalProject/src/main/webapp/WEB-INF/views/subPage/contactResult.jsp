@@ -45,11 +45,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
 						<c:if test="${maxPageNum ne 0}">
 							<div class="blue">총 ${maxCnt}</div>
+							<button type="button" id="adminNoticeDel" class="btnAdmin del">삭제</button>
 						</c:if>
-						<c:if test="${maxPageNum eq 0}">
-							<div class="blue"></div>
-						</c:if>
-						<button type="button" id="adminNoticeDel" class="btnAdmin del">삭제</button>
 					</div>	
 					<table>
 						<thead>
