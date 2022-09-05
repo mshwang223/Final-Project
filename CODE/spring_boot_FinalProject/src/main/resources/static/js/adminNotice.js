@@ -109,6 +109,63 @@ $(document).ready(function(){
    		$("#userFrm").attr('action', submitPath);
    		$("#userFrm").submit();   	
    	});
+   	
+  	// 전체동의 체크박스 체크시 전체 체크
+  	// 전체체크 선택 시 변수 값 저장
+  	var arrBoardId = new Array();	// 배열선언
+	$('#allCheck').click(function() {
+		if($(this).is(':checked')){	// 체크되었을 때
+			$('.agree_subcheck').prop('checked', true);
+			
+			// 변수값 저장
+			arrBoardId = [];	// 초기화 필요
+			$(".agree_subcheck:checked").each(function() {
+				arrBoardId.push($(this).val());
+			});
+		} else {
+			$('.agree_subcheck').prop('checked', false);
+			
+			// 변수값 제거
+			$(".agree_subcheck").each(function() {
+				arrBoardId.shift($(this).val());
+			});
+		}
+	});
+	
+	// 체크박스 선택 시 변수값 저장
+	$(".agree_subcheck").on('click', function() {
+		if($(this).is(':checked')) {
+			arrBoardId.push($(this).val());
+		} else {
+			arrBoardId.shift($(this).val());		
+		}
+	});
+	
+	// 삭제 기능
+	$("#adminNoticeDel").on('click', function() {
+	
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+ 		
+ 		$.ajax({
+ 			type:"post",
+ 			url:"/adminDeleteNotice",
+ 			data:{ "boardIds": JSON.stringify(arrBoardId) },
+			dataType:"text",
+			success:function(result){
+				// 성공 시 결과 받음
+				if(result == "SUCCESS") {
+					alert("삭제되었습니다.");
+					location.href = "/adminNoticeSearch/0";
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		});
+	});	
 });
 
 	

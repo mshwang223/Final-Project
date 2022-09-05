@@ -141,6 +141,21 @@ public class AdminController {
 		return "SUCCESS";
 	}
 	
+	// 관리자-공지사항 삭제
+	@ResponseBody
+	@RequestMapping("/adminDeleteNotice")
+	public String adminDeleteNotice(@RequestParam("boardIds") String boardIds,
+									HashMap<String, Object> map) {
+		
+		String[] arrBoardId = boardIds.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("boardIds", arrBoardId);
+		
+		boardService.deleteAdminNotice(map);
+		
+		return "SUCCESS";
+	}
+	
 	// 관리자-업체관리 조회
 	@RequestMapping("/adminInsertHotel")
 	public String viewAdminInsertHotel(Model model) {

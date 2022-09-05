@@ -10,6 +10,10 @@ td:not(.title) {
   text-align: center;
 }
 
+td.title {
+  text-align: left;
+}
+
 /* 2n번째 열 배경색 */
 tr:nth-child(even) td {
   background: #eaeaed;

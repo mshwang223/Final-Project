@@ -43,4 +43,7 @@ public interface IBoardService {
 	
 	// 관리자-공지사항 입력
 	void insertAdminNotice(HashMap<String, Object> map);
+	
+	// 관리자-공지사항 삭제
+	void deleteAdminNotice(HashMap<String, Object> map);
 }

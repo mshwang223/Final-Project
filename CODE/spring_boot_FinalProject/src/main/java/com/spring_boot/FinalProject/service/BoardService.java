@@ -93,4 +93,10 @@ public class BoardService implements IBoardService {
 	public void insertAdminNotice(HashMap<String, Object> map) {
 		dao.insertAdminNotice(map);
 	}
+
+	// 관리자-공지사항 삭제
+	@Override
+	public void deleteAdminNotice(HashMap<String, Object> map) {
+		dao.deleteAdminNotice(map);
+	}
 }

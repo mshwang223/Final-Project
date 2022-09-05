@@ -74,7 +74,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										</div>
 									</div>
 									<div>
-										<button type="button" id="adminNoticeNew" class="btnAdmin">NEW</button>
+										<button type="button" id="adminNoticeDel" class="btnAdmin del">삭제</button>
+										<button type="button" id="adminNoticeNew" class="btnAdmin new">NEW</button>
 									</div>
 								</td>
 							</tr>
@@ -85,6 +86,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<thead>
 								<tr>
 							      	<th class="num">번호</th>
+							      	<th class="checkBox">
+							      		전체 <input type="checkBox" id="allCheck" />
+							      	</th>
 							      	<th>제목</th>
 							     	<th class="author">작성자</th>
 							      	<th class="date">작성일</th>
@@ -100,6 +104,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									<c:forEach var="list" items="${lists}" varStatus="loop">
 									    <tr>
 									      	<td>${loop.count}</td>
+									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.boardId}"/>" /></td>
 									      	<td class="title"><a href="<c:url value="/adminNoticeDetail/${list.boardId}"/>">${list.title}</a></td>
 									      	<td>${list.userName}</td>
 									      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
