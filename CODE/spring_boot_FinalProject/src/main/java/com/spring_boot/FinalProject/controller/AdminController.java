@@ -1,19 +1,23 @@
 package com.spring_boot.FinalProject.controller;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -167,7 +171,7 @@ public class AdminController {
 	
 	// 관리자-업체관리 세부화면 페이지
 	@RequestMapping("/adminInsertDetail/{regId}")
-	public String viewAdminInsertDetail(@PathVariable int regId, Model model) {
+	public String viewAdminInsertDetail(@PathVariable int regId, String serviceImg, Model model) {
 		
 		InsertHotelVO vo = boardService.detailRegistration(regId);
 		model.addAttribute("regId", vo.getRegId());
@@ -186,33 +190,63 @@ public class AdminController {
 		model.addAttribute("createDate", vo.getCreateDate());
 		model.addAttribute("comment", vo.getComment());
 		
+		  // zip 파일
+		  File zipFile = new File("c:/springWorkspace/comImg/"+ serviceImg + ".zip");
+		  //log.debug("zipFile.exist : {}", zipFile.exists());
+		  
+		  // 압축해제 경로
+		  File unzipFolder = new File(zipFile.getParent(), zipFile.getName().replace(".zip", "serviceImg"));
+		  //log.debug("unzipFolder : {}", unzipFolder.getAbsolutePath() + "\n");
+		  
+		  // 존재 하지 않으면 디렉토리 만들기
+		  if(unzipFolder.exists() == false) unzipFolder.mkdirs();
+		  
+		 // log.debug("############# unzip begin #############");
+		  
+		  try (
+		    // zip 파일 읽어오기
+		    FileInputStream fis = new FileInputStream(zipFile);
+		    ZipInputStream zis = new ZipInputStream(fis);
+		    BufferedInputStream bis = new BufferedInputStream(zis);
+		  ) {
+		    ZipEntry zipEntry = null;
+		    while ((zipEntry = zis.getNextEntry()) != null) {
+		      File f = new File(unzipFolder.getAbsolutePath(), zipEntry.getName());
+		      if (zipEntry.isDirectory()) { // entry가 디렉토리일 경우 생성
+		        //log.debug("── onlyDirectory : {}", zipEntry.getName());
+		        //log.debug("└── mkdirs :{}", f.mkdirs());
+		      } else {
+		       // log.debug("── fileName : {}", zipEntry.getName());
+		        if (f.getParentFile().exists() == false) { // entry의 부모 디렉토리가 없을 경우
+		        //  log.debug("└── makeParentDirectory : {}", zipEntry.getName().substring(0, zipEntry.getName().lastIndexOf("/")));
+		          f.getParentFile().mkdirs();
+		        }
+		        try (
+		          FileOutputStream fos = new FileOutputStream(f);
+		          BufferedOutputStream bos = new BufferedOutputStream(fos);
+		        ) {
+		          int b = 0;
+		          while ((b = bis.read()) != -1) {
+		            bos.flush();
+		            bos.write(b);
+		          }
+		        }
+		      }
+		    }
+		  } catch (IOException e) {
+		    e.printStackTrace();
+		  }
+		
 		return "subPage/adminInsertDetail";
 	}	
 	
-	@RequestMapping("fileDownload/{serviceImg}")
-	public void fileDownload(@PathVariable String serviceImg, HttpServletResponse response) throws Exception {
-		
-		File f = new File("C:/springWorkspace/petImg/", serviceImg);
-		
-		//파일명 인코딩
-		String encodedFileName = new String (serviceImg.getBytes("UTF-8"), "ISO-8859-1");
-
-		// 파일 다운로드 설정
-		response.setContentType("application/download");
-		response.setContentLength((int) f.length());
-		response.setHeader("content-Disposition", "attratchment;filename=\""+ encodedFileName +"\"");
-		
-		//다운로드 시 저장되는 이름은 Response Header의 "Content-Disposition"에 명시
-		
-		//response 객체를 통해 서버로 부터 파일 다운로드 받음
-		OutputStream os = response.getOutputStream();
-		
-		//파일 입력 객체 생성 
-		FileInputStream fis = new FileInputStream(f);
-		FileCopyUtils.copy(fis,os);
-		
+	// 업체등록 이미지 압축파일 해제
+	@RequestMapping("unZipFile/{serviceImg}")
+	public void unZipFile(@PathVariable String serviceImg) {
+		  
 	}
-
+	
+	// 등록숙박 승인
 	@RequestMapping("/adminApproveHotel")
 	public String adminApproveHotel(@RequestParam HashMap<String, Object> map, Model model) {
 		boardService.approveHotel((String) map.get("name"), (String) map.get("approve"));
