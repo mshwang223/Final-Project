@@ -13,6 +13,7 @@
   		 		#{facility1}, #{facility2}, #{facility3}, #{price}, #{period}, #{serviceImg}, #{comment})
   	</insert>
   	
+  	<!-- 호텔전체 조회 -->
   	<select id="listAllHotel" resultType="com.spring_boot.FinalProject.model.StayVO">
 		SELECT s.*, room.price FROM stay s, 
 		(SELECT stayNo, MAX(price) AS price FROM room GROUP BY stayNo) AS room

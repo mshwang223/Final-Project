@@ -411,19 +411,26 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="stay_items_wrap">
 					<div class="stay_container">
 						<c:forEach begin="22" end="32" var="stayList" items="${stayList}" varStatus="loop">
-							<div class="popular_img_box">
-								<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${stayList.stayNo}'/>">
-								<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
-								<div class="stay_info">
-									<div class="stay_name">
-										<span>${stayList.stayName}</span><span class="stay_star"><img
-											src="<c:url value='/images/star.png'/>" alt="평점">${stayList.star }</span>
+							<form id="popular${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+								<div id="popularBox${stayList.stayNo }" class="popular_img_box">
+									<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${stayList.stayNo}'/>">
+									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
+									<div class="stay_info">
+										<div class="stay_name">
+											<span>${stayList.stayName}</span><span class="stay_star"><img
+												src="<c:url value='/images/star.png'/>" alt="평점">${stayList.star }</span>
+										</div>
+										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
-									<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
+									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
+										alt="찜하기" class="like_btn"></span>
 								</div>
-								<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-									alt="찜하기" class="like_btn"></span>
-							</div>
+								<script>
+							    $('#popularBox${stayList.stayNo }').click(function(){
+							    	$('#popular${stayList.stayNo}').submit();
+							    })
+								</script>
+							</form>
 						</c:forEach>
 					</div>
 					<img class="popular_prev" src="<c:url value='/images/left-arrow.png'/>" alt=""> <img
@@ -438,18 +445,25 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="stay_items_wrap">
 					<div class="stay_container">
 						<c:forEach begin="2" end="11" var="stayList" items="${stayList}" varStatus="loop">
-							<div class="seoul_img_box">
-								<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
-								<div class="stay_info">
-									<div class="stay_name">
-										<span>${stayList.stayName}</span><span class="stay_star"><img
-											src="<c:url value='/images/star.png'/>" alt="평점">${stayList.star }</span>
+							<form id="seoul${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+								<div id="seoulBox${stayList.stayNo }" class="seoul_img_box">
+									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
+									<div class="stay_info">
+										<div class="stay_name">
+											<span>${stayList.stayName}</span><span class="stay_star"><img
+												src="<c:url value='/images/star.png'/>" alt="평점">${stayList.star }</span>
+										</div>
+										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
-									<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
+									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
+										alt="찜하기" class="like_btn"></span>
 								</div>
-								<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-									alt="찜하기" class="like_btn"></span>
-							</div>
+								<script>
+							    $('#seoulBox${stayList.stayNo }').click(function(){
+							    	$('#seoul${stayList.stayNo}').submit();
+							    })
+								</script>
+							</form>
 						</c:forEach>
 					</div>
 					<img class="seoul_prev" src="<c:url value='/images/left-arrow.png'/>" alt=""> <img
@@ -463,18 +477,25 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="stay_items_wrap">
 					<div class="stay_container">
 						<c:forEach begin="81" end="90" var="stayList" items="${stayList}" varStatus="loop">
-							<div class="busan_img_box">
-								<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
-								<div class="stay_info">
-									<div class="stay_name">
-										<span>${stayList.stayName }</span><span class="stay_star"><img
-											src="<c:url value='/images/star.png'/>" alt="평점">${stayList.star }</span>
+							<form id="busan${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+								<div id="busanBox${stayList.stayNo }" class="busan_img_box">
+									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
+									<div class="stay_info">
+										<div class="stay_name">
+											<span>${stayList.stayName }</span><span class="stay_star"><img
+												src="<c:url value='/images/star.png'/>" alt="평점">${stayList.star }</span>
+										</div>
+										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
-									<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
+									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
+										alt="찜하기" class="like_btn"></span>
 								</div>
-								<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-									alt="찜하기" class="like_btn"></span>
-							</div>
+								<script>
+							    $('#busanBox${stayList.stayNo }').click(function(){
+							    	$('#busan${stayList.stayNo}').submit();
+							    })
+								</script>
+							</form>
 						</c:forEach>
 					</div>
 					<img class="busan_prev" src="<c:url value='/images/left-arrow.png'/>" alt=""> <img

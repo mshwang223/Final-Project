@@ -55,7 +55,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="stay_img_container">
 					<div class="stay_img_box1">
-						<a href="/images/petDetail1.jpg" data-lightbox="example"><img src="/images/petDetail1.jpg" alt=""></a>
+						<a href="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>" data-lightbox="example"><img src="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>" alt=""></a>
 					</div>
 					<div class="stay_img_box2">
 						<c:forEach begin="2" end="10" step="1" varStatus="loop">
@@ -67,7 +67,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<article class="stay_info_area">
 				<div class="info_content_area">
 					<div class="info_content_box1">
-						<div class="content_title">K401펜션</div>
+						<div class="content_title">${list.stayName}</div>
 						<div class="simple_info_box">
 							<span>침실 1개 · </span> <span>침대 1개 · </span>
 							<span>욕실 1개 · </span> <span>플레이그라운드</span>
@@ -96,7 +96,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<div>숙박타입</div>
 						<c:forEach var="room" items="${lists2}" varStatus="loop">
 						<div>
-							<img src="/images/stayType.jpg" alt="">
+							<img src="<c:url value='/petHotelImg/${room.stayNo }/${room.roomImg}.png'/>" alt="">
 							<div class="room_box">
 								<c:if test="${room.roomType eq 1}"><span># 스탠다드 더블</span></c:if>
 								<c:if test="${room.roomType eq 2}"><span># 스탠다드 트윈</span></c:if>
