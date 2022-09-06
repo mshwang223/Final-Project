@@ -243,6 +243,16 @@ public class AdminController {
 		return "subPage/adminUser";
 	}
 	
+	// 관리자-사용자관리 세부화면 페이지
+	@RequestMapping("/adminUserDetail/{userId}")
+	public String viewAdminUserDetail(@PathVariable String userId, Model model) {
+		BoardVO vo = boardService.noticeDetailView(userId);
+			
+		model.addAttribute("user", vo);
+		
+		return "subPage/adminUserDetail";
+	}
+	
 	// 관리자-업체관리 조회
 	@RequestMapping("/adminInsertHotel")
 	public String viewAdminInsertHotel(Model model) {

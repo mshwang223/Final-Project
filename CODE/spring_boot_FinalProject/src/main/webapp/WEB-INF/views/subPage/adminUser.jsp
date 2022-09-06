@@ -101,7 +101,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									<c:forEach var="list" items="${lists}" varStatus="loop">
 									    <tr>
 									      	<td>${loop.count}</td>
-									      	<td>${list.userId}</td>
+									      	<td><a href="<c:url value="/adminUserDetail/${list.userId}"/>">${list.userId}</a></td>
 									      	<td>${list.userName}</td>
 									      	<td>${list.userEmail}</td>
 									      	<td><fmt:formatDate value="${list.createDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
