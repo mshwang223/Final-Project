@@ -41,14 +41,20 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="underline"></div>	
 				</div>
 				<form method="post" id="userFrm" class="table-box" name="userFrm">
-					<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
-					<c:if test="${maxPageNum ne 0}">
-						<div class="blue">총 ${maxCnt}</div>
-					</c:if>	
+					<div>
+						<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
+						<c:if test="${maxPageNum ne 0}">
+							<div class="blue">총 ${maxCnt}</div>
+							<button type="button" id="adminNoticeDel" class="btnAdmin del">삭제</button>
+						</c:if>
+					</div>	
 					<table>
 						<thead>
 							<tr>
 						      	<th class="num">번호</th>
+						      	<th class="checkBox">
+							    	전체 <input type="checkBox" id="allCheck" />
+							    </th>
 						      	<th class="title">문의제목</th>
 						     	<th class="date">작성일</th>
 						      	<th class="chkYN">답변유무</th>
@@ -57,13 +63,14 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<tbody>
 							<c:if test="${maxPageNum eq 0}">
 								<tr>
-									<td colspan="4">문의 내역이 없습니다.</td>
+									<td colspan="5">문의 내역이 없습니다.</td>
 								</tr>							
 							</c:if>
 							<c:if test="${maxPageNum ne 0}">
 								<c:forEach var="list" items="${lists}" varStatus="loop">
 								    <tr>
 								      	<td>${loop.count}</td>
+								      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.boardId}"/>" /></td>
 								      	<td class="title"><a href="<c:url value="/contactDetail/${list.boardId}"/>">${list.title}</a></td>
 								      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 								      	<td class="blue">

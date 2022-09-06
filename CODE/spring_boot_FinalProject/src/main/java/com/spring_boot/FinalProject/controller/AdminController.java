@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
@@ -137,6 +136,21 @@ public class AdminController {
 		map.put("userId", sid);
 		
 		boardService.insertAdminNotice(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자-공지사항 삭제
+	@ResponseBody
+	@RequestMapping("/adminDeleteNotice")
+	public String adminDeleteNotice(@RequestParam("boardIds") String boardIds,
+									HashMap<String, Object> map) {
+		
+		String[] arrBoardId = boardIds.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("boardIds", arrBoardId);
+		
+		boardService.deleteAdminNotice(map);
 		
 		return "SUCCESS";
 	}

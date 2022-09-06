@@ -10,6 +10,10 @@ td:not(.title) {
   text-align: center;
 }
 
+td.title {
+  text-align: left;
+}
+
 /* 2n번째 열 배경색 */
 tr:nth-child(even) td {
   background: #eaeaed;
@@ -83,7 +87,7 @@ div.dropdown-box div:last-child {
   
   position: absolute;
   top:35px;
-  left: 104px;
+  left: 53px;
   z-index: 15;
   
   background-color: #f5f5f5;

@@ -109,5 +109,12 @@
 	  	INSERT into board
 	  		  (userId, title, contents, category)
 	  	VALUES(#{userId}, #{title}, #{contents}, 1)	   
-	</insert>  	
+	</insert>
+	
+  	<!-- 관리자 - 공지사항 삭제 -->
+	<delete id="deleteAdminNotice" parameterType="hashmap">
+	  	DELETE FROM board
+	  	 WHERE boardId IN
+	  	 <foreach collection="boardIds" item="boardId" open="(" close=")" separator=",">#{boardId}</foreach> 
+	</delete>  	
 </mapper>

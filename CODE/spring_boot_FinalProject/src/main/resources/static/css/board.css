@@ -34,13 +34,29 @@ th {
 }
 
 /* 테이블 번호 크기 고정 */
-th.num {
-  width: 80px;
+th.num, th.checkBox {
+  width: 90px;
+}
+
+/* 테이블 체크박스 */
+th.checkBox > input {
+  width: 15px;
+  height: 15px;
+  
+  position: relative;
+  top: 3px;
+  left: 3px;
+  
+  cursor: pointer;	
 }
 
 /* 테이블 작성자, 작성일 크기 고정 */
-th.author, th.date, th.chkYN {
-  width: 240px;
+th.date {
+  width: 220px;
+}
+
+th.author, th.chkYN {
+  width: 160px;	
 }
 
 th.approve{
@@ -55,6 +71,17 @@ td {
 
 td:first-child {
   border-left: 1px solid #c6c9cc;
+}
+
+/* 체크 박스 td */
+td > input.agree_subcheck {
+  position: relative;
+  top: 2px;
+  
+  width: 13px;
+  height: 13px;
+  
+  cursor: pointer;	
 }
 
 /* 페이징 레이아웃 */
@@ -114,7 +141,7 @@ td:first-child {
   
   text-align: center;
   
-  margin-left: 30px;
+  margin-left: 10px;
   padding: 9px 15px;
   
   border-radius: 5px;
@@ -129,4 +156,15 @@ td:first-child {
 .btnAdmin:active {
   background: white;
   color: black;	
+}
+
+/* 삭제 버튼 */
+.del {
+  background: white;
+  color: black;  	
+}
+
+.del:active {
+  background: black;
+  color: white;	
 }

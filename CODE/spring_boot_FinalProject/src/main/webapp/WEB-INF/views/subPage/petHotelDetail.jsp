@@ -58,13 +58,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<a href="/images/petDetail1.jpg" data-lightbox="example"><img src="/images/petDetail1.jpg" alt=""></a>
 					</div>
 					<div class="stay_img_box2">
-						<a href="/images/petDetail2.jpg" data-lightbox="example"><img src="/images/petDetail2.jpg" alt=""></a> 
-						<a href="/images/petDetail3.jpg" data-lightbox="example"><img src="/images/petDetail3.jpg" alt=""></a>
-						<a href="/images/petDetail4.jpg" data-lightbox="example"><img src="/images/petDetail4.jpg" alt=""></a>
-						<a href="/images/petDetail5.jpg" data-lightbox="example"><img src="/images/petDetail5.jpg" alt=""><div>+ 이미지 더보기</div></a>
-						<a href="/images/petDetail2.jpg" data-lightbox="example"><img src="/images/petDetail2.jpg" alt=""></a> 
-						<a href="/images/petDetail3.jpg" data-lightbox="example"><img src="/images/petDetail3.jpg" alt=""></a>
-						<a href="/images/petDetail4.jpg" data-lightbox="example"><img src="/images/petDetail4.jpg" alt=""></a>
+						<c:forEach begin="2" end="10" step="1" varStatus="loop">
+							<a href="<c:url value='/petHotelImg/${list.stayNo }/${loop.index }.png'/>" data-lightbox="example"><img src="<c:url value='/petHotelImg/${list.stayNo }/${loop.index }.png'/>" alt=""><div>+ 이미지 더보기</div></a> 
+						</c:forEach>
 					</div>
 				</div>
 			</article>
