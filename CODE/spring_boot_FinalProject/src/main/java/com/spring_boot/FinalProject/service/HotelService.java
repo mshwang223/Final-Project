@@ -62,4 +62,9 @@ public class HotelService implements IHotelService {
 	public ArrayList<FacilityVO> selectDetailFacility3(HashMap<String, Object> map) {
 		return dao.selectDetailFacility3(map);
 	}
+
+	@Override
+	public ArrayList<StayVO> listAllHotel() {
+		return dao.listAllHotel();
+	}
 }

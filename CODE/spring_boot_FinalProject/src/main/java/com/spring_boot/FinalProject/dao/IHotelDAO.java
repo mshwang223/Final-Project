@@ -13,6 +13,9 @@ public interface IHotelDAO {
 	// 호텔 등록
 	void insertHotel(InsertHotelVO vo);
 	
+	// 호텔 전체 조회
+	ArrayList<StayVO> listAllHotel();
+	
 	// 숙박펜션 조회 기능
 	ArrayList<StayVO> selectHotel(HashMap<String, Object> map);
 	

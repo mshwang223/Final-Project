@@ -144,7 +144,7 @@ public class HotelController {
 		model.addAttribute("lists", lists);
 		
 		// 호텔펜션 테이블
-		StayVO stayList = hotelService.selectDetailHotel(map);
+		ArrayList<StayVO> stayList = hotelService.listAllHotel();
 		model.addAttribute("stayList", stayList);
 		
 		return "subPage/petHotel";
