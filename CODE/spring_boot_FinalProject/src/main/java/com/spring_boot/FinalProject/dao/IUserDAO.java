@@ -1,5 +1,7 @@
 package com.spring_boot.FinalProject.dao;
 
+import java.util.HashMap;
+
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -34,6 +36,9 @@ public interface IUserDAO {
 	
 	// 회원 정보 수정
 	void memberUpdate(UserVO vo);
+	
+	// 관리자-사용자 권한 수정
+	void updateAdminUser(HashMap<String, Object> map);
 	
 	// 펫 등록
 	void insertPet(PetVO vo);

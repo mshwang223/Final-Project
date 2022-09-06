@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
@@ -19,7 +20,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminUserDetail.css"/>">
-
+		
+		<script src="<c:url value="/js/adminUserDetail.js"/>"></script>
 	</head>
 
 	<body>
@@ -28,7 +30,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 		<section class="wrap">
 			
 			<!-- section -->
-			<form method="post" id="signup" class="signup">
+			<div>
 			    <div class="pageTitle">
 					<div>
 						<span>#사용자관리</span>
@@ -46,17 +48,17 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	                    </div>
 			        	<div class="info_box">
 			            	<p class="title">아이디</p>
-			            	<input type="text" id="" class="text_content" readOnly />
+			            	<input type="text" id="userId" class="text_content" value="${user.userId}" readOnly />
 			          	</div>
 			          	<br>
 			          	<div class="info_box">
 			            	<p class="title">이름</p>
-			            	<input type="text" id="" class="text_content" readOnly />
+			            	<input type="text" class="text_content" value="${user.userName}" readOnly />
 			          	</div>
 			          	<br>
 			          	<div class="info_box">
 			            	<p class="title">이메일</p>
-			            	<input type="text" id="" class="text_content" readOnly />
+			            	<input type="text" class="text_content" value="${user.userEmail}" readOnly />
 			          	</div>
 			          	<br>
 			          	<div class="info_box">
@@ -66,8 +68,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			          				<th><p class="title">접속일</p></th>
 			          			</tr>
 			          			<tr>
-			          				<th><input type="text" id="" class="text_date" readOnly /></th>
-			          				<th><input type="text" id="" class="text_date" readOnly /></th>
+			          				<th><input type="text" class="text_date" value="<fmt:formatDate value="${user.createDate}" pattern="yyyy-MM-dd HH:mm:dd"/>" readOnly /></th>
+			          				<th><input type="text" class="text_date" value="<fmt:formatDate value="${user.activeDate}" pattern="yyyy-MM-dd HH:mm:dd"/>" readOnly /></th>
 			          			</tr>
 			            	</table>
 			          	</div>
@@ -79,10 +81,13 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			          				<th><p class="title">권 한</p></th>
 			          			</tr>
 			          			<tr>
-			          				<td><input type="text" id="" class="text_date" readOnly /></td>
+			          				<td><input type="text" class="text_date" value="${user.points}P" readOnly /></td>
 			          				<td>
 			          					<div>
-				          					<input type="text" id="" class="text_date author" />
+				          					<select id="userAuthor" class="text_date author" value="">
+				          						<option value="0" <c:if test="${user.userAuthor eq '0'}">selected</c:if>>사용자</option>
+				          						<option value="1" <c:if test="${user.userAuthor eq '1'}">selected</c:if>>관리자</option>
+				          					</select>
 				          					<button type="button" class="btn_save">수정</button>
 			          					</div>
 			          				</td>
@@ -91,7 +96,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			          	</div>
 		        	</div>
 		    	</div>
-		    </form>
+		    	<div class="btn_list_box">
+				   	<button type="button" class="btn_list_done">목록</button>
+				</div>
+		    </div>
 		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
 		<!-- footer -->

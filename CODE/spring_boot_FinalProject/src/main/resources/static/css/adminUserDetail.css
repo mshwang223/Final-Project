@@ -135,3 +135,33 @@ td > div {
   position: relative;
   top: 4.5px;
 }
+
+/* 목록 버튼 */
+.btn_list_box {
+  width: 600px;
+  height: 100px;
+  margin: 30px auto;
+  text-align: right;
+}
+
+.btn_list_done {
+  width: 120px;
+  height: 50px;
+  
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: #ee82ee;
+  border-radius: 2px;
+  color: white;
+  
+  border: none;
+  border-radius: 8px;
+  
+  cursor: pointer;
+}
+
+.btn_list_box > button:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.9s linear;
+}

@@ -159,7 +159,7 @@ $(document).ready(function(){
 		 			type:"post",
 		 			url:"/adminDeleteNotice",
 		 			data:{ "boardIds": JSON.stringify(arrBoardId) },
-					dataType:"text",
+		 			dataType:"text",
 					success:function(result){
 						// 성공 시 결과 받음
 						if(result == "SUCCESS") {

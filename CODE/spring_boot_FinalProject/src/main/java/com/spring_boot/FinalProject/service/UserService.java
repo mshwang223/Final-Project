@@ -1,5 +1,7 @@
 package com.spring_boot.FinalProject.service;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -60,6 +62,12 @@ public class UserService implements IUserService {
 		String encodedPwd = pwdEncoder.encode(updatePw);
 		dao.memberUpdate(userId,encodedPwd,updateEmail);
 	}
+	
+	// 관리자-사용자 권한 수정
+	@Override
+	public void updateAdminUser(HashMap<String, Object> map) {
+		dao.updateAdminUser(map);
+	}	
 		
 	// ID 체크
 	@Override

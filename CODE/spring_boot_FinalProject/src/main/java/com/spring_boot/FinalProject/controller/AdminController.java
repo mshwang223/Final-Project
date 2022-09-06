@@ -28,12 +28,16 @@ import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.BoardService;
+import com.spring_boot.FinalProject.service.UserService;
 
 @Controller
 public class AdminController {
 	
 	@Autowired
 	BoardService boardService;
+	
+	@Autowired
+	UserService userService;
 	
 	// 관리자 페이지
 	@RequestMapping("/adminNoticeSearch/{num}")
@@ -246,11 +250,21 @@ public class AdminController {
 	// 관리자-사용자관리 세부화면 페이지
 	@RequestMapping("/adminUserDetail/{userId}")
 	public String viewAdminUserDetail(@PathVariable String userId, Model model) {
-		BoardVO vo = boardService.noticeDetailView(userId);
+		UserVO vo = userService.selectUser(userId);
 			
 		model.addAttribute("user", vo);
 		
 		return "subPage/adminUserDetail";
+	}
+	
+	// 관리자-사용자관리 세부화면 수정
+	@ResponseBody
+	@RequestMapping("/adminUpdateUser")
+	public String updateAdminUser(@RequestParam HashMap<String, Object> map) {
+		
+		userService.updateAdminUser(map);
+		
+		return "SUCCESS";
 	}
 	
 	// 관리자-업체관리 조회
