@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.UserVO;
 
 public interface IBoardDAO {
 	// 공지사항 조회 기능
@@ -45,4 +46,7 @@ public interface IBoardDAO {
 	
 	// 관리자-공지사항 삭제
 	void deleteAdminNotice(HashMap<String, Object> map);
+	
+	// 관리자 - 사용자관리 조회
+	ArrayList<UserVO> selectAdminUser(HashMap<String, Object> map);
 }

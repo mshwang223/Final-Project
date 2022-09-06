@@ -158,6 +158,88 @@ public class AdminController {
 		
 		return "SUCCESS";
 	}
+
+	// 관리자 - 사용자관리 페이지
+	@RequestMapping("/adminUserSearch/{num}")
+	public String adminUserSearch(@PathVariable String num, 
+							   @RequestParam HashMap<String, Object> map, 
+							   HttpSession session, Model model) {
+		int chk_search = 0;
+		if(map.get("chk_search") != null)
+			chk_search = Integer.parseInt((String)map.get("chk_search"));
+		
+		String text_search = "";	
+
+		if(map.get("text_search") == null)
+			text_search = "";
+		else
+			text_search = (String)map.get("text_search");
+		
+		ArrayList<UserVO> lists = null;
+		
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
+		
+		if(chk_search == 0) {	// 검색 조건 전체
+			if(text_search.equals("") || text_search.length() == 0) {
+				map.put("userId", "%");
+				map.put("userName", "%");
+				map.put("activeDate", "%");
+			} else {
+				// 조건 필요
+				try {
+					String rullDate = text_search.replaceAll("[/.-]", "");
+					LocalDate activedate = LocalDate.parse(rullDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
+					map.put("activeDate", activedate);
+				} catch (DateTimeParseException e) {
+					map.put("userId", text_search);
+					map.put("userName", text_search);
+				}
+			}
+			
+			lists = boardService.selectAdminUser(map);
+		} else {
+			if(chk_search == 1) {	// 검색 조건 ID
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("userId", "%");
+				else
+					map.put("userId", text_search);
+
+			} else if(chk_search == 2) {	// 검색 조건 이름
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("userName", "%");
+				else
+					map.put("userName", text_search);
+			} else {	// 검색 조건 접속일자
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("activeDate", "%");
+				else
+					map.put("activeDate", text_search);
+			}
+			lists = boardService.selectAdminUser(map);
+		}
+
+		if(!lists.toString().equals("[]")) {
+		
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+	
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+	
+			model.addAttribute("chk_search", map.get("chk_search"));
+			model.addAttribute("text_search", map.get("text_search"));		
+			
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+		return "subPage/adminUser";
+	}
 	
 	// 관리자-업체관리 조회
 	@RequestMapping("/adminInsertHotel")

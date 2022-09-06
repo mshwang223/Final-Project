@@ -116,5 +116,15 @@
 	  	DELETE FROM board
 	  	 WHERE boardId IN
 	  	 <foreach collection="boardIds" item="boardId" open="(" close=")" separator=",">#{boardId}</foreach> 
-	</delete>  	
+	</delete>
+	
+  	<!-- 관리자 - 사용자 관리 조회 -->
+	<select id="selectAdminUser" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.UserVO">
+	  	SELECT *, COUNT(*) OVER() AS rowCnt
+	  	  FROM user
+	  	 WHERE userId LIKE CONCAT('%',#{userId},'%')
+	  	    OR userName LIKE CONCAT('%',#{userName},'%')
+	  	    OR DATE_FORMAT(activeDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{activeDate}, '%', activeDate), '%Y-%m-%d')
+	  	 ORDER BY activeDate DESC, userName ASC
+	</select>  	
 </mapper>

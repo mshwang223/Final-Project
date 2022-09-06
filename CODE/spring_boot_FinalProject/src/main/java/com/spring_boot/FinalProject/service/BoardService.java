@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.spring_boot.FinalProject.dao.IBoardDAO;
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.UserVO;
 
 
 @Service
@@ -98,5 +99,11 @@ public class BoardService implements IBoardService {
 	@Override
 	public void deleteAdminNotice(HashMap<String, Object> map) {
 		dao.deleteAdminNotice(map);
+	}
+	
+	// 관리자 - 사용자관리 조회
+	@Override
+	public ArrayList<UserVO> selectAdminUser(HashMap<String, Object> map){
+		return dao.selectAdminUser(map);
 	}
 }
