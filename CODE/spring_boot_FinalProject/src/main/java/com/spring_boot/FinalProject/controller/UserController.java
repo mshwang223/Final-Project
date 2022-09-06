@@ -213,7 +213,8 @@ public class UserController {
         }
         return "SUCCESS";
     }
-
+    
+    // 회원 프로필 이미지
 	@ResponseBody
     @RequestMapping(value = "/myProfileImg", method = RequestMethod.GET)
 	public ResponseEntity<Resource> myProfileImg(HttpSession session) throws MalformedURLException {
@@ -225,7 +226,7 @@ public class UserController {
 				.body(new UrlResource("file:" + imgService.getFullPath(userVO.getUserImg())));
 	}
 
-
+    // 회원 프로필 이미지 수정
     @RequestMapping(value = "/updateUserImg", method = RequestMethod.POST)
 	public String updateUserImg(HttpSession session,MultipartFile userImg) throws IOException {
 		String sid = (String) session.getAttribute("sid");

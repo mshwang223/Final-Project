@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.spring_boot.FinalProject.model.CartVO;
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
@@ -257,6 +258,12 @@ public class HotelController {
 		String period = (String)map.get("rangepicker");
 		map.put("period", period);
 				
+		// 카트
+		 String price =  String.valueOf( map.get("total"));
+	        String stayNo = String.valueOf(  map.get("stayNo"));
+	        CartVO cartVO = new CartVO(period, Integer.parseInt(price), Integer.parseInt(stayNo), userId);
+	        orderService.insertCart(cartVO);
+	        
 		String[] email = user.getUserEmail().split("@"); 
 		
 		model.addAttribute("user", user);

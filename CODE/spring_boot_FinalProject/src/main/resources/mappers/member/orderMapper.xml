@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.spring_boot.FinalProject.dao.IOrderDAO">
-  	<!-- 예약상품 저장 -->
-  	<insert id="insertRsv" parameterType="com.spring_boot.FinalProject.model.OrderVO">
-  		INSERT into orderProduct
-  		(userId, stayNo, manCnt, petCnt, rcvPhone)
-  		VALUES(#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone})
-  	</insert>
+    <!-- 예약상품 저장 -->
+    <insert id="insertRsv" parameterType="com.spring_boot.FinalProject.model.OrderVO">
+        INSERT into orderProduct
+            (userId, stayNo, manCnt, petCnt, rcvPhone)
+        VALUES (#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone})
+    </insert>
+    
+    <!-- 장바구니 저장 -->
+    <insert id="insertCart" parameterType="com.spring_boot.FinalProject.model.CartVO">
+        INSERT into cart
+            (userId, stayNo, period, price, cartQty)
+        VALUES (#{userId}, #{stayNo}, #{period}, #{price}, 1)
+    </insert>
+
+
+    <select id="selectCartByUserId" parameterType="String" resultType="com.spring_boot.FinalProject.model.CartVO">
+        SELECT c.cartId, s.stayNo, s.stayName, c.price, c.period
+        FROM cart c
+                 left join stay s on c.stayNo = s.stayNo
+        where c.userId = #{userId}
+    </select>
 </mapper>
