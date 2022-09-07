@@ -49,6 +49,15 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									</c:if>	
 								</td>
 								<td>
+									<div class="answer-box">
+										<div>답변유무 : </div>
+										
+										<div>
+											<input type="radio" id="chkAll" name="chkAnswer" value="" checked/><label for="chkAll">전체</label>
+											<input type="radio" id="chkWait" name="chkAnswer" value="0"/><label for="chkWait">답변대기</label>
+											<input type="radio" id="chkComplete" name="chkAnswer" value="1"/><label for="chkComplete">답변완료</label>
+										</div>
+									</div>
 									<div id="dropdown-box" class="dropdown-box">
 										<div id="dpBox-name" class="dpBox-name">전체</div>
 										
@@ -109,11 +118,11 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.boardId}"/>" /></td>
 									      	<td>${list.userId}</td>
 									      	<td>${list.userName}</td>
-									      	<td class="title">${list.title}</td>
+									      	<td class="title"><a href="<c:url value="/adminContactDetail/${list.boardId}"/>">${list.title}</a></td>
 								      	  	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 									      	<td>
-									      		<c:if test="${list.chkYN eq '0'}"><button type="button" id="btnAnswer" class="btnAnswer">답변하기</button></c:if>
-									      		<c:if test="${list.chkYN eq '1'}"><div class="txtAnswer">답변완료</div></c:if>
+									      		<c:if test="${list.chkYN eq '0'}">답변하기</c:if>
+									      		<c:if test="${list.chkYN eq '1'}">답변완료</c:if>
 									      	</td>
 									    </tr>
 								    </c:forEach>

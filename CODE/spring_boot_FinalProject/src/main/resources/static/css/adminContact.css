@@ -33,15 +33,17 @@ tr:nth-child(even) td {
 .search-table tr {
   display: flex; 	
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .search-table tr td {
   padding: 1px;
   border: 0;
-  width: 50%;
   display:flex;
   justify-content: flex-end;
   position: relative;
+  
+  text-align: right;
 }
 
 .search-table tr td:first-child {
@@ -56,6 +58,35 @@ div.blue {
   color: blue;  	
 }
 
+/* 답변 박스 레이아웃 */
+div.answer-box {
+  display: flex;
+  
+  margin-right: 40px;
+  padding: 8px;
+  
+  font-size: 14px;
+  
+  
+  border: 1px solid #c6c9cc;
+}
+
+div.answer-box > div:first-child {
+  margin-right: 15px;
+}
+
+div.answer-box > div:last-child {
+  width: 200px;
+  
+  display: flex;
+  justify-content: space-between;	
+}
+
+input[type=radio] {
+
+}
+
+/* 드롭다운 레이아웃 */
 div.dropdown-box {
   width: 100px;
   height: 35px;
@@ -75,13 +106,17 @@ div.dropdown-box div:first-child {
   display: inline-block;	
   margin: 8px auto;	
   font-size: 14px;
-  width: 40px; 	
+  width: 40px;
+  
+  position: relative;
+  right: 7px; 	
 }
 
 div.dropdown-box div:last-child {
   display: inline-block;
   font-size: 16px;
   text-align: right;
+  margin-right: 8px;
   width:40px;	
 }
 
@@ -93,7 +128,7 @@ div.dropdown-box div:last-child {
   
   position: absolute;
   top:35px;
-  left: 197px;
+  left: 335px;
   z-index: 15;
   
   background-color: #f5f5f5;
@@ -187,27 +222,4 @@ table {
   margin: 0 auto;
   width: 100%;
 
-}
-
-/* 답변 버튼 레이아웃 */
-button.btnAnswer {
-  font-weight: bold;
-  padding: 5px 10px;
-  
-  background-color: white;
-  color: black;	
-  
-  border: none;
-  border-radius: 5px;
-  
-  cursor: pointer;
-}
-
-button.btnAnswer:active {
-  background: black;
-  color: white;	
-}
-
-div.txtAnswer {
-  color: blue;	
 }

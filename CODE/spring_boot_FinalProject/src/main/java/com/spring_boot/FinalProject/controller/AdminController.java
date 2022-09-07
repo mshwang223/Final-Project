@@ -294,9 +294,16 @@ public class AdminController {
 		else
 			text_search = (String)map.get("text_search");
 		
+		String chkAnswer = (String)map.get("chkAnswer");
+		if(chkAnswer == null || chkAnswer.equals(""))
+			map.put("chkYN", '%');
+		else if(chkAnswer.equals("0"))
+			map.put("chkYN", '0');
+		else
+			map.put("chkYN", '1');
+		
 		ArrayList<BoardVO> lists = null;
-		
-		
+
 		// 페이징 초기값
 		int pageNum = Integer.parseInt(num) * 10;
 		map.put("pageNum", pageNum);
@@ -358,6 +365,16 @@ public class AdminController {
 			model.addAttribute("maxPageNum", 0);
 		}
 		return "subPage/adminContact";
+	}
+	
+	// 관리자-문의내역 세부화면 페이지
+	@RequestMapping("/adminContactDetail/{boardId}")
+	public String viewAdminContactDetail(@PathVariable String boardId, Model model) {
+		BoardVO vo = boardService.contactDetailView(boardId);
+			
+		model.addAttribute("notice", vo);
+		
+		return "subPage/adminContactDetail";
 	}
 	
 	// 관리자-업체관리 조회

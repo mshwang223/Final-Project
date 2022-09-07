@@ -132,10 +132,10 @@
 	<select id="selectAdminContact" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.BoardVO">
 		SELECT *, COUNT(*) OVER() AS rowCnt  
 		  FROM user u
-		  JOIN (SELECT * FROM board WHERE category = '2') AS b ON u.userId = b.userId
+		  JOIN (SELECT * FROM board WHERE category = '2' AND chkYN LIKE CONCAT('%',#{chkYN},'%')) AS b ON u.userId = b.userId
 		 WHERE u.userId LIKE CONCAT('%',#{userId},'%')
 			OR u.userName LIKE CONCAT('%',#{userName},'%')
 			OR DATE_FORMAT(b.modifyDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{modifyDate}, '%', b.modifyDate), '%Y-%m-%d')
 		 ORDER BY b.modifyDate DESC, userName ASC
-	</select>  	
+	</select> 
 </mapper>
