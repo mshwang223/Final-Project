@@ -6,6 +6,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -16,6 +20,7 @@ import java.util.zip.ZipInputStream;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,11 +28,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.zeroturnaround.zip.ZipUtil;
 
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.BoardService;
+import com.spring_boot.FinalProject.service.HotelService;
 import com.spring_boot.FinalProject.service.UserService;
 
 @Controller
@@ -38,6 +46,9 @@ public class AdminController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	HotelService hotelService;
 	
 	// 관리자 페이지
 	@RequestMapping("/adminNoticeSearch/{num}")
@@ -361,7 +372,7 @@ public class AdminController {
 	
 	// 관리자-업체관리 세부화면 페이지
 	@RequestMapping("/adminInsertDetail/{regId}")
-	public String viewAdminInsertDetail(@PathVariable int regId, String serviceImg, Model model) {
+	public String viewAdminInsertDetail(@PathVariable int regId, Model model) {
 		
 		InsertHotelVO vo = boardService.detailRegistration(regId);
 		model.addAttribute("regId", vo.getRegId());
@@ -380,52 +391,70 @@ public class AdminController {
 		model.addAttribute("createDate", vo.getCreateDate());
 		model.addAttribute("comment", vo.getComment());
 		
-		  // zip 파일
-		  File zipFile = new File("c:/springWorkspace/comImg/"+ serviceImg + ".zip");
-		  //log.debug("zipFile.exist : {}", zipFile.exists());
-		  
-		  // 압축해제 경로
-		  File unzipFolder = new File(zipFile.getParent(), zipFile.getName().replace(".zip", "serviceImg"));
-		  //log.debug("unzipFolder : {}", unzipFolder.getAbsolutePath() + "\n");
-		  
-		  // 존재 하지 않으면 디렉토리 만들기
-		  if(unzipFolder.exists() == false) unzipFolder.mkdirs();
-		  
-		 // log.debug("############# unzip begin #############");
-		  
-		  try (
-		    // zip 파일 읽어오기
-		    FileInputStream fis = new FileInputStream(zipFile);
-		    ZipInputStream zis = new ZipInputStream(fis);
-		    BufferedInputStream bis = new BufferedInputStream(zis);
-		  ) {
-		    ZipEntry zipEntry = null;
-		    while ((zipEntry = zis.getNextEntry()) != null) {
-		      File f = new File(unzipFolder.getAbsolutePath(), zipEntry.getName());
-		      if (zipEntry.isDirectory()) { // entry가 디렉토리일 경우 생성
-		        //log.debug("── onlyDirectory : {}", zipEntry.getName());
-		        //log.debug("└── mkdirs :{}", f.mkdirs());
-		      } else {
-		       // log.debug("── fileName : {}", zipEntry.getName());
-		        if (f.getParentFile().exists() == false) { // entry의 부모 디렉토리가 없을 경우
-		        //  log.debug("└── makeParentDirectory : {}", zipEntry.getName().substring(0, zipEntry.getName().lastIndexOf("/")));
-		          f.getParentFile().mkdirs();
-		        }
-		        try (
-		          FileOutputStream fos = new FileOutputStream(f);
-		          BufferedOutputStream bos = new BufferedOutputStream(fos);
-		        ) {
-		          int b = 0;
-		          while ((b = bis.read()) != -1) {
-		            bos.flush();
-		            bos.write(b);
-		          }
-		        }
-		      }
-		    }
-		  } catch (IOException e) {
-		    e.printStackTrace();
-		  }
+		// 호텔 압축파일명
+		StayVO fileImg = hotelService.selectInsertHotelImg(regId);
+		
+		ZipUtil.unpack(new File("c:\springWorkspace/comImg/"+ fileImg ), new File("c:\\springWorkspace/comImg"));
+		/*
+				
+				
+				  // zip 파일
+				  File zipFile = new File("c:/springWorkspace/comImg/"+ fileImg);
+
+				  // 압축해제할 폴더(디렉토리) 경로
+				  File unzipFolder = new File(zipFile.getParent());
+				  String directory = unzipFolder.toString();
+				  
+			        
+			        try {
+			        	// zip 파일 데이터 읽어오기
+			            FileInputStream fis = new FileInputStream(zipFile);
+			            ZipInputStream zis = new ZipInputStream(fis);
+			            // 성능향상 스트림
+			            BufferedInputStream bis = new BufferedInputStream(zis);
+			            
+			            // 압축 파일(zip)객체
+			            ZipEntry zipEntry = null;
+
+			            while ((zipEntry = zis.getNextEntry()) != null) {
+			            	
+			            	// 압축폴더 이름
+			                String fileNameToUnzip = zipEntry.getName();
+			                
+			                File targetFile = new File(fileNameToUnzip);
+			                
+			                Path newPath = Paths.get(directory);
+			                
+			                //디렉토리 인 경우
+			                if(zipEntry.isDirectory()) {
+			                	FileUtils.forceMkdir(targetFile);
+			                }
+			                else {  //파일 인 경우 parentDirectory 생성
+			                	FileUtils.forceMkdir(targetFile.getParentFile());
+			                }
+			                
+			                // 디렉토리 경로에 저장
+			                FileOutputStream fos = new FileOutputStream(fileNameToUnzip, true);
+			                BufferedOutputStream bos = new BufferedOutputStream(fos);
+			                Files.copy(zis, newPath, StandardCopyOption.REPLACE_EXISTING);
+			                
+			                if(zis != null) {
+				        		zis.close();
+				        	}
+				        	if(fis != null) {
+				        		fis.close();
+				        	}
+			            }
+			            
+			        } catch (IOException e) {
+			            // Exception Handling
+			        	e.printStackTrace();
+			        } finally {
+						
+			        	
+			        		
+			        }
+			        */
 		
 		return "subPage/adminInsertDetail";
 	}	

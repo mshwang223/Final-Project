@@ -83,6 +83,14 @@
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-lang3</artifactId>
 		</dependency>
+		
+      <!-- 파일 다운로드 -->
+      <dependency>
+         <groupId>org.zeroturnaround</groupId>
+         <artifactId>zt-zip</artifactId>
+         <version>1.6</version>
+      </dependency>
+      
 	</dependencies>
 
 	<build>
