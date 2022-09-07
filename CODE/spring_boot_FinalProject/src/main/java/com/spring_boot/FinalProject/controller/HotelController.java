@@ -256,7 +256,10 @@ public class HotelController {
 		// 호텔
 		StayVO stayList = hotelService.selectDetailHotel(map);
 		String period = (String)map.get("rangepicker");
+		String count = (String)map.get("countAll");
+		System.out.println(count);
 		map.put("period", period);
+		map.put("count", count);
 				
 		// 카트
 		 String price =  String.valueOf( map.get("total"));

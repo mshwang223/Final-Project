@@ -333,7 +333,18 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 						<div class="total_count">
 							<span>인원수 | 반려동물 수</span> 
-							<input type="text" class="info_content_count" id="infoCount" spellcheck="false" value="${map.count}">
+							
+							<form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv"/>">
+								<input type="text" class="info_content_count" id="infoCount" name="countAll" spellcheck="false" value="${map.count}">
+								<input type="hidden" id="roomType" name="roomType" value=""/>
+								<input type="hidden" id="rPrice" name="rPrice" value="0"/>
+								<input type="hidden" id="rangepicker" name="rangepicker" value="${map.period}"/>
+								<input type="hidden" id="discount" name="discount" value="0"/>
+								<input type="hidden" id="total" name="total" value=""/>
+								<input type="hidden" id="diffDay" name="diffDay" value=""/>
+								<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">	
+							</form>							
+							
 							<div class="person_count_option">
 								<h4 class="tlt_popup_person">인원 선택</h4>
 								<div class="div_person_count">
@@ -404,16 +415,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<button class="book_btn">예약하기</button>
 					
-					<form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv"/>">
-						<input type="hidden" id="count" name="count" value="${map.count}"/>
-						<input type="hidden" id="roomType" name="roomType" value=""/>
-						<input type="hidden" id="rPrice" name="rPrice" value="0"/>
-						<input type="hidden" id="rangepicker" name="rangepicker" value="${map.period}"/>
-						<input type="hidden" id="discount" name="discount" value="0"/>
-						<input type="hidden" id="total" name="total" value=""/>
-						<input type="hidden" id="diffDay" name="diffDay" value=""/>
-						<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">	
-					</form>
+					
+
 				</div>
 			</article>
 		</section>
