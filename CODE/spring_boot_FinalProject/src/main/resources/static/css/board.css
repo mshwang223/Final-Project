@@ -38,6 +38,10 @@ th.num, th.checkBox {
   width: 90px;
 }
 
+th.id, th.name {
+  width: 120px;	
+}
+
 /* 테이블 체크박스 */
 th.checkBox > input {
   width: 15px;
@@ -52,11 +56,11 @@ th.checkBox > input {
 
 /* 테이블 작성자, 작성일 크기 고정 */
 th.date {
-  width: 220px;
+  width: 180px;
 }
 
 th.author, th.chkYN {
-  width: 160px;	
+  width: 120px;	
 }
 
 th.approve{

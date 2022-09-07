@@ -106,4 +106,10 @@ public class BoardService implements IBoardService {
 	public ArrayList<UserVO> selectAdminUser(HashMap<String, Object> map){
 		return dao.selectAdminUser(map);
 	}
+	
+	// 관리자 - 문의내역 조회
+	@Override
+	public ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map) {
+		return dao.selectAdminContact(map);
+	}
 }

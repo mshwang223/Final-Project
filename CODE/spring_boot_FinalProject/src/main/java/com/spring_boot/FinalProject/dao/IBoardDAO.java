@@ -49,4 +49,7 @@ public interface IBoardDAO {
 	
 	// 관리자 - 사용자관리 조회
 	ArrayList<UserVO> selectAdminUser(HashMap<String, Object> map);
+	
+	// 관리자 - 문의내역 조회
+	ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map);
 }

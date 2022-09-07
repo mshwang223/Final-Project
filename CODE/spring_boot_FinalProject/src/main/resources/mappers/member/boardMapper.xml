@@ -126,5 +126,16 @@
 	  	    OR userName LIKE CONCAT('%',#{userName},'%')
 	  	    OR DATE_FORMAT(activeDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{activeDate}, '%', activeDate), '%Y-%m-%d')
 	  	 ORDER BY activeDate DESC, userName ASC
+	</select>
+	
+  	<!-- 관리자 - 사용자 관리 조회 -->
+	<select id="selectAdminContact" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.BoardVO">
+		SELECT *, COUNT(*) OVER() AS rowCnt  
+		  FROM user u
+		  JOIN (SELECT * FROM board WHERE category = '2') AS b ON u.userId = b.userId
+		    OR u.userId LIKE CONCAT('%',#{userId},'%')
+			OR u.userName LIKE CONCAT('%',#{userName},'%')
+			OR DATE_FORMAT(b.modifyDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{modifyDate}, '%', b.modifyDate), '%Y-%m-%d')
+		 ORDER BY b.modifyDate DESC, userName ASC
 	</select>  	
 </mapper>
