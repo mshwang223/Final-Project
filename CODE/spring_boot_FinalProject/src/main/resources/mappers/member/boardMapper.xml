@@ -133,7 +133,7 @@
 		SELECT *, COUNT(*) OVER() AS rowCnt  
 		  FROM user u
 		  JOIN (SELECT * FROM board WHERE category = '2') AS b ON u.userId = b.userId
-		    OR u.userId LIKE CONCAT('%',#{userId},'%')
+		 WHERE u.userId LIKE CONCAT('%',#{userId},'%')
 			OR u.userName LIKE CONCAT('%',#{userName},'%')
 			OR DATE_FORMAT(b.modifyDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{modifyDate}, '%', b.modifyDate), '%Y-%m-%d')
 		 ORDER BY b.modifyDate DESC, userName ASC

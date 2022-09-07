@@ -188,3 +188,26 @@ table {
   width: 100%;
 
 }
+
+/* 답변 버튼 레이아웃 */
+button.btnAnswer {
+  font-weight: bold;
+  padding: 5px 10px;
+  
+  background-color: white;
+  color: black;	
+  
+  border: none;
+  border-radius: 5px;
+  
+  cursor: pointer;
+}
+
+button.btnAnswer:active {
+  background: black;
+  color: white;	
+}
+
+div.txtAnswer {
+  color: blue;	
+}

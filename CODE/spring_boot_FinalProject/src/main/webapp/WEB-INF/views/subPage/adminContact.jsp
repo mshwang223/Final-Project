@@ -40,7 +40,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<span>#문의내역</span>
 						</div>
 					</div>	
-					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminUserSearch/0"/>">
+					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminContactSearch/0"/>">
 						<table class="search-table">
 							<tr>
 								<td>
@@ -112,8 +112,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									      	<td class="title">${list.title}</td>
 								      	  	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 									      	<td>
-									      		<c:if test="${list.chkYN eq '0'}">답변대기</c:if>
-									      		<c:if test="${list.chkYN eq '1'}">답변완료</c:if>
+									      		<c:if test="${list.chkYN eq '0'}"><button type="button" id="btnAnswer" class="btnAnswer">답변하기</button></c:if>
+									      		<c:if test="${list.chkYN eq '1'}"><div class="txtAnswer">답변완료</div></c:if>
 									      	</td>
 									    </tr>
 								    </c:forEach>
