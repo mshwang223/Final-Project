@@ -16,7 +16,7 @@
 
 				<a class="aUserLists adminNotice" href="<c:url value='/adminNoticeSearch/0'/>">공지사항</a>
 				<a class="aUserLists adminUser" href="<c:url value='/adminUserSearch/0'/>">사용자관리</a>
-				<a class="aUserLists" href="#">문의내역</a>
+				<a class="aUserLists adminContact" href="<c:url value='/adminContactSearch/0'/>">문의내역</a>
 				<a class="aUserLists" href="#">결재내역</a>
 				<a class="aUserLists" href="#">탈퇴회원</a>
 						
