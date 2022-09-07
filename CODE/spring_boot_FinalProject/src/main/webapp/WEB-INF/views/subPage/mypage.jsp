@@ -84,7 +84,7 @@
                         <button class="accordion">예약 내역<span class="accordion__arrow">></span></button>
                         <div class="panel">
                         <div class="panel_wrap">
-                            <p>펫밀리가 떴다2 펜션</p>
+                            <p></p>
                             <button id="review_btn">후기 남기러 가기</button>
                             </div>
                         </div>
