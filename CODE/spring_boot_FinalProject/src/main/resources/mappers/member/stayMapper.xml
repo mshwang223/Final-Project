@@ -79,4 +79,11 @@
 		 WHERE facilityroom.stayNo = #{stayNo}
 		   AND facilitySort = '3'   
 	</select>
+	
+	<!-- 업체등록 이미지 -->
+	<select id="selectInsertHotelImg" parameterType="int"  resultType="com.spring_boot.FinalProject.model.StayVO">
+		SELECT serviceImg
+		FROM registration
+		WHERE regId = #{regId}
+	</select>
 </mapper>

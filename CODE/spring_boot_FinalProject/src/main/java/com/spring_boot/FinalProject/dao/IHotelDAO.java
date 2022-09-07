@@ -33,4 +33,7 @@ public interface IHotelDAO {
 	
 	// 숙박펜션 편의시설3 세부화면 조회 기능
 	ArrayList<FacilityVO> selectDetailFacility3(HashMap<String, Object> map);
+	
+	// 업체등록 이미지 가져오기
+	StayVO selectInsertHotelImg(int id);
 }

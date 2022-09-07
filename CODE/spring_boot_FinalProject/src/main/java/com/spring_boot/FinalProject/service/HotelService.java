@@ -67,4 +67,10 @@ public class HotelService implements IHotelService {
 	public ArrayList<StayVO> listAllHotel() {
 		return dao.listAllHotel();
 	}
+
+	@Override
+	public StayVO selectInsertHotelImg(int id) {
+
+		return dao.selectInsertHotelImg(id);
+	}
 }
