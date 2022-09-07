@@ -2,7 +2,7 @@
 
 /* 헤더 언더라인 이동 */
 header nav.main_nav div.underline {
-  left: calc(50% + 32px);
+  left: calc(75% + 32px);
 }
 
 th {
@@ -34,6 +34,12 @@ tr:nth-child(2) > td {
 .contents {
   position: relative;
   top:-100px;
+}
+
+/* 답변이 왔을 경우 */
+.contents.readOnly {
+  top:-140px;
+  left: 15px;
 }
 
 /* summernote 바깥선 제거 */
@@ -178,4 +184,45 @@ th.contactInputTitle > input:focus {
   background-color: white;
   color: black;
 
+}
+
+/* 답변 박스 레이아웃 */
+
+td.answer-title {
+  background-color: #ee82ee;
+  color: white;
+  
+  font-weight: bold;
+  
+  height: 40px;
+}
+
+div.answers {
+  height: 200px;
+  
+  padding: 15px;
+}
+
+td.answer-box {
+  padding: 0;	
+}
+
+button.btnAnswerBox {
+  padding: 10px 20px;
+  
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: white;
+  color: black;
+  
+  float: right;
+  
+  position: relative;
+  top: 120px;
+  
+  border: none;
+  border-radius: 2px;
+  
+  cursor: pointer;   	
 }

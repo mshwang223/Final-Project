@@ -128,7 +128,7 @@
 	  	 ORDER BY activeDate DESC, userName ASC
 	</select>
 	
-  	<!-- 관리자 - 사용자 관리 조회 -->
+  	<!-- 관리자 - 문의내역 조회 -->
 	<select id="selectAdminContact" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.BoardVO">
 		SELECT *, COUNT(*) OVER() AS rowCnt  
 		  FROM user u
@@ -137,5 +137,34 @@
 			OR u.userName LIKE CONCAT('%',#{userName},'%')
 			OR DATE_FORMAT(b.modifyDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{modifyDate}, '%', b.modifyDate), '%Y-%m-%d')
 		 ORDER BY b.modifyDate DESC, userName ASC
-	</select> 
+	</select>
+	
+	<!-- 관리자 - 문의내역 답변 조회 -->
+	<select id="selectAdminComment" parameterType="String" resultType="com.spring_boot.FinalProject.model.CommentVO">
+		SELECT *  
+		  FROM comment
+		 WHERE boardId = #{boardId}
+	</select>
+		
+	<!-- 관리자 - 답변 반영 -->
+	<update id="updateCheckYN" parameterType="String">
+		UPDATE board
+		   SET chkYN = 1
+		 WHERE boardId = #{boardId} 	   
+	</update>
+	
+  	<!-- 관리자 - 문의내역 답변 저장 -->
+	<insert id="insertAdminContact" parameterType="hashmap">
+	  	INSERT into comment
+	  		  (boardId, userId, comment)
+	  	VALUES(#{boardId}, #{userId}, #{comment})	   
+	</insert>
+	
+	<!-- 관리자 - 문의내역 답변 수정 -->
+	<update id="updateAdminContact" parameterType="hashmap">
+		UPDATE comment
+		   SET comment = #{comment}
+		 WHERE boardId = #{boardId}
+		   AND userId = #{userId} 	   
+	</update>	 
 </mapper>

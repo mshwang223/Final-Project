@@ -5,6 +5,11 @@
 *********************************/
 
 $(document).ready(function(){
+	console.log($("#chkYN").val());
+	if($("#chkYN").val() == '1') {
+		$("input[name=title]").attr('readOnly', 'readOnly');
+	}
+
 	// 첨부 파일이 존재하면 보이기
 	if($("#fileName").text()) $(".file-box").css('display', 'inline-block');
 
@@ -35,7 +40,7 @@ $(document).ready(function(){
 		location.href = "/contactResult/0/" + $("#userId").val();
 	});
 	
-	/* summernote api 레이아웃 */
+	/* summernote api 내용 레이아웃 */
 	$("#contactContents").summernote({
 		height: 350,                 	// 에디터 높이
 		minHeight: 350,             	// 최소 높이

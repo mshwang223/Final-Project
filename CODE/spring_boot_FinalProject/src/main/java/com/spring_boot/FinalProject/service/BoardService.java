@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IBoardDAO;
 import com.spring_boot.FinalProject.model.BoardVO;
+import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
@@ -111,5 +112,29 @@ public class BoardService implements IBoardService {
 	@Override
 	public ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map) {
 		return dao.selectAdminContact(map);
+	}
+	
+	// 관리자 - 문의내역 답변 조회
+	@Override
+	public CommentVO selectAdminComment(String boardId) {
+		return dao.selectAdminComment(boardId);
+	}
+	
+	// 관리자 - 문의내역 답변 반영
+	@Override
+	public void updateCheckYN(String boardId) {
+		dao.updateCheckYN(boardId);
+	}
+
+	// 관리자 - 문의내역 답변 저장
+	@Override
+	public void insertAdminContact(HashMap<String, Object> map) {
+		dao.insertAdminContact(map);		
+	}
+
+	// 관리자 - 문의내역 답변 수정
+	@Override
+	public void updateAdminContact(HashMap<String, Object> map) {
+		dao.updateAdminContact(map);
 	}
 }

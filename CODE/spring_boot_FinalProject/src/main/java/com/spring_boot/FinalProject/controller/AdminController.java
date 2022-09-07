@@ -1,26 +1,15 @@
 package com.spring_boot.FinalProject.controller;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.zeroturnaround.zip.ZipUtil;
 
 import com.spring_boot.FinalProject.model.BoardVO;
+import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -369,12 +359,40 @@ public class AdminController {
 	
 	// 관리자-문의내역 세부화면 페이지
 	@RequestMapping("/adminContactDetail/{boardId}")
-	public String viewAdminContactDetail(@PathVariable String boardId, Model model) {
+	public String viewAdminContactDetail(@PathVariable String boardId, 
+										 HashMap<String, Object> map, Model model) {
+		
+		map.put("boardId", boardId);
+		
 		BoardVO vo = boardService.contactDetailView(boardId);
-			
+		CommentVO cvo = boardService.selectAdminComment(boardId);
+		
 		model.addAttribute("notice", vo);
+		model.addAttribute("answer", cvo);
 		
 		return "subPage/adminContactDetail";
+	}
+	
+	// 관리자-문의내역 답변 저장
+	@ResponseBody
+	@RequestMapping("/adminSaveContact")
+	public String adminSaveContact(@RequestParam HashMap<String, Object> map,
+								   HttpSession session) {
+		String chkInUp = (String)map.get("chkInUp");
+		String userId = (String)session.getAttribute("sid");
+		
+		map.put("userId", userId);
+				
+		if(chkInUp.equals("Insert")) {	// 신규 작성
+			boardService.updateCheckYN((String)map.get("boardId"));
+			boardService.insertAdminContact(map);
+			return "INSERT";
+		} else {	// 수정
+			boardService.updateAdminContact(map);
+			return "UPDATE";
+		}
+		
+		
 	}
 	
 	// 관리자-업체관리 조회

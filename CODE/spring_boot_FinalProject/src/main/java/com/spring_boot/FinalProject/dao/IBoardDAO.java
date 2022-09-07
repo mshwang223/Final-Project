@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.spring_boot.FinalProject.model.BoardVO;
+import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
@@ -22,6 +23,9 @@ public interface IBoardDAO {
 	
 	// 문의내역 조회
 	ArrayList<BoardVO> selectContact(HashMap<String, Object> map);
+	
+	// 관리자 - 문의내역 답변 조회
+	CommentVO selectAdminComment(String boardId);
 	
 	// 문의내역 상세조회
 	BoardVO contactDetailView(String boardId);
@@ -52,4 +56,13 @@ public interface IBoardDAO {
 	
 	// 관리자 - 문의내역 조회
 	ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map);
+	
+	// 관리자 - 문의내역 답변 반영
+	void updateCheckYN(String boardId);
+	
+	// 관리자 - 문의내역 답변 저장
+	void insertAdminContact(HashMap<String, Object> map);
+	
+	// 관리자 - 문의내역 답변 수정
+	void updateAdminContact(HashMap<String, Object> map);
 }
