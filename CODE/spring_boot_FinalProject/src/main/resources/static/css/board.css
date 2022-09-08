@@ -1,4 +1,10 @@
 /* 게시판 공통 */
+
+/* a태그 레이아웃 */
+a.atxtUnderline {
+  color: #008000;
+}
+
 th {
   background: #ee82ee;
   color: #fff;

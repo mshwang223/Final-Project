@@ -3,6 +3,10 @@ $(document).ready(function () {
     $(document).on('change','#profile_input',function () {
         $("#imageForm").submit();
     });
+    
+    $('#unRegister').click(function(){
+    	location.href='/unregisterForm';
+    })
 });
 
 function readURL(input) {

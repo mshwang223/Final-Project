@@ -48,6 +48,7 @@
                                 <label for="profile_input" id="input_profile_img">프로필 사진 편집</label>
                                 <input type="file" name="userImg" id="profile_input" style="display: none;">
                             </form>
+                            <div class="unregister" id="unRegister">회원탈퇴</div>
                         </div>
                     </div>
                 </div>

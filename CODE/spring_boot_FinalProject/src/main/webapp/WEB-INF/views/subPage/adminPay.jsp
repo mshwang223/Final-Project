@@ -19,9 +19,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/board.css"/>">
-		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminContact.css"/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminPay.css"/>">
 		
-		<script src="<c:url value="/js/adminContact.js"/>"></script>
+		<script src="<c:url value="/js/adminPay.js"/>"></script>
 	</head>
 	
 	<body>
@@ -37,10 +37,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="main-layout">
 					<div class="pageTitle">
 						<div>
-							<span>#문의내역</span>
+							<span>#결재내역</span>
 						</div>
 					</div>	
-					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminContactSearch/0"/>">
+					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminUserSearch/0"/>">
 						<table class="search-table">
 							<tr>
 								<td>
@@ -49,15 +49,6 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									</c:if>	
 								</td>
 								<td>
-									<div class="answer-box">
-										<div>답변유무 : </div>
-										
-										<div>
-											<input type="radio" id="chkAll" name="chkAnswer" value="" checked/><label for="chkAll">전체</label>
-											<input type="radio" id="chkWait" name="chkAnswer" value="0"/><label for="chkWait">답변대기</label>
-											<input type="radio" id="chkComplete" name="chkAnswer" value="1"/><label for="chkComplete">답변완료</label>
-										</div>
-									</div>
 									<div id="dropdown-box" class="dropdown-box">
 										<div id="dpBox-name" class="dpBox-name">전체</div>
 										
@@ -75,16 +66,13 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<li class="dp-all">전체</li>
 										<li class="dp-id">ID</li>
 										<li class="dp-name">이름</li>
-										<li class="dp-modifyDate">작성일</li>
+										<li class="dp-activeDate">접속일</li>
 									</ul>
 									<div class="search-box">
 										<div>
 											<input type="text" id="text_search" name="text_search" class="text_search" value="${text_search}" placeholder="검색어를 입력하세요.">
 											<button class="search-button"><img src="<c:url value="/images/search.png"/>"></button>
 										</div>
-									</div>
-									<div>
-										<button type="button" id="adminNoticeDel" class="btnAdmin del">삭제</button>
 									</div>
 								</td>
 							</tr>
@@ -95,34 +83,32 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<thead>
 								<tr>
 							      	<th class="num">번호</th>
-							      	<th class="checkBox">
-							      		전체 <input type="checkBox" id="allCheck" />
-							      	</th>
 							      	<th class="id">ID</th>
 							      	<th class="name">이름</th>
-							     	<th>문의제목</th>
-							      	<th class="date">작성일</th>
-							      	<th class="author">답변유무</th>
+							      	<th>이메일</th>
+							     	<th class="date">가입일</th>
+							      	<th class="date">접속일</th>
+							      	<th class="author">권한</th>
 							    </tr>
 							</thead>
 							<tbody>
 								<c:if test="${maxPageNum eq 0}">
 									<tr>
-										<td colspan="7">내용이 없습니다.</td>
+										<td colspan="8">내용이 없습니다.</td>
 									</tr>							
 								</c:if>
 								<c:if test="${maxPageNum ne 0}">
 									<c:forEach var="list" items="${lists}" varStatus="loop">
 									    <tr>
 									      	<td>${loop.count}</td>
-									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.boardId}"/>" /></td>
-									      	<td>${list.userId}</td>
+									      	<td><a class="atxtUnderline" href="<c:url value="/adminUserDetail/${list.userId}"/>">${list.userId}</a></td>
 									      	<td>${list.userName}</td>
-									      	<td class="title"><a class="atxtUnderline" href="<c:url value="/adminContactDetail/${list.boardId}"/>">${list.title}</a></td>
-								      	  	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
+									      	<td>${list.userEmail}</td>
+									      	<td><fmt:formatDate value="${list.createDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
+									      	<td><fmt:formatDate value="${list.activeDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 									      	<td>
-									      		<c:if test="${list.chkYN eq '0'}">답변하기</c:if>
-									      		<c:if test="${list.chkYN eq '1'}">답변완료</c:if>
+									      		<c:if test="${list.userAuthor eq '0'}">사용자</c:if>
+												<c:if test="${list.userAuthor eq '1'}">관리자</c:if>
 									      	</td>
 									    </tr>
 								    </c:forEach>

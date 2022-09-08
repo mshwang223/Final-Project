@@ -1,13 +1,13 @@
-/* 문의내역 */
+/* 결재내역 */
 
 /* 사이드 언더라인 이동 */
 
 div.sideTitleLine {
-  top:calc(60px * 3); 
+  top:calc(60px * 4); 
 }
 
 /* 공지사항에 메뉴 위치 */
-a.adminContact {
+a.adminUser {
   color: #ee82ee;	
 }
 
@@ -33,17 +33,15 @@ tr:nth-child(even) td {
 .search-table tr {
   display: flex; 	
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .search-table tr td {
   padding: 1px;
   border: 0;
+  width: 50%;
   display:flex;
   justify-content: flex-end;
   position: relative;
-  
-  text-align: right;
 }
 
 .search-table tr td:first-child {
@@ -58,35 +56,6 @@ div.blue {
   color: blue;  	
 }
 
-/* 답변 박스 레이아웃 */
-div.answer-box {
-  display: flex;
-  
-  margin-right: 40px;
-  padding: 8px;
-  
-  font-size: 14px;
-  
-  
-  border: 1px solid #c6c9cc;
-}
-
-div.answer-box > div:first-child {
-  margin-right: 15px;
-}
-
-div.answer-box > div:last-child {
-  width: 200px;
-  
-  display: flex;
-  justify-content: space-between;	
-}
-
-input[type=radio] {
-
-}
-
-/* 드롭다운 레이아웃 */
 div.dropdown-box {
   width: 100px;
   height: 35px;
@@ -106,17 +75,13 @@ div.dropdown-box div:first-child {
   display: inline-block;	
   margin: 8px auto;	
   font-size: 14px;
-  width: 40px;
-  
-  position: relative;
-  right: 7px; 	
+  width: 40px; 	
 }
 
 div.dropdown-box div:last-child {
   display: inline-block;
   font-size: 16px;
   text-align: right;
-  margin-right: 8px;
   width:40px;	
 }
 
@@ -128,7 +93,7 @@ div.dropdown-box div:last-child {
   
   position: absolute;
   top:35px;
-  left: 335px;
+  left: 197px;
   z-index: 15;
   
   background-color: #f5f5f5;

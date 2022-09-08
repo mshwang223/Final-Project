@@ -1,26 +1,15 @@
 package com.spring_boot.FinalProject.controller;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.zeroturnaround.zip.ZipUtil;
 
 import com.spring_boot.FinalProject.model.BoardVO;
+import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.BoardService;
@@ -369,12 +360,217 @@ public class AdminController {
 	
 	// 관리자-문의내역 세부화면 페이지
 	@RequestMapping("/adminContactDetail/{boardId}")
-	public String viewAdminContactDetail(@PathVariable String boardId, Model model) {
+	public String viewAdminContactDetail(@PathVariable String boardId, 
+										 HashMap<String, Object> map, Model model) {
+		
+		map.put("boardId", boardId);
+		
 		BoardVO vo = boardService.contactDetailView(boardId);
-			
+		CommentVO cvo = boardService.selectAdminComment(boardId);
+		
 		model.addAttribute("notice", vo);
+		model.addAttribute("answer", cvo);
 		
 		return "subPage/adminContactDetail";
+	}
+	
+	// 관리자-문의내역 답변 저장
+	@ResponseBody
+	@RequestMapping("/adminSaveContact")
+	public String adminSaveContact(@RequestParam HashMap<String, Object> map,
+								   HttpSession session) {
+		String chkInUp = (String)map.get("chkInUp");
+		String userId = (String)session.getAttribute("sid");
+		
+		map.put("userId", userId);
+				
+		if(chkInUp.equals("Insert")) {	// 신규 작성
+			boardService.updateCheckYN((String)map.get("boardId"));
+			boardService.insertAdminContact(map);
+			return "INSERT";
+		} else {	// 수정
+			boardService.updateAdminContact(map);
+			return "UPDATE";
+		}
+	}
+	
+	// 관리자 - 결재내역 페이지
+	@RequestMapping("/adminPaySearch/{num}")
+	public String adminPaySearch(@PathVariable String num, 
+							   		 @RequestParam HashMap<String, Object> map, 
+							   		 HttpSession session, Model model) {
+		int chk_search = 0;
+		if(map.get("chk_search") != null)
+			chk_search = Integer.parseInt((String)map.get("chk_search"));
+		
+		String text_search = "";	
+
+		if(map.get("text_search") == null)
+			text_search = "";
+		else
+			text_search = (String)map.get("text_search");
+		
+		ArrayList<UserVO> lists = null;
+		
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
+		
+		if(chk_search == 0) {	// 검색 조건 전체
+			if(text_search.equals("") || text_search.length() == 0) {
+				map.put("userId", "%");
+				map.put("userName", "%");
+				map.put("activeDate", "%");
+			} else {
+				// 조건 필요
+				try {
+					String rullDate = text_search.replaceAll("[/.-]", "");
+					LocalDate activedate = LocalDate.parse(rullDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
+					map.put("activeDate", activedate);
+				} catch (DateTimeParseException e) {
+					map.put("userId", text_search);
+					map.put("userName", text_search);
+				}
+			}
+			
+			lists = boardService.selectAdminUser(map);
+		} else {
+			if(chk_search == 1) {	// 검색 조건 ID
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("userId", "%");
+				else
+					map.put("userId", text_search);
+
+			} else if(chk_search == 2) {	// 검색 조건 이름
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("userName", "%");
+				else
+					map.put("userName", text_search);
+			} else {	// 검색 조건 접속일자
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("activeDate", "%");
+				else
+					map.put("activeDate", text_search);
+			}
+			lists = boardService.selectAdminUser(map);
+		}
+
+		if(!lists.toString().equals("[]")) {
+		
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+	
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+	
+			model.addAttribute("chk_search", map.get("chk_search"));
+			model.addAttribute("text_search", map.get("text_search"));		
+			
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+		return "subPage/adminPay";
+	}
+	
+	// 관리자 - 탈퇴내역 페이지
+	@RequestMapping("/adminOutSearch/{num}")
+	public String adminOutSearch(@PathVariable String num, 
+							   		 @RequestParam HashMap<String, Object> map, 
+							   		 HttpSession session, Model model) {
+		int chk_search = 0;
+		if(map.get("chk_search") != null)
+			chk_search = Integer.parseInt((String)map.get("chk_search"));
+		
+		String text_search = "";	
+
+		if(map.get("text_search") == null)
+			text_search = "";
+		else
+			text_search = (String)map.get("text_search");
+		
+		ArrayList<OutuserVO> lists = null;
+		
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
+		
+		if(chk_search == 0) {	// 검색 조건 전체
+			if(text_search.equals("") || text_search.length() == 0) {
+				map.put("userId", "%");
+				map.put("userName", "%");
+				map.put("levDate", "%");
+			} else {
+				// 조건 필요
+				try {
+					String rullDate = text_search.replaceAll("[/.-]", "");
+					LocalDate levDate = LocalDate.parse(rullDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
+					map.put("levDate", levDate);
+				} catch (DateTimeParseException e) {
+					map.put("userId", text_search);
+					map.put("userName", text_search);
+				}
+			}
+			
+			lists = boardService.selectOutUser(map);
+		} else {
+			if(chk_search == 1) {	// 검색 조건 ID
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("userId", "%");
+				else
+					map.put("userId", text_search);
+
+			} else if(chk_search == 2) {	// 검색 조건 이름
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("userName", "%");
+				else
+					map.put("userName", text_search);
+			} else {	// 검색 조건 접속일자
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("levDate", "%");
+				else
+					map.put("levDate", text_search);
+			}
+			lists = boardService.selectOutUser(map);
+		}
+
+		if(!lists.toString().equals("[]")) {
+		
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+	
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+	
+			model.addAttribute("chk_search", map.get("chk_search"));
+			model.addAttribute("text_search", map.get("text_search"));		
+			
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+		return "subPage/adminOut";
+	}
+	
+	// 관리자-탈퇴회원 삭제
+	@ResponseBody
+	@RequestMapping("/adminDeleteOut")
+	public String adminDeleteOut(@RequestParam("levIds") String levIds,
+								 HashMap<String, Object> map) {
+		
+		String[] arrLevIds = levIds.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("levIds", arrLevIds);
+		
+		boardService.deleteAdminOut(map);
+		
+		return "SUCCESS";
 	}
 	
 	// 관리자-업체관리 조회
