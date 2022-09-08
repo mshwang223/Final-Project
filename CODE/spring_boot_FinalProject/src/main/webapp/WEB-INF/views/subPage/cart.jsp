@@ -191,6 +191,7 @@
                     <button>PAYCO</button>
                     <button>L.pay</button>
                     <button>그외결제</button>
+                    <button class="payments_confirm">결제하기</button>
                 </div>
 
             </div>

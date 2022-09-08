@@ -81,7 +81,7 @@
                             <p>aaaaaaaaaaa</p>
                         </div>
 
-                        <button class="accordion">예약 내역<span class="accordion__arrow">></span></button>
+                        <button class="accordion">이용 내역<span class="accordion__arrow">></span></button>
                         <div class="panel">
                         <div class="panel_wrap">
                             <p></p>
