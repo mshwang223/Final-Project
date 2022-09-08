@@ -254,3 +254,10 @@ justify-content: space-between;
   float: right;
 }
 
+.unregister{
+	margin-left: 80px;
+	margin-top: 10px;
+	cursor: pointer;
+	color: #888;
+}
+

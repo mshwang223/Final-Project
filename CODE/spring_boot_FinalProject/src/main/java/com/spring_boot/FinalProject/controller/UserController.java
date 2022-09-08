@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
@@ -136,6 +137,21 @@ public class UserController {
 		session.setAttribute("author", vo.getUserAuthor());
 		
 		return "SUCCESS";
+	}
+	
+	// 회원탈퇴 페이지 이동
+	@RequestMapping("/unregisterForm")
+	public String viewUnregisterForm() {
+		return "subPage/unregisterForm";
+	}
+	
+	// 회원탈퇴 처리
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public String delete(String userId,RedirectAttributes rttr,HttpSession session){
+		userService.deleteUser(userId);
+		session.invalidate();
+		rttr.addFlashAttribute("msg", "이용해주셔서 감사합니다.");
+		return "redirect:/index";
 	}
 	
 	// ID 중복 체크
