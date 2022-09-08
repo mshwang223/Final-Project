@@ -176,5 +176,12 @@
 			OR userName LIKE CONCAT('%',#{userName},'%')
 			OR DATE_FORMAT(levDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{levDate}, '%', levDate), '%Y-%m-%d')
 		 ORDER BY levDate DESC, userName ASC
-	</select>	 
+	</select>
+	
+  	<!-- 관리자 - 탈퇴회원 삭제 -->
+	<delete id="deleteAdminOut" parameterType="hashmap">
+	  	DELETE FROM outuser
+	  	 WHERE levId IN
+	  	 <foreach collection="levIds" item="levId" open="(" close=")" separator=",">#{levId}</foreach> 
+	</delete>	 
 </mapper>
