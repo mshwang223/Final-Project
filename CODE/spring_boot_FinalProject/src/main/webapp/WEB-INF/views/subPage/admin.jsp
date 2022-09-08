@@ -105,7 +105,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									    <tr>
 									      	<td>${loop.count}</td>
 									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.boardId}"/>" /></td>
-									      	<td class="title"><a href="<c:url value="/adminNoticeDetail/${list.boardId}"/>">${list.title}</a></td>
+									      	<td class="title"><a class="atxtUnderline" href="<c:url value="/adminNoticeDetail/${list.boardId}"/>">${list.title}</a></td>
 									      	<td>${list.userName}</td>
 									      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 									    </tr>

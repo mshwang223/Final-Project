@@ -59,6 +59,11 @@ $(document).ready(function(){
 				alert("전송 실패");
 			}
  		}); 				
+	});
+	
+	// 다운로드
+	$("#fileDownload").click(function() {
+		location.href = "/fileDownload/" + $("#fileName").text();	
 	});	
 });
 

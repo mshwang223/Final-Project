@@ -118,7 +118,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.boardId}"/>" /></td>
 									      	<td>${list.userId}</td>
 									      	<td>${list.userName}</td>
-									      	<td class="title"><a href="<c:url value="/adminContactDetail/${list.boardId}"/>">${list.title}</a></td>
+									      	<td class="title"><a class="atxtUnderline" href="<c:url value="/adminContactDetail/${list.boardId}"/>">${list.title}</a></td>
 								      	  	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 									      	<td>
 									      		<c:if test="${list.chkYN eq '0'}">답변하기</c:if>
