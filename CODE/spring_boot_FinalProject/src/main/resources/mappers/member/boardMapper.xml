@@ -166,5 +166,15 @@
 		   SET comment = #{comment}
 		 WHERE boardId = #{boardId}
 		   AND userId = #{userId} 	   
-	</update>	 
+	</update>
+	
+	<!-- 관리자 - 탈퇴회원 조회 -->
+	<select id="selectOutUser" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.OutuserVO">
+		SELECT *, COUNT(*) OVER() AS rowCnt  
+		  FROM outuser
+		 WHERE userId LIKE CONCAT('%',#{userId},'%')
+			OR userName LIKE CONCAT('%',#{userName},'%')
+			OR DATE_FORMAT(levDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{levDate}, '%', levDate), '%Y-%m-%d')
+		 ORDER BY levDate DESC, userName ASC
+	</select>	 
 </mapper>

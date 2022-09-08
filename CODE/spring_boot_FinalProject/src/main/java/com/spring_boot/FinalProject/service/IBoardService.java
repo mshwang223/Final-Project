@@ -6,6 +6,7 @@ import java.util.HashMap;
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 public interface IBoardService {
@@ -43,13 +44,13 @@ public interface IBoardService {
 	// 업체 승인
 	void approveHotel(String name, String approve);
 	
-	// 관리자-공지사항 수정
+	// 관리자 - 공지사항 수정
 	void updateAdminNotice(HashMap<String, Object> map);
 	
-	// 관리자-공지사항 입력
+	// 관리자 - 공지사항 입력
 	void insertAdminNotice(HashMap<String, Object> map);
 	
-	// 관리자-공지사항 삭제
+	// 관리자 - 공지사항 삭제
 	void deleteAdminNotice(HashMap<String, Object> map);
 	
 	// 관리자 - 사용자관리 조회
@@ -66,4 +67,10 @@ public interface IBoardService {
 	
 	// 관리자 - 문의내역 답변 수정
 	void updateAdminContact(HashMap<String, Object> map);
+	
+	// 관리자 - 탈퇴회원 조회
+	ArrayList<OutuserVO> selectOutUser(HashMap<String, Object> map);
+	
+	// 관리자 - 탈퇴회원 삭제
+	void deleteAdminOut(HashMap<String, Object> map);
 }

@@ -40,7 +40,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<span>#탈퇴회원</span>
 						</div>
 					</div>	
-					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminUserSearch/0"/>">
+					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminOutSearch/0"/>">
 						<table class="search-table">
 							<tr>
 								<td>
@@ -66,13 +66,16 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<li class="dp-all">전체</li>
 										<li class="dp-id">ID</li>
 										<li class="dp-name">이름</li>
-										<li class="dp-activeDate">접속일</li>
+										<li class="dp-levDate">탈퇴일</li>
 									</ul>
 									<div class="search-box">
 										<div>
 											<input type="text" id="text_search" name="text_search" class="text_search" value="${text_search}" placeholder="검색어를 입력하세요.">
 											<button class="search-button"><img src="<c:url value="/images/search.png"/>"></button>
 										</div>
+									</div>
+									<div>
+										<button type="button" id="adminOutDel" class="btnAdmin del">삭제</button>
 									</div>
 								</td>
 							</tr>
@@ -83,29 +86,29 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<thead>
 								<tr>
 							      	<th class="num">번호</th>
-							      	<th class="id">ID</th>
-							      	<th class="name">이름</th>
-							      	<th>이메일</th>
-							     	<th class="date">가입일</th>
-							      	<th class="date">접속일</th>
+							      	<th class="checkBox">
+							      		전체 <input type="checkBox" id="allCheck" />
+							      	</th>
+							      	<th>ID</th>
+							      	<th>이름</th>
+							     	<th class="date">탈퇴일</th>
 							      	<th class="author">권한</th>
 							    </tr>
 							</thead>
 							<tbody>
 								<c:if test="${maxPageNum eq 0}">
 									<tr>
-										<td colspan="8">내용이 없습니다.</td>
+										<td colspan="6">내용이 없습니다.</td>
 									</tr>							
 								</c:if>
 								<c:if test="${maxPageNum ne 0}">
 									<c:forEach var="list" items="${lists}" varStatus="loop">
 									    <tr>
 									      	<td>${loop.count}</td>
-									      	<td><a class="atxtUnderline" href="<c:url value="/adminUserDetail/${list.userId}"/>">${list.userId}</a></td>
+									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.levId}"/>" /></td>
+									      	<td>${list.userId}</td>
 									      	<td>${list.userName}</td>
-									      	<td>${list.userEmail}</td>
-									      	<td><fmt:formatDate value="${list.createDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
-									      	<td><fmt:formatDate value="${list.activeDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
+									      	<td><fmt:formatDate value="${list.levDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 									      	<td>
 									      		<c:if test="${list.userAuthor eq '0'}">사용자</c:if>
 												<c:if test="${list.userAuthor eq '1'}">관리자</c:if>

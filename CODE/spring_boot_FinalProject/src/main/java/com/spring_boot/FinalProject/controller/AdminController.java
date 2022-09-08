@@ -22,6 +22,7 @@ import org.zeroturnaround.zip.ZipUtil;
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.BoardService;
@@ -491,7 +492,7 @@ public class AdminController {
 		else
 			text_search = (String)map.get("text_search");
 		
-		ArrayList<UserVO> lists = null;
+		ArrayList<OutuserVO> lists = null;
 		
 		
 		// 페이징 초기값
@@ -502,20 +503,20 @@ public class AdminController {
 			if(text_search.equals("") || text_search.length() == 0) {
 				map.put("userId", "%");
 				map.put("userName", "%");
-				map.put("activeDate", "%");
+				map.put("levDate", "%");
 			} else {
 				// 조건 필요
 				try {
 					String rullDate = text_search.replaceAll("[/.-]", "");
-					LocalDate activedate = LocalDate.parse(rullDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
-					map.put("activeDate", activedate);
+					LocalDate levDate = LocalDate.parse(rullDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
+					map.put("levDate", levDate);
 				} catch (DateTimeParseException e) {
 					map.put("userId", text_search);
 					map.put("userName", text_search);
 				}
 			}
 			
-			lists = boardService.selectAdminUser(map);
+			lists = boardService.selectOutUser(map);
 		} else {
 			if(chk_search == 1) {	// 검색 조건 ID
 				if(text_search.equals("") || text_search.length() == 0)
@@ -530,11 +531,11 @@ public class AdminController {
 					map.put("userName", text_search);
 			} else {	// 검색 조건 접속일자
 				if(text_search.equals("") || text_search.length() == 0)
-					map.put("activeDate", "%");
+					map.put("levDate", "%");
 				else
-					map.put("activeDate", text_search);
+					map.put("levDate", text_search);
 			}
-			lists = boardService.selectAdminUser(map);
+			lists = boardService.selectOutUser(map);
 		}
 
 		if(!lists.toString().equals("[]")) {
@@ -555,6 +556,21 @@ public class AdminController {
 			model.addAttribute("maxPageNum", 0);
 		}
 		return "subPage/adminOut";
+	}
+	
+	// 관리자-탈퇴회원 삭제
+	@ResponseBody
+	@RequestMapping("/adminDeleteOut")
+	public String adminDeleteOut(@RequestParam("levIds") String levIds,
+								 HashMap<String, Object> map) {
+		
+		String[] arrLevIds = levIds.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("levIds", arrLevIds);
+		
+		boardService.deleteAdminOut(map);
+		
+		return "SUCCESS";
 	}
 	
 	// 관리자-업체관리 조회
