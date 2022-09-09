@@ -54,7 +54,7 @@ public class AdminController {
 		
 		String text_search = "";	
 
-		if(map.get("text_search") == null)
+		if(map.get("text_search") == null) 
 			text_search = "";
 		else
 			text_search = (String)map.get("text_search");

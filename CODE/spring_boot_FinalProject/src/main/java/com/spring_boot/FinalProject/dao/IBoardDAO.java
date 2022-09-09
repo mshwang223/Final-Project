@@ -19,7 +19,7 @@ public interface IBoardDAO {
 	ArrayList<BoardVO> selectNoticeOR(HashMap<String, Object> map);
 	
 	// 공지사항 세부 내용
-	BoardVO noticeDetailView(String boardId);
+	BoardVO noticeDetailView(String boardId); 
 	
 	// 문의하기 작성
 	void insertContact(BoardVO vo);

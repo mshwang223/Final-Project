@@ -17,7 +17,7 @@ public interface IUserDAO {
 	void updateActiveDate(String userId);
 	
 	// 로그인 후 포인트 증감
-	void updatePoints(String userId);
+	void updatePoints(String userId); 
 	
 	// 회원가입
 	void insertUser(UserVO vo);

@@ -76,7 +76,7 @@
 		   SET title = #{title}, 
 		   	   contents = #{contents},
 		   	   chkFile = #{chkFile},
-		   	   modifyDate = CURRENT_TIMESTAMP
+		   	   modifyDate = CURRENT_TIMESTAMP 
 		 WHERE boardId=#{boardId} 	   
 	</update>
   	

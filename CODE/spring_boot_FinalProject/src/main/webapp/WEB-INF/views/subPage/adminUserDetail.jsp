@@ -17,8 +17,8 @@
 	</head>
 
 	<body>
-		<!-- top  -->
-		<c:import url="/WEB-INF/views/layout/top.jsp"/>
+		<!-- top  --> 
+		<c:import url="/WEB-INF/views/layout/top.jsp"/> 
 		<section class="wrap">
 			
 			<!-- section -->

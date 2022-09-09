@@ -26,7 +26,7 @@ public class BoardService implements IBoardService {
 	// 공지사항 조회기능(조건)
 	@Override
 	public ArrayList<BoardVO> selectNotice(HashMap<String, Object> map) {
-		return dao.selectNotice(map);
+		return dao.selectNotice(map); 
 	}
 	
 	// 공지사항 조회기능(전체)

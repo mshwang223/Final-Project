@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>펫밀리가 떴다</title>
+		<title>펫밀리가 떴다</title> 
 		
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
