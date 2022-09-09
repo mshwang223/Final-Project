@@ -147,8 +147,8 @@ public class UserController {
 	}
 	
 	// 회원탈퇴 처리
-	@RequestMapping(value="/delete", method=RequestMethod.POST)
-	public String delete(String userId,RedirectAttributes rttr,HttpSession session){
+	@RequestMapping(value="/delete")
+	public String delete(String userId, RedirectAttributes rttr,HttpSession session){
 		userService.deleteUser(userId);
 		session.invalidate();
 		rttr.addFlashAttribute("msg", "이용해주셔서 감사합니다.");
@@ -161,9 +161,10 @@ public class UserController {
 		
 		String userPw = userService.pwCheck(userVO.getUserId());
 		
-		if( userVO == null || !BCrypt.checkpw(userVO.getUserPw(), userPw)) {
-			return 0;
-		}
+		/*
+		 * if( userVO == null || !BCrypt.checkpw(userVO.getUserPw(), userPw)) { return
+		 * 0; }
+		 */
 
 		return 1;
 	}
