@@ -117,6 +117,14 @@ public class UserService implements IUserService {
 		dao.updateUserImg(sid, imgName);
 	}
 
+	
+	// 관리자 - 사용자 펫 등록 여부 확인
+	@Override
+	public PetVO selectAdminPetUser(String userId) {
+		return dao.selectAdminPetUser(userId);
+	}
+	
+	// 비밀번호 체크
 	@Override
 	public String pwCheck(String userId) {
 		return dao.pwCheck(userId);

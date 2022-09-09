@@ -51,4 +51,7 @@ public interface IUserService {
 	
 	// 패스워드 체크
 	String pwCheck(String userId);
+	
+	// 관리자 - 사용자 펫 등록 여부 확인
+	PetVO selectAdminPetUser(String userId);
 }
