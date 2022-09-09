@@ -37,6 +37,7 @@
 		                    <c:if test="${empty user.userImg }">
 		                        <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview" />
 		                    </c:if>
+		                    <img src="<c:url value='/petImg/'/>" id="pet_img__preview" />
 	                    </div>
 			        	<div class="info_box">
 			            	<p class="title">아이디</p>

@@ -111,4 +111,11 @@
   		SELECT userId FROM pet
 		 WHERE userId = #{userId}
   	</select>
+  	
+  	<!-- 관리자 - 사용자 펫 등록 여부 확인 -->
+   	<select id="selectAdminPetUser" parameterType="String" resultType="com.spring_boot.FinalProject.model.PetVO">
+  		SELECT * 
+  		  FROM pet
+		 WHERE userId = #{userId}
+  	</select>
 </mapper>

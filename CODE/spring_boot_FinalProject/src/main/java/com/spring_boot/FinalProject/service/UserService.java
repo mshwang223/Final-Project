@@ -116,4 +116,10 @@ public class UserService implements IUserService {
 	public void userImgUpdate(String sid, String imgName) {
 		dao.updateUserImg(sid, imgName);
 	}
+	
+	// 관리자 - 사용자 펫 등록 여부 확인
+	@Override
+	public PetVO selectAdminPetUser(String userId) {
+		return dao.selectAdminPetUser(userId);
+	}
 }
