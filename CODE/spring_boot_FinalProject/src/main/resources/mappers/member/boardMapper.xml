@@ -104,7 +104,7 @@
 		 WHERE boardId=#{boardId} 	   
 	</update>
 
-  	<!-- 관리자 - 공지사항 수정 -->
+  	<!-- 관리자 - 공지사항 추가 -->
 	<insert id="insertAdminNotice" parameterType="hashmap">
 	  	INSERT into board
 	  		  (userId, title, contents, category)
@@ -118,7 +118,7 @@
 	  	 <foreach collection="boardIds" item="boardId" open="(" close=")" separator=",">#{boardId}</foreach> 
 	</delete>
 	
-  	<!-- 관리자 - 사용자 관리 조회 -->
+  	<!-- 관리자 - 사용자관리 조회 -->
 	<select id="selectAdminUser" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.UserVO">
 	  	SELECT *, COUNT(*) OVER() AS rowCnt
 	  	  FROM user
@@ -126,6 +126,7 @@
 	  	    OR userName LIKE CONCAT('%',#{userName},'%')
 	  	    OR DATE_FORMAT(activeDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{activeDate}, '%', activeDate), '%Y-%m-%d')
 	  	 ORDER BY activeDate DESC, userName ASC
+	  	 LIMIT 10 OFFSET #{pageNum}
 	</select>
 	
   	<!-- 관리자 - 문의내역 조회 -->
@@ -137,6 +138,7 @@
 			OR u.userName LIKE CONCAT('%',#{userName},'%')
 			OR DATE_FORMAT(b.modifyDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{modifyDate}, '%', b.modifyDate), '%Y-%m-%d')
 		 ORDER BY b.modifyDate DESC, userName ASC
+		 LIMIT 10 OFFSET #{pageNum}
 	</select>
 	
 	<!-- 관리자 - 문의내역 답변 조회 -->
@@ -168,6 +170,20 @@
 		   AND userId = #{userId} 	   
 	</update>
 	
+  	<!-- 관리자 - 결재내역 조회 -->
+	<select id="selectAdminPay" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.OrderVO">
+		SELECT *, (SELECT stayName FROM stay WHERE stayNo = p.stayNo) AS stayName,
+		       COUNT(*) OVER() AS rowCnt 
+		  FROM orderproduct p
+		  JOIN orderInfo i ON p.ordPrdId = i.ordPrdId
+		  JOIN user u ON u.userId = p.userId
+		 WHERE p.userId LIKE CONCAT('%',#{userId},'%')
+		    OR u.userName LIKE CONCAT('%',#{userName},'%')
+		    OR DATE_FORMAT(i.payDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{payDate}, '%', i.payDate), '%Y-%m-%d')
+		 ORDER BY activeDate DESC, userName ASC
+		 LIMIT 10 OFFSET #{pageNum}
+	</select>
+	
 	<!-- 관리자 - 탈퇴회원 조회 -->
 	<select id="selectOutUser" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.OutuserVO">
 		SELECT *, COUNT(*) OVER() AS rowCnt  
@@ -176,6 +192,7 @@
 			OR userName LIKE CONCAT('%',#{userName},'%')
 			OR DATE_FORMAT(levDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{levDate}, '%', levDate), '%Y-%m-%d')
 		 ORDER BY levDate DESC, userName ASC
+		 LIMIT 10 OFFSET #{pageNum}
 	</select>
 	
   	<!-- 관리자 - 탈퇴회원 삭제 -->

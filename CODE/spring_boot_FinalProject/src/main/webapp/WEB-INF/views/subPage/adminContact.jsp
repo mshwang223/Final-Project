@@ -53,9 +53,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<div>답변유무 : </div>
 										
 										<div>
-											<input type="radio" id="chkAll" name="chkAnswer" value="" checked/><label for="chkAll">전체</label>
-											<input type="radio" id="chkWait" name="chkAnswer" value="0"/><label for="chkWait">답변대기</label>
-											<input type="radio" id="chkComplete" name="chkAnswer" value="1"/><label for="chkComplete">답변완료</label>
+											<input type="radio" id="chkAll" name="chkAnswer" value="" <c:if test="${empty chkAnswer}">checked</c:if>/><label for="chkAll">전체</label>
+											<input type="radio" id="chkWait" name="chkAnswer" value="0" <c:if test="${chkAnswer eq '0'}">checked</c:if>/><label for="chkWait">답변대기</label>
+											<input type="radio" id="chkComplete" name="chkAnswer" value="1" <c:if test="${chkAnswer eq '1'}">checked</c:if>/><label for="chkComplete">답변완료</label>
 										</div>
 									</div>
 									<div id="dropdown-box" class="dropdown-box">

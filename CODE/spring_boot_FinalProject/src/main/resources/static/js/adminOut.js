@@ -121,7 +121,9 @@ $(document).ready(function(){
 			arrLevId = [];	// 초기화 필요
 			$(".agree_subcheck:checked").each(function() {
 				arrLevId.push($(this).val());
+				
 			});
+			// console.log(arrLevId);
 		} else {
 			$('.agree_subcheck').prop('checked', false);
 			
@@ -129,16 +131,18 @@ $(document).ready(function(){
 			$(".agree_subcheck").each(function() {
 				arrLevId.shift($(this).val());
 			});
-			console.log(arrLevId.length);
 		}
 	});
-	
+
 	// 체크박스 선택 시 변수값 저장
 	$(".agree_subcheck").on('click', function() {
+		if($(".agree_subcheck:checked").length == 10) $('#allCheck').prop('checked', true);
+		
 		if($(this).is(':checked')) {
 			arrLevId.push($(this).val());
 		} else {
-			arrLevId.shift($(this).val());		
+			arrLevId = arrLevId.filter((e) => e !== $(this).val());
+			$('#allCheck').prop('checked', false);
 		}
 	});
 	

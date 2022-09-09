@@ -76,7 +76,9 @@ $(document).ready(function(){
 			arrBoardId = [];	// 초기화 필요
 			$(".agree_subcheck:checked").each(function() {
 				arrBoardId.push($(this).val());
+				
 			});
+			// console.log(arrBoardId);
 		} else {
 			$('.agree_subcheck').prop('checked', false);
 			
@@ -89,10 +91,13 @@ $(document).ready(function(){
 	
 	// 체크박스 선택 시 변수값 저장
 	$(".agree_subcheck").on('click', function() {
+		if($(".agree_subcheck:checked").length == 10) $('#allCheck').prop('checked', true);
+		
 		if($(this).is(':checked')) {
 			arrBoardId.push($(this).val());
 		} else {
-			arrBoardId.shift($(this).val());		
+			arrBoardId = arrBoardId.filter((e) => e !== $(this).val());
+			$('#allCheck').prop('checked', false);
 		}
 	});
 	

@@ -22,6 +22,7 @@ import org.zeroturnaround.zip.ZipUtil;
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -286,9 +287,9 @@ public class AdminController {
 			text_search = (String)map.get("text_search");
 		
 		String chkAnswer = (String)map.get("chkAnswer");
-		if(chkAnswer == null || chkAnswer.equals(""))
+		if(chkAnswer == null || chkAnswer.equals("")) {
 			map.put("chkYN", '%');
-		else if(chkAnswer.equals("0"))
+		} else if(chkAnswer.equals("0"))
 			map.put("chkYN", '0');
 		else
 			map.put("chkYN", '1');
@@ -350,6 +351,7 @@ public class AdminController {
 	
 			model.addAttribute("chk_search", map.get("chk_search"));
 			model.addAttribute("text_search", map.get("text_search"));		
+			model.addAttribute("chkAnswer", map.get("chkAnswer"));	
 			
 			session.setAttribute("flag", num);
 		} else {
@@ -410,7 +412,7 @@ public class AdminController {
 		else
 			text_search = (String)map.get("text_search");
 		
-		ArrayList<UserVO> lists = null;
+		ArrayList<OrderVO> lists = null;
 		
 		
 		// 페이징 초기값
@@ -421,20 +423,20 @@ public class AdminController {
 			if(text_search.equals("") || text_search.length() == 0) {
 				map.put("userId", "%");
 				map.put("userName", "%");
-				map.put("activeDate", "%");
+				map.put("payDate", "%");
 			} else {
 				// 조건 필요
 				try {
 					String rullDate = text_search.replaceAll("[/.-]", "");
-					LocalDate activedate = LocalDate.parse(rullDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
-					map.put("activeDate", activedate);
+					LocalDate payDate = LocalDate.parse(rullDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
+					map.put("payDate", payDate);
 				} catch (DateTimeParseException e) {
 					map.put("userId", text_search);
 					map.put("userName", text_search);
 				}
 			}
 			
-			lists = boardService.selectAdminUser(map);
+			lists = boardService.selectAdminPay(map);
 		} else {
 			if(chk_search == 1) {	// 검색 조건 ID
 				if(text_search.equals("") || text_search.length() == 0)
@@ -449,11 +451,11 @@ public class AdminController {
 					map.put("userName", text_search);
 			} else {	// 검색 조건 접속일자
 				if(text_search.equals("") || text_search.length() == 0)
-					map.put("activeDate", "%");
+					map.put("payDate", "%");
 				else
-					map.put("activeDate", text_search);
-			}
-			lists = boardService.selectAdminUser(map);
+					map.put("payDate", text_search);
+			} 
+			lists = boardService.selectAdminPay(map);
 		}
 
 		if(!lists.toString().equals("[]")) {

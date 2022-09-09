@@ -6,6 +6,7 @@ import java.util.HashMap;
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
@@ -58,6 +59,9 @@ public interface IBoardService {
 	
 	// 관리자 - 문의내역 조회
 	ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map);
+	
+	// 관리자 - 결재내역 조회
+	ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map);
 	
 	// 관리자 - 문의내역 답변 반영
 	void updateCheckYN(String boardId);

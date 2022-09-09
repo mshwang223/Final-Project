@@ -109,38 +109,6 @@ $(document).ready(function(){
    		$("#userFrm").attr('action', submitPath);
    		$("#userFrm").submit();   	
    	});
-   	
-  	// 전체동의 체크박스 체크시 전체 체크
-  	// 전체체크 선택 시 변수 값 저장
-  	var arrBoardId = new Array();	// 배열선언
-	$('#allCheck').click(function() {
-		if($(this).is(':checked')){	// 체크되었을 때
-			$('.agree_subcheck').prop('checked', true);
-			
-			// 변수값 저장
-			arrBoardId = [];	// 초기화 필요
-			$(".agree_subcheck:checked").each(function() {
-				arrBoardId.push($(this).val());
-			});
-		} else {
-			$('.agree_subcheck').prop('checked', false);
-			
-			// 변수값 제거
-			$(".agree_subcheck").each(function() {
-				arrBoardId.shift($(this).val());
-			});
-			console.log(arrBoardId.length);
-		}
-	});
-	
-	// 체크박스 선택 시 변수값 저장
-	$(".agree_subcheck").on('click', function() {
-		if($(this).is(':checked')) {
-			arrBoardId.push($(this).val());
-		} else {
-			arrBoardId.shift($(this).val());		
-		}
-	});
 });
 
 	
