@@ -24,6 +24,7 @@ import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.BoardService;
@@ -254,8 +255,11 @@ public class AdminController {
 	@RequestMapping("/adminUserDetail/{userId}")
 	public String viewAdminUserDetail(@PathVariable String userId, Model model) {
 		UserVO vo = userService.selectUser(userId);
+		
+		PetVO pvo = userService.selectAdminPetUser(userId);
 			
 		model.addAttribute("user", vo);
+		model.addAttribute("pet", pvo);
 		
 		return "subPage/adminUserDetail";
 	}
