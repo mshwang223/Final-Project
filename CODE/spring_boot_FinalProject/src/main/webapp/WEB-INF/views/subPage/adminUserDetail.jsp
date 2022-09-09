@@ -17,8 +17,8 @@
 	</head>
 
 	<body>
-		<!-- top  -->
-		<c:import url="/WEB-INF/views/layout/top.jsp"/>
+		<!-- top  --> 
+		<c:import url="/WEB-INF/views/layout/top.jsp"/> 
 		<section class="wrap">
 			
 			<!-- section -->
@@ -37,7 +37,16 @@
 		                    <c:if test="${empty user.userImg }">
 		                        <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview" />
 		                    </c:if>
+<<<<<<< HEAD
+=======
+		                    <c:if test="${not empty pet.petImg}">
+		                    	<img src="<c:url value='/petImg/${pet.petImg}'/>" id="pet_img__preview" />
+		                    </c:if>
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 	                    </div>
+	                    
+	                    <!-- 사용자 코드 -->
+	                    
 			        	<div class="info_box">
 			            	<p class="title">아이디</p>
 			            	<input type="text" id="userId" class="text_content" value="${user.userId}" readOnly />
@@ -76,7 +85,7 @@
 			          				<td><input type="text" class="text_date" value="${user.points}P" readOnly /></td>
 			          				<td>
 			          					<div>
-				          					<select id="userAuthor" class="text_date author" value="">
+				          					<select id="userAuthor" class="text_date author">
 				          						<option value="0" <c:if test="${user.userAuthor eq '0'}">selected</c:if>>사용자</option>
 				          						<option value="1" <c:if test="${user.userAuthor eq '1'}">selected</c:if>>관리자</option>
 				          					</select>
@@ -85,6 +94,33 @@
 			          				</td>
 			          			</tr>
 			            	</table>
+			          	</div>
+			          	
+			          	<!-- 펫 코드 -->
+			          	
+			          	<div class="pet_box">
+			            	<p class="title">이름</p>
+			            	<input type="text" id="petName" class="text_content" value="${pet.petName}" readOnly />			          	
+			          	</div>
+			          	<div class="pet_box">
+			            	<p class="title">종류</p>
+			            	<input type="text" id="petRace" class="text_content" value="${pet.petRace}" readOnly />			          	
+			          	</div>
+			          	<div class="pet_box">
+			            	<p class="title">나이</p>
+			            	<input type="text" id="petAge" class="text_content" value="${pet.petAge}" readOnly />			          	
+			          	</div>
+			          	<div class="pet_box">
+			            	<p class="title">품종</p>
+			            	<input type="text" id="petKind" class="text_content" value="${pet.petKind}" readOnly />			          	
+			          	</div>
+			          	<div class="pet_box">
+			            	<p class="title">크기</p>
+			            	<input type="text" id="petSize" class="text_content" value="${pet.petSize}" readOnly />			          	
+			          	</div>
+			          	<div class="pet_box">
+			            	<p class="title">특이사항</p>
+			            	<textarea cols="48" rows="10" id="comment" class="textArea_content" maxlength="220" readOnly>${pet.comment}</textarea>			          	
 			          	</div>
 		        	</div>
 		    	</div>

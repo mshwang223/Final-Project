@@ -17,7 +17,7 @@ public interface IUserDAO {
 	void updateActiveDate(String userId);
 	
 	// 로그인 후 포인트 증감
-	void updatePoints(String userId);
+	void updatePoints(String userId); 
 	
 	// 회원가입
 	void insertUser(UserVO vo);
@@ -57,4 +57,7 @@ public interface IUserDAO {
 	
 	// 패스워드 체크
 	String pwCheck(String userId);
+	
+	// 관리자 - 사용자 펫 등록 여부 확인
+	PetVO selectAdminPetUser(String userId);
 }

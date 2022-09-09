@@ -22,7 +22,7 @@ public interface IBoardService {
 	BoardVO noticeDetailView(String boardId);
 	
 	// 문의하기 작성
-	void insertContact(BoardVO vo);
+	void insertContact(BoardVO vo); 
 	
 	// 문의내역 조회
 	ArrayList<BoardVO> selectContact(HashMap<String, Object> map);

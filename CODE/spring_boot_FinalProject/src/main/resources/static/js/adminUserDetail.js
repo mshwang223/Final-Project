@@ -10,6 +10,17 @@ $(document).ready(function(){
 		location.href= "/adminUserSearch/0";
 	});
 	
+	// Img 클릭
+	$("#profile_img__preview").click(function() {
+		$(".info_box").css('display', 'block');
+		$(".pet_box").css('display', 'none');
+	});
+	
+	$("#pet_img__preview").click(function() {
+		$(".info_box").css('display', 'none');
+		$(".pet_box").css('display', 'block');
+	});
+	
 	// 권한 저장
 	const chkAuthor = $("#userAuthor").val();
 	$(".btn_save").click(function() {
@@ -33,6 +44,8 @@ $(document).ready(function(){
 			return false;
 		}		
 	});
+	
+	
 });
 
 	
