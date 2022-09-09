@@ -12,8 +12,8 @@
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/board.css"/>">
-		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminNoticeDetail.css"/>">		
-		<script src="<c:url value="/js/adminNoticeDetail.js"/>"></script>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminPayDetail.css"/>">		
+		<script src="<c:url value="/js/adminPayDetail.js"/>"></script>
 	</head>
 	
 	<body>
@@ -25,7 +25,7 @@
 			<article class="noticeBox">
 				<div class="pageTitle">
 					<div>
-						<span>#공지사항</span>
+						<span>#결재내역</span>
 					</div>
 				</div>
 				<form method="post" id="userFrm" class="userFrm" name="userFrm">

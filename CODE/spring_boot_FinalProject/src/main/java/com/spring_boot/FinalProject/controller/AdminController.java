@@ -114,7 +114,7 @@ public class AdminController {
 		return "subPage/admin";
 	}
 	
-	// 관리자-공지사항 세부화면 페이지
+	// 관리자 - 공지사항 세부화면 페이지
 	@RequestMapping("/adminNoticeDetail/{boardId}")
 	public String viewAdminNoticeDetail(@PathVariable String boardId, Model model) {
 		BoardVO vo = boardService.noticeDetailView(boardId);
@@ -124,7 +124,7 @@ public class AdminController {
 		return "subPage/adminNoticeDetail";
 	}
 	
-	// 관리자-공지사항 수정
+	// 관리자 - 공지사항 수정
 	@ResponseBody
 	@RequestMapping("/adminUpdateNotice")
 	public String updateAdminNotice(@RequestParam HashMap<String, Object> map) throws IOException {
@@ -134,13 +134,13 @@ public class AdminController {
 		return "SUCCESS";
 	}
 	
-	// 관리자-공지사항 신규생성 페이지
+	// 관리자 - 공지사항 신규생성 페이지
 	@RequestMapping("/adminNoticeNew")
 	public String viewAdminNoticeNew() {
 		return "subPage/adminNoticeNew";
 	}
 	
-	// 관리자-공지사항 입력
+	// 관리자 - 공지사항 입력
 	@ResponseBody
 	@RequestMapping("/adminInsertNotice")
 	public String updateAdminInsertNotice(@RequestParam HashMap<String, Object> map,
@@ -153,7 +153,7 @@ public class AdminController {
 		return "SUCCESS";
 	}
 	
-	// 관리자-공지사항 삭제
+	// 관리자 - 공지사항 삭제
 	@ResponseBody
 	@RequestMapping("/adminDeleteNotice")
 	public String adminDeleteNotice(@RequestParam("boardIds") String boardIds,
@@ -250,7 +250,7 @@ public class AdminController {
 		return "subPage/adminUser";
 	}
 	
-	// 관리자-사용자관리 세부화면 페이지
+	// 관리자 - 사용자관리 세부화면 페이지
 	@RequestMapping("/adminUserDetail/{userId}")
 	public String viewAdminUserDetail(@PathVariable String userId, Model model) {
 		UserVO vo = userService.selectUser(userId);
@@ -260,7 +260,7 @@ public class AdminController {
 		return "subPage/adminUserDetail";
 	}
 	
-	// 관리자-사용자관리 세부화면 수정
+	// 관리자 - 사용자관리 세부화면 수정
 	@ResponseBody
 	@RequestMapping("/adminUpdateUser")
 	public String updateAdminUser(@RequestParam HashMap<String, Object> map) {
@@ -360,7 +360,7 @@ public class AdminController {
 		return "subPage/adminContact";
 	}
 	
-	// 관리자-문의내역 세부화면 페이지
+	// 관리자 - 문의내역 세부화면 페이지
 	@RequestMapping("/adminContactDetail/{boardId}")
 	public String viewAdminContactDetail(@PathVariable String boardId, 
 										 HashMap<String, Object> map, Model model) {
@@ -376,7 +376,7 @@ public class AdminController {
 		return "subPage/adminContactDetail";
 	}
 	
-	// 관리자-문의내역 답변 저장
+	// 관리자 - 문의내역 답변 저장
 	@ResponseBody
 	@RequestMapping("/adminSaveContact")
 	public String adminSaveContact(@RequestParam HashMap<String, Object> map,
@@ -478,7 +478,21 @@ public class AdminController {
 		return "subPage/adminPay";
 	}
 	
-	// 관리자-탈퇴회원 삭제
+	// 관리자 - 결재내역 세부화면 페이지
+	@RequestMapping("/adminPayDetail/{ordNo}")
+	public String viewAdminPayDetail(@PathVariable String ordNo, 
+										 HashMap<String, Object> map, Model model) {
+		
+		map.put("ordNo", ordNo);
+		
+		//BoardVO vo = boardService.contactDetailView(boardId);
+		
+		//model.addAttribute("notice", vo);
+		
+		return "subPage/adminPayDetail";
+	}
+	
+	// 관리자 - 결재내역 삭제
 	@ResponseBody
 	@RequestMapping("/adminDeletePay")
 	public String adminDeletePay(@RequestParam("ordNos") String ordNos,

@@ -108,7 +108,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									    <tr>
 									      	<td>${loop.count}</td>
 									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.ordNo}"/>" /></td>
-									      	<td>${list.userId}</td>
+									      	<td><a class="atxtUnderline" href="<c:url value="/adminPayDetail/${list.ordNo}"/>">${list.userId}</a></td>
 									      	<td>${list.userName}</td>
 									      	<td>${list.stayName}</td>
 									      	<td><fmt:formatNumber type="currency" value="${list.price}" />원</td>
