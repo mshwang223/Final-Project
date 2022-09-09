@@ -185,6 +185,21 @@
 		 LIMIT 10 OFFSET #{pageNum}
 	</select>
 	
+  	<!-- 관리자 - 결제내역 세부화면 조회 -->
+  	<select id="payDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.OrderVO">
+		SELECT *
+		  FROM orderInfo i
+		  JOIN orderproduct p ON p.ordPrdId = i.ordPrdId
+		 WHERE ordNo = #{ordNo}  		
+  	</select>
+  	
+  	<!-- 관리자 - 결제내역 세부화면 호텔펜션 정보 조회 -->
+  	<select id="selectAdminDetailHotel" parameterType="String" resultType="com.spring_boot.FinalProject.model.StayVO">
+		SELECT *
+		  FROM stay
+		 WHERE stayNo = #{stayNo}   
+	</select>
+	
   	<!-- 관리자 - 결재내역 삭제 -->
 	<delete id="deleteAdminPay" parameterType="hashmap">
 	  	DELETE FROM orderInfo

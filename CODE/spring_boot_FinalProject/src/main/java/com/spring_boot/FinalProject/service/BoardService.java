@@ -13,6 +13,7 @@ import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 
@@ -144,6 +145,18 @@ public class BoardService implements IBoardService {
 	@Override
 	public ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map) {
 		return dao.selectAdminPay(map);
+	}
+	
+	// 관리자 - 결제내역 세부화면
+	@Override
+	public OrderVO payDetailView(String ordNo) {
+		return dao.payDetailView(ordNo);
+	}
+	
+	// 관리자 - 결제내역 세부화면 호텔펜션 정보 조회
+	@Override
+	public StayVO selectAdminDetailHotel(String stayNo) {
+		return dao.selectAdminDetailHotel(stayNo);
 	}
 	
 	// 관리자 - 결제내역 삭제

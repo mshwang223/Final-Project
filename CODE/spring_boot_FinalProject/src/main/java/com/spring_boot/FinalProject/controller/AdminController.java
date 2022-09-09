@@ -485,9 +485,12 @@ public class AdminController {
 		
 		map.put("ordNo", ordNo);
 		
-		//BoardVO vo = boardService.contactDetailView(boardId);
+		OrderVO vo = boardService.payDetailView(ordNo);
 		
-		//model.addAttribute("notice", vo);
+		StayVO svo = boardService.selectAdminDetailHotel(vo.getStayNo());
+		
+		model.addAttribute("info", svo);
+		model.addAttribute("order", vo);
 		
 		return "subPage/adminPayDetail";
 	}

@@ -8,6 +8,7 @@ import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 public interface IBoardDAO {
@@ -70,6 +71,12 @@ public interface IBoardDAO {
 	
 	// 관리자 - 결제내역 조회
 	ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map);
+	
+	// 관리자 - 결제내역 세부화면
+	OrderVO payDetailView(String ordNo);
+	
+	// 관리자 - 결제내역 세부화면 호텔펜션 정보 조회
+	StayVO selectAdminDetailHotel(String stayNo);
 	
 	// 관리자 - 결제내역 삭제
 	void deleteAdminPay(HashMap<String, Object> map);

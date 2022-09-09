@@ -31,10 +31,10 @@
 		    	<div class="userInfo_box">
 			        <div class="custom_info">
 			        	<div>
-	                        <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview" />
+	                        <img src="<c:url value='/petHotelImg/${info.stayNo}/1.png'/>" id="profile_img__preview" />
 	                        <div class="hotel_info">
-	                        	<div class="titleInfo">1111</div>
-	                        	<div><i class="fa-solid fa-location-dot address_icon"></i>1111</div>
+	                        	<div class="titleInfo">${info.stayName}</div>
+	                        	<div><i class="fa-solid fa-location-dot address_icon"></i>${info.stayAddress}</div>
 	                        	<div><i class="fa-solid fa-calendar-days stay_calendar"></i>1111</div>
 	                        	<div><i class="fa-solid fa-user person_icon"></i>1111</div>
 	                        	<div><i class="fa-solid fa-bed bed_icon"></i>1111</div>
@@ -52,11 +52,11 @@
 	                    <div class="txtContents"><div>숙박세 외 수수료</div><div><fmt:formatNumber type="currency" value="3000" />원</div></div>
 	                    <div class="txtContents mbottom"><div>할인금액</div><div><fmt:formatNumber type="currency" value="11111" />원</div></div>
 	                    <hr/>
-	                    <div class="txtContents total"><div>최총 금액</div><div><fmt:formatNumber type="currency" value="11111" />원</div></div>
+	                    <div class="txtContents total"><div>최총 금액</div><div><fmt:formatNumber type="currency" value="${order.price}" />원</div></div>
 	                    
 	                    <div class="txtTitle">그 외</div>
-	                    <div class="txtContents"><div>결제수단</div><div>11111</div></div>
-	                    <div class="txtContents"><div>결제일</div><div><fmt:formatDate value="${list.payDate}" pattern="yyyy-MM-dd HH:mm:dd"/></div></div>
+	                    <div class="txtContents"><div>결제수단</div><div>${order.payment}</div></div>
+	                    <div class="txtContents"><div>결제일</div><div><fmt:formatDate value="${order.payDate}" pattern="yyyy-MM-dd HH:mm:dd"/></div></div>
 		        	</div>
 		    	</div>
 		    	<div class="btn_list_box">
