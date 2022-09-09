@@ -396,7 +396,7 @@ public class AdminController {
 		}
 	}
 	
-	// 관리자 - 결재내역 페이지
+	// 관리자 - 결제내역 페이지
 	@RequestMapping("/adminPaySearch/{num}")
 	public String adminPaySearch(@PathVariable String num, 
 							   		 @RequestParam HashMap<String, Object> map, 
@@ -478,7 +478,7 @@ public class AdminController {
 		return "subPage/adminPay";
 	}
 	
-	// 관리자 - 결재내역 세부화면 페이지
+	// 관리자 - 결제내역 세부화면 페이지
 	@RequestMapping("/adminPayDetail/{ordNo}")
 	public String viewAdminPayDetail(@PathVariable String ordNo, 
 										 HashMap<String, Object> map, Model model) {

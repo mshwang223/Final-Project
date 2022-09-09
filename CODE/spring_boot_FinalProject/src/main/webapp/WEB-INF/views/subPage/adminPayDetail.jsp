@@ -2,91 +2,69 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>펫밀리가 떴다</title>
+		
 		<!-- header  -->
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
-		<link rel="stylesheet" type="text/css" href="<c:url value="/css/board.css"/>">
-		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminPayDetail.css"/>">		
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminPayDetail.css"/>">
+		
 		<script src="<c:url value="/js/adminPayDetail.js"/>"></script>
 	</head>
-	
+
 	<body>
-		<!-- header  -->
+		<!-- top  -->
 		<c:import url="/WEB-INF/views/layout/top.jsp"/>
-			
 		<section class="wrap">
-			<!-- 세부화면 레이아웃 시작 -->
-			<article class="noticeBox">
-				<div class="pageTitle">
+			
+			<!-- section -->
+			<div>
+			    <div class="pageTitle">
 					<div>
-						<span>#결재내역</span>
+						<span>#결제내역</span>
 					</div>
 				</div>
-				<form method="post" id="userFrm" class="userFrm" name="userFrm">
-					<input type="hidden" name="boardId" value="<c:url value='${notice.boardId}'/>" />
-					<table>
-						<thead>
-							<tr>
-						      	<th class="contactInputTitle" colspan="2">
-						      		<input type="text" name="title" value="<c:url value='${notice.title}'/>" />
-						      	</th>
-						    </tr>
-						</thead>
-						<tbody>
-						    <tr>
-						      	<td class="titles" colspan="2">
-						      		${notice.userName}&nbsp;&nbsp; | &nbsp;&nbsp;수정일 : 
-						      		<fmt:formatDate value="${notice.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/>
-						      		&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 
-						      		<fmt:formatDate value="${notice.createDate}" pattern="yyyy-MM-dd HH:mm:dd"/>
-						      	</td>
-						    </tr>
-						    <tr>
-						      	<td colspan="2">
-						      		<textarea id="adminNoticeContents" class="contents" name="contents">
-						      			${notice.contents}
-						      		</textarea>
-						      	</td>
-						    </tr>
-						    <tr>
-						      	<td class="paging-td">▲ 다음글</td>
-						      	<td>
-						      		<c:if test="${empty notice.nextTitle}">
-						      			마지막 글입니다.
-						      		</c:if>
-						      		<c:if test="${not empty notice.nextTitle}">
-						      			${notice.nextTitle}
-						      		</c:if>
-						      	</td>
-						    </tr>
-						    <tr>  	
-						      	<td class="paging-td">▼ 이전글</td>
-						      	<td>
-						      		<c:if test="${empty notice.prevTitle}">
-						      			첫 번째 글입니다.
-						      		</c:if>
-						      		<c:if test="${not empty notice.prevTitle}">
-						      			${notice.prevTitle}
-						      		</c:if>						      	
-						      	</td>
-						    </tr>
-						</tbody>
-					</table>
-				    <div class="btn_list_box">
-				    	<button type="button" class="btn_list_done">목록</button>
-				    	<button type="submit" class="btn_save_done">저장</button>
-				    </div>
-				</form>
-			</article>
-			<!-- 세부화면 레이아웃 종료 -->
+		    	<div class="userInfo_box">
+			        <div class="custom_info">
+			        	<div>
+	                        <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview" />
+	                        <div class="hotel_info">
+	                        	<div class="titleInfo">1111</div>
+	                        	<div><i class="fa-solid fa-location-dot address_icon"></i>1111</div>
+	                        	<div><i class="fa-solid fa-calendar-days stay_calendar"></i>1111</div>
+	                        	<div><i class="fa-solid fa-user person_icon"></i>1111</div>
+	                        	<div><i class="fa-solid fa-bed bed_icon"></i>1111</div>
+	                        </div>
+	                    </div>
+	                    <div class="txtTitle">투숙객 정보</div>
+	                    <div class="txtContents"><div>투숙객명 :</div><div>1111</div></div>
+	                    <div class="txtContents"><div>연락처 :</div><div>1111</div></div>
+	                    <div class="txtContents mbottom"><div>이메일 :</div><div>1111</div></div>
+	                    
+	                    <div class="txtTitle">결제정보</div>
+	                    <div class="txtContents"><div>11111</div><div><fmt:formatNumber type="currency" value="11111" />원</div></div>
+	                    <div class="txtContents"><div>청소비</div><div><fmt:formatNumber type="currency" value="15000" />원</div></div>
+	                    <div class="txtContents"><div>서비스 수수료</div><div><fmt:formatNumber type="currency" value="30000" />원</div></div>
+	                    <div class="txtContents"><div>숙박세 외 수수료</div><div><fmt:formatNumber type="currency" value="3000" />원</div></div>
+	                    <div class="txtContents mbottom"><div>할인금액</div><div><fmt:formatNumber type="currency" value="11111" />원</div></div>
+	                    <hr/>
+	                    <div class="txtContents total"><div>최총 금액</div><div><fmt:formatNumber type="currency" value="11111" />원</div></div>
+	                    
+	                    <div class="txtTitle">그 외</div>
+	                    <div class="txtContents"><div>결제수단</div><div>11111</div></div>
+	                    <div class="txtContents"><div>결제일</div><div><fmt:formatDate value="${list.payDate}" pattern="yyyy-MM-dd HH:mm:dd"/></div></div>
+		        	</div>
+		    	</div>
+		    	<div class="btn_list_box">
+				   	<button type="button" class="btn_list_done">목록</button>
+				</div>
+		    </div>
+		<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
-		
 		<!-- footer -->
 		<c:import url="/WEB-INF/views/layout/footer.jsp"/>
 	</body>

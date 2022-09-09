@@ -69,10 +69,10 @@ public interface IBoardService {
 	// 관리자 - 문의내역 답변 수정
 	void updateAdminContact(HashMap<String, Object> map);
 	
-	// 관리자 - 결재내역 조회
+	// 관리자 - 결제내역 조회
 	ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map);
 	
-	// 관리자 - 결재내역 삭제
+	// 관리자 - 결제내역 삭제
 	void deleteAdminPay(HashMap<String, Object> map);
 	
 	// 관리자 - 탈퇴회원 조회

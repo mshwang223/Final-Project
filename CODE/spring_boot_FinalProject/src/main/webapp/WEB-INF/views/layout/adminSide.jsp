@@ -17,7 +17,7 @@
 				<a class="aUserLists adminNotice" href="<c:url value='/adminNoticeSearch/0'/>">공지사항</a>
 				<a class="aUserLists adminUser" href="<c:url value='/adminUserSearch/0'/>">사용자관리</a>
 				<a class="aUserLists adminContact" href="<c:url value='/adminContactSearch/0'/>">문의내역</a>
-				<a class="aUserLists adminPay" href="<c:url value='/adminPaySearch/0'/>">결재내역</a>
+				<a class="aUserLists adminPay" href="<c:url value='/adminPaySearch/0'/>">결제내역</a>
 				<a class="aUserLists adminOut" href="<c:url value='/adminOutSearch/0'/>">탈퇴회원</a>
 						
 				<div class="sideTitle">운영</div>

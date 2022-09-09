@@ -1,59 +1,124 @@
-/* 관리자 - 결재내역 세부화면 */
+/* 관리자 - 결제내역 세부화면 */
 
-th {
-  text-align: left;	
-}
-
-.noticeBox div:first-child {
-  margin-bottom: 15px;	
-}
-
-/* 게시판 테이블 크기 */
-table {
-  border-spacing: 0;
-  margin: 0 auto;
-  width: 65%;
-}
-
-td {
-  background-color: #f5f5f5;
-}
-
-/* 게시판 내용 사이즈 */
-tr:nth-child(2) > td {
-  height: 350px;
+.pageTitle {
+  text-align: center;
   
-  padding: 0;	
+  margin: 50px auto 30px auto;	
 }
 
-.contents {
-  position: relative;
-  top:-100px;
+.pageTitle > div {
+  background-color: #fff;
+  border-radius: 20px;
+  
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  
+  display: inline-block;
+  
+  line-height: 60px;
 }
 
-.note-editor.note-frame {
-  border: 0;	
-}
-
-/* 테이블 상단 버튼 레이아웃 */
-td.button-table {
-  padding-right: 0px;
-  border: 0;	
-}
-
-.btnAdmin {
-  float: right;
-} 
-
-.paging-td {
+.pageTitle > div > span {
+  margin: 0 22px;
+  font-size: 25px;
   font-weight: bold;
-	
-  width: 120px;
 }
+
+.userInfo_box{
+  margin: 50px auto;
+  
+  border: 1px solid #ee82ee;
+  
+  width: 600px;
+  
+  background-color: #fff;
+  
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+}
+
+.custom_info > div:first-child {
+  text-align: center;
+  margin-bottom: 25px;	
+  
+  text-align: left;
+  
+  display: flex;
+}
+
+/* 프로필 이미지 */
+#profile_img__preview{
+  width: 150px;
+  height: 150px;
+}
+
+/* 박스안 고객정보 박스 */
+.custom_info{
+  margin: 50px;
+}
+
+/* 호텔 / 펜션 정보 */
+div.hotel_info {
+  margin-left: 30px;	
+}
+
+div.hotel_info > div.titleInfo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+div.hotel_info > div:not(.titleInfo) {
+  margin-top: 10px;
+  
+  font-size: 18px;
+  
+  color: #778887;  	
+}
+
+i {
+  width: 30px;
+  color: #778887; 	
+}
+
+/* 중간 레이아웃 */
+div.txtTitle {
+  text-align: center;
+  
+  width: 100%;
+  
+  padding: 5px 0px;
+  
+  background-color: #ee82ee;
+  color: white;
+  
+  font-weight: bold;	
+}
+
+div.txtContents {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.txtContents div {
+  margin-top: 10px;	
+}
+
+div.txtContents.mbottom {
+  margin-bottom: 10px;	
+}
+
+div.txtContents.total {
+  font-size: 20px;
+  font-weight: bold;
+  
+  margin-bottom: 10px;	
+}
+
 
 /* 목록 버튼 */
 .btn_list_box {
-  width: 65%;
+  width: 600px;
   height: 100px;
   margin: 30px auto;
   text-align: right;
@@ -66,27 +131,9 @@ td.button-table {
   font-size: 16px;
   font-weight: 600;
   
-  background-color: white;
-  border-radius: 2px;
-  color: black;
-  
-  border: none;
-  border-radius: 8px;
-  
-  cursor: pointer;
-}
-
-.btn_save_done {
-  width: 120px;
-  height: 50px;
-  
-  font-size: 16px;
-  font-weight: 600;
-  
   background-color: #ee82ee;
-  color: #fff;
-  
-  margin-left: 30px;
+  border-radius: 2px;
+  color: white;
   
   border: none;
   border-radius: 8px;
@@ -97,33 +144,4 @@ td.button-table {
 .btn_list_box > button:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: 0.9s linear;
-}
-
-/* 게시판 제목 */
-th.contactInputTitle {
-  padding: 0;	
-}
-
-th.contactInputTitle > input {
-  width: 100%;
-  height: 40px;
-  
-  border: none;
-  
-  background-color: #ee82ee;
-  color: white;
-  
-  text-indent: 15px;
-  
-  font-size: 16px;
-  font-weight: bold;
-  
-}
-
-th.contactInputTitle > input:focus {
-  outline: none;
-  
-  background-color: white;
-  color: black;
-
 }

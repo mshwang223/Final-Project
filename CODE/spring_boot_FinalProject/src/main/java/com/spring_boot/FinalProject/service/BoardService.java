@@ -140,13 +140,13 @@ public class BoardService implements IBoardService {
 		dao.updateAdminContact(map);
 	}
 	
-	// 관리자 - 결재내역 조회
+	// 관리자 - 결제내역 조회
 	@Override
 	public ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map) {
 		return dao.selectAdminPay(map);
 	}
 	
-	// 관리자 - 결재내역 삭제
+	// 관리자 - 결제내역 삭제
 	@Override
 	public void deleteAdminPay(HashMap<String, Object> map) {
 		dao.deleteAdminPay(map);

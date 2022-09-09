@@ -2,14 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<!-- 양식다시제출 제거 -->
-<%    
-response.setHeader("Cache-Control","no-store");    
-response.setHeader("Pragma","no-cache");    
-response.setDateHeader("Expires",0);    
-if (request.getProtocol().equals("HTTP/1.1"))  
-        response.setHeader("Cache-Control", "no-cache");  
-%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -37,7 +29,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="main-layout">
 					<div class="pageTitle">
 						<div>
-							<span>#결재내역</span>
+							<span>#결제내역</span>
 						</div>
 					</div>	
 					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminPaySearch/0"/>">
@@ -66,7 +58,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<li class="dp-all">전체</li>
 										<li class="dp-id">ID</li>
 										<li class="dp-name">이름</li>
-										<li class="dp-payDate">결재일</li>
+										<li class="dp-payDate">결제일</li>
 									</ul>
 									<div class="search-box">
 										<div>
@@ -93,7 +85,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							      	<th class="name">이름</th>
 							      	<th>상품명</th>
 							     	<th class="author">가격</th>
-							      	<th class="author">결재수단</th>
+							      	<th class="author">결제수단</th>
 							      	<th class="date">결재일</th>
 							    </tr>
 							</thead>
