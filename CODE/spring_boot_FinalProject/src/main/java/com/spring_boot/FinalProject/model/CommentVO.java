@@ -8,6 +8,7 @@ public class CommentVO {
 	private String commentId;
 	private String boardId;
 	private String userId;
+	private String userName;
 	private String comment;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
@@ -34,6 +35,13 @@ public class CommentVO {
 		this.userId = userId;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
 	public String getComment() {
 		return comment;
 	}

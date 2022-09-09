@@ -68,8 +68,15 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						      	</td>
 						    </tr>
 						    <c:if test="${notice.chkYN eq '1'}">
+						    
 						    <tr class="trAnswerBox">
 						    	<td class="answer-title" colspan="2">답변</td>
+						    </tr>
+						    <tr class="trAnswerBox">
+						    	<td class="titles" colspan="2">
+						    		${answer.userName}&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 
+						    		<fmt:formatDate value="${answer.writeDate}" pattern="yyyy-MM-dd HH:mm:dd"/>
+						    	</td>
 						    </tr>
 						    <tr class="trAnswerBox">
 						      	<td colspan="2" class="answer-box">

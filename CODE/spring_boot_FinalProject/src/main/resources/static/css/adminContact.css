@@ -109,7 +109,9 @@ div.dropdown-box div:first-child {
   width: 40px;
   
   position: relative;
-  right: 7px; 	
+  left: 6px;
+  
+  text-align: left;	
 }
 
 div.dropdown-box div:last-child {

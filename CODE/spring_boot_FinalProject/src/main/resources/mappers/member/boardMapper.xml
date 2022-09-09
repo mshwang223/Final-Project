@@ -144,7 +144,8 @@
 	<!-- 관리자 - 문의내역 답변 조회 -->
 	<select id="selectAdminComment" parameterType="String" resultType="com.spring_boot.FinalProject.model.CommentVO">
 		SELECT *  
-		  FROM comment
+		  FROM comment c
+		  JOIN user u ON c.userId = u.userId
 		 WHERE boardId = #{boardId}
 	</select>
 		
@@ -165,7 +166,7 @@
 	<!-- 관리자 - 문의내역 답변 수정 -->
 	<update id="updateAdminContact" parameterType="hashmap">
 		UPDATE comment
-		   SET comment = #{comment}
+		   SET comment = #{comment}, writeDate = CURRENT_TIMESTAMP
 		 WHERE boardId = #{boardId}
 		   AND userId = #{userId} 	   
 	</update>
