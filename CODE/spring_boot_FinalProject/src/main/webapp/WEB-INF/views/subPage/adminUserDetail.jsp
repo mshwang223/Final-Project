@@ -37,12 +37,9 @@
 		                    <c:if test="${empty user.userImg }">
 		                        <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview" />
 		                    </c:if>
-<<<<<<< HEAD
-=======
-		                    <c:if test="${not empty pet.petImg}">
+							<c:if test="${not empty pet.petImg}">
 		                    	<img src="<c:url value='/petImg/${pet.petImg}'/>" id="pet_img__preview" />
 		                    </c:if>
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 	                    </div>
 	                    
 	                    <!-- 사용자 코드 -->
