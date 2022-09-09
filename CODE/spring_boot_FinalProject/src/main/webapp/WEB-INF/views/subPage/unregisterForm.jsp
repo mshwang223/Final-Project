@@ -31,7 +31,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<span># 회원탈퇴</span>
 				</div>
 			</div>
-			<form action="/subPage/delete" method="post" id="deleteForm" name="deleteForm">
+			<form action="/delete" method="post" id="deleteForm" name="deleteForm">
 				<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
 				<div class="delete_box">
 					 <div class="custom_info">
@@ -46,11 +46,12 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						</div>
 					</div>
 				</div>
-			</form>
-			 <div class="btn_delete_box">
-		    	<button type="button" class="btn_cancel_done">취 소</button>
-		        <button type="submit" class="btn_delete_done">회원탈퇴</button>
-	    	</div>
+			
+				 <div class="btn_delete_box">
+			    	<button type="button" class="btn_cancel_done">취 소</button>
+			        <button type="submit" id="btnDelete" class="btn_delete_done">회원탈퇴</button>
+		    	</div>
+	    	</form>
 		</section>
 
 

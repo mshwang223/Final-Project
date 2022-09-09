@@ -48,4 +48,7 @@ public interface IUserService {
 	
 	// 펫 등록증 소유 여부 확인
 	String selectPetUser(String userId);
+	
+	// 패스워드 체크
+	String pwCheck(String userId);
 }

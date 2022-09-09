@@ -116,4 +116,9 @@ public class UserService implements IUserService {
 	public void userImgUpdate(String sid, String imgName) {
 		dao.updateUserImg(sid, imgName);
 	}
+
+	@Override
+	public String pwCheck(String userId) {
+		return dao.pwCheck(userId);
+	}
 }

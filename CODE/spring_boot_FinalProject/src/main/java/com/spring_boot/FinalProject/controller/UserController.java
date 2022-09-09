@@ -13,6 +13,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -151,7 +152,20 @@ public class UserController {
 		userService.deleteUser(userId);
 		session.invalidate();
 		rttr.addFlashAttribute("msg", "이용해주셔서 감사합니다.");
-		return "redirect:/index";
+		return "redirect:/";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/pwCheck")
+	public int pwCheck(UserVO userVO) {
+		
+		String userPw = userService.pwCheck(userVO.getUserId());
+		
+		if( userVO == null || !BCrypt.checkpw(userVO.getUserPw(), userPw)) {
+			return 0;
+		}
+
+		return 1;
 	}
 	
 	// ID 중복 체크

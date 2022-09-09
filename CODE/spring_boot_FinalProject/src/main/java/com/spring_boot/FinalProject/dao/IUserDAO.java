@@ -54,4 +54,7 @@ public interface IUserDAO {
 	
 	// 프로필 사진 변경
 	void updateUserImg(String sid, String imgName);
+	
+	// 패스워드 체크
+	String pwCheck(String userId);
 }

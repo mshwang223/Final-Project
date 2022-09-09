@@ -111,4 +111,9 @@
   		SELECT userId FROM pet
 		 WHERE userId = #{userId}
   	</select>
+  	
+  	<!-- 패스워드 체크 -->
+  	<select id="pwCheck" resultType="String">
+  		SELECT userPw FROM user WHERE userId = #{userId}
+  	</select>
 </mapper>
