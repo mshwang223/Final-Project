@@ -478,7 +478,21 @@ public class AdminController {
 		return "subPage/adminPay";
 	}
 	
-	// 관리자 - 탈퇴내역 페이지
+	// 관리자-탈퇴회원 삭제
+	@ResponseBody
+	@RequestMapping("/adminDeletePay")
+	public String adminDeletePay(@RequestParam("ordNos") String ordNos,
+								 HashMap<String, Object> map) {
+		String[] arrOrdNos = ordNos.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("ordNos", arrOrdNos);
+		
+		boardService.deleteAdminPay(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 탈퇴회원 페이지
 	@RequestMapping("/adminOutSearch/{num}")
 	public String adminOutSearch(@PathVariable String num, 
 							   		 @RequestParam HashMap<String, Object> map, 
@@ -560,7 +574,7 @@ public class AdminController {
 		return "subPage/adminOut";
 	}
 	
-	// 관리자-탈퇴회원 삭제
+	// 관리자 - 탈퇴회원 삭제
 	@ResponseBody
 	@RequestMapping("/adminDeleteOut")
 	public String adminDeleteOut(@RequestParam("levIds") String levIds,

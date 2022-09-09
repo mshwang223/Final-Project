@@ -17,6 +17,7 @@ public class OrderVO {
 	private String userId;
 	private String userName;
 	private String stayNo;
+	private String stayName;
 	private int manCnt;
 	private int petCnt;
 	private String rcvPhone;
@@ -84,6 +85,13 @@ public class OrderVO {
 	}
 	public void setStayNo(String stayNo) {
 		this.stayNo = stayNo;
+	}
+	
+	public String getStayName() {
+		return stayName;
+	}
+	public void setStayName(String stayName) {
+		this.stayName = stayName;
 	}
 
 	public int getManCnt() {

@@ -180,13 +180,12 @@ $(document).ready(function(){
 	
 	// 삭제 기능
 	$("#adminPayDel").on('click', function() {
-	
 		// submit 이벤트 기본 기능 : 페이지 새로 고침
  		// 기본 기능 중단
  		event.preventDefault();
  		
  		// 유효성 추가
- 		if(arrOrdPrdId.length == 0) {
+ 		if(arrOrdNo.length == 0) {
  			alert("삭제 내역이 없습니다.");
  			return false;
  		} else {
@@ -194,7 +193,7 @@ $(document).ready(function(){
 		 		$.ajax({
 		 			type:"post",
 		 			url:"/adminDeletePay",
-		 			data:{ "levIds": JSON.stringify(arrOrdNo) },
+		 			data:{ "ordNos": JSON.stringify(arrOrdNo) },
 		 			dataType:"text",
 					success:function(result){
 						// 성공 시 결과 받음

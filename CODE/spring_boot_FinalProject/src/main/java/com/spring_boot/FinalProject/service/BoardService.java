@@ -146,6 +146,12 @@ public class BoardService implements IBoardService {
 		return dao.selectAdminPay(map);
 	}
 	
+	// 관리자 - 결재내역 삭제
+	@Override
+	public void deleteAdminPay(HashMap<String, Object> map) {
+		dao.deleteAdminPay(map);
+	}
+	
 	// 관리자 - 탈퇴회원 조회
 	@Override
 	public ArrayList<OutuserVO> selectOutUser(HashMap<String, Object> map) {

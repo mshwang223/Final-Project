@@ -60,9 +60,6 @@ public interface IBoardService {
 	// 관리자 - 문의내역 조회
 	ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map);
 	
-	// 관리자 - 결재내역 조회
-	ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map);
-	
 	// 관리자 - 문의내역 답변 반영
 	void updateCheckYN(String boardId);
 	
@@ -71,6 +68,12 @@ public interface IBoardService {
 	
 	// 관리자 - 문의내역 답변 수정
 	void updateAdminContact(HashMap<String, Object> map);
+	
+	// 관리자 - 결재내역 조회
+	ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map);
+	
+	// 관리자 - 결재내역 삭제
+	void deleteAdminPay(HashMap<String, Object> map);
 	
 	// 관리자 - 탈퇴회원 조회
 	ArrayList<OutuserVO> selectOutUser(HashMap<String, Object> map);

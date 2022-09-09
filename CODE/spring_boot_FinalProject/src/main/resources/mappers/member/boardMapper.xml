@@ -184,6 +184,13 @@
 		 LIMIT 10 OFFSET #{pageNum}
 	</select>
 	
+  	<!-- 관리자 - 결재내역 삭제 -->
+	<delete id="deleteAdminPay" parameterType="hashmap">
+	  	DELETE FROM orderInfo
+	  	 WHERE ordNo IN
+	  	 <foreach collection="ordNos" item="ordNo" open="(" close=")" separator=",">#{ordNo}</foreach> 
+	</delete>
+	
 	<!-- 관리자 - 탈퇴회원 조회 -->
 	<select id="selectOutUser" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.OutuserVO">
 		SELECT *, COUNT(*) OVER() AS rowCnt  

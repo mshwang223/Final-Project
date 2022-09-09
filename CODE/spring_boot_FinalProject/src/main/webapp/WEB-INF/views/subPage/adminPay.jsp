@@ -74,6 +74,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 											<button class="search-button"><img src="<c:url value="/images/search.png"/>"></button>
 										</div>
 									</div>
+									<div>
+										<button type="button" id="adminPayDel" class="btnAdmin del">삭제</button>
+									</div>
 								</td>
 							</tr>
 						</table>
@@ -89,8 +92,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							      	<th class="id">ID</th>
 							      	<th class="name">이름</th>
 							      	<th>상품명</th>
-							     	<th class="author">수량</th>
-							      	<th class="author">가격</th>
+							     	<th class="author">가격</th>
 							      	<th class="author">결재수단</th>
 							      	<th class="date">결재일</th>
 							    </tr>
@@ -98,7 +100,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<tbody>
 								<c:if test="${maxPageNum eq 0}">
 									<tr>
-										<td colspan="9">내용이 없습니다.</td>
+										<td colspan="8">내용이 없습니다.</td>
 									</tr>							
 								</c:if>
 								<c:if test="${maxPageNum ne 0}">
@@ -106,11 +108,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									    <tr>
 									      	<td>${loop.count}</td>
 									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.ordNo}"/>" /></td>
-									      	<td><a class="atxtUnderline" href="<c:url value="/adminUserDetail/${list.userId}"/>">${list.userId}</a></td>
+									      	<td>${list.userId}</td>
 									      	<td>${list.userName}</td>
 									      	<td>${list.stayName}</td>
-									      	<td>${list.ordQty}</td>
-									      	<td>${list.price}</td>
+									      	<td><fmt:formatNumber type="currency" value="${list.price}" />원</td>
 									      	<td>${list.payment}</td>
 									      	<td><fmt:formatDate value="${list.payDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
 									    </tr>

@@ -71,6 +71,9 @@ public interface IBoardDAO {
 	// 관리자 - 결재내역 조회
 	ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map);
 	
+	// 관리자 - 결재내역 삭제
+	void deleteAdminPay(HashMap<String, Object> map);
+	
 	// 관리자 - 탈퇴회원 조회
 	ArrayList<OutuserVO> selectOutUser(HashMap<String, Object> map);
 	
