@@ -161,10 +161,6 @@ public class UserController {
 		
 		String userPw = userService.pwCheck(userVO.getUserId());
 		
-		/*
-		 * if( userVO == null || !BCrypt.checkpw(userVO.getUserPw(), userPw)) { return
-		 * 0; }
-		 */
 
 		return 1;
 	}
