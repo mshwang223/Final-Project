@@ -10,6 +10,83 @@ a.adminService {
   color: #ee82ee;
 }
 
+/* 메뉴 */
+.contact-menu {
+  display: flex;
+  flex-wrap: wrap;
+  
+  border-bottom: 1px solid #ddd;
+  
+  width: 100%;
+  height: 50px;
+  
+  margin: 0 auto 30px auto;  	
+}
+
+.contact-menu a {
+  width: 140px; 
+  height: 100%;
+  
+  text-align: center;
+  
+  padding-top: 12px;
+  
+  font-size: 18px;
+  font-weight: bold;	
+}
+
+.contact-menu div.underline {
+  position: relative;
+
+  left: -420px;	/* 기준: 140px */
+  bottom: -47px;
+  
+  width: 140px;
+  height: 3px;
+  
+  background: #ee82ee;
+  transition: all .3s ease-in-out;
+}
+
+.contact-menu a:nth-child(1):hover  {
+  color: #ee82ee;
+}
+.contact-menu a:nth-child(1):hover ~ .underline {
+  left: -420px;
+}
+
+.contact-menu a:nth-child(2):hover  {
+  color: #ee82ee;
+}
+.contact-menu a:nth-child(2):hover ~ .underline {
+  left: -280px;
+}
+
+.contact-menu a:nth-child(3):hover  {
+  color: #ee82ee;
+}
+.contact-menu a:nth-child(3):hover ~ .underline {
+  left: -140px;
+}
+
+/* 폰트 레이아웃 */
+div.subTitle {
+  float: left;
+  
+  font-size: 20px;
+  font-weight: bold;
+  
+  padding: 10px 20px;
+  
+  border-radius: 10px;
+  
+  background-color: white;	
+}
+
+div.subTitle.last {
+  margin-left: 20px;	
+}
+
 /* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
 td:not(.title) {
   text-align: center;
@@ -185,5 +262,4 @@ table {
   border-spacing: 0;
   margin: 0 auto;
   width: 100%;
-
 }

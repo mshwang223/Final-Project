@@ -178,3 +178,8 @@ td > input.agree_subcheck {
   background: black;
   color: white;	
 }
+
+/* 레이아웃 전체 크기 반영 */
+div.main-layout {
+  height: max-content;
+}

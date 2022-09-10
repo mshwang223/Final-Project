@@ -35,7 +35,7 @@ $(document).ready(function(){
 					$("#chk_search").val("2");
 					dropdownContainer.hide();
 				} else if(e.target.className == "dp-payDate") {
-					$("#dpBox-name").text("접속일");
+					$("#dpBox-name").text("결제일");
 					$("#chk_search").val("3");
 					dropdownContainer.hide();
 				}			

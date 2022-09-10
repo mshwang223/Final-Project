@@ -25,6 +25,7 @@ import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.PetVO;
+import com.spring_boot.FinalProject.model.ServiceVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.BoardService;
@@ -128,7 +129,7 @@ public class AdminController {
 	// 관리자 - 공지사항 수정
 	@ResponseBody
 	@RequestMapping("/adminUpdateNotice")
-	public String updateAdminNotice(@RequestParam HashMap<String, Object> map) throws IOException {
+	public String updateAdminNotice(@RequestParam HashMap<String, Object> map) {
 
 		boardService.updateAdminNotice(map);
 		
@@ -145,7 +146,7 @@ public class AdminController {
 	@ResponseBody
 	@RequestMapping("/adminInsertNotice")
 	public String updateAdminInsertNotice(@RequestParam HashMap<String, Object> map,
-										  HttpSession session) throws IOException {
+										  HttpSession session) {
 		String sid = (String)session.getAttribute("sid");
 		map.put("userId", sid);
 		
@@ -723,7 +724,7 @@ public class AdminController {
 		return "subPage/adminInsertHotel";
 	}
 	
-	// 관리자 - 공지사항 페이지
+	// 관리자 - 서비스 페이지
 	@RequestMapping("/adminServiceSearch/{num}")
 	public String adminServiceSearch(@PathVariable String num, 
 							   @RequestParam HashMap<String, Object> map, 
@@ -740,7 +741,7 @@ public class AdminController {
 			text_search = (String)map.get("text_search");
 
 		
-		ArrayList<BoardVO> lists = null;
+		ArrayList<ServiceVO> lists = null;
 		
 		// 페이징 초기값
 		int pageNum = Integer.parseInt(num) * 10;
@@ -748,31 +749,31 @@ public class AdminController {
 		
 		if(chk_search == 0) {	// 검색 조건 전체
 			if(text_search.equals("") || text_search.length() == 0) {
-				map.put("title", "%");
-				map.put("contents", "%");
+				map.put("serviceSort", "%");
+				map.put("serviceName", "%");
 			} else {
-				map.put("title", text_search);
-				map.put("contents", text_search);
+				map.put("serviceSort", text_search);
+				map.put("serviceName", text_search);
 			}
 			
-			lists = boardService.selectNoticeOR(map);
+			lists = boardService.selectService(map);
 		} else {
 			if(chk_search == 1) {	// 검색 조건 제목
 				if(text_search.equals("") || text_search.length() == 0)
-					map.put("title", "%");
+					map.put("serviceSort", "%");
 				else
-					map.put("title", text_search);
+					map.put("serviceSort", text_search);
 				
-				map.put("contents", "%");
+				map.put("serviceName", "%");
 			} else {	// 검색 조건 내용
 				if(text_search.equals("") || text_search.length() == 0)
-					map.put("contents", "%");
+					map.put("serviceName", "%");
 				else
-					map.put("contents", text_search);
+					map.put("serviceName", text_search);
 				
-				map.put("title", "%");				
+				map.put("serviceSort", "%");				
 			}
-			lists = boardService.selectNotice(map);
+			lists = boardService.selectService(map);
 		}
 
 		if(!lists.toString().equals("[]")) {
@@ -795,7 +796,58 @@ public class AdminController {
 		return "subPage/adminService";
 	}
 	
-	// 관리자 - 공지사항 페이지
+	// 관리자 - 서비스 신규생성 페이지
+	@RequestMapping("/adminServiceNew")
+	public String viewAdminServiceNew() {
+		return "subPage/adminServiceNew";
+	}
+	
+	// 관리자 - 서비스 입력
+	@ResponseBody
+	@RequestMapping("/adminInsertService")
+	public String adminInsertService(@RequestParam HashMap<String, Object> map,
+									 HttpSession session) throws IOException {
+		boardService.insertAdminService(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 서비스 삭제
+	@ResponseBody
+	@RequestMapping("/adminDeleteService")
+	public String adminDeleteService(@RequestParam("serviceIds") String serviceIds,
+									HashMap<String, Object> map) {
+		
+		String[] arrServiceId = serviceIds.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("serviceIds", arrServiceId);
+		
+		boardService.deleteAdminService(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 서비스 세부화면 페이지
+	@RequestMapping("/adminServiceDetail/{serviceId}")
+	public String viewAdminServiceDetail(@PathVariable String serviceId, Model model) {
+		ServiceVO vo = boardService.serviceDetailView(serviceId);
+			
+		model.addAttribute("service", vo);
+		
+		return "subPage/adminServiceDetail";
+	}
+	
+	// 관리자 - 서비스 세부화면 수정
+	@ResponseBody
+	@RequestMapping("/adminUpdateService")
+	public String updateAdminUpdateService(@RequestParam HashMap<String, Object> map) {
+
+		boardService.updateAdminService(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 펫등록증 페이지
 	@RequestMapping("/adminPetSearch/{num}")
 	public String adminPetSearch(@PathVariable String num, 
 							   @RequestParam HashMap<String, Object> map, 

@@ -13,6 +13,7 @@ import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.ServiceVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 
@@ -162,5 +163,35 @@ public class BoardService implements IBoardService {
 	@Override
 	public void deleteAdminOut(HashMap<String, Object> map) {
 		dao.deleteAdminOut(map);
+	}
+
+	// 관리자 - 서비스 조회
+	@Override
+	public ArrayList<ServiceVO> selectService(HashMap<String, Object> map) {
+		return dao.selectService(map);
+	}
+
+	// 관리자 - 서비스 입력
+	@Override
+	public void insertAdminService(HashMap<String, Object> map) {
+		dao.insertAdminService(map);
+	}
+
+	// 관리자 - 서비스 삭제
+	@Override
+	public void deleteAdminService(HashMap<String, Object> map) {
+		dao.deleteAdminService(map);
+	}
+
+	// 관리자 - 서비스 상세조회
+	@Override
+	public ServiceVO serviceDetailView(String serviceId) {
+		return dao.serviceDetailView(serviceId);
+	}
+
+	// 관리자 - 서비스 세부화면 수정
+	@Override
+	public void updateAdminService(HashMap<String, Object> map) {
+		dao.updateAdminService(map);
 	}
 }

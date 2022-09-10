@@ -8,6 +8,7 @@ import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.ServiceVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 public interface IBoardDAO {
@@ -79,4 +80,20 @@ public interface IBoardDAO {
 	
 	// 관리자 - 탈퇴회원 삭제
 	void deleteAdminOut(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 조회
+	ArrayList<ServiceVO> selectService(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 입력
+	void insertAdminService(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 삭제
+	void deleteAdminService(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 상세조회
+	ServiceVO serviceDetailView(String serviceId);
+	
+	// 관리자 - 서비스 세부화면 수정
+	void updateAdminService(HashMap<String, Object> map);
+	
 }
