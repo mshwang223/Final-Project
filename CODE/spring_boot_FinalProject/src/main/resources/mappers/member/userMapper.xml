@@ -44,7 +44,7 @@
   	
   	<!-- 회원 탈퇴 -->
   	<delete id="deleteUser" parameterType="String">
-  		DELETE FROM user WHERE userId = #{userId}
+		DELETE FROM user WHERE userId = #{userId} 
   	</delete>
 
   	<!-- ID 체크 -->
