@@ -43,7 +43,7 @@ public class AdminController {
 	@Autowired
 	HotelService hotelService;
 	
-	// 관리자 페이지
+	// 관리자 - 공지사항 페이지
 	@RequestMapping("/adminNoticeSearch/{num}")
 	public String adminNoticeSearch(@PathVariable String num, 
 							   @RequestParam HashMap<String, Object> map, 
@@ -723,5 +723,148 @@ public class AdminController {
 		return "subPage/adminInsertHotel";
 	}
 	
+	// 관리자 - 공지사항 페이지
+	@RequestMapping("/adminServiceSearch/{num}")
+	public String adminServiceSearch(@PathVariable String num, 
+							   @RequestParam HashMap<String, Object> map, 
+							   HttpSession session, Model model) {
+		int chk_search = 0;
+		if(map.get("chk_search") != null)
+			chk_search = Integer.parseInt((String)map.get("chk_search"));
+		
+		String text_search = "";	
+
+		if(map.get("text_search") == null) 
+			text_search = "";
+		else
+			text_search = (String)map.get("text_search");
+
+		
+		ArrayList<BoardVO> lists = null;
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
+		
+		if(chk_search == 0) {	// 검색 조건 전체
+			if(text_search.equals("") || text_search.length() == 0) {
+				map.put("title", "%");
+				map.put("contents", "%");
+			} else {
+				map.put("title", text_search);
+				map.put("contents", text_search);
+			}
+			
+			lists = boardService.selectNoticeOR(map);
+		} else {
+			if(chk_search == 1) {	// 검색 조건 제목
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("title", "%");
+				else
+					map.put("title", text_search);
+				
+				map.put("contents", "%");
+			} else {	// 검색 조건 내용
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("contents", "%");
+				else
+					map.put("contents", text_search);
+				
+				map.put("title", "%");				
+			}
+			lists = boardService.selectNotice(map);
+		}
+
+		if(!lists.toString().equals("[]")) {
+		
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+	
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+	
+			model.addAttribute("chk_search", map.get("chk_search"));
+			model.addAttribute("text_search", map.get("text_search"));		
+			
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+		return "subPage/adminService";
+	}
+	
+	// 관리자 - 공지사항 페이지
+	@RequestMapping("/adminPetSearch/{num}")
+	public String adminPetSearch(@PathVariable String num, 
+							   @RequestParam HashMap<String, Object> map, 
+							   HttpSession session, Model model) {
+		int chk_search = 0;
+		if(map.get("chk_search") != null)
+			chk_search = Integer.parseInt((String)map.get("chk_search"));
+		
+		String text_search = "";	
+
+		if(map.get("text_search") == null) 
+			text_search = "";
+		else
+			text_search = (String)map.get("text_search");
+
+		
+		ArrayList<BoardVO> lists = null;
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
+		
+		if(chk_search == 0) {	// 검색 조건 전체
+			if(text_search.equals("") || text_search.length() == 0) {
+				map.put("title", "%");
+				map.put("contents", "%");
+			} else {
+				map.put("title", text_search);
+				map.put("contents", text_search);
+			}
+			
+			lists = boardService.selectNoticeOR(map);
+		} else {
+			if(chk_search == 1) {	// 검색 조건 제목
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("title", "%");
+				else
+					map.put("title", text_search);
+				
+				map.put("contents", "%");
+			} else {	// 검색 조건 내용
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("contents", "%");
+				else
+					map.put("contents", text_search);
+				
+				map.put("title", "%");				
+			}
+			lists = boardService.selectNotice(map);
+		}
+
+		if(!lists.toString().equals("[]")) {
+		
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+	
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+	
+			model.addAttribute("chk_search", map.get("chk_search"));
+			model.addAttribute("text_search", map.get("text_search"));		
+			
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+		return "subPage/adminPet";
+	}
 	
 }
