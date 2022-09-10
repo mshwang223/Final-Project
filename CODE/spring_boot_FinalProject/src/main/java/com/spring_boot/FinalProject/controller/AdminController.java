@@ -727,8 +727,8 @@ public class AdminController {
 	// 관리자 - 서비스 페이지
 	@RequestMapping("/adminServiceSearch/{num}")
 	public String adminServiceSearch(@PathVariable String num, 
-							   @RequestParam HashMap<String, Object> map, 
-							   HttpSession session, Model model) {
+							   		 @RequestParam HashMap<String, Object> map, 
+							   		 HttpSession session, Model model) {
 		int chk_search = 0;
 		if(map.get("chk_search") != null)
 			chk_search = Integer.parseInt((String)map.get("chk_search"));
@@ -756,7 +756,7 @@ public class AdminController {
 				map.put("serviceName", text_search);
 			}
 			
-			lists = boardService.selectService(map);
+			lists = boardService.selectServiceOR(map);
 		} else {
 			if(chk_search == 1) {	// 검색 조건 제목
 				if(text_search.equals("") || text_search.length() == 0)

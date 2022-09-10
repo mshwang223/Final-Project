@@ -165,7 +165,13 @@ public class BoardService implements IBoardService {
 		dao.deleteAdminOut(map);
 	}
 
-	// 관리자 - 서비스 조회
+	// 관리자 - 서비스 조회(전체)
+	@Override
+	public ArrayList<ServiceVO> selectServiceOR(HashMap<String, Object> map) {
+		return dao.selectService(map);
+	}
+	
+	// 관리자 - 서비스 조회(조건)
 	@Override
 	public ArrayList<ServiceVO> selectService(HashMap<String, Object> map) {
 		return dao.selectService(map);

@@ -82,7 +82,10 @@ public interface IBoardService {
 	// 관리자 - 탈퇴회원 삭제
 	void deleteAdminOut(HashMap<String, Object> map);
 	
-	// 관리자 - 서비스 조회
+	// 관리자 - 서비스 조회(전체)
+	ArrayList<ServiceVO> selectServiceOR(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 조회(조건)
 	ArrayList<ServiceVO> selectService(HashMap<String, Object> map);
 	
 	// 관리자 - 서비스 입력

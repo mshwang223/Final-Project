@@ -210,12 +210,22 @@
 	  	 <foreach collection="levIds" item="levId" open="(" close=")" separator=",">#{levId}</foreach> 
 	</delete>
 	
-  	<!-- 관리자 - 서비스 조회 -->
-	<select id="selectService" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.ServiceVO">
+  	<!-- 관리자 - 서비스 조회(전체) -->
+	<select id="selectServiceOR" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.ServiceVO">
 	  	SELECT *, COUNT(*) OVER() AS rowCnt
 	  	  FROM service
 	  	 WHERE serviceSort LIKE CONCAT('%',#{serviceSort},'%')
 	  	    OR serviceName LIKE CONCAT('%',#{serviceName},'%')
+	  	 ORDER BY serviceSort ASC, serviceName ASC 
+	  	 LIMIT 10 OFFSET #{pageNum}
+	</select>
+  	
+  	<!-- 관리자 - 서비스 조회(조건) -->
+	<select id="selectService" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.ServiceVO">
+	  	SELECT *, COUNT(*) OVER() AS rowCnt
+	  	  FROM service
+	  	 WHERE serviceSort LIKE CONCAT('%',#{serviceSort},'%')
+	  	   AND serviceName LIKE CONCAT('%',#{serviceName},'%')
 	  	 ORDER BY serviceSort ASC, serviceName ASC 
 	  	 LIMIT 10 OFFSET #{pageNum}
 	</select>
