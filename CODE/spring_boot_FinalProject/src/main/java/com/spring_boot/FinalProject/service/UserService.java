@@ -103,9 +103,28 @@ public class UserService implements IUserService {
 		dao.deleteUser(userId);
 		
 	}
+	
+	// 탈퇴 후 내역관리
+	@Override
+	public void insertOutUser(HashMap<String, Object> map) {
+		dao.insertOutUser(map);
+	}	
 
 	// 사진 변경
 	public void userImgUpdate(String sid, String imgName) {
 		dao.updateUserImg(sid, imgName);
+	}
+
+	
+	// 관리자 - 사용자 펫 등록 여부 확인
+	@Override
+	public PetVO selectAdminPetUser(String userId) {
+		return dao.selectAdminPetUser(userId);
+	}
+	
+	// 비밀번호 체크
+	@Override
+	public String pwCheck(String userId) {
+		return dao.pwCheck(userId);
 	}
 }

@@ -4,7 +4,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.spring_boot.FinalProject.model.BoardVO;
+<<<<<<< HEAD
+=======
+import com.spring_boot.FinalProject.model.CommentVO;
+import com.spring_boot.FinalProject.model.FacilityVO;
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+<<<<<<< HEAD
+=======
+import com.spring_boot.FinalProject.model.OrderVO;
+import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.ServiceVO;
+import com.spring_boot.FinalProject.model.UserVO;
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 
 public interface IBoardService {
 
@@ -18,7 +30,7 @@ public interface IBoardService {
 	BoardVO noticeDetailView(String boardId);
 	
 	// 문의하기 작성
-	void insertContact(BoardVO vo);
+	void insertContact(BoardVO vo); 
 	
 	// 문의내역 조회
 	ArrayList<BoardVO> selectContact(HashMap<String, Object> map);
@@ -43,4 +55,73 @@ public interface IBoardService {
 	
 	// 관리자-공지사항 입력
 	void insertAdminNotice(HashMap<String, Object> map);
+<<<<<<< HEAD
+=======
+	
+	// 관리자 - 공지사항 삭제
+	void deleteAdminNotice(HashMap<String, Object> map);
+	
+	// 관리자 - 사용자관리 조회
+	ArrayList<UserVO> selectAdminUser(HashMap<String, Object> map);
+	
+	// 관리자 - 문의내역 조회
+	ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map);
+	
+	// 관리자 - 문의내역 답변 반영
+	void updateCheckYN(String boardId);
+	
+	// 관리자 - 문의내역 답변 저장
+	void insertAdminContact(HashMap<String, Object> map);
+	
+	// 관리자 - 문의내역 답변 수정
+	void updateAdminContact(HashMap<String, Object> map);
+	
+	// 관리자 - 결제내역 조회
+	ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map);
+	
+	// 관리자 - 결제내역 삭제
+	void deleteAdminPay(HashMap<String, Object> map);
+	
+	// 관리자 - 탈퇴회원 조회
+	ArrayList<OutuserVO> selectOutUser(HashMap<String, Object> map);
+	
+	// 관리자 - 탈퇴회원 삭제
+	void deleteAdminOut(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 조회(전체)
+	ArrayList<ServiceVO> selectServiceOR(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 조회(조건)
+	ArrayList<ServiceVO> selectService(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 입력
+	void insertAdminService(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 삭제
+	void deleteAdminService(HashMap<String, Object> map);
+	
+	// 관리자 - 서비스 상세조회
+	ServiceVO serviceDetailView(String serviceId);
+	
+	// 관리자 - 서비스 세부화면 수정
+	void updateAdminService(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 조회(전체)
+	ArrayList<FacilityVO> selectFacilityOR(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 조회(조건)
+	ArrayList<FacilityVO> selectFacility(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 입력
+	void insertAdminFacility(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 삭제
+	void deleteAdminFacility(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 상세조회
+	FacilityVO facilityDetailView(String facilityId);
+	
+	// 관리자 - 시설 세부화면 수정
+	void updateAdminFacility(HashMap<String, Object> map);
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 }

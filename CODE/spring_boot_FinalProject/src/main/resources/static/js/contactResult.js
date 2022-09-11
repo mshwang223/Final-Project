@@ -64,6 +64,83 @@ $(document).ready(function(){
 		$("#userFrm").attr('action', submitPath);
    		$("#userFrm").submit();   	
    	});
+<<<<<<< HEAD
+=======
+   	
+  	// 전체동의 체크박스 체크시 전체 체크
+  	// 전체체크 선택 시 변수 값 저장
+  	var arrBoardId = new Array();	// 배열선언
+	$('#allCheck').click(function() {
+		if($(this).is(':checked')){	// 체크되었을 때
+			$('.agree_subcheck').prop('checked', true);
+			
+			// 변수값 저장
+			arrBoardId = [];	// 초기화 필요
+			$(".agree_subcheck:checked").each(function() {
+				arrBoardId.push($(this).val());
+				
+			});
+			// console.log(arrBoardId);
+		} else {
+			$('.agree_subcheck').prop('checked', false);
+			
+			// 변수값 제거
+			$(".agree_subcheck").each(function() {
+				arrBoardId.shift($(this).val());
+			});
+		}
+	});
+	
+	// 체크박스 선택 시 변수값 저장
+	$(".agree_subcheck").on('click', function() {
+		if($(".agree_subcheck:checked").length == 10) $('#allCheck').prop('checked', true);
+		
+		if($(this).is(':checked')) {
+			arrBoardId.push($(this).val());
+		} else {
+			arrBoardId = arrBoardId.filter((e) => e !== $(this).val());
+			$('#allCheck').prop('checked', false);
+		}
+	});
+	
+	// 삭제 기능
+	$("#adminNoticeDel").on('click', function() {
+	
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+
+ 		// 유효성 추가
+ 		if(arrBoardId.length == 0) {
+ 			alert("삭제 내역이 없습니다.");
+ 			return false;
+ 		} else {
+ 			if(confirm("삭제하겠습니까")) {
+		 		$.ajax({
+		 			type:"post",
+		 			url:"/adminDeleteNotice",
+		 			data:{ "boardIds": JSON.stringify(arrBoardId) },
+					dataType:"text",
+					success:function(result){
+						// 성공 시 결과 받음
+						if(result == "SUCCESS") {
+							alert("삭제되었습니다.");
+							location.href = "/contactResult/0/" + $("#userId").val();
+						}
+					},
+					error:function(){
+						// 오류있을 경우 수행 되는 함수
+						alert("전송 실패");
+					}
+		 		});
+	 		} else {
+	 			$('#allCheck').prop('checked', false);
+	 			$(".agree_subcheck").prop('checked', false);
+	 			arrBoardId = [];	// 초기화 필요
+	 		}
+	 	} 
+	});	
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 });
 
 	

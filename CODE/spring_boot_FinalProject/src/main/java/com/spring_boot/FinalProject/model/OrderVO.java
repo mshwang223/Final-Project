@@ -15,10 +15,14 @@ public class OrderVO {
 	
 	private String ordPrdId;
 	private String userId;
+	private String userName;
 	private String stayNo;
+	private String stayName;
 	private int manCnt;
 	private int petCnt;
 	private String rcvPhone;
+	
+	private int rowCnt;
 
 	public String getOrdNo() {
 		return ordNo;
@@ -68,12 +72,26 @@ public class OrderVO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
 	public String getStayNo() {
 		return stayNo;
 	}
 	public void setStayNo(String stayNo) {
 		this.stayNo = stayNo;
+	}
+	
+	public String getStayName() {
+		return stayName;
+	}
+	public void setStayName(String stayName) {
+		this.stayName = stayName;
 	}
 
 	public int getManCnt() {
@@ -95,5 +113,12 @@ public class OrderVO {
 	}
 	public void setRcvPhone(String rcvPhone) {
 		this.rcvPhone = rcvPhone;
+	}
+	
+	public int getRowCnt() {
+		return rowCnt;
+	}
+	public void setRowCnt(int rowCnt) {
+		this.rowCnt = rowCnt;
 	}
 }

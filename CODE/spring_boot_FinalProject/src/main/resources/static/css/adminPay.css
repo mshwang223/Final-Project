@@ -1,0 +1,190 @@
+/* 결제내역 */
+
+/* 사이드 언더라인 이동 */
+
+div.sideTitleLine {
+  top:calc(60px * 4); 
+}
+
+/* 공지사항에 메뉴 위치 */
+a.adminPay {
+  color: #ee82ee;	
+}
+
+/* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
+td:not(.title) {
+  text-align: center;
+}
+
+td.title {
+  text-align: left;
+}
+
+/* 2n번째 열 배경색 */
+tr:nth-child(even) td {
+  background: #eaeaed;
+}
+
+.noticeBox div:first-child {
+  margin-bottom: 15px;	
+}
+
+/* 검색조건 레이아웃 */
+.search-table tr {
+  display: flex; 	
+  flex-wrap: wrap;
+}
+
+.search-table tr td {
+  padding: 1px;
+  border: 0;
+  width: 50%;
+  display:flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.search-table tr td:first-child {
+  justify-content: flex-start;
+}
+
+div.blue {
+  position: relative;
+  top: 27px;
+  
+  font-weight: bold;
+  color: blue;  	
+}
+
+div.dropdown-box {
+  width: 100px;
+  height: 35px;
+  border: 1px solid #c6c9cc;
+  
+  margin-right: 30px;
+  z-index: 20;
+  
+  user-select: none;
+}
+
+div.dropdown-box:hover {
+  cursor: pointer;
+}
+
+div.dropdown-box div:first-child {
+  display: inline-block;	
+  margin: 8px auto;	
+  font-size: 14px;
+  width: 40px; 	
+}
+
+div.dropdown-box div:last-child {
+  display: inline-block;
+  font-size: 16px;
+  text-align: right;
+  width:40px;	
+}
+
+/* 드롭다운 */
+.dropdown-contents {
+  display: none;	
+	
+  list-style: none;
+  
+  position: absolute;
+  top:35px;
+  left: 130px;
+  z-index: 15;
+  
+  background-color: #f5f5f5;
+}
+
+.dropdown-contents > li {
+  margin-top: 0px;
+  width: 100px;
+  height: 35px;
+  
+  border: 1px solid #c6c9cc;
+  border-top: none;
+  
+  font-size: 14px;
+  
+  text-align: left;
+  text-indent: 12px;
+  
+  padding-top: 8px;
+}
+
+.dropdown-contents > li:hover {
+  cursor: pointer;
+  background: white;	
+}
+
+div.search-box {
+  width: 230px;
+  height: 35px;
+  border: 1px solid #c6c9cc;
+}
+
+div.search-box div {
+  margin: -1px;
+
+  font-size: 16px;
+  
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.search-box div input {
+  width: 100%;
+  height: 35px;
+  text-indent: 12px;
+  
+  border: 1px solid #c6c9cc;
+}
+
+div.search-box div input:focus {
+  border: 1px solid black;
+  outline: none;
+  
+  z-index: 1;
+}
+
+div.search-box div button {
+  margin-left: -1px;
+
+  flex-basis: 50px;
+  
+  border: 1px solid #c6c9cc;
+  border-radius: 0px;
+  
+}
+
+div.search-box div button:hover {
+  cursor: pointer;
+}
+
+div.search-box div button img {
+  margin-top: 1px;
+  width: 20px;
+  height: 20px;
+}
+
+/* 테이블 레이아웃 위치 지정 */
+.table-box {
+  margin-top: 15px; 
+  height: 460px; 	
+}
+
+.table-box tr td {
+  font-size: 14px;
+  font-weight: bold;	
+}
+
+/* 공지사항 게시판 크기 */
+table {
+  border-spacing: 0;
+  margin: 0 auto;
+  width: 100%;
+
+}

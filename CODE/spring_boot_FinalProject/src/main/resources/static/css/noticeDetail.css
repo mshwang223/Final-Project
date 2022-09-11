@@ -40,9 +40,9 @@ tr:nth-child(2) > td {
 }
 
 .paging-td {
-	font-weight: bold;
+  font-weight: bold;
 	
-	width: 120px;
+  width: 120px;
 }
 
 /* 목록 버튼 */

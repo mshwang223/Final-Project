@@ -55,7 +55,7 @@
                             <button class="item__delete">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
-                            <img src="<c:url value='/images/hotel4.jpg'/>" alt="상품" width="120" height="90">
+                            <img src="<c:url value='/petHotelImg/${cartList.stayNo }/1.png'/>" alt="상품" width="120" height="90">
                             <div class="item-info">
                                 <p class="item-info__brand">${cartList.stayName}</p>
                                 <p class="item-info__name">예약날짜 : ${cartList.period}</p>

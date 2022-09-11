@@ -44,8 +44,15 @@
   	
   	<!-- 회원 탈퇴 -->
   	<delete id="deleteUser" parameterType="String">
-  		DELETE FROM user WHERE userId = #{userId}
+		DELETE FROM user WHERE userId = #{userId} 
   	</delete>
+  	
+  	<!-- 탈퇴 후 내역관리 -->
+  	<insert id="insertOutUser" parameterType="hashmap">
+  		INSERT into outuser
+  		(userId, userName, userAuthor)
+  		VALUES(#{userId}, #{userName}, #{userAuthor}) 
+  	</insert>
 
   	<!-- ID 체크 -->
   	<select id="chkId" parameterType="String" resultType="String">
@@ -102,6 +109,18 @@
   	<!-- 펫 등록증 소유 여부 확인 -->
    	<select id="selectPetUser" parameterType="String" resultType="String">
   		SELECT userId FROM pet
+		 WHERE userId = #{userId}
+  	</select>
+  	
+  	<!-- 패스워드 체크 -->
+  	<select id="pwCheck" resultType="String">
+  		SELECT userPw FROM user WHERE userId = #{userId}
+  	</select>
+  	
+  	<!-- 관리자 - 사용자 펫 등록 여부 확인 -->
+   	<select id="selectAdminPetUser" parameterType="String" resultType="com.spring_boot.FinalProject.model.PetVO">
+  		SELECT * 
+  		  FROM pet
 		 WHERE userId = #{userId}
   	</select>
 </mapper>

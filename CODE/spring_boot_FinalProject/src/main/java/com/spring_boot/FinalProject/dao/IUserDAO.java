@@ -15,13 +15,16 @@ public interface IUserDAO {
 	void updateActiveDate(String userId);
 	
 	// 로그인 후 포인트 증감
-	void updatePoints(String userId);
+	void updatePoints(String userId); 
 	
 	// 회원가입
 	void insertUser(UserVO vo);
 	
 	// 회원탈퇴
 	void deleteUser(String userId);
+	
+	// 탈퇴 후 내역관리
+	void insertOutUser(HashMap<String, Object> map);
 	
 	// ID 체크
 	String chkId(String id);
@@ -49,4 +52,10 @@ public interface IUserDAO {
 	
 	// 프로필 사진 변경
 	void updateUserImg(String sid, String imgName);
+	
+	// 패스워드 체크
+	String pwCheck(String userId);
+	
+	// 관리자 - 사용자 펫 등록 여부 확인
+	PetVO selectAdminPetUser(String userId);
 }

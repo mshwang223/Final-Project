@@ -109,7 +109,7 @@ public class BoardVO {
 	public void setRowCnt(int rowCnt) {
 		this.rowCnt = rowCnt;
 	}
-
+	
 	public String getPrevTitle() {
 		return prevTitle;
 	}

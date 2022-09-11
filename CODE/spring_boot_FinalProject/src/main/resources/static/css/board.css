@@ -130,3 +130,22 @@ td:first-child {
   background: white;
   color: black;	
 }
+<<<<<<< HEAD
+=======
+
+/* 삭제 버튼 */
+.del {
+  background: white;
+  color: black;  	
+}
+
+.del:active {
+  background: black;
+  color: white;	
+}
+
+/* 레이아웃 전체 크기 반영 */
+div.main-layout {
+  height: max-content;
+}
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git

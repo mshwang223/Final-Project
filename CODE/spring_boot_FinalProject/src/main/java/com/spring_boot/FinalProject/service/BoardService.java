@@ -9,7 +9,19 @@ import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IBoardDAO;
 import com.spring_boot.FinalProject.model.BoardVO;
+<<<<<<< HEAD
+=======
+import com.spring_boot.FinalProject.model.CommentVO;
+import com.spring_boot.FinalProject.model.FacilityVO;
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+<<<<<<< HEAD
+=======
+import com.spring_boot.FinalProject.model.OrderVO;
+import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.ServiceVO;
+import com.spring_boot.FinalProject.model.UserVO;
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 
 
 @Service
@@ -21,7 +33,7 @@ public class BoardService implements IBoardService {
 	// 공지사항 조회기능(조건)
 	@Override
 	public ArrayList<BoardVO> selectNotice(HashMap<String, Object> map) {
-		return dao.selectNotice(map);
+		return dao.selectNotice(map); 
 	}
 	
 	// 공지사항 조회기능(전체)
@@ -93,4 +105,145 @@ public class BoardService implements IBoardService {
 	public void insertAdminNotice(HashMap<String, Object> map) {
 		dao.insertAdminNotice(map);
 	}
+<<<<<<< HEAD
+=======
+
+	// 관리자-공지사항 삭제
+	@Override
+	public void deleteAdminNotice(HashMap<String, Object> map) {
+		dao.deleteAdminNotice(map);
+	}
+	
+	// 관리자 - 사용자관리 조회
+	@Override
+	public ArrayList<UserVO> selectAdminUser(HashMap<String, Object> map){
+		return dao.selectAdminUser(map);
+	}
+	
+	// 관리자 - 문의내역 조회
+	@Override
+	public ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map) {
+		return dao.selectAdminContact(map);
+	}
+	
+	// 관리자 - 문의내역 답변 조회
+	@Override
+	public CommentVO selectAdminComment(String boardId) {
+		return dao.selectAdminComment(boardId);
+	}
+	
+	// 관리자 - 문의내역 답변 반영
+	@Override
+	public void updateCheckYN(String boardId) {
+		dao.updateCheckYN(boardId);
+	}
+
+	// 관리자 - 문의내역 답변 저장
+	@Override
+	public void insertAdminContact(HashMap<String, Object> map) {
+		dao.insertAdminContact(map);		
+	}
+
+	// 관리자 - 문의내역 답변 수정
+	@Override
+	public void updateAdminContact(HashMap<String, Object> map) {
+		dao.updateAdminContact(map);
+	}
+	
+	// 관리자 - 결제내역 조회
+	@Override
+	public ArrayList<OrderVO> selectAdminPay(HashMap<String, Object> map) {
+		return dao.selectAdminPay(map);
+	}
+	
+	// 관리자 - 결제내역 삭제
+	@Override
+	public void deleteAdminPay(HashMap<String, Object> map) {
+		dao.deleteAdminPay(map);
+	}
+	
+	// 관리자 - 탈퇴회원 조회
+	@Override
+	public ArrayList<OutuserVO> selectOutUser(HashMap<String, Object> map) {
+		return dao.selectOutUser(map);
+	}
+	
+	// 관리자 - 탈퇴회원 삭제
+	@Override
+	public void deleteAdminOut(HashMap<String, Object> map) {
+		dao.deleteAdminOut(map);
+	}
+
+	// 관리자 - 서비스 조회(전체)
+	@Override
+	public ArrayList<ServiceVO> selectServiceOR(HashMap<String, Object> map) {
+		return dao.selectService(map);
+	}
+	
+	// 관리자 - 서비스 조회(조건)
+	@Override
+	public ArrayList<ServiceVO> selectService(HashMap<String, Object> map) {
+		return dao.selectService(map);
+	}
+
+	// 관리자 - 서비스 입력
+	@Override
+	public void insertAdminService(HashMap<String, Object> map) {
+		dao.insertAdminService(map);
+	}
+
+	// 관리자 - 서비스 삭제
+	@Override
+	public void deleteAdminService(HashMap<String, Object> map) {
+		dao.deleteAdminService(map);
+	}
+
+	// 관리자 - 서비스 상세조회
+	@Override
+	public ServiceVO serviceDetailView(String serviceId) {
+		return dao.serviceDetailView(serviceId);
+	}
+
+	// 관리자 - 서비스 세부화면 수정
+	@Override
+	public void updateAdminService(HashMap<String, Object> map) {
+		dao.updateAdminService(map);
+	}
+	
+	// 관리자 - 시설 조회(전체)
+	@Override
+	public ArrayList<FacilityVO> selectFacilityOR(HashMap<String, Object> map) {
+		return dao.selectFacility(map);
+	}
+	
+	// 관리자 - 시설 조회(조건)
+	@Override
+	public ArrayList<FacilityVO> selectFacility(HashMap<String, Object> map) {
+		return dao.selectFacility(map);
+	}
+
+	// 관리자 - 시설 입력
+	@Override
+	public void insertAdminFacility(HashMap<String, Object> map) {
+		dao.insertAdminFacility(map);
+	}
+
+	// 관리자 - 시설 삭제
+	@Override
+	public void deleteAdminFacility(HashMap<String, Object> map) {
+		dao.deleteAdminFacility(map);
+	}
+
+	// 관리자 - 시설 상세조회
+	@Override
+	public FacilityVO facilityDetailView(String facilityId) {
+		return dao.facilityDetailView(facilityId);
+	}
+
+	// 관리자 - 시설 세부화면 수정
+	@Override
+	public void updateAdminFacility(HashMap<String, Object> map) {
+		dao.updateAdminFacility(map);
+	}
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 }

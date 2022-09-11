@@ -1,0 +1,205 @@
+/* 관리자 - 사용자관리 세부화면 */
+
+.pageTitle {
+  text-align: center;
+  
+  margin: 50px auto 30px auto;	
+}
+
+.pageTitle > div {
+  background-color: #fff;
+  border-radius: 20px;
+  
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  
+  display: inline-block;
+  
+  line-height: 60px;
+}
+
+.pageTitle > div > span {
+  margin: 0 22px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.userInfo_box{
+  margin: 50px auto;
+  
+  border: 1px solid #ee82ee;
+  
+  width: 600px;
+  
+  background-color: #fff;
+  
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+}
+
+.custom_info > div:first-child {
+  text-align: center;
+  margin-bottom: 25px;	
+}
+
+/* 프로필 이미지 */
+#profile_img__preview{
+  width: 150px;
+  height: 150px;
+  
+  border-radius: 80px;
+  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  
+  cursor: pointer;
+}
+
+#pet_img__preview {
+  width: 60px;
+  height: 60px;
+  
+  border-radius: 30px;
+  
+  position: relative;
+  right: 50px;
+  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  
+  cursor: pointer; 	
+}
+
+/* 항목에 폰트 굵게 표시 */
+.title { 
+	font-size: 16px; 
+	font-weight:bold;
+}
+
+/* 모든 항목 위아래 간격 설정 */
+/* 사용자 */
+.info_box {	/* 사용자 */
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* 펫 */
+.pet_box {
+  display: none;
+  	
+  margin-top: 10px;
+  margin-bottom: 35px;
+  
+  position: relative;
+  bottom: 80px;
+}
+
+/* 박스안 고객정보 박스 */
+.custom_info {
+  width: 356px;
+  
+  margin: 50px auto;
+}
+
+/* 모든 p태그 폰트크기 결정 */
+.custom_info > p{
+  font-size: 16px;
+}
+
+
+/* 내용 입력 상자 */
+.text_content{
+  width: 354px;
+  height: 40px;
+  border: #ee82ee solid 1px;
+  border-radius: 2px;
+  padding: 8px;
+  outline: none;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.textArea_content {
+  width: 354px;
+  border: #ee82ee solid 1px;
+  border-radius: 2px;
+  padding: 8px;
+  outline: none;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* 내용-일자 입력 상자 */
+table.table_date {
+  border-collapse: collapse;
+  border-spacing: 0;
+  
+  text-align: left;	
+}
+
+td > div {
+  display: flex;
+}
+
+.text_date {
+  width: 170px;
+  height: 40px;
+  border: #ee82ee solid 1px;
+  border-radius: 2px;
+  padding: 8px;
+  outline: none;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-right: 14px;
+}
+
+.text_date.author {
+  width: 100px;
+  margin-right: 0;	
+}
+
+.btn_save{
+  width: 70px;
+  height: 40px;
+  
+  background-color: #ee82ee;
+  color: #fff;
+    
+  border: none;
+  
+  font-size: 16px;
+  font-weight: 600;
+  
+  cursor: pointer;
+  
+  position: relative;
+  top: 4.5px;
+}
+
+/* 목록 버튼 */
+.btn_list_box {
+  width: 600px;
+  height: 100px;
+  margin: 30px auto;
+  text-align: right;
+}
+
+.btn_list_done {
+  width: 120px;
+  height: 50px;
+  
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: #ee82ee;
+  color: white;
+  
+  border: none;
+  border-radius: 8px;
+  
+  cursor: pointer;
+}
+
+.btn_list_box > button:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.9s linear;
+}

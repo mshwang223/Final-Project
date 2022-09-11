@@ -61,6 +61,26 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						      		</textarea>
 						      	</td>
 						    </tr>
+<<<<<<< HEAD
+=======
+						    <c:if test="${notice.chkYN eq '1'}">
+						    
+						    <tr class="trAnswerBox">
+						    	<td class="answer-title" colspan="2">답변</td>
+						    </tr>
+						    <tr class="trAnswerBox">
+						    	<td class="titles" colspan="2">
+						    		${answer.userName}&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 
+						    		<fmt:formatDate value="${answer.writeDate}" pattern="yyyy-MM-dd HH:mm:dd"/>
+						    	</td>
+						    </tr>
+						    <tr class="trAnswerBox">
+						      	<td colspan="2" class="answer-box">
+					      			<div id="answers" class="answers">${answer.comment}</div>
+						      	</td>
+						    </tr>
+						    </c:if>
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 						    <tr class="tr-file">
 						    	<td class="paging-td file">첨부파일</td>
 						      	<td>

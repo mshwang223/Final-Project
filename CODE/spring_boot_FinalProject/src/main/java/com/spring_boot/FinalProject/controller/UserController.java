@@ -13,6 +13,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -135,10 +136,47 @@ public class UserController {
 		session.setAttribute("userEmail", vo.getUserEmail());
 		session.setAttribute("userImg", vo.getUserImg());
 		session.setAttribute("author", vo.getUserAuthor());
+		session.setAttribute("points", vo.getPoints());
 		
 		return "SUCCESS";
 	}
 	
+<<<<<<< HEAD
+=======
+	// 회원탈퇴 페이지 이동
+	@RequestMapping("/unregisterForm")
+	public String viewUnregisterForm() {
+		return "subPage/unregisterForm";
+	}
+	
+	// 회원탈퇴 처리
+	@RequestMapping(value="/delete")
+	public String delete(String userId, RedirectAttributes rttr,HttpSession session){
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("userId", userId);
+		map.put("userName", (String)session.getAttribute("userName"));
+		map.put("userAuthor", String.valueOf(session.getAttribute("author")));
+		
+		userService.insertOutUser(map);	// 탈퇴 후 내역 추가
+		
+		userService.deleteUser(userId);
+		session.invalidate();
+		rttr.addFlashAttribute("msg", "이용해주셔서 감사합니다.");
+		return "redirect:/";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/pwCheck")
+	public int pwCheck(UserVO userVO) {
+		
+		String userPw = userService.pwCheck(userVO.getUserId());
+		
+
+		return 1;
+	}
+	
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 	// ID 중복 체크
 	@ResponseBody
 	@RequestMapping("/chkId")
