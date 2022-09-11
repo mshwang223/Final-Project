@@ -48,7 +48,17 @@
 							<div class="company_img">
 								<span>이미지 파일 : </span>
 								<input type="hidden" name="serviceImg" id="serviceImg" value="${serviceImg }">
-								<a href="<c:url value='/fileDownload/${serviceImg}' /> ">파일 다운로드</a>
+								<div class="file_items_wrap">
+										<div class="file_container">
+											<c:forEach var ="serviceImg" items="${serviceImg}">
+												<div class="file_img_box">
+													<img src="<c:url value='/comImg/${serviceImg}.jpg'/>" alt="">
+												</div>
+											</c:forEach>
+										</div>
+										<img class="file_prev" src="<c:url value='/images/left-arrow.png'/>" alt=""> 
+										<img class="file_next" src="<c:url value='/images/next.png'/>" alt="">
+								</div>
 							</div>
 							<div class="company_contact">
 								<span>연락처 : </span>

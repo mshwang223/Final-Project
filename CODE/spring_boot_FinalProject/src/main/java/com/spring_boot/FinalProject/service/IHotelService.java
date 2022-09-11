@@ -12,6 +12,9 @@ public interface IHotelService {
 	// 호텔 등록
 	void insertHotel(InsertHotelVO vo);
 	
+	// 호텔 전체 조회
+	ArrayList<StayVO> listAllHotel();
+	
 	// 숙박펜션 조회 기능
 	ArrayList<StayVO> selectHotel(HashMap<String, Object> map);
 	
@@ -29,4 +32,7 @@ public interface IHotelService {
 	
 	// 숙박펜션 편의시설3 세부화면 조회 기능
 	ArrayList<FacilityVO> selectDetailFacility3(HashMap<String, Object> map);
+	
+	// 업체등록 이미지 가져오기
+	StayVO selectInsertHotelImg(int id);
 }

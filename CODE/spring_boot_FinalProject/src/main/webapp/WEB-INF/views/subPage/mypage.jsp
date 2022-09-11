@@ -48,6 +48,7 @@
                                 <label for="profile_input" id="input_profile_img">프로필 사진 편집</label>
                                 <input type="file" name="userImg" id="profile_input" style="display: none;">
                             </form>
+                            <div class="unregister" id="unRegister">회원탈퇴</div>
                         </div>
                     </div>
                 </div>
@@ -81,10 +82,10 @@
                             <p>aaaaaaaaaaa</p>
                         </div>
 
-                        <button class="accordion">예약 내역<span class="accordion__arrow">></span></button>
+                        <button class="accordion">이용 내역<span class="accordion__arrow">></span></button>
                         <div class="panel">
                         <div class="panel_wrap">
-                            <p>펫밀리가 떴다2 펜션</p>
+                            <p></p>
                             <button id="review_btn">후기 남기러 가기</button>
                             </div>
                         </div>

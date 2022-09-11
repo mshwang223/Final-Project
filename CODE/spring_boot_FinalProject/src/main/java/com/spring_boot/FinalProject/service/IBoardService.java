@@ -4,19 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.spring_boot.FinalProject.model.BoardVO;
-<<<<<<< HEAD
-=======
 import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.FacilityVO;
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 import com.spring_boot.FinalProject.model.InsertHotelVO;
-<<<<<<< HEAD
-=======
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.ServiceVO;
 import com.spring_boot.FinalProject.model.UserVO;
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 
 public interface IBoardService {
 
@@ -35,6 +29,9 @@ public interface IBoardService {
 	// 문의내역 조회
 	ArrayList<BoardVO> selectContact(HashMap<String, Object> map);
 	
+	// 관리자 - 문의내역 답변 조회
+	CommentVO selectAdminComment(String boardId);
+	
 	// 문의내역 상세조회
 	BoardVO contactDetailView(String boardId);
 	
@@ -50,13 +47,11 @@ public interface IBoardService {
 	// 업체 승인
 	void approveHotel(String name, String approve);
 	
-	// 관리자-공지사항 수정
+	// 관리자 - 공지사항 수정
 	void updateAdminNotice(HashMap<String, Object> map);
 	
-	// 관리자-공지사항 입력
+	// 관리자 - 공지사항 입력
 	void insertAdminNotice(HashMap<String, Object> map);
-<<<<<<< HEAD
-=======
 	
 	// 관리자 - 공지사항 삭제
 	void deleteAdminNotice(HashMap<String, Object> map);
@@ -123,5 +118,4 @@ public interface IBoardService {
 	
 	// 관리자 - 시설 세부화면 수정
 	void updateAdminFacility(HashMap<String, Object> map);
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 }

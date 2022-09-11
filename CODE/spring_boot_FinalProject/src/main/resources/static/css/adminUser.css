@@ -1,8 +1,14 @@
-/* 공지사항 */
+/* 사용자 관리 */
+
+/* 사이드 언더라인 이동 */
+
+div.sideTitleLine {
+  top:calc(60px * 2); 
+}
 
 /* 공지사항에 메뉴 위치 */
-a.adminNotice {
-  color: #ee82ee;
+a.adminUser {
+  color: #ee82ee;	
 }
 
 /* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
@@ -87,7 +93,7 @@ div.dropdown-box div:last-child {
   
   position: absolute;
   top:35px;
-  left: 53px;
+  left: 197px;
   z-index: 15;
   
   background-color: #f5f5f5;

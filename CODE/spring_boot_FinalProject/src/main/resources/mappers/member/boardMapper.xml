@@ -109,9 +109,6 @@
 	  	INSERT into board
 	  		  (userId, title, contents, category)
 	  	VALUES(#{userId}, #{title}, #{contents}, 1)	   
-<<<<<<< HEAD
-	</insert>  	
-=======
 	</insert>
 	
   	<!-- 관리자 - 공지사항 삭제 -->
@@ -310,5 +307,4 @@
 		   	   facilityName = #{facilityName}
 		 WHERE facilityId = #{facilityId} 	   
 	</update>	 
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 </mapper>

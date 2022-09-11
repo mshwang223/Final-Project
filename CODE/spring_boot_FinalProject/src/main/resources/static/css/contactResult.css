@@ -1,4 +1,4 @@
-/* 문의 조회 */
+/* 문의하기 조회 */
 
 /* 헤더 언더라인 이동 */
 header nav.main_nav div.underline {
@@ -62,7 +62,19 @@ header nav.main_nav div.underline {
 }
 
 .table-box {
-	margin-top: 45px;
+  margin-top: 45px;
+}
+
+.table-box > div {
+  display: flex;
+  justify-content: flex-start;
+  
+  text-align: center;
+  
+  width: 65%;
+  
+  margin: 0 auto;
+   	
 }
 
 /* 테이블 제목 항목을 제외한 나머지 항목들은 중앙 정렬 */
@@ -110,11 +122,14 @@ td {
 }
 
 div.blue {
-  width: 65%;
-  
   margin:  0 auto;
-  padding-bottom: 5px;
   
   font-weight: bold;
-  color: blue;  	
+  color: blue;  
+  
+  width: 93.5%;
+  text-align: left;
+  
+  position: relative;
+  top: 25px;
 }

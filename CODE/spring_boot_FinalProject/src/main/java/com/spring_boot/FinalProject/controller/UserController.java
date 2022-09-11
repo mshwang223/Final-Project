@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -141,8 +141,6 @@ public class UserController {
 		return "SUCCESS";
 	}
 	
-<<<<<<< HEAD
-=======
 	// 회원탈퇴 페이지 이동
 	@RequestMapping("/unregisterForm")
 	public String viewUnregisterForm() {
@@ -176,7 +174,6 @@ public class UserController {
 		return 1;
 	}
 	
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 	// ID 중복 체크
 	@ResponseBody
 	@RequestMapping("/chkId")

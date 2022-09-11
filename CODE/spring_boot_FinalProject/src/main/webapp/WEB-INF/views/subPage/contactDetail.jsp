@@ -48,6 +48,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<tbody>
 						    <tr>
 						      	<td class="titles" colspan="2">
+						      		<input type="hidden" id="chkYN" value="${notice.chkYN}">
 						      		<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">
 						      		<input type="hidden" id="userName" name="userName" value="<c:url value='${sessionScope.userName}'/>">
 						      		${notice.userName}&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 
@@ -56,13 +57,16 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						    </tr>
 						    <tr>
 						      	<td colspan="2">
+						      		<c:if test="${notice.chkYN eq '0'}">
 						      		<textarea id="contactContents" class="contents" name="contents">
 						      			${notice.contents}
 						      		</textarea>
+						      		</c:if>
+						      		<c:if test="${notice.chkYN eq '1'}">
+						      			<div id="readOnlyContents" class="contents readOnly">${notice.contents}</div>
+						      		</c:if>
 						      	</td>
 						    </tr>
-<<<<<<< HEAD
-=======
 						    <c:if test="${notice.chkYN eq '1'}">
 						    
 						    <tr class="trAnswerBox">
@@ -80,19 +84,21 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						      	</td>
 						    </tr>
 						    </c:if>
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 						    <tr class="tr-file">
 						    	<td class="paging-td file">첨부파일</td>
 						      	<td>
+						      		<c:if test="${notice.chkYN eq '0'}">
 								    <div class="btn_img_box">
 								    	<input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
 								    	<button type="button" id="btn_img_done" class="btn_img_done">파일찾기</button>
 								    </div>
-								    
+								    </c:if>
 								    <div class="file-box">
+								    	<c:if test="${notice.chkYN eq '0'}">
 								    	<div id="escFile">
 								    		<i class="fa-solid fa-circle-xmark"></i>
 								    	</div>
+								    	</c:if>
 								    	<div id="fileName">${notice.chkFile}</div>
 								    </div>
 						      	</td>
@@ -123,7 +129,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</table>
 				    <div class="btn_list_box">
 				    	<button type="button" class="btn_list_done">목록</button>
-				    	<button type="submit" class="btn_save_done">저장</button>
+				    	<c:if test="${notice.chkYN eq '0'}">
+				    		<button type="submit" class="btn_save_done">저장</button>
+				    	</c:if>
 				    </div>
 				</form>
 			</article>

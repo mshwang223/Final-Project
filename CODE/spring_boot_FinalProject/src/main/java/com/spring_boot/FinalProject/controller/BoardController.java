@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.spring_boot.FinalProject.model.BoardVO;
+import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.service.BoardService;
 
 @Controller
@@ -216,8 +217,10 @@ public class BoardController {
 	@RequestMapping("/contactDetail/{boardId}")
 	public String viewContactDetail(@PathVariable String boardId, Model model) {
 		BoardVO vo = boardService.contactDetailView(boardId);
+		CommentVO cvo = boardService.selectAdminComment(boardId);
 		
 		model.addAttribute("notice", vo);
+		model.addAttribute("answer", cvo);
 		
 		return "subPage/contactDetail";
 	}

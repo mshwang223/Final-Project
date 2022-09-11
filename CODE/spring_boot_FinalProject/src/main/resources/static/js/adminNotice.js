@@ -1,5 +1,5 @@
 /********************************
- * 파일명 : notice.js
+ * 파일명 : adminNotice.js
  * 용 도 : 관리자메뉴 공지사항 메인화면 
  * 작성자 : 황재윤
 *********************************/
@@ -109,8 +109,6 @@ $(document).ready(function(){
    		$("#userFrm").attr('action', submitPath);
    		$("#userFrm").submit();   	
    	});
-<<<<<<< HEAD
-=======
    	
   	// 전체동의 체크박스 체크시 전체 체크
   	// 전체체크 선택 시 변수 값 저장
@@ -185,7 +183,6 @@ $(document).ready(function(){
 	 		}
  		}
 	});	
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 });
 
 	

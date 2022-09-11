@@ -130,7 +130,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	              <div class="result_hotel_img">
 	              	<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">
 	                <%-- <img src="<c:url value='/images/${list.mainImg}'/>"> --%>
-                	<img src="<c:url value='/images/stay2.jpg'/>">
+                		<img src="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>">
 	              </div>
 	              <div class="wrap_whole">
 	                <div class="hotel_title">

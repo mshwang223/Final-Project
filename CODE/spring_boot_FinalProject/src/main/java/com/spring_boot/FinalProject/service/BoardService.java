@@ -9,19 +9,13 @@ import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IBoardDAO;
 import com.spring_boot.FinalProject.model.BoardVO;
-<<<<<<< HEAD
-=======
 import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.FacilityVO;
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 import com.spring_boot.FinalProject.model.InsertHotelVO;
-<<<<<<< HEAD
-=======
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.ServiceVO;
 import com.spring_boot.FinalProject.model.UserVO;
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 
 
 @Service
@@ -105,8 +99,6 @@ public class BoardService implements IBoardService {
 	public void insertAdminNotice(HashMap<String, Object> map) {
 		dao.insertAdminNotice(map);
 	}
-<<<<<<< HEAD
-=======
 
 	// 관리자-공지사항 삭제
 	@Override
@@ -245,5 +237,4 @@ public class BoardService implements IBoardService {
 	public void updateAdminFacility(HashMap<String, Object> map) {
 		dao.updateAdminFacility(map);
 	}
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 }

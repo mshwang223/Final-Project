@@ -1,5 +1,7 @@
 package com.spring_boot.FinalProject.service;
 
+import java.util.HashMap;
+
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -31,6 +33,9 @@ public interface IUserService {
 	
 	// 회원 정보 수정
     void memberUpdate(String userPw, String updatePw, String updateEmail);
+
+	// 관리자-사용자 권한 수정
+	void updateAdminUser(HashMap<String, Object> map);
     
 	// Email 체크
 	String chkEmail(String email);

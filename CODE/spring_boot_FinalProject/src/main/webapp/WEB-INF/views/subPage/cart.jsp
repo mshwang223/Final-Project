@@ -116,7 +116,7 @@
                 <div class="final_pay_txt">최종 결제 금액</div>
 
                 <div class="total_charge">
-                    <span>총합계</span> <span>${totalPrice} 원</span>
+                    <span class=total>총합계 :</span> <span>${totalPrice} 원</span>
                 </div>
                 <button class="final_pay_btn" id="payment" onclick="payment()">결제하기</button>
             </div>
@@ -191,6 +191,7 @@
                     <button>PAYCO</button>
                     <button>L.pay</button>
                     <button>그외결제</button>
+                    <button class="payments_confirm">결제하기</button>
                 </div>
 
             </div>

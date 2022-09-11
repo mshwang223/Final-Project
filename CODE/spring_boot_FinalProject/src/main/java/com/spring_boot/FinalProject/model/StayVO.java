@@ -1,9 +1,5 @@
 package com.spring_boot.FinalProject.model;
 
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 public class StayVO {
 	private String stayNo;
 	private String serviceId;

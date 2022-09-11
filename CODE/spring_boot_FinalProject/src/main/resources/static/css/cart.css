@@ -371,3 +371,13 @@ width:60px;
   "payco Lpay else ." 1fr / 1fr 1fr 1fr 1fr;
   gap: 5px;
 }
+
+.total_charge > span{
+	font-weight: 600;
+	font-family: 'Nanum Gothic';
+	font-size:25px;	
+}
+
+.payments_confirm{
+ color:#ee88ee;
+}

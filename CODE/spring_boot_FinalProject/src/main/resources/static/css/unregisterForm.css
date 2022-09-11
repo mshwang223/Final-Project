@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+.pageTitle {
+  text-align: center;
+  
+  margin: 50px auto 30px auto;	
+}
+
+.pageTitle > div {
+  background-color: #fff;
+  border-radius: 20px;
+  
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  
+  display: inline-block;
+  
+  line-height: 60px;
+}
+
+.pageTitle > div > span {
+  margin: 0 22px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.delete_box{
+  margin: 50px auto;
+  
+  border: 1px solid #ee82ee;
+  
+  width: 600px;
+  
+  background-color: #fff;
+  
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.title { 
+	font-size: 16px; 
+	font-weight:bold;
+}
+
+.delete_pw,
+.delete_pwcheck{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.custom_info{
+  width: 356px;
+  
+  margin: 50px auto;
+}
+
+.custom_info > p{
+  font-size: 16px;
+}
+
+
+.custom_info .text_delete_pw{
+  width: 270px;
+  height: 40px;
+  border: #ee82ee solid 1px;
+  border-radius: 2px;
+  padding: 8px;
+  outline: none;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.custom_info .text_delete_pw{
+  width: 270px;
+  height: 40px;
+  border: #ee82ee solid 1px;
+  border-radius: 2px;
+  padding: 8px;
+  outline: none;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+
+
+.btn_delete_box{
+  width: 600px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.btn_delete_done{
+  width: 120px;
+  height: 50px;
+
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: #ee82ee;
+  color: #fff;
+  
+  border: none;
+  border-radius: 8px;
+  
+  cursor: pointer;
+}
+
+.btn_cancel_done{
+  width: 120px;
+  height: 50px;
+  
+  margin-right: 30px;
+
+  font-size: 16px;
+  font-weight: 600;
+  
+  background-color: white;
+  color: black;
+  
+  border: none;
+  border-radius: 8px;
+  
+  cursor: pointer;
+}

@@ -1,42 +1,37 @@
 package com.spring_boot.FinalProject.controller;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.OutputStream;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
+import org.zeroturnaround.zip.ZipUtil;
 
 import com.spring_boot.FinalProject.model.BoardVO;
-<<<<<<< HEAD
-=======
 import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.FacilityVO;
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 import com.spring_boot.FinalProject.model.InsertHotelVO;
-<<<<<<< HEAD
-=======
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.ServiceVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 import com.spring_boot.FinalProject.service.BoardService;
+import com.spring_boot.FinalProject.service.HotelService;
+import com.spring_boot.FinalProject.service.UserService;
 
 @Controller
 public class AdminController {
@@ -44,9 +39,6 @@ public class AdminController {
 	@Autowired
 	BoardService boardService;
 	
-<<<<<<< HEAD
-	// 관리자 페이지
-=======
 	@Autowired
 	UserService userService;
 	
@@ -54,7 +46,6 @@ public class AdminController {
 	HotelService hotelService;
 	
 	// 관리자 - 공지사항 페이지
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 	@RequestMapping("/adminNoticeSearch/{num}")
 	public String adminNoticeSearch(@PathVariable String num, 
 							   @RequestParam HashMap<String, Object> map, 
@@ -165,8 +156,6 @@ public class AdminController {
 		return "SUCCESS";
 	}
 	
-<<<<<<< HEAD
-=======
 	// 관리자 - 공지사항 삭제
 	@ResponseBody
 	@RequestMapping("/adminDeleteNotice")
@@ -620,7 +609,6 @@ public class AdminController {
 		return "SUCCESS";
 	}
 	
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 	// 관리자-업체관리 조회
 	@RequestMapping("/adminInsertHotel")
 	public String viewAdminInsertHotel(Model model) {
@@ -652,33 +640,81 @@ public class AdminController {
 		model.addAttribute("createDate", vo.getCreateDate());
 		model.addAttribute("comment", vo.getComment());
 		
+		// 호텔 압축파일명
+		StayVO fileImg = hotelService.selectInsertHotelImg(regId);
+		
+		ZipUtil.unpack(new File("c:\springWorkspace/comImg/"+ fileImg ), new File("c:\\springWorkspace/comImg"));
+		/*
+				
+				
+				  // zip 파일
+				  File zipFile = new File("c:/springWorkspace/comImg/"+ fileImg);
+
+				  // 압축해제할 폴더(디렉토리) 경로
+				  File unzipFolder = new File(zipFile.getParent());
+				  String directory = unzipFolder.toString();
+				  
+			        
+			        try {
+			        	// zip 파일 데이터 읽어오기
+			            FileInputStream fis = new FileInputStream(zipFile);
+			            ZipInputStream zis = new ZipInputStream(fis);
+			            // 성능향상 스트림
+			            BufferedInputStream bis = new BufferedInputStream(zis);
+			            
+			            // 압축 파일(zip)객체
+			            ZipEntry zipEntry = null;
+
+			            while ((zipEntry = zis.getNextEntry()) != null) {
+			            	
+			            	// 압축폴더 이름
+			                String fileNameToUnzip = zipEntry.getName();
+			                
+			                File targetFile = new File(fileNameToUnzip);
+			                
+			                Path newPath = Paths.get(directory);
+			                
+			                //디렉토리 인 경우
+			                if(zipEntry.isDirectory()) {
+			                	FileUtils.forceMkdir(targetFile);
+			                }
+			                else {  //파일 인 경우 parentDirectory 생성
+			                	FileUtils.forceMkdir(targetFile.getParentFile());
+			                }
+			                
+			                // 디렉토리 경로에 저장
+			                FileOutputStream fos = new FileOutputStream(fileNameToUnzip, true);
+			                BufferedOutputStream bos = new BufferedOutputStream(fos);
+			                Files.copy(zis, newPath, StandardCopyOption.REPLACE_EXISTING);
+			                
+			                if(zis != null) {
+				        		zis.close();
+				        	}
+				        	if(fis != null) {
+				        		fis.close();
+				        	}
+			            }
+			            
+			        } catch (IOException e) {
+			            // Exception Handling
+			        	e.printStackTrace();
+			        } finally {
+						
+			        	
+			        		
+			        }
+			        */
+		
 		return "subPage/adminInsertDetail";
 	}	
 	
-	@RequestMapping("fileDownload/{serviceImg}")
-	public void fileDownload(@PathVariable String serviceImg, HttpServletResponse response) throws Exception {
-		
-		File f = new File("C:/springWorkspace/petImg/", serviceImg);
-		
-		//파일명 인코딩
-		String encodedFileName = new String (serviceImg.getBytes("UTF-8"), "ISO-8859-1");
-
-		// 파일 다운로드 설정
-		response.setContentType("application/download");
-		response.setContentLength((int) f.length());
-		response.setHeader("content-Disposition", "attratchment;filename=\""+ encodedFileName +"\"");
-		
-		//다운로드 시 저장되는 이름은 Response Header의 "Content-Disposition"에 명시
-		
-		//response 객체를 통해 서버로 부터 파일 다운로드 받음
-		OutputStream os = response.getOutputStream();
-		
-		//파일 입력 객체 생성 
-		FileInputStream fis = new FileInputStream(f);
-		FileCopyUtils.copy(fis,os);
-		
+	// 업체등록 이미지 압축파일 해제
+	@RequestMapping("unZipFile/{serviceImg}")
+	public void unZipFile(@PathVariable String serviceImg) {
+		  
 	}
-
+	
+	// 등록숙박 승인
 	@RequestMapping("/adminApproveHotel")
 	public String adminApproveHotel(@RequestParam HashMap<String, Object> map, Model model) {
 		boardService.approveHotel((String) map.get("name"), (String) map.get("approve"));
