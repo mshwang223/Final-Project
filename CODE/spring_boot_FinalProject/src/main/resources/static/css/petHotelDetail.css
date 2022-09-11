@@ -86,7 +86,7 @@
 
 .stay_img_container > .stay_img_box2 div{
   position: absolute;
-  bottom: -4px;
+  bottom: 4px;
   right: 0;
   height: 250px;
   width: 410px;
@@ -96,7 +96,7 @@
   font-weight: 800;
   color: #ee82ee;
   background-color: #222;
-  opacity: 0.2;
+  opacity: 0.8;
 }
 
 /* 숙소 정보 article */

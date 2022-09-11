@@ -144,7 +144,7 @@ public class HotelController {
 		model.addAttribute("lists", lists);
 		
 		// 호텔펜션 테이블
-		ArrayList<StayVO> stayList = hotelService.listAllHotel();
+		StayVO stayList = hotelService.selectDetailHotel(map);
 		model.addAttribute("stayList", stayList);
 		
 		return "subPage/petHotel";
@@ -256,10 +256,7 @@ public class HotelController {
 		// 호텔
 		StayVO stayList = hotelService.selectDetailHotel(map);
 		String period = (String)map.get("rangepicker");
-		String count = (String)map.get("countAll");
-		System.out.println(count);
 		map.put("period", period);
-		map.put("count", count);
 				
 		// 카트
 		 String price =  String.valueOf( map.get("total"));

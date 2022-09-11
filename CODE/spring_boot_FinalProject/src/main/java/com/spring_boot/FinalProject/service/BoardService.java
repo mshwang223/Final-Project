@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IBoardDAO;
 import com.spring_boot.FinalProject.model.BoardVO;
-import com.spring_boot.FinalProject.model.CommentVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
-import com.spring_boot.FinalProject.model.OutuserVO;
-import com.spring_boot.FinalProject.model.UserVO;
 
 
 @Service
@@ -95,59 +92,5 @@ public class BoardService implements IBoardService {
 	@Override
 	public void insertAdminNotice(HashMap<String, Object> map) {
 		dao.insertAdminNotice(map);
-	}
-
-	// 관리자-공지사항 삭제
-	@Override
-	public void deleteAdminNotice(HashMap<String, Object> map) {
-		dao.deleteAdminNotice(map);
-	}
-	
-	// 관리자 - 사용자관리 조회
-	@Override
-	public ArrayList<UserVO> selectAdminUser(HashMap<String, Object> map){
-		return dao.selectAdminUser(map);
-	}
-	
-	// 관리자 - 문의내역 조회
-	@Override
-	public ArrayList<BoardVO> selectAdminContact(HashMap<String, Object> map) {
-		return dao.selectAdminContact(map);
-	}
-	
-	// 관리자 - 문의내역 답변 조회
-	@Override
-	public CommentVO selectAdminComment(String boardId) {
-		return dao.selectAdminComment(boardId);
-	}
-	
-	// 관리자 - 문의내역 답변 반영
-	@Override
-	public void updateCheckYN(String boardId) {
-		dao.updateCheckYN(boardId);
-	}
-
-	// 관리자 - 문의내역 답변 저장
-	@Override
-	public void insertAdminContact(HashMap<String, Object> map) {
-		dao.insertAdminContact(map);		
-	}
-
-	// 관리자 - 문의내역 답변 수정
-	@Override
-	public void updateAdminContact(HashMap<String, Object> map) {
-		dao.updateAdminContact(map);
-	}
-	
-	// 관리자 - 탈퇴회원 조회
-	@Override
-	public ArrayList<OutuserVO> selectOutUser(HashMap<String, Object> map) {
-		return dao.selectOutUser(map);
-	}
-	
-	// 관리자 - 탈퇴회원 삭제
-	@Override
-	public void deleteAdminOut(HashMap<String, Object> map) {
-		dao.deleteAdminOut(map);
 	}
 }

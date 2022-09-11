@@ -30,7 +30,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<div class="rsv_wrap">
 				<div class="box_hotel_info">
 					<div class="box_img_tlt">
-						<div class="img_box"><img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>"></div>
+						<div class="img_box"><img src="<c:url value='/images/stay2.jpg'/>"></div>
 						<div class="info_txt_Box">
 							<input type="hidden" id="stayNo" name="stayNo" value="${stayList.stayNo}"/>
 							<input type="hidden" id="count" name="count" value="${map.count}"/>

@@ -76,13 +76,6 @@
         WHERE USERID=#{userId}
     </update>
     
-	<!-- 관리자-사용자 권한 수정 -->
-    <update id="updateAdminUser" parameterType="hashmap">
-        UPDATE user 
-           SET userAuthor = #{userAuthor}
-         WHERE userId = #{userId}
-    </update>
-    
     <!-- 프로필 사진 변경 -->
       <update id="updateUserImg" parameterType="String">
         UPDATE user

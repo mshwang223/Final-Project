@@ -1,10 +1,4 @@
 /* 게시판 공통 */
-
-/* a태그 레이아웃 */
-a.atxtUnderline {
-  color: #008000;
-}
-
 th {
   background: #ee82ee;
   color: #fff;
@@ -40,33 +34,13 @@ th {
 }
 
 /* 테이블 번호 크기 고정 */
-th.num, th.checkBox {
-  width: 90px;
-}
-
-th.id, th.name {
-  width: 120px;	
-}
-
-/* 테이블 체크박스 */
-th.checkBox > input {
-  width: 15px;
-  height: 15px;
-  
-  position: relative;
-  top: 3px;
-  left: 3px;
-  
-  cursor: pointer;	
+th.num {
+  width: 80px;
 }
 
 /* 테이블 작성자, 작성일 크기 고정 */
-th.date {
-  width: 180px;
-}
-
-th.author, th.chkYN {
-  width: 120px;	
+th.author, th.date, th.chkYN {
+  width: 240px;
 }
 
 th.approve{
@@ -81,17 +55,6 @@ td {
 
 td:first-child {
   border-left: 1px solid #c6c9cc;
-}
-
-/* 체크 박스 td */
-td > input.agree_subcheck {
-  position: relative;
-  top: 2px;
-  
-  width: 13px;
-  height: 13px;
-  
-  cursor: pointer;	
 }
 
 /* 페이징 레이아웃 */
@@ -151,7 +114,7 @@ td > input.agree_subcheck {
   
   text-align: center;
   
-  margin-left: 10px;
+  margin-left: 30px;
   padding: 9px 15px;
   
   border-radius: 5px;
@@ -166,15 +129,4 @@ td > input.agree_subcheck {
 .btnAdmin:active {
   background: white;
   color: black;	
-}
-
-/* 삭제 버튼 */
-.del {
-  background: white;
-  color: black;  	
-}
-
-.del:active {
-  background: black;
-  color: white;	
 }

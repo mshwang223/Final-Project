@@ -55,19 +55,23 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="stay_img_container">
 					<div class="stay_img_box1">
-						<a href="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>" data-lightbox="example"><img src="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>" alt=""></a>
+						<a href="/images/petDetail1.jpg" data-lightbox="example"><img src="/images/petDetail1.jpg" alt=""></a>
 					</div>
 					<div class="stay_img_box2">
-						<c:forEach begin="2" end="10" step="1" varStatus="loop">
-							<a href="<c:url value='/petHotelImg/${list.stayNo }/${loop.index }.png'/>" data-lightbox="example"><img src="<c:url value='/petHotelImg/${list.stayNo }/${loop.index }.png'/>" alt=""><div>+ 이미지 더보기</div></a> 
-						</c:forEach>
+						<a href="/images/petDetail2.jpg" data-lightbox="example"><img src="/images/petDetail2.jpg" alt=""></a> 
+						<a href="/images/petDetail3.jpg" data-lightbox="example"><img src="/images/petDetail3.jpg" alt=""></a>
+						<a href="/images/petDetail4.jpg" data-lightbox="example"><img src="/images/petDetail4.jpg" alt=""></a>
+						<a href="/images/petDetail5.jpg" data-lightbox="example"><img src="/images/petDetail5.jpg" alt=""><div>+ 이미지 더보기</div></a>
+						<a href="/images/petDetail2.jpg" data-lightbox="example"><img src="/images/petDetail2.jpg" alt=""></a> 
+						<a href="/images/petDetail3.jpg" data-lightbox="example"><img src="/images/petDetail3.jpg" alt=""></a>
+						<a href="/images/petDetail4.jpg" data-lightbox="example"><img src="/images/petDetail4.jpg" alt=""></a>
 					</div>
 				</div>
 			</article>
 			<article class="stay_info_area">
 				<div class="info_content_area">
 					<div class="info_content_box1">
-						<div class="content_title">${list.stayName}</div>
+						<div class="content_title">K401펜션</div>
 						<div class="simple_info_box">
 							<span>침실 1개 · </span> <span>침대 1개 · </span>
 							<span>욕실 1개 · </span> <span>플레이그라운드</span>
@@ -96,7 +100,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<div>숙박타입</div>
 						<c:forEach var="room" items="${lists2}" varStatus="loop">
 						<div>
-							<img src="<c:url value='/petHotelImg/${room.stayNo }/${room.roomImg}.png'/>" alt="">
+							<img src="/images/stayType.jpg" alt="">
 							<div class="room_box">
 								<c:if test="${room.roomType eq 1}"><span># 스탠다드 더블</span></c:if>
 								<c:if test="${room.roomType eq 2}"><span># 스탠다드 트윈</span></c:if>
@@ -333,18 +337,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 						<div class="total_count">
 							<span>인원수 | 반려동물 수</span> 
-							
-							<form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv"/>">
-								<input type="text" class="info_content_count" id="infoCount" name="countAll" spellcheck="false" value="${map.count}">
-								<input type="hidden" id="roomType" name="roomType" value=""/>
-								<input type="hidden" id="rPrice" name="rPrice" value="0"/>
-								<input type="hidden" id="rangepicker" name="rangepicker" value="${map.period}"/>
-								<input type="hidden" id="discount" name="discount" value="0"/>
-								<input type="hidden" id="total" name="total" value=""/>
-								<input type="hidden" id="diffDay" name="diffDay" value=""/>
-								<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">	
-							</form>							
-							
+							<input type="text" class="info_content_count" id="infoCount" spellcheck="false" value="${map.count}">
 							<div class="person_count_option">
 								<h4 class="tlt_popup_person">인원 선택</h4>
 								<div class="div_person_count">
@@ -415,8 +408,16 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<button class="book_btn">예약하기</button>
 					
-					
-
+					<form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv"/>">
+						<input type="hidden" id="count" name="count" value="${map.count}"/>
+						<input type="hidden" id="roomType" name="roomType" value=""/>
+						<input type="hidden" id="rPrice" name="rPrice" value="0"/>
+						<input type="hidden" id="rangepicker" name="rangepicker" value="${map.period}"/>
+						<input type="hidden" id="discount" name="discount" value="0"/>
+						<input type="hidden" id="total" name="total" value=""/>
+						<input type="hidden" id="diffDay" name="diffDay" value=""/>
+						<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">	
+					</form>
 				</div>
 			</article>
 		</section>

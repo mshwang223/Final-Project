@@ -12,17 +12,15 @@ public class UserVO {
 	private String userImg;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date createDate;
+	private Date createdDate;
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date activeDate;
+	private Date activateDate;
 	
 	private String userName;
 	private int userAuthor;	// 0:일반유저, 1:관리자
 	
 	private String petCode;
 	private int points;
-	
-	private int rowCnt;
 	
 	public String getUserId() {
 		return userId;
@@ -52,18 +50,18 @@ public class UserVO {
 		this.userImg = userImg;
 	}
 	
-	public Date getCreateDate() {
-		return createDate;
+	public Date getCreatedDate() {
+		return createdDate;
 	}
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
 	
-	public Date getActiveDate() {
-		return activeDate;
+	public Date getActivateDate() {
+		return activateDate;
 	}
-	public void setActiveDate(Date activeDate) {
-		this.activeDate = activeDate;
+	public void setActivateDate(Date activateDate) {
+		this.activateDate = activateDate;
 	}
 	
 	public String getUserName() {
@@ -92,12 +90,5 @@ public class UserVO {
 	}
 	public void setPoints(int points) {
 		this.points = points;
-	}
-	
-	public int getRowCnt() {
-		return rowCnt;
-	}
-	public void setRowCnt(int rowCnt) {
-		this.rowCnt = rowCnt;
 	}
 }
