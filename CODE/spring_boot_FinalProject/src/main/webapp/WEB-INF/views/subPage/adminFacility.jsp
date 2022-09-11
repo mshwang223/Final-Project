@@ -12,9 +12,9 @@
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/board.css"/>">
-		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminService.css"/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/adminFacility.css"/>">
 		
-		<script src="<c:url value="/js/adminService.js"/>"></script>
+		<script src="<c:url value="/js/adminFacility.js"/>"></script>
 	</head>
 	
 	<body>
@@ -30,7 +30,7 @@
 				<div class="main-layout">
 					<div class="pageTitle">
 						<div>
-							<span>#서비스</span>
+							<span>#시설</span>
 						</div>
 					</div>
 					<div class="contact-menu">
@@ -38,7 +38,7 @@
 						<a href="<c:url value="/adminFacilitySearch/0"/>">시설</a>
 						<div class="underline"></div>	
 					</div>
-					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminServiceSearch/0"/>">
+					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminFacilitySearch/0"/>">
 						<table class="search-table">
 							<tr>
 								<td>
@@ -101,9 +101,9 @@
 									<c:forEach var="list" items="${lists}" varStatus="loop">
 									    <tr>
 									      	<td>${loop.count}</td>
-									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.serviceId}"/>" /></td>
-									      	<td>${list.serviceSort}</td>
-									      	<td class="title"><a class="atxtUnderline" href="<c:url value="/adminServiceDetail/${list.serviceId}"/>">${list.serviceName}</a></td>
+									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.facilityId}"/>" /></td>
+									      	<td>${list.facilitySort}</td>
+									      	<td class="title"><a class="atxtUnderline" href="<c:url value="/adminFacilityDetail/${list.facilityId}"/>">${list.facilityName}</a></td>
 									    </tr>
 								    </c:forEach>
 								</c:if>

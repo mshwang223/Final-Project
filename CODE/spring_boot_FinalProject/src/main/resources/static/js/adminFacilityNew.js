@@ -1,15 +1,15 @@
 /********************************
- * 파일명 : adminServiceNew.js
- * 용 도 : 관리자메뉴 서비스 신규 세부화면 
+ * 파일명 : adminFacilityNew.js
+ * 용 도 : 관리자메뉴 시설 신규 세부화면 
  * 작성자 : 황재윤
 *********************************/
 
 $(document).ready(function(){
 	// 목록 가기 버튼
-	$("#serviceSort").focus();
+	$("#facilitySort").focus();
 	
 	$(".btn_list_done").click(function() {
-		location.href= "/adminServiceSearch/0";
+		location.href= "/adminFacilitySearch/0";
 	});
 	
 	// 저장 기능
@@ -24,7 +24,7 @@ $(document).ready(function(){
 		$.ajax({
  			type:"post",
  			enctype: 'multipart/form-data',
- 			url:"/adminInsertService",
+ 			url:"/adminInsertFacility",
  			data: formData,
 			contentType : false,
         	processData : false,
@@ -32,7 +32,7 @@ $(document).ready(function(){
 				// 성공 시 결과 받음
 				if(result){
 					alert("저장되었습니다.");
-					location.href = "/adminServiceSearch/0/";
+					location.href = "/adminFacilitySearch/0/";
 				}
 			},
 			error:function(){

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.spring_boot.FinalProject.dao.IBoardDAO;
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.CommentVO;
+import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
@@ -199,5 +200,41 @@ public class BoardService implements IBoardService {
 	@Override
 	public void updateAdminService(HashMap<String, Object> map) {
 		dao.updateAdminService(map);
+	}
+	
+	// 관리자 - 시설 조회(전체)
+	@Override
+	public ArrayList<FacilityVO> selectFacilityOR(HashMap<String, Object> map) {
+		return dao.selectFacility(map);
+	}
+	
+	// 관리자 - 시설 조회(조건)
+	@Override
+	public ArrayList<FacilityVO> selectFacility(HashMap<String, Object> map) {
+		return dao.selectFacility(map);
+	}
+
+	// 관리자 - 시설 입력
+	@Override
+	public void insertAdminFacility(HashMap<String, Object> map) {
+		dao.insertAdminFacility(map);
+	}
+
+	// 관리자 - 시설 삭제
+	@Override
+	public void deleteAdminFacility(HashMap<String, Object> map) {
+		dao.deleteAdminFacility(map);
+	}
+
+	// 관리자 - 시설 상세조회
+	@Override
+	public FacilityVO facilityDetailView(String facilityId) {
+		return dao.facilityDetailView(facilityId);
+	}
+
+	// 관리자 - 시설 세부화면 수정
+	@Override
+	public void updateAdminFacility(HashMap<String, Object> map) {
+		dao.updateAdminFacility(map);
 	}
 }

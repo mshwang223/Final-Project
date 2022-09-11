@@ -6,7 +6,7 @@
 
 $(document).ready(function(){
 	
-	// 사용자관리 드롭다운 확인
+	// 탈퇴내역 드롭다운 확인
 	$("#dropdown-box").on('click', function() {
 		$(".dropdown-contents").slideToggle();
 	});

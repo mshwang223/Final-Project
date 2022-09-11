@@ -8,6 +8,8 @@ public class FacilityVO {
 	
 	private String frId;
 	private String stayNo;
+	
+	private int rowCnt;
 
 	public String getFacilityId() {
 		return facilityId;
@@ -49,5 +51,12 @@ public class FacilityVO {
 	}
 	public void setStayNo(String stayNo) {
 		this.stayNo = stayNo;
+	}
+	
+	public int getRowCnt() {
+		return rowCnt;
+	}
+	public void setRowCnt(int rowCnt) {
+		this.rowCnt = rowCnt;
 	}
 }

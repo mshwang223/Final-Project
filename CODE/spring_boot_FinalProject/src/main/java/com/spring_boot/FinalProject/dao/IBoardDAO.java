@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.CommentVO;
+import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
@@ -99,4 +100,21 @@ public interface IBoardDAO {
 	// 관리자 - 서비스 세부화면 수정
 	void updateAdminService(HashMap<String, Object> map);
 	
+	// 관리자 - 시설 조회(전체)
+	ArrayList<FacilityVO> selectFacilityOR(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 조회(조건)
+	ArrayList<FacilityVO> selectFacility(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 입력
+	void insertAdminFacility(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 삭제
+	void deleteAdminFacility(HashMap<String, Object> map);
+	
+	// 관리자 - 시설 상세조회
+	FacilityVO facilityDetailView(String facilityId);
+	
+	// 관리자 - 시설 세부화면 수정
+	void updateAdminFacility(HashMap<String, Object> map);
 }

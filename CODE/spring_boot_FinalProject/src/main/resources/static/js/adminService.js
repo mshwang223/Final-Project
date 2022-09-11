@@ -1,17 +1,17 @@
 /********************************
- * 파일명 : adminNotice.js
- * 용 도 : 관리자메뉴 공지사항 메인화면 
+ * 파일명 : adminService.js
+ * 용 도 : 관리자메뉴 서비스 메인화면 
  * 작성자 : 황재윤
 *********************************/
 
 $(document).ready(function(){
 	
-	// 공시사항 신규 생성 화면으로 이동
+	// 서비스 신규 생성 화면으로 이동
 	$("#adminServiceNew").click(function() {
 		location.href = "/adminServiceNew";
 	});
 	
-	// 공지사항 드롭다운 확인
+	// 서비스 드롭다운 확인
 	$("#dropdown-box").on('click', function() {
 		$(".dropdown-contents").slideToggle();
 	});

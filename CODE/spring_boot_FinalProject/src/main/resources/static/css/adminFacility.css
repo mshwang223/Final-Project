@@ -38,7 +38,7 @@ a.adminService {
 .contact-menu div.underline {
   position: relative;
 
-  left: -280px;	/* 기준: 140px */
+  left: -140px;	/* 기준: 140px */
   bottom: -47px;
   
   width: 140px;

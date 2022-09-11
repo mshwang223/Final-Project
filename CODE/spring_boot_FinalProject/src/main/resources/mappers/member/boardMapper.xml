@@ -257,5 +257,54 @@
 		   SET serviceSort = #{serviceSort}, 
 		   	   serviceName = #{serviceName}
 		 WHERE serviceId = #{serviceId} 	   
+	</update>
+	
+  	<!-- 관리자 - 시설 조회(전체) -->
+	<select id="selectFacilityOR" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.FacilityVO">
+	  	SELECT *, COUNT(*) OVER() AS rowCnt
+	  	  FROM facility
+	  	 WHERE facilitySort LIKE CONCAT('%',#{facilitySort},'%')
+	  	    OR facilityName LIKE CONCAT('%',#{facilityName},'%')
+	  	 ORDER BY facilitySort ASC, facilityName ASC 
+	  	 LIMIT 10 OFFSET #{pageNum}
+	</select>
+  	
+  	<!-- 관리자 - 시설 조회(조건) -->
+	<select id="selectFacility" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.FacilityVO">
+	  	SELECT *, COUNT(*) OVER() AS rowCnt
+	  	  FROM facility
+	  	 WHERE facilitySort LIKE CONCAT('%',#{facilitySort},'%')
+	  	   AND facilityName LIKE CONCAT('%',#{facilityName},'%')
+	  	 ORDER BY facilitySort ASC, facilityName ASC 
+	  	 LIMIT 10 OFFSET #{pageNum}
+	</select>
+	
+  	<!-- 관리자 - 시설 입력 -->
+	<insert id="insertAdminFacility" parameterType="hashmap">
+	  	INSERT into facility
+	  		  (facilitySort, facilityName)
+	  	VALUES(#{facilitySort}, #{facilityName})	   
+	</insert>
+	
+  	<!-- 관리자 - 시설 삭제 -->
+	<delete id="deleteAdminFacility" parameterType="hashmap">
+	  	DELETE FROM facility
+	  	 WHERE facilityId IN
+	  	 <foreach collection="facilityIds" item="facilityId" open="(" close=")" separator=",">#{facilityId}</foreach> 
+	</delete>
+	
+  	<!-- 관리자 - 시설 상세조회 -->
+  	<select id="facilityDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.FacilityVO">
+		SELECT *
+		  FROM facility
+		 WHERE facilityId = #{facilityId}   		
+  	</select>
+  	
+  	<!-- 관리자 - 시설 세부화면 수정 -->
+	<update id="updateAdminFacility" parameterType="hashmap">
+		UPDATE facility
+		   SET facilitySort = #{facilitySort}, 
+		   	   facilityName = #{facilityName}
+		 WHERE facilityId = #{facilityId} 	   
 	</update>	 
 </mapper>

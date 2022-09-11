@@ -21,6 +21,7 @@ import org.zeroturnaround.zip.ZipUtil;
 
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.CommentVO;
+import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
@@ -843,6 +844,129 @@ public class AdminController {
 	public String updateAdminUpdateService(@RequestParam HashMap<String, Object> map) {
 
 		boardService.updateAdminService(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 시설 페이지
+	@RequestMapping("/adminFacilitySearch/{num}")
+	public String adminFacilitySearch(@PathVariable String num, 
+							   		 @RequestParam HashMap<String, Object> map, 
+							   		 HttpSession session, Model model) {
+		int chk_search = 0;
+		if(map.get("chk_search") != null)
+			chk_search = Integer.parseInt((String)map.get("chk_search"));
+		
+		String text_search = "";	
+
+		if(map.get("text_search") == null) 
+			text_search = "";
+		else
+			text_search = (String)map.get("text_search");
+
+		
+		ArrayList<FacilityVO> lists = null;
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
+		
+		if(chk_search == 0) {	// 검색 조건 전체
+			if(text_search.equals("") || text_search.length() == 0) {
+				map.put("facilitySort", "%");
+				map.put("facilityName", "%");
+			} else {
+				map.put("facilitySort", text_search);
+				map.put("facilityName", text_search);
+			}
+			
+			lists = boardService.selectFacilityOR(map);
+		} else {
+			if(chk_search == 1) {	// 검색 조건 제목
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("facilitySort", "%");
+				else
+					map.put("facilitySort", text_search);
+				
+				map.put("facilityName", "%");
+			} else {	// 검색 조건 내용
+				if(text_search.equals("") || text_search.length() == 0)
+					map.put("facilityName", "%");
+				else
+					map.put("facilityName", text_search);
+				
+				map.put("facilitySort", "%");				
+			}
+			lists = boardService.selectFacility(map);
+		}
+
+		if(!lists.toString().equals("[]")) {
+		
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+	
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+	
+			model.addAttribute("chk_search", map.get("chk_search"));
+			model.addAttribute("text_search", map.get("text_search"));		
+			
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+		return "subPage/adminFacility";
+	}
+	
+	// 관리자 - 시설 신규생성 페이지
+	@RequestMapping("/adminFacilityNew")
+	public String viewAdminFacilityNew() {
+		return "subPage/adminFacilityNew";
+	}
+	
+	// 관리자 - 시설 입력
+	@ResponseBody
+	@RequestMapping("/adminInsertFacility")
+	public String adminInsertFacility(@RequestParam HashMap<String, Object> map,
+									 HttpSession session) throws IOException {
+		boardService.insertAdminFacility(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 시설 삭제
+	@ResponseBody
+	@RequestMapping("/adminDeleteFacility")
+	public String adminDeleteFacility(@RequestParam("facilityIds") String facilityIds,
+									HashMap<String, Object> map) {
+		
+		String[] arrFacilityId = facilityIds.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("facilityIds", arrFacilityId);
+		
+		boardService.deleteAdminFacility(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 시설 세부화면 페이지
+	@RequestMapping("/adminFacilityDetail/{facilityId}")
+	public String viewAdminFacilityDetail(@PathVariable String facilityId, Model model) {
+		FacilityVO vo = boardService.facilityDetailView(facilityId);
+			
+		model.addAttribute("facility", vo);
+		
+		return "subPage/adminFacilityDetail";
+	}
+	
+	// 관리자 - 시설 세부화면 수정
+	@ResponseBody
+	@RequestMapping("/adminUpdateFacility")
+	public String updateAdminUpdateFacility(@RequestParam HashMap<String, Object> map) {
+		
+		boardService.updateAdminFacility(map);
 		
 		return "SUCCESS";
 	}
