@@ -643,7 +643,7 @@ public class AdminController {
 		// 호텔 압축파일명
 		StayVO fileImg = hotelService.selectInsertHotelImg(regId);
 		
-		ZipUtil.unpack(new File("c:\springWorkspace/comImg/"+ fileImg ), new File("c:\\springWorkspace/comImg"));
+		ZipUtil.unpack(new File("c:/springWorkspace/comImg/"+ fileImg ), new File("c:/springWorkspace/comImg"));
 		/*
 				
 				
