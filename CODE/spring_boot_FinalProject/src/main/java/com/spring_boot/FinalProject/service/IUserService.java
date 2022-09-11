@@ -25,6 +25,9 @@ public interface IUserService {
 	// 회원탈퇴
 	void deleteUser(String userId);
 	
+	// 탈퇴 후 내역관리
+	void insertOutUser(HashMap<String, Object> map);
+	
 	// ID 체크
 	String chkId(String id);
 	

@@ -136,6 +136,7 @@ public class UserController {
 		session.setAttribute("userEmail", vo.getUserEmail());
 		session.setAttribute("userImg", vo.getUserImg());
 		session.setAttribute("author", vo.getUserAuthor());
+		session.setAttribute("points", vo.getPoints());
 		
 		return "SUCCESS";
 	}
@@ -149,6 +150,14 @@ public class UserController {
 	// 회원탈퇴 처리
 	@RequestMapping(value="/delete")
 	public String delete(String userId, RedirectAttributes rttr,HttpSession session){
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("userId", userId);
+		map.put("userName", (String)session.getAttribute("userName"));
+		map.put("userAuthor", String.valueOf(session.getAttribute("author")));
+		
+		userService.insertOutUser(map);	// 탈퇴 후 내역 추가
+		
 		userService.deleteUser(userId);
 		session.invalidate();
 		rttr.addFlashAttribute("msg", "이용해주셔서 감사합니다.");

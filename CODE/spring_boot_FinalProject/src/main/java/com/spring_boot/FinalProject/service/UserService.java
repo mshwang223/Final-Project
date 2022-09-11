@@ -111,6 +111,12 @@ public class UserService implements IUserService {
 		dao.deleteUser(userId);
 		
 	}
+	
+	// 탈퇴 후 내역관리
+	@Override
+	public void insertOutUser(HashMap<String, Object> map) {
+		dao.insertOutUser(map);
+	}	
 
 	// 사진 변경
 	public void userImgUpdate(String sid, String imgName) {

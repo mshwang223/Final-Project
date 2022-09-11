@@ -46,6 +46,13 @@
   	<delete id="deleteUser" parameterType="String">
 		DELETE FROM user WHERE userId = #{userId} 
   	</delete>
+  	
+  	<!-- 탈퇴 후 내역관리 -->
+  	<insert id="insertOutUser" parameterType="hashmap">
+  		INSERT into outuser
+  		(userId, userName, userAuthor)
+  		VALUES(#{userId}, #{userName}, #{userAuthor}) 
+  	</insert>
 
   	<!-- ID 체크 -->
   	<select id="chkId" parameterType="String" resultType="String">
