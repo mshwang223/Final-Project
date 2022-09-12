@@ -51,6 +51,9 @@ public interface IUserDAO {
 	
 	// 펫 등록증 소유 여부 확인
 	String selectPetUser(String userId);
+	
+	// 펫 수정
+	void updatePet(PetVO vo);
 
 	//회원 정보 수정
 	void memberUpdate(String userId, String updatePw, String updateEmail);

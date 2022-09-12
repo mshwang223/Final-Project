@@ -119,6 +119,19 @@
 		 WHERE userId = #{userId}
   	</select>
   	
+  	<!-- 펫 수정 -->
+    <update id="updatePet" parameterType="com.spring_boot.FinalProject.model.PetVO">
+    	UPDATE pet 
+    	   SET petName = #{petName},
+    	   	   petRace = #{petRace},
+    	   	   petAge  = #{petAge},
+    	   	   petKind = #{petKind},
+    	   	   petSize = #{petSize},
+    	   	   comment = #{comment},
+    	   	   petImg  = #{petImg}
+    	 WHERE petId = #{petId}
+    </update>
+  	
   	<!-- 패스워드 체크 -->
   	<select id="pwCheck" resultType="String">
   		SELECT userPw FROM user WHERE userId = #{userId}

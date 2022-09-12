@@ -47,3 +47,7 @@ function uploadprofile(){
 function signupPet(){
 	window.location.href='/signupPet';
 }
+
+function managePet(){
+	window.location.href='/managePet';
+}

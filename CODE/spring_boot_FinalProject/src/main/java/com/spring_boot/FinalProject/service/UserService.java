@@ -105,6 +105,12 @@ public class UserService implements IUserService {
 		return dao.selectPetUser(userId);
 	}
 	
+	// 펫 수정
+	@Override
+	public void updatePet(PetVO vo) {
+		dao.updatePet(vo);
+	}
+	
 	// 회원탈퇴
 	@Override
 	public void deleteUser(String userId) {

@@ -27,7 +27,7 @@ input{
 }
 /* 전체 박스 */
 .whole_info_box{
-	width: 650px;
+	width: 900px;
 	height: 100%;
 	background-color: #fff;
 	border-radius: 10px;
@@ -100,7 +100,7 @@ input{
 }
 /* 정보박스 */
 .hotel_insert_info{
-	margin-left: 71px;
+	margin-left: 100px;
 	text-align: left;
 	width: 700px;
 }
@@ -700,7 +700,7 @@ input{
 	font-weight: 600;
 }
 #stayRule{
-   	width: 491px;
+   	width: 690px;
     height: 100px;
     padding: 8px;
     box-sizing: border-box;
@@ -741,6 +741,5 @@ input{
 	font-weight: 600;
 	text-align: center;
 	line-height: 50px; 
-	margin-right: 249px;
 	cursor: pointer;
 }

@@ -56,7 +56,12 @@
                         <div class="user_info">
                         	<div>
 	                        	<button id="modifyUser" onclick="uploadprofile()">프로필 수정</button>
-								<button id="signupPet" onclick="signupPet()">펫 등록</button>                        	
+	                        	<c:if test="${empty petUserId}">
+									<button id="signupPet" onclick="signupPet()">펫 등록</button>
+								</c:if>
+	                        	<c:if test="${not empty petUserId}">
+									<button id="managePet" onclick="managePet()">펫 관리</button>
+								</c:if>                        	
                         	</div>
 
 							<div>

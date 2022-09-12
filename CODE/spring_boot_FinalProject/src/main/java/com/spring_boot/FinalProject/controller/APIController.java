@@ -2,12 +2,16 @@ package com.spring_boot.FinalProject.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring_boot.FinalProject.service.FileRead;
@@ -71,6 +76,37 @@ public class APIController {
 		String path = "c:/springWorkspace/comImg/";
 		
 		return path;
+	}
+	
+	
+	///////////////////////// 업로드 /////////////////////////
+	
+	// 등록증 파일 업로드
+	@ResponseBody
+	@RequestMapping("/fileUpload")
+	public String fileUpLoadView(@RequestParam("file") MultipartFile [] file, HttpSession session) throws IOException {
+		
+		String userId = (String) session.getAttribute("sid");
+		
+		// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치(프로젝트 외부에 저장)
+		String uploadPath = uploadPathFile();
+		// 마지막에 / 있어야함
+		
+		// 2. 원본 파일 이름 알아오기
+		//String originalFileName = file[0].getOriginalFilename();
+		
+		// 3. 파일 이름이 중복되지 않도록 파일 이름 변경 : 서버에 저장할 이름
+		// UUID 클래스 사용
+		//UUID uuid = UUID.randomUUID();
+		String savedFileName = userId + "_petCard.png";
+		
+		// 4. 파일 생성
+		File newFile = new File(uploadPath + savedFileName);
+		
+		// 5. 서버로 전송
+		file[0].transferTo(newFile);
+		
+		return "SUCCESS";
 	}
 	
 	///////////////////////// 다운로드 /////////////////////////

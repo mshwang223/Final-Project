@@ -13,7 +13,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -209,6 +208,10 @@ public class UserController {
 		}
 		UserVO userVO = userService.selectUser(sid);
 		model.addAttribute("user",userVO);
+		
+		// 펫등록여부
+		String petUserId = userService.selectPetUser(sid);
+		model.addAttribute("petUserId", petUserId);
 
 		return "subPage/mypage";
 	}
@@ -352,7 +355,8 @@ public class UserController {
     // 펫등록 완료 페이지
 	@RequestMapping("/signupPetComplete/{petCode}")
 	public String viewSignupPetComplete(@PathVariable String petCode, Model model) {
-
+		
+		// 업로드
 		PetCardVO vo = userService.selectPet(petCode);
 		
 		model.addAttribute("petImg", vo.getPetImg());
@@ -367,6 +371,74 @@ public class UserController {
 		model.addAttribute("createDate", vo.getCreateDate());
 
 		return "subPage/signupPetComplete";
+	}
+	
+	// 펫관리 페이지
+	@RequestMapping("/managePet")
+	public String viewManagePet(HttpSession session, Model model) {
+		String sid = (String) session.getAttribute("sid");
+		PetVO pvo = userService.selectAdminPetUser(sid);
+		
+		model.addAttribute("pet", pvo);
+		
+		return "subPage/managePet";
+	}
+	
+	// 펫수정 기능
+	@ResponseBody
+	@RequestMapping("/updatePet")
+	public String petUpdate(@RequestParam("uploadFile") MultipartFile file,
+						  	@RequestParam HashMap<String, Object> param) throws IOException {
+		
+		String 	petId 		= (String)param.get("petId");
+		String 	userName 	= (String)param.get("userName");
+		String 	petName 	= (String)param.get("petName");
+		String 	petRace 	= (String)param.get("petRace");
+		int 	petAge 		= Integer.parseInt((String)param.get("petAge"));
+		String 	petKind 	= (String)param.get("petKind");
+		int 	petSize 	= Integer.parseInt((String)param.get("petSize"));
+		String 	comment 	= (String)param.get("comment");
+		String 	sessionFile = (String)param.get("sessionFile");
+		
+		PetVO vo = new PetVO();
+		vo.setPetId(petId);
+		vo.setPetName(petName);
+		vo.setPetRace(petRace);
+		vo.setPetAge(petAge);
+		vo.setPetKind(petKind);
+		vo.setPetSize(petSize);
+		vo.setComment(comment);			
+		
+		// 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
+		String uploadPath = apiController.uploadPetPathImg();
+		// c:대소문자 상관없으며 마지막에 '/' 있어야 한다
+				
+		// 2. 원본 파일 이름 설정
+		String originalFileName = file.getOriginalFilename();
+		// 이미지가 추가되었을 때
+		if(!originalFileName.equals("")) { 
+			// 3. 파일 이름이 중복되지 않도록 파일 이름 변경
+			
+			// 사용자명과 조합하여 파일명 생성
+			String savedFileName = userName + "_" + originalFileName;
+
+			// 4. 파일 생성
+			File newFile = new File(uploadPath + savedFileName);
+					
+			// 5. 서버로 전송
+			file.transferTo(newFile);
+					
+			// 6. DB에 저장
+			vo.setPetImg(savedFileName);
+		} else {	// 이미지가 추가되지 않은 경우
+			// 기존 추가된 이미지가 있을 경우
+			if(!sessionFile.equals(""))
+				vo.setPetImg(sessionFile);
+		}
+		
+		userService.updatePet(vo);
+		
+		return "SUCCESS";
 	}
 	
 	// 업체등록 페이지
