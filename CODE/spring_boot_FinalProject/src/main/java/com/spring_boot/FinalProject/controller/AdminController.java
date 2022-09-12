@@ -649,7 +649,8 @@ public class AdminController {
 		String directory = "c:/springWorkspace/comImg/";
 		
 		// 파일 압축 해제           
-		unzipService.unZip(directory, fileImg, directory);		
+		unzipService.unZip(directory, fileImg, directory);	
+		model.addAttribute("fileImg", fileImg);
 		
 		return "subPage/adminInsertDetail";
 	}	

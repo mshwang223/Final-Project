@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
 <html>
@@ -50,9 +51,9 @@
 								<input type="hidden" name="serviceImg" id="serviceImg" value="${serviceImg }">
 								<div class="file_items_wrap">
 										<div class="file_container">
-											<c:forEach var ="serviceImg" items="${serviceImg}">
+											<c:forEach begin="0" end="10" step="1" varStatus="loop">
 												<div class="file_img_box">
-													<img src="<c:url value='/comImg/${serviceImg}'/>" alt="">
+													<img src="<c:url value='/comImg/${fn:split(fileImg,".")[0]}/${loop.index +1 }.png'/>" alt="">
 												</div>
 											</c:forEach>
 										</div>
