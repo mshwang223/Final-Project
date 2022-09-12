@@ -10,12 +10,28 @@
             (userId, stayNo, manCnt, petCnt, rcvPhone)
         VALUES (#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone})
     </insert>
-    
+
     <!-- 장바구니 저장 -->
     <insert id="insertCart" parameterType="com.spring_boot.FinalProject.model.CartVO">
         INSERT into cart
             (userId, stayNo, period, price, cartQty)
         VALUES (#{userId}, #{stayNo}, #{period}, #{price}, 1)
+    </insert>
+
+    <insert id="insertOrder" parameterType="java.util.List">
+        INSERT into orderinfo
+        (ordQty, payment, price, payDate, stayNo,userId)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (
+            1
+            , 1
+            , #{item.price}
+            , NOW()
+            , #{item.stayNo}
+            , #{item.userId}
+            )
+        </foreach>
     </insert>
 
 
@@ -25,4 +41,7 @@
                  left join stay s on c.stayNo = s.stayNo
         where c.userId = #{userId}
     </select>
+
+
+
 </mapper>

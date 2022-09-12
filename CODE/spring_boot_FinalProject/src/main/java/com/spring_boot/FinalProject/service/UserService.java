@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.spring_boot.FinalProject.dao.IUserDAO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
+import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 @Service
@@ -147,4 +148,10 @@ public class UserService implements IUserService {
 	public String pwCheck(String userId) {
 		return dao.pwCheck(userId);
 	}
+	
+	// 리뷰 등록
+	@Override
+    public void insertReview(ReviewVO review) {
+		dao.insertReview(review);
+    }
 }

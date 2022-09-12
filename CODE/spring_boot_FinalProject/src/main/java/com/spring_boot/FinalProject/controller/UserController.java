@@ -26,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
+import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.HotelService;
 import com.spring_boot.FinalProject.service.ImgService;
@@ -445,6 +446,18 @@ public class UserController {
 	@RequestMapping("/insertHotel")
 	public String viewInsertHotel() {
 		return "subPage/insertHotel";
+	}
+	
+	// 리뷰 남기기
+	@RequestMapping(value = "/review", method = RequestMethod.POST)
+	public String pay(HttpSession session, ReviewVO review) {
+		String sid = (String) session.getAttribute("sid");
+		if (sid == null) {
+			return "ACCESS_DENIED";
+		}
+		review.setUserId(sid);
+		userService.insertReview(review);
+		return "redirect:/mypage";
 	}
 }
 

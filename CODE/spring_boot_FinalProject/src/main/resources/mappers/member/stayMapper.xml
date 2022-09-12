@@ -86,4 +86,20 @@
 		FROM registration
 		WHERE regId = #{regId}
 	</select>
+	
+	<!-- 나의 리뷰 -->
+	  <select id="selectMyReview" parameterType="String" resultType="com.spring_boot.FinalProject.model.ReviewVO">
+        select o.ordNo, r.reviewId, s.stayName, r.contents, r.point, s.stayNo
+        from orderinfo o
+                 left join review r on o.ordNo = r.ordNo
+                 left join stay s on s.stayNo = o.stayNo
+        where o.userId = #{userId}
+    </select>
+
+    <!-- 모든 리뷰 -->
+    <select id="selectAllreviews" parameterType="String" resultType="com.spring_boot.FinalProject.model.ReviewVO">
+        SELECT *
+        FROM review
+        where stayNo = #{stayNo};
+    </select>
 </mapper>

@@ -2,6 +2,7 @@ package com.spring_boot.FinalProject.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.spring_boot.FinalProject.dao.IHotelDAO;
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
 
@@ -72,5 +74,16 @@ public class HotelService implements IHotelService {
 	public String selectInsertHotelImg(int id) {
 
 		return dao.selectInsertHotelImg(id);
+	}
+	
+	// 나의 리뷰
+	@Override
+    public List<ReviewVO> selectMyReview(String userId) {
+		return dao.selectMyReview(userId);
+    }
+    // 모든 리뷰
+	@Override
+	public List<ReviewVO> selectAllreviews(String stayNo) {
+		return dao.selectAllreviews(stayNo);
 	}
 }

@@ -14,4 +14,6 @@ public interface IOrderService {
     List<CartVO> selectCartByUserId(String sid);
 
     void insertCart(CartVO cartVO);
+    
+    void insertOrder(List<OrderVO> orderVo);
 }

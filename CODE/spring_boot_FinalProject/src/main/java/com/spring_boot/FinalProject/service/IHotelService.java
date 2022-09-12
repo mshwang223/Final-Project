@@ -2,9 +2,11 @@ package com.spring_boot.FinalProject.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
 
@@ -35,4 +37,10 @@ public interface IHotelService {
 	
 	// 업체등록 이미지 가져오기
 	String selectInsertHotelImg(int id);
+    
+	// 나의 리뷰
+    List<ReviewVO> selectMyReview(String userId);
+    
+    // 모든 리뷰
+    List<ReviewVO> selectAllreviews(String stayNo);
 }

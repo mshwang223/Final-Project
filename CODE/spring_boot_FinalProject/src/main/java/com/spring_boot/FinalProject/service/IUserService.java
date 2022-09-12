@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
+import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 public interface IUserService {
@@ -63,4 +64,7 @@ public interface IUserService {
 	
 	// 관리자 - 사용자 펫 등록 여부 확인
 	PetVO selectAdminPetUser(String userId);
+	
+	// 리뷰 등록
+	void insertReview(ReviewVO review);
 }

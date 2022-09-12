@@ -150,4 +150,12 @@
   		  FROM pet
 		 WHERE userId = #{userId}
   	</select>
+  	
+  	    <!-- 리뷰 등록 -->
+    <insert id="insertReview" parameterType="com.spring_boot.FinalProject.model.ReviewVO">
+        INSERT into review
+            (userId, stayNo, contents, createDate, modifyDate, point, ordNo)
+        VALUES (#{userId}, #{stayNo}, #{contents}, now(), now(), #{point}, #{ordNo})
+    </insert>
+  	
 </mapper>

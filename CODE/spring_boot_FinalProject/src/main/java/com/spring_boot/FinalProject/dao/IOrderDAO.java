@@ -12,6 +12,8 @@ public interface IOrderDAO {
 	
 	// 장바구니
 	List<CartVO> selectCartByUserId(String userId);
-
+    
 	void insertCart(CartVO cartVO);
+	
+	  void insertOrder(List<OrderVO> orderVo);
 }

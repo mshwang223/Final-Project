@@ -121,4 +121,21 @@ public class OrderVO {
 	public void setRowCnt(int rowCnt) {
 		this.rowCnt = rowCnt;
 	}
+	
+	@Override
+	public String toString() {
+		return "OrderVO{" +
+				"ordNo='" + ordNo + '\'' +
+				", ordQty=" + ordQty +
+				", payment=" + payment +
+				", price=" + price +
+				", payDate=" + payDate +
+				", ordPrdId='" + ordPrdId + '\'' +
+				", userId='" + userId + '\'' +
+				", stayNo='" + stayNo + '\'' +
+				", manCnt=" + manCnt +
+				", petCnt=" + petCnt +
+				", rcvPhone='" + rcvPhone + '\'' +
+				'}';
+	}
 }
