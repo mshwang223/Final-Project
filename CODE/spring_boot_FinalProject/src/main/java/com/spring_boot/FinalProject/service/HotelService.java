@@ -69,7 +69,7 @@ public class HotelService implements IHotelService {
 	}
 
 	@Override
-	public StayVO selectInsertHotelImg(int id) {
+	public String selectInsertHotelImg(int id) {
 
 		return dao.selectInsertHotelImg(id);
 	}

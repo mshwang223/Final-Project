@@ -52,7 +52,7 @@
 										<div class="file_container">
 											<c:forEach var ="serviceImg" items="${serviceImg}">
 												<div class="file_img_box">
-													<img src="<c:url value='/comImg/${serviceImg}.jpg'/>" alt="">
+													<img src="<c:url value='/comImg/${serviceImg}'/>" alt="">
 												</div>
 											</c:forEach>
 										</div>

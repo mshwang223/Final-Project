@@ -1,6 +1,5 @@
 package com.spring_boot.FinalProject.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.zeroturnaround.zip.ZipUtil;
 
 import com.spring_boot.FinalProject.model.BoardVO;
 import com.spring_boot.FinalProject.model.CommentVO;
@@ -27,10 +25,10 @@ import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.ServiceVO;
-import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.BoardService;
 import com.spring_boot.FinalProject.service.HotelService;
+import com.spring_boot.FinalProject.service.UnzipService;
 import com.spring_boot.FinalProject.service.UserService;
 
 @Controller
@@ -44,6 +42,9 @@ public class AdminController {
 	
 	@Autowired
 	HotelService hotelService;
+	
+	@Autowired
+	UnzipService unzipService;
 	
 	// 관리자 - 공지사항 페이지
 	@RequestMapping("/adminNoticeSearch/{num}")
@@ -640,70 +641,15 @@ public class AdminController {
 		model.addAttribute("createDate", vo.getCreateDate());
 		model.addAttribute("comment", vo.getComment());
 		
+		// 업체등록 이미지 압축파일 해제
 		// 호텔 압축파일명
-		StayVO fileImg = hotelService.selectInsertHotelImg(regId);
+		String fileImg = hotelService.selectInsertHotelImg(regId);
+			  
+		// zip 파일 경로 
+		String directory = "c:/springWorkspace/comImg/";
 		
-		ZipUtil.unpack(new File("c:/springWorkspace/comImg/"+ fileImg ), new File("c:/springWorkspace/comImg"));
-		/*
-				
-				
-				  // zip 파일
-				  File zipFile = new File("c:/springWorkspace/comImg/"+ fileImg);
-
-				  // 압축해제할 폴더(디렉토리) 경로
-				  File unzipFolder = new File(zipFile.getParent());
-				  String directory = unzipFolder.toString();
-				  
-			        
-			        try {
-			        	// zip 파일 데이터 읽어오기
-			            FileInputStream fis = new FileInputStream(zipFile);
-			            ZipInputStream zis = new ZipInputStream(fis);
-			            // 성능향상 스트림
-			            BufferedInputStream bis = new BufferedInputStream(zis);
-			            
-			            // 압축 파일(zip)객체
-			            ZipEntry zipEntry = null;
-
-			            while ((zipEntry = zis.getNextEntry()) != null) {
-			            	
-			            	// 압축폴더 이름
-			                String fileNameToUnzip = zipEntry.getName();
-			                
-			                File targetFile = new File(fileNameToUnzip);
-			                
-			                Path newPath = Paths.get(directory);
-			                
-			                //디렉토리 인 경우
-			                if(zipEntry.isDirectory()) {
-			                	FileUtils.forceMkdir(targetFile);
-			                }
-			                else {  //파일 인 경우 parentDirectory 생성
-			                	FileUtils.forceMkdir(targetFile.getParentFile());
-			                }
-			                
-			                // 디렉토리 경로에 저장
-			                FileOutputStream fos = new FileOutputStream(fileNameToUnzip, true);
-			                BufferedOutputStream bos = new BufferedOutputStream(fos);
-			                Files.copy(zis, newPath, StandardCopyOption.REPLACE_EXISTING);
-			                
-			                if(zis != null) {
-				        		zis.close();
-				        	}
-				        	if(fis != null) {
-				        		fis.close();
-				        	}
-			            }
-			            
-			        } catch (IOException e) {
-			            // Exception Handling
-			        	e.printStackTrace();
-			        } finally {
-						
-			        	
-			        		
-			        }
-			        */
+		// 파일 압축 해제           
+		unzipService.unZip(directory, fileImg, directory);		
 		
 		return "subPage/adminInsertDetail";
 	}	

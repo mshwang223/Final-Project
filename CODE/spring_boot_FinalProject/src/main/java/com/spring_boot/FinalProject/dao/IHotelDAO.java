@@ -35,5 +35,5 @@ public interface IHotelDAO {
 	ArrayList<FacilityVO> selectDetailFacility3(HashMap<String, Object> map);
 	
 	// 업체등록 이미지 가져오기
-	StayVO selectInsertHotelImg(int id);
+	String selectInsertHotelImg(int id);
 }
