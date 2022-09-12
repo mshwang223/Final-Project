@@ -46,6 +46,9 @@ public interface IUserService {
 	// 펫 등록
 	void insertPet(PetVO vo);
 	
+	// 펫코드 확인
+	String selectPetCode(String petId);
+	
 	// 펫 등록증 확인
 	PetCardVO selectPet(String petCode);
 	

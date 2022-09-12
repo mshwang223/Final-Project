@@ -105,6 +105,13 @@
   			   #{petKind}, #{petSize}, #{comment}, #{petCode}, DATE_ADD(CURRENT_TIMESTAMP, INTERVAL 1 YEAR))
   	</insert>
   	
+  	<!-- 펫코드 확인 -->
+  	<select id="selectPetCode" parameterType="String" resultType="String">
+  		SELECT petCode
+		  FROM pet
+		 WHERE pet.petId = #{petId}
+  	</select>
+  	
   	<!-- 펫 등록 확인 -->
   	<select id="selectPet" parameterType="String" resultType="com.spring_boot.FinalProject.model.PetCardVO">
   		SELECT *, user.userName userName 

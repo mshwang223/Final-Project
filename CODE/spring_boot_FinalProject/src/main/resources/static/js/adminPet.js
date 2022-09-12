@@ -193,9 +193,9 @@ $(document).ready(function(){
 			 	dataType:"text",
 				success:function(result){
 					// 성공 시 결과 받음
-					if(result == "SUCCESS") {
+					if(result) {
 						alert("연장되었습니다.");
-						location.href = "/adminPetSearch/0";
+						location.href = "/signupPetComplete/" + result;
 					}
 				},
 				error:function(){

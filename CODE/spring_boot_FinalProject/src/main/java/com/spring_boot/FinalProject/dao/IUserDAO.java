@@ -48,6 +48,9 @@ public interface IUserDAO {
 	
 	// 펫 등록증 확인
 	PetCardVO selectPet(String petCode);
+
+	// 펫코드 확인
+	String selectPetCode(String petId);
 	
 	// 펫 등록증 소유 여부 확인
 	String selectPetUser(String userId);

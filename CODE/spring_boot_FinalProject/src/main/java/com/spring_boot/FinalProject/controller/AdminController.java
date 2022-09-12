@@ -1021,7 +1021,9 @@ public class AdminController {
 		
 		boardService.extendAdminPet(petId);
 		
-		return "SUCCESS";
+		String petCode = userService.selectPetCode(petId);
+		
+		return petCode;
 	}
 	
 }

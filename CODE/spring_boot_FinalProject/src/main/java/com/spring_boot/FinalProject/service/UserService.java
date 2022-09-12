@@ -92,6 +92,12 @@ public class UserService implements IUserService {
 	public void insertPet(PetVO vo) {
 		dao.insertPet(vo);
 	}
+	
+	// 펫코드 확인
+	@Override
+	public String selectPetCode(String petId) {
+		return dao.selectPetCode(petId);
+	}
 
 	// 펫 등록 확인
 	@Override
