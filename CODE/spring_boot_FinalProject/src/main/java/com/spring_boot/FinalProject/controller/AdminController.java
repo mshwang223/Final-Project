@@ -988,7 +988,7 @@ public class AdminController {
 			text_search = (String)map.get("text_search");
 
 		
-		ArrayList<BoardVO> lists = null;
+		ArrayList<PetVO> lists = null;
 		
 		// 페이징 초기값
 		int pageNum = Integer.parseInt(num) * 10;
@@ -996,39 +996,49 @@ public class AdminController {
 		
 		if(chk_search == 0) {	// 검색 조건 전체
 			if(text_search.equals("") || text_search.length() == 0) {
-				map.put("title", "%");
-				map.put("contents", "%");
+				map.put("userId", "%");
+				map.put("userName", "%");
 			} else {
-				map.put("title", text_search);
-				map.put("contents", text_search);
+				map.put("userId", text_search);
+				map.put("userName", text_search);
 			}
 			
-			lists = boardService.selectNoticeOR(map);
+			lists = boardService.selectPetOR(map);
 		} else {
 			if(chk_search == 1) {	// 검색 조건 제목
 				if(text_search.equals("") || text_search.length() == 0)
-					map.put("title", "%");
+					map.put("userId", "%");
 				else
-					map.put("title", text_search);
+					map.put("userId", text_search);
 				
-				map.put("contents", "%");
+				map.put("userName", "%");
 			} else {	// 검색 조건 내용
 				if(text_search.equals("") || text_search.length() == 0)
-					map.put("contents", "%");
+					map.put("userName", "%");
 				else
-					map.put("contents", text_search);
+					map.put("userName", text_search);
 				
-				map.put("title", "%");				
+				map.put("userId", "%");				
 			}
-			lists = boardService.selectNotice(map);
+			lists = boardService.selectPet(map);
 		}
 
 		if(!lists.toString().equals("[]")) {
+			
+			// 펫코드 암호화 처리
+			for(PetVO list : lists) {
+				String petCode = list.getPetCode();
+				StringBuilder sb = new StringBuilder(petCode);
+				
+				sb.replace(6, 11, "*****");
+				sb.replace(12, 17, "*****");
+				
+				list.setPetCode(sb.toString());
+			}
 		
 			// 페이징 계산
 			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
 	
-			
 			model.addAttribute("lists", lists);
 			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
 			model.addAttribute("maxPageNum", maxPageNum);
@@ -1041,6 +1051,31 @@ public class AdminController {
 			model.addAttribute("maxPageNum", 0);
 		}
 		return "subPage/adminPet";
+	}
+	
+	// 관리자 - 펫등록증 삭제
+	@ResponseBody
+	@RequestMapping("/adminDeletePet")
+	public String adminDeletePet(@RequestParam("petIds") String petIds,
+									HashMap<String, Object> map) {
+		
+		String[] arrPetId = petIds.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("petIds", arrPetId);
+		
+		boardService.deleteAdminPet(map);
+		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 펫등록증 연장
+	@ResponseBody
+	@RequestMapping("/adminExtendPet")
+	public String extendAdminPet(@RequestParam("petId") String petId) {
+		
+		boardService.extendAdminPet(petId);
+		
+		return "SUCCESS";
 	}
 	
 }

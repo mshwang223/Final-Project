@@ -306,5 +306,42 @@
 		   SET facilitySort = #{facilitySort}, 
 		   	   facilityName = #{facilityName}
 		 WHERE facilityId = #{facilityId} 	   
+	</update>
+	
+  	<!-- 관리자 - 펫등록증 조회(전체) -->
+	<select id="selectPetOR" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.PetVO">
+	  	SELECT *, COUNT(*) OVER() AS rowCnt
+	  	  FROM pet
+	  	  JOIN user ON user.userId = pet.userId
+	  	 WHERE user.userId LIKE CONCAT('%',#{userId},'%')
+	  	    OR user.userName LIKE CONCAT('%',#{userName},'%')
+	  	 ORDER BY pet.startDate DESC, user.userName ASC 
+	  	 LIMIT 10 OFFSET #{pageNum}
+	</select>
+  	
+  	<!-- 관리자 - 펫등록증 조회(조건) -->
+	<select id="selectPet" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.PetVO">
+	  	SELECT *, COUNT(*) OVER() AS rowCnt
+	  	  FROM pet
+	  	  JOIN user ON user.userId = pet.userId
+	  	 WHERE user.userId LIKE CONCAT('%',#{userId},'%')
+	  	   AND user.userName LIKE CONCAT('%',#{userName},'%')
+	  	 ORDER BY pet.startDate DESC, user.userName ASC 
+	  	 LIMIT 10 OFFSET #{pageNum}
+	</select>
+	
+  	<!-- 관리자 - 펫등록증 삭제 -->
+	<delete id="deleteAdminPet" parameterType="hashmap">
+	  	DELETE FROM pet
+	  	 WHERE petId IN
+	  	 <foreach collection="petIds" item="petId" open="(" close=")" separator=",">#{petId}</foreach> 
+	</delete>
+	
+  	<!-- 관리자 - 펫등록증 연장 -->
+	<update id="extendAdminPet" parameterType="String">
+		UPDATE pet
+		   SET startDate = CURRENT_TIMESTAMP, 
+		   	   endDate = DATE_ADD(CURRENT_TIMESTAMP, INTERVAL 1 YEAR)
+		 WHERE petId = #{petId} 	   
 	</update>	 
 </mapper>

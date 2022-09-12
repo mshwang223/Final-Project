@@ -8,6 +8,7 @@ public class PetVO {
 	
 	private String petId;
 	private String userId;
+	private String userName;
 	private String petImg;
 	private String petName;
 	private String petRace;
@@ -24,8 +25,10 @@ public class PetVO {
 	private Date endDate;	
 
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	private Date createdDate;
-
+	private Date createDate;
+	
+	private int rowCnt;
+	
 	public String getPetId() {
 		return petId;
 	}
@@ -38,6 +41,13 @@ public class PetVO {
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPetImg() {
@@ -110,12 +120,17 @@ public class PetVO {
 		this.endDate = endDate;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
+	public Date getCreateDate() {
+		return createDate;
 	}
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 
-
+	public int getRowCnt() {
+		return rowCnt;
+	}
+	public void setRowCnt(int rowCnt) {
+		this.rowCnt = rowCnt;
+	}
 }

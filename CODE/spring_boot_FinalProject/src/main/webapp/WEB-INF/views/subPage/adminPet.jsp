@@ -57,8 +57,8 @@
 									</div>
 									<ul class="dropdown-contents">
 										<li class="dp-all">전체</li>
-										<li class="dp-title">제목</li>
-										<li class="dp-contents">내용</li>
+										<li class="dp-id">ID</li>
+										<li class="dp-name">이름</li>
 									</ul>
 									<div class="search-box">
 										<div>
@@ -67,8 +67,7 @@
 										</div>
 									</div>
 									<div>
-										<button type="button" id="adminNoticeDel" class="btnAdmin del">삭제</button>
-										<button type="button" id="adminNoticeNew" class="btnAdmin new">NEW</button>
+										<button type="button" id="adminPetDel" class="btnAdmin del">삭제</button>
 									</div>
 								</td>
 							</tr>
@@ -82,25 +81,31 @@
 							      	<th class="checkBox">
 							      		전체 <input type="checkBox" id="allCheck" />
 							      	</th>
-							      	<th>제목</th>
-							     	<th class="author">작성자</th>
-							      	<th class="date">작성일</th>
+							      	<th class="id">유저ID</th>
+							     	<th class="name">이름</th>
+							      	<th>펫코드</th>
+							      	<th>시작일</th>
+							      	<th>종료일</th>
+							      	<th class="author">연장</th>
 							    </tr>
 							</thead>
 							<tbody>
 								<c:if test="${maxPageNum eq 0}">
 									<tr>
-										<td colspan="5">내용이 없습니다.</td>
+										<td colspan="8">내용이 없습니다.</td>
 									</tr>							
 								</c:if>
 								<c:if test="${maxPageNum ne 0}">
 									<c:forEach var="list" items="${lists}" varStatus="loop">
 									    <tr>
 									      	<td>${loop.count}</td>
-									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.boardId}"/>" /></td>
-									      	<td class="title"><a class="atxtUnderline" href="<c:url value="/adminNoticeDetail/${list.boardId}"/>">${list.title}</a></td>
+									      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${list.petId}"/>" /></td>
+									      	<td>${list.userId}</td>
 									      	<td>${list.userName}</td>
-									      	<td><fmt:formatDate value="${list.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/></td>
+									      	<td>${list.petCode}</td>
+									      	<td><fmt:formatDate value="${list.startDate}" pattern="yyyy-MM-dd"/></td>
+									      	<td><fmt:formatDate value="${list.endDate}" pattern="yyyy-MM-dd"/></td>
+									      	<td><button type="button" id="adminPetExtend" class="btnExtend" value="<c:url value="${list.petId}"/>">연장하기</button></td>
 									    </tr>
 								    </c:forEach>
 								</c:if>

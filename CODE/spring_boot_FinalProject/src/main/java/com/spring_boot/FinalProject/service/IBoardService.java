@@ -9,6 +9,7 @@ import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.ServiceVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
@@ -118,4 +119,16 @@ public interface IBoardService {
 	
 	// 관리자 - 시설 세부화면 수정
 	void updateAdminFacility(HashMap<String, Object> map);
+	
+	// 관리자 - 펫등록증 조회(전체)
+	ArrayList<PetVO> selectPetOR(HashMap<String, Object> map);
+	
+	// 관리자 - 펫등록증 조회(조건)
+	ArrayList<PetVO> selectPet(HashMap<String, Object> map);
+	
+	// 관리자 - 펫등록증 삭제
+	void deleteAdminPet(HashMap<String, Object> map);
+	
+	// 관리자 - 펫등록증 연장
+	void extendAdminPet(String petId);
 }

@@ -14,6 +14,7 @@ import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.OutuserVO;
+import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.ServiceVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
@@ -236,5 +237,29 @@ public class BoardService implements IBoardService {
 	@Override
 	public void updateAdminFacility(HashMap<String, Object> map) {
 		dao.updateAdminFacility(map);
+	}
+	
+	// 관리자 - 펫등록증 조회(전체)
+	@Override
+	public ArrayList<PetVO> selectPetOR(HashMap<String, Object> map) {
+		return dao.selectPetOR(map);
+	}
+
+	// 관리자 - 펫등록증 조회(조건)
+	@Override
+	public ArrayList<PetVO> selectPet(HashMap<String, Object> map) {
+		return dao.selectPet(map);
+	}
+
+	// 관리자 - 펫등록증 삭제
+	@Override
+	public void deleteAdminPet(HashMap<String, Object> map) {
+		dao.deleteAdminPet(map);
+	}
+
+	// 관리자 - 펫등록증 연장
+	@Override
+	public void extendAdminPet(String petId) {
+		dao.extendAdminPet(petId);
 	}
 }
