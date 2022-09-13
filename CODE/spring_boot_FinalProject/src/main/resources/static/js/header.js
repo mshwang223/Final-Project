@@ -125,6 +125,22 @@ $(document).ready(function(){
  		});	
 	});
 	
+	// 챗봇
+	$('#chatBot').click(function(){
+		$('.chatbot_box').css('display', 'block');
+	});
+	
+	$('#btnClose').click(function(){
+		$('.chatbot_box').css('display', 'none');
+	});
+	
+	$(document).mouseup(function (e){
+    	var LayerPopup = $("#chatbotBox");
+   		if(LayerPopup.has(e.target).length === 0){
+      	LayerPopup.removeClass("dis_block");
+    }
+  });
+	
     // 탑버튼 기능
     $('.top_btn').click(function (event) {
     	event.preventDefault();

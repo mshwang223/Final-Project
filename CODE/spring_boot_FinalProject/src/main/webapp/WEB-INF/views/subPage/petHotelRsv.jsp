@@ -27,11 +27,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	<section class="wrap">
 		<!-- middle -->
 		<form class="sec_rsv_wrap" id="userFrm">
-<<<<<<< HEAD
 		<fmt:parseNumber var="roomPrice" type="number" value="${map.rPrice}" />
-=======
 			<fmt:parseNumber var="roomPrice" type="number" value="${map.rPrice}" />
->>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 			<div class="rsv_wrap">
 				<div class="box_hotel_info">
 					<div class="box_img_tlt">
@@ -156,6 +153,21 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<button type="submit" id="finalPayBtn" class="final_pay_btn">예약하기</button>
 			</div>
 		</form>
+		<div id="chatbotBox" class="chatbot_box">
+			<div class="chat_head">
+				<span class="chat_title">펫밀리 쳇봇입니다</span>
+				<span id="btnClose" class="close_btn"><i class="fa-solid fa-xmark btn_x"></i></span>			
+			</div>
+			<!-- 채팅내용 출력 영역 -->
+			<div id="chattingBox" class="chatting_box"></div>
+			<div>
+				<form class="chat_form" id="chatForm" name="chatForm">
+					<input type="text" class="input_message" id="message" name="message" size="30"  placeholder="궁금한 사항을 물어봐주세요"/>
+					<input type="submit" class="send_text" value="전송">
+				</form>
+			</div>
+		</div>
+		<img id="chatBot" class="chat_bot" src="<c:url value='/images/chatbot.png'/>">
 	<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 	</section>
 	<!-- footer -->
