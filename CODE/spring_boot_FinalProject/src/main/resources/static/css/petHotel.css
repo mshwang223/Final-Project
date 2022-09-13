@@ -297,6 +297,7 @@ custom
   height: 430px;
   margin-right: 40px;
   cursor: pointer;
+  z-index: 0;
 }
 
 .popular_img_box > img, .seoul_img_box > img, .busan_img_box > img, .special_img_box > img,  .custom_img_box > img{

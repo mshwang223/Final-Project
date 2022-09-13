@@ -23,6 +23,9 @@ public interface IUserService {
 	// 회원가입
 	void insertUser(UserVO vo);
 	
+	// ID 찾기
+	String forgotId(HashMap<String, Object> map);
+	
 	// 회원탈퇴
 	void deleteUser(String userId);
 	
@@ -58,6 +61,9 @@ public interface IUserService {
 	
 	// 펫 수정
 	void updatePet(PetVO vo);
+	
+	// 펫 삭제
+	void deletePet(String petId);
 	
 	// 패스워드 체크
 	String pwCheck(String userId);

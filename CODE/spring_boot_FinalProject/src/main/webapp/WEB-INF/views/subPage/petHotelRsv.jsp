@@ -27,7 +27,11 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	<section class="wrap">
 		<!-- middle -->
 		<form class="sec_rsv_wrap" id="userFrm">
+<<<<<<< HEAD
 		<fmt:parseNumber var="roomPrice" type="number" value="${map.rPrice}" />
+=======
+			<fmt:parseNumber var="roomPrice" type="number" value="${map.rPrice}" />
+>>>>>>> branch 'master' of https://github.com/mshwang223/Final-Project.git
 			<div class="rsv_wrap">
 				<div class="box_hotel_info">
 					<div class="box_img_tlt">

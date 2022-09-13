@@ -57,6 +57,12 @@ public class UserService implements IUserService {
 		dao.insertUser(vo);
 	}
 	
+	// ID 찾기
+	@Override
+	public String forgotId(HashMap<String, Object> map) {
+		return dao.forgotId(map);
+	}
+	
 	// 회원 정보 수정
 	@Override
 	public void memberUpdate(String userId,String updatePw,String updateEmail) {
@@ -116,6 +122,12 @@ public class UserService implements IUserService {
 	@Override
 	public void updatePet(PetVO vo) {
 		dao.updatePet(vo);
+	}
+	
+	// 펫 삭제
+	@Override
+	public void deletePet(String petId) {
+		dao.deletePet(petId);
 	}
 	
 	// 회원탈퇴

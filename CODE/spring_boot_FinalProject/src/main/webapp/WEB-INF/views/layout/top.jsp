@@ -52,11 +52,11 @@
 						<img src="<c:url value='/images/petmilylogo.png'/>" alt="">
 							<span class="close">&times;</span>
 							<p>아이디 찾기</p>
-							<hr>
+							<div class="loginline last"></div>
 							<form id="findIdForm">
-								<input type="text" placeholder="이름" name="name">
-								<input type="email" placeholder="이메일" name="email">
-								<input type="submit" class="modal_btn" value="아이디 찾기">
+								<input type="text" placeholder="이름" name="userName" required />
+								<input type="email" placeholder="이메일" name="userEmail" required />
+								<button type="submit" class="modal_btn">확인</button> 
 							</form>
 						</div>
 					</div>

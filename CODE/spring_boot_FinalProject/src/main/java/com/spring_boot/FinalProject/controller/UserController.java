@@ -108,7 +108,18 @@ public class UserController {
 	@RequestMapping("/petLogin")
 	public String viewPetLogin() {
 		return "subPage/petLogin";
+	}
+	
+	// ID 찾기
+	@ResponseBody
+	@RequestMapping("/forgotId")
+	public String forgotId(@RequestParam HashMap<String, Object> map) {
+		String userId = userService.forgotId(map);
+		
+		return userId;
 	}	
+	
+	// PW 찾기
 
 	// 회원가입 페이지 가기
 	@RequestMapping("/signup")
@@ -442,6 +453,15 @@ public class UserController {
 		
 		userService.updatePet(vo);
 		
+		return "SUCCESS";
+	}
+	
+	// 관리자 - 공지사항 삭제
+	@ResponseBody
+	@RequestMapping("/deletePet")
+	public String petDelete(@RequestParam("petId") String petId) {
+		userService.deletePet(petId);
+
 		return "SUCCESS";
 	}
 	

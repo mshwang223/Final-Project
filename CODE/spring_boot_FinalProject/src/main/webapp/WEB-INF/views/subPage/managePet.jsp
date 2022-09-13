@@ -120,7 +120,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 		    	</div>
 			    
 			    <div class="btn_signup_box">
-			    	<button type="button" class="btn_cancel_done">취 소</button>
+			    	<button type="button" id="btn_cancel_done" class="btn_cancel_done">취 소</button>
 			    	<button type="button" id="btn_delete_done" class="btn_cancel_done">삭제하기</button>
 			        <button type="submit" id="btn_update_done" class="btn_signup_done">수정하기</button>
 			    </div>

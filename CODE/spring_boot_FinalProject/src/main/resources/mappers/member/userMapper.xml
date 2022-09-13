@@ -18,6 +18,14 @@
 		 WHERE pet.petCode = #{petCode}
   	</select>
   	
+  	<!-- ID 찾기 -->
+  	<select id="forgotId" parameterType="hashmap" resultType="String">
+  		SELECT userId 
+		  FROM user
+		 WHERE userName = #{userName}
+		   AND userEmail = #{userEmail}
+  	</select>
+  	
   	<!-- 로그인 후 접속일자 수정 -->
     <update id="updateActiveDate" parameterType="String">
     	UPDATE user 
@@ -138,6 +146,11 @@
     	   	   petImg  = #{petImg}
     	 WHERE petId = #{petId}
     </update>
+    
+  	<!-- 펫 삭제 -->
+  	<delete id="deletePet" parameterType="String">
+		DELETE FROM pet WHERE petId = #{petId} 
+  	</delete>
   	
   	<!-- 패스워드 체크 -->
   	<select id="pwCheck" resultType="String">
