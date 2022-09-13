@@ -8,12 +8,14 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	if(findIdBtn != null) {
 		findIdBtn.onclick = function() {
+			findPwModal.style.display = "none";
 			findIdModal.style.display = "block";
 		}
 	}
 	
 	if(findPwBtn != null) {
 		findPwBtn.onclick = function () {
+			findIdModal.style.display = "none";
 			findPwModal.style.display = "block";
 		}
 	}

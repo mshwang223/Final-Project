@@ -66,11 +66,11 @@
 						<img src="<c:url value='/images/petmilylogo.png'/>" alt="" height=200px;>
 							<span class="close">&times;</span>
 							<p>비밀번호 찾기</p>
-							<hr>
+							<div class="loginline last"></div>
 							<form id="findPwForm">
 								<input type="text" placeholder="아이디" name="username">
 								<input type="email" placeholder="이메일" name="email">
-								<input type="submit" class="modal_btn" value="비밀번호 찾기">
+								<button type="submit" class="modal_btn" >확인</button>
 							</form>
 						</div>
 					</div>
