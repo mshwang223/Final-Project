@@ -37,7 +37,7 @@ let heartCount = 1;
 
 for(let i = 0; i < likeBtn.length; i++){
 
-  likeBtn[i].addEventListener('click', ()=>{
+  likeBtn[i].addEventListener('click', (e)=>{
 
     heartCount++;
 
@@ -46,6 +46,9 @@ for(let i = 0; i < likeBtn.length; i++){
     }else{
       likeBtn[i].src = "/images/heart.png";
     }
+    
+    e.stopPropagation();
+    
   });
 }
 
@@ -238,7 +241,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
     var popularIndex = 0;
 
     $('.popular_next').click(function(){
-        $('.popular_img_box:nth-child(1)').animate({marginLeft:  '-=320px' }, '500');
+        $('#popularContainer form:nth-child(1)').animate({marginLeft:  '-=320px' }, '500');
         $('.popular_prev').css("display","block");
         popularIndex++;
         if(popularIndex == (popularBox - 5))
@@ -246,7 +249,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
     });
 
     $('.popular_prev').click(function(){
-        $('.popular_img_box:nth-child(1)').animate({marginLeft:  '+=320px' }, '500');
+        $('#popularContainer  form:nth-child(1)').animate({marginLeft:  '+=320px' }, '500');
         $('.popular_next').css("display","block");
         popularIndex--;
         if(popularIndex == 0)
@@ -258,7 +261,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
     var seoulIndex = 0;
 
     $('.seoul_next').click(function(){
-        $('.seoul_img_box:nth-child(1)').animate({marginLeft:  '-=320px' }, '700');
+        $('#seoulContainer form:nth-child(1)').animate({marginLeft:  '-=320px' }, '700');
         $('.seoul_prev').css("display","block");
         seoulIndex++;
         if(seoulIndex == (seoulBox - 5))
@@ -266,7 +269,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
     });
 
     $('.seoul_prev').click(function(){
-        $('.seoul_img_box:nth-child(1)').animate({marginLeft:  '+=320px' }, '700');
+        $('#seoulContainer form:nth-child(1)').animate({marginLeft:  '+=320px' }, '700');
         $('.seoul_next').css("display","block");
         seoulIndex--;
         if(seoulIndex == 0)
@@ -278,7 +281,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
     var busanIndex = 0;
 
     $('.busan_next').click(function(){
-        $('.busan_img_box:nth-child(1)').animate({marginLeft:  '-=320px' }, '700');
+        $('#busanContainer form:nth-child(1)').animate({marginLeft:  '-=320px' }, '700');
         $('.busan_prev').css("display","block");
         busanIndex++;
         if(busanIndex == (busanBox - 5))
@@ -286,7 +289,7 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
     });
 
     $('.busan_prev').click(function(){
-        $('.busan_img_box:nth-child(1)').animate({marginLeft:  '+=320px' }, '700');
+        $('#busanContainer form:nth-child(1)').animate({marginLeft:  '+=320px' }, '700');
         $('.busan_next').css("display","block");
         busanIndex--;
         if(busanIndex == 0)

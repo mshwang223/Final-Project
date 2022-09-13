@@ -125,7 +125,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<span># 맞춤숙소</span>
 				</div>
 				<div class="stay_items_wrap">
-					<div class="stay_container">
+					<div class="stay_container" id="customContainer">
 						<div class="custom_img_box">
 							<img src="<c:url value='/images/hotel1.jpg'/>" alt="">
 							<div class="stay_info">
@@ -267,7 +267,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<span># 특가숙소</span>
 				</div>
 				<div class="stay_items_wrap">
-					<div class="stay_container">
+					<div class="stay_container"  id="specialContainer">
 						<div class="special_img_box">
 							<img src="<c:url value='/images/hotel1.jpg'/>" alt="">
 							<div class="stay_info">
@@ -409,7 +409,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<span># 인기숙소</span>
 				</div>
 				<div class="stay_items_wrap">
-					<div class="stay_container">
+					<div class="stay_container"  id="popularContainer">
 						<c:forEach begin="22" end="32" var="stayList" items="${stayList}" varStatus="loop">
 							<form id="popular${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<div id="popularBox${stayList.stayNo }" class="popular_img_box">
@@ -443,7 +443,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<span># 서울에서 보내는 펫캉스</span>
 				</div>
 				<div class="stay_items_wrap">
-					<div class="stay_container">
+					<div class="stay_container"  id="seoulContainer">
 						<c:forEach begin="2" end="11" var="stayList" items="${stayList}" varStatus="loop">
 							<form id="seoul${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<div id="seoulBox${stayList.stayNo }" class="seoul_img_box">
@@ -475,7 +475,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<span># 부산 오션뷰 펫캉스</span>
 				</div>
 				<div class="stay_items_wrap">
-					<div class="stay_container">
+					<div class="stay_container"  id="busanContainer">
 						<c:forEach begin="81" end="90" var="stayList" items="${stayList}" varStatus="loop">
 							<form id="busan${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<div id="busanBox${stayList.stayNo }" class="busan_img_box">
@@ -491,6 +491,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										alt="찜하기" class="like_btn"></span>
 								</div>
 								<script>
+								
 							    $('#busanBox${stayList.stayNo }').click(function(){
 							    	$('#busan${stayList.stayNo}').submit();
 							    })
