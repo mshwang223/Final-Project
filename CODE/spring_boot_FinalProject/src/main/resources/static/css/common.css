@@ -166,7 +166,7 @@ header .login_box{
 }
 
 /* 첫 번째 언더라인 */
-#login-form .loginline {
+.loginline {
   width: 100%;
   height: 2px;
   background: #ee82ee;
@@ -175,7 +175,7 @@ header .login_box{
 }
 
 /* 두 번째 언더라인 */
-#login-form .loginline.last {
+.loginline.last {
   margin-top: 10px;	
 }
 
@@ -487,5 +487,3 @@ header .login_box > .dropdown > span.loginForm:hover{
 .headerDiv-move {
   margin-top: -105px;
 }
-
-
