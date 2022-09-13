@@ -110,6 +110,10 @@ $(document).ready(function(){
 				// 성공 시 결과 받음
 				if(result){
 					alert("해당 유저의 ID는 " + result + "입니다.");
+					$("#findIdModal").css('display', 'none');
+					$("#dropdown-login").css('display', 'block');
+					$("div#input-div > input#userId").val(result);
+					$("div#input-div > input#userId").focus();
 				} else {
 					alert("해당 유저의 정보가 없습니다.");
 				}
