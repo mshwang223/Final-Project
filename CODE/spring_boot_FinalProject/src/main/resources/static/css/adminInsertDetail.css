@@ -15,7 +15,7 @@
 .approve_area > .approve_wrap{
 	display: flex;
 	flex-direction: column;
-	width: 70%;
+	width: 880px;
 	height: 800px;
 	background-color: #fff;
 	border-radius: 10px;
@@ -90,7 +90,7 @@
 }
 
 .file_img_box > img{
-	width: 334px;
+	width: 350px;
 	height: 200px;	
 }
 
