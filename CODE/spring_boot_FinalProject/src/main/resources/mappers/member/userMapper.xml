@@ -138,6 +138,11 @@
     	   	   petImg  = #{petImg}
     	 WHERE petId = #{petId}
     </update>
+    
+  	<!-- 펫 삭제 -->
+  	<delete id="deletePet" parameterType="String">
+		DELETE FROM pet WHERE petId = #{petId} 
+  	</delete>
   	
   	<!-- 패스워드 체크 -->
   	<select id="pwCheck" resultType="String">

@@ -58,6 +58,9 @@ public interface IUserDAO {
 	
 	// 펫 수정
 	void updatePet(PetVO vo);
+	
+	// 펫 삭제
+	void deletePet(String petId);
 
 	//회원 정보 수정
 	void memberUpdate(String userId, String updatePw, String updateEmail);

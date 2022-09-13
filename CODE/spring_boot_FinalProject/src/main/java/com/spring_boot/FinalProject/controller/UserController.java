@@ -442,6 +442,15 @@ public class UserController {
 		return "SUCCESS";
 	}
 	
+	// 관리자 - 공지사항 삭제
+	@ResponseBody
+	@RequestMapping("/deletePet")
+	public String petDelete(@RequestParam("petId") String petId) {
+		userService.deletePet(petId);
+
+		return "SUCCESS";
+	}
+	
 	// 업체등록 페이지
 	@RequestMapping("/insertHotel")
 	public String viewInsertHotel() {

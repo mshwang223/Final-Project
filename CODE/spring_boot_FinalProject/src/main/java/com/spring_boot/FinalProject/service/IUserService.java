@@ -59,6 +59,9 @@ public interface IUserService {
 	// 펫 수정
 	void updatePet(PetVO vo);
 	
+	// 펫 삭제
+	void deletePet(String petId);
+	
 	// 패스워드 체크
 	String pwCheck(String userId);
 	

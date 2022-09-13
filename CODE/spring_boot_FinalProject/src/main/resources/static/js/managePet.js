@@ -117,12 +117,44 @@ $(document).ready(function(){
  		}
 	});
 	
+	// 삭제
+	
 	// 펫 등록증 다운로드  
 	$("#card_img_preview").click(function() {
 		location.href = "/fileDownload/" + $("#imgName").val();	
-	});   	
+	});
+	
+	// 삭제 기능
+	$("#btn_delete_done").on('click', function() {
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+ 		
+		if(confirm("삭제하겠습니까")) {
+	 		$.ajax({
+	 			type:"post",
+	 			url:"/deletePet",
+	 			data:{ "petId": $("#petId").val() },
+	 			dataType:"text",
+				success:function(result){
+					// 성공 시 결과 받음
+					if(result == "SUCCESS") {
+						alert("삭제되었습니다.");
+						location.href = "/mypage";
+					}
+				},
+				error:function(){
+					// 오류있을 경우 수행 되는 함수
+					alert("전송 실패");
+				}
+	 		}); 			
+		} else {
+			return false;
+ 		}
+	});	
+	   	
    	// 취소
-   	$(".btn_cancel_done").click(function() {
+   	$("#btn_cancel_done").click(function() {
    		//location.href="/myPage/" + $('#userId').val();
    		location.href="/mypage";
    	});
