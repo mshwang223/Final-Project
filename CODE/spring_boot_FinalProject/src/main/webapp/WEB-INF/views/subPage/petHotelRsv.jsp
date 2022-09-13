@@ -27,6 +27,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	<section class="wrap">
 		<!-- middle -->
 		<form class="sec_rsv_wrap" id="userFrm">
+			<fmt:parseNumber var="roomPrice" type="number" value="${map.rPrice}" />
 			<div class="rsv_wrap">
 				<div class="box_hotel_info">
 					<div class="box_img_tlt">
@@ -43,7 +44,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<div class="box_type_price">
 						<div class="room_type">${map.roomType}</div>
-						<div class="ttl_price"><fmt:formatNumber type="currency" value="${map.rPrice}" />원</div>
+						<div class="ttl_price"><fmt:formatNumber type="currency" value="${roomPrice}" />원</div>
 					</div>
 				</div>
 				<div class="box_cus_info">
@@ -114,8 +115,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<div class="follow_box">
 				<div class="info_price">결제정보</div>
 				<div class="price_per_night">
-					<div class="one_night">${map.diffDay}박(1박 : <fmt:formatNumber type="currency" value="${map.rPrice}" />원)</div>
-					<div class="one_night_price"><fmt:formatNumber type="currency" value="${map.rPrice * map.diffDay}" />원</div>
+					<div class="one_night">${map.diffDay}박(1박 : <fmt:formatNumber type="currency" value="${roomPrice}" />원)</div>
+					<div class="one_night_price"><fmt:formatNumber type="currency" value="${roomPrice * map.diffDay}" />원</div>
 				</div>
 				<div class="price_per_night">
 					<div class="one_night">청소비</div>
