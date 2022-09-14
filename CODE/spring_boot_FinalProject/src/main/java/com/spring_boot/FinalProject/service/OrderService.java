@@ -35,8 +35,7 @@ public class OrderService implements IOrderService {
 	public void insertCart(CartVO cartVO) {
 		dao.insertCart(cartVO);
 	}
-	
-	// 리뷰
+
 	@Override
 	public void insertOrder(List<OrderVO> orderVo) {
 		dao.insertOrder(orderVo);

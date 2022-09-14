@@ -90,6 +90,57 @@ $(document).ready(function(){
  		return true;
 	}
 	
+	// ID 찾기
+	$("#findIdForm").on('submit', function() {
+	
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+ 		
+ 		var formData = new FormData($('#findIdForm')[0]);
+ 		
+		$.ajax({
+ 			type:"post",
+ 			enctype: 'multipart/form-data',
+ 			url:"/forgotId",
+ 			data: formData,
+			contentType : false,
+        	processData : false,
+			success:function(result){
+				// 성공 시 결과 받음
+				if(result){
+					alert("해당 유저의 ID는 " + result + "입니다.");
+					$("#findIdModal").css('display', 'none');
+					$("#dropdown-login").css('display', 'block');
+					$("div#input-div > input#userId").val(result);
+					$("div#input-div > input#userId").focus();
+				} else {
+					alert("해당 유저의 정보가 없습니다.");
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		});	
+	});
+	
+	// 챗봇
+	$('#chatBot').click(function(){
+		$('.chatbot_box').css('display', 'block');
+	});
+	
+	$('#btnClose').click(function(){
+		$('.chatbot_box').css('display', 'none');
+	});
+	
+	$(document).mouseup(function (e){
+    	var LayerPopup = $("#chatbotBox");
+   		if(LayerPopup.has(e.target).length === 0){
+      	LayerPopup.removeClass("dis_block");
+    }
+  });
+	
     // 탑버튼 기능
     $('.top_btn').click(function (event) {
     	event.preventDefault();

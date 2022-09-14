@@ -57,6 +57,12 @@ public class UserService implements IUserService {
 		dao.insertUser(vo);
 	}
 	
+	// ID 찾기
+	@Override
+	public String forgotId(HashMap<String, Object> map) {
+		return dao.forgotId(map);
+	}
+	
 	// 회원 정보 수정
 	@Override
 	public void memberUpdate(String userId,String updatePw,String updateEmail) {

@@ -1,6 +1,9 @@
 package com.spring_boot.FinalProject.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
+import java.util.Date;
 
 public class ReviewVO {
 	private String userId;

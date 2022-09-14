@@ -6,7 +6,7 @@
 <mapper namespace="com.spring_boot.FinalProject.dao.IOrderDAO">
     <!-- 예약상품 저장 -->
     <insert id="insertRsv" parameterType="com.spring_boot.FinalProject.model.OrderVO">
-        INSERT into orderProduct
+        INSERT into orderproduct
             (userId, stayNo, manCnt, petCnt, rcvPhone)
         VALUES (#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone})
     </insert>

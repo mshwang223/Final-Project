@@ -4,11 +4,14 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.spring_boot.FinalProject.model.ReviewVO;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
@@ -105,7 +108,18 @@ public class UserController {
 	@RequestMapping("/petLogin")
 	public String viewPetLogin() {
 		return "subPage/petLogin";
+	}
+	
+	// ID 찾기
+	@ResponseBody
+	@RequestMapping("/forgotId")
+	public String forgotId(@RequestParam HashMap<String, Object> map) {
+		String userId = userService.forgotId(map);
+		
+		return userId;
 	}	
+	
+	// PW 찾기
 
 	// 회원가입 페이지 가기
 	@RequestMapping("/signup")

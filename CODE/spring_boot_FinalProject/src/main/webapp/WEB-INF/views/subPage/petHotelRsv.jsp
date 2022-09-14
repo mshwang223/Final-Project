@@ -27,6 +27,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	<section class="wrap">
 		<!-- middle -->
 		<form class="sec_rsv_wrap" id="userFrm">
+		<fmt:parseNumber var="roomPrice" type="number" value="${map.rPrice}" />
+			<fmt:parseNumber var="roomPrice" type="number" value="${map.rPrice}" />
 			<div class="rsv_wrap">
 				<div class="box_hotel_info">
 					<div class="box_img_tlt">
@@ -43,7 +45,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<div class="box_type_price">
 						<div class="room_type">${map.roomType}</div>
-						<div class="ttl_price"><fmt:formatNumber type="currency" value="${map.rPrice}" />원</div>
+						<div class="ttl_price"><fmt:formatNumber type="currency" value="${roomPrice}" />원</div>
 					</div>
 				</div>
 				<div class="box_cus_info">
@@ -114,8 +116,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<div class="follow_box">
 				<div class="info_price">결제정보</div>
 				<div class="price_per_night">
-					<div class="one_night">${map.diffDay}박(1박 : <fmt:formatNumber type="currency" value="${map.rPrice}" />원)</div>
-					<div class="one_night_price"><fmt:formatNumber type="currency" value="${map.rPrice * map.diffDay}" />원</div>
+					<div class="one_night">${map.diffDay}박(1박 : <fmt:formatNumber type="currency" value="${roomPrice}" />원)</div>
+					<div class="one_night_price"><fmt:formatNumber type="currency" value="${roomPrice * map.diffDay}" />원</div>
 				</div>
 				<div class="price_per_night">
 					<div class="one_night">청소비</div>
@@ -151,6 +153,21 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<button type="submit" id="finalPayBtn" class="final_pay_btn">예약하기</button>
 			</div>
 		</form>
+		<div id="chatbotBox" class="chatbot_box">
+			<div class="chat_head">
+				<span class="chat_title">펫밀리 쳇봇입니다</span>
+				<span id="btnClose" class="close_btn"><i class="fa-solid fa-xmark btn_x"></i></span>			
+			</div>
+			<!-- 채팅내용 출력 영역 -->
+			<div id="chattingBox" class="chatting_box"></div>
+			<div>
+				<form class="chat_form" id="chatForm" name="chatForm">
+					<input type="text" class="input_message" id="message" name="message" size="30"  placeholder="궁금한 사항을 물어봐주세요"/>
+					<input type="submit" class="send_text" value="전송">
+				</form>
+			</div>
+		</div>
+		<img id="chatBot" class="chat_bot" src="<c:url value='/images/chatbot.png'/>">
 	<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 	</section>
 	<!-- footer -->
