@@ -359,14 +359,14 @@
 			            </div>
 			            <div class="stay_img_container">
 			                <div class="stay_img_box1">
-			                    <a href="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>" data-lightbox="example"><img
-			                            src="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>" alt=""></a>
+			                    <a href="<c:url value='/comImg/${fn:split(insertHotel.serviceImg,".")[0]}/1.png'/>" data-lightbox="example"><img
+			                            src="<c:url value='/comImg/${fn:split(insertHotel.serviceImg,".")[0]}/1.png'/>" alt=""></a>
 			                </div>
 			                <div class="stay_img_box2">
 			                    <c:forEach begin="2" end="10" step="1" varStatus="loop">
-			                        <a href="<c:url value='/petHotelImg/${list.stayNo }/${loop.index }.png'/>"
+			                        <a href="<c:url value='/comImg/${fn:split(insertHotel.serviceImg,".")[0]}/${loop.index }.png'/>"
 			                           data-lightbox="example"><img
-			                                src="<c:url value='/petHotelImg/${list.stayNo }/${loop.index }.png'/>" alt="">
+			                                src="<c:url value='/comImg/${fn:split(insertHotel.serviceImg,".")[0]}/${loop.index }.png'/>" alt="">
 			                            <div>+ 이미지 더보기</div>
 			                        </a>
 			                    </c:forEach>
@@ -402,12 +402,12 @@
 		                    <div id="map" class="map"></div>
 		                    <input type="hidden" id="coordinate" value="<c:url value='${coordinate}'/>"/>
 		                </div>
-		                <c:if test="${not empty lists2}">
+		                <%-- <c:if test="${not empty lists2}"> --%>
 		                    <div class="info_content_box3">
 		                        <div>숙박타입</div>
 		                        <c:forEach var="room" items="${lists2}" varStatus="loop">
 		                            <div>
-		                                <img src="<c:url value='/petHotelImg/${room.stayNo }/${room.roomImg}.png'/>" alt="">
+		                                <img src="<c:url value='/comImg/${insertHotel.regId }/6.png'/>" alt="">
 		                                <div class="room_box">
 		                                    <c:if test="${room.roomType eq 1}"><span># 스탠다드 더블</span></c:if>
 		                                    <c:if test="${room.roomType eq 2}"><span># 스탠다드 트윈</span></c:if>
@@ -419,7 +419,7 @@
 		                            </div>
 		                        </c:forEach>
 		                    </div>
-		                </c:if>
+		               <%--  </c:if> --%>
 		                <div class="info_content_box4">
 		                    <div>숙소 편의 시설</div>
 		                    <div class="cs_box">

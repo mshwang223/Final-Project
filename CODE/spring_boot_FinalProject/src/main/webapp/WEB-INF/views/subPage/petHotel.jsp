@@ -273,7 +273,6 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<form id="special${approveList.regId }" method="post" action="<c:url value='petHotelDetail/${approveList.regId }'/>">
 								<input type="hidden" name="chk1" value="1">
 								<div id="specialBox${approveList.regId }" class="special_img_box">
-								<div>${approveList.regId}</div>
 									<img src="<c:url value='/comImg/${fn:split(approveList.serviceImg,".")[0]}/1.png'/>" alt="">
 									<div class="stay_info">
 										<div class="stay_name">
