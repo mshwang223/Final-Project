@@ -20,6 +20,9 @@ public interface IBoardDAO {
 	// 공지사항 조회 기능(전체)
 	ArrayList<BoardVO> selectNoticeOR(HashMap<String, Object> map);
 	
+	// 작성자 Email 확인
+	String contactEmail(String boardId);
+	
 	// 공지사항 세부 내용
 	BoardVO noticeDetailView(String boardId); 
 	

@@ -56,6 +56,14 @@
 		 LIMIT 10 OFFSET #{pageNum}
   	</select>
   	
+    <!-- 작성자 Email 확인 -->
+  	<select id="contactEmail" parameterType="String" resultType="String">
+  		SELECT u.userEmail 
+  		  FROM user u
+  		  JOIN board b ON b.userId = u.userId
+  		 WHERE boardId = #{board}
+  	</select>
+  	
   	<!-- 문의내역 세부 내용 조회 -->
   	<select id="contactDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.BoardVO">
   	<![CDATA[

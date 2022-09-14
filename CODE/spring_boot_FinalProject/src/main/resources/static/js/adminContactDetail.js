@@ -52,7 +52,11 @@ $(document).ready(function(){
 				if(result == "INSERT") alert("작성이 완료되었습니다.");
 				else alert("수정되었습니다.");
 				
-				location.href = "/adminContactSearch/0";
+				if($("#chkEmail").val() == "Y") {
+					emailJS();
+				} else {
+					location.href = "/adminContactSearch/0";
+				}
 			},
 			error:function(){
 				// 오류있을 경우 수행 되는 함수
@@ -60,6 +64,25 @@ $(document).ready(function(){
 			}
  		}); 				
 	});
+	
+	function emailJS() {
+		emailjs.init("DYOAnc2AZ2xubnmFo");
+		var tmpParams = {
+			name : $("#userName").val(),
+			email : $("#userEmail").val(),
+			date : $("#modifyDate").val(),
+			title : $("#title").val(),
+			contents : $("textarea").val()
+		};
+		
+		console.log(tmpParams);
+		emailjs.send('petmilys', 'template_contact', tmpParams).then(function(response) {
+			console.log('SUCCESS!', response.status, response.text);
+			location.href = "/adminContactSearch/0";
+		}, function(error) {
+			console.log('FAILED...', error);
+		});
+	}
 	
 	// 다운로드
 	$("#fileDownload").click(function() {

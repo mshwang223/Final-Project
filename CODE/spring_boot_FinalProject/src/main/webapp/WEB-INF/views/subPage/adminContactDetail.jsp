@@ -33,14 +33,17 @@
 					<table>
 						<thead>
 							<tr>
-						      	<th colspan="2">${notice.title}</th>
+						      	<th colspan="2">${notice.title}<input type="hidden" id="title" value="${notice.title}" /></th>
 						    </tr>
 						</thead>
 						<tbody>
 						    <tr>
 						      	<td class="titles" colspan="2">
-						      		${notice.userName}&nbsp;&nbsp; | &nbsp;&nbsp;작성일 : 
-						      		<fmt:formatDate value="${notice.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/>
+						      		<input type="hidden" id="modifyDate" value="<fmt:formatDate value="${notice.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/>" />
+						      		${notice.userName}<input type="hidden" id="userName" value="${notice.userName}" />&nbsp;&nbsp; | &nbsp;&nbsp; 
+						      		작성일 :<fmt:formatDate value="${notice.modifyDate}" pattern="yyyy-MM-dd HH:mm:dd"/>&nbsp;&nbsp; | &nbsp;&nbsp;
+						      		Email 답변 여부 : ${notice.chkEmail}<input type="hidden" id="chkEmail" value="${notice.chkEmail}" />
+						      		<input type="hidden" id="userEmail" value="${userEmail}" />
 						      	</td>
 						    </tr>
 						    <tr>
