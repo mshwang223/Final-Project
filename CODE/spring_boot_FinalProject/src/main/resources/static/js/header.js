@@ -152,6 +152,8 @@ $(document).ready(function(){
 					
 					emailJS(userName, userEmail, tmpPw);
 					
+					$("#findPwModal").css('display', 'none');
+					
 				} else {
 					alert("해당 유저의 정보가 없습니다.");
 				}
