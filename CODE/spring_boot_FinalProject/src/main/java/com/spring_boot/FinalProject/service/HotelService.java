@@ -97,4 +97,9 @@ public class HotelService implements IHotelService {
 	public ArrayList<InsertHotelVO> listtInsert() {
 		return dao.listtInsert();
 	}
+
+	@Override
+	public InsertHotelVO selectDetailInsert(String regId) {
+		return dao.selectDetailInsert(regId);
+	}
 }

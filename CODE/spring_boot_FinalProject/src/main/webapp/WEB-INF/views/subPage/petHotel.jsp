@@ -270,8 +270,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="specialContainer">
 						<c:forEach var="approveList" items="${approveList}" varStatus="loop">
-							<%-- <form id="seoul${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>"> --%>
-								<div class="special_img_box">
+							<form id="special${approveList.regId }" method="post" action="<c:url value='petHotelDetail/${approveList.regId }'/>">
+								<input type="hidden" name="chk1" value="1">
+								<div id="specialBox${approveList.regId }" class="special_img_box">
 								<div>${approveList.regId}</div>
 									<img src="<c:url value='/comImg/${fn:split(approveList.serviceImg,".")[0]}/1.png'/>" alt="">
 									<div class="stay_info">
@@ -285,7 +286,12 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
 										alt="찜하기" class="like_btn"></span>
 								</div>
-							<!-- </form> -->
+								<script>
+								    $('#specialBox${approveList.regId}').click(function(){
+								    	$('#special${approveList.regId}').submit();
+								    })
+								</script>
+							</form>
 						</c:forEach>	
 					</div>
 					<img class="special_prev" src="<c:url value='/images/left-arrow.png'/>" alt=""> 
@@ -301,6 +307,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="stay_container"  id="popularContainer">
 						<c:forEach begin="22" end="32" var="stayList" items="${stayList}" varStatus="loop">
 							<form id="popular${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+								<input type="hidden" name="chk1" value="2">
 								<div id="popularBox${stayList.stayNo }" class="popular_img_box">
 									<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${stayList.stayNo}'/>">
 									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
@@ -335,6 +342,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="stay_container"  id="seoulContainer">
 						<c:forEach begin="2" end="11" var="stayList" items="${stayList}" varStatus="loop">
 							<form id="seoul${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+								<input type="hidden" name="chk1" value="2">
 								<div id="seoulBox${stayList.stayNo }" class="seoul_img_box">
 									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
 									<div class="stay_info">
@@ -367,6 +375,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="stay_container"  id="busanContainer">
 						<c:forEach begin="81" end="90" var="stayList" items="${stayList}" varStatus="loop">
 							<form id="busan${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+								<input type="hidden" name="chk1" value="2">
 								<div id="busanBox${stayList.stayNo }" class="busan_img_box">
 									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
 									<div class="stay_info">

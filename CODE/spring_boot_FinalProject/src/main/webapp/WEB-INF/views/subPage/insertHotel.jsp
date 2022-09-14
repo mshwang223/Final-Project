@@ -78,6 +78,11 @@ if (request.getProtocol().equals("HTTP/1.1"))
           					<input type="text" id="inputLimitPet" name="inputLimitPet" class="input_limit_pet">
           				</div>
           				<br>
+          				<div class="room_type">
+          					<p>방 타입을 적어주세요</p>
+          					<input type="text" id="inputRoom" name="inputRoom" class="input_room_type">
+          				</div>
+          				<br>
           				<div class="comp_service">
           					<p>제공 서비스</p>
           					<div class="box_service">

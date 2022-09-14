@@ -214,6 +214,9 @@ public class HotelController {
 
 		String period = (String)map.get("daterange");
 		map.put("period", period);
+		
+		String chk1 = (String)map.get("chk1");
+		model.addAttribute("chk1", chk1);
 
 
 		// 호텔펜션 테이블
@@ -255,6 +258,60 @@ public class HotelController {
 		model.addAttribute("reviewList", reviews);
 		OptionalDouble average = reviews.stream().mapToInt(ReviewVO::getPoint).average();
 		model.addAttribute("pointAvg", average.orElse(0));
+
+
+		return "subPage/petHotelDetail";
+	}
+	
+	// 호텔 상세 페이지
+	@RequestMapping("/petHotelDetail/{regId}")
+	public String viewHotelInsertDetail(@PathVariable("regId") String regId,
+								  @RequestParam HashMap<String, Object> map,
+								  HttpSession session, Model model) {
+
+		map.put("regId", regId);
+
+		String period = (String)map.get("daterange");
+		map.put("period", period);
+		
+		String chk1 = (String)map.get("chk1");
+		model.addAttribute("chk1", chk1);
+
+
+		// 호텔펜션 테이블
+		InsertHotelVO vo = hotelService.selectDetailInsert(regId);
+
+		model.addAttribute("insertHotel", vo);
+
+		// 룸 테이블
+		ArrayList<RoomVO> lists2 = hotelService.selectDetailRoom(map);
+
+		model.addAttribute("lists2", lists2);
+
+		// 시설 테이블
+		ArrayList<FacilityVO> flist1 = hotelService.selectDetailFacility1(map);
+		ArrayList<FacilityVO> flist2 = hotelService.selectDetailFacility2(map);
+		ArrayList<FacilityVO> flist3 = hotelService.selectDetailFacility3(map);
+
+		model.addAttribute("flist1", flist1);
+		model.addAttribute("flist2", flist2);
+		model.addAttribute("flist3", flist3);
+		model.addAttribute("map", map);
+
+		// 지도 주소 좌표 호출(Naver GEOService)
+		String address = vo.getAddress1();
+		String coordinate = geoService.geoAddress(address);
+		model.addAttribute("coordinate", coordinate);
+
+		// 펫 등록증 소유여부 확인
+		String sid = (String)session.getAttribute("sid");
+		String userId = userService.selectPetUser(sid);
+
+		String petChkYn = "Y";
+		if(userId == null) petChkYn = "N";
+
+		model.addAttribute("petChkYn", petChkYn);
+
 
 
 		return "subPage/petHotelDetail";

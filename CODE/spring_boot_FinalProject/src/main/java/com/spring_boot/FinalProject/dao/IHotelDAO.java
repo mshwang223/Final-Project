@@ -50,4 +50,7 @@ public interface IHotelDAO {
     
     // 임시
     ArrayList<InsertHotelVO> listtInsert();
+    
+    // 등록 디테일 세부화면 조회
+    InsertHotelVO selectDetailInsert(String regId);
 }

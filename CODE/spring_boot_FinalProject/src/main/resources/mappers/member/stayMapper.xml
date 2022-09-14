@@ -117,4 +117,9 @@
     	 WHERE approve = "Y"
     </select>
     
+    <!-- 등록 숙박 상세 조회 -->
+    <select id="selectDetailInsert" parameterType="String" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
+    	SELECT * FROM registration WHERE regId = #{regId}
+    </select>
+    
 </mapper>
