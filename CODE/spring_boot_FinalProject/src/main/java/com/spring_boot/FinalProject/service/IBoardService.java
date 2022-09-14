@@ -33,6 +33,9 @@ public interface IBoardService {
 	// 관리자 - 문의내역 답변 조회
 	CommentVO selectAdminComment(String boardId);
 	
+	// 작성자 Email 확인
+	String contactEmail(String boardId);
+	
 	// 문의내역 상세조회
 	BoardVO contactDetailView(String boardId);
 	

@@ -376,9 +376,11 @@ public class AdminController {
 		
 		BoardVO vo = boardService.contactDetailView(boardId);
 		CommentVO cvo = boardService.selectAdminComment(boardId);
+		String email = boardService.contactEmail(boardId);
 		
 		model.addAttribute("notice", vo);
 		model.addAttribute("answer", cvo);
+		model.addAttribute("userEmail", email);
 		
 		return "subPage/adminContactDetail";
 	}

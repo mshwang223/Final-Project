@@ -55,6 +55,12 @@ public class BoardService implements IBoardService {
 		return dao.selectContact(map);
 	}
 	
+	// 작성자 Email 확인
+	@Override
+	public String contactEmail(String boardId) {
+		return dao.contactEmail(boardId);
+	}
+	
 	// 문의내역 세부화면 조회
 	@Override
 	public BoardVO contactDetailView(String boardId) {
