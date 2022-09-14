@@ -4,14 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import com.spring_boot.FinalProject.model.ReviewVO;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
@@ -117,7 +114,31 @@ public class UserController {
 		String userId = userService.forgotId(map);
 		
 		return userId;
-	}	
+	}
+	
+	// PW 찾기
+	@ResponseBody
+	@RequestMapping("/forgotPw")
+	public String forgotPw(@RequestParam HashMap<String, Object> map) {
+		
+		// 유저 정보 확인
+		String userName = userService.chkUser(map);
+		if(userName == null) {
+			return "NOTUSER";
+		} else {
+			// 8자리의 임의 문자열 생성
+			String tmpPw = RandomStringUtils.randomAlphanumeric(8);
+			
+			// 비밀번호 암호화 처리한 후 서비스에게 전달
+			String userPw = pwEncoder.encode(tmpPw);
+			map.put("userPw", userPw);
+			
+			userService.forgotPw(map);
+			
+			return userName + "-" + tmpPw;
+		}
+		
+	}
 	
 	// PW 찾기
 

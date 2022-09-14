@@ -26,6 +26,9 @@ public interface IUserDAO {
 	// ID 찾기
 	String forgotId(HashMap<String, Object> map);
 	
+	// PW 찾기
+	void forgotPw(HashMap<String, Object> map);
+	
 	// 회원탈퇴
 	void deleteUser(String userId);
 	
@@ -34,6 +37,9 @@ public interface IUserDAO {
 	
 	// ID 체크
 	String chkId(String id);
+	
+	// 유저정보 찾기(PW 분실용)
+	String chkUser(HashMap<String, Object> map);
 	
 	// Email 체크
 	String chkEmail(String email);

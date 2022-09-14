@@ -26,6 +26,9 @@
 	<!-- summernote -->
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/summernote-lite.css'/>">
 	<script src="<c:url value='/js/summernote-lite.js'/>"></script>
+
+	<!-- EmailJS -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	
 	<!-- fontawesome -->
 	<script type="text/javascript" src="<c:url value='https://kit.fontawesome.com/fa5522895a.js'/>" crossorigin="anonymous"></script>

@@ -68,8 +68,8 @@
 							<p>비밀번호 찾기</p>
 							<div class="loginline last"></div>
 							<form id="findPwForm">
-								<input type="text" placeholder="아이디" name="username">
-								<input type="email" placeholder="이메일" name="email">
+								<input type="text" placeholder="아이디" name="userId" required />
+								<input type="email" placeholder="이메일" name="userEmail" required />
 								<button type="submit" class="modal_btn" >확인</button>
 							</form>
 						</div>

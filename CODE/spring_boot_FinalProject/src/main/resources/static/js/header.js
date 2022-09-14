@@ -125,6 +125,61 @@ $(document).ready(function(){
  		});	
 	});
 	
+	// PW 찾기
+	$("#findPwForm").on('submit', function() {
+	
+		// submit 이벤트 기본 기능 : 페이지 새로 고침
+ 		// 기본 기능 중단
+ 		event.preventDefault();
+ 		
+ 		var formData = new FormData($('#findPwForm')[0]);
+ 		
+ 		var userEmail = $("#findPwForm > input[name=userEmail]").val();
+ 		
+		$.ajax({
+ 			type:"post",
+ 			enctype: 'multipart/form-data',
+ 			url:"/forgotPw",
+ 			data: formData,
+			contentType : false,
+        	processData : false,
+			success:function(result){
+				// 성공 시 결과 받음
+				if(result !== "NOTUSER"){
+					var userInfo = result.split("-");
+					var userName = userInfo[0];
+					var tmpPw = userInfo[1];
+					
+					emailJS(userName, userEmail, tmpPw);
+					
+				} else {
+					alert("해당 유저의 정보가 없습니다.");
+				}
+			},
+			error:function(){
+				// 오류있을 경우 수행 되는 함수
+				alert("전송 실패");
+			}
+ 		});	
+	});
+	
+	function emailJS(name, email, pw) {
+		emailjs.init("DYOAnc2AZ2xubnmFo");
+		var tmpParams = {
+			name : name,
+			email : email,
+			tmp_pw : pw
+		};
+		
+		console.log(tmpParams);
+		emailjs.send('petmilys', 'template_petmily', tmpParams).then(function(response) {
+			console.log('SUCCESS!', response.status, response.text);
+			alert("임시 비밀번호가 발급되었습니다. 메일을 확인하세요.");
+		}, function(error) {
+			console.log('FAILED...', error);
+		});
+	}
+	
 	// 챗봇
 	$('#chatBot').click(function(){
 		$('.chatbot_box').css('display', 'block');

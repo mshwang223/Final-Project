@@ -26,6 +26,14 @@
 		   AND userEmail = #{userEmail}
   	</select>
   	
+  	<!-- PW 찾기 -->
+    <update id="forgotPw" parameterType="String">
+    	UPDATE user 
+    	   SET userPw = #{userPw}
+    	 WHERE userId = #{userId}
+    	   AND userEmail = #{userEmail}
+    </update>
+  	
   	<!-- 로그인 후 접속일자 수정 -->
     <update id="updateActiveDate" parameterType="String">
     	UPDATE user 
@@ -65,6 +73,14 @@
   	<!-- ID 체크 -->
   	<select id="chkId" parameterType="String" resultType="String">
   		SELECT userId FROM user WHERE userId = #{userId}
+  	</select>
+  	
+  	<!-- 유저정보 찾기(PW 분실용) -->
+  	<select id="chkUser" parameterType="hashmap" resultType="String">
+  		SELECT userName 
+  		  FROM user 
+  		 WHERE userId = #{userId}
+  		   AND userEmail = #{userEmail}
   	</select>
   	
   	<!-- Email 체크 -->

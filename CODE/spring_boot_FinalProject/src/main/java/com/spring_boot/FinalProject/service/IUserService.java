@@ -26,6 +26,12 @@ public interface IUserService {
 	// ID 찾기
 	String forgotId(HashMap<String, Object> map);
 	
+	// PW 찾기
+	void forgotPw(HashMap<String, Object> map);
+	
+	// 유저정보 찾기(PW 분실용)
+	String chkUser(HashMap<String, Object> map);
+	
 	// 회원탈퇴
 	void deleteUser(String userId);
 	

@@ -62,6 +62,12 @@ public class UserService implements IUserService {
 	public String forgotId(HashMap<String, Object> map) {
 		return dao.forgotId(map);
 	}
+
+	// PW 찾기
+	@Override
+	public void forgotPw(HashMap<String, Object> map) {
+		dao.forgotPw(map);
+	}
 	
 	// 회원 정보 수정
 	@Override
@@ -80,6 +86,12 @@ public class UserService implements IUserService {
 	@Override
 	public String chkId(String id) {
 		return dao.chkId(id);
+	}
+	
+	// 유저정보 찾기(PW 분실용)
+	@Override
+	public String chkUser(HashMap<String, Object> map) {
+		return dao.chkUser(map);
 	}
 	
 	// Email 체크
