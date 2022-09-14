@@ -47,4 +47,7 @@ public interface IHotelService {
     
     //등록 승인 업체
     ArrayList<StayVO> selectYHotel();
+    
+    // 임시
+    ArrayList<InsertHotelVO> listtInsert();
 }

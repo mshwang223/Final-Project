@@ -109,4 +109,12 @@
     	 FROM registration
     	 WHERE approve = "Y"
     </select>
+    
+    <!-- 등록 승인 업체  -->
+    <select id="listtInsert" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
+    	 SELECT *
+    	 FROM registration
+    	 WHERE approve = "Y"
+    </select>
+    
 </mapper>

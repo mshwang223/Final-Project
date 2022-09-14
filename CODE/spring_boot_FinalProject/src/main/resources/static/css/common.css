@@ -478,7 +478,7 @@ header .login_box > .dropdown > span.loginForm:hover{
 }
 
 .chat_head{
-	width: 500px;
+	width: 400px;
 	height: 60px;
 	background-color: #e8e8e8;
 	line-height: 60px;
@@ -492,14 +492,14 @@ header .login_box > .dropdown > span.loginForm:hover{
 	padding-left: 10px;
 }
 .close_btn{
-	margin-left: 300px;
+	margin-left: 200px;
 	font-size: 20px;
 	cursor: pointer;
 }
 
 .chatting_box{
-	width: 500px;
-	height: 700px;
+	width: 400px;
+	height: 500px;
 	background-color: #ffb7ff;
 	padding: 15px 15px; 
 }
@@ -508,7 +508,7 @@ header .login_box > .dropdown > span.loginForm:hover{
 	font-size: 0;
 }
 .input_message{
-	width: 440px;
+	width: 340px;
 	height: 50px;
 	padding: 10px;
 	font-size: 18px;

@@ -272,6 +272,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						<c:forEach var="approveList" items="${approveList}" varStatus="loop">
 							<%-- <form id="seoul${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>"> --%>
 								<div class="special_img_box">
+								<div>${approveList.regId}</div>
 									<img src="<c:url value='/comImg/${fn:split(approveList.serviceImg,".")[0]}/1.png'/>" alt="">
 									<div class="stay_info">
 										<div class="stay_name">

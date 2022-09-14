@@ -152,7 +152,7 @@ public class HotelController {
 		ArrayList<StayVO> stayList = hotelService.listAllHotel();
 		model.addAttribute("stayList", stayList);
 		
-		ArrayList<StayVO> approveList = hotelService.selectYHotel();
+		ArrayList<InsertHotelVO> approveList = hotelService.listtInsert();
 		model.addAttribute("approveList", approveList);
 		
 		return "subPage/petHotel";
