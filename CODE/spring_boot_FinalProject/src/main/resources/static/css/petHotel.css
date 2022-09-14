@@ -246,7 +246,7 @@ span.option_span, .added_option{
 
 
 /* 호텔 , 펜션 (인기, 서울, 부산)  */
-custom
+
 .popular_area, .seoul_area, .busan_area, .special_area, .custom_area{
   margin-bottom: 90px;
 }
@@ -283,9 +283,9 @@ custom
 
 .stay_container{
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -294,7 +294,6 @@ custom
   align-items: center;
   flex-direction: column;
   position: relative;
-  height: 430px;
   margin-right: 40px;
   cursor: pointer;
   z-index: 0;
@@ -363,6 +362,11 @@ custom
 .popular_next, .seoul_next, .busan_next, .special_next, .custom_next{
   top: 135px;
   right: -75px;
+}
+
+/* 특가숙소 슬라이드 버튼 */
+.special_next {
+	display: none;
 }
 
 /* 찜하기 */

@@ -86,4 +86,10 @@ public class HotelService implements IHotelService {
 	public List<ReviewVO> selectAllreviews(String stayNo) {
 		return dao.selectAllreviews(stayNo);
 	}
+
+	@Override
+	public ArrayList<StayVO> selectYHotel() {
+
+		return dao.selectYHotel();
+	}
 }

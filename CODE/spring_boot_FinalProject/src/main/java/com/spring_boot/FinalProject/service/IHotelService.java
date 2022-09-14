@@ -44,4 +44,7 @@ public interface IHotelService {
     
     // 모든 리뷰
     List<ReviewVO> selectAllreviews(String stayNo);
+    
+    //등록 승인 업체
+    ArrayList<StayVO> selectYHotel();
 }

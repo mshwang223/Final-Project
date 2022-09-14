@@ -247,6 +247,9 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
         if(popularIndex == (popularBox - 5))
             $('.popular_next').css("display","none");
     });
+    
+            if(specialBox > 5)
+        	$('.special_next').css("display","block");
 
     $('.popular_prev').click(function(){
         $('#popularContainer  form:nth-child(1)').animate({marginLeft:  '+=320px' }, '500');

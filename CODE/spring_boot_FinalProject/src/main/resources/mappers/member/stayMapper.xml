@@ -102,4 +102,11 @@
         FROM review
         where stayNo = #{stayNo};
     </select>
+    
+    <!-- 등록 승인 업체  -->
+    <select id="selectYHotel" resultType="com.spring_boot.FinalProject.model.StayVO">
+    	 SELECT *
+    	 FROM registration
+    	 WHERE approve = "Y"
+    </select>
 </mapper>

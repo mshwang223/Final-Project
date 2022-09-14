@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!-- 양식다시제출 제거 -->
 <%    
 response.setHeader("Cache-Control","no-store");    
@@ -268,136 +269,23 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="specialContainer">
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel1.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
+						<c:forEach var="approveList" items="${approveList}" varStatus="loop">
+							<%-- <form id="seoul${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>"> --%>
+								<div class="special_img_box">
+									<img src="<c:url value='/comImg/${fn:split(approveList.serviceImg,".")[0]}/1.png'/>" alt="">
+									<div class="stay_info">
+										<div class="stay_name">
+											<span>${approveList.name }</span>
+											<span class="stay_star"><img src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
+										</div> 
+										<div>${approveList.period}</div>
+										<div><fmt:formatNumber type="currency" value="${approveList.price}" />원 / 1박</div>
+									</div>
+									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
+										alt="찜하기" class="like_btn"></span>
 								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel2.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel3.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel4.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel5.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel1.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel2.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel3.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel4.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star"><img
-										src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
-						<div class="special_img_box">
-							<img src="<c:url value='/images/hotel5.jpg'/>" alt="">
-							<div class="stay_info">
-								<div class="stay_name">
-									<span>비스타 워커힐 서울</span><span class="stay_star">
-									<img src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
-								</div>
-								<div>8월 20일 ~ 8월 23일</div>
-								<div>352,000원 / 1박</div>
-							</div>
-							<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-								alt="찜하기" class="like_btn"></span>
-						</div>
+							<!-- </form> -->
+						</c:forEach>	
 					</div>
 					<img class="special_prev" src="<c:url value='/images/left-arrow.png'/>" alt=""> 
 					<img class="special_next" src="<c:url value='/images/next.png'/>" alt="">
