@@ -4,11 +4,13 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
@@ -244,7 +246,9 @@ public class UserController {
 		}
 		UserVO userVO = userService.selectUser(sid);
 		model.addAttribute("user",userVO);
-		
+
+		List<ReviewVO> reservationList=hotelService.selectMyReview(sid);
+		model.addAttribute("reservationList",reservationList);
 		// 펫등록여부
 		String petUserId = userService.selectPetUser(sid);
 		model.addAttribute("petUserId", petUserId);
@@ -261,6 +265,23 @@ public class UserController {
         }
         return "subPage/updateprofile";
     }
+
+	@ResponseBody
+	@RequestMapping(value = "/userImg/{userId}", method = RequestMethod.GET)
+	public ResponseEntity<Resource> userImg(HttpSession session,@PathVariable String userId) throws MalformedURLException {
+
+		UserVO userVO = userService.selectUser(userId);
+		if (userVO.getUserImg() == null) {
+			Resource resource = new ClassPathResource("static/images/user.png");
+			return ResponseEntity.ok()
+					.contentType(MediaType.IMAGE_PNG)
+					.body(resource);
+		}
+
+		return ResponseEntity.ok()
+				.contentType(MediaType.IMAGE_PNG)
+				.body(new UrlResource("file:" + imgService.getFullPath(userVO.getUserImg())));
+	}
     
     // 회원 정보 수정
     @ResponseBody

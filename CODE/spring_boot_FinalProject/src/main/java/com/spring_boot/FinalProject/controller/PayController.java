@@ -7,13 +7,11 @@ import com.spring_boot.FinalProject.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -39,6 +37,18 @@ public class PayController {
         model.addAttribute("totalPrice", new DecimalFormat("#,###").format(sum));
         model.addAttribute("cartList", cartList);
         return "subPage/cart";
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/carts",method = RequestMethod.DELETE)
+    public String deleteCart(HttpSession session,@RequestParam(value="id[]") ArrayList<Long> id) {
+        String sid = (String) session.getAttribute("sid");
+        if (sid == null) {
+            return "ACCESS_DENIED";
+        }
+        orderService.deleteCarts(id);
+        return "success";
     }
 
     @ResponseBody

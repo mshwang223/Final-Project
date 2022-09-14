@@ -209,28 +209,28 @@ public class HotelController {
 	public String viewHotelDetail(@PathVariable("stayNo") String stayNo,
 								  @RequestParam HashMap<String, Object> map,
 								  HttpSession session, Model model) {
-		
+
 		map.put("stayNo", stayNo);
-		
+
 		String period = (String)map.get("daterange");
 		map.put("period", period);
 
-		
+
 		// 호텔펜션 테이블
 		StayVO vo = hotelService.selectDetailHotel(map);
-		
+
 		model.addAttribute("list", vo);
-		
+
 		// 룸 테이블
 		ArrayList<RoomVO> lists2 = hotelService.selectDetailRoom(map);
-		
+
 		model.addAttribute("lists2", lists2);
-		
+
 		// 시설 테이블
 		ArrayList<FacilityVO> flist1 = hotelService.selectDetailFacility1(map);
 		ArrayList<FacilityVO> flist2 = hotelService.selectDetailFacility2(map);
 		ArrayList<FacilityVO> flist3 = hotelService.selectDetailFacility3(map);
-		
+
 		model.addAttribute("flist1", flist1);
 		model.addAttribute("flist2", flist2);
 		model.addAttribute("flist3", flist3);
@@ -240,19 +240,26 @@ public class HotelController {
 		String address = vo.getStayAddress();
 		String coordinate = geoService.geoAddress(address);
 		model.addAttribute("coordinate", coordinate);
-		
+
 		// 펫 등록증 소유여부 확인
 		String sid = (String)session.getAttribute("sid");
 		String userId = userService.selectPetUser(sid);
-		
+
 		String petChkYn = "Y";
 		if(userId == null) petChkYn = "N";
-		
+
 		model.addAttribute("petChkYn", petChkYn);
-				
+
+		List<ReviewVO> reviews =hotelService.selectAllreviews(stayNo);
+		model.addAttribute("reviewCount", reviews.size());
+		model.addAttribute("reviewList", reviews);
+		OptionalDouble average = reviews.stream().mapToInt(ReviewVO::getPoint).average();
+		model.addAttribute("pointAvg", average.orElse(0));
+
+
 		return "subPage/petHotelDetail";
 	}
-	
+
 	// 호텔 예약 페이지
 	@RequestMapping("/petHotelRsv")
 	public String viewHotelRsv(@RequestParam HashMap<String, Object> map,

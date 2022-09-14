@@ -1,5 +1,6 @@
 package com.spring_boot.FinalProject.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,4 +18,7 @@ public interface IOrderService {
     void insertCart(CartVO cartVO);
     
     void insertOrder(List<OrderVO> orderVo);
+    
+    //장바구니 삭제
+    void deleteCarts(ArrayList<Long> id);
 }

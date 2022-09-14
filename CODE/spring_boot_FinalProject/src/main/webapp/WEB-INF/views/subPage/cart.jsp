@@ -43,7 +43,7 @@
                 <div id="cart_box__controller">
                     <div>
                         <input type="checkbox" name="package" value="selectall" onclick="selectAll(this)"/>
-                        <span>전체선택(0/${count})</span>
+                        <span>전체선택(</span><span id="count">0</span><span>/${count})</span>
                     </div>
                     <button class="delete_btn">선택삭제</button>
                 </div>
@@ -51,8 +51,8 @@
                 <div>
                     <c:forEach items="${cartList}" var="cartList" varStatus="status">
                         <div class="item">
-                            <input type="checkbox" name="package" value="package1"/>
-                            <button class="item__delete">
+                            <input type="checkbox"  data-id="${cartList.cartId}" class="deleteCheckBox" name="package" value="package1"/>
+                            <button class="item__delete" data-id="${cartList.cartId}">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
                             <img src="<c:url value='/images/hotel4.jpg'/>" alt="상품" width="120" height="90">

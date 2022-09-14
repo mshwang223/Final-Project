@@ -1,5 +1,6 @@
 package com.spring_boot.FinalProject.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,11 @@ public class OrderService implements IOrderService {
 	@Override
 	public void insertOrder(List<OrderVO> orderVo) {
 		dao.insertOrder(orderVo);
+	}
+    
+	// 장바구니 삭제
+	@Override
+    public void deleteCarts(ArrayList<Long> id) {
+    	dao.deleteCarts(id);
 	}
 }

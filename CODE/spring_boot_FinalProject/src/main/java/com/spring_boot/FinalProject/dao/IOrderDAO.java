@@ -1,5 +1,6 @@
 package com.spring_boot.FinalProject.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.spring_boot.FinalProject.model.CartVO;
@@ -16,4 +17,8 @@ public interface IOrderDAO {
 	void insertCart(CartVO cartVO);
 	
 	  void insertOrder(List<OrderVO> orderVo);
+
+	 //장바구니 삭제
+    void deleteCarts(ArrayList<Long> id);
+
 }

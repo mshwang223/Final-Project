@@ -41,7 +41,17 @@
                  left join stay s on c.stayNo = s.stayNo
         where c.userId = #{userId}
     </select>
+     
+    <!-- 장바구니 삭제 -->
+    <delete id="deleteCarts" parameterType="java.util.List">
+        DELETE FROM cart
+        <where>
+            <foreach collection="list" item="cartId" open="" close="" separator="OR">
+                 cartId = #{cartId}
+            </foreach>
+        </where>
 
+    </delete>
 
 
 </mapper>
