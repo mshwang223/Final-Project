@@ -176,7 +176,7 @@ public class BoardService implements IBoardService {
 	// 관리자 - 서비스 조회(전체)
 	@Override
 	public ArrayList<ServiceVO> selectServiceOR(HashMap<String, Object> map) {
-		return dao.selectService(map);
+		return dao.selectServiceOR(map);
 	}
 	
 	// 관리자 - 서비스 조회(조건)
@@ -212,7 +212,7 @@ public class BoardService implements IBoardService {
 	// 관리자 - 시설 조회(전체)
 	@Override
 	public ArrayList<FacilityVO> selectFacilityOR(HashMap<String, Object> map) {
-		return dao.selectFacility(map);
+		return dao.selectFacilityOR(map);
 	}
 	
 	// 관리자 - 시설 조회(조건)
