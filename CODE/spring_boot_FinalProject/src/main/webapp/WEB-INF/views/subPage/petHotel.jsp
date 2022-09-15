@@ -277,9 +277,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									<div class="stay_info">
 										<div class="stay_name">
 											<span>${approveList.name }</span>
-											<span class="stay_star"><img src="<c:url value='/images/star.png'/>" alt="평점">4.87</span>
 										</div> 
 										<div>${approveList.period}</div>
+										<input type="hidden" name="startDate" value="${fn:substring(approveList.period,5,14) }">
+										<input type="hidden" name="endDate" value="${fn:substring(approveList.period,21,29) }">
 										<div><fmt:formatNumber type="currency" value="${approveList.price}" />원 / 1박</div>
 									</div>
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"

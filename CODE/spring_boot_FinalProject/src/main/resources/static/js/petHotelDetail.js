@@ -26,8 +26,9 @@ $(document).ready(function(){
 			    
 				autoUpdateInput: false,
 				autoApply: true,
-				minDate: new Date($('#rangepicker1').val()),
-  				maxDate: new Date($('#rangepicker2').val())
+				//dateFormat: 'MM.DD(dd)',
+				minDate: new Date($('#startDate').val()),
+  				maxDate: new Date($('#endDate').val())
 			});						
 		});
 	}
@@ -35,7 +36,6 @@ $(document).ready(function(){
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
 		$('#rangepicker1').val(picker.startDate.format('MM.DD(dd)'));
 		$('#rangepicker2').val(picker.endDate.format('MM.DD(dd)'));
-		$("#rangepicker").val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.endDate.format('YYYY.MM.DD(dd)'));
 		calculate();
 	});
 

@@ -279,6 +279,12 @@ public class HotelController {
 		String period = (String)map.get("daterange");
 		map.put("period", period);
 		
+		String startDate = (String) map.get("startDate");
+		map.put("startDate", startDate);
+		
+		String endDate = (String) map.get("endDate");
+		map.put("endDate", endDate);
+		
 		String chk1 = (String)map.get("chk1");
 		model.addAttribute("chk1", chk1);
 

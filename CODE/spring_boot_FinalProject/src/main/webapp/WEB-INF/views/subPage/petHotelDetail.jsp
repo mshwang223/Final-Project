@@ -40,6 +40,7 @@
 <section class="wrap">
 
     <section>
+    	<input type="hidden" id=chk1 value="${chk1 }">
     	<c:choose>
     		<c:when test="${chk1 eq '2'}">
 		        <article class="stay_detail">
@@ -487,13 +488,13 @@
 		                <div class="check_date">
 		                    <div class="checkin">
 		                        <div>체크인</div>
-		                        <input type="text" id="rangepicker1" class="stay_date"
-		                               name="daterange" autocomplete="off" value="${fn:substring(map.period,5,14) }">
+		                        <input type="text" id="rangepicker1" class="stay_date" name="daterange" autocomplete="off" spellcheck="false">
+		                        <input type="hidden" id="startDate" value="${map.startDate }">
 		                    </div>
 		                    <div class="checkout">
 		                        <div>체크아웃</div>
-		                        <input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off"
-		                               spellcheck="false" value="${fn:substring(map.period,21,29) }">
+		                        <input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off" spellcheck="false">
+		                        <input type="hidden" id="endDate" value="${map.endDate }">
 		                    </div>
 		                    <div class="total_count">
 		                        <span>인원수 | 반려동물 수</span>
