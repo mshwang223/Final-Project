@@ -10,13 +10,13 @@ $(document).ready(function(){
 		$("#signupPetModal").css('display', 'block');
 		$(".modal-content > div").empty();	// 초기화
 		$(".modal-content > div").append('<div id="subpagePet" class="showDetail"></div>');
-		readTxtFile("subpagePet", $("#subpagePet"));
+		readTxtFile("subpagePet", $("div#subpagePet"));
 	});
 	
  	function readTxtFile(fileName, id) {
  		$.ajax({
  			type:"post",
- 			url:"subPage",
+ 			url:"subDoc",
  			data:{"fileName":fileName},
  			dataType:"text",
 			success:function(result){
