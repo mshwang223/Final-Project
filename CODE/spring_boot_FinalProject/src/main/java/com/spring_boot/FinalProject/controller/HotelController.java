@@ -217,6 +217,9 @@ public class HotelController {
 		String period = (String)map.get("daterange");
 		map.put("period", period);
 		
+		String count = (String)map.get("count");
+		map.put("count", count);
+		
 		String chk1 = (String)map.get("chk1");
 		model.addAttribute("chk1", chk1);
 
@@ -265,7 +268,7 @@ public class HotelController {
 		return "subPage/petHotelDetail";
 	}
 	
-	// 호텔 상세 페이지
+	// 특가호텔 상세 페이지
 	@RequestMapping("/petHotelDetail/{regId}")
 	public String viewHotelInsertDetail(@PathVariable("regId") String regId,
 								  @RequestParam HashMap<String, Object> map,
