@@ -18,8 +18,7 @@
     <c:import url="/WEB-INF/views/layout/header.jsp"/>
 
     <!-- naver maps api -->
-    <script type="text/javascript"
-            src="<c:url value='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=dmtzzphj4x'/>"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ca3sk0yzl"></script>
 
     <!-- lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css"/>
