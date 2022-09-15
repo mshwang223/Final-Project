@@ -26,13 +26,13 @@ public class InsertHotelVO {
 	private Date createDate;
 	private String comment;
 	private String approve;
-	private String roopType;
+	private String roomType;
 	
-	public String getRoopType() {
-		return roopType;
+	public String getRoomType() {
+		return roomType;
 	}
-	public void setRoopType(String roopType) {
-		this.roopType = roopType;
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
 	}
 	public String getApprove() {
 		return approve;

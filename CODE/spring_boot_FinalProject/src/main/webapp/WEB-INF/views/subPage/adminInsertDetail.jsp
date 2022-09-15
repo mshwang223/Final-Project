@@ -107,6 +107,12 @@
 								<input type="hidden" name="comment" id="comment" value="${comment}">
 								<input type="hidden" name="approve" id="approve" value="Y">
 							</div>
+							<div class="company_pet_room">
+								<span>방타입 : </span>
+								<span>${roomType}</span>
+								<input type="hidden" name="roomType" id="roomType" value="${roomType}">
+								<input type="hidden" name="approve" id="approve" value="Y">
+							</div>
 						</div>
 				
 					</div>

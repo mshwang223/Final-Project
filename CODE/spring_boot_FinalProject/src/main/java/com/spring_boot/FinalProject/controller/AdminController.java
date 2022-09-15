@@ -642,6 +642,7 @@ public class AdminController {
 		model.addAttribute("serviceImg", vo.getServiceImg());
 		model.addAttribute("createDate", vo.getCreateDate());
 		model.addAttribute("comment", vo.getComment());
+		model.addAttribute("roomType", vo.getRoomType());
 		
 		// 업체등록 이미지 압축파일 해제
 		// 호텔 압축파일명

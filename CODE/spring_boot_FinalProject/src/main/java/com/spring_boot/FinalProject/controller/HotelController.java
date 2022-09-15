@@ -80,6 +80,7 @@ public class HotelController {
 		String period = (String)param.get("daterange");
 		String sessionFile = (String)param.get("uploadFile");
 		String comment = (String)param.get("stayRule");
+		String roomType = (String)param.get("inputRoom");
 		
 		for(int i =0; i<services.length; i++) {
 			facility1 += services[i] + ",";
@@ -107,6 +108,7 @@ public class HotelController {
 		  vo.setPrice(price);
 		  vo.setPeriod(period); 
 		  vo.setComment(comment);
+		  vo.setRoomType(roomType);
 		  
 		  
 		  // 1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)

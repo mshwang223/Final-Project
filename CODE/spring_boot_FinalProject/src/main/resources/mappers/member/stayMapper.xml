@@ -8,9 +8,9 @@
   	<insert id="insertHotel" parameterType="com.spring_boot.FinalProject.model.InsertHotelVO">
   		INSERT INTO registration
   		(userId, name, zipcode, address1, address2, telNumber, maxManCnt, maxPetCnt,
-  		 facility1, facility2, facility3, price, period, serviceImg, comment)
+  		 facility1, facility2, facility3, price, period, serviceImg, comment, roomType)
   		 VALUES(#{userId}, #{name}, #{zipcode}, #{address1}, #{address2}, #{telNumber}, #{maxManCnt}, #{maxPetCnt},
-  		 		#{facility1}, #{facility2}, #{facility3}, #{price}, #{period}, #{serviceImg}, #{comment})
+  		 		#{facility1}, #{facility2}, #{facility3}, #{price}, #{period}, #{serviceImg}, #{comment}, #{roomType})
   	</insert>
   	
   	<!-- 호텔전체 조회 -->
