@@ -334,6 +334,9 @@ public class HotelController {
 		String userId = (String) session.getAttribute("sid");
 		UserVO user = userService.selectUser(userId);
 		
+		String chk = (String)map.get("chk");
+		model.addAttribute("chk", chk);
+		
 		// 호텔
 		StayVO stayList = hotelService.selectDetailHotel(map);
 		String period = (String)map.get("rangepicker");
@@ -373,6 +376,9 @@ public class HotelController {
 		
 		String userId = (String) session.getAttribute("sid");
 		UserVO user = userService.selectUser(userId);
+		
+		String chk = (String)map.get("chk");
+		model.addAttribute("chk", chk);
 		
 		// 호텔
 		StayVO stayList = hotelService.selectDetailHotel(map);

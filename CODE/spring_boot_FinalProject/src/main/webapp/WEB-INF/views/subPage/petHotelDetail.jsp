@@ -17,8 +17,8 @@
     <!-- header  -->
     <c:import url="/WEB-INF/views/layout/header.jsp"/>
 
-    <!-- naver maps api -->
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ca3sk0yzl"></script>
+	<!-- naver maps api -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ca3sk0yzl%22%3E"></script>
 
     <!-- lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css"/>
@@ -256,6 +256,7 @@
 		                        <span>인원수 | 반려동물 수</span>
 		
 		                        <form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv"/>">
+		                        	<input type="hidden" name="chk" value="2">
 		                            <input type="text" class="info_content_count" id="infoCount" name="countAll"
 		                                   spellcheck="false" value="${map.count}">
 		                            <input type="hidden" id="roomType" name="roomType" value=""/>
@@ -319,7 +320,7 @@
 		                                <button id="confirm" type="button">확인</button>
 		                            </div>
 		                            <div class="uploadImg-box">
-		                                <img id="profile_img_preview" src="<c:url value='/images/bgPetCard.png'/>"/>
+		                                <img id="profile_img_preview" src="<c:url value='/images/bgpetCard.png'/>"/>
 		                                <i class="fa-solid fa-circle-plus add_img_file"></i>
 		                                <input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
 		                                <div>(등록증을 업로드 하세요)</div>
@@ -499,6 +500,7 @@
 		                        <span>인원수 | 반려동물 수</span>
 		
 		                        <form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv/${insertHotel.regId }"/>">
+		                        	<input type="hidden" name="chk" value="1">
 		                            <input type="text" class="info_content_count" id="infoCount" name="countAll"
 		                                   spellcheck="false" value="${map.count}">
 		                            <input type="hidden" id="roomType" name="roomType" value=""/>
