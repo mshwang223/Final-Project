@@ -96,4 +96,9 @@ public class HotelService implements IHotelService {
 	public InsertHotelVO selectDetailInsert(String regId) {
 		return dao.selectDetailInsert(regId);
 	}
+
+	@Override
+	public InsertHotelVO selectInsertHotel(HashMap<String, Object> map) {
+		return dao.selectInsertHotel(map);
+	}
 }

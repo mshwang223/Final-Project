@@ -50,4 +50,7 @@ public interface IHotelDAO {
     
     // 등록 디테일 세부화면 조회
     InsertHotelVO selectDetailInsert(String regId);
+    
+	// 숙박펜션 세부화면 조회 기능
+	InsertHotelVO selectInsertHotel(HashMap<String, Object> map);
 }

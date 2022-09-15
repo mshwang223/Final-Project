@@ -122,4 +122,10 @@
     	SELECT * FROM registration WHERE regId = #{regId}
     </select>
     
+  	<select id="selectInsertHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
+		SELECT *
+		  FROM registration
+		 WHERE regId = #{regId}   
+	</select>
+    
 </mapper>
