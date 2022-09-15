@@ -3,19 +3,6 @@ $(document).ready(function(){
 	var now = new Date();
 	var today = (now.getMonth()+1) + "/" + now.getDate() + "/" + now.getFullYear();
 	
-	$(function(){
-		$(".stay_date").daterangepicker({
-			locale: {
-		  	daysOfweek: ['일','월','화','수','목','금','토'],
-		  	monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
-			},
-		    
-			autoUpdateInput: false,
-			autoApply: true,
-			minDate: today
-		});
-	});
-	
 	if($('#chk1').val() == '1') {
 		$(function(){
 			$(".stay_date").daterangepicker({
@@ -26,14 +13,26 @@ $(document).ready(function(){
 			    
 				autoUpdateInput: false,
 				autoApply: true,
-				//dateFormat: 'MM.DD(dd)',
 				minDate: new Date($('#startDate').val()),
   				maxDate: new Date($('#endDate').val())
 			});						
 		});
+	} else {
+		$(function(){
+			$(".stay_date").daterangepicker({
+				locale: {
+			  	daysOfweek: ['일','월','화','수','목','금','토'],
+			  	monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+				},
+			    
+				autoUpdateInput: false,
+				autoApply: true,
+				minDate: today
+			});
+		});
 	}
 
-	$('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
+	$('.stay_date').on('apply.daterangepicker', function(ev,picker){
 		$('#rangepicker1').val(picker.startDate.format('MM.DD(dd)'));
 		$('#rangepicker2').val(picker.endDate.format('MM.DD(dd)'));
 		calculate();
