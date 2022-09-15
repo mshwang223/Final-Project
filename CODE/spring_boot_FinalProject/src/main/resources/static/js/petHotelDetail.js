@@ -9,12 +9,28 @@ $(document).ready(function(){
 		  	daysOfweek: ['일','월','화','수','목','금','토'],
 		  	monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
 			},
-		
+		    
 			autoUpdateInput: false,
 			autoApply: true,
 			minDate: today
 		});
 	});
+	
+	if($('#chk1').val() == '1') {
+		$(function(){
+			$(".stay_date").daterangepicker({
+				locale: {
+			  	daysOfweek: ['일','월','화','수','목','금','토'],
+			  	monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+				},
+			    
+				autoUpdateInput: false,
+				autoApply: true,
+				minDate: new Date($('#rangepicker1').val()),
+  				maxDate: new Date($('#rangepicker2').val())
+			});						
+		});
+	}
 
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
 		$('#rangepicker1').val(picker.startDate.format('MM.DD(dd)'));

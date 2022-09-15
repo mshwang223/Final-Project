@@ -20,9 +20,6 @@ public class StayVO {
 	
 	private int rowCnt;
 	private int price;
-	
-	private String name;
-	private String period;
 
 	public String getStayNo() {
 		return stayNo;
@@ -128,17 +125,6 @@ public class StayVO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getName() {
-		return name;
-	}
-	public String getPeriod() {
-		return period;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public void setPeriod(String period) {
-		this.period = period;
-	}
+
 	
 }

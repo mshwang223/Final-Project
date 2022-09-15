@@ -46,9 +46,6 @@ public interface IHotelService {
     List<ReviewVO> selectAllreviews(String stayNo);
     
     //	등록 승인 업체
-    ArrayList<StayVO> selectYHotel();
-    
-    // 등록 승인
     ArrayList<InsertHotelVO> listtInsert();
     
     // 등록 디테일 세부화면 조회

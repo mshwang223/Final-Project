@@ -88,12 +88,6 @@ public class HotelService implements IHotelService {
 	}
 
 	@Override
-	public ArrayList<StayVO> selectYHotel() {
-
-		return dao.selectYHotel();
-	}
-
-	@Override
 	public ArrayList<InsertHotelVO> listtInsert() {
 		return dao.listtInsert();
 	}
