@@ -25,13 +25,15 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	closeBtns.forEach(closeBtn => {
 		closeBtn.addEventListener("click", (event) => {
+			$(".modal-content > div").empty();	// 초기화
 			event.path[2].style.display = "none";
-		})
+		});
 	});
 	
 	window.onclick = function (event) {
 		// console.log(event.target);
 		if (event.target == findIdModal) {
+			$(".modal-content > div").empty();	// 초기화
 			findIdModal.style.display = "none";
 		}
 	}
@@ -39,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	modals.forEach(modal => {
 		modal.addEventListener("click", (event) => {
 			if (event.target == modal) {
+				$(".modal-content > div").empty();	// 초기화
 				modal.style.display = "none";
 			}
 		});
