@@ -320,7 +320,7 @@
 		                                <button id="confirm" type="button">확인</button>
 		                            </div>
 		                            <div class="uploadImg-box">
-		                                <img id="profile_img_preview" src="<c:url value='/images/bgpetCard.png'/>"/>
+		                                <img id="profile_img_preview" src="<c:url value='/images/bgPetCard.png'/>"/>
 		                                <i class="fa-solid fa-circle-plus add_img_file"></i>
 		                                <input type="file" id="uploadFile" name="uploadFile" style="display:none"/>
 		                                <div>(등록증을 업로드 하세요)</div>
