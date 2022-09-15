@@ -131,6 +131,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			            <div id="resultHotelList${list.stayNo }" class="wrap_result_hotel_list">
 			              <div class="result_hotel_img">
 			              	<input type="hidden" id="${list.stayNo }" name="stayNo" value="<c:url value='${list.stayNo}'/>">
+			              	<input type="hidden" id="rangepicker" name="daterange" value="${map.period}"/>
+			              	<input type="hidden" name="count" value="${map.count}"/>
 			                <%-- <img src="<c:url value='/images/${list.mainImg}'/>"> --%>
 		                		<img src="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>">
 			              </div>

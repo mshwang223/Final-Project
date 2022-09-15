@@ -401,19 +401,18 @@
 		                <%-- <c:if test="${not empty lists2}"> --%>
 		                    <div class="info_content_box3">
 		                        <div>숙박타입</div>
-		                        <c:forEach var="room" items="${lists2}" varStatus="loop">
+		                        <%-- <c:forEach var="insertHotel" items="${insertHotel}" varStatus="loop" --%>
 		                            <div>
-		                                <img src="<c:url value='/comImg/${insertHotel.regId }/6.png'/>" alt="">
+		                                <img src="<c:url value='/comImg/${fn:split(insertHotel.serviceImg,".")[0]}/6.png'/>" alt="">
 		                                <div class="room_box">
-		                                    <c:if test="${room.roomType eq 1}"><span># 스탠다드 더블</span></c:if>
-		                                    <c:if test="${room.roomType eq 2}"><span># 스탠다드 트윈</span></c:if>
+		                                    <span># ${insertHotel.roomType }</span>
 		                                    <div><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency"
-		                                                                                         value="${room.price}"/>원
+		                                                                                         value="${insertHotel.price}"/>원
 		                                    </div>
 		                                    <button class="room_btn">선택</button>
 		                                </div>
 		                            </div>
-		                        </c:forEach>
+		                        <%-- </c:forEach> --%>
 		                    </div>
 		               <%--  </c:if> --%>
 		                <div class="info_content_box4">
@@ -421,6 +420,7 @@
 		                    <div class="cs_box">
 		
 		                        <div class="cs_box1">
+		                        ${insertHotel.facility1 }
 		                            <c:forEach var="f1" items="${flist1}" varStatus="loop">
 		                                <div>
 		                                    <img src="/images/${f1.facilityImg}" alt="">${f1.facilityName}
@@ -428,6 +428,7 @@
 		                            </c:forEach>
 		                        </div>
 		                        <div class="cs_box2">
+		                        ${insertHotel.facility2 }
 		                            <c:forEach var="f2" items="${flist2}" varStatus="loop">
 		                                <div>
 		                                    <img src="/images/${f2.facilityImg}" alt="">${f2.facilityName}
@@ -435,23 +436,23 @@
 		                            </c:forEach>
 		                        </div>
 		                    </div>
-		                    <c:if test="${not empty flist3}">
+		                    <%-- <c:if test="${not empty flist3}"> --%>
 		                        <div class="additional_click">
 		                            <span>추가 편의시설 더 보기</span><i id="additionalClick"
 		                                                        class="fa-solid fa-chevron-down"></i>
 		                        </div>
 		
-		
+									
 		                        <div class="additional_cs">
-		                            <c:forEach var="f3" items="${flist3}" varStatus="loop">
-		                                <div class="cs_box${loop.count}">
+		                            <%-- <c:forEach var="f3" items="${flist3}" varStatus="loop"> --%>
+		                                <div class="cs_box">
 		                                    <div>
-		                                        <img src="/images/${f3.facilityImg}" alt="">${f3.facilityName}
+		                                        ${insertHotel.facility3 }
 		                                    </div>
 		                                </div>
-		                            </c:forEach>
+		                            <%-- </c:forEach> --%>
 		                        </div>
-		                    </c:if>
+		                    <%-- </c:if> --%>
 		                </div>
 		
 		                <div class="info_content_box6">
@@ -480,7 +481,7 @@
 		            <div class="sticky_area">
 		                <div class="charge_area">
 		                    <div>
-		                        <span id="roomPrice"></span><span><fmt:formatNumber type="Number" value="${insertHotel.price }" />원 / 1박</span>
+		                        <span id="roomPrice"></span><span> / 1박</span>
 		                    </div>
 		                </div>
 		                <div class="check_date">
@@ -506,7 +507,7 @@
 		                            <input type="hidden" id="discount" name="discount" value="0"/>
 		                            <input type="hidden" id="total" name="total" value=""/>
 		                            <input type="hidden" id="diffDay" name="diffDay" value=""/>
-		                            <input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">
+		                            <input type="hidden" id="regId" name="regId" value="<c:url value='${insertHotel.regId}'/>">
 		                        </form>
 		
 		                        <div class="person_count_option">

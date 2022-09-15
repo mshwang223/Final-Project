@@ -83,13 +83,13 @@ public class HotelController {
 		String roomType = (String)param.get("inputRoom");
 		
 		for(int i =0; i<services.length; i++) {
-			facility1 += services[i] + ",";
+			facility1 += services[i] + " "+"<br>"+"<br>";
 		}
 		for(int i =0; i<provides.length; i++) {
-			facility2 += provides[i] + ",";
+			facility2 += provides[i] + " "+"<br>"+"<br>";
 		}
 		for(int i =0; i<additionals.length; i++) {
-			facility3 += additionals[i] + ",";
+			facility3 += additionals[i] + " "+"<br>"+"<br>";
 		}
 		  
 		
