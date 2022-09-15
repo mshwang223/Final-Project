@@ -153,8 +153,18 @@ $(document).ready(function(){
 	$('.book_btn').click(function(){
 		//var stay_no = $('.sticky_area').children('input[type=hidden]').val();
 		//window.location.href = "/petHotelRsv/stayNo=" + stay_no + "&period=" + $("#rangepicker").val();
-		$("#rsvForm").submit();
+		if($('.stay_date').val() == ""){
+			alert("날짜를 입력해 주세요");
+			return false;
+		}else if($('.info_content_count').val() == ""){
+			alert("인원수를 입력해주세요");
+			return false;		
+		}else{
+			$("#rsvForm").submit();
+		}
 	});
+	
+	
 	
 	// 현재 스크롤 위치
 	var scrollValue;

@@ -382,7 +382,7 @@ public class HotelController {
 		
 		// 호텔
 		StayVO stayList = hotelService.selectDetailHotel(map);
-		String period = (String)map.get("rangepicker");
+		String period = (String)map.get("daterange");
 		String count = (String)map.get("countAll");
 		System.out.println(count);
 		map.put("period", period);
@@ -394,12 +394,13 @@ public class HotelController {
 		map.put("iPeriod", iPeriod);
 				
 		
-		/*
-		 * // 카트 String price = String.valueOf( map.get("total")); String stayNo =
-		 * String.valueOf( map.get("stayNo")); CartVO cartVO = new CartVO(period,
-		 * Integer.parseInt(price), Integer.parseInt(stayNo), userId);
-		 * orderService.insertCart(cartVO);
-		 */
+		
+	    // 카트
+	    String price = String.valueOf( map.get("total")); 
+	    String registId = String.valueOf( map.get("regId")); 
+	    CartVO cartVO = new CartVO(period, Integer.parseInt(price), Integer.parseInt(registId), userId);
+	    orderService.insertCart(cartVO);
+		 
 		 
 	        
 		String[] email = user.getUserEmail().split("@"); 

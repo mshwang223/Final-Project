@@ -505,7 +505,7 @@
 		                                   spellcheck="false" value="${map.count}">
 		                            <input type="hidden" id="roomType" name="roomType" value=""/>
 		                            <input type="hidden" id="rPrice" name="rPrice" value="0"/>
-		                            <input type="hidden" id="rangepicker" name="rangepicker" value="${map.period}"/>
+		                            <input type="hidden" id="rangepicker" name="daterange" value=""/>
 		                            <input type="hidden" id="discount" name="discount" value="0"/>
 		                            <input type="hidden" id="total" name="total" value=""/>
 		                            <input type="hidden" id="diffDay" name="diffDay" value=""/>

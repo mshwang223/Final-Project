@@ -163,15 +163,16 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					<div class="rsv_wrap">
 						<div class="box_hotel_info">
 							<div class="box_img_tlt">
-								<div class="img_box"><img src="<c:url value='/comImg/${insertList.regId }/1.png'/>"></div>
+								<div class="img_box"><img src="<c:url value='/comImg/${fn:split(insertList.serviceImg,".")[0]}/1.png'/>"></div>
 								<div class="info_txt_Box">
 									<input type="hidden" id="stayNo" name="stayNo" value="${insertList.regId}"/>
 									<input type="hidden" id="count" name="count" value="${map.count}"/>
+									<input type="hidden" id="daterange" name="daterange" value=""/>
 									<div class="info_tlt">${insertList.name }</div>
 									<div class="info_address"><i class="fa-solid fa-location-dot address_icon"></i>${insertList.address1}</div>
-									<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${fn:substring(map.period,0,29) }</div>
+									<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${map.period }</div>
 									<div class="info_person_count"><i class="fa-solid fa-user person_icon"></i>${map.count}</div>
-									<div class="info_bed"><i class="fa-solid fa-bed bed_icon"></i>${map.roomType}</div>
+									<div class="info_bed"><i class="fa-solid fa-bed bed_icon"></i>${insertList.roomType}</div>
 								</div>
 							</div>
 							<div class="box_type_price">
