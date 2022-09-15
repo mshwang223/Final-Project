@@ -181,12 +181,11 @@
 	
   	<!-- 관리자 - 결재내역 조회 -->
 	<select id="selectAdminPay" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.OrderVO">
-		SELECT *, (SELECT stayName FROM stay WHERE stayNo = p.stayNo) AS stayName,
+		SELECT *, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
 		       COUNT(*) OVER() AS rowCnt 
-		  FROM orderproduct p
-		  JOIN orderInfo i ON p.ordPrdId = i.ordPrdId
-		  JOIN user u ON u.userId = p.userId
-		 WHERE p.userId LIKE CONCAT('%',#{userId},'%')
+		  FROM orderinfo i
+		  JOIN user u ON u.userId = i.userId
+		 WHERE u.userId LIKE CONCAT('%',#{userId},'%')
 		    OR u.userName LIKE CONCAT('%',#{userName},'%')
 		    OR DATE_FORMAT(i.payDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{payDate}, '%', i.payDate), '%Y-%m-%d')
 		 ORDER BY activeDate DESC, userName ASC
