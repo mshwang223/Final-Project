@@ -25,7 +25,6 @@
 
 <section class="wrap">
     <!-- article -->
-    <article>
         <div class="pageTitle">
             <div>
                 <span>#마이페이지</span>
@@ -154,7 +153,7 @@
 
     </div>
 </div>
-</article>
+
 <script defer="defer" src="<c:url value='/js/review-modal.js'/>"></script>
 <!--footer -->
 <c:import url="/WEB-INF/views/layout/footer.jsp"/>
