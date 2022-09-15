@@ -44,7 +44,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			        <div class="custom_info">
 			        	<div class="signup_id">
 			            	<p class="title">아이디</p>
-			            	<input type="text" id="signupId" class="text_signup_id" placeholder="아이디 입력(5~8자리)" pattern=".{5,8}" required title="아이디는 5~8자리까지 입력해야 합니다.">
+			            	<input type="text" id="signupId" class="text_signup_id" placeholder="아이디 입력(5~10자리)" pattern=".{5,10}" required title="아이디는 5~10자리까지 입력해야 합니다.">
 			            	<button type="button" class="btn_idcheck">중복확인</button>
 			          	</div>
 			          	<br>

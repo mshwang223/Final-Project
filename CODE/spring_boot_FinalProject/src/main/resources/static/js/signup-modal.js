@@ -10,39 +10,38 @@ $(document).ready(function(){
 		$("#signupModal").css('display', 'block');
 		$(".modal-content > div").empty();	// 초기화
 		$(".modal-content > div").append('<div id="subpage1" class="showDetail"></div>');
-		readTxtFile("subpage1", $("#subpage1"));
+		readTxtFile("subpage1", $("div#subpage1"));
 	});
 	
 	$("#subDetail2").click(function() {
 		$("#signupModal").css('display', 'block');
 		$(".modal-content > div").empty();	// 초기화
 		$(".modal-content > div").append('<div id="subpage2" class="showDetail"></div>');
-		readTxtFile("subpage2", $("#subpage2"));
+		readTxtFile("subpage2", $("div#subpage2"));
 	});
 	
 	$("#subDetail3").click(function() {
 		$("#signupModal").css('display', 'block');
 		$(".modal-content > div").empty();	// 초기화
 		$(".modal-content > div").append('<div id="subpage3" class="showDetail"></div>');
-		readTxtFile("subpage3", $("#subpage3"));
+		readTxtFile("subpage3", $("div#subpage3"));
 	});
 	
 	$("#subDetail4").click(function() {
 		$("#signupModal").css('display', 'block');
 		$(".modal-content > div").empty();	// 초기화
 		$(".modal-content > div").append('<div id="subpage4" class="showDetail"></div>');
-		readTxtFile("subpage4", $("#subpage4"));
+		readTxtFile("subpage4", $("div#subpage4"));
 	});
 
  	function readTxtFile(fileName, id) {
  		$.ajax({
  			type:"post",
- 			url:"subPage",
+ 			url:"/subDoc",
  			data:{"fileName":fileName},
  			dataType:"text",
 			success:function(result){
-						
- 				id.html(result);
+				id.html(result);
  				
 			},
 			error:function(){

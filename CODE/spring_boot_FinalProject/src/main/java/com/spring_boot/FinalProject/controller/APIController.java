@@ -32,7 +32,7 @@ public class APIController {
 	
 	// TXT 파일 읽어 웹에 보여주기
 	@ResponseBody
-	@RequestMapping("/subPage")
+	@RequestMapping("/subDoc")
 	public String viewSubPage(@RequestParam("fileName") String fileName,
 							  HttpServletRequest request) {
 		String filePath = request.getServletContext().getRealPath("/WEB-INF/views/signupDoc/");
