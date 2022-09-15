@@ -347,10 +347,6 @@
 			            <div>
 			                <div class="stay_title">${insertHotel.name}</div>
 			                <div class="stay_sub_info">
-			                    <div class="stay_sub_box">
-			                        <img src="/images/star.png" alt="별점"> <span>${pointAvg}</span>
-			                        <div class="review_move">후기 ${reviewCount}개</div>
-			                    </div>
 			                    <div class="stay_pick">
 			                        <span>찜하기</span>
 			                        <img class="like_btn" src="/images/heart.png" alt="찜하기">
@@ -480,66 +476,11 @@
 		                        </div>
 		                    </div>
 		                </div>
-		                <div class="info_content_box7">
-		                    <div class="review_title">
-		                        <img src="/images/star.png" alt="별점"> <span>${pointAvg}</span>
-		                        <div>후기 ${reviewCount}개</div>
-		                    </div>
-		                    <div class="review_content_container">
-		                        <div class="review_content_box">
-		                            <c:forEach items="${reviewList}" var="review" varStatus="status" end="3">
-		                                <div class="review_user_content">
-		                                    <div class="user_img_box">
-		                                        <img src="<c:url value='/userImg/${review.userId}'/>">
-		                                    </div>
-		                                    <div class="review_info">
-		                                        <div class="modal_nickname">${review.userId}</div>
-		                                        <div class="modal_review_date">${review.createDate}</div>
-		                                    </div>
-		                                    <div class="review_content"> ${review.contents}
-		                                    </div>
-		                                </div>
-		                            </c:forEach>
-		                        </div>
-		                    </div>
-		                    <button class="review_more_btn">후기 더보기</button>
-		                    <div class="black_bg">
-		                        <div class="review_container">
-		                            <div class="modal_review_title">
-		                                <img src="/images/star.png" alt="별점"> <span>${pointAvg}</span>
-		                                <div>후기 ${reviewCount}개</div>
-		                            </div>
-		                            <div class="review_close"><i class="fa-regular fa-circle-xmark"></i></div>
-		                            <div class="review_box">
-		
-		                                <c:forEach items="${reviewList}" var="review" varStatus="status">
-		                                    <div class="modal_user_review">
-		                                        <div class="modal_user_info">
-		                                            <img src="<c:url value='/userImg/${review.userId}'/>">
-		                                            <div>
-		                                                <div class="modal_nickname">${review.userId}</div>
-		                                                <div class="modal_review_date">${review.createDate}</div>
-		                                            </div>
-		                                        </div>
-		                                        <div class="modal_content">
-		                                                ${review.contents}
-		                                        </div>
-		                                    </div>
-		                                </c:forEach>
-		
-		                            </div>
-		                        </div>
-		                    </div>
-		                </div>
 		            </div>
 		            <div class="sticky_area">
 		                <div class="charge_area">
 		                    <div>
-		                        <span id="roomPrice"></span><span> / 1박</span>
-		                    </div>
-		                    <div>
-		                        <img src="/images/star.png" alt="별점"> <span>${pointAvg}</span>
-		                        <div class="review_move">${reviewCount}개</div>
+		                        <span id="roomPrice"></span><span><fmt:formatNumber type="Number" value="${insertHotel.price }" />원 / 1박</span>
 		                    </div>
 		                </div>
 		                <div class="check_date">
