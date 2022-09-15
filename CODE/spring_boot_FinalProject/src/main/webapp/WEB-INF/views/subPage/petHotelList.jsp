@@ -126,26 +126,34 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	          <!-- 호텔 리스트 영역 -->
 	          <div class="list_box">
 	          	<c:forEach var="list" items="${lists}" varStatus="loop">
-	            <div id="resultHotelList" class="wrap_result_hotel_list">
-	              <div class="result_hotel_img">
-	              	<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${list.stayNo}'/>">
-	                <%-- <img src="<c:url value='/images/${list.mainImg}'/>"> --%>
-                		<img src="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>">
-	              </div>
-	              <div class="wrap_whole">
-	                <div class="hotel_title">
-	                  <p>${list.stayName}</p>
-	                  <div><i class="fa-solid fa-star"></i>${list.star}</div>
-	                </div>
-	                <div class="wrap_date_Stay">
-	                	${fn:substring(map.period,5,14) } ~ ${fn:substring(map.period,21,29) }
-	                </div>
-	                <div class="per_stay_price">
-	                <fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${list.price}" />원 / 1박
-	                </div>
-	              </div>
-	              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
-	            </div>
+		          	<form id="all${list.stayNo }" method="post" action="<c:url value='/petHotelDetail/stayNo=${list.stayNo }'/>">
+		          		<input type="hidden" name="chk1" value="2">
+			            <div id="resultHotelList${list.stayNo }" class="wrap_result_hotel_list">
+			              <div class="result_hotel_img">
+			              	<input type="hidden" id="${list.stayNo }" name="stayNo" value="<c:url value='${list.stayNo}'/>">
+			                <%-- <img src="<c:url value='/images/${list.mainImg}'/>"> --%>
+		                		<img src="<c:url value='/petHotelImg/${list.stayNo }/1.png'/>">
+			              </div>
+			              <div class="wrap_whole">
+			                <div class="hotel_title">
+			                  <p>${list.stayName}</p>
+			                  <div><i class="fa-solid fa-star"></i>${list.star}</div>
+			                </div>
+			                <div class="wrap_date_Stay">
+			                	${fn:substring(map.period,5,14) } ~ ${fn:substring(map.period,21,29) }
+			                </div>
+			                <div class="per_stay_price">
+			                <fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${list.price}" />원 / 1박
+			                </div>
+			              </div>
+			              <span class="like_hover"><img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn"></span>
+			            </div>
+			            <script>
+			            	$('#resultHotelList${list.stayNo }').click(function(){
+			            		$('#all${list.stayNo }').submit();
+			            	});
+			            </script>
+			        </form>
 	            </c:forEach> 
 	          </div>
 	        </div>
