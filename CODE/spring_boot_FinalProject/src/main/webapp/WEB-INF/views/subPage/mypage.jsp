@@ -79,10 +79,6 @@
             </div>
 
             <div class="profile_menu">
-                <button class="accordion">문의 내역<span class="accordion__arrow">></span></button>
-                <div class="panel">
-                    <p>aaaaaaaa</p>
-                </div>
 
                 <button class="accordion">나의 리뷰<span class="accordion__arrow">></span></button>
                 <div class="panel">
