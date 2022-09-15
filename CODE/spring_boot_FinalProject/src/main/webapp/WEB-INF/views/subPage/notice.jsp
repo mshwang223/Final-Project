@@ -142,6 +142,23 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 			</article>
 			<!-- 공지사항 레이아웃 종료 -->
+			
+			<div id="chatbotBox" class="chatbot_box">
+				<div class="chat_head">
+					<span class="chat_title">펫밀리 쳇봇입니다</span>
+					<span id="btnClose" class="close_btn"><i class="fa-solid fa-xmark btn_x"></i></span>			
+				</div>
+				<!-- 채팅내용 출력 영역 -->
+				<div id="chattingBox" class="chatting_box"></div>
+				<div>
+					<form class="chat_form" id="chatForm" name="chatForm">
+						<input type="text" class="input_message" id="message" name="message" size="30"  placeholder="궁금한 사항을 물어봐주세요"/>
+						<input type="submit" class="send_text" value="전송">
+					</form>
+				</div>
+			</div>
+			<img id="chatBot" class="chat_bot" src="<c:url value='/images/chatbot.png'/>">
+			<img class="top_btn" src="<c:url value='/images/top_dog.png'/>">
 		</section>
 		
 		<!-- footer -->
