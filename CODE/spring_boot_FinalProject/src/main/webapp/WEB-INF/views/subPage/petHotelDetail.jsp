@@ -499,7 +499,7 @@
 		                    <div class="total_count">
 		                        <span>인원수 | 반려동물 수</span>
 		
-		                        <form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv"/>">
+		                        <form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv/${insertHotel.regId }"/>">
 		                            <input type="text" class="info_content_count" id="infoCount" name="countAll"
 		                                   spellcheck="false" value="${map.count}">
 		                            <input type="hidden" id="roomType" name="roomType" value=""/>

@@ -1,8 +1,6 @@
 package com.spring_boot.FinalProject.controller;
 
 import java.io.File;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +9,6 @@ import java.util.OptionalDouble;
 
 import javax.servlet.http.HttpSession;
 
-import com.spring_boot.FinalProject.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +22,7 @@ import com.spring_boot.FinalProject.model.CartVO;
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
 import com.spring_boot.FinalProject.model.OrderVO;
+import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
@@ -343,12 +341,17 @@ public class HotelController {
 		System.out.println(count);
 		map.put("period", period);
 		map.put("count", count);
+		
+		// 등록호텔
+		InsertHotelVO insertList = hotelService.selectInsertHotel(map);
+		String iPeriod = (String)map.get("daterange");
+		map.put("iPeriod", iPeriod);
 				
-		// 카트
-		 String price =  String.valueOf( map.get("total"));
-	        String stayNo = String.valueOf(  map.get("stayNo"));
-	        CartVO cartVO = new CartVO(period, Integer.parseInt(price), Integer.parseInt(stayNo), userId);
-	        orderService.insertCart(cartVO);
+		// 카트 
+		String price = String.valueOf( map.get("total"));
+		String stayNo = String.valueOf( map.get("stayNo")); 
+		CartVO cartVO = new CartVO(period, Integer.parseInt(price), Integer.parseInt(stayNo), userId);
+		orderService.insertCart(cartVO);
 	        
 		String[] email = user.getUserEmail().split("@"); 
 		
@@ -356,10 +359,54 @@ public class HotelController {
 		model.addAttribute("stayList", stayList);
 		model.addAttribute("email", email);
 		model.addAttribute("map", map);
+		model.addAttribute("insertList", insertList);
 		
 		
 		return "subPage/petHotelRsv";
 	}
+	
+	// 호텔 예약 페이지
+	@RequestMapping("/petHotelRsv/{regId}")
+	public String viewInsertHotelRsv(@RequestParam HashMap<String, Object> map,
+									 @PathVariable String regId,
+							   		 HttpSession session, Model model) {
+		
+		String userId = (String) session.getAttribute("sid");
+		UserVO user = userService.selectUser(userId);
+		
+		// 호텔
+		StayVO stayList = hotelService.selectDetailHotel(map);
+		String period = (String)map.get("rangepicker");
+		String count = (String)map.get("countAll");
+		System.out.println(count);
+		map.put("period", period);
+		map.put("count", count);
+		
+		// 등록호텔
+		InsertHotelVO insertList = hotelService.selectInsertHotel(map);
+		String iPeriod = (String)map.get("daterange");
+		map.put("iPeriod", iPeriod);
+				
+		
+		/*
+		 * // 카트 String price = String.valueOf( map.get("total")); String stayNo =
+		 * String.valueOf( map.get("stayNo")); CartVO cartVO = new CartVO(period,
+		 * Integer.parseInt(price), Integer.parseInt(stayNo), userId);
+		 * orderService.insertCart(cartVO);
+		 */
+		 
+	        
+		String[] email = user.getUserEmail().split("@"); 
+		
+		model.addAttribute("user", user);
+		model.addAttribute("stayList", stayList);
+		model.addAttribute("email", email);
+		model.addAttribute("map", map);
+		model.addAttribute("insertList", insertList);
+		
+		
+		return "subPage/petHotelRsv";
+	}	
 	
 	// 예약한 상품 저장
 	@ResponseBody
