@@ -44,6 +44,9 @@ public class AdminController {
 	HotelService hotelService;
 	
 	@Autowired
+	APIController apiController;
+	
+	@Autowired
 	UnzipService unzipService;
 	
 	// 관리자 - 공지사항 페이지
@@ -649,7 +652,7 @@ public class AdminController {
 		String fileImg = hotelService.selectInsertHotelImg(regId);
 			  
 		// zip 파일 경로 
-		String directory = "c:/springWorkspace/comImg/";
+		String directory = apiController.uploadCompanyPathImg();
 		
 		// 파일 압축 해제           
 		unzipService.unZip(directory, fileImg, directory);	
