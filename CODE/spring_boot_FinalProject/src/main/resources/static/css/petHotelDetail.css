@@ -130,12 +130,10 @@
 .info_content_box2{
   /* display: flex; */
   /* align-items: center; */
-  
   padding: 15px;
   text-align: center;
-  
   justify-content: space-around;
-  height: 100px;
+  height: 135px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -150,7 +148,7 @@
   align-items: center;
   position: relative;
   font-size: 20px;
-  
+  height: 40px;
   margin-bottom: 20px;
 }
 
