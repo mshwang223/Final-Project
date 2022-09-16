@@ -339,16 +339,12 @@ public class HotelController {
 		
 		// 호텔
 		StayVO stayList = hotelService.selectDetailHotel(map);
-		String period = (String)map.get("rangepicker");
+		String period = (String)map.get("daterange");
 		String count = (String)map.get("countAll");
 		System.out.println(count);
 		map.put("period", period);
 		map.put("count", count);
 		
-		// 등록호텔
-		InsertHotelVO insertList = hotelService.selectInsertHotel(map);
-		String iPeriod = (String)map.get("daterange");
-		map.put("iPeriod", iPeriod);
 				
 		// 카트 
 		String price = String.valueOf( map.get("total"));
@@ -362,7 +358,6 @@ public class HotelController {
 		model.addAttribute("stayList", stayList);
 		model.addAttribute("email", email);
 		model.addAttribute("map", map);
-		model.addAttribute("insertList", insertList);
 		
 		
 		return "subPage/petHotelRsv";
@@ -381,17 +376,13 @@ public class HotelController {
 		model.addAttribute("chk", chk);
 		
 		// 호텔
-		StayVO stayList = hotelService.selectDetailHotel(map);
-		String period = (String)map.get("daterange");
-		String count = (String)map.get("countAll");
-		System.out.println(count);
-		map.put("period", period);
-		map.put("count", count);
 		
 		// 등록호텔
 		InsertHotelVO insertList = hotelService.selectInsertHotel(map);
-		String iPeriod = (String)map.get("daterange");
-		map.put("iPeriod", iPeriod);
+		String period = (String)map.get("daterange");
+		String count = (String)map.get("countAll");
+		map.put("period", period);
+		map.put("count", count);
 				
 		
 		
@@ -406,7 +397,6 @@ public class HotelController {
 		String[] email = user.getUserEmail().split("@"); 
 		
 		model.addAttribute("user", user);
-		model.addAttribute("stayList", stayList);
 		model.addAttribute("email", email);
 		model.addAttribute("map", map);
 		model.addAttribute("insertList", insertList);

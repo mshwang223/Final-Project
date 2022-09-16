@@ -35,6 +35,7 @@ $(document).ready(function(){
 	$('.stay_date').on('apply.daterangepicker', function(ev,picker){
 		$('#rangepicker1').val(picker.startDate.format('MM.DD(dd)'));
 		$('#rangepicker2').val(picker.endDate.format('MM.DD(dd)'));
+		$('#rangepicker').val("2022." + picker.startDate.format('MM.DD(dd)') + ' ~ ' +"2022." + picker.endDate.format('MM.DD(dd)'));
 		calculate();
 	});
 
