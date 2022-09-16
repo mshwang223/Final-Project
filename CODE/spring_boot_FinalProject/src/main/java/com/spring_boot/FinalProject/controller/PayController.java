@@ -39,7 +39,7 @@ public class PayController {
         return "subPage/cart";
     }
 
-
+    
     @ResponseBody
     @RequestMapping(value = "/carts",method = RequestMethod.DELETE)
     public String deleteCart(HttpSession session,@RequestParam(value="id[]") ArrayList<Long> id) {
