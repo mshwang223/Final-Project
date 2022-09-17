@@ -83,9 +83,11 @@ public class HotelService implements IHotelService {
     }
     // 모든 리뷰
 	@Override
-	public List<ReviewVO> selectAllreviews(String stayNo) {
-		return dao.selectAllreviews(stayNo);
+	public List<ReviewVO> selectStayAllReviews(String stayNo) {
+		return dao.selectStayAllReviews(stayNo);
 	}
+
+
 
 	@Override
 	public ArrayList<InsertHotelVO> listtInsert() {

@@ -1,132 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.spring_boot.FinalProject.dao.IHotelDAO">
-  	<!-- 업체등록 -->
-  	<insert id="insertHotel" parameterType="com.spring_boot.FinalProject.model.InsertHotelVO">
-  		INSERT INTO registration
-  		(userId, name, zipcode, address1, address2, telNumber, maxManCnt, maxPetCnt,
-  		 facility1, facility2, facility3, price, period, serviceImg, comment, roomType)
-  		 VALUES(#{userId}, #{name}, #{zipcode}, #{address1}, #{address2}, #{telNumber}, #{maxManCnt}, #{maxPetCnt},
-  		 		#{facility1}, #{facility2}, #{facility3}, #{price}, #{period}, #{serviceImg}, #{comment}, #{roomType})
-  	</insert>
-  	
-  	
-  	<!-- 호텔전체 조회 -->
-  	<select id="listAllHotel" resultType="com.spring_boot.FinalProject.model.StayVO">
-		SELECT s.*, room.price FROM stay s, 
-		(SELECT stayNo, MAX(price) AS price FROM room GROUP BY stayNo) AS room
-		WHERE s.stayNo = room.stayNo
-		ORDER BY s.stayNo
-  	</select>
-  	  	
-  	<!-- 숙박펜션 조회 기능 -->
-  	<select id="selectHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
+    <!-- 업체등록 -->
+    <insert id="insertHotel" parameterType="com.spring_boot.FinalProject.model.InsertHotelVO">
+        INSERT INTO registration
+        (userId, name, zipcode, address1, address2, telNumber, maxManCnt, maxPetCnt,
+         facility1, facility2, facility3, price, period, serviceImg, comment, roomType)
+        VALUES (#{userId}, #{name}, #{zipcode}, #{address1}, #{address2}, #{telNumber}, #{maxManCnt}, #{maxPetCnt},
+                #{facility1}, #{facility2}, #{facility3}, #{price}, #{period}, #{serviceImg}, #{comment}, #{roomType})
+    </insert>
+
+
+    <!-- 호텔전체 조회 -->
+    <select id="listAllHotel" resultType="com.spring_boot.FinalProject.model.StayVO">
+        SELECT s.*, room.price
+        FROM stay s,
+             (SELECT stayNo, MAX(price) AS price FROM room GROUP BY stayNo) AS room
+        WHERE s.stayNo = room.stayNo
+        ORDER BY s.stayNo
+    </select>
+
+    <!-- 숙박펜션 조회 기능 -->
+    <select id="selectHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
   	<![CDATA[
-  		SELECT *,
-  			   (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) AS price,
-  			   '' AS mainImg,
-  			   COUNT(*) OVER() AS rowCnt 
-  		  FROM stay
-  		 WHERE stateId = #{stateId}
-  		   AND maxManCnt >= #{maxManCnt}
-  		   AND maxPetCnt >= #{maxPetCnt}
-  		 ORDER BY (CASE #{num} WHEN '0' THEN stay.stayNo END) ASC,
-  		          (CASE #{num} WHEN '1' THEN stay.star END) DESC,
-  		          (CASE #{num} WHEN '2' THEN (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) END) ASC,
-  		          (CASE #{num} WHEN '3' THEN (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) END) DESC             
-   	]]>	   
+        SELECT *,
+               (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) AS price,
+               ''                                                            AS mainImg,
+               COUNT(*) OVER ()                                              AS rowCnt
+        FROM stay
+        WHERE stateId = #{stateId}
+          AND maxManCnt >= #{maxManCnt}
+          AND maxPetCnt >= #{maxPetCnt}
+        ORDER BY (CASE #{num} WHEN '0' THEN stay.stayNo END) ASC,
+                 (CASE #{num} WHEN '1' THEN stay.star END) DESC,
+                 (CASE #{num} WHEN '2' THEN (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) END) ASC,
+                 (CASE #{num} WHEN '3' THEN (SELECT MAX(price) FROM room WHERE stay.stayNo = room.stayNo) END) DESC
+        ]]>
 	</select>
-	
-  	<!-- 숙박펜션 세부화면 조회 기능 -->
-  	<select id="selectDetailHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
-		SELECT *, #{period} AS period, #{count} AS count
-		  FROM stay
-		 WHERE stayNo = #{stayNo}   
-	</select>
-	
-  	<!-- 숙박펜션 세부화면 조회 기능 -->
-  	<select id="selectDetailRoom" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.RoomVO">
-		SELECT *
-		  FROM room
-		 WHERE stayNo = #{stayNo}   
-	</select>
-	
-  	<!-- 숙박펜션 편의시설1 세부화면 조회 기능 -->
-  	<select id="selectDetailFacility1" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.FacilityVO">
-		SELECT *
-		  FROM facilityroom
-		  JOIN facility ON facilityroom.facilityId = facility.facilityId
-		 WHERE facilityroom.stayNo = #{stayNo}
-		   AND facilitySort = '1'   
-	</select>
-	
-	<!-- 숙박펜션 편의시설2 세부화면 조회 기능 -->
-  	<select id="selectDetailFacility2" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.FacilityVO">
-		SELECT *
-		  FROM facilityroom
-		  JOIN facility ON facilityroom.facilityId = facility.facilityId
-		 WHERE facilityroom.stayNo = #{stayNo}
-		   AND facilitySort = '2'   
-	</select>
-	
-	<!-- 숙박펜션 편의시설3 세부화면 조회 기능 -->
-  	<select id="selectDetailFacility3" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.FacilityVO">
-		SELECT *
-		  FROM facilityroom
-		  JOIN facility ON facilityroom.facilityId = facility.facilityId
-		 WHERE facilityroom.stayNo = #{stayNo}
-		   AND facilitySort = '3'   
-	</select>
-	
-	<!-- 업체등록 이미지 -->
-	<select id="selectInsertHotelImg" parameterType="int"  resultType="string">
-		SELECT serviceImg
-		FROM registration
-		WHERE regId = #{regId}
-	</select>
-	
-	<!-- 나의 리뷰 -->
-	  <select id="selectMyReview" parameterType="String" resultType="com.spring_boot.FinalProject.model.ReviewVO">
-        select o.ordNo, r.reviewId, s.stayName, r.contents, r.point, s.stayNo
+
+    <!-- 숙박펜션 세부화면 조회 기능 -->
+    <select id="selectDetailHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.StayVO">
+        SELECT *, #{period} AS period, #{count} AS count
+        FROM stay
+        WHERE stayNo = #{stayNo}
+    </select>
+
+    <!-- 숙박펜션 세부화면 조회 기능 -->
+    <select id="selectDetailRoom" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.RoomVO">
+        SELECT *
+        FROM room
+        WHERE stayNo = #{stayNo}
+    </select>
+
+    <!-- 숙박펜션 편의시설1 세부화면 조회 기능 -->
+    <select id="selectDetailFacility1" parameterType="hashmap"
+            resultType="com.spring_boot.FinalProject.model.FacilityVO">
+        SELECT *
+        FROM facilityroom
+                 JOIN facility ON facilityroom.facilityId = facility.facilityId
+        WHERE facilityroom.stayNo = #{stayNo}
+          AND facilitySort = '1'
+    </select>
+
+    <!-- 숙박펜션 편의시설2 세부화면 조회 기능 -->
+    <select id="selectDetailFacility2" parameterType="hashmap"
+            resultType="com.spring_boot.FinalProject.model.FacilityVO">
+        SELECT *
+        FROM facilityroom
+                 JOIN facility ON facilityroom.facilityId = facility.facilityId
+        WHERE facilityroom.stayNo = #{stayNo}
+          AND facilitySort = '2'
+    </select>
+
+    <!-- 숙박펜션 편의시설3 세부화면 조회 기능 -->
+    <select id="selectDetailFacility3" parameterType="hashmap"
+            resultType="com.spring_boot.FinalProject.model.FacilityVO">
+        SELECT *
+        FROM facilityroom
+                 JOIN facility ON facilityroom.facilityId = facility.facilityId
+        WHERE facilityroom.stayNo = #{stayNo}
+          AND facilitySort = '3'
+    </select>
+
+    <!-- 업체등록 이미지 -->
+    <select id="selectInsertHotelImg" parameterType="int" resultType="string">
+        SELECT serviceImg
+        FROM registration
+        WHERE regId = #{regId}
+    </select>
+
+    <!-- 나의 리뷰 -->
+    <select id="selectMyReview" parameterType="String" resultType="com.spring_boot.FinalProject.model.ReviewVO">
+        select o.ordNo, r.reviewId, s.stayName stayName, r.contents, r.point, s.stayNo
         from orderinfo o
                  left join review r on o.ordNo = r.ordNo
                  left join stay s on s.stayNo = o.stayNo
         where o.userId = #{userId}
+          and o.stayNo IS NOT NULL
     </select>
 
     <!-- 모든 리뷰 -->
-    <select id="selectAllreviews" parameterType="String" resultType="com.spring_boot.FinalProject.model.ReviewVO">
+    <select id="selectStayAllReviews" parameterType="String" resultType="com.spring_boot.FinalProject.model.ReviewVO">
         SELECT *
         FROM review
         where stayNo = #{stayNo};
     </select>
-    
+
+
     <!-- 등록 승인 업체  -->
     <select id="selectYHotel" resultType="com.spring_boot.FinalProject.model.StayVO">
-    	 SELECT *
-    	 FROM registration
-    	 WHERE approve = "Y"
+        SELECT *
+        FROM registration
+        WHERE approve = "Y"
     </select>
-    
+
     <!-- 등록 승인 업체  -->
     <select id="listtInsert" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
-    	 SELECT *
-    	 FROM registration
-    	 WHERE approve = "Y"
+        SELECT *
+        FROM registration
+        WHERE approve = "Y"
     </select>
-    
+
     <!-- 등록 숙박 상세 조회 -->
-    <select id="selectDetailInsert" parameterType="String" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
-    	SELECT * FROM registration WHERE regId = #{regId}
+    <select id="selectDetailInsert" parameterType="String"
+            resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
+        SELECT *
+        FROM registration
+        WHERE regId = #{regId}
     </select>
-    
-  	<select id="selectInsertHotel" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
-		SELECT *
-		  FROM registration
-		 WHERE regId = #{regId}   
-	</select>
-    
+
+    <select id="selectInsertHotel" parameterType="hashmap"
+            resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
+        SELECT *
+        FROM registration
+        WHERE regId = #{regId}
+    </select>
+
 </mapper>

@@ -521,6 +521,7 @@ public class UserController {
 			return "ACCESS_DENIED";
 		}
 		review.setUserId(sid);
+		System.out.println("review = " + review);
 		userService.insertReview(review);
 		return "redirect:/mypage";
 	}

@@ -10,16 +10,48 @@ public class CartVO {
     private String period;
     private int price;
     private int stayNo;
+    private int regId;
 
-    public CartVO(String period, int price, int stayNo,String userId) {
+    public static CartVO ofStay(String period, int price, int stayNo, String userId) {
+        return new CartVO(price, stayNo, userId, period);
+    }
+
+    public static CartVO ofReg(String period, int price, int regId, String userId) {
+        return new CartVO(period, price, regId, userId);
+    }
+
+
+    private CartVO(String period, int price, int regId, String userId) {
+        this.period = period;
+        this.price = price;
+        this.regId = regId;
+        this.userId = userId;
+    }
+
+    private CartVO(int price, int stayNo, String userId, String period) {
         this.period = period;
         this.price = price;
         this.stayNo = stayNo;
         this.userId = userId;
     }
 
-    
     public CartVO() {
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public int getRegId() {
+        return regId;
+    }
+
+    public void setRegId(int regId) {
+        this.regId = regId;
     }
 
     public int getCartId() {
@@ -30,7 +62,6 @@ public class CartVO {
     public int getStayNo() {
         return stayNo;
     }
-
 
 
     public void setStayNo(int stayNo) {
@@ -68,10 +99,13 @@ public class CartVO {
     @Override
     public String toString() {
         return "CartVO{" +
-                "cartId=" + cartId +
+                "userId='" + userId + '\'' +
+                ", cartId=" + cartId +
                 ", stayName='" + stayName + '\'' +
                 ", period='" + period + '\'' +
                 ", price=" + price +
+                ", stayNo=" + stayNo +
+                ", regId=" + regId +
                 '}';
     }
 }

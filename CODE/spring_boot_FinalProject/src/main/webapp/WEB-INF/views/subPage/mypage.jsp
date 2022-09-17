@@ -129,6 +129,7 @@
         <hr>
         <form class="form-group" id=reviewForm" action="/review" method="post">
             <input id="stayNo" type="hidden" name="stayNo">
+            <input id="regId" type="hidden" name="regId">
             <input id="ordNo" type="hidden" name="ordNo">
             <div class="star-rating">
                 <input type="radio"   id="5-stars" checked="checked" name="point" value="5"/>

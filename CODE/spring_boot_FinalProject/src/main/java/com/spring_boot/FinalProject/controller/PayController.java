@@ -32,6 +32,7 @@ public class PayController {
             return "ACCESS_DENIED";
         }
         List<CartVO> cartList = orderService.selectCartByUserId(sid);
+        System.out.println("cartList = " + cartList);
         model.addAttribute("count", cartList.size());
         int sum = cartList.stream().mapToInt(CartVO::getPrice).sum();
         model.addAttribute("totalPrice", new DecimalFormat("#,###").format(sum));
@@ -59,15 +60,12 @@ public class PayController {
             return "ACCESS_DENIED";
         }
         list.forEach(i->i.setUserId(sid));
-
 		try {
 			orderService.insertOrder(list);
 		} catch (Exception e) {
             e.printStackTrace();
 			return "error";
 		}
-
-
         return "success";
     }
 

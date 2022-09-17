@@ -10,6 +10,7 @@ public class OrderVO {
 	private int payment;
 	private int price;
 
+
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date payDate;
 	
@@ -17,12 +18,23 @@ public class OrderVO {
 	private String userId;
 	private String userName;
 	private String stayNo;
+
+	private String regId;
 	private String stayName;
 	private int manCnt;
 	private int petCnt;
 	private String rcvPhone;
 	
 	private int rowCnt;
+
+
+	public String getRegId() {
+		return regId;
+	}
+
+	public void setRegId(String regId) {
+		this.regId = regId;
+	}
 
 	public String getOrdNo() {
 		return ordNo;

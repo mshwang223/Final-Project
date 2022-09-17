@@ -51,7 +51,8 @@
                 <div>
                     <c:forEach items="${cartList}" var="cartList" varStatus="status">
                         <div class="item">
-                            <input type="checkbox"  data-id="${cartList.cartId}" class="deleteCheckBox" name="package" value="package1"/>
+                            <input type="checkbox" data-id="${cartList.cartId}" class="deleteCheckBox" name="package"
+                                   value="package1"/>
                             <button class="item__delete" data-id="${cartList.cartId}">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
@@ -72,11 +73,13 @@
                 </div>
             </div>
             <script>
+
                 var list = new Array();
                 <c:forEach items="${cartList}" var="cartList" varStatus="status">
                 var reservation = {
                     "price":${cartList.price},
-                    "stayNo":${cartList.stayNo}
+                    "stayNo":${cartList.stayNo},
+                    "regId":${cartList.regId}
                 };
                 list.push(reservation);
                 </c:forEach>

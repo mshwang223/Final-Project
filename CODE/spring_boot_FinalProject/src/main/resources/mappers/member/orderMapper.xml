@@ -14,45 +14,64 @@
     <!-- 장바구니 저장 -->
     <insert id="insertCart" parameterType="com.spring_boot.FinalProject.model.CartVO">
         INSERT into cart
-            (userId, stayNo, period, price, cartQty)
-        VALUES (#{userId}, #{stayNo}, #{period}, #{price}, 1)
+        <if test='regId != 0'>
+            (userId, period, price, cartQty,regId)
+            VALUES (#{userId}, #{period}, #{price}, 1,#{regId})
+        </if>
+        <if test='stayNo != 0'>
+            (userId, period, price, cartQty,stayNo)
+            VALUES (#{userId}, #{period}, #{price}, 1,#{stayNo})
+        </if>
+
     </insert>
 
     <insert id="insertOrder" parameterType="java.util.List">
         INSERT into orderinfo
-        (ordQty, payment, price, payDate, stayNo,userId)
+        (ordQty, payment, price, payDate, stayNo,userId,regId)
         values
         <foreach collection="list" item="item" separator=",">
             (
-            1
-            , 1
-            , #{item.price}
-            , NOW()
-            , #{item.stayNo}
-            , #{item.userId}
+            <if test='item.stayNo != 0'>
+                1
+                , 1
+                , #{item.price}
+                , NOW()
+                , #{item.stayNo}
+                , #{item.userId}
+                ,null
+            </if>
+            <if test='item.regId != 0'>
+                1
+                , 1
+                , #{item.price}
+                , NOW()
+                ,null
+                , #{item.userId}
+                , #{item.regId}
+            </if>
             )
         </foreach>
     </insert>
 
 
     <select id="selectCartByUserId" parameterType="String" resultType="com.spring_boot.FinalProject.model.CartVO">
-        SELECT c.cartId, s.stayNo, s.stayName, c.price, c.period
+        SELECT c.cartId, s.stayNo, ifnull(s.stayName, r.name) as stayName, c.price, c.period, r.regId
         FROM cart c
                  left join stay s on c.stayNo = s.stayNo
+                 left join registration r on r.regId = c.regId
         where c.userId = #{userId}
     </select>
-     
+
     <!-- 장바구니 삭제 -->
     <delete id="deleteCarts" parameterType="java.util.List">
         DELETE FROM cart
         <where>
             <foreach collection="list" item="cartId" open="" close="" separator="OR">
-                 cartId = #{cartId}
+                cartId = #{cartId}
             </foreach>
         </where>
 
     </delete>
-
 
 
 </mapper>

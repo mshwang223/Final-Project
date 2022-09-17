@@ -43,7 +43,8 @@ public interface IHotelDAO {
     List<ReviewVO> selectMyReview(String userId);
     
     // 전체 리뷰
-    List<ReviewVO> selectAllreviews(String stayNo);
+    List<ReviewVO> selectStayAllReviews(String stayNo);
+
     
     //등록 승인 업체
     ArrayList<InsertHotelVO> listtInsert();

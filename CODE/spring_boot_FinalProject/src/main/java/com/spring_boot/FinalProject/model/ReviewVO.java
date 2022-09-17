@@ -17,6 +17,9 @@ public class ReviewVO {
 
 	private LocalDate createDate;
 
+
+
+
 	public LocalDate getCreateDate() {
 		return createDate;
 	}
@@ -82,6 +85,7 @@ public class ReviewVO {
 		this.point = point;
 	}
 
+
 	@Override
 	public String toString() {
 		return "ReviewVO{" +
@@ -92,7 +96,7 @@ public class ReviewVO {
 				", point=" + point +
 				", stayNo=" + stayNo +
 				", stayName='" + stayName + '\'' +
-				",  Property [createdDate] not found on type [com.spring_boot.FinalProject.model.ReviewVO]=" + createDate +
+				", createDate=" + createDate +
 				'}';
 	}
 }
