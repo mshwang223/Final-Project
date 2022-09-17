@@ -11,6 +11,7 @@ response.setDateHeader("Expires",0);
 if (request.getProtocol().equals("HTTP/1.1"))  
         response.setHeader("Cache-Control", "no-cache");  
 %>
+
 <!DOCTYPE html>
 <html>
 	<head>

@@ -54,6 +54,7 @@ public class HotelController {
 	OrderService orderService;
 	
 	
+	
 	// 업체등록
 	@ResponseBody
 	@RequestMapping("/registerHotel")

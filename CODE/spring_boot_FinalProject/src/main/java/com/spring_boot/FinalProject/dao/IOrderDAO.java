@@ -18,6 +18,7 @@ public interface IOrderDAO {
 	
 	  void insertOrder(List<OrderVO> orderVo);
 
+	  
 	 //장바구니 삭제
     void deleteCarts(ArrayList<Long> id);
 

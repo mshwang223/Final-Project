@@ -69,6 +69,7 @@ $(document).ready(function(){
  		// 기본 기능 중단
  		event.preventDefault();
  		
+ 		
  		// 유효성 체크
  		if(!validate()) return false;
  		

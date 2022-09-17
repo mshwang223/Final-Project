@@ -97,7 +97,7 @@
                 </div>
             </div>
             <br>
-            <div class="wented_title"><p>이용한 패키지</p>
+            <div class="wented_title"><p>찜한 숙소</p>
                 <br></div>
             <div class="wented_hotel_wrap">
                 <div class="wented_hotel_container">
