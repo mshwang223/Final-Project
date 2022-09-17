@@ -182,13 +182,14 @@ $(document).ready(function(){
 		});
 	}
 	
+	
 	// 챗봇
 	$('#chatBot').click(function(){
-		$('.chatbot_box').css('display', 'block');
-		if($('.chatbot_box').css('display', 'block') == true){
-			$('.chatbot_box').hide();
-		}else{
+		//$('.chatbot_box').css('display', 'block');
+		if($('chatbot_box').css('display', 'none')){
 			$('.chatbot_box').show();
+		}else{
+			$('.chatbot_box').hide();
 		}
 	});
 	

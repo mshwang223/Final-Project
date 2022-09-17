@@ -36,7 +36,7 @@
 			dataType: "text",
 			success: function(result){
 				
-				$('#chattingBox').append('<div id="resultBox"><span id="in"><span><img src="/images/챗봇강아지.png"></span><br><span class="result">'+result+'</span></span></div><br>');
+				$('#chattingBox').append('<div id="resultBox"><span id="in"><span><img src="/images/chatbot2.png"></span><br><span class="result">'+result+'</span></span></div><br>');
 	            $('#chattingBox').scrollTop($('#chattingBox')[0].scrollHeight);
 	             
 	         
