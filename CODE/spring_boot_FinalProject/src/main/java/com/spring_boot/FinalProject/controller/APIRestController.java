@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.spring_boot.FinalProject.model.UserVO;
+import com.spring_boot.FinalProject.service.ChatbotService;
 import com.spring_boot.FinalProject.service.OCRService;
 import com.spring_boot.FinalProject.service.UserService;
 
@@ -77,4 +78,13 @@ public class APIRestController {
 			return "SUCCESS";
 		}
 	}
+	
+	// chatbot api
+	@RequestMapping("/petmilyChatbot")
+	public String viewChatbot(@RequestParam String message) {
+		return ChatbotService.main(message);
+	}
+	
 }
+
+

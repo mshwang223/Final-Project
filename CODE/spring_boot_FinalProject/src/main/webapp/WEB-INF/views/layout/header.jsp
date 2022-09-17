@@ -39,7 +39,7 @@
 	<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 	<script defer src="<c:url value='/js/modal.js'/>"></script>
 	<script defer src="<c:url value='/js/modal-move.js'/>"></script>
-	
+	<script defer src="<c:url value='/js/chatbot.js'/>"></script>
 	<script src="<c:url value='/js/header.js'/>"></script>
 	
 
