@@ -590,7 +590,7 @@ header .login_box > .dropdown > span.loginForm:hover{
 	border-radius: 5px;
 	background: #fff;
 	padding: 10px 5px;
-	height: 60px;
+	height: 100%;
 	word-break: break-all;
 	display: block;
 	
