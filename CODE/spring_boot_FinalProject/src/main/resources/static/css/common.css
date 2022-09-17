@@ -551,6 +551,7 @@ header .login_box > .dropdown > span.loginForm:hover{
 	height: 500px;
 	background-color: #ffb7ff;
 	padding: 15px 15px; 
+	overflow-y: auto;
 }
 .chat_form{
 	line-height: 0;
@@ -586,10 +587,13 @@ header .login_box > .dropdown > span.loginForm:hover{
 }
 
 .result{
-	border-radius: 10px;
+	border-radius: 5px;
 	background: #fff;
 	padding: 10px 5px;
 	height: 60px;
+	word-break: break-all;
+	display: block;
+	
 }
 
 #resultBox img{

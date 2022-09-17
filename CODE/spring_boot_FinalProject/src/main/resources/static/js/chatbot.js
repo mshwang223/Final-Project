@@ -21,6 +21,7 @@
        $('#chattingBox').append('<div class="msgBox send"><span id="in"><span>'+$('#message').val()+'</span></span></div><br>');
        
        		chatbotMsg();
+       		$('#message').val('');
 	}); // submit 끝
 
 
@@ -36,7 +37,7 @@
 			success: function(result){
 				
 				$('#chattingBox').append('<div id="resultBox"><span id="in"><span><img src="/images/챗봇강아지.png"></span><br><span class="result">'+result+'</span></span></div><br>');
-	            $('#chattingBox').scrollTop($('#chatBox')[0].scrollHeight);
+	            $('#chattingBox').scrollTop($('#chattingBox')[0].scrollHeight);
 	             
 	         
 	           $('#message').val("");
