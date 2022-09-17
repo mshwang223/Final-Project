@@ -457,7 +457,56 @@ header .login_box > .dropdown > span.loginForm:hover{
   cursor: pointer;
 }
 
-/* 챗봇 */
+
+
+/* 탑버튼 */
+.top_btn{
+  width: 75px;
+  height: 70px;
+  float: right;
+  position: fixed;
+  right: 80px;
+  bottom: 110px;
+  cursor: pointer;
+  filter:  hue-rotate(320deg);
+}
+
+/* 스크롤 이동 시 header 이동 */
+.header-move {
+  position: fixed;
+  top: 0;
+  margin-top: 0;
+  
+  width: 100%;
+  height: 95px;
+  
+  background: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+  
+  z-index: 50;
+}
+
+.headerDiv-move {
+  margin-top: -105px;
+}
+
+/*  챗봇 chatbot */
+/* #chatHeader {padding: 10px 15px; border-bottom: 1px solid #95a6b4;}
+
+#btnClose {border: none; background: none; float: right;}  
+
+#message {width: 440px;}
+
+#btnSubmit {float: right; background:#eeeeee; height: 28px; padding-right:0;}
+
+.msgBox  span {padding:3px 5px; word-break:break-all; display:block; 
+                      max-width:300px; margin-bottom: 10px; border-radius: 10px;}
+                      
+.msgBox.send  span {background:#fef01b; float:right; }
+
+
+.msgBox.receive  span {background:#ffffff; float:left; } */
+
 .chat_bot{
 	width:80px;
 	height: 75px;
@@ -502,6 +551,7 @@ header .login_box > .dropdown > span.loginForm:hover{
 	height: 500px;
 	background-color: #ffb7ff;
 	padding: 15px 15px; 
+	overflow-y: auto;
 }
 .chat_form{
 	line-height: 0;
@@ -527,33 +577,26 @@ header .login_box > .dropdown > span.loginForm:hover{
 	border-bottom-right-radius: 10px;
 }
 
-/* 탑버튼 */
-.top_btn{
-  width: 75px;
-  height: 70px;
-  float: right;
-  position: fixed;
-  right: 80px;
-  bottom: 110px;
-  cursor: pointer;
-  filter:  hue-rotate(320deg);
+.msgBox  span {padding:3px 5px; word-break:break-all; display:block; 
+                      max-width:300px; margin-bottom: 10px; border-radius: 10px;}
+                      
+.msgBox.send  span {background:#fef01b; float:right; }
+
+#resultBox{
+	margin: 5px 0;
 }
 
-/* 스크롤 이동 시 header 이동 */
-.header-move {
-  position: fixed;
-  top: 0;
-  margin-top: 0;
-  
-  width: 100%;
-  height: 95px;
-  
-  background: #f5f5f5;
-  border-bottom: 2px solid #ddd;
-  
-  z-index: 50;
+.result{
+	border-radius: 5px;
+	background: #fff;
+	padding: 10px 5px;
+	height: 100%;
+	word-break: break-all;
+	display: block;
+	
 }
 
-.headerDiv-move {
-  margin-top: -105px;
+#resultBox img{
+	width: 50px;
+	height: 50px;
 }
