@@ -45,16 +45,23 @@ $(document).ready(function(){
 	}); 
 
 	// 인원 버튼 클릭할 때
-  let personCount = parseInt($('#personCount').text());
-  let petCount = parseInt($('#petCount').text());
-
+let personCount = parseInt($('#personCount').text());
+let petCount = parseInt($('#petCount').text());
+let maxManCnt = $('#maxManCnt');   // 최대 인원수
+let maxPetCnt = $('#maxPetCnt'); 	// 최대 반려동물 수
+  
   // 성인 + 버튼 클릭
   $('#personPlusBtn').click(function() {
     personCount++;
     // 1명부터 -버튼 활성화
     if(personCount > 0){
-      $('#personMinusBtn').addClass('btn_count_active');
-      $('#personMinusBtn').attr('href', '#');
+      $('#personMinusBtn').addClass('btn_count_active'); 
+      
+       if(maxManCnt.val() <= personCount){
+		$('#personPlusBtn').removeClass('btn_count_active');
+		personCount = maxManCnt.val();
+ 	  }
+ 	  	
     }
     $('#personCount').text(personCount);
     $('#infoCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
@@ -63,7 +70,12 @@ $(document).ready(function(){
 	// 성인 - 버튼 클릭
 	$('#personMinusBtn').click(function(){
 		personCount--;
-		// 인원이 1 이 되면 - 버튼 비활성
+		
+		if(maxManCnt.val() >= personCount){
+			$('#personPlusBtn').addClass('btn_count_active');
+		}
+		
+		// 인원이 0이 되면 비활성
 		if(personCount == 0){
 			$('#personMinusBtn').removeClass('btn_count_active');
 		}else if(personCount < 0){
@@ -79,6 +91,11 @@ $(document).ready(function(){
 		// 2마리 부터 - 버튼 활성화
 		if(petCount>1){
 			$('#petMinusBtn').addClass('btn_count_active');
+			
+			if(maxPetCnt.val() <= petCount){
+				$('#petPlusBtn').removeClass('btn_count_active');
+				petCount = maxPetCnt.val();
+		 	  }
 		}
 		$('#petCount').text(petCount);
 		$('#infoCount').attr('value', '성인'+personCount+', 반려동물'+petCount);
@@ -92,6 +109,11 @@ $(document).ready(function(){
 	// 반려동물 - 버튼 클릭
 	$('#petMinusBtn').click(function(){
 		petCount--;
+		
+		if(maxPetCnt.val() >= petCount){
+			$('#petPlusBtn').addClass('btn_count_active');
+		}
+		
 		// 반려동물이 1 되면 - 버튼 비활성화
 		if(petCount == 1){
 			$('#petMinusBtn').removeClass('btn_count_active');
@@ -206,6 +228,7 @@ $(document).ready(function(){
 				$('html, body').css({'overflow': 'visible', 'height': '100%'});
 		    }
    	});
+   	
 
 	// naver geocode
 	var coordinate = $("#coordinate").val().split(",");

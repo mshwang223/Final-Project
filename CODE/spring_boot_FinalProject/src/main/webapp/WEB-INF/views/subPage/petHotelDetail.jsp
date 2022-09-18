@@ -249,16 +249,14 @@
 		                    </div>
 		                    <div class="checkout">
 		                        <div>체크아웃</div>
-		                        <input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off"
-		                               spellcheck="false" value="${fn:substring(map.period,21,29) }">
+		                        <input type="text" id="rangepicker2" class="stay_date" name="daterange" autocomplete="off" spellcheck="false" value="${fn:substring(map.period,21,29) }">
 		                    </div>
 		                    <div class="total_count">
 		                        <span>인원수 | 반려동물 수</span>
-		
+								
 		                        <form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv"/>">
 		                        	<input type="hidden" name="chk" value="2">
-		                            <input type="text" class="info_content_count" id="infoCount" name="countAll"
-		                                   spellcheck="false" value="${map.count}">
+		                            <input type="text" class="info_content_count" id="infoCount" name="countAll" autocomplete="off" spellcheck="false" value="${map.count}">
 		                            <input type="hidden" id="roomType" name="roomType" value=""/>
 		                            <input type="hidden" id="rPrice" name="rPrice" value="0"/>
 		                            <input type="hidden" id="rangepicker" name="daterange" value="${map.period}"/>
@@ -278,8 +276,8 @@
 		                                <div class="box_plus_minus">
 		                                    <span id="personMinusBtn" class="btn_popup_count">-</span>
 		                                    <span id="personCount" class="popup_count_person">0</span>
-		                                    <span id="personPlusBtn"
-		                                          class="btn_popup_count btn_adult_plus btn_count_active">+</span>
+		                                    <span id="personPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</span>
+		                                    <input type="hidden" id="maxManCnt" value="${list.maxManCnt }">
 		                                </div>
 		                            </div>
 		                            <div class="div_person_count">
@@ -291,6 +289,7 @@
 		                                    <span id="petMinusBtn" class="btn_popup_count">-</span>
 		                                    <span id="petCount" class="popup_count_person">1</span>
 		                                    <span id="petPlusBtn" class="btn_popup_count btn_count_active">+</span>
+											<input type="hidden" id="maxPetCnt" value="${list.maxPetCnt }">
 		                                </div>
 		                            </div>
 		                        </div>
@@ -501,8 +500,7 @@
 		
 		                        <form id="rsvForm" name="rsvForm" method="post" action="<c:url value="/petHotelRsv/${insertHotel.regId }"/>">
 		                        	<input type="hidden" name="chk" value="1">
-		                            <input type="text" class="info_content_count" id="infoCount" name="countAll"
-		                                   spellcheck="false" value="${map.count}">
+		                            <input type="text" class="info_content_count" id="infoCount" name="countAll" autocomplete="off" spellcheck="false" value="${map.count}">
 		                            <input type="hidden" id="roomType" name="roomType" value=""/>
 		                            <input type="hidden" id="rPrice" name="rPrice" value="0"/>
 		                            <input type="hidden" id="rangepicker" name="daterange" value=""/>
@@ -522,8 +520,8 @@
 		                                <div class="box_plus_minus">
 		                                    <span id="personMinusBtn" class="btn_popup_count">-</span>
 		                                    <span id="personCount" class="popup_count_person">0</span>
-		                                    <span id="personPlusBtn"
-		                                          class="btn_popup_count btn_adult_plus btn_count_active">+</span>
+		                                    <span id="personPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</span>
+		                                    <input type="hidden" id="maxManCnt" value="${insertHotel.maxManCnt }">
 		                                </div>
 		                            </div>
 		                            <div class="div_person_count">
@@ -535,6 +533,7 @@
 		                                    <span id="petMinusBtn" class="btn_popup_count">-</span>
 		                                    <span id="petCount" class="popup_count_person">1</span>
 		                                    <span id="petPlusBtn" class="btn_popup_count btn_count_active">+</span>
+		                                    <input type="hidden" id="maxPetCnt" value="${insertHotel.maxPetCnt }">
 		                                </div>
 		                            </div>
 		                        </div>

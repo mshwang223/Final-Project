@@ -217,9 +217,8 @@ span.spanWidth {
 
 /* 숙박타입 */
 .info_content_box3{
-  height: 670px;
   border-bottom: 1px solid #ddd;
-  padding: 30px 0 0 0;
+  padding: 30px 0 55px 0;
 }
 
 .info_content_box3 > div:first-child{
