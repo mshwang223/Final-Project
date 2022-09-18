@@ -577,10 +577,20 @@ header .login_box > .dropdown > span.loginForm:hover{
 	border-bottom-right-radius: 10px;
 }
 
-.msgBox  span {padding:3px 5px; word-break:break-all; display:block; 
-                      max-width:300px; margin-bottom: 10px; border-radius: 10px;}
+.msgBox  span {
+	padding:3px 5px;
+	word-break:break-all; 
+	display:block; 
+    max-width:300px; 
+    margin-bottom: 10px; 
+    border-radius: 10px;
+}
                       
-.msgBox.send  span {background:#fef01b; float:right; }
+.msgBox.send  span {
+	background:#fef01b; 
+	float:right; 
+	border-radius: 5px;
+}
 
 #resultBox{
 	margin: 5px 0;
@@ -590,6 +600,7 @@ header .login_box > .dropdown > span.loginForm:hover{
 	border-radius: 5px;
 	background: #fff;
 	padding: 10px 5px;
+	width: 300px;
 	height: 100%;
 	word-break: break-all;
 	display: block;
@@ -599,4 +610,19 @@ header .login_box > .dropdown > span.loginForm:hover{
 #resultBox img{
 	width: 50px;
 	height: 50px;
+}
+
+/* 스크롤바 커스텀 */
+.chatting_box::-webkit-scrollbar{
+	width: 6px;
+}
+
+.chatting_box::-webkit-scrollbar-thumb {
+    height: 20%; 
+    background: #f196f1; 
+    border-radius: 10px;
+}
+
+.chatting_box::-webkit-scrollbar-track {
+    background: #d9d9d9;
 }
