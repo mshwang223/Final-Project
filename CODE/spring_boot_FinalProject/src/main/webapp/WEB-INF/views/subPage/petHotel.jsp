@@ -411,7 +411,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<div id="chattingBox" class="chatting_box"></div>
 			<div>
 				<form class="chat_form" id="chatForm" name="chatForm">
-					<input type="text" class="input_message" id="message" name="message" size="30"  placeholder="궁금한 사항을 물어봐주세요"/>
+					<input type="text" class="input_message" id="message" name="message" size="30" autocomplete="off" placeholder="궁금한 사항을 물어봐주세요"/>
 					<input type="submit" class="send_text" value="전송">
 				</form>
 			</div>

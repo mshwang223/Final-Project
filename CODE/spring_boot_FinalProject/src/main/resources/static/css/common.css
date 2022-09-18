@@ -575,6 +575,7 @@ header .login_box > .dropdown > span.loginForm:hover{
 	background-color: #e8e8e8;
 	border: none;
 	border-bottom-right-radius: 10px;
+	cursor: pointer
 }
 
 .msgBox  span {
@@ -582,7 +583,6 @@ header .login_box > .dropdown > span.loginForm:hover{
 	word-break:break-all; 
 	display:block; 
     max-width:300px; 
-    margin-bottom: 10px; 
     border-radius: 10px;
 }
                       

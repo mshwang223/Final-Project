@@ -180,7 +180,7 @@ let maxPetCnt = $('#maxPetCnt'); 	// 최대 반려동물 수
 			alert("날짜를 입력해 주세요");
 			return false;
 		}else if($('.info_content_count').val() == ""){
-			alert("인원수를 입력해주세요");
+			alert("인원수와 반려동물 수를 선택해주세요");
 			return false;		
 		}else{
 			$("#rsvForm").submit();

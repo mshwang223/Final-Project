@@ -14,7 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/adminNotice.css'/>">
 		
-		<script src="<c:url value='js/adminInsertHotel.js'/>"></script>
+		<script src="<c:url value='/js/adminInsertHotel.js'/>"></script>
 	</head>
 	
 	<body>
@@ -33,35 +33,41 @@
 							<span># 등록관리</span>
 						</div>
 					</div>	
-					<div>
-						<table class="search-table">
-							<tr>
-								<td></td>
-								<td>
-									<div class="dropdown-box">
-										<div id="dpBox-name" class="dpBox-div">전체</div>
-										<div class="dpBox-div">▼</div>
-									</div>
-									<ul class="dropdown-contents">
-										<li id="dp-all">전체</li>
-										<li id="dp-title">제목</li>
-										<li id="dp-contents">내용</li>
-									</ul>
-									<div class="search-box">
-										<div>
-											<input type="text" class="text_search" placeholder="검색어를 입력하세요.">
-											<button class="search-button"><img src="images/search.png"></button>
+					<form method="post" id="userFrm" class="userFrm" name="userFrm" action="<c:url value="/adminInsertHotel/0"/>">
+						<div>
+							<table class="search-table">
+								<tr>
+									<td></td>
+									<td>
+										<div class="dropdown-box">
+											<div id="dpBox-name" class="dpBox-div">전체</div>
+											<div class="dpBox-div">▼</div>
 										</div>
-									</div>
-								</td>
-							</tr>
-						</table>
-					</div>
+										<ul class="dropdown-contents">
+											<li id="dp-all">전체</li>
+											<li id="dp-title">제목</li>
+											<li id="dp-contents">내용</li>
+										</ul>
+										<div class="search-box">
+											<div>
+												<input type="text" class="text_search" name="text_search" placeholder="검색어를 입력하세요.">
+												<button class="search-button"><img src="/images/search.png"></button>
+											</div>
+										</div>
+										<button type="button" id="adminRegDel" class="btnAdmin del">삭제</button>
+									</td>
+								</tr>
+							</table>
+						</div>	
+					</form>
 					<div class="table-box">
 						<table>
 							<thead>
 								<tr>
 							      	<th class="num">번호</th>
+							      	<th class="checkBox">
+							      		전체 <input type="checkBox" id="allCheck" />
+							      	</th>
 							      	<th>등록업체</th>
 							     	<th class="author">사용자ID</th>
 							      	<th class="date">등록일</th>
@@ -69,9 +75,10 @@
 							    </tr>
 							</thead>
 							<tbody>
-								<c:forEach var="regList" items="${regList }"  begin="0" end="9">
+								<c:forEach var="regList" items="${lists }"  begin="0" end="9">
 								    <tr>
 								      	<td>${regList.regId}</td>
+								      	<td><input type="checkBox" class="agree_subcheck" value="<c:url value="${regList.regId}"/>" /></td>
 								      	<td class="title"><a href="<c:url value='/adminInsertDetail/${regList.regId }'/>">${regList.name}</a></td>
 								      	<td>${regList.userId}</td>
 								      	<td><fmt:formatDate value="${regList.createDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
@@ -83,39 +90,42 @@
 						</table>
 					</div>
 					<div class="paging-box">
+						<input type="hidden" id="flag" value="${sessionScope.flag}" />
+						<input type="hidden" id="maxPage" value="${maxPageNum}" />
 						<ul>
-							<li class="firstPager">
-								<a href="" title="첫 페이지로 이동하기">
-									<<
-								</a>
-							</li>
-							<li class="prevPager">
-								<a href="" title="이전 페이지로 이동하기">
-									<
-								</a>
-							</li>
+							<c:if test="${maxPageNum ne 0}">
+								<c:if test="${maxPageNum ne 1}">
+									<li class="firstPager">
+										<div title="첫 페이지로 이동하기">
+											<<
+										</div>
+									</li>
+									<li class="prevPager">
+										<div title="이전 페이지로 이동하기">
+											<
+										</div>
+									</li>
+								</c:if>
+	
+								<c:forEach var="i" begin="1" end="${maxPageNum}">
+								<li>
+									<div class="active" value="${i}">${i}</div>
+								</li>
+								</c:forEach>
 							
-							<li><a href="" class="active">1</a></li>
-							<li><a href="" class="active">2</a></li>
-							<li><a href="" class="active">3</a></li>
-							<li><a href="" class="active">4</a></li>
-							<li><a href="" class="active">5</a></li>
-							<li><a href="" class="active">6</a></li>
-							<li><a href="" class="active">7</a></li>
-							<li><a href="" class="active">8</a></li>
-							<li><a href="" class="active">9</a></li>
-							<li><a href="" class="active">10</a></li>
-							
-							<li class="nextPager">
-								<a href="" title="다음 페이지로 이동하기">
-									>
-								</a>
-							</li>
-							<li class="lastPager">
-								<a href="" title="마지막 페이지로 이동하기">
-									>>
-								</a>
-							</li>
+								<c:if test="${maxPageNum ne 1}">
+									<li class="nextPager">
+										<div title="다음 페이지로 이동하기">
+											>
+										</div>
+									</li>
+									<li class="lastPager">
+										<div title="마지막 페이지로 이동하기">
+											>>
+										</div>
+									</li>
+								</c:if>
+							</c:if>
 						</ul>
 					</div>
 				</div>

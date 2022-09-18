@@ -42,8 +42,8 @@ public interface IBoardService {
 	// 문의내역 저장
 	void updateContact(HashMap<String, Object> map);
 	
-	//등록업체 조회
-	ArrayList<InsertHotelVO> selectRegistration();
+	//등록업체 조회(등록업체 명)
+	ArrayList<InsertHotelVO> selectRegistration(HashMap<String, Object> map);
 	
 	// 업체 디테일 조회
 	InsertHotelVO detailRegistration(int regId);
@@ -134,4 +134,8 @@ public interface IBoardService {
 	
 	// 관리자 - 펫등록증 연장
 	void extendAdminPet(String petId);
+	
+	// 관리자 - 등록업체 삭제
+	void deleteAdminReg(HashMap<String, Object> map);	
+	
 }

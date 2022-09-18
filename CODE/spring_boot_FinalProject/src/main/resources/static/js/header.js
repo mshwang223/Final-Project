@@ -6,6 +6,8 @@
 
 $(document).ready(function(){
 
+	$('input').attr("autocomplete", "off");
+
 	// 메뉴 따라오기
 	$(window).scroll(function() {
 		if($(this).scrollTop() > 50) {
