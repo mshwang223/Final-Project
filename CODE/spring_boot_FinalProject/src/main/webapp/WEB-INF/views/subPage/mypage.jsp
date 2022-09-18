@@ -81,7 +81,7 @@
 
                 <button class="accordion">나의 리뷰<span class="accordion__arrow">></span></button>
                 <div class="panel">
-                    <p>aaaaaaaaaaa</p>
+                    <p>aaa</p>
                 </div>
 
                 <button class="accordion">이용 내역<span class="accordion__arrow">></span></button>
