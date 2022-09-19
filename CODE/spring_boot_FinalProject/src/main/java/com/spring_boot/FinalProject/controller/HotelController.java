@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.spring_boot.FinalProject.model.CartVO;
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.LikeVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.RoomVO;
@@ -142,6 +143,24 @@ public class HotelController {
         hotelService.insertHotel(vo);
 
         return "success";
+    }
+    
+    // 찜하기
+    @ResponseBody
+    @RequestMapping("/likeHotel")
+    public String likeHotel(@RequestParam HashMap<String, Object>map, Model model)throws IOException {
+    	
+    	String userId = (String)map.get("userId");
+    	String stayNo = (String)map.get("likeStayNo");
+    	String regId = (String)map.get("regId");
+    	
+    	LikeVO likeVo = new LikeVO();
+    	likeVo.setUserId(userId);
+    	likeVo.setStayNo(stayNo);
+    	likeVo.setRegId(regId);
+    	
+    	hotelService.likeHotel(likeVo);
+    	return "success";
     }
 
     // 숙박예약 가기(검색)
