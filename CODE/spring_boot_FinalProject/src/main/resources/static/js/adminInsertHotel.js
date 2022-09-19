@@ -1,8 +1,7 @@
 $(document).ready(function(){
 	
-    // 초기화
-	$("#dpBox-name").text("전체");
-
+   	var flag = $("#flag").val();
+   	$("div.active").eq(flag).addClass("aSelected");
    	
    	// 페이지 번호 버튼 클릭했을 때
    	$(".active").click(function(e) {
