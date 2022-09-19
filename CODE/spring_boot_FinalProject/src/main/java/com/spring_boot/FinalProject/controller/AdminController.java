@@ -492,10 +492,7 @@ public class AdminController {
 	
 	// 관리자 - 결제내역 세부화면 페이지
 	@RequestMapping("/adminPayDetail/{ordNo}")
-	public String viewAdminPayDetail(@PathVariable String ordNo, 
-										 HashMap<String, Object> map, Model model) {
-		
-		map.put("ordNo", ordNo);
+	public String viewAdminPayDetail(@PathVariable String ordNo, Model model) {
 		
 		OrderVO vo = boardService.payDetailView(ordNo);
 		

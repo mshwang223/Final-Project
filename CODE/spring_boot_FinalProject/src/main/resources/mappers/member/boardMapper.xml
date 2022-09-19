@@ -205,10 +205,10 @@
 	
   	<!-- 관리자 - 결재내역 세부 내용 조회 -->
   	<select id="payDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.OrderVO">
-		SELECT i.*, u.userName, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
+		SELECT *, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
 		  	   (SELECT stayAddress FROM stay WHERE stayNo = i.stayNo) AS address
 		  FROM orderinfo i
-		  JOIN orderProduct p ON p.userId = i.userId
+		  JOIN orderproduct p ON p.userId = i.userId
 		  JOIN user u ON u.userId = p.userId
 		 WHERE i.ordNo = #{ordNo}		
   	</select>
