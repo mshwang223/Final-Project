@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.LikeVO;
 import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
@@ -54,4 +55,7 @@ public interface IHotelService {
     
 	// 숙박펜션 세부화면 조회 기능
 	InsertHotelVO selectInsertHotel(HashMap<String, Object> map);
+	
+	// 찜하기
+	void likeHotel(LikeVO vo);
 }

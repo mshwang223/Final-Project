@@ -31,26 +31,26 @@ searchValueClick();
 
 
 // 찜하기 눌렀을 때
-let likeBtn = document.getElementsByClassName("like_btn");
-let heartCount = 1;
+//let likeBtn = document.getElementsByClassName("like_btn");
+//let heartCount = 1;
 
 
-for(let i = 0; i < likeBtn.length; i++){
+//for(let i = 0; i < likeBtn.length; i++){
 
-  likeBtn[i].addEventListener('click', (e)=>{
+//  likeBtn[i].addEventListener('click', (e)=>{
 
-    heartCount++;
+//    heartCount++;
 
-    if(heartCount % 2 == 0){
-      likeBtn[i].src = "/images/red_heart.png";
-    }else{
-      likeBtn[i].src = "/images/heart.png";
-    }
+//    if(heartCount % 2 == 0){
+  //    likeBtn[i].src = "/images/red_heart.png";
+    //}else{
+      //likeBtn[i].src = "/images/heart.png";
+    //}
     
-    e.stopPropagation();
+   // e.stopPropagation();
     
-  });
-}
+//  });
+//}
 
 // option 넓이
 /*let option = document.querySelectorAll(".option_pop span");
@@ -298,16 +298,57 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
         if(busanIndex == 0)
             $('.busan_prev').css("display","none");
     });
-	
+    
+    // 찜하기
+	$(".like_btn").click(function(e){
+		let likeBtn = $('.like_btn').val();
+		let heartCount = 1;
+		
+		let like = [];
+		$('.like_btn').each(function(index, item){
+			like.push($(this).val());
+		});
+  		
+
+		e.stopPropagation();
+		
+			for(let i = 0; i<like.length; i++){
+			like[i].click(function(e){
+			
+				heartCount++;
+				if(heartCount % 2 == 0){
+					like[i].src = "/images/red_heart.png";
+				}else{
+					like[i].src = "/images/heart.png";
+				}
+				e.stopPropagation();
+			});
+			
+		}
+	});
 }); //document.ready 끝
 
+// 찜하기 눌렀을 때
+//let likeBtn = document.getElementsByClassName("like_btn");
+//let heartCount = 1;
 
 
-//옵션 삭제 로드 이후 동적으로 생성
-/*$(document).on('click', '.option_close', function(e){
-	$(this).closest('.added_option').remove();
-		e.preventDefault();
-});*/
+//for(let i = 0; i < likeBtn.length; i++){
+
+//  likeBtn[i].addEventListener('click', (e)=>{
+
+//    heartCount++;
+
+//    if(heartCount % 2 == 0){
+  //    likeBtn[i].src = "/images/red_heart.png";
+    //}else{
+      //likeBtn[i].src = "/images/heart.png";
+    //}
+    
+   // e.stopPropagation();
+    
+//  });
+//}
 
 
 

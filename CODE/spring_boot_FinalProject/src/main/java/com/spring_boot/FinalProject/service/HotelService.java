@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.spring_boot.FinalProject.dao.IHotelDAO;
 import com.spring_boot.FinalProject.model.FacilityVO;
 import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.LikeVO;
 import com.spring_boot.FinalProject.model.ReviewVO;
 import com.spring_boot.FinalProject.model.RoomVO;
 import com.spring_boot.FinalProject.model.StayVO;
@@ -104,5 +105,10 @@ public class HotelService implements IHotelService {
 	@Override
 	public InsertHotelVO selectInsertHotel(HashMap<String, Object> map) {
 		return dao.selectInsertHotel(map);
+	}
+
+	@Override
+	public void likeHotel(LikeVO vo) {
+		dao.likeHotel(vo);
 	}
 }
