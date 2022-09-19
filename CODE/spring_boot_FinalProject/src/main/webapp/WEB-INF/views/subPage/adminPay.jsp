@@ -86,7 +86,7 @@
 							      	<th>상품명</th>
 							     	<th class="author">가격</th>
 							      	<th class="author">결제수단</th>
-							      	<th class="date">결재일</th>
+							      	<th class="date">결제일</th>
 							    </tr>
 							</thead>
 							<tbody>
