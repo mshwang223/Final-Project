@@ -615,16 +615,6 @@ public class AdminController {
 		return "SUCCESS";
 	}
 	
-	// 관리자-업체관리 조회
-	@RequestMapping("/adminInsertHotel")
-	public String viewAdminInsertHotel(Model model) {
-		
-		ArrayList <InsertHotelVO> regList = boardService.selectRegistration();
-		model.addAttribute("regList", regList);
-		
-		return "subPage/adminInsertHotel";
-	}	
-	
 	// 관리자-업체관리 세부화면 페이지
 	@RequestMapping("/adminInsertDetail/{regId}")
 	public String viewAdminInsertDetail(@PathVariable int regId, Model model) {
@@ -670,12 +660,11 @@ public class AdminController {
 	// 등록숙박 승인
 	@RequestMapping("/adminApproveHotel")
 	public String adminApproveHotel(@RequestParam HashMap<String, Object> map, Model model) {
+		
 		boardService.approveHotel((String) map.get("name"), (String) map.get("approve"));
 		
-		ArrayList <InsertHotelVO> regList = boardService.selectRegistration();
-		model.addAttribute("regList", regList);
 		
-		return "subPage/adminInsertHotel";
+		return "redirect:/adminInsertHotel/0";
 	}
 	
 	// 관리자 - 서비스 페이지
@@ -1033,4 +1022,69 @@ public class AdminController {
 		return petCode;
 	}
 	
+	
+	// 관리자-업체관리 조회
+	@RequestMapping("/adminInsertHotel/{num}")
+	public String adminInsertHotel(@PathVariable String num, 
+							   @RequestParam HashMap<String, Object> map, 
+							   HttpSession session, Model model) {
+		
+		String text_search = "";	
+
+		if(map.get("text_search") == null) 
+			text_search = "";
+		else
+			text_search = (String)map.get("text_search");
+		
+		System.out.println(text_search);
+		
+		ArrayList<InsertHotelVO> lists = null;
+		
+		// 페이징 초기값
+		int pageNum = Integer.parseInt(num) * 10;
+		map.put("pageNum", pageNum);
+		
+	
+		if(text_search.equals("") || text_search.length() == 0) {
+			map.put("title", "%");
+		} else {
+			map.put("title", text_search);
+		}
+		
+		lists = boardService.selectRegistration(map);
+			
+
+		if(!lists.toString().equals("[]")) {
+		
+			// 페이징 계산
+			int maxPageNum = (int)Math.ceil((double)lists.get(0).getRowCnt() / 10);
+	
+			
+			model.addAttribute("lists", lists);
+			model.addAttribute("maxCnt", lists.get(0).getRowCnt());
+			model.addAttribute("maxPageNum", maxPageNum);
+	
+			model.addAttribute("chk_search", map.get("chk_search"));
+			model.addAttribute("text_search", map.get("text_search"));		
+			
+			session.setAttribute("flag", num);
+		} else {
+			model.addAttribute("maxPageNum", 0);
+		}
+		return "subPage/adminInsertHotel";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/adminRegDelete")
+	public String deleteReg(@RequestParam("regIds") String regIds, HashMap<String, Object> map) {
+		
+		String[] regList = regIds.replaceAll("[^0-9,]", "").split(",");
+		
+		map.put("regIds", regList);
+		
+		boardService.deleteAdminReg(map);
+		
+		
+		return "SUCCESS";
+	}
 }

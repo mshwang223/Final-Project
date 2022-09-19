@@ -28,6 +28,8 @@ public class InsertHotelVO {
 	private String approve;
 	private String roomType;
 	
+	private int rowCnt;
+	
 	public String getRoomType() {
 		return roomType;
 	}
@@ -153,6 +155,12 @@ public class InsertHotelVO {
 	}
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+	public int getRowCnt() {
+		return rowCnt;
+	}
+	public void setRowCnt(int rowCnt) {
+		this.rowCnt = rowCnt;
 	}
 	
 	

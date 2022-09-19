@@ -75,8 +75,8 @@ public class BoardService implements IBoardService {
 	
 	//등록업체 조회
 	@Override
-	public ArrayList<InsertHotelVO> selectRegistration(){
-		return dao.selectRegistration();
+	public ArrayList<InsertHotelVO> selectRegistration(HashMap<String, Object> map){
+		return dao.selectRegistration(map);
 	}
 
 	// 업체 등록 세부 관리
@@ -268,4 +268,10 @@ public class BoardService implements IBoardService {
 	public void extendAdminPet(String petId) {
 		dao.extendAdminPet(petId);
 	}
+
+	@Override
+	public void deleteAdminReg(HashMap<String, Object> map) {		
+		dao.deleteAdminReg(map);
+	}
+
 }

@@ -30,6 +30,7 @@
 					<div class="approve_area">			
 						<div class="approve_btn_box">
 							<button type="submit" class="approve_submit">승인</button>
+							<input type="hidden" name="approve" id="approve" value="Y">
 							<button type="button" id="approve_cancle">취소</button>	
 						</div>
 						
@@ -105,18 +106,17 @@
 								<span>특이사항 : </span>
 								<span>${comment}</span>
 								<input type="hidden" name="comment" id="comment" value="${comment}">
-								<input type="hidden" name="approve" id="approve" value="Y">
 							</div>
 							<div class="company_pet_room">
 								<span>방타입 : </span>
 								<span>${roomType}</span>
 								<input type="hidden" name="roomType" id="roomType" value="${roomType}">
-								<input type="hidden" name="approve" id="approve" value="Y">
 							</div>
 						</div>
 				
 					</div>
 				</form>
+				<!-- 승인 취소 -->
 				<form id="cancleForm" method="post" action="/adminApproveHotel">
 					<input type="hidden" name="name" value="${name }">
 					<input type="hidden" name="approve" value="N">

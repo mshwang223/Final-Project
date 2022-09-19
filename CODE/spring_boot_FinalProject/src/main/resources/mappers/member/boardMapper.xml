@@ -89,8 +89,12 @@
 	</update>
   	
   	  <!-- 등록업체  -->
-  	<select id="selectRegistration" parameterType="String" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
-  		SELECT * FROM registration
+  	<select id="selectRegistration" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
+  		SELECT *, COUNT(*) OVER() AS rowCnt
+		FROM registration
+  		WHERE name LIKE CONCAT('%',#{title},'%')
+  		ORDER BY regId DESC
+  		LIMIT 10 OFFSET #{pageNum}
   	</select>
   	
   	<!-- 등록업체 확인페이지  -->
@@ -351,4 +355,12 @@
 		   	   endDate = DATE_ADD(CURRENT_TIMESTAMP, INTERVAL 1 YEAR)
 		 WHERE petId = #{petId} 	   
 	</update>	 
+	
+	<!-- 관리자 - 등록업체 삭제  -->
+	<delete id="deleteAdminReg" parameterType="hashmap">
+		DELETE FROM registration
+		WHERE regId IN
+	  	 <foreach collection="regIds" item="regId" open="(" close=")" separator=",">#{regId}</foreach> 
+	</delete>
+	
 </mapper>

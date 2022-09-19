@@ -22,7 +22,7 @@
 						
 				<div class="sideTitle">운영</div>
 
-				<a class="aOperLists" href="<c:url value="/adminInsertHotel"/>">숙박업체 등록</a>
+				<a class="aOperLists adminInsertHotel" href="<c:url value="/adminInsertHotel/0"/>">숙박업체 등록</a>
 				<a class="aOperLists adminService" href="<c:url value='/adminServiceSearch/0'/>">서비스 / 시설</a>
 				<a class="aOperLists adminPet" href="<c:url value='/adminPetSearch/0'/>">펫등록증</a>
 				<div class="sideTitleLine"></div>
