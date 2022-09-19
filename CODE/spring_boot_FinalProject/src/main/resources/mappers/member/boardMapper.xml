@@ -185,12 +185,11 @@
 	
   	<!-- 관리자 - 결재내역 조회 -->
 	<select id="selectAdminPay" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.OrderVO">
-		SELECT *, u.userName, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
+		SELECT i.*, u.userName, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
 		       COUNT(*) OVER() AS rowCnt 
 		  FROM orderinfo i
-		  JOIN orderProduct p ON p.userId = i.userId
 		  JOIN user u ON u.userId = i.userId
-		 WHERE p.userId LIKE CONCAT('%',#{userId},'%')
+		 WHERE u.userId LIKE CONCAT('%',#{userId},'%')
 		    OR u.userName LIKE CONCAT('%',#{userName},'%')
 		    OR DATE_FORMAT(i.payDate, '%Y-%m-%d') LIKE DATE_FORMAT(REPLACE(#{payDate}, '%', i.payDate), '%Y-%m-%d')
 		 ORDER BY i.payDate DESC, u.userName ASC
@@ -206,10 +205,10 @@
 	
   	<!-- 관리자 - 결재내역 세부 내용 조회 -->
   	<select id="payDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.OrderVO">
-		SELECT *, u.userName, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
+		SELECT i.*, u.userName, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
 		  	   (SELECT stayAddress FROM stay WHERE stayNo = i.stayNo) AS address
 		  FROM orderinfo i
-		  JOIN orderProduct p ON p.userId = p.userId
+		  JOIN orderProduct p ON p.userId = i.userId
 		  JOIN user u ON u.userId = p.userId
 		 WHERE i.ordNo = #{ordNo}		
   	</select>
