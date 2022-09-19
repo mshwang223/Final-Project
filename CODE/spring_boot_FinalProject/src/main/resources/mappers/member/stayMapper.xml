@@ -131,7 +131,8 @@
         FROM registration
         WHERE regId = #{regId}
     </select>
-
+    
+    <!-- 등록 업체 -->
     <select id="selectInsertHotel" parameterType="hashmap"
             resultType="com.spring_boot.FinalProject.model.InsertHotelVO">
         SELECT *

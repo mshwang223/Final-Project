@@ -24,7 +24,7 @@
         </if>
 
     </insert>
-
+    
     <insert id="insertOrder" parameterType="java.util.List">
         INSERT into orderinfo
         (ordQty, payment, price, payDate, stayNo,userId,regId)
@@ -53,7 +53,7 @@
         </foreach>
     </insert>
 
-
+    <!-- 장바구니 등록 -->
     <select id="selectCartByUserId" parameterType="String" resultType="com.spring_boot.FinalProject.model.CartVO">
         SELECT c.cartId, s.stayNo, ifnull(s.stayName, r.name) as stayName, c.price, c.period, r.regId
         FROM cart c

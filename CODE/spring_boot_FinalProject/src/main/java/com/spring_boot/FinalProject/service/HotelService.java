@@ -88,17 +88,19 @@ public class HotelService implements IHotelService {
 	}
 
 
-
+    // 등록 업체 조회
 	@Override
 	public ArrayList<InsertHotelVO> listtInsert() {
 		return dao.listtInsert();
 	}
-
+    
+	// 등록 업체 디테일
 	@Override
 	public InsertHotelVO selectDetailInsert(String regId) {
 		return dao.selectDetailInsert(regId);
 	}
-
+    
+	// 등록 업체 
 	@Override
 	public InsertHotelVO selectInsertHotel(HashMap<String, Object> map) {
 		return dao.selectInsertHotel(map);
