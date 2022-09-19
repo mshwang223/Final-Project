@@ -39,10 +39,6 @@
 								<tr>
 									<td></td>
 									<td>
-										<div class="dropdown-box">
-											<div id="dpBox-name" class="dpBox-div">전체</div>
-											<div class="dpBox-div">▼</div>
-										</div>
 										<ul class="dropdown-contents">
 											<li id="dp-all">전체</li>
 											<li id="dp-title">제목</li>
@@ -50,7 +46,7 @@
 										</ul>
 										<div class="search-box">
 											<div>
-												<input type="text" class="text_search" name="text_search" placeholder="검색어를 입력하세요.">
+												<input type="text" class="text_search" name="text_search" placeholder="업체명을 입력하세요.">
 												<button class="search-button"><img src="/images/search.png"></button>
 											</div>
 										</div>
