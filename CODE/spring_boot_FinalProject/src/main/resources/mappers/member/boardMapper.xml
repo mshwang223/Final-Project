@@ -187,7 +187,7 @@
 	<select id="selectAdminPay" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.OrderVO">
 		SELECT i.*, u.userName, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
 		       COUNT(*) OVER() AS rowCnt 
-		  FROM orderinfo i
+		  FROM (SELECT * FROM orderinfo WHERE stayNo IS NOT NULL) i
 		  JOIN user u ON u.userId = i.userId
 		 WHERE u.userId LIKE CONCAT('%',#{userId},'%')
 		    OR u.userName LIKE CONCAT('%',#{userName},'%')
