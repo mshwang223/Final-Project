@@ -435,7 +435,9 @@ public class HotelController {
         String userId = (String) session.getAttribute("sid");
         String stayNo = (String) map.get("stayNo");
         String count = (String) map.get("count");
-
+        int roomPrice = Integer.parseInt((String)map.get("roomPrice"));
+        int discount = Integer.parseInt((String)map.get("discount"));;
+        
         String man = count.split(", ")[0];
         int manCnt = Integer.parseInt(man.substring(man.length() - 1, man.length()));
 
@@ -443,13 +445,27 @@ public class HotelController {
         int petCnt = Integer.parseInt(pet.substring(pet.length() - 1, pet.length()));
 
         String rcvPhone = (String) map.get("rcvPhone");
-
+        String rcvName = (String) map.get("rcvName");
+        
+        String rcvEmail = (String)map.get("rEmail1") + "@" + (String)map.get("rEmail2");
+        String period = (String)map.get("period");
+        int periodDay = Integer.parseInt((String)map.get("periodDay"));
+        String roomType = (String)map.get("roomType");
+        
+        
         OrderVO vo = new OrderVO();
         vo.setUserId(userId);
         vo.setStayNo(stayNo);
         vo.setManCnt(manCnt);
         vo.setPetCnt(petCnt);
         vo.setRcvPhone(rcvPhone);
+        vo.setRoomPrice(roomPrice);
+        vo.setDiscount(discount);
+        vo.setRcvName(rcvName);
+        vo.setRcvEmail(rcvEmail);
+        vo.setPeriod(period);
+        vo.setPeriodDay(periodDay);
+        vo.setRoomType(roomType);
 
         orderService.insertRsv(vo);
 

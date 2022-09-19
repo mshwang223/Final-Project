@@ -73,7 +73,13 @@ div.hotel_info > div:not(.titleInfo) {
   
   font-size: 18px;
   
-  color: #778887;  	
+  color: #778887;
+  
+  display: flex;  	
+}
+
+div.hotel_info div.txtAddress {
+  font-size: 14px;	
 }
 
 i {

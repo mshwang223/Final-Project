@@ -80,6 +80,9 @@ public interface IBoardDAO {
 	// 관리자 - 결제내역 삭제
 	void deleteAdminPay(HashMap<String, Object> map);
 	
+	// 관리자 - 결제내역 상세조회
+	OrderVO payDetailView(String ordNo);
+	
 	// 관리자 - 탈퇴회원 조회
 	ArrayList<OutuserVO> selectOutUser(HashMap<String, Object> map);
 	

@@ -7,8 +7,10 @@
     <!-- 예약상품 저장 -->
     <insert id="insertRsv" parameterType="com.spring_boot.FinalProject.model.OrderVO">
         INSERT into orderproduct
-            (userId, stayNo, manCnt, petCnt, rcvPhone)
-        VALUES (#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone})
+            (userId, stayNo, manCnt, petCnt, rcvPhone, rcvName, rcvEmail, roomPrice, discount, 
+             period, periodDay, roomType)
+        VALUES (#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone}, #{rcvName}, #{rcvEmail}, #{roomPrice}, #{discount},
+        		#{period}, #{periodDay}, #{roomType})
     </insert>
 
     <!-- 장바구니 저장 -->

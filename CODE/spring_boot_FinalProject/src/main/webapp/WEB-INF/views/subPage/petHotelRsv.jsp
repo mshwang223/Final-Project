@@ -39,6 +39,11 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								<div class="info_txt_Box">
 									<input type="hidden" id="stayNo" name="stayNo" value="${stayList.stayNo}"/>
 									<input type="hidden" id="count" name="count" value="${map.count}"/>
+									<input type="hidden" name="period" value="${fn:substring(map.period,0,29) }"/>
+									<input type="hidden" name="periodDay" value="${map.diffDay}"/>
+									<input type="hidden" name="roomType" value="${map.roomType}"/>
+									<input type="hidden" name="roomPrice" value="${roomPrice}"/>
+									<input type="hidden" name="discount" value="${map.discount}"/>
 									<div class="info_tlt">${stayList.stayName }</div>
 									<div class="info_address"><i class="fa-solid fa-location-dot address_icon"></i>${stayList.stayAddress}</div>
 									<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${fn:substring(map.period,0,29) }</div>
@@ -57,7 +62,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								<div class="name_rule">(투숙객 이름은 체크인 시 제시할 유효한 신분증 이름과 정확히 일치해야 합니다)</div>
 								<div class="cus_name">
 									<div class="tlt_all">투숙객명</div>
-									<input type="text" id="cusName" class="input_cus_name" value="${user.userName }">							
+									<input type="text" id="cusName" class="input_cus_name" name="rcvName" value="${user.userName }">							
 								</div>
 								<div class="cus_phone">
 									<div class="tlt_all">연락처</div>
@@ -65,8 +70,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								</div>
 								<div class="cus_email">
 									<div class="tlt_all">이메일</div>
-									<input type="text" id="mailId" class="mail_id" value="${email[0]}"> @
-									<input type="text" id="mailAddress" class="mail_address" placeholder="직접입력" value="${email[1]}">
+									<input type="text" id="mailId" class="mail_id" name="rEmail1" value="${email[0]}"> @
+									<input type="text" id="mailAddress" class="mail_address" name="rEmail2" placeholder="직접입력" value="${email[1]}">
 									<select class="mail_address_select" id="cusSel" >
 										<option value="" selected>직접입력</option>
 										<option>naver.com</option>
@@ -169,6 +174,11 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									<input type="hidden" id="stayNo" name="stayNo" value="${insertList.regId}"/>
 									<input type="hidden" id="count" name="count" value="${map.count}"/>
 									<input type="hidden" id="daterange" name="daterange" value=""/>
+									<input type="hidden" name="period" value="${fn:substring(map.period,0,29) }"/>
+									<input type="hidden" name="periodDay" value="${map.diffDay}"/>
+									<input type="hidden" name="roomType" value="${map.roomType}"/>
+									<input type="hidden" name="roomPrice" value="${roomPrice}"/>
+									<input type="hidden" name="discount" value="${map.discount}"/>
 									<div class="info_tlt">${insertList.name }</div>
 									<div class="info_address"><i class="fa-solid fa-location-dot address_icon"></i>${insertList.address1}</div>
 									<div class="info_period"><i class="fa-solid fa-calendar-days stay_calendar"></i>${map.period }</div>
@@ -187,7 +197,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								<div class="name_rule">(투숙객 이름은 체크인 시 제시할 유효한 신분증 이름과 정확히 일치해야 합니다)</div>
 								<div class="cus_name">
 									<div class="tlt_all">투숙객명</div>
-									<input type="text" id="cusName" class="input_cus_name" value="${user.userName }">							
+									<input type="text" id="cusName" class="input_cus_name" name="rcvName" value="${user.userName }">							
 								</div>
 								<div class="cus_phone">
 									<div class="tlt_all">연락처</div>
@@ -195,8 +205,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								</div>
 								<div class="cus_email">
 									<div class="tlt_all">이메일</div>
-									<input type="text" id="mailId" class="mail_id" value="${email[0]}"> @
-									<input type="text" id="mailAddress" class="mail_address" placeholder="직접입력" value="${email[1]}">
+									<input type="text" id="mailId" class="mail_id" name="rEmail1" value="${email[0]}"> @
+									<input type="text" id="mailAddress" class="mail_address" name="rEmail2" placeholder="직접입력" value="${email[1]}">
 									<select class="mail_address_select" id="cusSel" >
 										<option value="" selected>직접입력</option>
 										<option>naver.com</option>

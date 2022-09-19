@@ -9,7 +9,10 @@ public class OrderVO {
 	private int ordQty;
 	private int payment;
 	private int price;
-
+	private int roomPrice;
+	private int discount;
+	
+	private String address;
 
 	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	private Date payDate;
@@ -24,17 +27,16 @@ public class OrderVO {
 	private int manCnt;
 	private int petCnt;
 	private String rcvPhone;
+	private String rcvName;
+	private String rcvEmail;
+	
+	private String userImg;
+	
+	private String period;
+	private int periodDay;
+	private String roomType;
 	
 	private int rowCnt;
-
-
-	public String getRegId() {
-		return regId;
-	}
-
-	public void setRegId(String regId) {
-		this.regId = regId;
-	}
 
 	public String getOrdNo() {
 		return ordNo;
@@ -64,6 +66,27 @@ public class OrderVO {
 		this.price = price;
 	}
 
+	public int getRoomPrice() {
+		return roomPrice;
+	}
+	public void setRoomPrice(int roomPrice) {
+		this.roomPrice = roomPrice;
+	}
+
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public Date getPayDate() {
 		return payDate;
 	}
@@ -84,7 +107,7 @@ public class OrderVO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	
+
 	public String getUserName() {
 		return userName;
 	}
@@ -98,7 +121,14 @@ public class OrderVO {
 	public void setStayNo(String stayNo) {
 		this.stayNo = stayNo;
 	}
-	
+
+	public String getRegId() {
+		return regId;
+	}
+	public void setRegId(String regId) {
+		this.regId = regId;
+	}
+
 	public String getStayName() {
 		return stayName;
 	}
@@ -126,14 +156,56 @@ public class OrderVO {
 	public void setRcvPhone(String rcvPhone) {
 		this.rcvPhone = rcvPhone;
 	}
+
+	public String getRcvName() {
+		return rcvName;
+	}
+	public void setRcvName(String rcvName) {
+		this.rcvName = rcvName;
+	}
+
+	public String getRcvEmail() {
+		return rcvEmail;
+	}
+	public void setRcvEmail(String rcvEmail) {
+		this.rcvEmail = rcvEmail;
+	}
 	
+	public String getUserImg() {
+		return userImg;
+	}
+	public void setUserImg(String userImg) {
+		this.userImg = userImg;
+	}
+	
+	public String getPeriod() {
+		return period;
+	}
+	public void setPeriod(String period) {
+		this.period = period;
+	}
+	
+	public int getPeriodDay() {
+		return periodDay;
+	}
+	public void setPeriodDay(int periodDay) {
+		this.periodDay = periodDay;
+	}
+	
+	public String getRoomType() {
+		return roomType;
+	}
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
+	}
+
 	public int getRowCnt() {
 		return rowCnt;
 	}
 	public void setRowCnt(int rowCnt) {
 		this.rowCnt = rowCnt;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "OrderVO{" +
@@ -141,6 +213,8 @@ public class OrderVO {
 				", ordQty=" + ordQty +
 				", payment=" + payment +
 				", price=" + price +
+				", roomPrice=" + roomPrice +
+				", discount=" + discount +
 				", payDate=" + payDate +
 				", ordPrdId='" + ordPrdId + '\'' +
 				", userId='" + userId + '\'' +
@@ -148,6 +222,11 @@ public class OrderVO {
 				", manCnt=" + manCnt +
 				", petCnt=" + petCnt +
 				", rcvPhone='" + rcvPhone + '\'' +
+				", rcvName='" + rcvName + '\'' +
+				", rcvEmail='" + rcvEmail + '\'' +
+				", period='" + period + '\'' +
+				", periodDay='" + periodDay + '\'' +
+				", roomType='" + roomType + '\'' +
 				'}';
 	}
 }

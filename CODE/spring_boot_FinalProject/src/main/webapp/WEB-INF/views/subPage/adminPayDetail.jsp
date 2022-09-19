@@ -30,33 +30,41 @@
 				</div>
 		    	<div class="userInfo_box">
 			        <div class="custom_info">
-			        	<div>
-	                        <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview" />
+						<div>
+							<c:if test="${empty pay.userImg}">
+								<img src="<c:url value='/images/profile.png'/>" id="profile_img__preview">
+							</c:if>
+							<c:if test="${not empty pay.userImg}">
+								<img src="<c:url value='/profileImg/${pay.userImg}'/>" id="profile_img__preview">
+							</c:if>
 	                        <div class="hotel_info">
-	                        	<div class="titleInfo">1111</div>
-	                        	<div><i class="fa-solid fa-location-dot address_icon"></i>1111</div>
-	                        	<div><i class="fa-solid fa-calendar-days stay_calendar"></i>1111</div>
-	                        	<div><i class="fa-solid fa-user person_icon"></i>1111</div>
-	                        	<div><i class="fa-solid fa-bed bed_icon"></i>1111</div>
+	                        	<div class="titleInfo">${pay.stayName}</div>
+	                        	<div><i class="fa-solid fa-location-dot address_icon"></i><div class="txtAddress">${pay.address}</div></div>
+	                        	<div><i class="fa-solid fa-calendar-days stay_calendar"></i>${pay.period}</div>
+	                        	<div><i class="fa-solid fa-user person_icon"></i>성인${pay.manCnt}, 반려동물${pay.petCnt}</div>
+	                        	<div><i class="fa-solid fa-bed bed_icon"></i>${pay.roomType}</div>
 	                        </div>
 	                    </div>
 	                    <div class="txtTitle">투숙객 정보</div>
-	                    <div class="txtContents"><div>투숙객명 :</div><div>1111</div></div>
-	                    <div class="txtContents"><div>연락처 :</div><div>1111</div></div>
-	                    <div class="txtContents mbottom"><div>이메일 :</div><div>1111</div></div>
+	                    <div class="txtContents"><div>투숙객명 :</div><div>${pay.rcvName}</div></div>
+	                    <div class="txtContents"><div>연락처 :</div><div>${pay.rcvPhone}</div></div>
+	                    <div class="txtContents mbottom"><div>이메일 :</div><div>${pay.rcvEmail}</div></div>
 	                    
 	                    <div class="txtTitle">결제정보</div>
-	                    <div class="txtContents"><div>11111</div><div><fmt:formatNumber type="currency" value="11111" />원</div></div>
+	                    <div class="txtContents">
+	                    	<div>${pay.periodDay}박(1박 : <fmt:formatNumber type="currency" value="${pay.roomPrice}" />원)</div>
+	                    	<div><fmt:formatNumber type="currency" value="${pay.periodDay * pay.roomPrice}" />원</div>
+	                    </div>
 	                    <div class="txtContents"><div>청소비</div><div><fmt:formatNumber type="currency" value="15000" />원</div></div>
 	                    <div class="txtContents"><div>서비스 수수료</div><div><fmt:formatNumber type="currency" value="30000" />원</div></div>
 	                    <div class="txtContents"><div>숙박세 외 수수료</div><div><fmt:formatNumber type="currency" value="3000" />원</div></div>
-	                    <div class="txtContents mbottom"><div>할인금액</div><div><fmt:formatNumber type="currency" value="11111" />원</div></div>
+	                    <div class="txtContents mbottom"><div>할인금액</div><div><fmt:formatNumber type="currency" value="${pay.discount}" />원</div></div>
 	                    <hr/>
-	                    <div class="txtContents total"><div>최총 금액</div><div><fmt:formatNumber type="currency" value="11111" />원</div></div>
+	                    <div class="txtContents total"><div>최총 금액</div><div><fmt:formatNumber type="currency" value="${pay.price}" />원</div></div>
 	                    
 	                    <div class="txtTitle">그 외</div>
-	                    <div class="txtContents"><div>결제수단</div><div>11111</div></div>
-	                    <div class="txtContents"><div>결제일</div><div><fmt:formatDate value="${list.payDate}" pattern="yyyy-MM-dd HH:mm:dd"/></div></div>
+	                    <div class="txtContents"><div>결제수단</div><div>${pay.payment}</div></div>
+	                    <div class="txtContents"><div>결제일</div><div><fmt:formatDate value="${pay.payDate}" pattern="yyyy-MM-dd HH:mm:dd"/></div></div>
 		        	</div>
 		    	</div>
 		    	<div class="btn_list_box">
