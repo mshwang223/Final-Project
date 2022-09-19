@@ -12,7 +12,7 @@
 		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 		
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/adminNotice.css'/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/adminInsertHotel.css'/>">
 		
 		<script src="<c:url value='/js/adminInsertHotel.js'/>"></script>
 	</head>
