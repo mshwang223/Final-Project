@@ -192,5 +192,13 @@
 			VALUES (#{userId}, #{stayNo}, #{contents}, now(), now(), #{point}, #{ordNo})
 		</if>
     </insert>
+    
+    
+    <!-- 실험용 -->
+    <select id="selectLike" parameterType="string" resultType="com.spring_boot.FinalProject.model.LikeVO">
+       	SELECT *
+    	FROM mylike
+    	WHERE userId = #{userId} ORDER BY likeId
+    </select>
   	
 </mapper>

@@ -1,5 +1,6 @@
 package com.spring_boot.FinalProject.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.spring_boot.FinalProject.dao.IUserDAO;
+import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.LikeVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.ReviewVO;
+import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 @Service
@@ -178,4 +182,21 @@ public class UserService implements IUserService {
     public void insertReview(ReviewVO review) {
 		dao.insertReview(review);
     }
+
+	@Override
+	public ArrayList<InsertHotelVO> selectLikeReg(String sid) {
+		return dao.selectLikeReg(sid);
+	}
+
+	@Override
+	public ArrayList<StayVO> selectLikeHotel(String sid) {
+		return dao.selectLikeHotel(sid);
+	}
+
+	@Override
+	public ArrayList<LikeVO> selectLike(String sid) {
+		return dao.selectLike(sid);
+	}
+
+
 }

@@ -1,10 +1,14 @@
 package com.spring_boot.FinalProject.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.LikeVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.ReviewVO;
+import com.spring_boot.FinalProject.model.StayVO;
 import com.spring_boot.FinalProject.model.UserVO;
 
 public interface IUserDAO {
@@ -85,4 +89,14 @@ public interface IUserDAO {
 	
 	// 리뷰 등록
 	 void insertReview(ReviewVO review);
+	 
+	 // 찜 들고오기(특가)
+	 ArrayList<InsertHotelVO> selectLikeReg(String sid);
+	 
+	 // 찜 들고오기(일반)
+	 ArrayList<StayVO> selectLikeHotel(String sid);
+	 
+	 // 실험용
+	 ArrayList<LikeVO> selectLike(String sid);
+	 
 }

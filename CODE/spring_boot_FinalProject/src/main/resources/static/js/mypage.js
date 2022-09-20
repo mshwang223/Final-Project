@@ -7,6 +7,31 @@ $(document).ready(function () {
     $('#unRegister').click(function(){
     	location.href='/unregisterForm';
     })
+    
+    // 찜 슬라이드
+	var Box = $('.wanted_hotel').length;
+    var Index = 0;
+	var slice = Math.ceil(Box / 2);
+	
+	if(Box > 4){
+		$('.next').css("display","block");
+	}
+
+    $('.next').click(function(){
+        $('.wanted_hotel:nth-child(1)').animate({marginLeft:  '-=130px' }, '500');
+        $('.prev').css("display","block");
+        Index++;
+        if(Index == (Box - Math.ceil(Box / slice)))
+            $('.next').css("display","none");
+    });
+
+    $('.prev').click(function(){
+        $('.wanted_hotel:nth-child(1)').animate({marginLeft:  '+=130px' }, '500');
+        $('.next').css("display","block");
+        Index--;
+        if(Index == 0)
+            $('.prev').css("display","none");
+    });
 });
 
 function readURL(input) {

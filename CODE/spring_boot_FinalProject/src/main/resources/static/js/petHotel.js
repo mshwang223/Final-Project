@@ -60,12 +60,12 @@ $(document).ready(function(){
 	for(let i = 0; i < likeBtn.length; i++){
 		
 	  likeBtn[i].addEventListener('click', (e)=>{
-		//alert(likeBtn[i].dataset.id);
-		//alert(likeBtn[i].dataset.flag);
-		
+
 		let id = likeBtn[i].dataset.id;
 		let flag = likeBtn[i].dataset.flag;
+		let img = likeBtn[i].dataset.img;
 	    heartCount++;
+	    
 	
 	    if(heartCount % 2 == 0){
 	      likeBtn[i].src = "/images/red_heart.png";
@@ -75,20 +75,21 @@ $(document).ready(function(){
 	    
 	    e.stopPropagation();
 	    
-	    likeAjax(id, flag);
+	    likeAjax(id, flag, img);
 	    
 	  });
 	  
 	}
 
-  function likeAjax(id, flag){
+  function likeAjax(id, flag, img){
   		
   	 //  var formData = $('#special${approveList.regId }, #popular${stayList.stayNo }, #seoul${stayList.stayNo }, #busan${stayList.stayNo }').serialize();
 	      $.ajax({
 	          type:"post",
 	          url:"/likeHotel",
 	          data: {'id': id,
-	          		 'flag': flag
+	          		 'flag': flag,
+	          		 'img': img
 	          		 },
 	          success:function(result){
 	            // 성공 시 결과 받음

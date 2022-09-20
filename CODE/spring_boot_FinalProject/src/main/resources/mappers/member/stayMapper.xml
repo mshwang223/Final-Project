@@ -17,12 +17,12 @@
 	<insert id="likeHotel" parameterType="hashmap">
 		INSERT INTO mylike
 		<if test="flag == 'regId'">
-			(userId, regId)
-			VALUES(#{userId}, #{id})
+			(userId, regId, serviceImg)
+			VALUES(#{userId}, #{id}, #{img})
 		</if>
 		<if test="flag =='stayNo'">
-			(userId, stayNo)
-			VALUES(#{userId}, #{id})
+			(userId, stayNo, serviceImg)
+			VALUES(#{userId}, #{id}, #{img})
 		</if>
 	</insert>
 

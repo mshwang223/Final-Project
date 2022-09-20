@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
 <html>
@@ -101,11 +102,20 @@
                 <br></div>
             <div class="wented_hotel_wrap">
                 <div class="wented_hotel_container">
+	
 
-                    <div class="wanted_hotel"><img src="<c:url value='/images/hotel1.jpg'/>" alt=""></div>
-                    <div class="wanted_hotel"><img src="<c:url value='/images/hotel2.jpg'/>" alt=""></div>
-                    <div class="wanted_hotel"><img src="<c:url value='/images/hotel3.jpg'/>" alt=""></div>
-                    <div class="wanted_hotel"><img src="<c:url value='/images/hotel4.jpg'/>" alt=""></div>
+                   	<c:forEach items="${likeList}" var="likeList" varStatus="status">
+                   		
+                   		<c:choose>
+	                   		<c:when test="${likeList.stayNo ne null }">
+	                   			<div class="wanted_hotel"><img src="<c:url value='/petHotelImg/${likeList.serviceImg }/1.png'/>" alt=""></div>
+							</c:when>
+							<c:otherwise>
+	                   			<div class="wanted_hotel"><img src="<c:url value='/comImg/${likeList.serviceImg }/1.png'/>" alt=""></div>
+							</c:otherwise>
+						</c:choose>
+					 </c:forEach>
+
                 </div>
                 <img class="prev" src="../images/left-arrow.png" alt="">
                 <img class="next" src="../images/next.png" alt="">

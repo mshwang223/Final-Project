@@ -151,21 +151,21 @@ public class HotelController {
     //public String likeHotel(@RequestParam HashMap<String, Object>map, Model model)throws IOException {
     public String likeHotel(@RequestParam ("id") String id,
     						@RequestParam ("flag") String flag,
+    						@RequestParam ("img") String img,
     						@RequestParam HashMap<String, Object>map,
     						HttpSession session)throws IOException {
     	
 		
-    	
-    	System.out.println(id);
-    	System.out.println(flag);
-    	
-    	String userId = (String) session.getAttribute("sid");
-    	map.put("userId", userId);
-    	map.put("id", id);
-    	map.put("flag", flag);
-    	
+		  String userId = (String) session.getAttribute("sid"); 
+		  map.put("userId", userId); 
+		  map.put("id", id); 
+		  map.put("flag", flag); 
+		  map.put("img", img);
 
-    	hotelService.likeHotel(map);
+		  
+		  
+		  hotelService.likeHotel(map);
+		 
     	
     	
     	return "success";

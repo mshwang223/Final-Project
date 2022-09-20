@@ -3,6 +3,7 @@ package com.spring_boot.FinalProject.controller;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -26,6 +27,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring_boot.FinalProject.model.InsertHotelVO;
+import com.spring_boot.FinalProject.model.LikeVO;
 import com.spring_boot.FinalProject.model.PetCardVO;
 import com.spring_boot.FinalProject.model.PetVO;
 import com.spring_boot.FinalProject.model.ReviewVO;
@@ -239,7 +242,7 @@ public class UserController {
 
     // 마이 페이지
 	@RequestMapping("/mypage")
-	public String viweMypage( HttpSession session,Model model) {
+	public String viweMypage( HttpSession session, Model model) {
 		String sid = (String) session.getAttribute("sid");
 		if (sid == null) {
 			return "ACCESS_DENIED";
@@ -252,6 +255,19 @@ public class UserController {
 		// 펫등록여부
 		String petUserId = userService.selectPetUser(sid);
 		model.addAttribute("petUserId", petUserId);
+				
+		
+		  ArrayList<LikeVO> likeList = userService.selectLike(sid);
+		  model.addAttribute("likeList", likeList);
+		  
+			/*
+			 * System.out.println(likeList.size());
+			 * 
+			 * 
+			 * for(int i = 0; i < likeList.size(); i++) { LikeVO vo = likeList.get(i);
+			 * System.out.println(vo.getLikeId()); }
+			 */
+		 
 
 		return "subPage/mypage";
 	}

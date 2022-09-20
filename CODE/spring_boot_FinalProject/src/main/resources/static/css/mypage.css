@@ -215,17 +215,15 @@ justify-content: space-between;
 .wented_hotel_wrap{
   position: relative;
   display: flex;
-  align-items: center;
+  width: 515px;
   justify-content: center;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .wented_hotel_container{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-  width: 90%;
+  width: 95%;
+  overflow: hidden;
 }
 
 .wented_hotel_container img{
@@ -233,9 +231,11 @@ justify-content: space-between;
   height: 100px;
   border-radius: 10px;
   cursor: pointer;
+  margin-right: 30px;
 }
 
 .wented_hotel_wrap .prev, .wented_hotel_wrap .next{
+  display: none;
   position:absolute;
   width: 20px;
   height: 20px;
@@ -243,11 +243,13 @@ justify-content: space-between;
 }
 
 .wented_hotel_wrap .prev{
-  left: 1px;
+  left: -25px;
+  bottom: 45px;
 }
 
 .wented_hotel_wrap .next{
-  right: 1px;
+  right: -25px;
+  bottom: 45px;
 }
 
 .accordion__arrow2 {

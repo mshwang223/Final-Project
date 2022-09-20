@@ -6,7 +6,14 @@ public class LikeVO {
 	private String userId;
 	private String stayNo;
 	private String regId;
-	
+	private String serviceImg;
+
+	public String getServiceImg() {
+		return serviceImg;
+	}
+	public void setServiceImg(String serviceImg) {
+		this.serviceImg = serviceImg;
+	}
 	public String getLikeId() {
 		return likeId;
 	}

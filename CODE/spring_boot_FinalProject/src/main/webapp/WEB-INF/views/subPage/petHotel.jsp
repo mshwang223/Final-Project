@@ -274,6 +274,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 								<input type="hidden" name="chk1" value="1">
 								<input type="hidden" id="userId" name="userId" value="${sessionScope.sid }">
 								<input type="hidden" id="regId" name="regId" value="${approveList.regId }">
+								<input type="hidden" name="serviceImg" value="${fn:split(approveList.serviceImg,'.')[0]}">
 								<div id="specialBox${approveList.regId }" class="special_img_box">
 									<img src="<c:url value='/comImg/${fn:split(approveList.serviceImg,".")[0]}/1.png'/>" alt="">
 									<div class="stay_info">
@@ -285,8 +286,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<input type="hidden" name="endDate" value="${fn:substring(approveList.period,21,29) }">
 										<div><fmt:formatNumber type="currency" value="${approveList.price}" />원 / 1박</div>
 									</div>
-									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn" data-id="${approveList.regId }" data-flag="regId"></span>
+									<span class="like_hover">
+										<img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn" data-id="${approveList.regId }" data-flag="regId" data-img="${fn:split(approveList.serviceImg,'.')[0]}">
+									</span>
 								</div>
 								<script>
 								    $('#specialBox${approveList.regId}').click(function(){
@@ -323,7 +325,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo"></span>
+										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }></span>
 								</div>
 								<script>
 							    $('#popularBox${stayList.stayNo }').click(function(){
@@ -358,7 +360,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo"></span>
+										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }></span>
 								</div>
 								<script>
 							    $('#seoulBox${stayList.stayNo }').click(function(){
@@ -392,7 +394,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo"></span>
+										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }></span>
 								</div>
 								<script>
 								
