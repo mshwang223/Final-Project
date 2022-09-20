@@ -1,5 +1,6 @@
 package com.spring_boot.FinalProject.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -35,8 +36,20 @@ public class OrderVO {
 	private String period;
 	private int periodDay;
 	private String roomType;
+	private LocalDate startDate;
+	private LocalDate endDate;
 	
 	private int rowCnt;
+
+	public void setDate() {
+		int first = period.indexOf("(");
+		int second = period.lastIndexOf("(");
+		int tilt = period.lastIndexOf("~")+1;
+		String start = period.substring(0, first).trim().replace(".","-");
+		String end = period.substring(tilt, second).trim().replace(".","-");
+		startDate= LocalDate.parse(start);
+		endDate =LocalDate.parse(end);
+	}
 
 	public String getOrdNo() {
 		return ordNo;

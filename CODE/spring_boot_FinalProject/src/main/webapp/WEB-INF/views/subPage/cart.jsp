@@ -79,7 +79,8 @@
                 var reservation = {
                     "price":${cartList.price},
                     "stayNo":${cartList.stayNo},
-                    "regId":${cartList.regId}
+                    "regId":${cartList.regId},
+                    "period":"${cartList.period}"
                 };
                 list.push(reservation);
                 </c:forEach>

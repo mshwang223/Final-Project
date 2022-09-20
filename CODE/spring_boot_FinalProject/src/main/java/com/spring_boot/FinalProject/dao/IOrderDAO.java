@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.spring_boot.FinalProject.model.CartVO;
+import com.spring_boot.FinalProject.model.OrderInfoVO;
 import com.spring_boot.FinalProject.model.OrderVO;
 
 public interface IOrderDAO {
@@ -21,5 +22,6 @@ public interface IOrderDAO {
 	  
 	 //장바구니 삭제
     void deleteCarts(ArrayList<Long> id);
+	List<OrderInfoVO> selectReservation(String userId);
 
 }

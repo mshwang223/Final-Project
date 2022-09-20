@@ -120,11 +120,13 @@
                 <img class="prev" src="../images/left-arrow.png" alt="">
                 <img class="next" src="../images/next.png" alt="">
             </div>
-            <div class="wented_title"><br>
+           <div class="wented_title"><br>
                 <p>예약 현황</p><br></div>
             <div class="profile_menu">
-                <button class="accordion">2022.03.13~2022.03.15 | 펫밀리가 떴다 펜션<span class="accordion__arrow">></span>
-                </button>
+                <c:forEach items="${orderList}" var="list" varStatus="status">
+                    <button class="accordion">${list.period} | ${list.name}<span class="accordion__arrow">></span>
+                    </button>
+                </c:forEach>
             </div>
 
         </div>

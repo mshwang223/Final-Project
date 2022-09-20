@@ -59,7 +59,11 @@ public class PayController {
         if (sid == null) {
             return "ACCESS_DENIED";
         }
-        list.forEach(i->i.setUserId(sid));
+        list.forEach(i->{
+            i.setUserId(sid);
+            System.out.println("i.getPeriod() = " + i.getPeriod());
+            i.setDate();
+        });
 		try {
 			orderService.insertOrder(list);
 		} catch (Exception e) {

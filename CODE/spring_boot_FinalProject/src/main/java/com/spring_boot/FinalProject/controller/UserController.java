@@ -3,12 +3,13 @@ package com.spring_boot.FinalProject.controller;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.spring_boot.FinalProject.model.*;
+import com.spring_boot.FinalProject.service.OrderService;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -27,12 +28,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.spring_boot.FinalProject.model.InsertHotelVO;
-import com.spring_boot.FinalProject.model.LikeVO;
-import com.spring_boot.FinalProject.model.PetCardVO;
-import com.spring_boot.FinalProject.model.PetVO;
-import com.spring_boot.FinalProject.model.ReviewVO;
-import com.spring_boot.FinalProject.model.UserVO;
 import com.spring_boot.FinalProject.service.HotelService;
 import com.spring_boot.FinalProject.service.ImgService;
 import com.spring_boot.FinalProject.service.UserService;
@@ -50,6 +45,9 @@ public class UserController {
 
 	@Autowired
 	ImgService imgService;
+
+	@Autowired
+	OrderService orderService;
 	
 	@Autowired
 	HotelService hotelService;
@@ -242,7 +240,7 @@ public class UserController {
 
     // 마이 페이지
 	@RequestMapping("/mypage")
-	public String viweMypage( HttpSession session, Model model) {
+	public String viweMypage( HttpSession session,Model model) {
 		String sid = (String) session.getAttribute("sid");
 		if (sid == null) {
 			return "ACCESS_DENIED";
@@ -250,24 +248,14 @@ public class UserController {
 		UserVO userVO = userService.selectUser(sid);
 		model.addAttribute("user",userVO);
 
+		List<OrderInfoVO> orderList = orderService.selectReservation(sid);
+		model.addAttribute("orderList",orderList);
+
 		List<ReviewVO> reservationList=hotelService.selectMyReview(sid);
 		model.addAttribute("reservationList",reservationList);
 		// 펫등록여부
 		String petUserId = userService.selectPetUser(sid);
 		model.addAttribute("petUserId", petUserId);
-				
-		
-		  ArrayList<LikeVO> likeList = userService.selectLike(sid);
-		  model.addAttribute("likeList", likeList);
-		  
-			/*
-			 * System.out.println(likeList.size());
-			 * 
-			 * 
-			 * for(int i = 0; i < likeList.size(); i++) { LikeVO vo = likeList.get(i);
-			 * System.out.println(vo.getLikeId()); }
-			 */
-		 
 
 		return "subPage/mypage";
 	}

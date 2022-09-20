@@ -183,14 +183,8 @@
   	    <!-- 리뷰 등록 -->
     <insert id="insertReview" parameterType="com.spring_boot.FinalProject.model.ReviewVO">
         INSERT into review
-		<if test='regId != 0'>
-            (userId, regId, contents, createDate, modifyDate, point, ordNo)
-        VALUES (#{userId}, #{regId}, #{contents}, now(), now(), #{point}, #{ordNo})
-		</if>
-		<if test='stayNo != 0'>
 			(userId, stayNo, contents, createDate, modifyDate, point, ordNo)
 			VALUES (#{userId}, #{stayNo}, #{contents}, now(), now(), #{point}, #{ordNo})
-		</if>
     </insert>
     
     

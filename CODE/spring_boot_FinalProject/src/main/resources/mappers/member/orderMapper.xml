@@ -7,10 +7,11 @@
     <!-- 예약상품 저장 -->
     <insert id="insertRsv" parameterType="com.spring_boot.FinalProject.model.OrderVO">
         INSERT into orderproduct
-            (userId, stayNo, manCnt, petCnt, rcvPhone, rcvName, rcvEmail, roomPrice, discount, 
-             period, periodDay, roomType)
-        VALUES (#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone}, #{rcvName}, #{rcvEmail}, #{roomPrice}, #{discount},
-        		#{period}, #{periodDay}, #{roomType})
+        (userId, stayNo, manCnt, petCnt, rcvPhone, rcvName, rcvEmail, roomPrice, discount,
+         period, periodDay, roomType)
+        VALUES (#{userId}, #{stayNo}, #{manCnt}, #{petCnt}, #{rcvPhone}, #{rcvName}, #{rcvEmail}, #{roomPrice},
+                #{discount},
+                #{period}, #{periodDay}, #{roomType})
     </insert>
 
     <!-- 장바구니 저장 -->
@@ -26,10 +27,10 @@
         </if>
 
     </insert>
-    
+
     <insert id="insertOrder" parameterType="java.util.List">
         INSERT into orderinfo
-        (ordQty, payment, price, payDate, stayNo,userId,regId)
+        (ordQty, payment, price, payDate, stayNo,userId,regId,period,startDate,endDate)
         values
         <foreach collection="list" item="item" separator=",">
             (
@@ -41,6 +42,9 @@
                 , #{item.stayNo}
                 , #{item.userId}
                 ,null
+                , #{item.period}
+                ,#{item.startDate}
+                ,#{item.endDate}
             </if>
             <if test='item.regId != 0'>
                 1
@@ -50,10 +54,11 @@
                 ,null
                 , #{item.userId}
                 , #{item.regId}
+                , #{item.period}
+                ,#{item.startDate}
+                ,#{item.endDate}
             </if>
             )
-            
-            
         </foreach>
     </insert>
 
@@ -76,6 +81,15 @@
         </where>
 
     </delete>
+
+    <!-- 이용내역-->
+    <select id="selectReservation" parameterType="String" resultType="com.spring_boot.FinalProject.model.OrderInfoVO">
+        SELECT o.*, ifnull(s.stayName, r.name) as name
+        FROM orderinfo o
+                 left join stay s on o.stayNo = s.stayNo
+                 left join registration r on r.regId = o.regId
+        where o.userId = #{userId} and o.endDate >= date_format(NOW(),'%Y-%m-%d')
+    </select>
 
 
 </mapper>
