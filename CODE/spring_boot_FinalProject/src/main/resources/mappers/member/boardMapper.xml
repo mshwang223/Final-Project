@@ -183,7 +183,7 @@
 		   AND userId = #{userId} 	   
 	</update>
 	
-  	<!-- 관리자 - 결재내역 조회 -->
+  	<!-- 관리자 - 결제내역 조회 -->
 	<select id="selectAdminPay" parameterType="hashmap" resultType="com.spring_boot.FinalProject.model.OrderVO">
 		SELECT i.*, u.userName, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
 		       COUNT(*) OVER() AS rowCnt 
@@ -196,14 +196,14 @@
 		 LIMIT 10 OFFSET #{pageNum}
 	</select>
 	
-  	<!-- 관리자 - 결재내역 삭제 -->
+  	<!-- 관리자 - 결제내역 삭제 -->
 	<delete id="deleteAdminPay" parameterType="hashmap">
 	  	DELETE FROM orderInfo
 	  	 WHERE ordNo IN
 	  	 <foreach collection="ordNos" item="ordNo" open="(" close=")" separator=",">#{ordNo}</foreach> 
 	</delete>
 	
-  	<!-- 관리자 - 결재내역 세부 내용 조회 -->
+  	<!-- 관리자 - 결제내역 세부 내용 조회 -->
   	<select id="payDetailView" parameterType="String" resultType="com.spring_boot.FinalProject.model.OrderVO">
 		SELECT *, (SELECT stayName FROM stay WHERE stayNo = i.stayNo) AS stayName,
 		  	   (SELECT stayAddress FROM stay WHERE stayNo = i.stayNo) AS address
