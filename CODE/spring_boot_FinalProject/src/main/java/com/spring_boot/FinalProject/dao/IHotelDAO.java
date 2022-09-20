@@ -57,5 +57,5 @@ public interface IHotelDAO {
 	InsertHotelVO selectInsertHotel(HashMap<String, Object> map);
 	
 	// 찜하기
-	void likeHotel(LikeVO vo);
+	void likeHotel(HashMap<String, Object> map);
 }

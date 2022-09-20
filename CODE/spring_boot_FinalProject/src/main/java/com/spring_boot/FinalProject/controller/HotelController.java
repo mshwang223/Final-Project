@@ -148,18 +148,26 @@ public class HotelController {
     // 찜하기
     @ResponseBody
     @RequestMapping("/likeHotel")
-    public String likeHotel(@RequestParam HashMap<String, Object>map, Model model)throws IOException {
+    //public String likeHotel(@RequestParam HashMap<String, Object>map, Model model)throws IOException {
+    public String likeHotel(@RequestParam ("id") String id,
+    						@RequestParam ("flag") String flag,
+    						@RequestParam HashMap<String, Object>map,
+    						HttpSession session)throws IOException {
     	
-    	String userId = (String)map.get("userId");
-    	String stayNo = (String)map.get("likeStayNo");
-    	String regId = (String)map.get("regId");
+		
     	
-    	LikeVO likeVo = new LikeVO();
-    	likeVo.setUserId(userId);
-    	likeVo.setStayNo(stayNo);
-    	likeVo.setRegId(regId);
+    	System.out.println(id);
+    	System.out.println(flag);
     	
-    	hotelService.likeHotel(likeVo);
+    	String userId = (String) session.getAttribute("sid");
+    	map.put("userId", userId);
+    	map.put("id", id);
+    	map.put("flag", flag);
+    	
+
+    	hotelService.likeHotel(map);
+    	
+    	
     	return "success";
     }
 

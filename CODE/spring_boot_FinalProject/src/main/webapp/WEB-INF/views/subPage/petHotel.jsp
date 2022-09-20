@@ -270,8 +270,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="specialContainer">
 						<c:forEach var="approveList" items="${approveList}" varStatus="loop">
-							<form id="special${approveList.regId }" method="post" action="<c:url value='petHotelDetail/${approveList.regId }'/>">
+							<form id="special${approveList.regId }" class="like_insert" method="post" action="<c:url value='petHotelDetail/${approveList.regId }'/>">
 								<input type="hidden" name="chk1" value="1">
+								<input type="hidden" id="userId" name="userId" value="${sessionScope.sid }">
+								<input type="hidden" id="regId" name="regId" value="${approveList.regId }">
 								<div id="specialBox${approveList.regId }" class="special_img_box">
 									<img src="<c:url value='/comImg/${fn:split(approveList.serviceImg,".")[0]}/1.png'/>" alt="">
 									<div class="stay_info">
@@ -284,7 +286,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<div><fmt:formatNumber type="currency" value="${approveList.price}" />원 / 1박</div>
 									</div>
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn"></span>
+										alt="찜하기" class="like_btn" data-id="${approveList.regId }" data-flag="regId"></span>
 								</div>
 								<script>
 								    $('#specialBox${approveList.regId}').click(function(){
@@ -306,8 +308,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="popularContainer">
 						<c:forEach begin="22" end="32" var="stayList" items="${stayList}" varStatus="loop">
-							<form id="popular${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+							<form id="popular${stayList.stayNo }" class="like_insert" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<input type="hidden" name="chk1" value="2">
+								<input type="hidden" name="userId" value="${sessionScope.sid }">
+								<input type="hidden" class="likeStayNo" name="likeStayNo" value="${stayList.stayNo }">
 								<div id="popularBox${stayList.stayNo }" class="popular_img_box">
 									<input type="hidden" id="stayNo" name="stayNo" value="<c:url value='${stayList.stayNo}'/>">
 									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
@@ -319,7 +323,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn"></span>
+										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo"></span>
 								</div>
 								<script>
 							    $('#popularBox${stayList.stayNo }').click(function(){
@@ -341,8 +345,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="seoulContainer">
 						<c:forEach begin="2" end="11" var="stayList" items="${stayList}" varStatus="loop">
-							<form id="seoul${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+							<form id="seoul${stayList.stayNo }" class="like_insert" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<input type="hidden" name="chk1" value="2">
+								<input type="hidden" name="userId" value="${sessionScope.sid }">
 								<div id="seoulBox${stayList.stayNo }" class="seoul_img_box">
 									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
 									<div class="stay_info">
@@ -353,7 +358,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn"></span>
+										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo"></span>
 								</div>
 								<script>
 							    $('#seoulBox${stayList.stayNo }').click(function(){
@@ -374,8 +379,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="busanContainer">
 						<c:forEach begin="81" end="90" var="stayList" items="${stayList}" varStatus="loop">
-							<form id="busan${stayList.stayNo }" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
+							<form id="busan${stayList.stayNo }" class="like_insert" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<input type="hidden" name="chk1" value="2">
+								<input type="hidden" name="userId" value="${sessionScope.sid }">
 								<div id="busanBox${stayList.stayNo }" class="busan_img_box">
 									<img src="<c:url value='/petHotelImg/${stayList.stayNo }/1.png'/>" alt="">
 									<div class="stay_info">
@@ -386,7 +392,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
 									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn"></span>
+										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo"></span>
 								</div>
 								<script>
 								
@@ -401,6 +407,11 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						class="busan_next" src="<c:url value='/images/next.png'/>" alt="">
 				</div>
 			</article>
+<%-- 			<form id="likeForm" method="post" action="<c:url value='/likeHotel'/>">
+				<input type="hidden" name="userId" value="${sessionScope.sid }">
+				<input type="hidden" class="likeStayNo" name="likeStayNo" value="${stayList.stayNo }">
+				<input type="hidden" id="regId" name="regId" value="${approveList.regId }">
+			</form> --%>
 		</section>
 		<div class="chatbot_box">
 			<div class="chat_head">

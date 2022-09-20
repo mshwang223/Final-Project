@@ -30,27 +30,7 @@ function searchValueClick(){
 searchValueClick();
 
 
-// 찜하기 눌렀을 때
-//let likeBtn = document.getElementsByClassName("like_btn");
-//let heartCount = 1;
 
-
-//for(let i = 0; i < likeBtn.length; i++){
-
-//  likeBtn[i].addEventListener('click', (e)=>{
-
-//    heartCount++;
-
-//    if(heartCount % 2 == 0){
-  //    likeBtn[i].src = "/images/red_heart.png";
-    //}else{
-      //likeBtn[i].src = "/images/heart.png";
-    //}
-    
-   // e.stopPropagation();
-    
-//  });
-//}
 
 // option 넓이
 /*let option = document.querySelectorAll(".option_pop span");
@@ -71,6 +51,57 @@ takeOptionLength();*/
 
 // 제이쿼리 영역
 $(document).ready(function(){
+
+// 찜하기 눌렀을 때
+	let likeBtn = document.getElementsByClassName("like_btn");
+	let heartCount = 1;
+	
+	
+	for(let i = 0; i < likeBtn.length; i++){
+		
+	  likeBtn[i].addEventListener('click', (e)=>{
+		//alert(likeBtn[i].dataset.id);
+		//alert(likeBtn[i].dataset.flag);
+		
+		let id = likeBtn[i].dataset.id;
+		let flag = likeBtn[i].dataset.flag;
+	    heartCount++;
+	
+	    if(heartCount % 2 == 0){
+	      likeBtn[i].src = "/images/red_heart.png";
+	    }else{
+	      likeBtn[i].src = "/images/heart.png";
+	    }
+	    
+	    e.stopPropagation();
+	    
+	    likeAjax(id, flag);
+	    
+	  });
+	  
+	}
+
+  function likeAjax(id, flag){
+  		
+  	 //  var formData = $('#special${approveList.regId }, #popular${stayList.stayNo }, #seoul${stayList.stayNo }, #busan${stayList.stayNo }').serialize();
+	      $.ajax({
+	          type:"post",
+	          url:"/likeHotel",
+	          data: {'id': id,
+	          		 'flag': flag
+	          		 },
+	          success:function(result){
+	            // 성공 시 결과 받음
+	            if(result){
+	               alert("찜했습니다.");
+	            }
+	         },
+	         error:function(){
+	            // 오류있을 경우 수행 되는 함수
+	            alert("전송 실패");
+	         }
+	       }); 
+   }
 
 // Daterangepicker
 var now = new Date();
@@ -298,57 +329,9 @@ $('.stay_date').val(picker.startDate.format('YYYY.MM.DD(dd)') + ' ~ ' + picker.e
         if(busanIndex == 0)
             $('.busan_prev').css("display","none");
     });
-    
-    // 찜하기
-	$(".like_btn").click(function(e){
-		let likeBtn = $('.like_btn').val();
-		let heartCount = 1;
-		
-		let like = [];
-		$('.like_btn').each(function(index, item){
-			like.push($(this).val());
-		});
-  		
 
-		e.stopPropagation();
-		
-			for(let i = 0; i<like.length; i++){
-			like[i].click(function(e){
-			
-				heartCount++;
-				if(heartCount % 2 == 0){
-					like[i].src = "/images/red_heart.png";
-				}else{
-					like[i].src = "/images/heart.png";
-				}
-				e.stopPropagation();
-			});
-			
-		}
-	});
 }); //document.ready 끝
 
-// 찜하기 눌렀을 때
-//let likeBtn = document.getElementsByClassName("like_btn");
-//let heartCount = 1;
-
-
-//for(let i = 0; i < likeBtn.length; i++){
-
-//  likeBtn[i].addEventListener('click', (e)=>{
-
-//    heartCount++;
-
-//    if(heartCount % 2 == 0){
-  //    likeBtn[i].src = "/images/red_heart.png";
-    //}else{
-      //likeBtn[i].src = "/images/heart.png";
-    //}
-    
-   // e.stopPropagation();
-    
-//  });
-//}
 
 
 

@@ -108,7 +108,8 @@ public class HotelService implements IHotelService {
 	}
 
 	@Override
-	public void likeHotel(LikeVO vo) {
-		dao.likeHotel(vo);
+	public void likeHotel(HashMap<String, Object> map) {
+		dao.likeHotel(map);
 	}
+
 }
