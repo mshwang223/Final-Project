@@ -32,7 +32,7 @@
 			        <div class="custom_info">
 			        	<div>
 		                    <c:if test="${not empty user.userImg }">
-		                        <img src="/myProfileImg/${user.userImg} }" id="profile_img__preview">
+		                        <img src="/myProfileImg/${user.userImg}" id="profile_img__preview">
 		                    </c:if>
 		                    <c:if test="${empty user.userImg }">
 		                        <img src="<c:url value='/images/profile.png'/>" id="profile_img__preview" />
