@@ -197,12 +197,14 @@ $(document).ready(function(){
 	
 	$('#btnClose').click(function(){
 		$('.chatbot_box').css('display', 'none');
+		$('#chattingBox').empty();
 	});
 	
 	$(document).mouseup(function (e){
     	var LayerPopup = $("#chatbotBox");
    		if(LayerPopup.has(e.target).length === 0){
-      	LayerPopup.hide();
+      		LayerPopup.hide();
+      		$('#chattingBox').empty();
     }
   });
 	
