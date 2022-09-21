@@ -111,3 +111,24 @@
   top: 75px;
   right: -47px;
 }
+
+.company_service {
+  display: flex;	
+}
+.company_service br{
+  display: none !important;	
+}
+
+.company_facility {
+  display: flex;	
+}
+.company_facility br{
+  display: none !important;	
+}
+
+.company_add_facility {
+  display: flex;	
+}
+.company_add_facility br{
+  display: none !important;	
+}
