@@ -191,21 +191,32 @@
 	<select id="selectLike" parameterType="string" resultType="com.spring_boot.FinalProject.model.LikeVO">
 		SELECT * FROM mylike WHERE userId = #{userId} ORDER BY likeId 
 	</select>
+	
 	<!--  찜 삭제하기 (특가) -->
 	<delete id="deleteLikeReg" parameterType="hashmap">
 		DELETE FROM mylike WHERE userId = #{userId} AND regId = #{regId} 
 	</delete>
+	
 	<!--  찜 삭제하기 (일반) -->
 	<delete id="deleteLikeStay" parameterType="hashmap">
 		DELETE FROM mylike WHERE userId = #{userId} AND stayNo = #{stayNo}
 	</delete>
+	
 	<!--  찜 유지 (특가)  -->
 	<select id="selectChkRegId" parameterType="hashmap" resultType="int">
 		SELECT COUNT(*) FROM mylike WHERE userId = #{userId} AND regId = #{id}
 	</select>
+	
 	<!--  찜 유지 (일반) -->
 	<select id="selectChkStay" parameterType="hashmap" resultType="int">
 		SELECT COUNT(*) FROM mylike WHERE userId = #{userId} AND stayNo = #{id}
 	</select>
+	
+	 <!-- 마이페이지에서 찜삭제하기 -->
+	 <delete id="deleteMyLike" parameterType="hashmap">
+	 	DELETE FROM mylike
+	 	WHERE likeId = #{likeId} AND userId = #{userId}
+	 </delete>
+
   	
 </mapper>

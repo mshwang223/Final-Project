@@ -209,6 +209,11 @@ public class UserService implements IUserService {
 		dao.deleteLikeStay(map);
 	}
 
+	@Override
+	public void deleteMyLike(HashMap<String, Object> map) {
+		dao.deleteMyLike(map);
+	}
+
 
 
 

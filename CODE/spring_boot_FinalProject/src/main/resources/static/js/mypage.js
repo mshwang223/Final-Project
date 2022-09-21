@@ -32,6 +32,9 @@ $(document).ready(function () {
         if(Index == 0)
             $('.prev').css("display","none");
     });
+    
+   
+     
 });
 
 function readURL(input) {

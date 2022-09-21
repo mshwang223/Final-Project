@@ -104,4 +104,7 @@ public interface IUserDAO {
 	 
 	 // 찜유지(일반)
 	 int selectChkStay(HashMap<String, Object> map);
+	 
+	 // 마이페이지에서 찜삭제하기
+	 void deleteMyLike(HashMap<String, Object> map);
 }

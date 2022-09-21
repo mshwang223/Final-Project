@@ -241,7 +241,7 @@ public class UserController {
 
     // 마이 페이지
 	@RequestMapping("/mypage")
-	public String viweMypage( HttpSession session,Model model) {
+	public String viweMypage(HttpSession session,Model model) {
 		String sid = (String) session.getAttribute("sid");
 		if (sid == null) {
 			return "ACCESS_DENIED";
@@ -254,6 +254,7 @@ public class UserController {
 
 		List<ReviewVO> reservationList=hotelService.selectMyReview(sid);
 		model.addAttribute("reservationList",reservationList);
+		
 		// 펫등록여부
 		String petUserId = userService.selectPetUser(sid);
 		model.addAttribute("petUserId", petUserId);		
@@ -263,6 +264,25 @@ public class UserController {
 		model.addAttribute("likeList", likeList);
 
 		return "subPage/mypage";
+	}
+	
+	// 찜 삭제
+	@ResponseBody
+	@RequestMapping("/deleteMyLike")
+	public String deleteMyLike(@RequestParam HashMap<String, Object> map, HttpSession session, Model model) {
+		
+		String userId = (String) session.getAttribute("sid"); 
+		
+		ArrayList<LikeVO> likeList = userService.selectLike(userId);
+		model.addAttribute("likeList", likeList);
+		
+		String likeId = (String) map.get("likeId");
+		map.put("likeId", likeId);
+		map.put("userId", userId);
+		
+		userService.deleteMyLike(map);
+		
+		return "result";
 	}
 	
 	 // 프로필 수정 페이지

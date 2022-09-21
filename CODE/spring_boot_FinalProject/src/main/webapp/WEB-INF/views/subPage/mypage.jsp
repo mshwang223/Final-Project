@@ -104,17 +104,47 @@
                 <div class="wented_hotel_container">
 
                    	<c:forEach items="${likeList}" var="likeList" varStatus="status">
-                   		
+                   		<input type="hidden" name="likeId" value="${likeList.likeId}" id="likeId">
+
                    		<c:choose>
 	                   		<c:when test="${likeList.stayNo ne null }">
-	                   			<div class="wanted_hotel"><img src="<c:url value='/petHotelImg/${likeList.serviceImg }/1.png'/>" alt=""><i class="fa-regular fa-circle-xmark like_close"></i></div>
+	                   			<div class="wanted_hotel"><img src="<c:url value='/petHotelImg/${likeList.serviceImg }/1.png'/>" alt="">
+	                   				<i class="fa-regular fa-circle-xmark like_close" data-likeId = "${likeList.likeId }"></i>
+	                   			</div>
 							</c:when>
 							<c:otherwise>
-	                   			<div class="wanted_hotel"><img src="<c:url value='/comImg/${likeList.serviceImg }/1.png'/>" alt=""><i class="fa-regular fa-circle-xmark like_close"></i></div>
+	                   			<div class="wanted_hotel"><img src="<c:url value='/comImg/${likeList.serviceImg }/1.png'/>" alt="">
+	                   				<i class="fa-regular fa-circle-xmark like_close" data-likeId = "${likeList.likeId }"></i>
+	                   			</div>
 							</c:otherwise>
 						</c:choose>
 					 </c:forEach>
-
+					 <script>
+					 $(document).ready(function () {
+							// 마이페이지 찜 삭제
+						    $('.like_close').click(function(){
+						    	
+						    	$.ajax({
+						        type: "post",
+						        url: "/deleteMyLike",
+						        data: {
+						        		  "likeId": $("#likeId").val()
+						        		},
+						        success: function (result) {
+						            if (result == "result") {
+						                alert("삭제되었습니다.");
+						                location.reload();
+						            }
+						        },
+						        error: function () {
+						            alert("error");
+						        }
+						    });
+				      	});
+					 });
+					 </script>
+					  
+					
                 </div>
                 <img class="prev" src="../images/left-arrow.png" alt="">
                 <img class="next" src="../images/next.png" alt="">
