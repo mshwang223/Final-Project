@@ -3,7 +3,10 @@
  */
  
  $(document).ready(function(){
- 
+ 	
+ 	$('#chatBot').click(function(){
+ 		chatbotMsg();
+ 	});
 	
 	 
 	$('#chatForm').on('submit',function(){

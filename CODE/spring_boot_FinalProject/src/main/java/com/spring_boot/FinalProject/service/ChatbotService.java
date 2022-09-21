@@ -105,6 +105,13 @@ public class ChatbotService {
 
 	            obj.put("bubbles", bubbles_array);
 	            obj.put("event", "send");
+	            
+	            // 일반 메시지와 웰컴 메시지 구분
+	            if(voiceMessage == "") {
+	            	obj.put("event", "open");
+	            }else {
+	            	obj.put("event", "send");
+	            }
 
 	            requestBody = obj.toString();
 
