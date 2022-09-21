@@ -33,12 +33,21 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						</div>
 						<div class="promotion_area_contents">
 							<div>아늑한 공간에서 특별한 생일을 보내 보세요</div>
+							<button class="slide_btn" id="careBtn">자세히보기</button>
+						</div>
+					</div>
+					<div class="promotion_area">
+						<div class="promotion_area_img">
+							<img src="<c:url value='/images/promotion2.png'/>" alt="반려동물 생일">
+						</div>
+						<div class="promotion_area_contents">
+							<div>아늑한 공간에서 특별한 생일을 보내 보세요</div>
 							<button class="slide_btn" id="partyBtn">자세히보기</button>
 						</div>
 					</div>
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="<c:url value='/images/promotion2.jpg'/>" alt="반려동물 사진">
+							<img src="<c:url value='/images/promotion3.jpg'/>" alt="반려동물 사진">
 						</div>
 						<div class="promotion_area_contents">
 							<div>반려동물과 추억이 담긴 사진을 찍어봐요</div>
@@ -47,7 +56,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="<c:url value='/images/promotion3.png'/>" alt="반려동물 장난감">
+							<img src="<c:url value='/images/promotion4.png'/>" alt="반려동물 장난감">
 						</div>
 						<div class="promotion_area_contents">
 							<div>다양한 용품을 제공해드려요</div>
@@ -56,7 +65,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 					</div>
 					<div class="promotion_area">
 						<div class="promotion_area_img">
-							<img src="<c:url value='/images/promotion4.png'/>" alt="반려동물 활동">
+							<img src="<c:url value='/images/promotion5.png'/>" alt="반려동물 활동">
 						</div>
 						<div class="promotion_area_contents">
 							<div>반려동물과 함께 다양한 활동을 해봐요</div>
@@ -66,12 +75,29 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="slide_bar_box">
 					<span class="slide_bar"></span> <span class="slide_bar"></span> <span
-						class="slide_bar"></span> <span class="slide_bar"></span>
+						class="slide_bar"></span> <span class="slide_bar"></span> <span class="slide_bar"></span>
 				</div>
 			</article>
 		</section>
 	<section class="wrap">
-	
+		<section class="photo_area" id="photoArea">
+			<div class="photo_title"># 반려 돌봄 서비스</div>
+			<div class="photo_box">
+				<div class="photo_description">
+					<span>펫밀리가 떴다는 반려동물을 돌봐드립니다. 가족의 안전을 약속 드리면서</span>
+					<div>
+						<span>전문 인력으로 안전하게 가족을 돌봐드려요.</span> <img
+							src="<c:url value='/images/dog_walk.png'/>" alt="">
+					</div>
+					<span>지금까지 없었던 서비스를 저희와 함께해요</span>
+				</div>
+				<div class="photo_img">
+					<img src="<c:url value='/images/petsitter1.png'/>" alt=""> <img
+						src="<c:url value='/images/petsitter2.png'/>" alt=""> <img
+						src="<c:url value='/images/petsitter3.png'/>" alt="">
+				</div>
+			</div>
+		</section>
 		<section class="party_area" id="partyArea">
 			<div class="party_title"># 파티용품</div>
 			<div class="party_box">
@@ -132,7 +158,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<div class="photo_title"># 추억이 담긴 사진</div>
 			<div class="photo_box">
 				<div class="photo_description">
-					<span>호텔 및 펜션 예약 시 촬영옵션을 선택하면(유료 서비스)</span>
+					<span>호텔 및 펜션 예약 시 촬영을 원하시면(유선상담 서비스 : 02-222-2334)</span>
 					<div>
 						<span>반려동물과의 소중한 추억을 사진으로 남겨드려요</span> <img
 							src="<c:url value='/images/camera.png'/>" alt="">

@@ -273,11 +273,6 @@ public class UserController {
 		
 		String userId = (String) session.getAttribute("sid"); 
 		
-		ArrayList<LikeVO> likeList = userService.selectLike(userId);
-		model.addAttribute("likeList", likeList);
-		
-		String likeId = (String) map.get("likeId");
-		map.put("likeId", likeId);
 		map.put("userId", userId);
 		
 		userService.deleteMyLike(map);

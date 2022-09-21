@@ -37,6 +37,9 @@ input{
 	margin-top: 20px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+.whole_info_box p{
+	font-size: 18px;
+}
 .filebox{
 	margin-top: 50px;
 }

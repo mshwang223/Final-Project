@@ -36,7 +36,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<form id="fileUploadFormMulti" method="post" enctype="multipart/form-data" class="wrap_insert_box">
 				<div class="tlt_insert"><div># 업체등록</div></div>
 				<div class="whole_info_box">
-
+					<p>* 기간한정 특가 호텔을 등록해 주세요!</p>
 					<div class="hotel_insert_info">
 						<div class="filebox">
 							<input type="hidden" id="userId" name="userId" value="<c:url value='${sessionScope.sid}'/>">

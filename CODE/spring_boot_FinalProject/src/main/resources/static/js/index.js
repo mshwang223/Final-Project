@@ -77,20 +77,23 @@ $(document).ready(function(){
      
 
    // 자세히보기 버튼 이동
+   $('#careBtn').click(function(){
+      $('html,body').animate({scrollTop : 840},300);
+   });
+
    $('#partyBtn').click(function(){
-      $('html,body').animate({scrollTop : 1000},300);
+      $('html,body').animate({scrollTop : 1650},300);
    });
 
    $('#photoBtn').click(function(){
-      $('html,body').animate({scrollTop : 2150},300);
-   });
-
-   $('#itemBtn').click(function(){
       $('html,body').animate({scrollTop : 2950},300);
    });
 
+   $('#itemBtn').click(function(){
+      $('html,body').animate({scrollTop : 3760},300);
+   });
    $('#playBtn').click(function(){
-      $('html,body').animate({scrollTop : 3900},300);
+      $('html,body').animate({scrollTop : 4700},300);
    });
 });   // document.ready
 
