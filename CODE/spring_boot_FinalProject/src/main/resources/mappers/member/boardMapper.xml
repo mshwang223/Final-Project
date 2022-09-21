@@ -40,7 +40,7 @@
   	</select>
   	
   	<!-- 문의하기 작성 -->
-  	<insert id="insertContact" parameterType="com.spring_boot.FinalProject.model.UserVO">
+  	<insert id="insertContact" parameterType="com.spring_boot.FinalProject.model.BoardVO">
   		INSERT into board
   		(userId, title, contents, chkEmail, chkFile, category, chkYN)
   		VALUES(#{userId}, #{title}, #{contents}, #{chkEmail}, #{chkFile}, 2, 0)

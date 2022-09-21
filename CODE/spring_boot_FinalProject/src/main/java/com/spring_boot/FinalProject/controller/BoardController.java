@@ -149,12 +149,14 @@ public class BoardController {
 		// 4. 파일 생성
 		File newFile = new File(uploadPath + savedFileName);
 					
-		// 5. 서버로 전송
-		file.transferTo(newFile);
-					
-		// 6. DB에 저장
-		if(!originalFileName.equals(""))
+		
+		if(!originalFileName.equals("")) {
+			// 5. 서버로 전송
+			file.transferTo(newFile);
+			
+			// 6. DB에 저장
 			vo.setChkFile(savedFileName);
+		}
 		
 		
 		boardService.insertContact(vo);
