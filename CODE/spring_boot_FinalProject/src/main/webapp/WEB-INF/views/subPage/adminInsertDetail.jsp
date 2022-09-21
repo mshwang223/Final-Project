@@ -84,22 +84,22 @@
 							</div>
 							<div class="company_service">
 								<span>제공서비스 : </span>
-								<span>${facility1}</span>
+								<span>&nbsp;${facility1}</span>
 								<input type="hidden" name="facility1" id="facility1" value="${facility1 }">
 							</div>
 							<div class="company_facility">
 								<span>제공시설 : </span>
-								<span>${facility2}</span>
+								<span>&nbsp;${facility2}</span>
 								<input type="hidden" name="facility2" id="facility2" value="${facility2 }">
 							</div>
 							<div class="company_add_facility">
 								<span>추가시설 : </span>
-								<span>${facility3}</span>
+								<span>&nbsp;${facility3}</span>
 								<input type="hidden" name="facility3" id="facility3" value="${facility3}">
 							</div>
 							<div class="company_add_facility">
 								<span>등록기간 : </span>
-								<span>${period}</span>
+								<span>&nbsp;${period}</span>
 								<input type="hidden" name="facility3" id="facility3" value="${facility3}">
 							</div>
 							<div class="company_pet_count">
