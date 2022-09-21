@@ -54,20 +54,20 @@ $(document).ready(function(){
 
 // 찜하기 눌렀을 때
 	let likeBtn = document.getElementsByClassName("like_btn");
-	let heartCount = 1;
+	let arrHeart = [likeBtn.length];
 	
 	
 	for(let i = 0; i < likeBtn.length; i++){
-		
+		arrHeart[i] = 1;
 	  likeBtn[i].addEventListener('click', (e)=>{
-
+	  
+		arrHeart[i]++;
 		let id = likeBtn[i].dataset.id;
 		let flag = likeBtn[i].dataset.flag;
 		let img = likeBtn[i].dataset.img;
-	    heartCount++;
-	    
+
 	
-	    if(heartCount % 2 == 0){
+	    if(arrHeart[i] % 2 == 0){
 	      likeBtn[i].src = "/images/red_heart.png";
 	    }else{
 	      likeBtn[i].src = "/images/heart.png";
@@ -83,7 +83,6 @@ $(document).ready(function(){
 
   function likeAjax(id, flag, img){
   		
-  	 //  var formData = $('#special${approveList.regId }, #popular${stayList.stayNo }, #seoul${stayList.stayNo }, #busan${stayList.stayNo }').serialize();
 	      $.ajax({
 	          type:"post",
 	          url:"/likeHotel",
@@ -92,10 +91,45 @@ $(document).ready(function(){
 	          		 'img': img
 	          		 },
 	          success:function(result){
-	            // 성공 시 결과 받음
-	            if(result){
-	               alert("찜했습니다.");
-	            }
+	          	if(result == "00") {
+					$.ajax({
+						type:"post",
+		   				url:"/delete_regId",
+		   				data:{"regId": id},
+		   				success:function(result) {
+		   					alert("해당 상품이 찜 목록에서 삭제되었습니다.");
+		   				}
+					});
+				} else if(result == "01") {
+					$.ajax({
+						type:"post",
+		   				url:"/delete_stayNo",
+		   				data:{"stayNo": id},
+		   				success:function(result) {
+		   					alert("해당 상품이 찜 목록에서 삭제되었습니다.");
+		   				}
+					});
+				} else if(result == "10") {
+					$.ajax({
+						type:"post",
+		   				url:"/delete_regId",
+		   				data:{"regId": id},
+		   				success:function(result) {
+		   					alert("해당 상품이 찜 목록에서 삭제되었습니다.");
+		   				}
+					});
+				} else if(result == "11") {
+					$.ajax({
+						type:"post",
+		   				url:"/delete_stayNo",
+		   				data:{"stayNo": id},
+		   				success:function(result) {
+		   					alert("해당 상품이 찜 목록에서 삭제되었습니다.");
+		   				}
+					});
+				} else {
+					alert("상품이 찜되었습니다.");
+				}
 	         },
 	         error:function(){
 	            // 오류있을 경우 수행 되는 함수

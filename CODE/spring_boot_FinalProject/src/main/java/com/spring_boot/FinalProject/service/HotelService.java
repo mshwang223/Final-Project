@@ -106,7 +106,8 @@ public class HotelService implements IHotelService {
 	public InsertHotelVO selectInsertHotel(HashMap<String, Object> map) {
 		return dao.selectInsertHotel(map);
 	}
-
+	
+	// 찜하기
 	@Override
 	public void likeHotel(HashMap<String, Object> map) {
 		dao.likeHotel(map);

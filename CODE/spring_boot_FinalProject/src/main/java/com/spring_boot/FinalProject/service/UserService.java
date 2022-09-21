@@ -182,21 +182,34 @@ public class UserService implements IUserService {
     public void insertReview(ReviewVO review) {
 		dao.insertReview(review);
     }
-
-	@Override
-	public ArrayList<InsertHotelVO> selectLikeReg(String sid) {
-		return dao.selectLikeReg(sid);
-	}
-
-	@Override
-	public ArrayList<StayVO> selectLikeHotel(String sid) {
-		return dao.selectLikeHotel(sid);
-	}
-
+	
+	// 마이페이지 찜하기
 	@Override
 	public ArrayList<LikeVO> selectLike(String sid) {
 		return dao.selectLike(sid);
 	}
+
+	@Override
+	public int selectChkRegId(HashMap<String, Object> map) {
+		return dao.selectChkRegId(map);
+	}
+
+	@Override
+	public int selectChkStay(HashMap<String, Object> map) {
+		return dao.selectChkStay(map);
+	}
+
+	@Override
+	public void deleteLikeReg(HashMap<String, Object> map) {
+		dao.deleteLikeReg(map);
+	}
+
+	@Override
+	public void deleteLikeStay(HashMap<String, Object> map) {
+		dao.deleteLikeStay(map);
+	}
+
+
 
 
 }

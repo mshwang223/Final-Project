@@ -89,14 +89,19 @@ public interface IUserDAO {
 	
 	// 리뷰 등록
 	 void insertReview(ReviewVO review);
-	 
-	 // 찜 들고오기(특가)
-	 ArrayList<InsertHotelVO> selectLikeReg(String sid);
-	 
-	 // 찜 들고오기(일반)
-	 ArrayList<StayVO> selectLikeHotel(String sid);
-	 
-	 // 실험용
+
+	 // 마이페이지 찜하기
 	 ArrayList<LikeVO> selectLike(String sid);
 	 
+	 //마이페이지 찜삭제(특가)
+	 void deleteLikeReg(HashMap<String, Object> map);
+	 
+	 //마이페이지 찜삭제(일반)
+	 void deleteLikeStay(HashMap<String, Object> map);
+	 
+	 // 찜유지(특가)
+	 int selectChkRegId(HashMap<String, Object> map);
+	 
+	 // 찜유지(일반)
+	 int selectChkStay(HashMap<String, Object> map);
 }

@@ -203,6 +203,7 @@ justify-content: space-between;
   padding: 90px 50px 0 50px;
 }
 
+/* 마이페이지 찜 */
 .wented_title{
   width: 200px;
   font-size: 22px;
@@ -217,13 +218,19 @@ justify-content: space-between;
   display: flex;
   width: 515px;
   justify-content: center;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 .wented_hotel_container{
   display: flex;
+  align-items: center;
   width: 95%;
   overflow: hidden;
+  height: 125px; 
+}
+
+.wanted_hotel{
+  position: relative;
 }
 
 .wented_hotel_container img{
@@ -254,6 +261,14 @@ justify-content: space-between;
 
 .accordion__arrow2 {
   float: right;
+}
+
+.like_close{
+  position: absolute;
+  font-size: 25px;
+  z-index: 3;
+  left: 74px;
+  cursor: pointer;
 }
 
 /* 회원탈퇴 */
