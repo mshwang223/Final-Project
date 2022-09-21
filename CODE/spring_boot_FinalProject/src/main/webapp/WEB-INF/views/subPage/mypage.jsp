@@ -102,16 +102,15 @@
                 <br></div>
             <div class="wented_hotel_wrap">
                 <div class="wented_hotel_container">
-	
 
                    	<c:forEach items="${likeList}" var="likeList" varStatus="status">
                    		
                    		<c:choose>
 	                   		<c:when test="${likeList.stayNo ne null }">
-	                   			<div class="wanted_hotel"><img src="<c:url value='/petHotelImg/${likeList.serviceImg }/1.png'/>" alt=""></div>
+	                   			<div class="wanted_hotel"><img src="<c:url value='/petHotelImg/${likeList.serviceImg }/1.png'/>" alt=""><i class="fa-regular fa-circle-xmark like_close"></i></div>
 							</c:when>
 							<c:otherwise>
-	                   			<div class="wanted_hotel"><img src="<c:url value='/comImg/${likeList.serviceImg }/1.png'/>" alt=""></div>
+	                   			<div class="wanted_hotel"><img src="<c:url value='/comImg/${likeList.serviceImg }/1.png'/>" alt=""><i class="fa-regular fa-circle-xmark like_close"></i></div>
 							</c:otherwise>
 						</c:choose>
 					 </c:forEach>

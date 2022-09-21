@@ -3,6 +3,7 @@ package com.spring_boot.FinalProject.controller;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -255,7 +256,11 @@ public class UserController {
 		model.addAttribute("reservationList",reservationList);
 		// 펫등록여부
 		String petUserId = userService.selectPetUser(sid);
-		model.addAttribute("petUserId", petUserId);
+		model.addAttribute("petUserId", petUserId);		
+		
+		// 찜
+		ArrayList<LikeVO> likeList = userService.selectLike(sid);
+		model.addAttribute("likeList", likeList);
 
 		return "subPage/mypage";
 	}

@@ -148,28 +148,75 @@ public class HotelController {
     // 찜하기
     @ResponseBody
     @RequestMapping("/likeHotel")
-    //public String likeHotel(@RequestParam HashMap<String, Object>map, Model model)throws IOException {
     public String likeHotel(@RequestParam ("id") String id,
     						@RequestParam ("flag") String flag,
+    						@RequestParam ("img") String img,
     						@RequestParam HashMap<String, Object>map,
     						HttpSession session)throws IOException {
     	
-		
-    	
-    	System.out.println(id);
-    	System.out.println(flag);
-    	
-    	String userId = (String) session.getAttribute("sid");
-    	map.put("userId", userId);
-    	map.put("id", id);
-    	map.put("flag", flag);
-    	
+    	  String result = null;
+		  String userId = (String) session.getAttribute("sid"); 
+		  map.put("userId", userId); 
+		  map.put("id", id); 
+		  map.put("flag", flag); 
+		  map.put("img", img);
+		  
+		  int count1 =  userService.selectChkRegId(map);
+		  int count2 = userService.selectChkStay(map);
+			/* System.out.println(count1+ "," + count2+ "," + flag); */
 
-    	hotelService.likeHotel(map);
+		  if(count1 == 0) {
+			  if(count2 == 0) {
+				  hotelService.likeHotel(map);
+			  }else {
+				  if(flag.equals("stayNo")) {
+					  result = "01";
+				  }else {
+					  hotelService.likeHotel(map);
+				  }
+			  }
+		  }else {
+			  if(count2 == 0) {
+				  if(flag.equals("regId")) {
+					  result = "10";
+				  }else {
+					  hotelService.likeHotel(map);
+				  }
+			  }else {
+				  if(flag.equals("regId")) {
+					  result = "00";
+				  }else {
+					  result = "11";
+				  }
+			  }
+		  }
     	
-    	
-    	return "success";
+    	return result;
     }
+    
+    //찜해제(일반)
+    @ResponseBody
+    @RequestMapping("/delete_stayNo")
+    public String deleteStayNo(@RequestParam HashMap<String, Object> map, HttpSession session) {
+    	
+    	 String userId = (String) session.getAttribute("sid"); 
+    	 map.put("userId", userId);
+    	 userService.deleteLikeStay(map);
+    	
+    	return "result";
+    }
+    
+    //찜해제(특가)
+    @ResponseBody
+    @RequestMapping("/delete_regId")
+    public String deleteRegId(@RequestParam HashMap<String, Object> map, HttpSession session) {
+    	
+   	 String userId = (String) session.getAttribute("sid"); 
+   	 map.put("userId", userId);
+   	 userService.deleteLikeReg(map);
+   	
+   	return "result";
+   }
 
     // 숙박예약 가기(검색)
     @RequestMapping("/petHotel")
