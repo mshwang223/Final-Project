@@ -170,7 +170,8 @@
   padding: 15px;
   border: 1px solid #ee82ee;
   width: 450px;
-  height: 385px;
+  height: fit-content;
+  min-height: 278px;
   background-color: #fff;
   border-radius: 10px;
  
@@ -197,7 +198,6 @@
   font-family: 'Nanum Gothic';
   font-weight: 600;
   font-size:20px;
-  position: absolute;
   bottom: 20px;
   width: 400px;
   padding: 20px;
@@ -382,6 +382,7 @@ width:60px;
 	display: flex;
 	justify-content: space-between;
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .total_charge > div{
