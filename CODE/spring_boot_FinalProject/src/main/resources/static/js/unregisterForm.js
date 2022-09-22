@@ -47,6 +47,8 @@ $(document).ready(function () {
 		});
 
 	});
-
+	$('#btnCancel').click(function(){
+		location.href = "/mypage";
+	});
 
 });

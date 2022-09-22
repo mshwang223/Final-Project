@@ -48,7 +48,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 			
 				 <div class="btn_delete_box">
-			    	<button type="button" class="btn_cancel_done">취 소</button>
+			    	<button type="button" id="btnCancel" class="btn_cancel_done">취 소</button>
 			        <button type="submit" id="btnDelete" class="btn_delete_done">회원탈퇴</button>
 		    	</div>
 	    	</form>
