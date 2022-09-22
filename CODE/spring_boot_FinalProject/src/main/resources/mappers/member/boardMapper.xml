@@ -210,7 +210,9 @@
 		  FROM orderinfo i
 		  JOIN orderproduct p ON p.userId = i.userId
 		  JOIN user u ON u.userId = p.userId
-		 WHERE i.ordNo = #{ordNo}		
+		 WHERE i.ordNo = #{ordNo}
+		 ORDER BY p.ordPrdId DESC
+         LIMIT 1		
   	</select>
 	
 	<!-- 관리자 - 탈퇴회원 조회 -->
