@@ -169,6 +169,9 @@ public class UserController {
 		
 		userService.insertUser(vo);
 		
+		// 가입 후 포인트 반영
+		vo = userService.selectUser(userId);
+		
 		// 세션저장
 		session.setAttribute("sid", vo.getUserId());
 		session.setAttribute("userName", vo.getUserName());
