@@ -198,7 +198,7 @@
 	
   	<!-- 관리자 - 결제내역 삭제 -->
 	<delete id="deleteAdminPay" parameterType="hashmap">
-	  	DELETE FROM orderInfo
+	  	DELETE FROM orderinfo
 	  	 WHERE ordNo IN
 	  	 <foreach collection="ordNos" item="ordNo" open="(" close=")" separator=",">#{ordNo}</foreach> 
 	</delete>
