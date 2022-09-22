@@ -251,13 +251,14 @@ public class BoardController {
 
 		// 4. 파일 생성
 		File newFile = new File(uploadPath + savedFileName);
-					
-		// 5. 서버로 전송
-		file.transferTo(newFile);
-					
-		// 6. DB에 저장
-		if(!originalFileName.equals("")) map.put("chkFile", savedFileName);
-		else map.put("chkFile", "");
+		
+		if(!originalFileName.equals("")) {
+			// 5. 서버로 전송
+			file.transferTo(newFile);
+			
+			// 6. DB에 저장
+			map.put("chkFile", savedFileName);
+		} else map.put("chkFile", "");
 		
 		boardService.updateContact(map);
 		
