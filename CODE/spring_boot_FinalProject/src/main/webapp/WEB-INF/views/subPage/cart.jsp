@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!-- 양식제출 안뜨게함!--!>
 <!-- 양식다시제출 제거 -->
 <%
@@ -59,11 +60,11 @@
                             <img src="<c:url value='/images/hotel4.jpg'/>" alt="상품" width="120" height="90">
                             <div class="item-info">
                                 <p class="item-info__brand">${cartList.stayName}</p>
-                                <p class="item-info__name">예약날짜 : ${cartList.period}</p>
+                                <p class="item-info__name">${cartList.period}</p>
                                 <button>주문변경</button>
                             </div>
                             <div class="item__price">
-                                <h3>${cartList.price}원</h3>
+                                <h3><fmt:formatNumber type="currency" value="${cartList.price}"/>원</h3>
                             </div>
                         </div>
                         <c:if test="${status.last eq false}">
@@ -111,28 +112,22 @@
                 <div class="recommended-item-ct">
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel1.jpg'/>" alt="상품" width="120" height="90">
-                    
                         <button>장바구니 담기</button>
                     </div>
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel2.jpg'/>" alt="상품" width="120" height="90">
-                     
                         <button>장바구니 담기</button>
                     </div>
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel3.jpg'/>" alt="상품" width="120" height="90">
-                      
                         <button>장바구니 담기</button>
                     </div>
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel4.jpg'/>" alt="상품" width="120" height="90">
-                        <p class="recommended-item-info__brand"></p>
-                        <p class="recommended-item-info__name"></p>
                         <button>장바구니 담기</button>
                     </div>
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel5.jpg'/>" alt="상품" width="120" height="90">
-                        
                         <button>장바구니 담기</button>
                     </div>
 
@@ -143,9 +138,17 @@
         <div class="cart_box_final_pay">
             <div class="final_pay">
                 <div class="final_pay_txt">최종 결제 금액</div>
-
+				<div id="insurancePrice" class="insurance_price">
+					<i class="fa-solid fa-shield-dog"></i><span>펫밀리가 떴다 가격 보장제</span>
+				</div>
+				<div class="info_insurance">
+					<p>펫밀리가 떴다는 고객님들께 가능한 한 최적의</p> 
+					<p>가격을 제공해드리도록 노력합니다.</p>
+					<p>다른 플랫폼에서 더 저렴한 상품을 찾으신 경우</p>
+					<p>해당 차액을 환블해 드리겠습니다.</p>
+				</div>
                 <div class="total_charge">
-                    <span class=total>총합계 :</span> <span>${totalPrice} 원</span>
+                    <div class=total>총합계 : </div> <div>${totalPrice} 원</div>
                 </div>
                 <button class="final_pay_btn" id="payment" onclick="payment()">결제하기</button>
             </div>
@@ -226,10 +229,11 @@
             </div>
         </div>
     </div>
+   </section>
 
     <!--footer -->
     <c:import url="/WEB-INF/views/layout/footer.jsp"/>
-</section>
+
 <script src="js/cart.js"></script>
 </body>
 </html>

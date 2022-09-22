@@ -75,12 +75,17 @@
 .item-info p:nth-of-type(1) {
   padding-bottom: 5px;
   font-weight: 800;
+  font-size: 20px;
   margin-top: 14px;
 }
 
 .item-info p:nth-of-type(3) {
   padding: 15px 0;
   font-weight: 200;
+}
+.item-info__name{
+	margin-top: 6px;
+	font-size: 16px;;	
 }
 
 .item-info button {
@@ -93,6 +98,7 @@
   width: fit-content;
   padding: 10px 5px;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 .item__price {
@@ -164,7 +170,7 @@
   padding: 15px;
   border: 1px solid #ee82ee;
   width: 450px;
-  height: 500px;
+  height: 385px;
   background-color: #fff;
   border-radius: 10px;
  
@@ -372,8 +378,13 @@ width:60px;
   "payco Lpay else ." 1fr / 1fr 1fr 1fr 1fr;
   gap: 5px;
 }
+.total_charge{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
 
-.total_charge > span{
+.total_charge > div{
 	font-weight: 600;
 	font-family: 'Nanum Gothic';
 	font-size:25px;	
@@ -381,4 +392,27 @@ width:60px;
 
 .payments_confirm{
  color:#ee88ee;
+}
+
+.insurance_price{
+	margin-top: 50px;
+	cursor: pointer;
+}
+.insurance_price i{
+	font-size: 18px;
+	color: #778887;
+	margin-right: 8px;
+}
+.insurance_price span{
+	font-size: 18px;
+	color: #778887;
+	margin-right: 8px;
+}
+.info_insurance{
+	display: none;
+	padding: 10px 0 0 25px;
+}
+.info_insurance p{
+	margin-bottom: 8px;
+	color: #778887;
 }

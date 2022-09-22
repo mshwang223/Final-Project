@@ -83,3 +83,9 @@ function selectAll2(selectAll) {
         checkbox.checked = selectAll.checked;
     })
 }
+$(document).ready(function(){
+	// 가격보상제도 클릭시
+	$('#insurancePrice').click(function(){
+		$('.info_insurance').slideToggle('500');
+	});
+});
