@@ -99,12 +99,18 @@ public interface IUserDAO {
 	 //마이페이지 찜삭제(일반)
 	 void deleteLikeStay(HashMap<String, Object> map);
 	 
-	 // 찜유지(특가)
+	 // 찜(특가)
 	 int selectChkRegId(HashMap<String, Object> map);
 	 
-	 // 찜유지(일반)
+	 // 찜(일반)
 	 int selectChkStay(HashMap<String, Object> map);
 	 
 	 // 마이페이지에서 찜삭제하기
 	 void deleteMyLike(HashMap<String, Object> map);
+	 
+	 // 찜 하트유지(특가)
+	 ArrayList<LikeVO> retainHeartReg(String userId);
+	 
+	 // 찜 하트유지(일반)
+	 ArrayList<LikeVO> retainHeartStay(String userId);
 }

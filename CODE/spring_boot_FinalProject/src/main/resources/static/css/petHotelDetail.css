@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 150px;
+  width: 120px;
 }
 
 .stay_sub_info .stay_sub_box img{
@@ -37,7 +37,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 90px;
+  width: 85px;
 }
 
 .stay_sub_info .stay_pick img{
@@ -389,7 +389,7 @@ span.spanWidth {
 .charge_area div:nth-child(2){
   display: flex;
   justify-content: space-between;
-  width: 150px;
+  width: 125px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -402,6 +402,8 @@ span.spanWidth {
 .charge_area div:nth-child(2) > div{
   border-bottom: 1px solid #222;
   cursor: pointer;
+  margin-left: 10px;
+  font-weight: 600;
 }
 
 .check_date{
@@ -637,7 +639,7 @@ span.spanWidth {
   justify-content: space-between;
   font-size: 25px;
   font-weight: 600;
-  width: 215px;
+  width: 180px;
 }
 
 .info_content_box7 > div.review_title > img{
@@ -654,19 +656,20 @@ span.spanWidth {
 }
 
 .review_content_box{
-  width: 50%;
-  height: 550px;
-  margin: 20px 0;
-  padding: 40px 20px;
+  display: flex;	
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 20px 10px;
+  overflow: hidden;
 }
 
 .review_content_box > div.review_user_content{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 250px;
-  margin-bottom: 20px;
-  padding: 10px
+  width: 390px;
+  height: 200px;
+  padding: 15px;
 }
 
 .review_content_box .user_img_box{
@@ -690,21 +693,21 @@ span.spanWidth {
 }
 
 .review_info .nickname{
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
 .review_info .review_date{
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
 }
 
 .review_content{
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 25px;
-  height: 190px;
+  height: 130px;
   padding: 20px 10px 10px;
 }
 
@@ -779,6 +782,7 @@ span.spanWidth {
 
 .review_box{
 	height: 500px;
+	width: 100%;
 	padding: 10px;
 	overflow: auto;
 }

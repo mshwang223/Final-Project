@@ -56,7 +56,6 @@ $(document).ready(function(){
 	let likeBtn = document.getElementsByClassName("like_btn");
 	let arrHeart = [likeBtn.length];
 	
-	
 	for(let i = 0; i < likeBtn.length; i++){
 		arrHeart[i] = 1;
 	  likeBtn[i].addEventListener('click', (e)=>{
@@ -137,6 +136,11 @@ $(document).ready(function(){
 	         }
 	       }); 
    }
+   
+// 찜 유지
+let likeReg = $('#likeReg').val();
+
+console.log(likeReg);
 
 // Daterangepicker
 var now = new Date();

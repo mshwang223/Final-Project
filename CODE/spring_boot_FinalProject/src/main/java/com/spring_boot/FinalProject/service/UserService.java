@@ -189,32 +189,45 @@ public class UserService implements IUserService {
 		return dao.selectLike(sid);
 	}
 
+	 // 찜 (특가)
 	@Override
 	public int selectChkRegId(HashMap<String, Object> map) {
 		return dao.selectChkRegId(map);
 	}
 
+	 // 찜 (일반)
 	@Override
 	public int selectChkStay(HashMap<String, Object> map) {
 		return dao.selectChkStay(map);
 	}
 
+	 //마이페이지 찜삭제(특가)
 	@Override
 	public void deleteLikeReg(HashMap<String, Object> map) {
 		dao.deleteLikeReg(map);
 	}
 
+	 //마이페이지 찜삭제(일반)
 	@Override
 	public void deleteLikeStay(HashMap<String, Object> map) {
 		dao.deleteLikeStay(map);
 	}
 
+	 // 마이페이지에서 찜삭제하기
 	@Override
 	public void deleteMyLike(HashMap<String, Object> map) {
 		dao.deleteMyLike(map);
 	}
 
-
-
+	// 찜 하트유지(특가)
+	@Override
+	public ArrayList<LikeVO> retainHeartReg(String userId) {
+		return dao.retainHeartReg(userId);
+	}
+	// 찜 하트유지(일반)
+	@Override
+	public ArrayList<LikeVO> retainHeartStay(String userId) {
+		return dao.retainHeartStay(userId);
+	}
 
 }

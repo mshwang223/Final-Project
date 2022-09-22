@@ -220,7 +220,10 @@ public class HotelController {
 
     // 숙박예약 가기(검색)
     @RequestMapping("/petHotel")
-    public String viewPetHotel(Model model, @RequestParam HashMap<String, Object> map) {
+    public String viewPetHotel(Model model, @RequestParam HashMap<String, Object> map, HttpSession session) {
+    	
+      	 String userId = (String) session.getAttribute("sid");
+    	
         // 지역코드 검색
         ArrayList<UtilVO> lists = utilService.selectState();
         model.addAttribute("lists", lists);
@@ -231,7 +234,15 @@ public class HotelController {
 
         ArrayList<InsertHotelVO> approveList = hotelService.listtInsert();
         model.addAttribute("approveList", approveList);
-
+        
+        // 찜하트 유지(특가)
+        ArrayList<LikeVO> likeRegList = userService.retainHeartReg(userId);
+        model.addAttribute("likeRegList", likeRegList);
+        System.out.println(likeRegList);
+        // 찜하트 유지(일반)
+        ArrayList<LikeVO> likeStayList = userService.retainHeartStay(userId);
+        model.addAttribute("likeStayList", likeStayList);
+        System.out.println(likeStayList);
         return "subPage/petHotel";
     }
 

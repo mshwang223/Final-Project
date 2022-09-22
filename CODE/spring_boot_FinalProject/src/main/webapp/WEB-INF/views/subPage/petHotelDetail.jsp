@@ -47,7 +47,7 @@
 			                <div class="stay_title">${list.stayName}</div>
 			                <div class="stay_sub_info">
 			                    <div class="stay_sub_box">
-			                        <img src="/images/star.png" alt="별점"> <span>${pointAvg}</span>
+			                        <img src="/images/star.png" alt="별점"> <span>${fn:substring(pointAvg, 0, 3) }</span>
 			                        <div class="review_move">후기 ${reviewCount}개</div>
 			                    </div>
 			                    <div class="stay_pick">
@@ -181,7 +181,7 @@
 		                </div>
 		                <div class="info_content_box7">
 		                    <div class="review_title">
-		                        <img src="/images/star.png" alt="별점"> <span>${pointAvg}</span>
+		                        <img src="/images/star.png" alt="별점"> <span>${fn:substring(pointAvg, 0, 3) }</span>
 		                        <div>후기 ${reviewCount}개</div>
 		                    </div>
 		                    <div class="review_content_container">
@@ -205,7 +205,7 @@
 		                    <div class="black_bg">
 		                        <div class="review_container">
 		                            <div class="modal_review_title">
-		                                <img src="/images/star.png" alt="별점"> <span>${pointAvg}</span>
+		                                <img src="/images/star.png" alt="별점"> <span>${fn:substring(pointAvg, 0, 3) }</span>
 		                                <div>후기 ${reviewCount}개</div>
 		                            </div>
 		                            <div class="review_close"><i class="fa-regular fa-circle-xmark"></i></div>
@@ -237,8 +237,8 @@
 		                        <span id="roomPrice"></span><span> / 1박</span>
 		                    </div>
 		                    <div>
-		                        <img src="/images/star.png" alt="별점"> <span>${pointAvg}</span>
-		                        <div class="review_move">${reviewCount}개</div>
+		                        <img src="/images/star.png" alt="별점"> <span>${fn:substring(pointAvg, 0, 3) }</span>
+		                        <div class="review_move">후기 ${reviewCount}개</div>
 		                    </div>
 		                </div>
 		                <div class="check_date">

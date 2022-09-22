@@ -269,7 +269,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="specialContainer">
-						<c:forEach var="approveList" items="${approveList}" varStatus="loop">
+						<c:forEach var="approveList" items="${approveList}"  varStatus="status">
 							<form id="special${approveList.regId }" class="like_insert" method="post" action="<c:url value='petHotelDetail/${approveList.regId }'/>">
 								<input type="hidden" name="chk1" value="1">
 								<input type="hidden" id="userId" name="userId" value="${sessionScope.sid }">
@@ -286,9 +286,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										<input type="hidden" name="endDate" value="${fn:substring(approveList.period,21,29) }">
 										<div><fmt:formatNumber type="currency" value="${approveList.price}" />원 / 1박</div>
 									</div>
-									<span class="like_hover">
-										<img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn" data-id="${approveList.regId }" data-flag="regId" data-img="${fn:split(approveList.serviceImg,'.')[0]}">
-									</span>
+										<span class="like_hover">
+											<img src="<c:url value='/images/heart.png'/>" alt="찜하기" class="like_btn" data-id="${approveList.regId }" data-flag="regId" data-img="${fn:split(approveList.serviceImg,'.')[0]}">
+										</span>
 								</div>
 								<script>
 								    $('#specialBox${approveList.regId}').click(function(){
@@ -309,7 +309,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="popularContainer">
-						<c:forEach begin="22" end="32" var="stayList" items="${stayList}" varStatus="loop">
+						<c:forEach begin="22" end="32" var="stayList" items="${stayList}" varStatus="status">
 							<form id="popular${stayList.stayNo }" class="like_insert" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<input type="hidden" name="chk1" value="2">
 								<input type="hidden" name="userId" value="${sessionScope.sid }">
@@ -324,8 +324,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										</div>
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
-									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }></span>
+									<span class="like_hover">
+												<img src="<c:url value='/images/heart.png'/>"  alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }>
+									</span>
 								</div>
 								<script>
 							    $('#popularBox${stayList.stayNo }').click(function(){
@@ -346,7 +347,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="seoulContainer">
-						<c:forEach begin="2" end="11" var="stayList" items="${stayList}" varStatus="loop">
+						<c:forEach begin="2" end="11" var="stayList" items="${stayList}">
 							<form id="seoul${stayList.stayNo }" class="like_insert" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<input type="hidden" name="chk1" value="2">
 								<input type="hidden" name="userId" value="${sessionScope.sid }">
@@ -359,8 +360,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										</div>
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
-									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }></span>
+									<span class="like_hover">
+												<img src="<c:url value='/images/heart.png'/>"  alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }>
+									</span>
 								</div>
 								<script>
 							    $('#seoulBox${stayList.stayNo }').click(function(){
@@ -380,7 +382,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</div>
 				<div class="stay_items_wrap">
 					<div class="stay_container"  id="busanContainer">
-						<c:forEach begin="81" end="90" var="stayList" items="${stayList}" varStatus="loop">
+						<c:forEach begin="81" end="90" var="stayList" items="${stayList}" varStatus="status">
 							<form id="busan${stayList.stayNo }" class="like_insert" method="post" action="<c:url value='petHotelDetail/stayNo=${stayList.stayNo }'/>">
 								<input type="hidden" name="chk1" value="2">
 								<input type="hidden" name="userId" value="${sessionScope.sid }">
@@ -393,8 +395,9 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										</div>
 										<div><fmt:formatNumber type="currency" value="${stayList.price}" />원 / 1박</div>
 									</div>
-									<span class="like_hover"><img src="<c:url value='/images/heart.png'/>"
-										alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }></span>
+									<span class="like_hover">
+												<img src="<c:url value='/images/heart.png'/>"  alt="찜하기" class="like_btn" data-id="${stayList.stayNo }" data-flag="stayNo" data-img=${stayList.stayNo }>
+									</span>
 								</div>
 								<script>
 								
@@ -409,11 +412,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 						class="busan_next" src="<c:url value='/images/next.png'/>" alt="">
 				</div>
 			</article>
-<%-- 			<form id="likeForm" method="post" action="<c:url value='/likeHotel'/>">
-				<input type="hidden" name="userId" value="${sessionScope.sid }">
-				<input type="hidden" class="likeStayNo" name="likeStayNo" value="${stayList.stayNo }">
-				<input type="hidden" id="regId" name="regId" value="${approveList.regId }">
-			</form> --%>
+	
 		</section>
 		<div class="chatbot_box">
 			<div class="chat_head">
@@ -436,4 +435,22 @@ if (request.getProtocol().equals("HTTP/1.1"))
 	<!-- footer -->
 	<c:import url="/WEB-INF/views/layout/footer.jsp" />
 </body>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+    <c:forEach var="likeRegList" items="${likeRegList}">
+	    $('img[class=like_btn]').each(function(){
+	        if($(this).data('id') == "${likeRegList.regId}")
+	           $(this).attr('src', '/images/red_heart.png')
+	     });
+	 </c:forEach>
+	 <c:forEach var="likeStayList" items="${likeStayList}">
+		 $('img[class=like_btn]').each(function(){
+		      if($(this).data('id') == "${likeStayList.stayNo}")
+		         $(this).attr('src', '/images/red_heart.png')
+		   });
+	 </c:forEach>
+
+});
+</script>
 </html>

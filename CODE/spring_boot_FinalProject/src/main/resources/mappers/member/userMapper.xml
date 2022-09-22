@@ -202,12 +202,12 @@
 		DELETE FROM mylike WHERE userId = #{userId} AND stayNo = #{stayNo}
 	</delete>
 	
-	<!--  찜 유지 (특가)  -->
+	<!--  찜 (특가)  -->
 	<select id="selectChkRegId" parameterType="hashmap" resultType="int">
 		SELECT COUNT(*) FROM mylike WHERE userId = #{userId} AND regId = #{id}
 	</select>
 	
-	<!--  찜 유지 (일반) -->
+	<!--  찜 (일반) -->
 	<select id="selectChkStay" parameterType="hashmap" resultType="int">
 		SELECT COUNT(*) FROM mylike WHERE userId = #{userId} AND stayNo = #{id}
 	</select>
@@ -217,6 +217,16 @@
 	 	DELETE FROM mylike
 	 	WHERE likeId = #{likeId} AND userId = #{userId}
 	 </delete>
-
+	 
+	 <!-- 찜하트 유지(특가) -->
+	 <select id="retainHeartReg" parameterType="string" resultType="com.spring_boot.FinalProject.model.LikeVO">
+		SELECT regId FROM mylike
+		WHERE userId = #{userId} AND NOT regId IS NULL
+	 </select>
   	
+	 <!-- 찜하트 유지(일반) -->
+	 <select id="retainHeartStay" parameterType="string" resultType="com.spring_boot.FinalProject.model.LikeVO">
+		SELECT stayNo FROM mylike
+		WHERE userId = #{userId}  AND NOT stayNo IS NULL
+	 </select>
 </mapper>
