@@ -81,8 +81,8 @@ public class APIRestController {
 	
 	// chatbot api
 	@RequestMapping("/petmilyChatbot")
-	public String viewChatbot(@RequestParam String message) {
-		return ChatbotService.main(message);
+	public String viewChatbot(@RequestParam String message) throws IOException {
+		return ChatbotService.mainJSON(message);
 	}
 	
 }
