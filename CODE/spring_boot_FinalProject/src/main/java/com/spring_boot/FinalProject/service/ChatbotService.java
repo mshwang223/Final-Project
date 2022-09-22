@@ -68,7 +68,7 @@ public class ChatbotService {
 	        } catch (Exception e) {
 	            System.out.println(e);
 	        }
-	        System.out.println(chatbotMessage);
+			/* System.out.println(chatbotMessage); */
 	        return chatbotMessage;
 	    }
 
