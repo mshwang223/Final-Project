@@ -111,32 +111,28 @@
                 <div class="recommended-item-ct">
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel1.jpg'/>" alt="상품" width="120" height="90">
-                        <p class="recommended-item-info__brand">oo</p>
-                        <p class="recommended-item-info__name">oooooooooooooo</p>
+                    
                         <button>장바구니 담기</button>
                     </div>
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel2.jpg'/>" alt="상품" width="120" height="90">
-                        <p class="recommended-item-info__brand">oo</p>
-                        <p class="recommended-item-info__name">oooooooooooooo</p>
+                     
                         <button>장바구니 담기</button>
                     </div>
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel3.jpg'/>" alt="상품" width="120" height="90">
-                        <p class="recommended-item-info__brand">oo</p>
-                        <p class="recommended-item-info__name">oooooooooooooo</p>
+                      
                         <button>장바구니 담기</button>
                     </div>
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel4.jpg'/>" alt="상품" width="120" height="90">
-                        <p class="recommended-item-info__brand">oo</p>
-                        <p class="recommended-item-info__name">oooooooooooooo</p>
+                        <p class="recommended-item-info__brand"></p>
+                        <p class="recommended-item-info__name"></p>
                         <button>장바구니 담기</button>
                     </div>
                     <div class="recommended-item">
                         <img src="<c:url value='/images/hotel5.jpg'/>" alt="상품" width="120" height="90">
-                        <p class="recommended-item-info__brand">oo</p>
-                        <p class="recommended-item-info__name">oooooooooooooo</p>
+                        
                         <button>장바구니 담기</button>
                     </div>
 
