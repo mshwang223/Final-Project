@@ -120,29 +120,30 @@
 						</c:choose>
 					 </c:forEach>
 					 <script>
-					 $(document).ready(function () {
-							// 마이페이지 찜 삭제
-						    $('.like_close').click(function(){
-						    	
-						    	$.ajax({
-						        type: "post",
-						        url: "/deleteMyLike",
-						        data: {
-						        		  "likeId": $("#likeId").val()
-						        		},
-						        success: function (result) {
-						            if (result == "result") {
-						                alert("삭제되었습니다.");
-						                location.reload();
-						            }
-						        },
-						        error: function () {
-						            alert("error");
-						        }
-						    });
-				      	});
-					 });
-					 </script>
+                        $(document).ready(function () {
+                               // 마이페이지 찜 삭제
+                               $('.like_close').click(function(){
+                                   let likeId = $(this).parent().children("input[type=hidden]").val();
+   
+                                   $.ajax({
+                                   type: "post",
+                                   url: "/deleteMyLike",
+                                   data: {
+                                             "likeId": likeId
+                                           },
+                                   success: function (result) {
+                                       if (result == "result") {
+                                           alert("삭제되었습니다.");
+                                           location.reload();
+                                       }
+                                   },
+                                   error: function () {
+                                       alert("error");
+                                   }
+                               });
+                             });
+                        });
+                        </script>
 					  
 					
                 </div>
