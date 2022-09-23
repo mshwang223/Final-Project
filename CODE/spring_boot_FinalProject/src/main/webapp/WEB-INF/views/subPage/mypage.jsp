@@ -104,46 +104,48 @@
                 <div class="wented_hotel_container">
 
                    	<c:forEach items="${likeList}" var="likeList" varStatus="status">
-                   		<input type="hidden" name="likeId" value="${likeList.likeId}" id="likeId">
-
                    		<c:choose>
 	                   		<c:when test="${likeList.stayNo ne null }">
 	                   			<div class="wanted_hotel"><img src="<c:url value='/petHotelImg/${likeList.serviceImg }/1.png'/>" alt="">
 	                   				<i class="fa-regular fa-circle-xmark like_close" data-likeId = "${likeList.likeId }"></i>
+	                   				<input type="hidden" name="likeId" value="${likeList.likeId}" id="likeId">
 	                   			</div>
 							</c:when>
 							<c:otherwise>
 	                   			<div class="wanted_hotel"><img src="<c:url value='/comImg/${likeList.serviceImg }/1.png'/>" alt="">
 	                   				<i class="fa-regular fa-circle-xmark like_close" data-likeId = "${likeList.likeId }"></i>
+	                   				<input type="hidden" name="likeId" value="${likeList.likeId}" id="likeId">
 	                   			</div>
 							</c:otherwise>
 						</c:choose>
 					 </c:forEach>
 					 <script>
-                        $(document).ready(function () {
-                               // 마이페이지 찜 삭제
-                               $('.like_close').click(function(){
-                                   let likeId = $(this).parent().children("input[type=hidden]").val();
-   
-                                   $.ajax({
-                                   type: "post",
-                                   url: "/deleteMyLike",
-                                   data: {
-                                             "likeId": likeId
-                                           },
-                                   success: function (result) {
-                                       if (result == "result") {
-                                           alert("삭제되었습니다.");
-                                           location.reload();
-                                       }
-                                   },
-                                   error: function () {
-                                       alert("error");
-                                   }
-                               });
-                             });
-                        });
-                        </script>
+					 $(document).ready(function () {
+							// 마이페이지 찜 삭제
+						    $('.like_close').click(function(){
+						    	let likeId = $(this).parent().children("input[type=hidden]").val();
+								console.log("likeId = " + likeId);
+								/*
+						    	$.ajax({
+						        type: "post",
+						        url: "/deleteMyLike",
+						        data: {
+						        		  "likeId": likeId
+						        		},
+						        success: function (result) {
+						            if (result == "result") {
+						                alert("삭제되었습니다.");
+						                location.reload();
+						            }
+						        },
+						        error: function () {
+						            alert("error");
+						        }
+						    });
+								*/
+				      	});
+					 });
+					 </script>
 					  
 					
                 </div>
