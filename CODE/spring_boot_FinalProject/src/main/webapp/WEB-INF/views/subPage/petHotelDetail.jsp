@@ -50,10 +50,10 @@
 			                        <img src="/images/star.png" alt="별점"> <span>${fn:substring(pointAvg, 0, 3) }</span>
 			                        <div class="review_move">후기 ${reviewCount}개</div>
 			                    </div>
-			                    <div class="stay_pick">
+			                    <!-- <div class="stay_pick">
 			                        <span>찜하기</span>
 			                        <img class="like_btn" src="/images/heart.png" alt="찜하기">
-			                    </div>
+			                    </div> -->
 			                </div>
 			            </div>
 			            <div class="stay_img_container">
@@ -347,10 +347,10 @@
 			            <div>
 			                <div class="stay_title">${insertHotel.name}</div>
 			                <div class="stay_sub_info">
-			                    <div class="stay_pick">
+			                    <!-- <div class="stay_pick">
 			                        <span>찜하기</span>
 			                        <img class="like_btn" src="/images/heart.png" alt="찜하기">
-			                    </div>
+			                    </div> -->
 			                </div>
 			            </div>
 			            <div class="stay_img_container">

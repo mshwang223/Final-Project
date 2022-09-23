@@ -96,7 +96,7 @@ $(document).ready(function(){
 		   				url:"/delete_regId",
 		   				data:{"regId": id},
 		   				success:function(result) {
-		   					alert("해당 상품이 찜 목록에서 삭제되었습니다.");
+
 		   				}
 					});
 				} else if(result == "01") {
@@ -105,7 +105,7 @@ $(document).ready(function(){
 		   				url:"/delete_stayNo",
 		   				data:{"stayNo": id},
 		   				success:function(result) {
-		   					alert("해당 상품이 찜 목록에서 삭제되었습니다.");
+
 		   				}
 					});
 				} else if(result == "10") {
@@ -114,7 +114,7 @@ $(document).ready(function(){
 		   				url:"/delete_regId",
 		   				data:{"regId": id},
 		   				success:function(result) {
-		   					alert("해당 상품이 찜 목록에서 삭제되었습니다.");
+
 		   				}
 					});
 				} else if(result == "11") {
@@ -123,11 +123,11 @@ $(document).ready(function(){
 		   				url:"/delete_stayNo",
 		   				data:{"stayNo": id},
 		   				success:function(result) {
-		   					alert("해당 상품이 찜 목록에서 삭제되었습니다.");
+
 		   				}
 					});
 				} else {
-					alert("상품이 찜되었습니다.");
+
 				}
 	         },
 	         error:function(){
