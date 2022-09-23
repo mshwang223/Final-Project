@@ -40,7 +40,7 @@ public class PayController {
         return "subPage/cart";
     }
 
-    
+    // 장바구니 삭제
     @ResponseBody
     @RequestMapping(value = "/carts",method = RequestMethod.DELETE)
     public String deleteCart(HttpSession session,@RequestParam(value="id[]") ArrayList<Long> id) {
@@ -51,7 +51,8 @@ public class PayController {
         orderService.deleteCarts(id);
         return "success";
     }
-
+    
+    // 장바구니 결제
     @ResponseBody
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
     public String pay(HttpSession session, Model model, @RequestBody List<OrderVO> list) {
