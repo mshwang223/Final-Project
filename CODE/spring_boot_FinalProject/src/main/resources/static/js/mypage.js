@@ -18,7 +18,7 @@ $(document).ready(function () {
 	}
 
     $('.next').click(function(){
-        $('.wanted_hotel:nth-child(2)').animate({marginLeft:  '-=130px' }, '500');
+        $('.wented_hotel_container div:nth-child(1)').animate({marginLeft:  '-=130px' }, '500');
         $('.prev').css("display","block");
         Index++;
         if(Index == (Box - Math.ceil(Box / slice)))
@@ -26,7 +26,7 @@ $(document).ready(function () {
     });
 
     $('.prev').click(function(){
-        $('.wanted_hotel:nth-child(2)').animate({marginLeft:  '+=130px' }, '500');
+        $('.wented_hotel_container div:nth-child(1)').animate({marginLeft:  '+=130px' }, '500');
         $('.next').css("display","block");
         Index--;
         if(Index == 0)
