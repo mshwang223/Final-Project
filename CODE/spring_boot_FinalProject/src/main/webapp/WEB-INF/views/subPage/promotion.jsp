@@ -122,9 +122,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 							<div class="whole_profit">
 								<div class="first_profit">
 									▶ 반려동물 어메니티 제공<br><br>
-									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능)<br><br>
+									▶ 촬영한 사진 액자로 제공(요청시 자택으로 배송가능),펫 등록증 제공<br><br>
 									▶ 객실 내 반려동물 하우스 제공
-									▶ 펫등록증 제공
 								</div>
 								<div class="second_profit">
 									▶ 성인 조식 1인 포함(추가시 성인 1인 35,000원)<br><br>
@@ -188,7 +187,6 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									▶ 견생네컷 촬영서비스 제공<br><br>
 									▶ 촬영한 견생네컷 티셔츠로 제작 (자택으로 배송가능)<br><br>
 									▶ 객실 내 반려동물 하우스 제공
-									▶ 펫등록증 제공
 								</div>
 								<div class="second_profit">
 									▶ 성인 조식 1인 포함(추가시 성인 1인 35,000원)<br><br>
@@ -252,7 +250,6 @@ if (request.getProtocol().equals("HTTP/1.1"))
 									▶ 휴대용 배변패드 함께 제공<br><br>
 									▶ 최고급 반려동물 캐리어 제공(요청시 자택으로 배송)<br><br>
 									▶ 반려동물 목걸이 함께 제공
-									▶ 펫등록증 제공
 								</div>
 								<div class="second_profit">
 									▶ 성인 조식 1인 포함(추가시 성인 1인 35,000원)<br><br>
