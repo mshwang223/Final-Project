@@ -126,10 +126,6 @@
                         <img src="<c:url value='/images/hotel4.jpg'/>" alt="상품" width="120" height="90">
                         <button>장바구니 담기</button>
                     </div>
-                    <div class="recommended-item">
-                        <img src="<c:url value='/images/hotel5.jpg'/>" alt="상품" width="120" height="90">
-                        <button>장바구니 담기</button>
-                    </div>
 
 
                 </div>

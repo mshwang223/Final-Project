@@ -116,7 +116,7 @@ $(document).ready(function(){
 						// 성공 시 결과 받음
 						if(result == "SUCCESS") {
 							alert("삭제되었습니다.");
-							location.href = "/adminInsertHotel";
+							location.href = "/adminInsertHotel/0";
 						}
 					},
 					error:function(){

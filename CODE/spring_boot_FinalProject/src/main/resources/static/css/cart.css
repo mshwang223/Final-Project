@@ -124,6 +124,7 @@
 
 .recommended-item-ct {
   display: flex;
+  justify-content: space-evenly;
   overflow: scroll;
   -ms-overflow-style: none; 
   scrollbar-width: none; 
@@ -143,6 +144,7 @@
   width: 200px;
   height: 150px;
   margin: 40px 10px 20px 10px;
+  border-radius: 10px;
 }
 
 .recommended-item button {
@@ -151,7 +153,8 @@
   background-color: #ee88ee;
   width: max-content;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-left: 52px;
   border:none;
   border-radius: 7px;
   color:#fff;
