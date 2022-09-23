@@ -125,7 +125,7 @@
 						    $('.like_close').click(function(){
 						    	let likeId = $(this).parent().children("input[type=hidden]").val();
 								console.log("likeId = " + likeId);
-								/*
+
 						    	$.ajax({
 						        type: "post",
 						        url: "/deleteMyLike",
@@ -142,7 +142,7 @@
 						            alert("error");
 						        }
 						    });
-								*/
+
 				      	});
 					 });
 					 </script>
